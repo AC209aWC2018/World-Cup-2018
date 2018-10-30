@@ -1,0 +1,737 @@
+,Player,Country,Pos,Birthday,Age,Caps,Club,Club Country
+0,Jefferson,Brazil,GK,1983-01-02,31,9,Botafogo,Brazil
+1,Dani Alves,Brazil,DF,1983-05-06,31,75,Barcelona,Spain
+2,Thiago Silva,Brazil,DF,1984-09-22,29,46,Paris Saint-Germain,France
+3,David Luiz,Brazil,DF,1987-04-22,27,36,Chelsea,England
+4,Fernandinho,Brazil,MF,1985-05-04,29,7,Manchester City,England
+5,Marcelo,Brazil,DF,1988-05-12,26,31,Real Madrid,Spain
+6,Hulk,Brazil,FW,1986-07-25,27,35,Zenit Saint Petersburg,Russia
+7,Paulinho,Brazil,MF,1988-07-25,25,26,Tottenham Hotspur,England
+8,Fred,Brazil,FW,1983-10-03,30,33,Fluminense,Brazil
+9,Neymar,Brazil,FW,1992-02-05,22,49,Barcelona,Spain
+10,Oscar,Brazil,MF,1991-09-09,22,31,Chelsea,England
+11,Júlio César,Brazil,GK,1979-09-03,34,80,Toronto FC,Canada
+12,Dante,Brazil,DF,1983-10-18,30,12,Bayern Munich,Germany
+13,Maxwell,Brazil,DF,1981-08-27,32,9,Paris Saint-Germain,France
+14,Henrique,Brazil,DF,1986-10-14,27,5,Napoli,Italy
+15,Ramires,Brazil,MF,1987-03-24,27,42,Chelsea,England
+16,Luiz Gustavo,Brazil,MF,1987-07-23,26,19,VfL Wolfsburg,Germany
+17,Hernanes,Brazil,MF,1985-05-29,29,24,Internazionale,Italy
+18,Willian,Brazil,MF,1988-08-09,25,7,Chelsea,England
+19,Bernard,Brazil,FW,1992-09-08,21,11,Shakhtar Donetsk,Ukraine
+20,Jô,Brazil,FW,1987-03-20,27,17,Atlético Mineiro,Brazil
+21,Victor,Brazil,GK,1983-01-21,31,6,Atlético Mineiro,Brazil
+22,Maicon,Brazil,DF,1981-07-26,32,72,Roma,Italy
+23,Loïc Feudjou,Cameroon,GK,1992-04-14,22,2,Coton Sport,Cameroon
+24,Benoît Assou-Ekotto,Cameroon,DF,1984-03-24,30,22,Queens Park Rangers,England
+25,Nicolas Nkoulou,Cameroon,DF,1990-03-27,24,48,Marseille,France
+26,Cédric Djeugoué,Cameroon,DF,1992-08-28,21,3,Coton Sport,Cameroon
+27,Dany Nounkeu,Cameroon,DF,1986-04-11,28,16,Beşiktaş,Turkey
+28,Alex Song,Cameroon,MF,1987-09-09,26,47,Barcelona,Spain
+29,Landry N'Guémo,Cameroon,MF,1985-11-28,28,40,Bordeaux,France
+30,Benjamin Moukandjo,Cameroon,FW,1988-11-12,25,17,Nancy,France
+31,Samuel Eto'o,Cameroon,FW,1981-03-10,33,117,Chelsea,England
+32,Vincent Aboubakar,Cameroon,FW,1992-01-22,22,24,Lorient,France
+33,Jean Makoun,Cameroon,MF,1983-05-29,31,66,Rennes,France
+34,Henri Bedimo,Cameroon,DF,1984-06-04,30,31,Lyon,France
+35,Eric Maxim Choupo-Moting,Cameroon,FW,1989-03-23,25,26,Mainz 05,Germany
+36,Aurélien Chedjou,Cameroon,DF,1985-06-20,28,31,Galatasaray,Turkey
+37,Pierre Webó,Cameroon,FW,1982-01-20,32,56,Fenerbahçe,Turkey
+38,Charles Itandje,Cameroon,GK,1982-11-02,31,9,Konyaspor,Turkey
+39,Stéphane Mbia,Cameroon,MF,1986-05-20,28,49,Sevilla,Spain
+40,Eyong Enoh,Cameroon,MF,1986-03-23,28,38,Antalyaspor,Turkey
+41,Fabrice Olinga,Cameroon,FW,1996-05-12,18,8,Zulte Waregem,Belgium
+42,Edgar Salli,Cameroon,MF,1992-08-17,21,9,Lens,France
+43,Joël Matip,Cameroon,MF,1991-08-08,22,23,Schalke 04,Germany
+44,Allan Nyom,Cameroon,DF,1988-05-10,26,10,Granada,Spain
+45,Sammy N'Djock,Cameroon,GK,1990-02-25,24,3,Fethiyespor,Turkey
+46,Stipe Pletikosa,Croatia,GK,1979-01-08,35,111,Rostov,Russia
+47,Šime Vrsaljko,Croatia,DF,1992-01-10,22,7,Genoa,Italy
+48,Danijel Pranjić,Croatia,DF,1981-12-02,32,50,Panathinaikos,Greece
+49,Ivan Perišić,Croatia,MF,1989-02-02,25,29,VfL Wolfsburg,Germany
+50,Vedran Ćorluka,Croatia,DF,1986-02-05,28,72,Lokomotiv Moscow,Russia
+51,Dejan Lovren,Croatia,DF,1989-07-05,24,25,Southampton,England
+52,Ivan Rakitić,Croatia,MF,1988-03-10,26,62,Sevilla,Spain
+53,Ognjen Vukojević,Croatia,MF,1983-12-20,30,55,Dynamo Kyiv,Ukraine
+54,Nikica Jelavić,Croatia,FW,1985-08-27,28,33,Hull City,England
+55,Luka Modrić,Croatia,MF,1985-09-09,28,75,Real Madrid,Spain
+56,Darijo Srna,Croatia,DF,1982-05-01,32,112,Shakhtar Donetsk,Ukraine
+57,Oliver Zelenika,Croatia,GK,1993-05-14,21,0,Lokomotiva,Croatia
+58,Gordon Schildenfeld,Croatia,DF,1985-03-18,29,21,Panathinaikos,Greece
+59,Marcelo Brozović,Croatia,MF,1992-11-16,21,1,Dinamo Zagreb,Croatia
+60,Milan Badelj,Croatia,MF,1989-02-25,25,9,Hamburger SV,Germany
+61,Ante Rebić,Croatia,FW,1993-09-21,20,5,Fiorentina,Italy
+62,Mario Mandžukić,Croatia,FW,1986-05-21,28,50,Bayern Munich,Germany
+63,Ivica Olić,Croatia,FW,1979-09-14,34,92,VfL Wolfsburg,Germany
+64,Sammir,Croatia,MF,1987-04-23,27,6,Getafe,Spain
+65,Mateo Kovačić,Croatia,MF,1994-05-06,20,10,Internazionale,Italy
+66,Domagoj Vida,Croatia,DF,1989-04-29,25,23,Dynamo Kyiv,Ukraine
+67,Eduardo,Croatia,FW,1983-02-25,31,63,Shakhtar Donetsk,Ukraine
+68,Danijel Subašić,Croatia,GK,1984-10-27,29,6,Monaco,France
+69,Jesús Corona,Mexico,GK,1981-01-26,33,34,Cruz Azul,Mexico
+70,Francisco Javier Rodríguez,Mexico,DF,1981-10-20,32,95,América,Mexico
+71,Carlos Salcido,Mexico,DF,1980-04-02,34,122,UANL,Mexico
+72,Rafael Márquez,Mexico,DF,1979-02-13,35,120,León,Mexico
+73,Diego Reyes,Mexico,DF,1992-09-19,21,14,Porto,Portugal
+74,Héctor Herrera,Mexico,MF,1990-04-19,24,13,Porto,Portugal
+75,Miguel Layún,Mexico,DF,1988-06-25,25,15,América,Mexico
+76,Marco Fabián,Mexico,MF,1989-07-21,24,15,Cruz Azul,Mexico
+77,Raúl Jiménez,Mexico,FW,1991-05-05,23,25,América,Mexico
+78,Giovani dos Santos,Mexico,MF,1989-05-11,25,76,Villarreal,Spain
+79,Alan Pulido,Mexico,FW,1991-03-08,23,6,UANL,Mexico
+80,Alfredo Talavera,Mexico,GK,1982-09-18,31,14,Toluca,Mexico
+81,Guillermo Ochoa,Mexico,GK,1985-07-13,28,59,Ajaccio,France
+82,Javier Hernández,Mexico,FW,1988-06-01,26,62,Manchester United,England
+83,Héctor Moreno,Mexico,DF,1988-01-17,26,53,Espanyol,Spain
+84,Miguel Ángel Ponce,Mexico,DF,1989-04-12,25,8,Toluca,Mexico
+85,Isaác Brizuela,Mexico,MF,1990-08-28,23,7,Toluca,Mexico
+86,Andrés Guardado,Mexico,MF,1986-09-28,27,104,Bayer Leverkusen,Germany
+87,Oribe Peralta,Mexico,FW,1984-01-12,30,33,Santos Laguna,Mexico
+88,Javier Aquino,Mexico,MF,1990-02-11,24,22,Villarreal,Spain
+89,Carlos Peña,Mexico,MF,1990-03-29,24,16,León,Mexico
+90,Paul Aguilar,Mexico,DF,1986-03-06,28,30,América,Mexico
+91,José Juan Vázquez,Mexico,MF,1988-03-14,26,5,León,Mexico
+92,Mathew Ryan,Australia,GK,1992-04-08,22,7,Club Brugge,Belgium
+93,Ivan Franjic,Australia,DF,1987-09-10,26,9,Brisbane Roar,Australia
+94,Jason Davidson,Australia,DF,1991-06-29,22,7,Heracles Almelo,Netherlands
+95,Tim Cahill,Australia,FW,1979-12-06,34,69,New York Red Bulls,United States
+96,Mark Milligan,Australia,MF,1985-08-04,28,29,Melbourne Victory,Australia
+97,Matthew Spiranovic,Australia,DF,1988-06-27,25,18,Western Sydney Wanderers,Australia
+98,Mathew Leckie,Australia,FW,1991-02-04,23,8,FSV Frankfurt,Germany
+99,Bailey Wright,Australia,DF,1992-07-28,21,0,Preston North End,England
+100,Adam Taggart,Australia,FW,1993-06-02,21,5,Newcastle Jets,Australia
+101,Ben Halloran,Australia,MF,1992-06-14,21,2,Fortuna Düsseldorf,Germany
+102,Tommy Oar,Australia,MF,1991-12-10,22,15,Utrecht,Netherlands
+103,Mitchell Langerak,Australia,GK,1988-08-22,25,3,Borussia Dortmund,Germany
+104,Oliver Bozanic,Australia,MF,1989-01-08,25,3,Luzern,Switzerland
+105,James Troisi,Australia,MF,1988-07-03,25,11,Melbourne Victory,Australia
+106,Mile Jedinak,Australia,MF,1984-08-03,29,44,Crystal Palace,England
+107,James Holland,Australia,MF,1989-05-15,25,14,Austria Wien,Austria
+108,Matt McKay,Australia,MF,1983-01-11,31,47,Brisbane Roar,Australia
+109,Eugene Galekovic,Australia,GK,1981-06-12,33,8,Adelaide United,Australia
+110,Ryan McGowan,Australia,DF,1989-08-15,24,9,Shandong Luneng Taishan,China
+111,Dario Vidošić,Australia,MF,1987-04-08,27,23,Sion,Switzerland
+112,Massimo Luongo,Australia,MF,1992-09-25,21,1,Swindon Town,England
+113,Alex Wilkinson,Australia,DF,1984-08-13,29,3,Jeonbuk Hyundai Motors,South Korea
+114,Mark Bresciano,Australia,MF,1980-02-11,34,74,Al-Gharafa,Qatar
+115,Claudio Bravo,Chile,GK,1983-04-13,31,79,Real Sociedad,Spain
+116,Eugenio Mena,Chile,DF,1988-07-18,25,25,Santos,Brazil
+117,Miiko Albornoz,Chile,DF,1990-11-30,23,2,Malmö FF,Sweden
+118,Mauricio Isla,Chile,MF,1988-06-12,26,47,Juventus,Italy
+119,Francisco Silva,Chile,MF,1986-02-11,28,12,Osasuna,Spain
+120,Carlos Carmona,Chile,MF,1987-02-21,27,44,Atalanta,Italy
+121,Alexis Sánchez,Chile,FW,1988-12-19,25,67,Barcelona,Spain
+122,Arturo Vidal,Chile,MF,1987-05-22,27,54,Juventus,Italy
+123,Mauricio Pinilla,Chile,FW,1984-02-04,30,27,Cagliari,Italy
+124,Jorge Valdivia,Chile,MF,1983-10-03,30,57,Palmeiras,Brazil
+125,Eduardo Vargas,Chile,FW,1989-11-20,24,30,Valencia,Spain
+126,Cristopher Toselli,Chile,GK,1988-06-22,25,4,Universidad Católica,Chile
+127,José Manuel Rojas,Chile,DF,1983-06-03,31,19,Universidad de Chile,Chile
+128,Fabián Orellana,Chile,MF,1986-01-27,28,26,Celta Vigo,Spain
+129,Jean Beausejour,Chile,MF,1984-06-03,30,59,Wigan Athletic,England
+130,Felipe Gutiérrez,Chile,MF,1990-10-08,23,18,Twente,Netherlands
+131,Gary Medel,Chile,DF,1987-08-03,26,61,Cardiff City,Wales
+132,Gonzalo Jara,Chile,DF,1985-08-29,28,65,Nottingham Forest,England
+133,José Pedro Fuenzalida,Chile,MF,1985-02-22,29,23,Colo-Colo,Chile
+134,Charles Aránguiz,Chile,MF,1989-04-17,25,21,Internacional,Brazil
+135,Marcelo Díaz,Chile,MF,1986-12-30,27,21,Basel,Switzerland
+136,Esteban Paredes,Chile,FW,1980-08-01,33,35,Colo-Colo,Chile
+137,Johnny Herrera,Chile,GK,1981-05-09,33,8,Universidad de Chile,Chile
+138,Jasper Cillessen,Netherlands,GK,1989-04-22,25,8,Ajax,Netherlands
+139,Ron Vlaar,Netherlands,DF,1985-02-16,29,24,Aston Villa,England
+140,Stefan de Vrij,Netherlands,DF,1992-02-05,22,12,Feyenoord,Netherlands
+141,Bruno Martins Indi,Netherlands,DF,1992-02-08,22,16,Feyenoord,Netherlands
+142,Daley Blind,Netherlands,DF,1990-03-09,24,12,Ajax,Netherlands
+143,Nigel de Jong,Netherlands,MF,1984-11-30,29,71,Milan,Italy
+144,Daryl Janmaat,Netherlands,DF,1989-07-22,24,16,Feyenoord,Netherlands
+145,Jonathan de Guzmán,Netherlands,MF,1987-09-13,26,10,Swansea City,Wales
+146,Robin van Persie,Netherlands,FW,1983-08-06,30,85,Manchester United,England
+147,Wesley Sneijder,Netherlands,MF,1984-06-09,30,99,Galatasaray,Turkey
+148,Arjen Robben,Netherlands,FW,1984-01-23,30,75,Bayern Munich,Germany
+149,Paul Verhaegh,Netherlands,DF,1983-09-01,30,2,FC Augsburg,Germany
+150,Joël Veltman,Netherlands,DF,1992-01-15,22,2,Ajax,Netherlands
+151,Terence Kongolo,Netherlands,DF,1994-02-14,20,1,Feyenoord,Netherlands
+152,Dirk Kuyt,Netherlands,FW,1980-07-22,33,98,Fenerbahçe,Turkey
+153,Jordy Clasie,Netherlands,MF,1991-06-27,22,8,Feyenoord,Netherlands
+154,Jeremain Lens,Netherlands,FW,1987-11-24,26,22,Dynamo Kyiv,Ukraine
+155,Leroy Fer,Netherlands,MF,1990-01-05,24,6,Norwich City,England
+156,Klaas-Jan Huntelaar,Netherlands,FW,1983-08-12,30,62,Schalke 04,Germany
+157,Georginio Wijnaldum,Netherlands,MF,1990-11-11,23,5,PSV,Netherlands
+158,Memphis Depay,Netherlands,FW,1994-02-13,20,6,PSV,Netherlands
+159,Michel Vorm,Netherlands,GK,1983-10-20,30,14,Swansea City,Wales
+160,Tim Krul,Netherlands,GK,1988-04-03,26,5,Newcastle United,England
+161,Iker Casillas,Spain,GK,1981-05-20,33,154,Real Madrid,Spain
+162,Raúl Albiol,Spain,DF,1985-09-04,28,46,Napoli,Italy
+163,Gerard Piqué,Spain,DF,1987-02-02,27,60,Barcelona,Spain
+164,Javi Martínez,Spain,MF,1988-09-02,25,17,Bayern Munich,Germany
+165,Juanfran,Spain,DF,1985-01-09,29,8,Atlético Madrid,Spain
+166,Andrés Iniesta,Spain,MF,1984-05-11,30,97,Barcelona,Spain
+167,David Villa,Spain,FW,1981-12-03,32,96,Atlético Madrid,Spain
+168,Xavi,Spain,MF,1980-01-25,34,132,Barcelona,Spain
+169,Fernando Torres,Spain,FW,1984-03-20,30,107,Chelsea,England
+170,Cesc Fàbregas,Spain,MF,1987-05-04,27,89,Barcelona,Spain
+171,Pedro,Spain,FW,1987-07-28,26,40,Barcelona,Spain
+172,David de Gea,Spain,GK,1990-11-07,23,1,Manchester United,England
+173,Juan Mata,Spain,MF,1988-04-28,26,33,Manchester United,England
+174,Xabi Alonso,Spain,MF,1981-11-25,32,111,Real Madrid,Spain
+175,Sergio Ramos,Spain,DF,1986-03-30,28,117,Real Madrid,Spain
+176,Sergio Busquets,Spain,MF,1988-07-16,25,65,Barcelona,Spain
+177,Koke,Spain,MF,1992-01-08,22,8,Atlético Madrid,Spain
+178,Jordi Alba,Spain,DF,1989-03-21,25,26,Barcelona,Spain
+179,Diego Costa,Spain,FW,1988-10-07,25,2,Atlético Madrid,Spain
+180,Santi Cazorla,Spain,MF,1984-12-13,29,64,Arsenal,England
+181,David Silva,Spain,MF,1986-01-08,28,80,Manchester City,England
+182,César Azpilicueta,Spain,DF,1989-08-28,24,6,Chelsea,England
+183,Pepe Reina,Spain,GK,1982-08-31,31,32,Napoli,Italy
+184,David Ospina,Colombia,GK,1988-08-31,25,44,Nice,France
+185,Cristián Zapata,Colombia,DF,1986-09-30,27,24,Milan,Italy
+186,Mario Yepes,Colombia,DF,1976-01-13,38,98,Atalanta,Italy
+187,Santiago Arias,Colombia,DF,1992-01-13,22,6,PSV,Netherlands
+188,Carlos Carbonero,Colombia,MF,1990-07-25,23,1,River Plate,Argentina
+189,Carlos Sánchez,Colombia,MF,1986-02-06,28,44,Elche,Spain
+190,Pablo Armero,Colombia,DF,1986-11-02,27,53,West Ham United,England
+191,Abel Aguilar,Colombia,MF,1985-01-06,29,49,Toulouse,France
+192,Teófilo Gutiérrez,Colombia,FW,1985-05-17,29,30,River Plate,Argentina
+193,James Rodríguez,Colombia,MF,1991-07-12,22,22,Monaco,France
+194,Juan Cuadrado,Colombia,MF,1988-05-26,26,28,Fiorentina,Italy
+195,Camilo Vargas,Colombia,GK,1989-03-09,25,0,Santa Fe,Colombia
+196,Fredy Guarín,Colombia,MF,1986-06-30,27,49,Internazionale,Italy
+197,Víctor Ibarbo,Colombia,FW,1990-05-19,24,9,Cagliari,Italy
+198,Alexander Mejía,Colombia,MF,1988-07-11,25,8,Atlético Nacional,Colombia
+199,Éder Álvarez Balanta,Colombia,DF,1993-02-28,21,3,River Plate,Argentina
+200,Carlos Bacca,Colombia,FW,1986-09-08,27,11,Sevilla,Spain
+201,Juan Camilo Zúñiga,Colombia,DF,1985-12-14,28,50,Napoli,Italy
+202,Adrián Ramos,Colombia,FW,1986-01-22,28,26,Hertha BSC,Germany
+203,Juan Fernando Quintero,Colombia,MF,1993-01-18,21,4,Porto,Portugal
+204,Jackson Martínez,Colombia,FW,1986-10-03,27,27,Porto,Portugal
+205,Faryd Mondragón,Colombia,GK,1971-06-21,42,50,Deportivo Cali,Colombia
+206,Carlos Valdés,Colombia,DF,1985-05-22,29,14,San Lorenzo,Argentina
+207,Orestis Karnezis,Greece,GK,1985-07-11,28,19,Granada,Spain
+208,Giannis Maniatis,Greece,MF,1986-10-12,27,30,Olympiacos,Greece
+209,Giorgos Tzavellas,Greece,DF,1987-11-26,26,13,PAOK,Greece
+210,Kostas Manolas,Greece,DF,1991-06-14,22,9,Olympiacos,Greece
+211,Vangelis Moras,Greece,DF,1981-08-26,32,19,Hellas Verona,Italy
+212,Alexandros Tziolis,Greece,MF,1985-02-13,29,49,Kayserispor,Turkey
+213,Georgios Samaras,Greece,FW,1985-02-21,29,74,Celtic,Scotland
+214,Panagiotis Kone,Greece,MF,1987-07-26,26,16,Bologna,Italy
+215,Konstantinos Mitroglou,Greece,FW,1988-03-12,26,32,Fulham,England
+216,Giorgos Karagounis,Greece,MF,1977-03-06,37,135,Fulham,England
+217,Loukas Vyntra,Greece,DF,1981-02-05,33,50,Levante,Spain
+218,Panagiotis Glykos,Greece,GK,1986-06-03,28,2,PAOK,Greece
+219,Stefanos Kapino,Greece,GK,1994-03-18,20,2,Panathinaikos,Greece
+220,Dimitris Salpingidis,Greece,FW,1981-08-18,32,76,PAOK,Greece
+221,Vasilis Torosidis,Greece,DF,1985-06-10,29,66,Roma,Italy
+222,Lazaros Christodoulopoulos,Greece,MF,1986-12-19,27,19,Bologna,Italy
+223,Theofanis Gekas,Greece,FW,1980-05-23,34,72,Konyaspor,Turkey
+224,Giannis Fetfatzidis,Greece,MF,1990-12-21,23,19,Genoa,Italy
+225,Sokratis Papastathopoulos,Greece,DF,1988-06-09,26,47,Borussia Dortmund,Germany
+226,José Holebas,Greece,DF,1984-06-27,29,22,Olympiacos,Greece
+227,Kostas Katsouranis,Greece,MF,1979-06-21,34,111,PAOK,Greece
+228,Andreas Samaris,Greece,MF,1989-06-13,24,4,Olympiacos,Greece
+229,Panagiotis Tachtsidis,Greece,MF,1991-02-15,23,6,Torino,Italy
+230,Boubacar Barry,Ivory Coast,GK,1979-12-30,34,77,Lokeren,Belgium
+231,Ousmane Viera,Ivory Coast,DF,1986-12-21,27,1,Çaykur Rizespor,Turkey
+232,Arthur Boka,Ivory Coast,DF,1983-04-02,31,78,VfB Stuttgart,Germany
+233,Kolo Touré,Ivory Coast,DF,1981-03-19,33,107,Liverpool,England
+234,Didier Zokora,Ivory Coast,DF,1980-12-14,33,119,Trabzonspor,Turkey
+235,Mathis Bolly,Ivory Coast,FW,1990-11-14,23,4,Fortuna Düsseldorf,Germany
+236,Jean-Daniel Akpa-Akpro,Ivory Coast,DF,1992-10-11,21,1,Toulouse,France
+237,Salomon Kalou,Ivory Coast,FW,1985-08-05,28,67,Lille,France
+238,Cheick Tioté,Ivory Coast,MF,1986-06-21,27,43,Newcastle United,England
+239,Gervinho,Ivory Coast,FW,1987-05-27,27,53,Roma,Italy
+240,Didier Drogba,Ivory Coast,FW,1978-03-11,36,101,Galatasaray,Turkey
+241,Wilfried Bony,Ivory Coast,FW,1988-12-10,25,24,Swansea City,Wales
+242,Didier Ya Konan,Ivory Coast,FW,1984-05-22,30,25,Hannover 96,Germany
+243,Ismaël Diomandé,Ivory Coast,MF,1992-08-28,21,2,Saint-Étienne,France
+244,Max Gradel,Ivory Coast,FW,1987-11-30,26,26,Saint-Étienne,France
+245,Sylvain Gbohouo,Ivory Coast,GK,1988-10-29,25,2,Séwé Sport,Ivory Coast
+246,Serge Aurier,Ivory Coast,DF,1992-12-24,21,8,Toulouse,France
+247,Constant Djakpa,Ivory Coast,DF,1986-10-17,27,5,Eintracht Frankfurt,Germany
+248,Yaya Touré,Ivory Coast,MF,1983-05-13,31,82,Manchester City,England
+249,Serey Die,Ivory Coast,MF,1984-11-07,29,7,Basel,Switzerland
+250,Giovanni Sio,Ivory Coast,FW,1989-03-31,25,7,Basel,Switzerland
+251,Sol Bamba,Ivory Coast,DF,1985-01-13,29,43,Trabzonspor,Turkey
+252,Sayouba Mandé,Ivory Coast,GK,1993-06-15,20,1,Stabæk,Norway
+253,Eiji Kawashima,Japan,GK,1983-03-20,31,56,Standard Liège,Belgium
+254,Atsuto Uchida,Japan,DF,1988-03-27,26,68,Schalke 04,Germany
+255,Gōtoku Sakai,Japan,DF,1991-03-14,23,12,VfB Stuttgart,Germany
+256,Keisuke Honda,Japan,MF,1986-06-13,27,56,Milan,Italy
+257,Yuto Nagatomo,Japan,DF,1986-09-12,27,70,Internazionale,Italy
+258,Masato Morishige,Japan,DF,1987-05-21,27,10,FC Tokyo,Japan
+259,Yasuhito Endō,Japan,MF,1980-01-28,34,144,Gamba Osaka,Japan
+260,Hiroshi Kiyotake,Japan,MF,1989-11-12,24,25,1. FC Nürnberg,Germany
+261,Shinji Okazaki,Japan,FW,1986-04-16,28,76,Mainz 05,Germany
+262,Shinji Kagawa,Japan,MF,1989-03-17,25,57,Manchester United,England
+263,Yoichiro Kakitani,Japan,FW,1990-01-03,24,12,Cerezo Osaka,Japan
+264,Shusaku Nishikawa,Japan,GK,1986-06-18,27,13,Urawa Red Diamonds,Japan
+265,Yoshito Ōkubo,Japan,FW,1982-06-09,32,57,Kawasaki Frontale,Japan
+266,Toshihiro Aoyama,Japan,MF,1986-02-22,28,6,Sanfrecce Hiroshima,Japan
+267,Yasuyuki Konno,Japan,DF,1983-01-25,31,81,Gamba Osaka,Japan
+268,Hotaru Yamaguchi,Japan,MF,1990-10-06,23,12,Cerezo Osaka,Japan
+269,Makoto Hasebe,Japan,MF,1984-01-18,30,78,1. FC Nürnberg,Germany
+270,Yuya Osako,Japan,FW,1990-05-18,24,9,1860 Munich,Germany
+271,Masahiko Inoha,Japan,DF,1983-08-28,30,21,Jubilo Iwata,Japan
+272,Manabu Saitō,Japan,FW,1990-04-04,24,5,Yokohama F. Marinos,Japan
+273,Hiroki Sakai,Japan,DF,1990-04-12,24,18,Hannover 96,Germany
+274,Maya Yoshida,Japan,DF,1988-08-24,25,41,Southampton,England
+275,Shūichi Gonda,Japan,GK,1989-03-03,25,2,FC Tokyo,Japan
+276,Keylor Navas,Costa Rica,GK,1986-12-15,27,53,Levante,Spain
+277,Johnny Acosta,Costa Rica,DF,1983-07-21,30,25,Alajuelense,Costa Rica
+278,Giancarlo González,Costa Rica,DF,1988-02-08,26,35,Columbus Crew,United States
+279,Michael Umaña,Costa Rica,DF,1982-07-16,31,83,Saprissa,Costa Rica
+280,Celso Borges,Costa Rica,MF,1988-05-27,26,63,AIK,Sweden
+281,Óscar Duarte,Costa Rica,DF,1989-06-03,25,11,Club Brugge,Belgium
+282,Christian Bolaños,Costa Rica,MF,1984-05-17,30,55,Copenhagen,Denmark
+283,David Myrie,Costa Rica,DF,1988-06-01,26,10,Herediano,Costa Rica
+284,Joel Campbell,Costa Rica,FW,1992-06-26,21,33,Olympiacos,Greece
+285,Bryan Ruiz,Costa Rica,FW,1985-08-18,28,63,PSV,Netherlands
+286,Michael Barrantes,Costa Rica,MF,1983-10-04,30,50,Aalesund,Norway
+287,Waylon Francis,Costa Rica,DF,1990-09-20,23,1,Columbus Crew,United States
+288,Esteban Granados,Costa Rica,MF,1985-10-25,28,11,Herediano,Costa Rica
+289,Randall Brenes,Costa Rica,FW,1983-08-13,30,39,Cartaginés,Costa Rica
+290,Júnior Díaz,Costa Rica,DF,1983-09-12,30,62,Mainz 05,Germany
+291,Cristian Gamboa,Costa Rica,DF,1989-10-24,24,25,Rosenborg,Norway
+292,Yeltsin Tejeda,Costa Rica,MF,1992-03-17,22,22,Saprissa,Costa Rica
+293,Patrick Pemberton,Costa Rica,GK,1982-04-24,32,21,Alajuelense,Costa Rica
+294,Roy Miller,Costa Rica,DF,1984-11-24,29,48,New York Red Bulls,United States
+295,Diego Calvo,Costa Rica,MF,1991-03-25,23,10,Vålerenga,Norway
+296,Marco Ureña,Costa Rica,FW,1990-03-05,24,24,Kuban Krasnodar,Russia
+297,José Miguel Cubero,Costa Rica,MF,1987-02-14,27,35,Herediano,Costa Rica
+298,Daniel Cambronero,Costa Rica,GK,1987-12-01,26,4,Herediano,Costa Rica
+299,Joe Hart,England,GK,1987-04-19,27,41,Manchester City,England
+300,Glen Johnson,England,DF,1984-08-23,29,52,Liverpool,England
+301,Leighton Baines,England,DF,1984-12-11,29,24,Everton,England
+302,Steven Gerrard,England,MF,1980-05-30,34,111,Liverpool,England
+303,Gary Cahill,England,DF,1985-12-19,28,24,Chelsea,England
+304,Phil Jagielka,England,DF,1982-08-17,31,26,Everton,England
+305,Jack Wilshere,England,MF,1992-01-01,22,18,Arsenal,England
+306,Frank Lampard,England,MF,1978-06-20,35,105,Chelsea,England
+307,Daniel Sturridge,England,FW,1989-09-01,24,12,Liverpool,England
+308,Wayne Rooney,England,FW,1985-10-24,28,92,Manchester United,England
+309,Danny Welbeck,England,FW,1990-11-26,23,24,Manchester United,England
+310,Chris Smalling,England,DF,1989-11-22,24,12,Manchester United,England
+311,Ben Foster,England,GK,1983-04-03,31,7,West Bromwich Albion,England
+312,Jordan Henderson,England,MF,1990-06-17,23,11,Liverpool,England
+313,Alex Oxlade-Chamberlain,England,MF,1993-08-15,20,15,Arsenal,England
+314,Phil Jones,England,DF,1992-02-21,22,10,Manchester United,England
+315,James Milner,England,MF,1986-01-04,28,47,Manchester City,England
+316,Rickie Lambert,England,FW,1982-02-16,32,6,Southampton,England
+317,Raheem Sterling,England,MF,1994-12-08,19,4,Liverpool,England
+318,Adam Lallana,England,MF,1988-05-10,26,6,Southampton,England
+319,Ross Barkley,England,MF,1993-12-05,20,6,Everton,England
+320,Fraser Forster,England,GK,1988-03-17,26,2,Celtic,Scotland
+321,Luke Shaw,England,DF,1995-07-12,18,2,Southampton,England
+322,Gianluigi Buffon,Italy,GK,1978-01-28,36,140,Juventus,Italy
+323,Mattia De Sciglio,Italy,DF,1992-10-20,21,11,Milan,Italy
+324,Giorgio Chiellini,Italy,DF,1984-08-14,29,68,Juventus,Italy
+325,Matteo Darmian,Italy,DF,1989-12-02,24,1,Torino,Italy
+326,Thiago Motta,Italy,MF,1982-08-28,31,20,Paris Saint-Germain,France
+327,Antonio Candreva,Italy,MF,1987-02-28,27,20,Lazio,Italy
+328,Ignazio Abate,Italy,DF,1986-11-12,27,20,Milan,Italy
+329,Claudio Marchisio,Italy,MF,1986-01-19,28,44,Juventus,Italy
+330,Mario Balotelli,Italy,FW,1990-08-12,23,30,Milan,Italy
+331,Antonio Cassano,Italy,FW,1982-07-12,31,37,Parma,Italy
+332,Alessio Cerci,Italy,FW,1987-07-23,26,12,Torino,Italy
+333,Salvatore Sirigu,Italy,GK,1987-01-12,27,8,Paris Saint-Germain,France
+334,Mattia Perin,Italy,GK,1992-11-10,21,0,Genoa,Italy
+335,Alberto Aquilani,Italy,MF,1984-07-07,29,35,Fiorentina,Italy
+336,Andrea Barzagli,Italy,DF,1981-05-08,33,47,Juventus,Italy
+337,Daniele De Rossi,Italy,MF,1983-07-24,30,95,Roma,Italy
+338,Ciro Immobile,Italy,FW,1990-02-20,24,2,Torino,Italy
+339,Marco Parolo,Italy,MF,1985-01-25,29,4,Parma,Italy
+340,Leonardo Bonucci,Italy,DF,1987-05-01,27,37,Juventus,Italy
+341,Gabriel Paletta,Italy,DF,1986-02-15,28,2,Parma,Italy
+342,Andrea Pirlo,Italy,MF,1979-05-19,35,109,Juventus,Italy
+343,Lorenzo Insigne,Italy,FW,1991-06-04,23,5,Napoli,Italy
+344,Marco Verratti,Italy,MF,1992-11-05,21,6,Paris Saint-Germain,France
+345,Fernando Muslera,Uruguay,GK,1986-06-16,27,58,Galatasaray,Turkey
+346,Diego Lugano,Uruguay,DF,1980-11-02,33,94,West Bromwich Albion,England
+347,Diego Godín,Uruguay,DF,1986-02-16,28,77,Atlético Madrid,Spain
+348,Jorge Fucile,Uruguay,DF,1984-11-19,29,42,Porto,Portugal
+349,Walter Gargano,Uruguay,MF,1984-07-23,29,63,Parma,Italy
+350,Álvaro Pereira,Uruguay,MF,1985-11-28,28,57,São Paulo,Brazil
+351,Cristian Rodríguez,Uruguay,MF,1985-09-30,28,73,Atlético Madrid,Spain
+352,Abel Hernández,Uruguay,FW,1990-08-08,23,12,Palermo,Italy
+353,Luis Suárez,Uruguay,FW,1987-01-24,27,77,Liverpool,England
+354,Diego Forlán,Uruguay,FW,1979-05-19,35,110,Cerezo Osaka,Japan
+355,Cristhian Stuani,Uruguay,FW,1986-10-12,27,10,Espanyol,Spain
+356,Rodrigo Muñoz,Uruguay,GK,1982-01-22,32,0,Libertad,Paraguay
+357,José Giménez,Uruguay,DF,1995-01-20,19,6,Atlético Madrid,Spain
+358,Nicolás Lodeiro,Uruguay,MF,1989-03-21,25,26,Botafogo,Brazil
+359,Diego Pérez,Uruguay,MF,1980-05-18,34,89,Bologna,Italy
+360,Maxi Pereira,Uruguay,DF,1984-06-08,30,90,Benfica,Portugal
+361,Egidio Arévalo Ríos,Uruguay,MF,1982-01-01,32,55,Morelia,Mexico
+362,Gastón Ramírez,Uruguay,MF,1990-12-02,23,29,Southampton,England
+363,Sebastián Coates,Uruguay,DF,1990-10-07,23,15,Nacional,Uruguay
+364,Álvaro González,Uruguay,MF,1984-10-29,29,43,Lazio,Italy
+365,Edinson Cavani,Uruguay,FW,1987-02-14,27,62,Paris Saint-Germain,France
+366,Martín Cáceres,Uruguay,DF,1987-04-07,27,57,Juventus,Italy
+367,Martín Silva,Uruguay,GK,1983-03-25,31,4,Vasco da Gama,Brazil
+368,Máximo Banguera,Ecuador,GK,1985-12-16,28,25,Barcelona,Ecuador
+369,Jorge Guagua,Ecuador,DF,1981-09-28,32,59,Emelec,Ecuador
+370,Frickson Erazo,Ecuador,DF,1988-05-05,26,37,Flamengo,Brazil
+371,Juan Carlos Paredes,Ecuador,DF,1987-07-08,26,38,Barcelona,Ecuador
+372,Renato Ibarra,Ecuador,MF,1991-01-20,23,18,Vitesse,Netherlands
+373,Christian Noboa,Ecuador,MF,1985-04-09,29,42,Dynamo Moscow,Russia
+374,Jefferson Montero,Ecuador,MF,1989-09-01,24,40,Morelia,Mexico
+375,Édison Méndez,Ecuador,MF,1979-03-16,35,110,Santa Fe,Colombia
+376,Joao Rojas,Ecuador,MF,1989-06-14,24,30,Cruz Azul,Mexico
+377,Walter Ayoví,Ecuador,DF,1979-08-11,34,90,Pachuca,Mexico
+378,Felipe Caicedo,Ecuador,FW,1988-09-05,25,50,Al-Jazira,United Arab Emirates
+379,Adrián Bone,Ecuador,GK,1988-09-08,25,3,El Nacional,Ecuador
+380,Enner Valencia,Ecuador,FW,1989-04-11,25,10,Pachuca,Mexico
+381,Oswaldo Minda,Ecuador,MF,1983-07-26,30,18,Chivas USA,United States
+382,Michael Arroyo,Ecuador,MF,1987-04-23,27,21,Atlante,Mexico
+383,Antonio Valencia,Ecuador,MF,1985-08-04,28,71,Manchester United,England
+384,Jaime Ayoví,Ecuador,FW,1988-02-21,26,30,Tijuana,Mexico
+385,Óscar Bagüí,Ecuador,DF,1982-12-10,31,21,Emelec,Ecuador
+386,Luis Saritama,Ecuador,MF,1983-10-20,30,49,Barcelona,Ecuador
+387,Fidel Martínez,Ecuador,MF,1990-02-15,24,8,Tijuana,Mexico
+388,Gabriel Achilier,Ecuador,DF,1985-03-24,29,23,Emelec,Ecuador
+389,Alexander Domínguez,Ecuador,GK,1987-06-05,27,18,LDU Quito,Ecuador
+390,Carlos Gruezo,Ecuador,MF,1995-04-19,19,3,VfB Stuttgart,Germany
+391,Hugo Lloris,France,GK,1986-12-26,27,57,Tottenham Hotspur,England
+392,Mathieu Debuchy,France,DF,1985-07-28,28,21,Newcastle United,England
+393,Patrice Evra,France,DF,1981-05-15,33,58,Manchester United,England
+394,Raphaël Varane,France,DF,1993-04-25,21,6,Real Madrid,Spain
+395,Mamadou Sakho,France,DF,1990-02-13,24,19,Liverpool,England
+396,Yohan Cabaye,France,MF,1986-01-14,28,30,Paris Saint-Germain,France
+397,Rémy Cabella,France,MF,1990-03-08,24,1,Montpellier,France
+398,Mathieu Valbuena,France,MF,1984-09-28,29,34,Marseille,France
+399,Olivier Giroud,France,FW,1986-09-30,27,30,Arsenal,England
+400,Karim Benzema,France,FW,1987-12-19,26,66,Real Madrid,Spain
+401,Antoine Griezmann,France,MF,1991-03-21,23,4,Real Sociedad,Spain
+402,Rio Mavuba,France,MF,1984-03-08,30,12,Lille,France
+403,Eliaquim Mangala,France,DF,1991-02-13,23,3,Porto,Portugal
+404,Blaise Matuidi,France,MF,1987-04-09,27,23,Paris Saint-Germain,France
+405,Bacary Sagna,France,DF,1983-02-14,31,41,Arsenal,England
+406,Stéphane Ruffier,France,GK,1986-09-27,27,2,Saint-Étienne,France
+407,Lucas Digne,France,DF,1993-07-20,20,2,Paris Saint-Germain,France
+408,Moussa Sissoko,France,MF,1989-08-16,24,17,Newcastle United,England
+409,Paul Pogba,France,MF,1993-03-15,21,11,Juventus,Italy
+410,Loïc Rémy,France,FW,1987-01-02,27,25,Newcastle United,England
+411,Laurent Koscielny,France,DF,1985-09-10,28,17,Arsenal,England
+412,Morgan Schneiderlin,France,MF,1989-11-08,24,1,Southampton,England
+413,Mickaël Landreau,France,GK,1979-05-14,35,11,Bastia,France
+414,Luis López,Honduras,GK,1993-09-13,20,0,Real España,Honduras
+415,Osman Chávez,Honduras,DF,1984-07-29,29,54,Qingdao Jonoon,China
+416,Maynor Figueroa,Honduras,DF,1983-05-02,31,105,Hull City,England
+417,Juan Pablo Montes,Honduras,DF,1985-10-26,28,11,Motagua,Honduras
+418,Víctor Bernárdez,Honduras,DF,1982-05-24,32,78,San Jose Earthquakes,United States
+419,Juan Carlos García,Honduras,DF,1988-03-08,26,34,Wigan Athletic,England
+420,Emilio Izaguirre,Honduras,DF,1986-05-10,28,68,Celtic,Scotland
+421,Wilson Palacios,Honduras,MF,1984-07-29,29,95,Stoke City,England
+422,Jerry Palacios,Honduras,FW,1981-11-01,32,24,Alajuelense,Costa Rica
+423,Mario Martínez,Honduras,MF,1989-07-30,24,37,Real España,Honduras
+424,Jerry Bengtson,Honduras,FW,1987-04-08,27,44,New England Revolution,United States
+425,Edder Delgado,Honduras,MF,1986-11-20,27,26,Real España,Honduras
+426,Carlo Costly,Honduras,FW,1982-07-18,31,70,Real España,Honduras
+427,Óscar Boniek García,Honduras,MF,1984-09-04,29,92,Houston Dynamo,United States
+428,Roger Espinoza,Honduras,MF,1986-10-25,27,42,Wigan Athletic,England
+429,Rony Martínez,Honduras,FW,1988-10-16,25,12,Real Sociedad,Honduras
+430,Andy Najar,Honduras,MF,1993-03-16,21,17,Anderlecht,Belgium
+431,Noel Valladares,Honduras,GK,1977-05-03,37,122,Olimpia,Honduras
+432,Luis Garrido,Honduras,MF,1990-11-05,23,20,Olimpia,Honduras
+433,Jorge Claros,Honduras,MF,1986-01-08,28,49,Motagua,Honduras
+434,Brayan Beckeles,Honduras,DF,1985-11-28,28,23,Olimpia,Honduras
+435,Donis Escober,Honduras,GK,1980-02-03,34,26,Olimpia,Honduras
+436,Marvin Chávez,Honduras,MF,1983-11-03,30,42,Chivas USA,United States
+437,Diego Benaglio,Switzerland,GK,1983-09-08,30,57,VfL Wolfsburg,Germany
+438,Stephan Lichtsteiner,Switzerland,DF,1984-01-16,30,63,Juventus,Italy
+439,Reto Ziegler,Switzerland,DF,1986-01-16,28,35,Sassuolo,Italy
+440,Philippe Senderos,Switzerland,DF,1985-02-14,29,53,Valencia,Spain
+441,Steve von Bergen,Switzerland,DF,1983-06-10,31,41,Young Boys,Switzerland
+442,Michael Lang,Switzerland,DF,1991-02-08,23,6,Grasshopper,Switzerland
+443,Tranquillo Barnetta,Switzerland,MF,1985-05-22,29,74,Eintracht Frankfurt,Germany
+444,Gökhan Inler,Switzerland,MF,1984-06-27,29,73,Napoli,Italy
+445,Haris Seferović,Switzerland,FW,1992-02-22,22,11,Real Sociedad,Spain
+446,Granit Xhaka,Switzerland,MF,1992-09-27,21,26,Borussia Mönchengladbach,Germany
+447,Valon Behrami,Switzerland,MF,1985-04-19,29,48,Napoli,Italy
+448,Yann Sommer,Switzerland,GK,1988-12-17,25,6,Basel,Switzerland
+449,Ricardo Rodríguez,Switzerland,DF,1992-08-25,21,21,VfL Wolfsburg,Germany
+450,Valentin Stocker,Switzerland,MF,1989-04-12,25,24,Basel,Switzerland
+451,Blerim Džemaili,Switzerland,MF,1986-04-12,28,34,Napoli,Italy
+452,Gelson Fernandes,Switzerland,MF,1986-09-02,27,47,SC Freiburg,Germany
+453,Mario Gavranović,Switzerland,FW,1989-11-24,24,11,Zürich,Switzerland
+454,Admir Mehmedi,Switzerland,FW,1991-03-16,23,21,SC Freiburg,Germany
+455,Josip Drmić,Switzerland,FW,1992-08-08,21,7,1. FC Nürnberg,Germany
+456,Johan Djourou,Switzerland,DF,1987-01-18,27,44,Hamburger SV,Germany
+457,Roman Bürki,Switzerland,GK,1990-11-14,23,0,Grasshopper,Switzerland
+458,Fabian Schär,Switzerland,DF,1991-12-20,22,6,Basel,Switzerland
+459,Xherdan Shaqiri,Switzerland,MF,1991-10-10,22,33,Bayern Munich,Germany
+460,Sergio Romero,Argentina,GK,1987-02-22,27,47,Monaco,France
+461,Ezequiel Garay,Argentina,DF,1986-10-10,27,18,Benfica,Portugal
+462,Hugo Campagnaro,Argentina,DF,1980-06-27,33,15,Internazionale,Italy
+463,Pablo Zabaleta,Argentina,DF,1985-01-16,29,36,Manchester City,England
+464,Fernando Gago,Argentina,MF,1986-04-10,28,49,Boca Juniors,Argentina
+465,Lucas Biglia,Argentina,MF,1986-01-30,28,18,Lazio,Italy
+466,Ángel Di María,Argentina,MF,1988-02-14,26,47,Real Madrid,Spain
+467,Enzo Pérez,Argentina,MF,1986-02-22,28,7,Benfica,Portugal
+468,Gonzalo Higuaín,Argentina,FW,1987-12-10,26,36,Napoli,Italy
+469,Lionel Messi,Argentina,FW,1987-06-24,26,86,Barcelona,Spain
+470,Maxi Rodríguez,Argentina,MF,1981-01-02,33,55,Newell's Old Boys,Argentina
+471,Agustín Orión,Argentina,GK,1981-07-26,32,3,Boca Juniors,Argentina
+472,Augusto Fernández,Argentina,MF,1986-04-10,28,9,Celta Vigo,Spain
+473,Javier Mascherano,Argentina,MF,1984-06-08,30,98,Barcelona,Spain
+474,Martín Demichelis,Argentina,DF,1980-12-20,33,38,Manchester City,England
+475,Marcos Rojo,Argentina,DF,1990-03-20,24,22,Sporting CP,Portugal
+476,Federico Fernández,Argentina,DF,1989-02-21,25,26,Napoli,Italy
+477,Rodrigo Palacio,Argentina,FW,1982-02-05,32,22,Internazionale,Italy
+478,Ricky Álvarez,Argentina,MF,1988-04-12,26,7,Internazionale,Italy
+479,Sergio Agüero,Argentina,FW,1988-06-02,26,51,Manchester City,England
+480,Mariano Andújar,Argentina,GK,1983-07-30,30,10,Catania,Italy
+481,Ezequiel Lavezzi,Argentina,FW,1985-05-03,29,31,Paris Saint-Germain,France
+482,José María Basanta,Argentina,DF,1984-04-03,30,10,Monterrey,Mexico
+483,Asmir Begović,Bosnia and Herzegovina,GK,1987-06-20,26,30,Stoke City,England
+484,Avdija Vršajević,Bosnia and Herzegovina,DF,1986-03-06,28,13,Hajduk Split,Croatia
+485,Ermin Bičakčić,Bosnia and Herzegovina,DF,1990-01-24,24,7,Eintracht Braunschweig,Germany
+486,Emir Spahić,Bosnia and Herzegovina,DF,1980-08-18,33,74,Bayer Leverkusen,Germany
+487,Sead Kolašinac,Bosnia and Herzegovina,DF,1993-06-20,20,4,Schalke 04,Germany
+488,Ognjen Vranješ,Bosnia and Herzegovina,DF,1989-10-24,24,13,Elazığspor,Turkey
+489,Muhamed Bešić,Bosnia and Herzegovina,DF,1992-09-10,21,9,Ferencváros,Hungary
+490,Miralem Pjanić,Bosnia and Herzegovina,MF,1990-04-02,24,48,Roma,Italy
+491,Vedad Ibišević,Bosnia and Herzegovina,FW,1984-08-06,29,55,VfB Stuttgart,Germany
+492,Zvjezdan Misimović,Bosnia and Herzegovina,MF,1982-06-05,32,81,Guizhou Renhe,China
+493,Edin Džeko,Bosnia and Herzegovina,FW,1986-03-17,28,62,Manchester City,England
+494,Jasmin Fejzić,Bosnia and Herzegovina,GK,1986-05-15,28,0,VfR Aalen,Germany
+495,Mensur Mujdža,Bosnia and Herzegovina,DF,1984-03-28,30,24,SC Freiburg,Germany
+496,Tino-Sven Sušić,Bosnia and Herzegovina,MF,1992-02-13,22,2,Hajduk Split,Croatia
+497,Toni Šunjić,Bosnia and Herzegovina,DF,1988-12-15,25,8,Zorya Luhansk,Ukraine
+498,Senad Lulić,Bosnia and Herzegovina,MF,1986-01-18,28,33,Lazio,Italy
+499,Senijad Ibričić,Bosnia and Herzegovina,MF,1985-09-26,28,42,Kayseri Erciyesspor,Turkey
+500,Haris Medunjanin,Bosnia and Herzegovina,MF,1985-03-08,29,35,Gaziantepspor,Turkey
+501,Edin Višća,Bosnia and Herzegovina,FW,1990-02-17,24,10,İstanbul Başakşehir,Turkey
+502,Izet Hajrović,Bosnia and Herzegovina,MF,1991-08-04,22,7,Galatasaray,Turkey
+503,Anel Hadžić,Bosnia and Herzegovina,MF,1989-08-16,24,2,Sturm Graz,Austria
+504,Asmir Avdukić,Bosnia and Herzegovina,GK,1981-05-13,33,3,Borac Banja Luka,Bosnia and Herzegovina
+505,Sejad Salihović,Bosnia and Herzegovina,MF,1984-10-08,29,42,1899 Hoffenheim,Germany
+506,Rahman Ahmadi,Iran,GK,1980-07-30,33,10,Sepahan,Iran
+507,Khosro Heydari,Iran,MF,1983-09-14,30,49,Esteghlal,Iran
+508,Ehsan Hajsafi,Iran,MF,1990-02-25,24,62,Sepahan,Iran
+509,Jalal Hosseini,Iran,DF,1982-02-03,32,85,Persepolis,Iran
+510,Amir Hossein Sadeghi,Iran,DF,1981-09-06,32,17,Esteghlal,Iran
+511,Javad Nekounam,Iran,MF,1980-10-07,33,140,Al-Kuwait,Kuwait
+512,Masoud Shojaei,Iran,MF,1984-06-09,30,50,Las Palmas,Spain
+513,Reza Haghighi,Iran,MF,1989-02-01,25,8,Persepolis,Iran
+514,Alireza Jahanbakhsh,Iran,FW,1993-08-11,20,7,NEC,Netherlands
+515,Karim Ansarifard,Iran,FW,1990-04-03,24,42,Tractor Sazi,Iran
+516,Ghasem Haddadifar,Iran,MF,1983-07-12,30,17,Zob Ahan,Iran
+517,Alireza Haghighi,Iran,GK,1988-05-02,26,6,Sporting Covilhã,Portugal
+518,Hossein Mahini,Iran,DF,1986-09-16,27,22,Persepolis,Iran
+519,Andranik Teymourian,Iran,MF,1983-03-06,31,79,Esteghlal,Iran
+520,Pejman Montazeri,Iran,DF,1983-09-06,30,22,Umm Salal,Qatar
+521,Reza Ghoochannejhad,Iran,FW,1987-09-20,26,14,Charlton Athletic,England
+522,Ahmad Alenemeh,Iran,DF,1982-10-10,31,9,Naft Tehran,Iran
+523,Bakhtiar Rahmani,Iran,MF,1991-09-23,22,4,Foolad,Iran
+524,Hashem Beikzadeh,Iran,DF,1984-01-22,30,17,Esteghlal,Iran
+525,Steven Beitashour,Iran,DF,1987-02-01,27,6,Vancouver Whitecaps FC,Canada
+526,Ashkan Dejagah,Iran,MF,1986-07-05,27,14,Fulham,England
+527,Daniel Davari,Iran,GK,1988-01-06,26,4,Eintracht Braunschweig,Germany
+528,Mehrdad Pouladi,Iran,DF,1987-02-26,27,20,Persepolis,Iran
+529,Vincent Enyeama,Nigeria,GK,1982-08-29,31,91,Lille,France
+530,Joseph Yobo,Nigeria,DF,1980-09-06,33,97,Norwich City,England
+531,Ejike Uzoenyi,Nigeria,MF,1988-03-23,26,21,Enugu Rangers,Nigeria
+532,Reuben Gabriel,Nigeria,MF,1990-09-25,23,11,Waasland-Beveren,Belgium
+533,Efe Ambrose,Nigeria,DF,1988-10-18,25,37,Celtic,Scotland
+534,Azubuike Egwuekwe,Nigeria,DF,1989-07-16,24,31,Warri Wolves,Nigeria
+535,Ahmed Musa,Nigeria,FW,1992-10-14,21,35,CSKA Moscow,Russia
+536,Peter Odemwingie,Nigeria,FW,1981-07-15,32,61,Stoke City,England
+537,Emmanuel Emenike,Nigeria,FW,1987-05-10,27,23,Fenerbahçe,Turkey
+538,John Obi Mikel,Nigeria,MF,1987-04-22,27,59,Chelsea,England
+539,Victor Moses,Nigeria,MF,1990-12-12,23,22,Liverpool,England
+540,Kunle Odunlami,Nigeria,DF,1991-04-30,23,11,Sunshine Stars,Nigeria
+541,Juwon Oshaniwa,Nigeria,DF,1990-09-14,23,10,Ashdod,Israel
+542,Godfrey Oboabona,Nigeria,DF,1990-08-16,23,35,Çaykur Rizespor,Turkey
+543,Ramon Azeez,Nigeria,MF,1992-12-12,21,2,Almería,Spain
+544,Austin Ejide,Nigeria,GK,1984-04-08,30,31,Hapoel Be'er Sheva,Israel
+545,Ogenyi Onazi,Nigeria,MF,1992-12-25,21,21,Lazio,Italy
+546,Michael Babatunde,Nigeria,MF,1992-12-24,21,5,Volyn Lutsk,Ukraine
+547,Uche Nwofor,Nigeria,FW,1991-09-17,22,6,Heerenveen,Netherlands
+548,Michael Uchebo,Nigeria,FW,1990-02-02,24,4,Cercle Brugge,Belgium
+549,Chigozie Agbim,Nigeria,GK,1984-11-28,29,11,Gombe United,Nigeria
+550,Kenneth Omeruo,Nigeria,DF,1993-10-17,20,17,Middlesbrough,England
+551,Shola Ameobi,Nigeria,FW,1981-10-12,32,7,Newcastle United,England
+552,Manuel Neuer,Germany,GK,1986-03-27,28,45,Bayern Munich,Germany
+553,Kevin Großkreutz,Germany,DF,1988-07-19,25,5,Borussia Dortmund,Germany
+554,Matthias Ginter,Germany,DF,1994-01-19,20,2,SC Freiburg,Germany
+555,Benedikt Höwedes,Germany,DF,1988-02-29,26,21,Schalke 04,Germany
+556,Mats Hummels,Germany,DF,1988-12-16,25,30,Borussia Dortmund,Germany
+557,Sami Khedira,Germany,MF,1987-04-04,27,46,Real Madrid,Spain
+558,Bastian Schweinsteiger,Germany,MF,1984-08-01,29,102,Bayern Munich,Germany
+559,Mesut Özil,Germany,MF,1988-10-15,25,55,Arsenal,England
+560,André Schürrle,Germany,FW,1990-11-06,23,33,Chelsea,England
+561,Lukas Podolski,Germany,FW,1985-06-04,29,114,Arsenal,England
+562,Miroslav Klose,Germany,FW,1978-06-09,36,132,Lazio,Italy
+563,Ron-Robert Zieler,Germany,GK,1989-02-12,25,3,Hannover 96,Germany
+564,Thomas Müller,Germany,FW,1989-09-13,24,49,Bayern Munich,Germany
+565,Julian Draxler,Germany,MF,1993-09-20,20,11,Schalke 04,Germany
+566,Erik Durm,Germany,DF,1992-05-12,22,1,Borussia Dortmund,Germany
+567,Philipp Lahm,Germany,DF,1983-11-11,30,106,Bayern Munich,Germany
+568,Per Mertesacker,Germany,DF,1984-09-29,29,98,Arsenal,England
+569,Toni Kroos,Germany,MF,1990-01-04,24,44,Bayern Munich,Germany
+570,Mario Götze,Germany,MF,1992-06-03,22,29,Bayern Munich,Germany
+571,Jérôme Boateng,Germany,DF,1988-09-03,25,39,Bayern Munich,Germany
+572,Shkodran Mustafi,Germany,DF,1992-04-17,22,1,Sampdoria,Italy
+573,Roman Weidenfeller,Germany,GK,1980-08-06,33,3,Borussia Dortmund,Germany
+574,Christoph Kramer,Germany,MF,1991-02-19,23,2,Borussia Mönchengladbach,Germany
+575,Stephen Adams,Ghana,GK,1989-09-28,24,7,Aduana Stars,Ghana
+576,Samuel Inkoom,Ghana,DF,1989-06-01,25,46,Platanias,Greece
+577,Asamoah Gyan,Ghana,FW,1985-11-22,28,79,Al-Ain,United Arab Emirates
+578,Daniel Opare,Ghana,DF,1990-10-18,23,16,Standard Liège,Belgium
+579,Michael Essien,Ghana,MF,1982-12-03,31,57,Milan,Italy
+580,Afriyie Acquah,Ghana,MF,1992-01-05,22,5,Parma,Italy
+581,Christian Atsu,Ghana,MF,1992-01-10,22,23,Vitesse,Netherlands
+582,Emmanuel Agyemang-Badu,Ghana,MF,1990-12-02,23,49,Udinese,Italy
+583,Kevin-Prince Boateng,Ghana,FW,1987-03-06,27,13,Schalke 04,Germany
+584,André Ayew,Ghana,MF,1989-12-17,24,49,Marseille,France
+585,Sulley Muntari,Ghana,MF,1984-08-27,29,82,Milan,Italy
+586,Adam Kwarasey,Ghana,GK,1987-12-12,26,21,Strømsgodset,Norway
+587,Jordan Ayew,Ghana,FW,1991-09-11,22,13,Sochaux,France
+588,Albert Adomah,Ghana,MF,1987-12-13,26,15,Middlesbrough,England
+589,Rashid Sumaila,Ghana,DF,1992-12-18,21,6,Mamelodi Sundowns,South Africa
+590,Fatau Dauda,Ghana,GK,1985-04-06,29,18,Orlando Pirates,South Africa
+591,Mohammed Rabiu,Ghana,MF,1989-12-31,24,17,Kuban Krasnodar,Russia
+592,Majeed Waris,Ghana,FW,1991-09-19,22,13,Valenciennes,France
+593,Jonathan Mensah,Ghana,DF,1990-07-13,23,27,Evian,France
+594,Kwadwo Asamoah,Ghana,MF,1988-12-09,25,62,Juventus,Italy
+595,John Boye,Ghana,DF,1987-04-23,27,30,Rennes,France
+596,Wakaso Mubarak,Ghana,MF,1990-07-25,23,17,Rubin Kazan,Russia
+597,Harrison Afful,Ghana,DF,1986-06-24,27,41,Espérance,Tunisia
+598,Eduardo,Portugal,GK,1982-09-19,31,34,Braga,Portugal
+599,Bruno Alves,Portugal,DF,1981-11-27,32,72,Fenerbahçe,Turkey
+600,Pepe,Portugal,DF,1983-02-26,31,58,Real Madrid,Spain
+601,Miguel Veloso,Portugal,MF,1986-05-11,28,49,Dynamo Kyiv,Ukraine
+602,Fábio Coentrão,Portugal,DF,1988-03-11,26,45,Real Madrid,Spain
+603,William Carvalho,Portugal,MF,1992-04-07,22,4,Sporting CP,Portugal
+604,Cristiano Ronaldo,Portugal,FW,1985-02-05,29,111,Real Madrid,Spain
+605,João Moutinho,Portugal,MF,1986-09-08,27,68,Monaco,France
+606,Hugo Almeida,Portugal,FW,1984-05-23,30,55,Beşiktaş,Turkey
+607,Vieirinha,Portugal,MF,1986-01-24,28,9,VfL Wolfsburg,Germany
+608,Éder,Portugal,FW,1987-12-22,26,8,Braga,Portugal
+609,Rui Patrício,Portugal,GK,1988-02-15,26,30,Sporting CP,Portugal
+610,Ricardo Costa,Portugal,DF,1981-05-16,33,19,Valencia,Spain
+611,Luís Neto,Portugal,DF,1988-05-26,26,9,Zenit Saint Petersburg,Russia
+612,Rafa Silva,Portugal,MF,1993-05-17,21,3,Braga,Portugal
+613,Raul Meireles,Portugal,MF,1983-03-17,31,74,Fenerbahçe,Turkey
+614,Nani,Portugal,MF,1986-11-17,27,75,Manchester United,England
+615,Silvestre Varela,Portugal,MF,1985-02-02,29,24,Porto,Portugal
+616,André Almeida,Portugal,DF,1990-09-10,23,5,Benfica,Portugal
+617,Rúben Amorim,Portugal,MF,1985-01-27,29,13,Benfica,Portugal
+618,João Pereira,Portugal,DF,1984-02-25,30,36,Valencia,Spain
+619,Beto,Portugal,GK,1982-05-01,32,7,Sevilla,Spain
+620,Hélder Postiga,Portugal,FW,1982-08-02,31,69,Lazio,Italy
+621,Tim Howard,United States,GK,1979-03-06,35,100,Everton,England
+622,DeAndre Yedlin,United States,DF,1993-07-09,20,4,Seattle Sounders FC,United States
+623,Omar Gonzalez,United States,DF,1988-10-11,25,20,Los Angeles Galaxy,United States
+624,Michael Bradley,United States,MF,1987-07-31,26,86,Toronto FC,Canada
+625,Matt Besler,United States,DF,1987-02-11,27,17,Sporting Kansas City,United States
+626,John Brooks,United States,DF,1993-01-28,21,4,Hertha BSC,Germany
+627,DaMarcus Beasley,United States,DF,1982-05-24,32,116,Puebla,Mexico
+628,Clint Dempsey,United States,FW,1983-03-09,31,105,Seattle Sounders FC,United States
+629,Aron Jóhannsson,United States,FW,1990-11-10,23,8,AZ,Netherlands
+630,Mix Diskerud,United States,MF,1990-10-02,23,20,Rosenborg,Norway
+631,Alejandro Bedoya,United States,MF,1987-04-29,27,28,Nantes,France
+632,Brad Guzan,United States,GK,1984-09-09,29,25,Aston Villa,England
+633,Jermaine Jones,United States,MF,1981-11-03,32,42,Beşiktaş,Turkey
+634,Brad Davis,United States,MF,1981-11-08,32,16,Houston Dynamo,United States
+635,Kyle Beckerman,United States,MF,1982-04-23,32,37,Real Salt Lake,United States
+636,Julian Green,United States,MF,1995-06-06,19,2,Bayern Munich,Germany
+637,Jozy Altidore,United States,FW,1989-11-06,24,70,Sunderland,England
+638,Chris Wondolowski,United States,FW,1983-01-28,31,21,San Jose Earthquakes,United States
+639,Graham Zusi,United States,MF,1986-08-18,27,23,Sporting Kansas City,United States
+640,Geoff Cameron,United States,DF,1985-07-11,28,27,Stoke City,England
+641,Timothy Chandler,United States,DF,1990-03-29,24,13,1. FC Nürnberg,Germany
+642,Nick Rimando,United States,GK,1979-06-17,34,14,Real Salt Lake,United States
+643,Fabian Johnson,United States,DF,1987-12-11,26,22,1899 Hoffenheim,Germany
+644,Cédric Si Mohamed,Algeria,GK,1985-01-09,29,1,CS Constantine,Algeria
+645,Madjid Bougherra,Algeria,DF,1982-10-07,31,62,Lekhwiya,Qatar
+646,Faouzi Ghoulam,Algeria,DF,1991-02-01,23,6,Napoli,Italy
+647,Essaïd Belkalem,Algeria,DF,1989-01-01,25,13,Watford,England
+648,Rafik Halliche,Algeria,DF,1986-09-02,27,29,Académica de Coimbra,Portugal
+649,Djamel Mesbah,Algeria,DF,1984-10-09,29,26,Livorno,Italy
+650,Hassan Yebda,Algeria,MF,1984-05-14,30,25,Udinese,Italy
+651,Medhi Lacen,Algeria,MF,1984-05-15,30,30,Getafe,Spain
+652,Nabil Ghilas,Algeria,FW,1990-04-20,24,5,Porto,Portugal
+653,Sofiane Feghouli,Algeria,MF,1989-12-26,24,19,Valencia,Spain
+654,Yacine Brahimi,Algeria,MF,1990-02-08,24,6,Granada,Spain
+655,Carl Medjani,Algeria,DF,1985-05-15,29,26,Valenciennes,France
+656,Islam Slimani,Algeria,FW,1988-06-18,25,20,Sporting CP,Portugal
+657,Nabil Bentaleb,Algeria,MF,1994-11-24,19,3,Tottenham Hotspur,England
+658,El Arbi Hillel Soudani,Algeria,FW,1987-11-25,26,22,Dinamo Zagreb,Croatia
+659,Mohamed Zemmamouche,Algeria,GK,1985-03-19,29,7,USM Alger,Algeria
+660,Liassine Cadamuro-Bentaïba,Algeria,DF,1988-03-05,26,7,Mallorca,Spain
+661,Abdelmoumene Djabou,Algeria,MF,1987-01-31,27,8,Club Africain,Tunisia
+662,Saphir Taïder,Algeria,MF,1992-02-29,22,11,Internazionale,Italy
+663,Aïssa Mandi,Algeria,DF,1991-10-22,22,2,Reims,France
+664,Riyad Mahrez,Algeria,MF,1991-02-21,23,2,Leicester City,England
+665,Mehdi Mostefa,Algeria,MF,1983-08-30,30,23,Ajaccio,France
+666,Raïs M'Bolhi,Algeria,GK,1986-04-25,28,28,CSKA Sofia,Bulgaria
+667,Thibaut Courtois,Belgium,GK,1992-05-11,22,17,Atlético Madrid,Spain
+668,Toby Alderweireld,Belgium,DF,1989-03-02,25,34,Atlético Madrid,Spain
+669,Thomas Vermaelen,Belgium,DF,1985-11-14,28,47,Arsenal,England
+670,Vincent Kompany,Belgium,DF,1986-04-10,28,59,Manchester City,England
+671,Jan Vertonghen,Belgium,DF,1987-04-24,27,56,Tottenham Hotspur,England
+672,Axel Witsel,Belgium,MF,1989-01-12,25,48,Zenit Saint Petersburg,Russia
+673,Kevin De Bruyne,Belgium,MF,1991-06-28,22,21,VfL Wolfsburg,Germany
+674,Marouane Fellaini,Belgium,MF,1987-11-22,26,50,Manchester United,England
+675,Romelu Lukaku,Belgium,FW,1993-05-13,21,29,Everton,England
+676,Eden Hazard,Belgium,MF,1991-01-07,23,45,Chelsea,England
+677,Kevin Mirallas,Belgium,MF,1987-10-05,26,44,Everton,England
+678,Simon Mignolet,Belgium,GK,1988-08-06,25,14,Liverpool,England
+679,Sammy Bossut,Belgium,GK,1985-08-11,28,0,Zulte Waregem,Belgium
+680,Dries Mertens,Belgium,FW,1987-05-06,27,25,Napoli,Italy
+681,Daniel Van Buyten,Belgium,DF,1978-02-07,36,79,Bayern Munich,Germany
+682,Steven Defour,Belgium,MF,1988-04-15,26,43,Porto,Portugal
+683,Divock Origi,Belgium,FW,1995-04-18,19,2,Lille,France
+684,Nicolas Lombaerts,Belgium,DF,1985-03-20,29,25,Zenit Saint Petersburg,Russia
+685,Moussa Dembélé,Belgium,MF,1987-07-16,26,57,Tottenham Hotspur,England
+686,Adnan Januzaj,Belgium,MF,1995-02-05,19,1,Manchester United,England
+687,Anthony Vanden Borre,Belgium,DF,1987-10-24,26,25,Anderlecht,Belgium
+688,Nacer Chadli,Belgium,MF,1989-10-02,24,20,Tottenham Hotspur,England
+689,Laurent Ciman,Belgium,DF,1985-08-05,28,8,Standard Liège,Belgium
+690,Igor Akinfeev,Russia,GK,1986-04-08,28,68,CSKA Moscow,Russia
+691,Aleksei Kozlov,Russia,DF,1986-11-16,27,11,Dynamo Moscow,Russia
+692,Georgi Shchennikov,Russia,DF,1991-04-27,23,4,CSKA Moscow,Russia
+693,Sergei Ignashevich,Russia,DF,1979-07-14,34,96,CSKA Moscow,Russia
+694,Andrei Semyonov,Russia,DF,1989-03-24,25,1,Terek Grozny,Russia
+695,Maksim Kanunnikov,Russia,FW,1991-07-14,22,2,Amkar Perm,Russia
+696,Igor Denisov,Russia,MF,1984-05-17,30,43,Dynamo Moscow,Russia
+697,Denis Glushakov,Russia,MF,1987-01-27,27,26,Spartak Moscow,Russia
+698,Aleksandr Kokorin,Russia,FW,1991-03-19,23,21,Dynamo Moscow,Russia
+699,Alan Dzagoev,Russia,MF,1990-06-17,23,32,CSKA Moscow,Russia
+700,Aleksandr Kerzhakov,Russia,FW,1982-11-27,31,80,Zenit Saint Petersburg,Russia
+701,Yuri Lodygin,Russia,GK,1990-05-26,24,3,Zenit Saint Petersburg,Russia
+702,Vladimir Granat,Russia,DF,1987-05-22,27,5,Dynamo Moscow,Russia
+703,Vasili Berezutski,Russia,DF,1982-06-20,31,78,CSKA Moscow,Russia
+704,Pavel Mogilevets,Russia,MF,1993-01-25,21,1,Rubin Kazan,Russia
+705,Sergey Ryzhikov,Russia,GK,1980-09-19,33,1,Rubin Kazan,Russia
+706,Oleg Shatov,Russia,MF,1990-07-29,23,7,Zenit Saint Petersburg,Russia
+707,Yuri Zhirkov,Russia,DF,1983-08-20,30,60,Dynamo Moscow,Russia
+708,Aleksandr Samedov,Russia,FW,1984-07-19,29,17,Lokomotiv Moscow,Russia
+709,Viktor Fayzulin,Russia,MF,1986-04-22,28,19,Zenit Saint Petersburg,Russia
+710,Aleksei Ionov,Russia,FW,1989-02-18,25,5,Dynamo Moscow,Russia
+711,Andrey Yeshchenko,Russia,DF,1984-02-09,30,12,Anzhi Makhachkala,Russia
+712,Dmitri Kombarov,Russia,DF,1987-01-22,27,22,Spartak Moscow,Russia
+713,Jung Sung-ryong,South Korea,GK,1985-01-04,29,61,Suwon Bluewings,South Korea
+714,Kim Chang-soo,South Korea,DF,1985-09-12,28,9,Kashiwa Reysol,Japan
+715,Yun Suk-young,South Korea,DF,1990-02-13,24,4,Queens Park Rangers,England
+716,Kwak Tae-hwi,South Korea,DF,1981-07-08,32,35,Al-Hilal,Saudi Arabia
+717,Kim Young-gwon,South Korea,DF,1990-02-27,24,21,Guangzhou Evergrande,China
+718,Hwang Seok-ho,South Korea,DF,1989-06-27,24,3,Sanfrecce Hiroshima,Japan
+719,Kim Bo-kyung,South Korea,MF,1989-10-06,24,28,Cardiff City,Wales
+720,Ha Dae-sung,South Korea,MF,1985-03-02,29,13,Beijing Guoan,China
+721,Son Heung-min,South Korea,FW,1992-07-08,21,25,Bayer Leverkusen,Germany
+722,Park Chu-young,South Korea,FW,1985-07-10,28,64,Watford,England
+723,Lee Keun-ho,South Korea,FW,1985-04-11,29,63,Sangju Sangmu,South Korea
+724,Lee Yong,South Korea,DF,1986-12-24,27,12,Ulsan Hyundai,South Korea
+725,Koo Ja-cheol,South Korea,MF,1989-02-27,25,37,Mainz 05,Germany
+726,Han Kook-young,South Korea,MF,1990-04-19,24,10,Kashiwa Reysol,Japan
+727,Park Jong-woo,South Korea,MF,1989-03-10,25,10,Guangzhou R&F,China
+728,Ki Sung-yueng,South Korea,MF,1989-01-24,25,58,Sunderland,England
+729,Lee Chung-yong,South Korea,MF,1988-07-02,25,55,Bolton Wanderers,England
+730,Kim Shin-wook,South Korea,FW,1988-04-14,26,27,Ulsan Hyundai,South Korea
+731,Ji Dong-won,South Korea,FW,1991-05-28,23,28,FC Augsburg,Germany
+732,Hong Jeong-ho,South Korea,DF,1989-08-12,24,25,FC Augsburg,Germany
+733,Kim Seung-gyu,South Korea,GK,1990-09-30,23,5,Ulsan Hyundai,South Korea
+734,Park Joo-ho,South Korea,DF,1987-01-16,27,14,Mainz 05,Germany
+735,Lee Bum-young,South Korea,GK,1989-04-02,25,0,Busan IPark,South Korea
