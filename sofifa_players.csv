@@ -1,0 +1,1656 @@
+ID,name,full_name,position,age,overall,potential,value,wage,club,club_rating,team,team_rating
+212188,T. Werner,Timo Werner,ST ,21,83.0,87.0,€34.5M,€68K,,,RB Leipzig,78.0
+176635,M. Özil,Mesut Özil,CAM RW ,28,87.0,87.0,€51M,€205K,Arsenal,82.0,Germany,85.0
+188350,M. Reus,Marco Reus,LM LW ST CAM ,28,85.0,85.0,€39M,€98K,,,Borussia Dortmund,81.0
+189596,T. Müller,Thomas Müller,CF RW CAM ST ,27,86.0,86.0,€47.5M,€190K,FC Bayern München,86.0,Germany,85.0
+179846,S. Khedira,Sami Khedira,CM CDM ,30,84.0,84.0,€29M,€160K,Juventus,85.0,Germany,85.0
+182521,T. Kroos,Toni Kroos,CM CDM ,27,90.0,90.0,€79M,€340K,Real Madrid,86.0,Germany,85.0
+208334,J. Hector,Jonas Hector,LB CDM ,27,80.0,80.0,€12M,€42K,1. FC Köln,76.0,Germany,85.0
+178603,M. Hummels,Mats Hummels (Mats  Hummels),CB ,28,90.0,90.0,€62.5M,€215K,FC Bayern München,86.0,Germany,85.0
+183907,J. Boateng,Jérôme Boateng,CB ,28,87.0,87.0,€41M,€165K,FC Bayern München,86.0,Germany,85.0
+212622,J. Kimmich,Joshua Kimmich,RB CM CB CDM ,22,84.0,88.0,€33.5M,€115K,FC Bayern München,86.0,Germany,85.0
+167495,M. Neuer,Manuel Neuer,GK ,31,92.0,92.0,€61M,€230K,FC Bayern München,86.0,Germany,85.0
+150418,M. Gómez,Mario Gómez (Mario Gómez García),ST ,31,81.0,81.0,€16M,€38K,VfB Stuttgart,75.0,Germany,85.0
+186942,I. Gündoğan,İlkay Gündoğan,CM CDM ,26,85.0,86.0,€44.5M,€190K,,,Manchester City,84.0
+202166,J. Draxler,Julian Draxler,LW CM LM CAM ,23,84.0,87.0,€39.5M,€120K,Paris Saint-Germain,83.0,Germany,85.0
+209658,L. Goretzka,Leon Goretzka,CM CAM CDM ,22,83.0,88.0,€34M,€46K,,,FC Schalke 04,79.0
+212190,N. Süle,Niklas Süle,CB ,21,84.0,90.0,€36.5M,€105K,FC Bayern München,86.0,Germany,85.0
+205452,A. Rüdiger,Antonio Rüdiger,CB ,24,81.0,85.0,€19.5M,€96K,,,Chelsea,83.0
+192448,M. ter Stegen,Marc-André ter Stegen,GK ,25,87.0,90.0,€44.5M,€185K,FC Barcelona,85.0,Germany,85.0
+189251,S. Rudy,Sebastian Rudy,CM CDM RB ,27,81.0,81.0,€18M,€105K,,,FC Bayern München,86.0
+192557,M. Plattenhardt,Marvin Plattenhardt,LB ,25,78.0,80.0,€10.5M,€28K,,,Hertha BSC,77.0
+207862,M. Ginter,Matthias Ginter,CB CDM ,23,79.0,82.0,€13.5M,€36K,,,Borussia Mönchengladbach,78.0
+212194,J. Brandt,Julian Brandt,LM RM CAM ,21,82.0,88.0,€30.5M,€53K,Bayer 04 Leverkusen,79.0,Germany,85.0
+188943,K. Trapp,Kevin Trapp,GK ,26,80.0,81.0,€12M,€65K,,,Paris Saint-Germain,83.0
+222492,L. Sané,Leroy Sané,LW RW ,21,85.0,92.0,€54.5M,€165K,,,Manchester City,84.0
+213331,J. Tah,Jonathan Tah,CB ,21,82.0,88.0,€26M,€47K,Bayer 04 Leverkusen,79.0,Germany,85.0
+192563,B. Leno,Bernd Leno,GK ,25,85.0,88.0,€34M,€61K,Bayer 04 Leverkusen,79.0,Germany,85.0
+187072,L. Stindl,Lars Stindl,CF ,28,81.0,81.0,€18.5M,€52K,,,Borussia Mönchengladbach,78.0
+192318,M. Götze,Mario Götze,CM CAM CF ,25,83.0,87.0,€33M,€69K,,,Borussia Dortmund,81.0
+206113,S. Gnabry,Serge Gnabry,ST LM CAM ,21,79.0,85.0,€17.5M,€90K,TSG 1899 Hoffenheim,78.0,FC Bayern München,1452.0
+179784,B. Höwedes,Benedikt Höwedes,CB ,29,83.0,83.0,€20M,€50K,Juventus,85.0,Germany,85.0
+192227,S. Mustafi,Shkodran Mustafi,CB ,25,83.0,85.0,€26.5M,€110K,Arsenal,82.0,Germany,85.0
+211748,K. Demirbay,Kerem Demirbay,CAM CM ,23,80.0,84.0,€19.5M,€40K,,,TSG 1899 Hoffenheim,78.0
+202857,K. Bellarabi,Karim Bellarabi,RM ,27,81.0,81.0,€18.5M,€62K,Bayer 04 Leverkusen,79.0,Germany,85.0
+200610,K. Volland,Kevin Volland,ST RW LW ,24,81.0,83.0,€22.5M,€59K,,,Bayer 04 Leverkusen,79.0
+208333,E. Can,Emre Can,CM CDM ,23,80.0,85.0,€19.5M,€105K,Liverpool,81.0,Germany,85.0
+222028,J. Weigl,Julian Weigl,CDM CM ,21,80.0,86.0,€17.5M,€46K,Borussia Dortmund,81.0,Germany,85.0
+205966,A. Younes,Amin Younes,LW ,23,75.0,79.0,€8.5M,€12K,,,Ajax,76.0
+228579,B. Henrichs,Benjamin Henrichs,RB LB ,20,76.0,85.0,€10M,€36K,,,Bayer 04 Leverkusen,79.0
+193130,A. Schürrle,André Schürrle,LM ST ,26,79.0,79.0,€13.5M,€66K,Borussia Dortmund,81.0,Germany,85.0
+212245,Y. Gerhardt,Yannick Gerhardt,LB LM CM ,23,75.0,81.0,€7.5M,€40K,,,VfL Wolfsburg,77.0
+190871,Neymar,Neymar da Silva Santos Jr. (Neymar da Silva Santos Junior),LW ,25,92.0,93.0,€119.5M,€280K,Paris Saint-Germain,83.0,Brazil,85.0
+230666,Gabriel Jesus,Gabriel Fernando de Jesus,ST ,20,83.0,92.0,€41M,€125K,Manchester City,84.0,Brazil,85.0
+189242,Coutinho,Philippe Coutinho Correia,LW LM RM CM ,25,87.0,90.0,€63M,€275K,FC Barcelona,85.0,Brazil,85.0
+169195,Renato Augusto,Renato Augusto (Renato  Soares de Oliveira Augusto),CM CAM CDM LM ,29,80.0,80.0,€0,€0,,,Brazil,85.0
+187961,Paulinho,José Paulo Bezerra M. Júnior (José Paulo Bezzera Maciel Júnior),CM CAM CDM RM ,28,83.0,83.0,€25.5M,€180K,FC Barcelona,85.0,Brazil,85.0
+200145,Casemiro,Carlos Henrique Venancio Casimiro (Carlos Henrique Casimiro),CDM ,25,86.0,89.0,€47M,€230K,Real Madrid,86.0,Brazil,85.0
+176676,Marcelo,Marcelo Vieira da Silva (Marcelo Vieira da Silva Júnior),LB ,29,87.0,87.0,€38M,€250K,Real Madrid,86.0,Brazil,85.0
+168609,Miranda,João Miranda de Souza Filho,CB ,32,85.0,85.0,€22M,€96K,Inter,80.0,Brazil,85.0
+164240,Thiago Silva,Thiago Emiliano da Silva,CB ,32,87.0,87.0,€29M,€135K,Paris Saint-Germain,83.0,Brazil,85.0
+199304,Danilo,Danilo Luiz da Silva,RB LB ,25,79.0,81.0,€12.5M,€115K,,,Manchester City,84.0
+212831,Alisson,Alisson Ramses Becker,GK ,24,84.0,90.0,€31M,€64K,Roma,81.0,Brazil,85.0
+180403,Willian,Willian Borges da Silva,RW RM ,28,84.0,84.0,€31.5M,€200K,Chelsea,83.0,Brazil,85.0
+201942,Roberto Firmino,Roberto Firmino Barbosa de Oliveira,ST LW ,25,85.0,87.0,€48M,€175K,Liverpool,81.0,Brazil,85.0
+188803,Taison,Taison Barcellos Freda,CAM LM ,29,82.0,82.0,€21.5M,€1K,Shakhtar Donetsk,77.0,Brazil,85.0
+135507,Fernandinho,Fernando Luiz Rosa,CDM CM ,32,85.0,85.0,€22M,€170K,Manchester City,84.0,Brazil,85.0
+164169,Filipe Luís,Filipe Luís Kasmirski (Filipe Luis Kasmirski),LB ,31,86.0,86.0,€29M,€95K,Atlético Madrid,83.0,Brazil,85.0
+207865,Marquinhos,Marcos Aoás Corrêa (Marcos  Aoás Corrêa),CB ,23,84.0,89.0,€35.5M,€98K,Paris Saint-Germain,83.0,Brazil,85.0
+210257,Ederson,Ederson Santana de Moraes,GK ,23,85.0,89.0,€36M,€115K,Manchester City,84.0,Brazil,85.0
+167958,Cássio,Cássio Ramos,GK ,30,77.0,77.0,€0,€0,,,Brazil,86.0
+183614,Fagner,Fagner Conserva Lemos (Fágner Conserva Lemos),RB ,28,77.0,77.0,€0,€0,,,Brazil,86.0
+170802,Geromel,Pedro Tonon Geromel,CB ,31,78.0,78.0,€0,€0,,,Brazil,86.0
+209297,Fred,Frederico R. de Paula Santos (Frederico Rodrigues Santos),CM CDM ,24,81.0,86.0,€23.5M,€1K,Shakhtar Donetsk,77.0,Brazil,85.0
+190483,Douglas Costa,Douglas Costa de Souza,LM RW LW ,26,84.0,84.0,€33.5M,€150K,Juventus,85.0,Brazil,85.0
+188152,Oscar,Oscar dos Santos Emboaba (Oscar dos Santos Emboaba Júnior),CAM CM ,25,82.0,84.0,€0,€0,,,Brazil,85.0
+193869,Gil,Carlos Gilberto do Nascimento Silva (Carlos Gilberto Nascimento Silva),CB ,31,76.0,76.0,€5M,€18K,,,Shandong Luneng TaiShan FC,68.0
+222446,Luan,Luan Guilherme de Jesus Vieira (Luan Guilherme de Jesús Vieira),RW ST LW ,24,78.0,80.0,€0,€0,,,Brazil,86.0
+215792,Jemerson,Jemerson de Jesus Nascimento,CB ,24,80.0,83.0,€16M,€35K,,,AS Monaco,80.0
+189362,Hulk,Givanildo Vieira de Souza,RM CAM ST ,31,81.0,81.0,€15.5M,€25K,,,Shanghai SIPG FC,69.0
+191043,Alex Sandro,Alex Sandro Lobo Silva,LB LM ,26,86.0,87.0,€42.5M,€175K,,,Juventus,85.0
+152789,Diego Souza,Diego de Souza Andrade (Diego de Souza  Andrade),ST ,32,78.0,78.0,€0,€0,,,Brazil,86.0
+185221,Luiz Gustavo,Luiz Gustavo Dias,CDM CB ,29,82.0,82.0,€17M,€40K,,,Olympique de Marseille,78.0
+184942,Giuliano,Giuliano Victor de Paula,CAM RW ,27,83.0,84.0,€29.5M,€86K,Fenerbahçe SK,77.0,Brazil,85.0
+200949,Lucas,Lucas Rodrigues M. Silva,RW LW ,24,82.0,84.0,€27.5M,€105K,,,Tottenham Hotspur,83.0
+157271,Ricardo Oliveira,Ricardo Oliveira (Ricardo de Oliveira),ST ,37,80.0,80.0,€0,€0,,,Brazil,86.0
+209499,Fabinho,Fábio Henrique Tavares,CDM ,23,84.0,89.0,€35.5M,€49K,,,AS Monaco,80.0
+146530,Dani Alves,Daniel Alves da Silva,RB ,34,83.0,83.0,€7.5M,€87K,Paris Saint-Germain,83.0,Brazil,85.0
+229712,Jorge,Jorge Marco de Oliveira Morais (Jorge Marco de Oliveira Moraes),LB ,21,74.0,80.0,€6.5M,€22K,,,AS Monaco,80.0
+201305,Gabriel Paulista,Gabriel Armando de Abreu,CB RB ,26,81.0,83.0,€18M,€37K,,,Valencia CF,80.0
+179944,David Luiz,David Luiz Moreira Marinho,CB ,30,84.0,84.0,€23M,€160K,,,Chelsea,83.0
+184949,Mariano,Mariano Ferreira Filho,RB ,31,79.0,79.0,€8M,€65K,,,Galatasaray SK,77.0
+197781,Isco,Francisco Román Alarcón Suárez,CM CAM ,25,86.0,89.0,€55M,€250K,Real Madrid,86.0,Spain,86.0
+179844,Diego Costa,Diego da Silva Costa,ST ,28,85.0,85.0,€40M,€100K,Atlético Madrid,83.0,Spain,86.0
+168542,David Silva,David Josué Jiménez Silva,CAM CM ,31,89.0,89.0,€58.5M,€285K,Manchester City,84.0,Spain,86.0
+41,Iniesta,Andrés Iniesta Luján,CM LM ,33,87.0,87.0,€29.5M,€260K,FC Barcelona,85.0,Spain,86.0
+193747,Koke,Jorge Resurrección (Jorge Resurrección Merodio),CM RM LM ,25,85.0,88.0,€47.5M,€84K,Atlético Madrid,83.0,Spain,86.0
+189511,Sergio Busquets,Sergio Busquets Burgos (Sergio Busquets i Burgos),CDM CM ,28,87.0,87.0,€41M,€250K,FC Barcelona,85.0,Spain,86.0
+189332,Jordi Alba,Jordi Alba Ramos,LB ,28,87.0,87.0,€40M,€250K,FC Barcelona,85.0,Spain,86.0
+155862,Sergio Ramos,Sergio Ramos García,CB ,31,90.0,90.0,€52M,€310K,Real Madrid,86.0,Spain,86.0
+152729,Piqué,Gerard Piqué Bernabeu (Gerard Piqué Bernabéu),CB ,30,87.0,87.0,€37.5M,€240K,FC Barcelona,85.0,Spain,86.0
+200724,Nacho Fernández,José Ignacio Fernández Iglesias,CB LB RB ,27,81.0,83.0,€17.5M,€145K,Real Madrid,86.0,Spain,86.0
+193080,De Gea,David De Gea Quintana,GK ,26,91.0,93.0,€74.5M,€295K,Manchester United,83.0,Spain,86.0
+220834,Marco Asensio,Marco Asensio Willemsen,LW CAM RW ,21,84.0,92.0,€46M,€195K,Real Madrid,86.0,Spain,86.0
+192629,Iago Aspas,Iago Aspas Juncal,RW ST ,29,84.0,84.0,€30.5M,€51K,RC Celta,78.0,Spain,86.0
+189509,Thiago,Thiago Alcântara (Thiago Alcântara do Nascimento),CM CAM CDM ,26,88.0,89.0,€68.5M,€225K,FC Bayern München,86.0,Spain,86.0
+208421,Saúl,Saúl Ñíguez Esclápez (Saúl Ñíguez Esclapez),CM LM RM ,22,84.0,91.0,€43M,€77K,Atlético Madrid,83.0,Spain,86.0
+204963,Carvajal,Daniel Carvajal Ramos,RB ,25,84.0,87.0,€32M,€195K,Real Madrid,86.0,Spain,86.0
+184432,Azpilicueta,César Azpilicueta Tanco,CB ,27,86.0,88.0,€43.5M,€190K,Chelsea,83.0,Spain,86.0
+24630,Pepe Reina,José Manuel Reina Páez (José Manuel  Reina Páez),GK ,34,83.0,83.0,€10.5M,€59K,Napoli,81.0,Spain,86.0
+234035,Odriozola,Álvaro Odriozola Arzalluz,RB RWB ,21,78.0,87.0,€14M,€22K,,,Real Sociedad,78.0
+177604,Nacho Monreal,Ignacio Monreal Eraso,CB LB ,31,80.0,80.0,€10M,€110K,,,Arsenal,82.0
+208618,Lucas Vázquez,Lucas Vázquez Iglesias,RW RM ,26,82.0,83.0,€26M,€185K,,,Real Madrid,86.0
+198329,Rodrigo,Rodrigo Moreno Machado,ST RW LW CAM ,26,81.0,82.0,€21M,€44K,Valencia CF,80.0,Spain,86.0
+206585,Kepa,Kepa Arrizabalaga,GK ,22,82.0,87.0,€21.5M,€21K,Athletic Club de Bilbao,79.0,Spain,86.0
+201153,Morata,Álvaro Borja Morata Martín,ST ,24,84.0,88.0,€41M,€170K,Chelsea,83.0,Spain,86.0
+199715,Vitolo,Víctor Machín Pérez,LM RM ,27,83.0,83.0,€27M,€68K,,,Atlético Madrid,83.0
+198141,Bartra,Marc Bartra Aregall,CB RB ,26,81.0,83.0,€18M,€29K,,,Real Betis,78.0
+199564,Sergi Roberto,Sergio Roberto Carnicer (Sergi Roberto Carnicer),RB ,25,82.0,85.0,€23M,€150K,,,FC Barcelona,85.0
+190584,Illarramendi,Asier Illarramendi (Asier Illarramendi Andonegi),CM CDM ,27,81.0,81.0,€18M,€37K,,,Real Sociedad,78.0
+177610,Javi Martínez,Javier Martínez Aginaga,CDM CB ,28,84.0,84.0,€25M,€145K,,,FC Bayern München,86.0
+191740,Ander Herrera,Ander Herrera Agüera,CM CDM ,27,83.0,83.0,€26.5M,€145K,,,Manchester United,83.0
+106231,Aduriz,Aritz Aduriz Zubeldia,ST ,36,84.0,84.0,€11M,€38K,,,Athletic Club de Bilbao,79.0
+202651,Suso,Jesús Joaquín Fernández Sáez,RW CF ,23,82.0,87.0,€29.5M,€110K,,,Milan,79.0
+198164,Jonathan Viera,Jonathan Viera Ramos,CAM CM ,28,82.0,82.0,€22.5M,€31K,,,Beijing Sinobo Guoan FC,70.0
+204525,Iñigo Martínez,Iñigo Martínez Berridi (Íñigo Martínez Berridi),CB ,26,82.0,84.0,€22.5M,€32K,,,Athletic Club de Bilbao,79.0
+189505,Pedro,Pedro Rodríguez Ledesma (Pedro Eliezer Rodríguez Ledesma),RW LW ,29,83.0,83.0,€25.5M,€155K,,,Chelsea,83.0
+178088,Juan Mata,Juan Manuel Mata García,RM CAM ,29,83.0,83.0,€25.5M,€150K,,,Manchester United,83.0
+200454,Paco Alcácer,Francisco Alcácer García,ST ,23,79.0,85.0,€17.5M,€150K,,,FC Barcelona,85.0
+185020,José Callejón,José María Callejón Bueno,RW ,30,83.0,83.0,€24.5M,€87K,,,Napoli,81.0
+113422,David Villa,David Villa Sánchez,ST ,35,82.0,82.0,€10M,€12K,,,New York City FC,70.0
+206652,Sergio Rico,Sergio Rico González,GK ,23,81.0,86.0,€17M,€14K,,,Sevilla FC,79.0
+231747,K. Mbappé,Kylian Mbappé,ST RW ,18,84.0,94.0,€47M,€41K,Paris Saint-Germain,83.0,France,84.0
+194765,A. Griezmann,Antoine Griezmann,ST RW LW ,26,88.0,89.0,€71M,€150K,Atlético Madrid,83.0,France,84.0
+231443,O. Dembélé,Ousmane Dembélé,RW LW ,20,83.0,92.0,€40M,€150K,FC Barcelona,85.0,France,84.0
+195864,P. Pogba,Paul Pogba,CM CDM ,24,88.0,92.0,€76M,€250K,Manchester United,83.0,France,84.0
+219683,C. Tolisso,Corentin Tolisso,CM CDM ,22,82.0,89.0,€30.5M,€98K,FC Bayern München,86.0,France,84.0
+215914,N. Kanté,N'Golo Kanté,CDM CM ,26,88.0,90.0,€59.5M,€245K,Chelsea,83.0,France,84.0
+220814,L. Hernández,Lucas Hernández,CB LB ,21,79.0,89.0,€18M,€43K,Atlético Madrid,83.0,France,84.0
+205600,S. Umtiti,Samuel Umtiti,CB ,23,84.0,90.0,€36.5M,€175K,FC Barcelona,85.0,France,84.0
+201535,R. Varane,Raphaël Varane,CB ,24,85.0,92.0,€46.5M,€175K,Real Madrid,86.0,France,84.0
+226851,B. Pavard,Benjamin Pavard,CB RB CDM ,21,77.0,84.0,€11M,€20K,VfB Stuttgart,75.0,France,84.0
+167948,H. Lloris,Hugo Lloris,GK ,30,88.0,88.0,€38M,€165K,Tottenham Hotspur,83.0,France,84.0
+178509,O. Giroud,Olivier Giroud,ST ,30,82.0,82.0,€21.5M,€150K,Chelsea,83.0,France,84.0
+170890,B. Matuidi,Blaise Matuidi,CDM CM ,30,85.0,85.0,€28.5M,€145K,Juventus,85.0,France,84.0
+213565,T. Lemar,Thomas Lemar,LM CAM ,21,83.0,89.0,€36M,€37K,AS Monaco,80.0,France,84.0
+216594,N. Fekir,Nabil Fekir,CAM ST ,23,84.0,88.0,€40.5M,€92K,Olympique Lyonnais,78.0,France,84.0
+183280,A. Rami,Adil Rami,CB ,31,81.0,81.0,€12M,€35K,Olympique de Marseille,78.0,France,84.0
+204884,B. Mendy,Benjamin Mendy,LB LWB ,22,79.0,87.0,€15.5M,€105K,Manchester City,84.0,France,84.0
+163705,S. Mandanda,Steve Mandanda,GK ,32,82.0,82.0,€12.5M,€31K,Olympique de Marseille,78.0,France,84.0
+193105,A. Areola,Alphonse Areola,GK ,24,80.0,84.0,€14M,€54K,Paris Saint-Germain,83.0,France,84.0
+225850,P. Kimpembe,Presnel Kimpembe,CB ,21,80.0,88.0,€19M,€61K,Paris Saint-Germain,83.0,France,84.0
+201042,D. Sidibé,Djibril Sidibé,RB LB ,24,79.0,81.0,€12.5M,€35K,AS Monaco,80.0,France,84.0
+187936,S. N'Zonzi,Steven N'Zonzi (Steven N'Kemboanza Mike Christopher Nzonzi),CDM CM ,28,83.0,83.0,€21M,€25K,Sevilla FC,79.0,France,84.0
+204970,F. Thauvin,Florian Thauvin,RM RW ,24,83.0,86.0,€33M,€36K,Olympique de Marseille,78.0,France,84.0
+193301,A. Lacazette,Alexandre Lacazette,ST ,26,84.0,85.0,€37M,€180K,,,Arsenal,82.0
+211300,A. Martial,Anthony Martial,LM LW ST ,21,83.0,90.0,€36.5M,€115K,,,Manchester United,83.0
+213345,K. Coman,Kingsley Coman,RM LM ,21,82.0,87.0,€30M,€88K,,,FC Bayern München,86.0
+183394,M. Sissoko,Moussa Sissoko,RM CM ,27,77.0,77.0,€9.5M,€84K,,,Tottenham Hotspur,83.0
+200458,L. Digne,Lucas Digne,LB ,23,79.0,84.0,€14M,€125K,,,FC Barcelona,85.0
+210008,A. Rabiot,Adrien Rabiot,CM CDM ,22,82.0,86.0,€28.5M,€83K,,,Paris Saint-Germain,83.0
+204311,K. Zouma,Kurt Zouma (Kurt Happy Zouma),CB ,22,78.0,85.0,€12.5M,€80K,Stoke City,76.0,Chelsea,2260.0
+158121,B. Costil,Benoît Costil,GK ,29,80.0,80.0,€10M,€42K,,,FC Girondins de Bordeaux,75.0
+201455,G. Kondogbia,Geoffrey Kondogbia,CDM CM ,24,81.0,85.0,€19.5M,€58K,Valencia CF,80.0,Inter,407.0
+167943,Y. Cabaye,Yohan Cabaye,CM ,31,78.0,78.0,€9M,€58K,,,Crystal Palace,76.0
+176600,K. Gameiro,Kévin Gameiro (Kevin Gameiro),ST ,30,82.0,82.0,€21.5M,€73K,,,Atlético Madrid,83.0
+201510,L. Kurzawa,Layvin Kurzawa,LB ,24,79.0,82.0,€13M,€69K,,,Paris Saint-Germain,83.0
+177388,D. Payet,Dimitri Payet (Dimitri  Payet),CAM LW ,30,84.0,84.0,€29.5M,€55K,,,Olympique de Marseille,78.0
+212218,A. Laporte,Aymeric Laporte (Aymeric  Laporte),CB ,23,83.0,88.0,€29.5M,€115K,,,Manchester City,84.0
+153244,A. Gignac,André-Pierre Gignac,ST ,31,81.0,81.0,€16M,€84K,,,Tigres U.A.N.L.,75.0
+219809,T. Bakayoko,Tiémoué Bakayoko,CDM CM ,22,80.0,85.0,€17M,€96K,,,Chelsea,83.0
+165229,L. Koscielny,Laurent Koscielny,CB ,31,83.0,83.0,€17.5M,€115K,,,Arsenal,82.0
+20801,Cristiano Ronaldo,C. Ronaldo dos Santos Aveiro (Cristiano Ronaldo dos Santos Aveiro),LW ST ,32,94.0,94.0,€95.5M,€565K,Real Madrid,86.0,Portugal,82.0
+224411,Gonçalo Guedes,Gonçalo Manuel Ganchinho Guedes,LM LW ST RM ,20,80.0,89.0,€23M,€69K,Valencia CF,80.0,Portugal,82.0
+212198,Bruno Fernandes,Bruno Miguel Borges Fernandes,CAM CF CM ,22,82.0,87.0,€29.5M,€21K,Sporting CP,79.0,Portugal,82.0
+162347,João Moutinho,João Filipe Moutinho (João Filipe Iria Santos Moutinho),CM CDM CAM ,30,82.0,82.0,€20.5M,€48K,AS Monaco,80.0,Portugal,82.0
+218667,Bernardo Silva,Bernardo Mota Carvalho e Silva (Bernardo Mota Veiga de Carvalho e Silva),RW ,22,84.0,90.0,€42.5M,€180K,Manchester City,84.0,Portugal,82.0
+207566,William Carvalho,William Silva de Carvalho,CDM CM ,25,83.0,86.0,€27.5M,€21K,Sporting CP,79.0,Portugal,82.0
+209889,R. Guerreiro,Raphaël Guerreiro,LB LM CM ,23,80.0,85.0,€16.5M,€52K,Borussia Dortmund,81.0,Portugal,82.0
+171791,José Fonte,José Miguel da Rocha Fonte,CB ,33,78.0,78.0,€0,€0,,,Portugal,82.0
+120533,Pepe,Képler Laveran Lima Ferreira (Kléper Laveran Lima Ferreira),CB ,34,85.0,85.0,€11.5M,€80K,Beşiktaş JK,79.0,Portugal,82.0
+201118,Cédric,Cédric Ricardo Alves Soares,RB ,25,78.0,80.0,€10.5M,€68K,Southampton,76.0,Portugal,82.0
+178005,Rui Patrício,Rui Pedro dos Santos Patrício,GK ,29,83.0,83.0,€17.5M,€19K,Sporting CP,79.0,Portugal,82.0
+228941,André Silva,André Miguel Valente da Silva (André Miguel Valente Silva),ST ,21,77.0,85.0,€13.5M,€77K,Milan,79.0,Portugal,82.0
+184826,Adrien Silva,Adrien S. Perruchet Silva (Adrien Sebastian Perruchet Silva),CM ,28,82.0,82.0,€22M,€92K,Leicester City,78.0,Portugal,82.0
+20775,Quaresma,Ricardo Andrade Quaresma Bernardo,RM LM ,33,83.0,83.0,€15.5M,€67K,Beşiktaş JK,79.0,Portugal,82.0
+227055,Gelson Martins,Gelson Dany Batalha Martins,RM LM ,22,82.0,88.0,€30.5M,€21K,Sporting CP,79.0,Portugal,82.0
+138110,Bruno Alves,Bruno Eduardo Regufe Alves,CB ,35,74.0,74.0,€1.3M,€32K,Rangers FC,71.0,Portugal,82.0
+239818,Rúben Dias,Rúben Alves Dias,CB ,20,76.0,86.0,€11M,€10K,SL Benfica,78.0,Portugal,82.0
+199482,A. Lopes,Anthony Lopes,GK ,26,84.0,86.0,€26M,€78K,Olympique Lyonnais,78.0,Portugal,82.0
+157960,Manuel Fernandes,Manuel H. Tavares Fernandes (Manuel Henrique Tavares Fernandes),CAM CM ,31,81.0,81.0,€15.5M,€54K,Lokomotiv Moscow,76.0,Portugal,82.0
+212814,João Mário,João Mário Naval Costa Eduardo,CAM LW CM ,24,81.0,84.0,€22.5M,€64K,West Ham United,77.0,Portugal,82.0
+204614,Mário Rui,Mário Rui Silva Duarte,LB ,26,78.0,79.0,€10M,€56K,Napoli,81.0,Portugal,82.0
+210243,Ricardo Pereira,Ricardo D. Barbosa Pereira,RB RM ,23,81.0,86.0,€20M,€15K,FC Porto,80.0,Portugal,82.0
+182629,Beto,António Alberto Bastos Pimparel,GK ,35,76.0,76.0,€1.8M,€11K,Göztepe SK,72.0,Portugal,82.0
+211575,André Gomes,André Filipe Tavares Gomes,CM LM RM ,23,82.0,88.0,€30M,€150K,,,FC Barcelona,85.0
+178424,Antunes,Vitorino Pacheco Antunes (Vitorino Gabriel  Pacheco Antunes),LB ,30,79.0,79.0,€9M,€29K,,,Getafe CF,74.0
+139068,Nani,Luís Carlos Almeida da Cunha,LW RW CAM LM ,30,81.0,81.0,€17M,€44K,Lazio,80.0,Valencia CF,152.0
+210514,João Cancelo,João Pedro Cavaco Cancelo,RB ,23,79.0,86.0,€15M,€31K,Inter,80.0,Valencia CF,1380.0
+2492,Eliseu,Eliseu Pereira dos Santos,LB ,33,76.0,76.0,€3M,€13K,,,SL Benfica,78.0
+189795,Éder,Éder Macedo Lopes (Éderzito António Macedo Lopes),ST ,29,76.0,76.0,€7.5M,€51K,Lokomotiv Moscow,76.0,LOSC Lille,58.0
+171688,Fábio Coentrão,Fábio Alexandre Silva Coentrão (Fábio Alexandre da Silva Coentrão),LB LM ,29,79.0,79.0,€9.5M,€150K,Sporting CP,79.0,Real Madrid,136.0
+216547,Rafa,Rafael A. Ferreira Silva (Rafael Alexandre Fernandes Ferreira da Silva),RW ,24,79.0,82.0,€16M,€17K,,,SL Benfica,78.0
+199626,André André,André Filipe Brás André (André Filipe Bras André),CM ,27,76.0,76.0,€8M,€16K,,,FC Porto,80.0
+227928,Nélson Semedo,Nélson Cabral Semedo,RB ,23,81.0,87.0,€20.5M,€125K,,,FC Barcelona,85.0
+204341,Luís Neto,Luís Carlos Novo Neto (Luis Carlos Novo Neto),CB ,29,76.0,76.0,€6M,€59K,Fenerbahçe SK,77.0,Zenit St. Petersburg,32.0
+200798,Marafona,José Carlos Coentrão Marafona,GK ,30,76.0,76.0,€4.9M,€11K,,,SC Braga,76.0
+200888,Danilo Pereira,Danilo Luís Hélio Pereira,CDM CB CM ,25,83.0,86.0,€27.5M,€18K,,,FC Porto,80.0
+211368,Bruma,Armindo Tué Na Bangna,LM CAM ,22,80.0,85.0,€20M,€63K,,,RB Leipzig,78.0
+230767,Renato Sanches,Renato Júnior Luz Sanches,CM ,19,75.0,84.0,€10M,€41K,Swansea City,75.0,FC Bayern München,3075.0
+197965,Pizzi,Luis Miguel Afonso Fernandes (Luís Miguel Afonso Fernandes),CM ,27,83.0,83.0,€26.5M,€19K,,,SL Benfica,78.0
+189303,Nélson Oliveira,Nélson Miguel Castro Oliveira,ST ,25,73.0,75.0,€5M,€37K,,,Norwich City,71.0
+183898,A. Di María,Ángel Di María (Ángel Fabián Di María Hernández),RW LW ,29,84.0,84.0,€30.5M,€145K,Paris Saint-Germain,83.0,Argentina,82.0
+153079,S. Agüero,Sergio Agüero (Sergio Leonel Agüero del Castillo),ST ,29,89.0,89.0,€66.5M,€325K,,,Manchester City,84.0
+216700,M. Meza,Maximiliano Meza (Maximiliano Eduardo Meza),CAM LM RM ,25,77.0,78.0,€10.5M,€24K,Independiente,75.0,Argentina,82.0
+158023,L. Messi,Lionel Messi (Lionel Andrés Messi Cuccittini),CF ST RW ,30,94.0,94.0,€118.5M,€565K,FC Barcelona,85.0,Argentina,82.0
+158963,L. Biglia,Lucas Biglia (Lucas Rodrigo Biglia),CDM CM ,31,82.0,82.0,€15M,€105K,Milan,79.0,Argentina,82.0
+142754,J. Mascherano,Javier Mascherano (Javier Alejandro Mascherano),CB CDM ,33,82.0,82.0,€0,€0,,,Argentina,82.0
+211256,N. Tagliafico,Nicolás Tagliafico (Nicolás Alejandro Tagliafico),LB CB ,24,79.0,82.0,€13M,€14K,Ajax,76.0,Argentina,82.0
+201862,M. Rojo,Marcos Rojo (Faustino Marcos Alberto Rojo),CB ,27,80.0,81.0,€14M,€120K,Manchester United,83.0,Argentina,82.0
+192366,N. Otamendi,Nicolás Otamendi (Nicolás Hernán Otamendi),CB ,29,85.0,85.0,€30M,€180K,Manchester City,84.0,Argentina,82.0
+190972,E. Salvio,Eduardo Salvio (Eduardo Antonio Salvio),RW ,26,80.0,80.0,€16M,€19K,,,SL Benfica,78.0
+176919,N. Guzmán,Nahuel Guzmán (Nahuel Ignacio Guzmán),GK ,31,78.0,78.0,€6.5M,€48K,Tigres U.A.N.L.,75.0,Argentina,82.0
+167664,G. Higuaín,Gonzalo Higuaín (Gonzalo Gerardo Higuaín),ST ,29,90.0,90.0,€77M,€275K,Juventus,85.0,Argentina,82.0
+224254,C. Pavón,Cristian Pavón (Cristian David Pavón),RW RM ,21,76.0,85.0,€12M,€23K,Boca Juniors,75.0,Argentina,82.0
+178562,E. Banega,Éver Banega (Éver Maximiliano David Banega),CM CDM CAM ,29,83.0,83.0,€25M,€27K,Sevilla FC,79.0,Argentina,82.0
+196432,E. Pérez,Enzo Pérez,CM CDM ,31,79.0,79.0,€11M,€30K,,,River Plate,75.0
+179847,F. Fazio,Federico Fazio (Federico Julián Fazio),CB ,30,83.0,83.0,€19M,€73K,Roma,81.0,Argentina,82.0
+173306,C. Ansaldi,Cristian Ansaldi (Cristian Daniel Ansaldi),LB LM ,30,79.0,79.0,€9M,€68K,Torino,77.0,Inter,34.0
+139062,W. Caballero,Willy Caballero (Wilfredo Daniel Caballero),GK ,35,79.0,79.0,€3M,€59K,Chelsea,83.0,Argentina,82.0
+226226,G. Lo Celso,Giovani Lo Celso,CM CAM ,21,77.0,84.0,€12.5M,€58K,Paris Saint-Germain,83.0,Argentina,82.0
+211110,P. Dybala,Paulo Dybala (Paulo Bruno Exequiel Dybala),CAM ST ,23,89.0,94.0,€89M,€215K,,,Juventus,85.0
+224334,M. Acuña,Marcos Acuña (Marcos Javier Acuña),LM RM ,25,80.0,81.0,€17.5M,€22K,,,Sporting CP,79.0
+183892,G. Mercado,Gabriel Mercado (Gabriel Iván Mercado),CB RB ,30,79.0,79.0,€9.5M,€22K,Sevilla FC,79.0,Argentina,82.0
+214584,F. Armani,Franco Armani,GK ,30,78.0,78.0,€6.5M,€18K,,,River Plate,75.0
+188988,M. Lanzini,Manuel Lanzini,CAM CM LM ,24,81.0,86.0,€24M,€95K,West Ham United,77.0,Argentina,82.0
+207939,G. Pizarro,Guido Pizarro,CDM CM CAM ,27,78.0,79.0,€10M,€18K,,,Sevilla FC,79.0
+214997,A. Correa,Ángel Correa,RM ST ,22,80.0,86.0,€20.5M,€54K,,,Atlético Madrid,83.0
+143076,A. Gómez,Alejandro Gómez (Alejandro Darío Gómez),CF LW ST ,29,84.0,84.0,€31M,€60K,,,Atalanta,76.0
+159065,E. Lavezzi,Ezequiel Lavezzi (Ezequiel Iván Lavezzi),ST CAM LW RW ,33,79.0,79.0,€8M,€22K,,,Hebei China Fortune FC,68.0
+201399,M. Icardi,Mauro Icardi (Mauro Emanuel Icardi Rivero),ST ,24,87.0,91.0,€66.5M,€120K,,,Inter,80.0
+207439,L. Paredes,Leandro Paredes,CM CDM ,23,80.0,85.0,€19.5M,€64K,Zenit St. Petersburg,77.0,Argentina,82.0
+193061,R. Pereyra,Roberto Pereyra,CAM LM CM ,26,79.0,80.0,€15M,€69K,,,Watford,77.0
+215079,P. Pérez,Pablo Pérez,CM ,31,77.0,77.0,€7.5M,€27K,Boca Juniors,75.0,Argentina,82.0
+199667,R. Funes Mori,Ramiro Funes Mori (José Ramiro Funes Mori),CB ,26,77.0,80.0,€9M,€88K,,,Everton,79.0
+176915,A. Fernández,Augusto Fernández (Augusto Matías Fernández),CM ,32,80.0,80.0,€11M,€20K,,,Beijing Renhe FC,65.0
+173373,S. Romero,Sergio Romero (Sergio Germán Romero),GK ,30,80.0,80.0,€9.5M,€97K,Manchester United,83.0,Argentina,82.0
+142784,P. Zabaleta,Pablo Zabaleta (Pablo Javier Zabaleta Girod),RWB RB ,32,76.0,76.0,€4.3M,€83K,,,West Ham United,77.0
+191180,J. Pastore,Javier Pastore (Javier Matías Pastore),CM LW RW ,28,83.0,83.0,€25.5M,€100K,,,Paris Saint-Germain,83.0
+214977,M. Kranevitter,Matías Kranevitter,CDM CM ,24,77.0,82.0,€10M,€48K,,,Zenit St. Petersburg,77.0
+215259,E. Rigoni,Emiliano Rigoni,RM LM RW ,24,78.0,81.0,€13M,€54K,,,Zenit St. Petersburg,77.0
+215316,G. Rulli,Gerónimo Rulli,GK ,25,82.0,87.0,€21M,€28K,,,Real Sociedad,78.0
+192505,R. Lukaku,Romelu Lukaku,ST ,24,86.0,90.0,€59M,€210K,Manchester United,83.0,Belgium,84.0
+183277,E. Hazard,Eden Hazard,LW CF ,26,91.0,91.0,€95.5M,€405K,Chelsea,83.0,Belgium,84.0
+175943,D. Mertens,Dries Mertens,CF ST ,30,87.0,87.0,€48.5M,€135K,Napoli,81.0,Belgium,84.0
+208418,Y. Carrasco,Yannick Carrasco (Yannick Ferreira Carrasco),LM RM ,23,85.0,90.0,€0,€0,,,Belgium,84.0
+177413,A. Witsel,Axel Witsel (Axel  Witsel),CM CDM CAM ,28,82.0,82.0,€0,€0,,,Belgium,84.0
+192985,K. De Bruyne,Kevin De Bruyne,CAM CM ,26,91.0,92.0,€104.5M,€395K,Manchester City,84.0,Belgium,84.0
+202371,T. Meunier,Thomas Meunier,RB RM ,25,81.0,84.0,€18.5M,€77K,Paris Saint-Germain,83.0,Belgium,84.0
+172871,J. Vertonghen,Jan Vertonghen,CB ,30,86.0,86.0,€33M,€155K,Tottenham Hotspur,83.0,Belgium,84.0
+139720,V. Kompany,Vincent Kompany,CB ,31,85.0,85.0,€26M,€170K,Manchester City,84.0,Belgium,84.0
+184087,T. Alderweireld,Toby Alderweireld,CB ,28,85.0,86.0,€35M,€140K,Tottenham Hotspur,83.0,Belgium,84.0
+192119,T. Courtois,Thibaut Courtois,GK ,25,89.0,92.0,€59M,€190K,Chelsea,83.0,Belgium,84.0
+204529,M. Batshuayi,Michy Batshuayi (Michy Batshuayi Tunga),ST ,23,81.0,85.0,€23.5M,€120K,Borussia Dortmund,81.0,Belgium,84.0
+203486,T. Hazard,Thorgan Hazard,LM RM CF ,24,82.0,85.0,€28M,€43K,Borussia Mönchengladbach,78.0,Belgium,84.0
+162240,M. Dembélé,Moussa Dembélé (Moussa Sidi Yaya Dembélé),CM CDM ,29,84.0,84.0,€30M,€150K,Tottenham Hotspur,83.0,Belgium,84.0
+176944,M. Fellaini,Marouane Fellaini (Marouane Fellaini-Bakkioui),CM CDM ,29,79.0,79.0,€12M,€140K,Manchester United,83.0,Belgium,84.0
+157304,T. Vermaelen,Thomas Vermaelen,CB LB ,31,78.0,78.0,€7M,€120K,FC Barcelona,85.0,Belgium,84.0
+212501,L. Dendoncker,Leander Dendoncker,CB CDM CM ,22,77.0,83.0,€10.5M,€21K,RSC Anderlecht,74.0,Belgium,84.0
+173426,S. Mignolet,Simon Mignolet,GK ,29,80.0,80.0,€10M,€91K,Liverpool,81.0,Belgium,84.0
+200529,N. Chadli,Nacer Chadli,LM RM CAM ,27,78.0,78.0,€11M,€68K,West Bromwich Albion,76.0,Belgium,84.0
+216393,Y. Tielemans,Youri Tielemans,CM CDM ,20,79.0,89.0,€20M,€35K,AS Monaco,80.0,Belgium,84.0
+197837,D. Boyata,Dedryck Boyata (Anga Dedryck Boyata),CB ,26,73.0,75.0,€4M,€44K,Celtic,74.0,Belgium,84.0
+208330,A. Januzaj,Adnan Januzaj,RM RW LM CAM ,22,79.0,85.0,€17.5M,€33K,Real Sociedad,78.0,Belgium,84.0
+192984,K. Casteels,Koen Casteels,GK ,25,80.0,83.0,€13M,€50K,VfL Wolfsburg,77.0,Belgium,84.0
+157678,L. Ciman,Laurent Ciman,CB ,32,75.0,75.0,€3.8M,€13K,,,Dijon FCO,73.0
+184111,C. Benteke,Christian Benteke (Christian Benteke Liolo),ST ,26,79.0,80.0,€15M,€75K,,,Crystal Palace,76.0
+190324,C. Kabasele,Christian Kabasele,CB ,26,75.0,78.0,€7M,€44K,,,Watford,77.0
+199641,M. Sels,Matz Sels,GK ,25,75.0,78.0,€6M,€40K,RSC Anderlecht,74.0,Newcastle United,88.0
+207537,J. Lukaku,Jordan Lukaku,LM LB ,22,77.0,83.0,€12M,€43K,,,Lazio,80.0
+170815,S. Defour,Steven Defour,CM ,29,79.0,79.0,€12M,€72K,,,Burnley,77.0
+172175,K. Mirallas,Kevin Mirallas,LM LW ST ,29,79.0,79.0,€12.5M,€1K,,,Olympiacos CFP,75.0
+213135,D. Origi,Divock Origi,ST LW RM ,22,77.0,82.0,€12M,€92K,VfL Wolfsburg,77.0,Liverpool,1145.0
+163492,N. Lombaerts,Nicolas Lombaerts,CB ,32,74.0,74.0,€3.2M,€15K,,,KV Oostende,70.0
+208509,T. Foket,Thomas Foket,RB RM ,22,73.0,78.0,€4.5M,€17K,,,KAA Gent,73.0
+163369,S. Pocognoli,Sébastien Pocognoli,LB ,29,71.0,71.0,€1.8M,€11K,,,Standard de Liège,73.0
+17605,T. Simons,Timmy Simons,CDM CM CB ,40,72.0,72.0,€0,€10K,,,Club Brugge KV,75.0
+200434,L. Cavanda,Luis Pedro Cavanda,RB ,26,71.0,72.0,€2.3M,€32K,Standard de Liège,73.0,Galatasaray SK,229.0
+198219,L. Insigne,Lorenzo Insigne,LW ,26,87.0,88.0,€59M,€135K,Napoli,81.0,Italy,83.0
+192387,C. Immobile,Ciro Immobile,ST ,27,86.0,86.0,€47.5M,€110K,Lazio,80.0,Italy,83.0
+196889,S. Verdi,Simone Verdi,RW CAM ,24,81.0,83.0,€22M,€62K,Bologna,76.0,Italy,83.0
+199556,M. Verratti,Marco Verratti,CM CDM ,24,87.0,90.0,€63M,€130K,Paris Saint-Germain,83.0,Italy,83.0
+205498,Jorginho,Luiz Frello Filho Jorge (Jorge Luiz Frello Filho),CM ,25,82.0,85.0,€27.5M,€77K,Napoli,81.0,Italy,83.0
+183498,M. Parolo,Marco Parolo,CM CDM ,32,81.0,81.0,€13.5M,€60K,Lazio,80.0,Italy,83.0
+206058,M. De Sciglio,Mattia De Sciglio,RB LB ,24,77.0,81.0,€9.5M,€73K,Juventus,85.0,Italy,83.0
+211320,D. Rugani,Daniele Rugani,CB ,22,81.0,88.0,€21.5M,€88K,Juventus,85.0,Italy,83.0
+138956,G. Chiellini,Giorgio Chiellini,CB ,32,89.0,89.0,€38M,€225K,Juventus,85.0,Italy,83.0
+203551,A. Florenzi,Alessandro Florenzi (Alessandro  Florenzi),RB RW CM ,26,82.0,83.0,€21M,€73K,Roma,81.0,Italy,83.0
+1179,G. Buffon,Gianluigi Buffon,GK ,39,89.0,89.0,€4.5M,€110K,,,Juventus,85.0
+208596,A. Belotti,Andrea Belotti,ST ,23,82.0,87.0,€30M,€58K,Torino,77.0,Italy,83.0
+237715,P. Cutrone,Patrick Cutrone,ST ,19,74.0,88.0,€12M,€48K,Milan,79.0,Italy,83.0
+212153,R. Gagliardini,Roberto Gagliardini,CDM CM ,23,78.0,85.0,€12.5M,€24K,Inter,80.0,Italy,83.0
+184344,L. Bonucci,Leonardo Bonucci,CB ,30,86.0,86.0,€33M,€165K,Milan,79.0,Italy,83.0
+216150,D. Zappacosta,Davide Zappacosta,RWB RB ,25,79.0,83.0,€13.5M,€110K,Chelsea,83.0,Italy,83.0
+183855,A. Ogbonna,Angelo Ogbonna (Angelo Obinze Ogbonna),CB ,29,78.0,78.0,€8M,€87K,West Ham United,77.0,Italy,83.0
+230621,G. Donnarumma,Gianluigi Donnarumma,GK ,18,82.0,93.0,€27M,€35K,Milan,79.0,Italy,83.0
+189125,G. Bonaventura,Giacomo Bonaventura,CM LW ,27,82.0,82.0,€23M,€115K,Milan,79.0,Italy,83.0
+184392,M. Darmian,Matteo Darmian,LB RB ,27,78.0,78.0,€8.5M,€100K,Manchester United,83.0,Italy,83.0
+228251,L. Pellegrini,Lorenzo Pellegrini,CM ,21,78.0,84.0,€14M,€48K,,,Roma,81.0
+173221,A. Candreva,Antonio Candreva,RM ,30,81.0,81.0,€17M,€74K,Inter,80.0,Italy,83.0
+198009,M. Perin,Mattia Perin,GK ,24,84.0,89.0,€30M,€36K,Genoa,76.0,Italy,83.0
+231677,M. Rashford,Marcus Rashford,LM ST RM ,19,81.0,90.0,€26.5M,€74K,Manchester United,83.0,England,82.0
+202126,H. Kane,Harry Kane,ST ,23,88.0,91.0,€76.5M,€210K,Tottenham Hotspur,83.0,England,82.0
+211117,D. Alli,Dele Alli (Bamidele Alli),CAM CF ,21,84.0,90.0,€43M,€115K,Tottenham Hotspur,83.0,England,82.0
+202335,E. Dier,Eric Dier,CDM CB ,23,81.0,85.0,€19.5M,€79K,Tottenham Hotspur,83.0,England,82.0
+183711,J. Henderson,Jordan Henderson (Jordan Brian Henderson),CDM CM ,27,81.0,83.0,€17.5M,€110K,Liverpool,81.0,England,82.0
+169595,D. Rose,Danny Rose,LB LWB ,26,81.0,81.0,€15M,€92K,Tottenham Hotspur,83.0,England,82.0
+194957,P. Jones,Phil Jones,CB ,25,80.0,81.0,€14.5M,€115K,Manchester United,83.0,England,82.0
+203574,J. Stones,John Stones,CB ,23,80.0,86.0,€17.5M,€105K,Manchester City,84.0,England,82.0
+188377,K. Walker,Kyle Walker,RB RWB ,27,84.0,84.0,€25.5M,€170K,Manchester City,84.0,England,82.0
+186345,K. Trippier,Kieran Trippier,RB RWB ,26,80.0,81.0,€14M,€92K,,,Tottenham Hotspur,83.0
+204935,J. Pickford,Jordan Pickford,GK ,23,80.0,86.0,€15M,€71K,Everton,79.0,England,82.0
+208830,J. Vardy,Jamie Vardy,ST ,30,82.0,82.0,€21.5M,€96K,Leicester City,78.0,England,82.0
+202652,R. Sterling,Raheem Sterling,RW LW CF ,22,85.0,88.0,€49M,€180K,Manchester City,84.0,England,82.0
+207494,J. Lingard,Jesse Lingard,CAM RW RM ,24,81.0,84.0,€22.5M,€115K,Manchester United,83.0,England,82.0
+164468,G. Cahill,Gary Cahill,CB ,31,82.0,82.0,€15M,€125K,Chelsea,83.0,England,82.0
+152908,A. Young,Ashley Young,LB LWB RB ,31,79.0,79.0,€8M,€120K,,,Manchester United,83.0
+203263,H. Maguire,Harry Maguire,CB ,24,79.0,83.0,€14M,€64K,Leicester City,78.0,England,82.0
+203042,J. Butland,Jack Butland,GK ,24,81.0,86.0,€17M,€50K,Stoke City,76.0,England,82.0
+231281,T. Alexander-Arnold,Trent Alexander-Arnold,RB ,18,75.0,87.0,€9.5M,€39K,,,Liverpool,81.0
+213666,R. Loftus-Cheek,Ruben Loftus-Cheek,LM CAM CM ,21,75.0,84.0,€10.5M,€68K,Crystal Palace,76.0,England,82.0
+203841,N. Pope,Nick Pope,GK ,25,78.0,81.0,€9M,€40K,,,Burnley,77.0
+183427,F. Delph,Fabian Delph,LB CM ,27,79.0,79.0,€10.5M,€120K,,,Manchester City,84.0
+186146,D. Welbeck,Danny Welbeck (Daniel Nii Tackie Mensah Welbeck),ST LW ,26,79.0,80.0,€15M,€130K,,,Arsenal,82.0
+180819,A. Lallana,Adam Lallana (Adam David Lallana),CM ,29,82.0,82.0,€21.5M,€135K,Liverpool,81.0,England,82.0
+186132,D. Drinkwater,Danny Drinkwater,CM ,27,80.0,80.0,€15M,€125K,,,Chelsea,83.0
+186115,K. Gibbs,Kieran Gibbs (Kieran  Gibbs),LB LWB ,27,77.0,77.0,€7.5M,€62K,,,West Bromwich Albion,76.0
+189059,J. Livermore,Jake Livermore,CM CDM ,27,74.0,74.0,€6M,€57K,West Bromwich Albion,76.0,England,82.0
+163264,T. Heaton,Tom Heaton,GK ,31,81.0,81.0,€11M,€51K,,,Burnley,77.0
+189461,J. Wilshere,Jack Wilshere,CM CAM CDM ,25,81.0,83.0,€21.5M,€115K,,,Arsenal,82.0
+207599,M. Keane,Michael Keane,CB ,24,80.0,83.0,€16M,€91K,,,Everton,79.0
+150724,J. Hart,Joe Hart,GK ,30,78.0,78.0,€6.5M,€81K,West Ham United,77.0,England,82.0
+169705,R. Bertrand,Ryan Bertrand,LB ,27,79.0,79.0,€10.5M,€86K,Southampton,76.0,England,82.0
+53914,P. Jagielka,Phil Jagielka,CB ,34,79.0,79.0,€3.8M,€110K,,,Everton,79.0
+164859,T. Walcott,Theo Walcott (Theo  Walcott),RM RW LM ,28,79.0,79.0,€12.5M,€125K,,,Everton,79.0
+50542,J. Defoe,Jermain Defoe (Jermain  Defoe),ST ,34,78.0,78.0,€5.5M,€72K,,,Bournemouth,76.0
+189881,C. Smalling,Chris Smalling,CB ,27,81.0,82.0,€17M,€120K,,,Manchester United,83.0
+199189,R. Barkley,Ross Barkley,CAM RW CM ,23,80.0,83.0,€19M,€110K,,,Chelsea,83.0
+171833,D. Sturridge,Daniel Sturridge (Daniel Andre Sturridge),ST ,27,81.0,81.0,€19M,€130K,West Bromwich Albion,76.0,Liverpool,313.0
+190456,N. Clyne,Nathaniel Clyne (Nathaniel Edwin Clyne),RB ,26,81.0,82.0,€17M,€110K,,,Liverpool,81.0
+198784,A. Oxlade-Chamberlain,Alex Oxlade-Chamberlain,RM CM ,23,81.0,85.0,€23M,€105K,,,Liverpool,81.0
+188545,R. Lewandowski,Robert Lewandowski,ST ,28,91.0,91.0,€92M,€355K,FC Bayern München,86.0,Poland,78.0
+205175,A. Milik,Arkadiusz Milik,ST ,23,79.0,86.0,€18M,€71K,Napoli,81.0,Poland,78.0
+177922,K. Grosicki,Kamil Grosicki,LM RM LW ,29,74.0,74.0,€5.5M,€13K,Hull City,71.0,Poland,78.0
+210406,P. Zieliński,Piotr Zieliński,CM ,23,80.0,87.0,€20.5M,€64K,Napoli,81.0,Poland,78.0
+211408,K. Linetty,Karol Linetty,CM ,22,76.0,83.0,€10.5M,€34K,Sampdoria,75.0,Poland,78.0
+164994,J. Błaszczykowski,Jakub Błaszczykowski,RM RB ,31,75.0,75.0,€6M,€51K,VfL Wolfsburg,77.0,Poland,78.0
+186347,M. Rybus,Maciej Rybus,LB LM ,27,71.0,71.0,€2M,€25K,Lokomotiv Moscow,76.0,Poland,78.0
+185010,M. Pazdan,Michał Pazdan,CB ,29,76.0,76.0,€6M,€13K,Legia Warszawa,71.0,Poland,78.0
+190547,K. Glik,Kamil Glik,CB ,29,84.0,84.0,€24M,€60K,AS Monaco,80.0,Poland,78.0
+173771,L. Piszczek,Łukasz Piszczek,RB CB ,32,83.0,83.0,€14.5M,€66K,Borussia Dortmund,81.0,Poland,78.0
+186153,W. Szczęsny,Wojciech Szczęsny (Wojciech  Szczęsny),GK ,27,84.0,86.0,€25M,€120K,Juventus,85.0,Poland,78.0
+201013,L. Teodorczyk,Łukasz Teodorczyk,ST ,26,76.0,78.0,€9.5M,€29K,RSC Anderlecht,74.0,Poland,78.0
+221168,D. Kownacki,Dawid Kownacki,ST ,20,69.0,81.0,€1.9M,€17K,Sampdoria,75.0,Poland,78.0
+197242,G. Krychowiak,Grzegorz Krychowiak,CDM CM ,27,79.0,80.0,€12M,€81K,West Bromwich Albion,76.0,Poland,78.0
+148564,S. Peszko,Sławomir Peszko,LM ,32,70.0,70.0,€1.4M,€7K,Lechia Gdańsk,69.0,Poland,78.0
+177790,A. Jędrzejczyk,Artur Jędrzejczyk,RB ,29,71.0,71.0,€1.8M,€8K,Legia Warszawa,71.0,Poland,78.0
+189118,Thiago Cionek,Thiago Rangel Cionek,CB ,31,71.0,71.0,€1.6M,€10K,SPAL,73.0,Poland,78.0
+164835,L. Fabiański,Łukasz Fabiański,GK ,32,80.0,80.0,€8.5M,€60K,Swansea City,75.0,Poland,78.0
+220570,J. Bednarek,Jan Bednarek,CB ,21,68.0,77.0,€1.2M,€27K,Southampton,76.0,Poland,78.0
+199763,B. Bereszyński,Bartosz Bereszyński,RB ,24,73.0,76.0,€4.2M,€26K,Sampdoria,75.0,Poland,78.0
+229739,J. Góralski,Jacek Góralski,CDM ,24,73.0,77.0,€0,€0,,,Poland,78.0
+221791,R. Kurzawa,Rafał Kurzawa,LM ,24,68.0,71.0,€1.1M,€4K,Górnik Zabrze,65.0,Poland,78.0
+155871,B. Białkowski,Bartosz Białkowski (Bartosz Bialkowski),GK ,29,75.0,75.0,€4.5M,€16K,Ipswich Town,70.0,Poland,78.0
+174669,K. Mączyński,Krzysztof Mączyński,CDM CM ,30,71.0,71.0,€1.8M,€7K,,,Legia Warszawa,71.0
+213404,P. Dawidowicz,Paweł Dawidowicz,CB CDM CM ,22,68.0,79.0,€1.3M,€2K,,,Palermo,70.0
+210136,T. Kędziora,Tomasz Kędziora,RB ,24,74.0,79.0,€6.5M,€1K,Dynamo Kyiv,75.0,Poland,77.0
+185109,M. Sadlok,Maciej Sadlok,LB ,28,71.0,71.0,€1.9M,€6K,,,Wisła Kraków,68.0
+190915,K. Wilczek,Kamil Wilczek,ST ,29,70.0,70.0,€1.8M,€16K,,,Brøndby IF,70.0
+204078,R. Wolski,Rafał Wolski,CAM CM ,24,73.0,77.0,€5M,€9K,,,Lechia Gdańsk,69.0
+189908,L. Skorupski,Łukasz Skorupski,GK ,26,76.0,79.0,€6.5M,€46K,,,Roma,81.0
+216003,B. Kapustka,Bartosz Kapustka,LM ,20,71.0,80.0,€3.7M,€32K,SC Freiburg,73.0,Leicester City,430.0
+199761,M. Kamiński,Marcin Kamiński,CB ,25,73.0,75.0,€4.1M,€21K,,,VfB Stuttgart,75.0
+200461,M. Makuszewski,Maciej Makuszewski,RM ,27,72.0,72.0,€3.3M,€8K,,,Lech Poznań,70.0
+211626,D. Kądzior,Damian Kądzior,RM ,25,68.0,71.0,€1.1M,€4K,,,Górnik Zabrze,65.0
+208631,F. Starzyński,Filip Starzyński,CAM ,26,69.0,70.0,€1.2M,€6K,,,Zagłębie Lubin,67.0
+176094,P. Tytoń,Przemysław Tytoń,GK ,30,70.0,70.0,€1.1M,€12K,,,Deportivo de La Coruña,77.0
+188762,I. Lewczuk,Igor Lewczuk,CB ,32,73.0,73.0,€2.3M,€34K,,,FC Girondins de Bordeaux,75.0
+203568,P. Wszołek,Paweł Wszołek,RW RWB RM ,25,70.0,71.0,€2.1M,€21K,,,Queens Park Rangers,69.0
+198046,D. Dąbrowski,Damian Dąbrowski,CDM ,24,70.0,74.0,€2M,€5K,,,Cracovia,65.0
+208306,M. Stępiński,Mariusz Stępiński,ST CF ,22,72.0,79.0,€4.4M,€16K,Chievo Verona,76.0,FC Nantes,49.0
+176580,L. Suárez,Luis Suárez (Luis Alberto Suárez Díaz),ST ,30,92.0,92.0,€97M,€510K,FC Barcelona,85.0,Uruguay,81.0
+179813,E. Cavani,Edinson Cavani (Edinson Roberto Cavani Gómez),ST ,30,88.0,88.0,€57M,€210K,Paris Saint-Germain,83.0,Uruguay,81.0
+225645,G. De Arrascaeta,Giorgian De Arrascaeta,CAM LM CM ,23,78.0,83.0,€0,€0,,,Uruguay,80.0
+227535,R. Bentancur,Rodrigo Bentancur (Rodrigo Bentancur Colmán),CM ,20,75.0,88.0,€12.5M,€61K,Juventus,85.0,Uruguay,81.0
+219985,M. Vecino,Matias Vecino,CDM CM ,25,79.0,82.0,€13.5M,€64K,Inter,80.0,Uruguay,81.0
+230965,N. Nández,Nahitan Nández,CM CDM RM ,21,73.0,84.0,€7M,€18K,Boca Juniors,75.0,Uruguay,81.0
+182495,M. Cáceres,Martín Cáceres,CB RB ,30,78.0,78.0,€7.5M,€45K,Lazio,80.0,Uruguay,81.0
+182493,D. Godín,Diego Godín,CB ,31,88.0,88.0,€40M,€125K,Atlético Madrid,83.0,Uruguay,81.0
+216460,J. Giménez,José María Giménez (José María Giménez de Vargas),CB RB ,22,83.0,87.0,€28.5M,€53K,Atlético Madrid,83.0,Uruguay,81.0
+219914,G. Varela,Guillermo Varela,RB ,24,68.0,73.0,€0,€0,,,Uruguay,81.0
+182494,F. Muslera,Fernando Muslera,GK ,31,81.0,81.0,€11M,€52K,Galatasaray SK,77.0,Uruguay,81.0
+186537,C. Stuani,Cristhian Stuani (Cristhian Ricardo Stuani Curbelo),ST RM ,30,79.0,79.0,€12M,€36K,Girona FC,75.0,Uruguay,81.0
+213400,D. Laxalt,Diego Laxalt,LM ,24,78.0,81.0,€13M,€30K,Genoa,76.0,Uruguay,81.0
+205510,C. Sánchez,Carlos Sánchez (Carlos Andrés Sánchez Arcosa),CM CAM RM ,32,76.0,76.0,€6M,€58K,Monterrey,74.0,Uruguay,81.0
+223959,L. Torreira,Lucas Torreira (Lucas Torreira Di Pascua),CM CDM ,21,78.0,85.0,€14.5M,€30K,Sampdoria,75.0,Uruguay,81.0
+170664,C. Rodríguez,Cristian Rodríguez (Cristian Gabriel Rodríguez Barrotti),CAM LM ,31,75.0,75.0,€0,€0,,,Uruguay,81.0
+197655,S. Coates,Sebastián Coates (Sebastián Coates Nión),CB ,26,81.0,82.0,€17.5M,€21K,Sporting CP,79.0,Uruguay,81.0
+225647,M. Campaña,Martín Campaña,GK ,28,79.0,81.0,€10.5M,€23K,Independiente,75.0,Uruguay,81.0
+198653,M. Silva,Martín Silva (Martín Andrés Silva Leites),GK ,34,74.0,74.0,€0,€0,,,Uruguay,80.0
+239207,M. Gómez,Maximiliano Gómez,ST ,20,78.0,84.0,€14.5M,€23K,RC Celta,78.0,Uruguay,81.0
+220702,G. Silva,Gastón Silva,CB LB ,23,73.0,78.0,€4.5M,€16K,Independiente,75.0,Uruguay,81.0
+182862,M. Pereira,Maximiliano Pereira,RB ,33,78.0,78.0,€4M,€15K,FC Porto,80.0,Uruguay,81.0
+189338,J. Urretaviscaya,Jonathan Urretaviscaya (Jonathan Matías Urretaviscaya da Luz),RW LM ,27,74.0,74.0,€6M,€53K,,,Monterrey,74.0
+239053,F. Valverde,Federico Valverde,CM LM CAM ,18,74.0,85.0,€9M,€62K,Deportivo de La Coruña,77.0,Real Madrid,127.0
+197225,N. Lodeiro,Nicolás Lodeiro (Marcelo Nicolás Lodeiro Benítez),RM CAM CF ,28,78.0,78.0,€10.5M,€11K,,,Seattle Sounders FC,72.0
+201508,G. Ramírez,Gastón Ramírez (Gastón Exequiel Ramírez Pereyra),CAM ,26,79.0,80.0,€15M,€47K,Sampdoria,75.0,Uruguay,81.0
+213114,D. Rolán,Diego Rolán,ST LM RM RW ,24,78.0,81.0,€13.5M,€43K,Málaga CF,75.0,Uruguay,81.0
+229636,G. Pereiro,Gastón Pereiro (Gastón Rodrigo Pereiro López),CAM RW LW ,22,76.0,81.0,€10.5M,€17K,,,PSV,75.0
+188484,A. Hernández,Abel Hernández (Abel Mathías Hernández Platero),ST ,26,75.0,75.0,€7.5M,€14K,,,Hull City,71.0
+229270,M. Lemos,Mauricio Lemos (Mauricio Lemos Merladet),CB CDM ,21,75.0,80.0,€7.5M,€14K,Sassuolo,75.0,UD Las Palmas,812.0
+172098,A. Pereira,Álvaro Pereira (Álvaro Daniel Pereira Barragán),LB ,31,75.0,75.0,€0,€0,,,Uruguay,80.0
+182860,A. González,Álvaro González,CM CDM ,32,74.0,74.0,€0,€0,,,Uruguay,80.0
+225299,E. Velázquez,Emiliano Velázquez,CB ,23,74.0,81.0,€7M,€34K,Rayo Vallecano,73.0,Atlético Madrid,81.0
+176518,M. Victorino,Mauricio Victorino (Mauricio Bernardo Victorino Dansilio),CB ,34,74.0,74.0,€0,€0,,,Uruguay,80.0
+223691,M. Corujo,Mathías Corujo,RB CM RM ,31,73.0,73.0,€0,€0,,,Uruguay,80.0
+225646,C. Mayada,Camilo Mayada,RB RM ,26,73.0,73.0,€3.4M,€19K,,,River Plate,75.0
+182103,E. Arévalo Ríos,Egidio Arévalo Ríos,CDM ,36,73.0,73.0,€0,€0,,,Uruguay,81.0
+236543,G. Guruceaga,Gastón Guruceaga,GK ,22,73.0,81.0,€0,€0,,,Uruguay,80.0
+224147,G. Pereira,Guzmán Pereira (Ricardo Guzmán Pereira Méndez),CM CDM ,26,72.0,75.0,€0,€0,,,Uruguay,80.0
+186355,E. Conde,Esteban Conde (Esteban Néstor Conde Quintana),GK ,34,71.0,71.0,€0,€0,,,Uruguay,81.0
+181783,M. Mandžukić,Mario Mandžukić,ST LW ,31,83.0,83.0,€23.5M,€135K,,,Juventus,85.0
+181458,I. Perišić,Ivan Perišić,LM CAM ,28,85.0,85.0,€39M,€110K,,,Inter,80.0
+177003,L. Modrić,Luka Modrić,CM CDM ,31,89.0,89.0,€57M,€340K,,,Real Madrid,86.0
+216354,A. Kramarić,Andrej Kramarić,ST LW RW ,26,81.0,83.0,€22M,€50K,,,TSG 1899 Hoffenheim,78.0
+168651,I. Rakitić,Ivan Rakitić,CM ,29,86.0,86.0,€42.5M,€275K,,,FC Barcelona,85.0
+216352,M. Brozović,Marcelo Brozović,CM CAM CDM ,24,80.0,82.0,€18M,€64K,,,Inter,80.0
+201139,I. Strinić,Ivan Strinić,LB ,29,74.0,74.0,€4.3M,€31K,,,Sampdoria,75.0
+181786,V. Ćorluka,Vedran Ćorluka,CB ,31,82.0,82.0,€15M,€54K,,,Lokomotiv Moscow,76.0
+199206,D. Vida,Domagoj Vida,CB RB ,28,79.0,79.0,€10M,€59K,,,Beşiktaş JK,79.0
+203890,S. Vrsaljko,Šime Vrsaljko,RB ,25,80.0,83.0,€15.5M,€54K,,,Atlético Madrid,83.0
+192593,D. Subašić,Danijel Subašić,GK ,32,84.0,84.0,€18M,€46K,,,AS Monaco,80.0
+185431,N. Kalinić,Nikola Kalinić,ST ,29,79.0,79.0,€12.5M,€84K,Milan,79.0,Fiorentina,62.0
+207410,M. Kovačić,Mateo Kovačić,CM CDM ,23,82.0,88.0,€30M,€150K,,,Real Madrid,86.0
+201144,M. Badelj,Milan Badelj,CDM CM ,28,79.0,79.0,€10M,€71K,,,Fiorentina,77.0
+195086,D. Lovren,Dejan Lovren,CB ,27,80.0,82.0,€14.5M,€110K,,,Liverpool,81.0
+215930,T. Jedvaj,Tin Jedvaj,CB RB ,21,76.0,82.0,€9M,€36K,,,Bayer 04 Leverkusen,79.0
+225263,D. Ćaleta-Car,Duje Ćaleta-Car,CB ,20,71.0,77.0,€2.8M,€15K,,,FC Red Bull Salzburg,71.0
+220932,L. Kalinić,Lovre Kalinić,GK ,27,77.0,79.0,€7M,€19K,,,KAA Gent,73.0
+229593,M. Pjaca,Marko Pjaca,LW ,22,76.0,83.0,€11M,€89K,FC Schalke 04,79.0,Juventus,676.0
+216356,J. Pivarić,Josip Pivarić,LB LM ,29,75.0,75.0,€5M,€1K,,,Dynamo Kyiv,75.0
+241670,F. Bradarić,Filip Bradarić,CDM CM ,26,70.0,74.0,€1.9M,€15K,,,Cagliari,75.0
+220018,A. Rebić,Ante Rebić,ST LW LM ,23,76.0,79.0,€10M,€30K,,,Eintracht Frankfurt,77.0
+241671,D. Livaković,Dominik Livaković,GK ,22,72.0,80.0,€3.4M,€1K,,,Dinamo Zagreb,72.0
+237209,M. Mitrović,Matej Mitrović,CB ,23,73.0,78.0,€4.5M,€34K,Club Brugge KV,75.0,Beşiktaş JK,13.0
+223273,M. Pašalić,Mario Pašalić,CM CDM ,22,76.0,85.0,€11.5M,€89K,Spartak Moscow,77.0,Chelsea,468.0
+189536,D. Čop,Duje Čop,ST ,27,72.0,72.0,€3.3M,€13K,,,Standard de Liège,73.0
+226518,A. Milić,Antonio Milić,CB LB ,23,72.0,78.0,€3.6M,€9K,,,KV Oostende,70.0
+241674,Z. Nižić,Zoran Nižić,CB ,27,63.0,63.0,€0,€0,,,Croatia,80.0
+208017,I. Santini,Ivan Santini,ST ,28,76.0,76.0,€8M,€31K,,,Stade Malherbe Caen,73.0
+236311,M. Rog,Marko Rog,CM ,21,76.0,84.0,€11.5M,€48K,,,Napoli,81.0
+220709,I. Vargić,Ivan Vargić,GK ,30,69.0,69.0,€675K,€18K,,,Lazio,80.0
+241673,B. Barišić,Borna Barišić,LB ,25,70.0,75.0,€2M,€23K,,,Rangers FC,72.0
+241672,M. Lešković,Marko Lešković,CB CDM ,27,71.0,73.0,€2.3M,€1K,,,Dinamo Zagreb,72.0
+216351,D. Antolić,Domagoj Antolić,CM CDM ,27,69.0,70.0,€1.2M,€7K,,,Legia Warszawa,71.0
+239148,F. Andrijašević,Franko Andrijašević,CAM CM ,26,73.0,75.0,€4.8M,€21K,,,KAA Gent,73.0
+193250,M. Leovac,Marin Leovac,LB LM ,28,71.0,71.0,€1.9M,€1K,,,PAOK,74.0
+241095,N. Vlašić,Nikola Vlašić,RM CAM ,19,68.0,82.0,€1.9M,€27K,,,Everton,79.0
+229594,A. Ćorić,Ante Ćorić,CAM ,21,76.0,88.0,€14M,€38K,,,Roma,81.0
+221992,H. Lozano,Hirving Lozano (Hirving Rodrigo Lozano Bahena),RW LW ,21,79.0,85.0,€17.5M,€20K,PSV,75.0,Mexico,78.0
+178224,J. Hernández,Javier Hernández (Javier Hernández Balcázar),ST ,29,79.0,79.0,€12.5M,€125K,West Ham United,77.0,Mexico,78.0
+169416,C. Vela,Carlos Vela (Carlos Alberto Vela Garrido),RW ST ,28,81.0,81.0,€0,€0,,,Mexico,78.0
+170370,J. dos Santos,Jonathan dos Santos (Jonathan dos Santos Ramírez),CM RM ,27,78.0,78.0,€10.5M,€11K,,,LA Galaxy,71.0
+186307,M. Fabián,Marco Fabián (Marco Jhonfai Fabián De La Mora),CAM RM LM ,27,79.0,79.0,€13M,€38K,Eintracht Frankfurt,77.0,Mexico,78.0
+171897,A. Guardado,Andrés Guardado (José Andrés Guardado Hernández),CM CDM ,30,81.0,81.0,€16.5M,€32K,Real Betis,78.0,Mexico,78.0
+178322,M. Layún,Miguel Layún (Miguel Arturo Layún Prado),RB LB ,29,78.0,78.0,€8M,€15K,Sevilla FC,79.0,Mexico,78.0
+173432,H. Moreno,Héctor Moreno (Héctor Alfredo Moreno Herrera),CB LB ,29,79.0,79.0,€10M,€36K,Real Sociedad,78.0,Mexico,78.0
+171896,H. Ayala,Hugo Ayala (Hugo Ayala Castro),CB ,30,75.0,75.0,€4.9M,€50K,Tigres U.A.N.L.,75.0,Mexico,78.0
+212888,C. Salcedo,Carlos Salcedo,CB ,23,75.0,79.0,€7.5M,€38K,Eintracht Frankfurt,77.0,Mexico,78.0
+140233,G. Ochoa,Guillermo Ochoa (Francisco Guillermo Ochoa Magaña),GK ,31,77.0,77.0,€5.5M,€15K,Standard de Liège,73.0,Mexico,78.0
+193165,J. Corona,Jesús Corona,RM ,24,81.0,84.0,€22.5M,€17K,FC Porto,80.0,Mexico,78.0
+204838,R. Jiménez,Raúl Jiménez (Raúl Alonso Jiménez Rodríguez),ST ,26,77.0,78.0,€10.5M,€16K,SL Benfica,78.0,Mexico,78.0
+156519,H. Herrera,Héctor Herrera (Héctor Miguel Herrera López),CM ,27,80.0,80.0,€15M,€19K,FC Porto,80.0,Mexico,78.0
+170369,G. dos Santos,Giovani dos Santos (Giovani dos Santos Ramírez),CF CAM ST ,28,78.0,78.0,€10.5M,€12K,,,LA Galaxy,71.0
+220854,E. Gutiérrez,Erick Gutiérrez,CM ,22,76.0,84.0,€11M,€30K,,,Pachuca,72.0
+26709,R. Márquez,Rafael Márquez (Rafael Márquez Álvarez),CB CDM ,38,73.0,73.0,€550K,€14K,,,Club Atlas,71.0
+156412,J. Corona,José de Jesús Corona (José de Jesús Corona Rodríguez),GK ,36,76.0,76.0,€1M,€17K,Cruz Azul,72.0,Mexico,78.0
+158543,O. Peralta,Oribe Peralta (Oribe Peralta Morones),ST ,33,75.0,75.0,€4.2M,€53K,Club América,72.0,Mexico,78.0
+226045,J. Gallardo,Jesús Gallardo,LM LB ,22,73.0,79.0,€5.5M,€19K,U.N.A.M.,71.0,Mexico,78.0
+192350,J. Aquino,Javier Aquino (Javier Ignacio Aquino Carmona),LM LW ,27,77.0,77.0,€9.5M,€65K,,,Tigres U.A.N.L.,75.0
+235844,E. Álvarez,Edson Álvarez,CB CDM ,19,72.0,82.0,€4.2M,€17K,,,Club América,72.0
+156433,A. Talavera,Alfredo Talavera (Alfredo Talavera Díaz),GK ,34,77.0,77.0,€3.6M,€16K,Deportivo Toluca,71.0,Mexico,78.0
+192012,D. Reyes,Diego Reyes (Diego Antonio Reyes Rosales),CB ,24,77.0,82.0,€10M,€13K,FC Porto,80.0,Mexico,78.0
+187013,O. Alanís,Oswaldo Alanís (Oswaldo Alanís Pantoja),CB ,28,72.0,72.0,€2.5M,€33K,,,Guadalajara,72.0
+183581,J. Molina,Jesús Molina (Jesús Antonio Molina Granados),CDM CM CB ,29,73.0,73.0,€3.1M,€46K,Monterrey,74.0,Mexico,78.0
+207444,J. Damm,Jürgen Damm,RM ,24,75.0,78.0,€8.5M,€47K,,,Tigres U.A.N.L.,75.0
+192041,N. Araujo,Néstor Araujo (Néstor Alejandro Araújo Razo),CB ,25,76.0,79.0,€8M,€23K,Santos Laguna,72.0,Mexico,78.0
+210761,R. Pizarro,Rodolfo Pizarro,CAM LM CM ,23,77.0,83.0,€12M,€50K,Guadalajara,72.0,Mexico,78.0
+186302,E. Hernández,Elías Hernández (Elías Hernán Hernández Jacuinde),RM ,29,78.0,78.0,€10M,€36K,,,Club León,72.0
+171378,P. Aguilar,Paul Aguilar (Paul Nicolás Aguilar Rojas),RB ,31,76.0,76.0,€5M,€53K,,,Club América,72.0
+224574,O. Pineda,Orbelín Pineda (Orbelín Pineda Alvarado),CM CAM CDM ,21,74.0,82.0,€8M,€38K,,,Guadalajara,72.0
+186992,J. Dueñas,Jesús Dueñas (Jesús Alberto Dueñas Manzo),CDM RB CM ,28,75.0,75.0,€5.5M,€52K,,,Tigres U.A.N.L.,75.0
+229980,C. Montes,César Montes (César Jasib Montes Castro),CB ,20,73.0,81.0,€5M,€34K,,,Monterrey,74.0
+234578,L. Reyes,Luis Reyes (Luis Ricardo Reyes Moreno),LB ,26,72.0,73.0,€3M,€14K,,,Club Atlas,71.0
+187205,L. Fuentes,Luis Fuentes (Luis Fernando Fuentes Vargas),LB ,30,71.0,71.0,€1.7M,€14K,,,U.N.A.M.,71.0
+187478,J. Pereira,Jair Pereira (Jair Pereira Rodríguez),CB ,30,72.0,72.0,€2.3M,€32K,,,Guadalajara,72.0
+184703,L. Montes,Luis Montes (Luis Arturo Montes Jiménez),CM CAM LM ,31,69.0,69.0,€900K,€17K,,,Club León,72.0
+186098,R. Cota,Rodolfo Cota (Rodolfo Cota Robles),GK ,29,74.0,74.0,€3.8M,€23K,Guadalajara,72.0,Pachuca,4.0
+140257,A. Palacios,Alejandro Palacios (Miguel Alejandro Palacios Redorta),GK ,36,74.0,74.0,€0,€0,,,Mexico,79.0
+202556,M. Depay,Memphis Depay,LW ST ,23,81.0,86.0,€24M,€71K,Olympique Lyonnais,78.0,Netherlands,80.0
+157301,R. Babel,Ryan Babel (Ryan Guno Babel),LM ST ,30,78.0,78.0,€10M,€52K,Beşiktaş JK,79.0,Netherlands,80.0
+181291,G. Wijnaldum,Georginio Wijnaldum,CM ,26,82.0,83.0,€25.5M,€130K,Liverpool,81.0,Netherlands,80.0
+193158,D. Pröpper,Davy Pröpper,CM ,25,77.0,80.0,€11M,€50K,Brighton & Hove Albion,75.0,Netherlands,80.0
+221363,D. van de Beek,Donny van de Beek,CM CDM ,20,77.0,84.0,€12.5M,€12K,Ajax,76.0,Netherlands,80.0
+203535,T. Vilhena,Tonny Vilhena (Tonny Emilio Trindade de Vilhena),CM CAM ,22,77.0,81.0,€11.5M,€17K,Feyenoord,76.0,Netherlands,80.0
+203376,V. van Dijk,Virgil van Dijk,CB ,25,84.0,86.0,€31.5M,€145K,Liverpool,81.0,Netherlands,80.0
+198176,S. de Vrij,Stefan de Vrij,CB ,25,84.0,89.0,€35M,€73K,Lazio,80.0,Netherlands,80.0
+235243,M. de Ligt,Matthijs de Ligt,CB ,17,79.0,90.0,€16.5M,€9K,Ajax,76.0,Netherlands,80.0
+216266,K. Tete,Kenny Tete,RB ,21,78.0,83.0,€11.5M,€43K,Olympique Lyonnais,78.0,Netherlands,80.0
+199987,J. Cillessen,Jasper Cillessen,GK ,28,81.0,83.0,€15M,€125K,FC Barcelona,85.0,Netherlands,80.0
+208808,Q. Promes,Quincy Promes (Quincy Anton Promes),RM ST LM ,25,83.0,84.0,€31M,€76K,Spartak Moscow,77.0,Netherlands,80.0
+226537,V. Janssen,Vincent Janssen,ST ,23,77.0,82.0,€12M,€80K,Fenerbahçe SK,77.0,Tottenham Hotspur,257.0
+189712,K. Strootman,Kevin Strootman,CM CDM ,27,83.0,83.0,€26.5M,€80K,Roma,81.0,Netherlands,80.0
+190815,D. Blind,Daley Blind,LB CB ,27,80.0,80.0,€12M,€120K,Manchester United,83.0,Netherlands,80.0
+208920,N. Aké,Nathan Aké,CB ,22,78.0,85.0,€12.5M,€52K,Bournemouth,76.0,Netherlands,80.0
+188155,D. Janmaat,Daryl Janmaat,RB RWB ,27,76.0,76.0,€6.5M,€53K,Watford,77.0,Netherlands,80.0
+190778,J. Zoet,Jeroen Zoet,GK ,26,80.0,83.0,€13M,€17K,PSV,75.0,Netherlands,80.0
+199767,M. van Ginkel,Marco van Ginkel,CM ,24,80.0,82.0,€18M,€110K,PSV,75.0,Netherlands,80.0
+189805,L. de Jong,Luuk de Jong,ST ,26,78.0,79.0,€12.5M,€21K,PSV,75.0,Netherlands,80.0
+200260,S. Berghuis,Steven Berghuis,RW LW ,25,78.0,79.0,€12.5M,€20K,Feyenoord,76.0,Netherlands,80.0
+232270,T. Fosu-Mensah,Timothy Fosu-Mensah (Timothy Evans Fosu-Mensah),RB CB ,19,74.0,83.0,€7M,€44K,Crystal Palace,76.0,Manchester United,2545.0
+200110,M. Bizot,Marco Bizot,GK ,26,75.0,78.0,€6M,€9K,AZ Alkmaar,73.0,Netherlands,80.0
+167397,Falcao,Radamel Falcao García Zarate (Radamel Falcao García Zárate),ST ,31,85.0,85.0,€34.5M,€68K,AS Monaco,80.0,Colombia,79.0
+198710,J. Rodríguez,James Rodríguez (James David Rodríguez Rubio),CAM CM RM ,25,87.0,90.0,€63M,€250K,FC Bayern München,86.0,Colombia,79.0
+219411,J. Izquierdo,José Izquierdo (José Heriberto Izquierdo Mena),LM ,24,78.0,80.0,€13M,€46K,Brighton & Hove Albion,75.0,Colombia,79.0
+193082,J. Cuadrado,Juan Cuadrado,RM ,29,83.0,83.0,€25.5M,€130K,,,Juventus,85.0
+177974,A. Aguilar,Abel Aguilar (Abel Enrique Aguilar Tapia),CDM ,32,73.0,73.0,€2.3M,€4K,Deportivo Cali,71.0,Colombia,79.0
+214394,W. Barrios,Wilmar Barrios (Wílmar Enrique Barrios Terán),CDM CM ,23,77.0,84.0,€10.5M,€21K,Boca Juniors,75.0,Colombia,79.0
+214603,F. Díaz,Farid Díaz (Farid Alfonso Díaz Rhenals),LB ,34,72.0,72.0,€0,€0,,,Colombia,80.0
+198581,O. Murillo,Óscar Murillo (Oscar Fabián Murillo Murillo),CB ,29,76.0,76.0,€6M,€33K,Pachuca,72.0,Colombia,79.0
+177983,C. Zapata,Cristian Zapata (Cristian Eduardo Zapata Valencia),CB ,30,78.0,78.0,€7.5M,€80K,Milan,79.0,Colombia,79.0
+204259,S. Arias,Santiago Arias (Santiago Arias Naranjo),RB ,25,78.0,80.0,€10.5M,€17K,PSV,75.0,Colombia,79.0
+176550,D. Ospina,David Ospina (David Ospina Ramírez),GK ,28,78.0,78.0,€7.5M,€76K,Arsenal,82.0,Colombia,79.0
+207664,C. Bacca,Carlos Bacca (Carlos Arturo Bacca Ahumada),ST ,30,82.0,82.0,€21.5M,€125K,Villarreal CF,79.0,Colombia,79.0
+199110,L. Muriel,Luis Muriel (Luis Fernando Muriel Fruto),ST ,26,80.0,81.0,€17.5M,€26K,Sevilla FC,79.0,Colombia,79.0
+182882,C. Sánchez,Carlos Sánchez,CDM CB ,31,77.0,77.0,€6M,€56K,RCD Espanyol,78.0,Colombia,79.0
+213991,J. Lerma,Jefferson Lerma (Jefferson Andrés Lerma Solís),CDM CM RB ,22,76.0,84.0,€10M,€21K,Levante UD,75.0,Colombia,79.0
+214047,M. Uribe,Matheus Uribe (Andrés Mateus Uribe Villa),CM CDM RW ,26,74.0,75.0,€6.5M,€48K,Club América,72.0,Colombia,79.0
+220793,D. Sánchez,Davinson Sánchez,CB ,21,82.0,88.0,€26M,€76K,Tottenham Hotspur,83.0,Colombia,79.0
+212067,C. Vargas,Camilo Vargas (Camilo Andrés Vargas Gil),GK ,28,75.0,76.0,€5.5M,€5K,Deportivo Cali,71.0,Colombia,79.0
+214110,J. Cuadrado,José Cuadrado (José Fernando Cuadrado Romero),GK ,32,75.0,75.0,€3.8M,€2K,Once Caldas,66.0,Colombia,79.0
+219862,M. Borja,Miguel Borja,ST ,24,77.0,80.0,€0,€0,,,Colombia,79.0
+220523,Y. Mina,Yerry Mina,CB ,22,80.0,87.0,€18M,€125K,FC Barcelona,85.0,Colombia,79.0
+214026,J. Mojica,Johan Mojica (Johan Andrés Mojica Palacio),LM LWB LB ,24,73.0,76.0,€5M,€11K,Girona FC,75.0,Colombia,79.0
+210513,J. Quintero,Juan Fernando Quintero,CAM ,24,77.0,82.0,€12M,€14K,River Plate,75.0,Colombia,79.0
+214040,F. Fabra,Frank Fabra (Frank Yusty Fabra Palacios),LB ,26,76.0,77.0,€7.5M,€25K,Boca Juniors,75.0,Colombia,79.0
+196147,G. Moreno,Giovanni Moreno,CAM CM ST ,32,78.0,78.0,€8M,€19K,,,Shanghai Greenland Shenhua FC,67.0
+214132,Y. Chará,Yimmi Chará (Yimmi Javier Chará Zamora),RM ST CAM RW ,26,78.0,78.0,€11M,€6K,Junior FC,72.0,Colombia,79.0
+214606,S. Pérez,Sebastián Pérez (Sebastián Pérez Cardona),CM CDM ,24,73.0,78.0,€5.5M,€20K,,,Boca Juniors,75.0
+214009,G. Cuéllar,Gustavo Cuéllar (Gustavo Leonardo Cuéllar Gallego),CDM ,24,76.0,82.0,€0,€0,,,Colombia,79.0
+192342,E. Cardona,Edwin Cardona (Edwin Andrés Cardona Bedoya),LW LM CM ,24,74.0,77.0,€7M,€46K,Boca Juniors,75.0,Monterrey,304.0
+196150,T. Gutiérrez,Teófilo Gutiérrez,ST CAM CF ,32,78.0,78.0,€8.5M,€6K,,,Junior FC,72.0
+215333,D. Zapata,Duván Zapata,ST ,26,78.0,79.0,€12.5M,€67K,Sampdoria,75.0,Colombia,79.0
+186521,B. Espinosa,Bernardo Espinosa (Bernardo José Espinosa Zúñiga),CB ,27,76.0,77.0,€7.5M,€25K,,,Girona FC,75.0
+214169,W. Tesillo,William Tesillo (William José Tesillo Gutiérrez),CB ,27,75.0,76.0,€6.5M,€5K,,,Independiente Santa Fe,70.0
+214601,S. Medina,Stefan Medina (Jhon Stefan Medina Ramírez),RB CB RWB ,25,72.0,76.0,€3.3M,€30K,,,Monterrey,74.0
+214190,L. Castellanos,Leandro Castellanos (Andrés Leandro Castellanos Serrano),GK ,33,73.0,73.0,€2M,€4K,,,Independiente Santa Fe,70.0
+214605,A. Mejía,Alexander Mejía (Alexander Mejía Sabalsa),CDM ,28,76.0,76.0,€6M,€33K,,,Club León,72.0
+214332,D. Torres,Daniel Torres (Daniel Alejandro Torres Rojas),CDM CM ,27,77.0,78.0,€8.5M,€25K,,,Deportivo Alavés,75.0
+201377,J. Murillo,Jeison Murillo (Jeison Fabián Murillo Cerón),CB ,25,80.0,84.0,€16M,€64K,Valencia CF,80.0,Inter,259.0
+196142,M. Torres,Macnelly Torres,CM ,32,76.0,76.0,€6M,€8K,,,Atlético Nacional,73.0
+196144,J. Martínez,Jackson Martínez,ST ,31,77.0,77.0,€8M,€22K,Portimonense SC,71.0,Guangzhou Evergrande Taobao FC,186.0
+187491,F. Smolov,Fedor Smolov (Fyodor Smolov),ST ,27,81.0,81.0,€19M,€59K,FC Krasnodar,76.0,Russia,78.0
+225663,A. Golovin,Alexandr Golovin,CM CDM LM ,21,79.0,85.0,€17M,€45K,PFC CSKA Moscow,76.0,Russia,78.0
+206225,D. Cheryshev,Denis Cheryshev,LM LW ST ,26,76.0,76.0,€8.5M,€35K,,,Villarreal CF,79.0
+147621,A. Samedov,Alexandr Samedov (Aleksandr Samedov),RM ,32,79.0,79.0,€10M,€74K,Spartak Moscow,77.0,Russia,78.0
+213160,R. Zobnin,Roman Zobnin,CDM CM LM ,23,78.0,85.0,€12.5M,€48K,,,Spartak Moscow,77.0
+216335,Y. Gazinskiy,Yuriy Gazinskiy (Yury Gazinskiy),CDM CM ,27,75.0,75.0,€5.5M,€35K,,,FC Krasnodar,76.0
+154950,Y. Zhirkov,Yuriy Zhirkov (Yuri Zhirkov),LB LM ,33,75.0,75.0,€2.6M,€47K,Zenit St. Petersburg,77.0,Russia,78.0
+112542,S. Ignashevich,Sergey Ignashevich (Sergei Ignashevich),CB ,37,77.0,77.0,€1.2M,€31K,,,PFC CSKA Moscow,76.0
+210468,I. Kutepov,Ilya Kutepov,CB ,23,73.0,81.0,€5M,€40K,Spartak Moscow,77.0,Russia,78.0
+193525,Mário Fernandes,Mário Figueira Fernandes,RWB RM ,26,81.0,81.0,€15M,€52K,PFC CSKA Moscow,76.0,Russia,78.0
+148119,I. Akinfeev,Igor Akinfeev,GK ,31,80.0,80.0,€9M,€42K,PFC CSKA Moscow,76.0,Russia,78.0
+187607,A. Dzyuba,Artem Dzyuba,ST ,28,77.0,77.0,€9M,€70K,Arsenal Tula,70.0,Zenit St. Petersburg,194.0
+187735,A. Dzagoev,Alan Dzagoev,CM CDM CF ,27,80.0,80.0,€15M,€57K,PFC CSKA Moscow,76.0,Russia,78.0
+214092,A. Miranchuk,Alexey Miranchuk (Aleksey Miranchuk),CAM ST ,21,77.0,84.0,€12.5M,€35K,Lokomotiv Moscow,76.0,Russia,78.0
+222368,A. Miranchuk,Anton Miranchuk,CAM ,21,73.0,82.0,€6M,€30K,,,Lokomotiv Moscow,76.0
+187347,I. Smolnikov,Igor Smolnikov,RB ,28,79.0,79.0,€10M,€71K,Zenit St. Petersburg,77.0,Russia,78.0
+187415,V. Granat,Vladimir Granat,CB ,30,72.0,72.0,€2.3M,€26K,,,Rubin Kazan,71.0
+147579,V. Gabulov,Vladimir Gabulov,GK ,33,74.0,74.0,€2.8M,€17K,Club Brugge KV,75.0,Russia,78.0
+229909,A. Lunev,Andrey Lunev,GK ,25,79.0,81.0,€10.5M,€51K,Zenit St. Petersburg,77.0,Russia,78.0
+181795,F. Kudryashov,Fedor Kudryashov,CB LWB ,30,73.0,73.0,€3M,€37K,Rubin Kazan,71.0,Russia,78.0
+223058,D. Kuzyaev,Daler Kuzyaev,CM CDM RM ,24,77.0,80.0,€11M,€54K,Zenit St. Petersburg,77.0,Russia,78.0
+203629,A. Erokhin,Alexandr Erokhin (Aleksandr Erokhin),CM CDM CAM ,27,74.0,74.0,€6M,€52K,Zenit St. Petersburg,77.0,Russia,78.0
+211592,A. Semenov,Andrey Semenov,CB ,28,74.0,75.0,€5M,€31K,,,Terek Grozny,71.0
+186274,K. Rausch,Konstantin Rausch,LB LM ,27,72.0,72.0,€2.6M,€21K,Dinamo Moscow,71.0,Russia,78.0
+186296,R. Neustädter,Roman Neustädter,CB CDM ,29,75.0,75.0,€5M,€53K,Fenerbahçe SK,77.0,Russia,78.0
+189581,R. Kambolov,Ruslan Kambolov,CB CM CDM ,27,73.0,75.0,€3.9M,€37K,,,Rubin Kazan,71.0
+187366,D. Glushakov,Denis Glushakov,CDM CM ,30,77.0,77.0,€6.5M,€56K,Spartak Moscow,77.0,Russia,78.0
+187492,D. Kombarov,Dmitriy Kombarov,LB LWB ,30,73.0,73.0,€2.9M,€47K,Spartak Moscow,77.0,Russia,78.0
+201452,D. Poloz,Dmitriy Poloz,LW LM ST ,25,76.0,76.0,€8.5M,€64K,,,Zenit St. Petersburg,77.0
+206133,A. Shvets,Anton Shvets,CDM CM ,24,69.0,76.0,€1.3M,€15K,,,Terek Grozny,71.0
+192146,V. Ignatiev,Vladislav Ignatiev (Vladislav Ignatyev),RB RM LM ,30,72.0,72.0,€2.2M,€25K,,,Lokomotiv Moscow,76.0
+194662,A. Zabolotnyy,Anton Zabolotnyy (Anton Zabolotnyi),ST ,26,69.0,72.0,€1.3M,€33K,Zenit St. Petersburg,77.0,Russia,78.0
+180714,Guilherme,Guilherme Alvim Marinato,GK ,31,78.0,78.0,€6.5M,€33K,,,Lokomotiv Moscow,76.0
+192086,A. Kokorin,Alexandr Kokorin (Aleksandr Kokorin),ST RW ,26,80.0,81.0,€17.5M,€80K,Zenit St. Petersburg,77.0,Russia,78.0
+187517,V. Vasin,Viktor Vasin,CB ,28,77.0,78.0,€8M,€46K,,,PFC CSKA Moscow,76.0
+229773,G. Dzhikiya,Georgiy Dzhikiya,CB ,23,76.0,82.0,€9M,€48K,Spartak Moscow,77.0,Russia,78.0
+213732,A. Selikhov,Alexandr Selikhov,GK ,23,78.0,83.0,€10M,€37K,,,Spartak Moscow,77.0
+167549,R. Shishkin,Roman Shishkin,RB CDM CB ,30,75.0,75.0,€4.8M,€35K,,,FC Krasnodar,76.0
+187659,D. Tarasov,Dmitriy Tarasov,CDM ,30,75.0,75.0,€4.9M,€35K,Lokomotiv Moscow,76.0,Russia,78.0
+194876,M. Kanunnikov,Maxim Kanunnikov (Maksim Kanunnikov),ST RM ,25,72.0,75.0,€4M,€17K,,,SKA Khabarovsk,67.0
+212196,P. Sisto,Pione Sisto (Pione Sisto Ifolo Emirmija),LW LM ,22,77.0,84.0,€12.5M,€26K,RC Celta,78.0,Denmark,77.0
+199852,N. Jørgensen,Nicolai Jørgensen,ST ,26,77.0,78.0,€10.5M,€21K,Feyenoord,76.0,Denmark,77.0
+207791,Y. Poulsen,Yussuf Poulsen (Yussuf Yurary Poulsen),ST ,23,77.0,82.0,€12M,€58K,RB Leipzig,78.0,Denmark,77.0
+190460,C. Eriksen,Christian Eriksen (Christian  Dannemann Eriksen),CAM RM CM ,25,88.0,91.0,€74.5M,€210K,Tottenham Hotspur,83.0,Denmark,77.0
+193283,T. Delaney,Thomas Delaney,CM CDM ,25,78.0,81.0,€13M,€30K,SV Werder Bremen,76.0,Denmark,77.0
+158676,W. Kvist,William Kvist (William Vitved Kvist Jørgensen),CM ,32,67.0,67.0,€575K,€13K,FC København,71.0,Denmark,77.0
+193133,J. Stryger Larsen,Jens Stryger Larsen,CB RB ,26,74.0,76.0,€5.5M,€24K,Udinese,74.0,Denmark,77.0
+213661,A. Christensen,Andreas Christensen,CB ,21,82.0,90.0,€28.5M,€93K,Chelsea,83.0,Denmark,77.0
+179645,S. Kjær,Simon Kjær (Simon Thorup Kjær),CB ,28,78.0,79.0,€9.5M,€19K,Sevilla FC,79.0,Denmark,77.0
+190633,H. Dalsgaard,Henrik Dalsgaard,RB ,27,71.0,71.0,€2M,€27K,Brentford,70.0,Denmark,77.0
+163587,K. Schmeichel,Kasper Schmeichel,GK ,30,82.0,82.0,€14M,€65K,Leicester City,78.0,Denmark,77.0
+228687,K. Dolberg,Kasper Dolberg,ST CAM ,19,76.0,85.0,€11.5M,€10K,Ajax,76.0,Denmark,77.0
+201943,A. Cornelius,Andreas Cornelius (Andreas Evald Cornelius),ST ,24,75.0,80.0,€9M,€25K,Atalanta,76.0,Denmark,77.0
+172143,L. Schøne,Lasse Schøne (Lasse Schöne),CM CDM ,31,76.0,76.0,€6.5M,€15K,Ajax,76.0,Denmark,77.0
+159240,M. Krohn-Dehli,Michael Krohn-Dehli,LM CM CAM CDM ,34,77.0,77.0,€4.5M,€27K,,,Deportivo de La Coruña,77.0
+183491,M. Jørgensen,Mathias Jørgensen,CB ,27,75.0,77.0,€6.5M,€40K,,,Huddersfield Town,74.0
+199748,J. Knudsen,Jonas Knudsen,LB CB LWB ,24,70.0,75.0,€2M,€12K,,,Ipswich Town,70.0
+172553,J. Lössl,Jonas Lössl,GK ,28,75.0,76.0,€5.5M,€34K,Huddersfield Town,74.0,Denmark,77.0
+202849,J. Vestergaard,Jannik Vestergaard,CB ,24,80.0,82.0,€15.5M,€36K,,,Borussia Mönchengladbach,78.0
+193290,M. Braithwaite,Martin Braithwaite,CAM ST LM ,26,75.0,78.0,€8.5M,€19K,FC Girondins de Bordeaux,75.0,Middlesbrough,352.0
+203965,V. Fischer,Viktor Fischer,LM LW ST ,23,76.0,82.0,€10.5M,€22K,FC København,71.0,Denmark,77.0
+217605,L. Lerager,Lukas Lerager (Lukas Reiff Lerager),CM CDM ,23,74.0,78.0,€7M,€33K,,,FC Girondins de Bordeaux,75.0
+201269,F. Rønnow,Frederik Rønnow,GK ,24,74.0,80.0,€5.5M,€12K,Brøndby IF,70.0,Denmark,77.0
+172517,M. Jensen,Mike Jensen (Mike Lindemann Jensen),CM ,29,74.0,74.0,€5.5M,€9K,Rosenborg BK,70.0,Denmark,77.0
+167706,N. Bendtner,Nicklas Bendtner,ST ,29,74.0,74.0,€5.5M,€10K,Rosenborg BK,70.0,Denmark,77.0
+208564,P. Ankersen,Peter Ankersen,RB ,26,71.0,71.0,€2M,€14K,FC København,71.0,Denmark,77.0
+183781,A. Bjelland,Andreas Bjelland,CB LB ,28,72.0,72.0,€2.5M,€29K,Brentford,70.0,Denmark,77.0
+172522,D. Wass,Daniel Wass,CM RM RB ,28,81.0,81.0,€17.5M,€33K,RC Celta,78.0,Denmark,77.0
+184218,L. Vibe,Lasse Vibe,ST RW ,31,71.0,71.0,€2.1M,€9K,,,Changchun Yatai FC,66.0
+132740,J. Hansen,Jesper Hansen,GK ,32,73.0,73.0,€2.3M,€20K,,,FC Midtjylland,70.0
+211385,R. Durmisi,Riza Durmisi,LB LWB ,23,73.0,80.0,€4.7M,€18K,Real Betis,78.0,Denmark,77.0
+213648,P. Højbjerg,Pierre-Emile Højbjerg,CM CDM ,21,76.0,81.0,€10M,€61K,,,Southampton,76.0
+201342,F. Sørensen,Frederik Sørensen (Frederik Hillesborg Sørensen),CB RB ,25,76.0,80.0,€8.5M,€33K,,,1. FC Köln,76.0
+205929,N. Thomsen,Nicolaj Thomsen,LM RM RB ,24,69.0,72.0,€1.3M,€11K,,,FC København,71.0
+177373,L. Nielsen,Lasse Nielsen,CB ,29,70.0,70.0,€1.4M,€5K,,,Malmö FF,69.0
+199745,E. Sviatchenko,Erik Sviatchenko,CB ,25,73.0,75.0,€4.1M,€42K,FC Midtjylland,70.0,Celtic,69.0
+215247,M. Ingvartsen,Marcus Ingvartsen,ST ,21,70.0,77.0,€2.6M,€10K,,,KRC Genk,72.0
+190947,D. Jensen,David Jensen,GK ,25,74.0,77.0,€5M,€9K,,,FC Utrecht,72.0
+201303,R. Falk Jensen,Rasmus Falk Jensen,RM LM ,25,74.0,74.0,€6M,€20K,,,FC København,71.0
+184941,A. Sánchez,Alexis Sánchez (Alexis Alejandro Sánchez Sánchez),LW ST LM ,28,88.0,88.0,€60M,€325K,Manchester United,83.0,Chile,77.0
+212878,N. Castillo,Nicolás Castillo,ST ,24,76.0,81.0,€10.5M,€25K,U.N.A.M.,71.0,Chile,77.0
+192492,F. Orellana,Fabián Orellana,CAM RM LM CM ,31,78.0,78.0,€9M,€24K,,,SD Eibar,77.0
+199827,P. Hernández,Pablo Hernández (Pedro Pablo Hernández),CM CAM CDM ,30,80.0,80.0,€13.5M,€32K,RC Celta,78.0,Chile,77.0
+199042,C. Aránguiz,Charles Aránguiz (Charles Mariano Aránguiz Sandoval),CM CDM ,28,80.0,80.0,€14.5M,€65K,Bayer 04 Leverkusen,79.0,Chile,77.0
+181872,A. Vidal,Arturo Vidal,CDM CM ,30,86.0,86.0,€33M,€160K,FC Bayern München,86.0,Chile,77.0
+158851,J. Beausejour,Jean Beausejour (Jean André Emanuel Beausejour Coliqueo),LB LW ,33,75.0,75.0,€2.6M,€12K,Universidad de Chile,71.0,Chile,77.0
+193532,G. Medel,Gary Medel (Gary Alexis Medel Soto),CDM CB ,29,81.0,81.0,€14M,€59K,Beşiktaş JK,79.0,Chile,77.0
+194795,G. Jara,Gonzalo Jara (Gonzalo Alejandro Jara Reyes),CB ,31,75.0,75.0,€4.5M,€12K,,,Universidad de Chile,71.0
+187800,M. Isla,Mauricio Isla (Mauricio Aníbal Isla Isla),RB CM ,29,77.0,77.0,€6.5M,€63K,Fenerbahçe SK,77.0,Chile,77.0
+174543,C. Bravo,Claudio Bravo (Claudio Andrés Bravo Muñoz),GK ,34,80.0,80.0,€6M,€97K,Manchester City,84.0,Chile,77.0
+196073,E. Paredes,Esteban Paredes,ST ,36,76.0,76.0,€2.8M,€8K,,,Colo-Colo,72.0
+206655,E. Vargas,Eduardo Vargas,ST CAM ,27,75.0,75.0,€7M,€59K,Tigres U.A.N.L.,75.0,Chile,77.0
+157492,J. Valdivia,Jorge Valdivia (Jorge Luís Valdivia Toro),CAM CF ,33,78.0,78.0,€6.5M,€10K,,,Colo-Colo,72.0
+176930,M. Díaz,Marcelo Díaz (Marcelo Alfonso Díaz Rojas),CM CDM ,30,77.0,77.0,€8M,€26K,,,U.N.A.M.,71.0
+203801,F. Silva,Francisco Silva (Francisco Andrés Silva Gajardo),CM CDM ,31,73.0,73.0,€3.4M,€29K,,,Cruz Azul,72.0
+212225,E. Roco,Enzo Roco (Enzo Pablo Roco Roco),CB ,24,75.0,78.0,€7M,€23K,Cruz Azul,72.0,Chile,77.0
+174542,J. Herrera,Johnny Herrera (Jhonny Cristián Herrera Muñoz),GK ,36,75.0,75.0,€900K,€6K,Universidad de Chile,71.0,Chile,77.0
+214436,P. Díaz,Paulo Díaz (Paulo César Díaz Huincales),RB LB CB ,22,72.0,81.0,€4.1M,€12K,San Lorenzo de Almagro,74.0,Chile,77.0
+218747,C. Pinares,César Pinares (César Ignacio Pinares Tamayo),CAM CM LM ,26,72.0,73.0,€3.7M,€6K,,,Colo-Colo,72.0
+197973,O. González,Osvaldo González (Osvaldo Alexis González Sepúlveda),CB ,32,71.0,71.0,€1.4M,€12K,,,Deportivo Toluca,71.0
+196069,J. Fuenzalida,José Pedro Fuenzalida,RW RB ,33,74.0,74.0,€3.4M,€11K,,,Universidad Católica,70.0
+239035,G. Collao,Gonzalo Collao,GK ,19,64.0,78.0,€0,€0,,,Chile,78.0
+215716,A. Mitrović,Aleksandar Mitrović,ST ,22,76.0,81.0,€10.5M,€66K,Fulham,72.0,Newcastle United,897.0
+223848,S. Milinković-Savić,Sergej Milinković-Savić,CM CAM ,22,83.0,89.0,€35M,€56K,,,Lazio,80.0
+208574,F. Kostić,Filip Kostić,LM ,24,78.0,81.0,€13M,€33K,,,Hamburger SV,74.0
+199434,D. Tadić,Dušan Tadić,CAM RM ,28,79.0,79.0,€12.5M,€98K,,,Southampton,76.0
+191202,N. Matić,Nemanja Matić,CDM CM ,28,85.0,85.0,€31M,€180K,,,Manchester United,83.0
+206304,L. Milivojević,Luka Milivojević,CDM CM ,26,78.0,81.0,€11M,€53K,,,Crystal Palace,76.0
+185103,A. Kolarov,Aleksandar Kolarov,LB CB ,31,81.0,81.0,€11.5M,€68K,,,Roma,81.0
+176377,D. Tošić,Duško Tošić,CB LB ,32,75.0,75.0,€3.8M,€40K,,,Beşiktaş JK,79.0
+178372,B. Ivanović,Branislav Ivanović,CB RB ,33,82.0,82.0,€9M,€73K,,,Zenit St. Petersburg,77.0
+181816,A. Rukavina,Antonio Rukavina,RB LB RM ,33,76.0,76.0,€3M,€32K,,,Villarreal CF,79.0
+167993,V. Stojković,Vladimir Stojković,GK ,33,74.0,74.0,€0,€0,,,Serbia,78.0
+189757,A. Prijović,Aleksandar Prijović,ST CF ,27,74.0,74.0,€6M,€1K,,,PAOK,74.0
+220746,A. Živković,Andrija Živković,CAM CM LW ,20,78.0,86.0,€15.5M,€11K,,,SL Benfica,78.0
+190544,A. Ljajić,Adem Ljajić,CAM LW ,25,80.0,82.0,€18M,€54K,,,Torino,77.0
+232099,M. Grujić,Marko Grujić,CDM CM ,21,72.0,85.0,€5.5M,€40K,Cardiff City,71.0,Liverpool,622.0
+221354,M. Veljković,Miloš Veljković (Milos Veljkovic),CB CDM ,21,75.0,83.0,€8.5M,€19K,,,SV Werder Bremen,76.0
+238095,N. Milenković,Nikola Milenković,CB RB ,19,72.0,82.0,€4.2M,€18K,,,Fiorentina,77.0
+227290,M. Dmitrović,Marko Dmitrović,GK ,25,75.0,78.0,€6M,€14K,,,SD Eibar,77.0
+213163,M. Rodić,Milan Rodić,LB ,26,69.0,71.0,€0,€0,,,Serbia,78.0
+215892,U. Spajić,Uroš Spajić,CB RB ,24,73.0,77.0,€4.4M,€18K,,,RSC Anderlecht,74.0
+243656,N. Radonjić,Nemanja Radonjić,LW ,22,73.0,80.0,€5.5M,€31K,,,Olympique de Marseille,79.0
+232432,L. Jović,Luka Jović,ST ,19,74.0,83.0,€8.5M,€8K,Eintracht Frankfurt,77.0,SL Benfica,427.0
+241727,P. Rajković,Predrag Rajković,GK ,21,69.0,77.0,€0,€0,,,Serbia,78.0
+205362,M. Nastasić,Matija Nastasić,CB ,24,81.0,84.0,€19M,€38K,,,FC Schalke 04,79.0
+239433,N. Maksimović,Nemanja Maksimović,CDM CM RM ,22,73.0,80.0,€4.8M,€22K,,,Valencia CF,80.0
+230564,M. Gaćinović,Mijat Gaćinović,CM LM CAM RW ,22,75.0,81.0,€9M,€23K,,,Eintracht Frankfurt,77.0
+234735,A. Jovanović,Aleksandar Jovanović,GK ,24,65.0,70.0,€525K,€3K,,,Aarhus GF,66.0
+193714,N. Pejčinović,Nemanja Pejčinović,CB RB ,29,77.0,77.0,€7M,€43K,,,Lokomotiv Moscow,76.0
+209547,S. Mitrović,Stefan Mitrović,CB ,27,73.0,75.0,€3.9M,€19K,,,KAA Gent,73.0
+225028,N. Radoja,Nemanja Radoja,CM CDM ,24,78.0,83.0,€13.5M,€23K,,,RC Celta,78.0
+105454,Z. Tošić,Zoran Tošić,RM ,30,76.0,76.0,€0,€0,,,Serbia,78.0
+204874,A. Katai,Aleksandar Katai,LM LW CAM ,26,74.0,74.0,€6M,€23K,Chicago Fire,68.0,Deportivo Alavés,4.0
+191198,I. Obradović,Ivan Obradović,LB LWB CB ,28,73.0,73.0,€3.2M,€21K,,,RSC Anderlecht,74.0
+193198,N. Gudelj,Nemanja Gudelj,CDM CM ,26,78.0,80.0,€10.5M,€19K,Sporting CP,79.0,Guangzhou Evergrande Taobao FC,162.0
+215466,N. Maksimović,Nikola Maksimović,CB ,25,78.0,81.0,€11M,€54K,Spartak Moscow,77.0,Napoli,511.0
+194947,J. Vuković,Jagoš Vuković,CB ,29,75.0,75.0,€5M,€25K,,,Hellas Verona,72.0
+212125,L. Marković,Lazar Marković (Lazar  Marković),RM CF ,23,75.0,79.0,€8.5M,€71K,RSC Anderlecht,74.0,Liverpool,634.0
+221430,U. Đurđević,Uroš Đurđević,ST ,23,73.0,78.0,€5.5M,€1K,,,Olympiacos CFP,75.0
+183376,L. Fejsa,Ljubomir Fejsa,CDM CM ,28,82.0,82.0,€18M,€18K,,,SL Benfica,78.0
+183606,S. Rajković,Slobodan Rajković,CB ,28,73.0,73.0,€3.2M,€5K,,,Palermo,70.0
+193408,H. Seferović,Haris Seferović,ST ,25,74.0,76.0,€7M,€13K,SL Benfica,78.0,Switzerland,78.0
+138699,B. Džemaili,Blerim Džemaili,CM CAM ,31,77.0,77.0,€7.5M,€54K,Bologna,76.0,Switzerland,78.0
+190059,S. Zuber,Steven Zuber,LWB LM LB ,25,76.0,78.0,€7.5M,€33K,TSG 1899 Hoffenheim,78.0,Switzerland,78.0
+193348,X. Shaqiri,Xherdan Shaqiri,RW RM CAM ,25,82.0,83.0,€26.5M,€92K,Stoke City,76.0,Switzerland,78.0
+229261,D. Zakaria,Denis Zakaria (Denis Lemi Zakaria Lako Lado),CM CDM ,20,77.0,86.0,€13.5M,€30K,Borussia Mönchengladbach,78.0,Switzerland,78.0
+199503,G. Xhaka,Granit Xhaka,CM CDM ,24,82.0,85.0,€27.5M,€110K,Arsenal,82.0,Switzerland,78.0
+193352,R. Rodríguez,Ricardo Rodríguez,LB CB LM ,24,80.0,83.0,€15.5M,€83K,Milan,79.0,Switzerland,78.0
+229237,M. Akanji,Manuel Akanji (Manuel Obafemi Akanji),CB ,21,75.0,86.0,€10M,€32K,Borussia Dortmund,81.0,Switzerland,78.0
+210047,F. Schär,Fabian Schär,CB ,25,77.0,81.0,€9.5M,€23K,Deportivo de La Coruña,77.0,Switzerland,78.0
+108080,S. Lichtsteiner,Stephan Lichtsteiner,RB RM ,33,80.0,80.0,€5.5M,€105K,Juventus,85.0,Switzerland,78.0
+177683,Y. Sommer,Yann Sommer,GK ,28,82.0,83.0,€18M,€39K,Borussia Mönchengladbach,78.0,Switzerland,78.0
+222357,B. Embolo,Breel Embolo (Breel-Donald Embolo),ST RW ,20,76.0,86.0,€12.5M,€35K,FC Schalke 04,79.0,Switzerland,78.0
+198504,J. Drmić,Josip Drmić (Josip Drmic),ST RM ,24,74.0,79.0,€7.5M,€31K,Borussia Mönchengladbach,78.0,Switzerland,78.0
+161805,V. Behrami,Valon Behrami,CDM CM ,32,75.0,75.0,€3.8M,€24K,Udinese,74.0,Switzerland,78.0
+202024,R. Freuler,Remo Freuler,CM ,25,76.0,79.0,€9.5M,€30K,Atalanta,76.0,Switzerland,78.0
+221491,N. Elvedi,Nico Elvedi,RB CB LB ,20,76.0,83.0,€9M,€26K,Borussia Mönchengladbach,78.0,Switzerland,78.0
+162893,J. Djourou,Johan Djourou (Johan Danon Djourou-Gbadjere),CB ,30,73.0,73.0,€3M,€17K,Antalyaspor,70.0,Switzerland,78.0
+189117,R. Bürki,Roman Bürki,GK ,26,81.0,84.0,€15.5M,€49K,Borussia Dortmund,81.0,Switzerland,78.0
+158438,Gelson Fernandes,Gelson Tavares Fernandes (Gélson da Conceição Tavares Fernandes),CDM CM ,30,76.0,76.0,€5.5M,€29K,Eintracht Frankfurt,77.0,Switzerland,78.0
+184501,M. Lang,Michael Lang,RB RM ,26,78.0,79.0,€10M,€38K,FC Basel 1893,73.0,Switzerland,78.0
+179565,M. Gavranović,Mario Gavranović,ST CAM ,27,72.0,72.0,€0,€0,,,Switzerland,78.0
+198067,F. Moubandje,François Moubandje (Jacques François Moubandje),LB ,27,73.0,74.0,€3.7M,€25K,Toulouse Football Club,74.0,Switzerland,78.0
+206003,Y. Mvogo,Yvon Mvogo,GK ,23,75.0,81.0,€6.5M,€31K,RB Leipzig,78.0,Switzerland,78.0
+216158,S. Widmer,Silvan Widmer,RM RB ,24,76.0,78.0,€9.5M,€27K,,,Udinese,74.0
+215556,E. Fernandes,Edimilson Fernandes,CAM CM RWB ,21,71.0,80.0,€3.7M,€43K,,,West Ham United,77.0
+210537,R. Steffen,Renato Steffen,LM RM CAM ,25,76.0,77.0,€9M,€58K,,,VfL Wolfsburg,77.0
+183346,F. Frei,Fabian Frei,CM CDM CAM CB ,28,75.0,75.0,€6.5M,€36K,,,FC Basel 1893,73.0
+199895,L. Lacroix,Léo Lacroix,CB ,25,72.0,77.0,€3.5M,€20K,FC Basel 1893,73.0,AS Saint-Étienne,26.0
+179972,E. Derdiyok,Eren Derdiyok,ST ,29,75.0,75.0,€6.5M,€56K,,,Galatasaray SK,77.0
+199383,T. Klose,Timm Klose,CB ,29,74.0,74.0,€4.4M,€34K,,,Norwich City,71.0
+183187,V. Stocker,Valentin Stocker,CAM LM RM RW ,28,74.0,74.0,€5.5M,€36K,,,FC Basel 1893,73.0
+215598,S. Tarashaj,Shani Tarashaj,CAM ,22,68.0,75.0,€1.3M,€42K,,,Everton,79.0
+223143,U. Garcia,Ulisses Garcia,LB LM ,21,67.0,75.0,€975K,€11K,1. FC Nürnberg,70.0,SV Werder Bremen,59.0
+190243,M. Hitz,Marwin Hitz,GK ,29,79.0,79.0,€8.5M,€27K,,,FC Augsburg,75.0
+188770,A. Mehmedi,Admir Mehmedi,RM ST LM ,26,76.0,76.0,€8.5M,€60K,,,VfL Wolfsburg,77.0
+176733,M. Berg,Marcus Berg,ST CF ,30,80.0,80.0,€0,€0,,,Sweden,76.0
+176794,O. Toivonen,Ola Toivonen,CAM CF ST ,30,73.0,73.0,€3.8M,€28K,Toulouse Football Club,74.0,Sweden,76.0
+208448,E. Forsberg,Emil Forsberg,CAM LM ,25,82.0,84.0,€27M,€75K,RB Leipzig,78.0,Sweden,76.0
+177448,G. Svensson,Gustav Svensson,CDM CB CM ,30,74.0,74.0,€4.2M,€8K,Seattle Sounders FC,72.0,Sweden,76.0
+164459,S. Larsson,Sebastian Larsson,CM CDM ,32,70.0,70.0,€1.3M,€9K,Hull City,71.0,Sweden,76.0
+207554,V. Claesson,Viktor Claesson,CAM LM CM ,25,75.0,78.0,€8.5M,€36K,FC Krasnodar,76.0,Sweden,76.0
+184472,M. Olsson,Martin Olsson,LB LWB ,29,75.0,75.0,€5M,€55K,Swansea City,75.0,Sweden,76.0
+156713,A. Granqvist,Andreas Granqvist,CB ,32,80.0,80.0,€8.5M,€50K,FC Krasnodar,76.0,Sweden,76.0
+221660,V. Lindelöf,Victor Lindelöf (Victor Nilsson Lindelöf),CB ,22,78.0,85.0,€12.5M,€86K,Manchester United,83.0,Sweden,76.0
+176942,M. Lustig,Mikael Lustig,RB CB ,30,72.0,72.0,€2.2M,€32K,Celtic,74.0,Sweden,76.0
+207557,R. Olsen,Robin Olsen,GK ,27,73.0,75.0,€3.2M,€16K,,,FC København,71.0
+199602,J. Guidetti,John Guidetti,ST ,25,78.0,80.0,€13M,€28K,Deportivo Alavés,75.0,Sweden,76.0
+205985,I. Kiese Thelin,Isaac Kiese Thelin,ST ,25,72.0,75.0,€4M,€17K,Waasland-Beveren,68.0,Sweden,76.0
+181318,A. Ekdal,Albin Ekdal,CM CDM CB ,27,76.0,76.0,€8M,€38K,,,Hamburger SV,74.0
+189207,J. Durmaz,Jimmy Durmaz,LM CAM RM ,28,75.0,75.0,€6.5M,€29K,Toulouse Football Club,74.0,Sweden,76.0
+194201,P. Jansson,Pontus Jansson,CB ,26,76.0,78.0,€7.5M,€37K,Leeds United,71.0,Sweden,76.0
+212678,L. Augustinsson,Ludwig Augustinsson,LB ,23,75.0,81.0,€7.5M,€21K,,,SV Werder Bremen,76.0
+190120,K. Johnsson,Karl-Johan Johnsson,GK ,27,75.0,75.0,€4.5M,€17K,En Avant de Guingamp,74.0,Sweden,76.0
+207650,E. Krafth,Emil Krafth,RB ,22,73.0,80.0,€4.7M,€36K,Bologna,76.0,Sweden,76.0
+207555,F. Helander,Filip Helander,CB ,24,73.0,78.0,€4.5M,€36K,Bologna,76.0,Sweden,76.0
+207553,M. Rohdén,Marcus Rohdén,RM CM ,26,71.0,71.0,€2.5M,€10K,,,Crotone,70.0
+192129,K. Nordfeldt,Kristoffer Nordfeldt,GK ,28,73.0,75.0,€3.3M,€45K,Swansea City,75.0,Sweden,76.0
+202944,O. Hiljemark,Oscar Hiljemark,CM CDM ,25,73.0,78.0,€5M,€28K,Genoa,76.0,Sweden,76.0
+213813,A. Fransson,Alexander Fransson,CDM CM CAM ,23,72.0,81.0,€4.2M,€19K,FC Lausanne-Sport,65.0,FC Basel 1893,114.0
+213750,K. Sema,Ken Sema,LM ,23,71.0,75.0,€3.1M,€4K,Östersunds FK,66.0,Sweden,76.0
+189723,S. Armenteros,Samuel Armenteros (Kristiano Samuel Armenteros Nunez Mendoza Jansson),ST ,27,73.0,73.0,€4.3M,€30K,Portland Timbers,70.0,Benevento,7.0
+209782,S. Larsson,Sam Larsson,LW ,24,76.0,79.0,€10M,€18K,Feyenoord,76.0,Sweden,76.0
+209063,S. Holmén,Sebastian Holmén,CB ,25,72.0,75.0,€3.3M,€20K,,,Dinamo Moscow,71.0
+205210,O. Lewicki,Oscar Lewicki,CDM CM ,24,72.0,75.0,€3.3M,€4K,,,Malmö FF,69.0
+202905,C. Nyman,Christoffer Nyman,ST ,24,72.0,76.0,€4.1M,€17K,,,Eintracht Braunschweig,69.0
+181383,J. Johansson,Jakob Johansson,CDM CM ,27,75.0,76.0,€6.5M,€1K,,,AEK Athens,74.0
+198455,J. Larsson,Johan Larsson,RB ,27,71.0,71.0,€2M,€13K,Brøndby IF,70.0,Sweden,76.0
+144429,O. Wendt,Oscar Wendt,LB LM ,31,77.0,77.0,€6M,€35K,,,Borussia Mönchengladbach,78.0
+187915,E. Kujović,Emir Kujović,ST ,29,68.0,68.0,€900K,€18K,,,Fortuna Düsseldorf,71.0
+192102,N. Hult,Niklas Hult,LB ,27,74.0,74.0,€4.6M,€1K,,,AEK Athens,74.0
+216750,P. Carlgren,Patrik Carlgren (Patrik Ulf Anders Carlgren),GK ,25,69.0,73.0,€975K,€8K,,,Atiker Konyaspor,72.0
+213933,L. Wahlqvist,Linus Wahlqvist,RB CB RWB ,20,69.0,75.0,€1.2M,€3K,,,IFK Norrköping,66.0
+207926,A. Linde,Andreas Linde,GK ,23,69.0,76.0,€1.1M,€3K,,,Molde FK,67.0
+192991,C. Tosun,Cenk Tosun,ST ,26,80.0,82.0,€18M,€130K,Everton,79.0,Turkey,76.0
+192565,Y. Mallı,Yunus Mallı,CAM CF LM ,25,79.0,81.0,€15.5M,€69K,VfL Wolfsburg,77.0,Turkey,76.0
+208128,H. Çalhanoğlu,Hakan Çalhanoğlu,LW LM CAM ,23,80.0,84.0,€19.5M,€105K,Milan,79.0,Turkey,76.0
+189491,O. Şahan,Olcay Şahan,RM LM ,30,74.0,74.0,€5.5M,€30K,,,Trabzonspor,74.0
+196934,O. Özyakup,Oğuzhan Özyakup,CM CDM CAM ,24,80.0,85.0,€19.5M,€54K,Beşiktaş JK,79.0,Turkey,76.0
+205201,O. Yokuşlu,Okay Yokuşlu,CDM CM CB ,23,76.0,82.0,€9M,€28K,Trabzonspor,74.0,Turkey,76.0
+171875,C. Erkin,Caner Erkin,LB LM ,28,75.0,75.0,€5.5M,€41K,,,Beşiktaş JK,79.0
+232119,C. Söyüncü,Çağlar Söyüncü (Caglar Söyüncü),CB ,21,74.0,83.0,€7.5M,€17K,SC Freiburg,73.0,Turkey,76.0
+124635,M. Topal,Mehmet Topal,CDM CB ,31,78.0,78.0,€7M,€61K,Fenerbahçe SK,77.0,Turkey,76.0
+143699,G. Gönül,Gökhan Gönül,RB ,32,77.0,77.0,€4.9M,€47K,,,Beşiktaş JK,79.0
+188524,V. Babacan,Volkan Babacan,GK ,28,79.0,80.0,€10M,€28K,Medipol Başakşehir FK,76.0,Turkey,76.0
+124375,B. Yılmaz,Burak Yılmaz,ST ,31,79.0,79.0,€11.5M,€46K,,,Trabzonspor,74.0
+143745,A. Turan,Arda Turan,CM RW LW ,30,81.0,81.0,€16.5M,€160K,Medipol Başakşehir FK,76.0,FC Barcelona,230.0
+124607,S. İnan,Selçuk İnan,CM CDM ,32,75.0,75.0,€5M,€50K,,,Galatasaray SK,77.0
+194079,A. Potuk,Alper Potuk,CAM LM RM ,26,77.0,78.0,€10.5M,€66K,,,Fenerbahçe SK,77.0
+189127,S. Aziz,Serdar Aziz,CB ,26,76.0,78.0,€7.5M,€54K,,,Galatasaray SK,77.0
+125871,H. Kaldırım,Hasan Ali Kaldırım,LB ,27,75.0,75.0,€5.5M,€51K,Fenerbahçe SK,77.0,Turkey,76.0
+186953,O. Kıvrak,Onur Kıvrak (Onur Recep Kıvrak),GK ,29,77.0,77.0,€6M,€28K,,,Trabzonspor,74.0
+185239,O. Toprak,Ömer Toprak,CB ,27,82.0,83.0,€21M,€66K,,,Borussia Dortmund,81.0
+80,E. Belözoğlu,Emre Belözoğlu,CM CDM ,36,79.0,79.0,€4M,€26K,,,Medipol Başakşehir FK,76.0
+231240,E. Mor,Emre Mor,RW ST LW CF ,19,74.0,85.0,€9.5M,€15K,,,RC Celta,78.0
+223197,E. Ünal,Enes Ünal,ST ,20,76.0,83.0,€11M,€30K,,,Villarreal CF,79.0
+199417,H. Tekin,Harun Tekin,GK ,28,75.0,76.0,€5.5M,€15K,Bursaspor,73.0,Turkey,76.0
+243586,A. El Kaabi,Ayoub El Kaabi,ST ,25,65.0,69.0,€700K,€4K,,,Hebei China Fortune FC,68.0
+232097,A. Harit,Amine Harit,RW CM LW ,20,78.0,86.0,€15.5M,€35K,,,FC Schalke 04,79.0
+164435,M. Boussoufa,Mbark Boussoufa,CM CAM ,32,77.0,77.0,€0,€0,,,Morocco,76.0
+193738,Y. Belhanda,Younès Belhanda,CAM LW ,27,81.0,81.0,€18.5M,€71K,,,Galatasaray SK,77.0
+208670,H. Ziyech,Hakim Ziyech,CM CAM ,24,81.0,85.0,€23M,€16K,,,Ajax,76.0
+162329,K. El Ahmadi,Karim El Ahmadi (Karim El Ahmadi Al Aroos),CM CDM ,32,79.0,79.0,€9.5M,€23K,,,Feyenoord,76.0
+235212,A. Hakimi,Achraf Hakimi (Achraf Hakimi Mouh),RB LB ,18,73.0,85.0,€5.5M,€52K,,,Real Madrid,86.0
+208295,R. Saïss,Romain Saïss,CDM CM ,27,76.0,77.0,€7.5M,€51K,,,Wolverhampton Wanderers,74.0
+177509,M. Benatia,Medhi Benatia (Medhi Amine El Mouttaqi Benatia),CB ,30,85.0,85.0,€28.5M,€145K,,,Juventus,85.0
+183108,N. Amrabat,Nordin Amrabat,RM LM ST ,30,79.0,79.0,€12M,€69K,CD Leganés,75.0,Watford,81.0
+223573,Munir,Munir Mohand Mohamedi,GK ,28,70.0,71.0,€1.4M,€6K,,,CD Numancia,70.0
+188305,A. Bouhaddouz,Aziz Bouhaddouz,ST ,30,71.0,71.0,€2.3M,€15K,,,FC St. Pauli,70.0
+205083,F. Fajr,Fayçal Fajr,RM LM CM CDM ,28,75.0,75.0,€6.5M,€23K,,,Getafe CF,74.0
+224158,S. Amrabat,Sofyan Amrabat,CM RB ,20,75.0,80.0,€9M,€13K,,,Feyenoord,76.0
+230042,Y. Aït Bennasser,Youssef Aït Bennasser,CM ,20,75.0,84.0,€10M,€24K,Stade Malherbe Caen,73.0,AS Monaco,156.0
+177533,Manuel da Costa,Manuel Marouan da Costa Senoussi (Manuel Marouan da Costa Trinidade),CB CDM ,31,72.0,72.0,€2.1M,€16K,,,Medipol Başakşehir FK,76.0
+238346,H. Mendyl,Hamza Mendyl,LB ,19,66.0,78.0,€975K,€5K,,,LOSC Lille,74.0
+209981,Y. Bounou,Yassine Bounou,GK ,26,75.0,79.0,€6M,€17K,,,Girona FC,75.0
+177525,N. Dirar,Nabil Dirar,RM RB CM ,31,77.0,77.0,€8M,€66K,,,Fenerbahçe SK,77.0
+184089,M. Carcela-González,Mehdi Carcela-González,RM LM CAM ,28,78.0,78.0,€10.5M,€14K,Standard de Liège,73.0,Granada CF,29.0
+210439,K. Boutaïb,Khalid Boutaïb,ST CAM ,30,74.0,74.0,€5.5M,€17K,,,Yeni Malatyaspor,69.0
+235410,Y. En-Nesyri,Youssef En-Nesyri,ST ,20,71.0,78.0,€3.4M,€14K,,,Málaga CF,75.0
+241777,A. Tagnaouti,Ahmed Tagnaouti,GK ,21,64.0,74.0,€0,€0,,,Morocco,76.0
+241778,B. Benoun,Badr Benoun,CB ,23,67.0,73.0,€0,€0,,,Morocco,76.0
+210434,F. Chafik,Fouad Chafik,RB RWB ,30,72.0,72.0,€2.2M,€13K,,,Dijon FCO,72.0
+208045,O. Tannane,Oussama Tannane,RM LM CAM ,23,74.0,78.0,€7.5M,€28K,,,AS Saint-Étienne,76.0
+225114,M. Mahi,Mimoun Mahi,ST CF LM ,23,73.0,77.0,€5.5M,€12K,,,FC Groningen,68.0
+192274,A. Barrada,Abdelaziz Barrada,CAM RM LM ,29,75.0,75.0,€6.5M,€18K,,,Antalyaspor,70.0
+203377,A. Tighadouini,Adnane Tighadouini,LM ,24,70.0,73.0,€2.3M,€14K,FC Twente,68.0,Málaga CF,52.0
+197682,Y. El Kharroubi,Yassine El Kharroubi,GK ,27,63.0,66.0,€0,€0,,,Morocco,76.0
+205188,R. Alioui,Rachid Alioui,ST ,25,71.0,74.0,€3M,€5K,,,Nîmes Olympique,68.0
+194209,Y. El Arabi,Youssef El Arabi (Youssef El-Arabi),ST ,30,72.0,72.0,€0,€0,,,Morocco,76.0
+206161,A. Lazaar,Achraf Lazaar,LB LM ,25,72.0,75.0,€3.2M,€36K,Benevento,72.0,Newcastle United,72.0
+205705,Z. Feddal,Zouhair Feddal,CB LB ,27,78.0,78.0,€8.5M,€24K,,,Real Betis,78.0
+187702,O. El Kaddouri,Omar El Kaddouri,CAM CM ,26,76.0,77.0,€9M,€1K,,,PAOK,74.0
+192555,I. El Adoua,Issam El Adoua,CDM CB ,31,70.0,70.0,€1.2M,€7K,,,CD Aves,70.0
+223875,Y. Bammou,Yacine Bammou,ST CAM LM ,25,72.0,73.0,€3.8M,€17K,,,FC Nantes,74.0
+211381,S. Boufal,Sofiane Boufal,LW RW CAM ,23,77.0,80.0,€11.5M,€75K,,,Southampton,76.0
+240526,M. Fouzair,Mohamed Fouzair,CAM RM ,25,70.0,72.0,€2.2M,€25K,,,Al Nassr,69.0
+206493,Y. Abdelhamid,Yunis Abdelhamid,CB ,29,71.0,71.0,€1.8M,€7K,,,Stade de Reims,70.0
+211453,M. Mohsen,Marwan Mohsen,ST ,28,65.0,65.0,€0,€0,,,Egypt,72.0
+197300,A. El-Said,Abdallah El-Said (Abdalla Mahmoud El Said Bekhit),CAM RW ,31,68.0,68.0,€0,€0,,,Egypt,72.0
+226078,Trezeguet,Mahmoud Hassan,LM CAM RM ,22,74.0,77.0,€7M,€19K,Kasimpaşa SK,70.0,Egypt,72.0
+209331,M. Salah,Mohamed Salah (Mohamed  Salah Ghaly),RW ,25,87.0,90.0,€63M,€205K,Liverpool,81.0,Egypt,72.0
+222134,T. Hamed,Tarek Hamed,CDM ,28,66.0,66.0,€0,€0,,,Egypt,72.0
+213051,M. Elneny,Mohamed Elneny,CDM CM ,24,77.0,81.0,€10M,€76K,Arsenal,82.0,Egypt,72.0
+212088,M. Abdul Shafy,Mohamed Abdul Shafy (Mohamed Abdul Shafy Sayed Abouezeid),LB ,32,68.0,68.0,€500K,€20K,Al Fateh,64.0,Egypt,72.0
+210648,A. Hegazi,Ahmed Hegazi,CB ,26,76.0,78.0,€7.5M,€62K,West Bromwich Albion,76.0,Egypt,72.0
+226077,A. Gabr,Ali Gabr,CB ,28,68.0,68.0,€725K,€33K,West Bromwich Albion,76.0,Egypt,72.0
+175608,A. Fathi,Ahmed Fathi (Ahmed Fathy Abdel Meneim Ibrahim),RB CDM ,32,67.0,67.0,€0,€0,,,Egypt,72.0
+228182,M. El-Shenawy,Mohamed El-Shenawy,GK ,28,64.0,67.0,€0,€0,,,Egypt,72.0
+219740,Kahraba,Mahmoud Abdel Moneim,LM RM LW ST ,23,75.0,81.0,€9M,€32K,Al Ittihad,68.0,Egypt,72.0
+233601,R. Sobhi,Ramadan Sobhi,LM LW ,20,75.0,82.0,€9.5M,€45K,Stoke City,76.0,Egypt,72.0
+170828,Shikabala,Mahmoud Abdel Razek Fadlallah,LW RM ,31,71.0,71.0,€2.1M,€17K,Al Raed,65.0,Egypt,72.0
+191005,A. Elmohamady,Ahmed Elmohamady (Ahmed Eissa  El Mohamady Abdel Fattah),RB RWB RM ,29,72.0,72.0,€2.4M,€24K,Aston Villa,73.0,Egypt,72.0
+218430,S. Saad,Samir Saad (Saad Ali Saadeldin Samir),CB ,28,70.0,71.0,€0,€0,,,Egypt,72.0
+212783,O. Gaber,Omar Gaber,RB RM LB ,25,69.0,72.0,€0,€0,,,Egypt,72.0
+169423,S. Ekramy,Sherif Ekramy (Sherif Ekramy  Ahmed),GK ,33,69.0,69.0,€0,€0,,,Egypt,72.0
+197975,S. Morsy,Sam Morsy,CDM CM ,25,68.0,70.0,€925K,€8K,Wigan Athletic,68.0,Egypt,72.0
+243533,M. Hamdy,Mahmoud Hamdy (Mohamed  Hamdy Sharaf),CB ,22,68.0,78.0,€0,€0,,,Egypt,72.0
+228203,A. Ashraf,Ayman Ashraf,LM LW CAM ,26,69.0,69.0,€0,€0,,,Egypt,72.0
+233600,A. Warda,Amr Warda,RM LM CAM ,23,71.0,76.0,€0,€0,,,Egypt,72.0
+188033,E. El Hadary,Essam El Hadary (Essam Kamal Tawfik El Hadary),GK ,44,70.0,70.0,€120K,€7K,Al Taawoun,65.0,Egypt,72.0
+220380,R. Rabia,Ramy Rabia,CB ,24,75.0,81.0,€0,€0,,,Egypt,76.0
+210259,A. Hassan,Ahmed Hassan,ST ,24,74.0,78.0,€7.5M,€12K,,,SC Braga,76.0
+228204,B. Morsi,Bassem Morsi,ST ,25,72.0,74.0,€0,€0,,,Egypt,76.0
+224198,K. Hafez,Karim Hafez (Karim Hafez  Ramadan),LB ,21,66.0,73.0,€775K,€2K,,,Racing Club de Lens,67.0
+241781,M. Awad,Mohamed Awad,GK ,25,66.0,69.0,€575K,€5K,Al Wehda,69.0,Egypt,73.0
+233598,A. Duiedar,Ahmed Duiedar,CB ,29,69.0,69.0,€0,€0,,,Egypt,76.0
+241780,A. Marei,Amr Marei,ST ,25,67.0,70.0,€0,€0,,,Egypt,76.0
+212258,S. Gomaa,Saleh Gomaa,CM CAM ,23,73.0,77.0,€5M,€22K,,,Al Faisaly,66.0
+203704,I. Salah,Ibrahim Salah (Ibrahim Salah Abdel-Fattah),CDM ,30,68.0,68.0,€0,€0,,,Egypt,76.0
+222130,A. Gamal,Amr Gamal (Amr Gamal Sayed Ahmed),ST ,25,70.0,71.0,€0,€0,,,Egypt,76.0
+211452,H. Ashour,Hossam Ashour (Hossam Mohamed Ashour Rahman Nasr),CDM ,31,68.0,68.0,€0,€0,,,Egypt,76.0
+203703,W. Soliman,Walid Soliman,LM RM ,32,73.0,73.0,€0,€0,,,Egypt,76.0
+226079,M. Zakaria,Moamen Zakaria,RM LM ,29,67.0,67.0,€750K,€23K,,,Al Ahli,72.0
+239652,M. Fathi,Mostafa Fathi,RM CAM LM ,23,67.0,70.0,€975K,€11K,,,Al Taawoun,65.0
+203766,A. El-Shenawy,Ahmed El-Shenawy (Ahmed Naser Mahmoud Al Shenawy),GK ,27,73.0,76.0,€0,€0,,,Egypt,73.0
+203772,M. Nagieb,Mohamed Nagieb (Mohamed Youssef Naguib El Sayed Mohamed El Gharieb),CB ,34,66.0,66.0,€0,€0,,,Egypt,76.0
+218432,S. Raheel,Sabry Raheel (Sabri El Sayed Abdel Muttalib Mayhoub Rahil),LB ,29,68.0,68.0,€0,€0,,,Egypt,76.0
+215785,K. Baldé,Keita Baldé,RM ST LM ,22,81.0,88.0,€25M,€38K,,,AS Monaco,80.0
+172124,M. Sow,Moussa Sow,ST LM ,31,78.0,78.0,€9.5M,€24K,,,Bursaspor,73.0
+208722,S. Mané,Sadio Mané,LW RW ,25,84.0,85.0,€37M,€175K,,,Liverpool,81.0
+221000,B. Ndiaye,Badou Ndiaye,CM CDM CAM ,26,76.0,77.0,€9M,€68K,,,Stoke City,76.0
+186801,C. Kouyaté,Cheikhou Kouyaté,CDM CM CB ,27,76.0,76.0,€6.5M,€83K,,,West Ham United,77.0
+193474,I. Gueye,Idrissa Gueye (Idrissa Gana Gueye),CDM CM ,27,82.0,82.0,€18.5M,€115K,,,Everton,79.0
+215699,Y. Sabaly,Youssouf Sabaly,RB ,24,76.0,80.0,€8.5M,€35K,,,FC Girondins de Bordeaux,75.0
+201024,K. Koulibaly,Kalidou Koulibaly,CB ,26,85.0,88.0,€40M,€96K,,,Napoli,81.0
+198584,K. Mbodji,Kara Mbodji (Serigne Modou Kara Mbodji),CB ,27,78.0,79.0,€10M,€24K,,,RSC Anderlecht,74.0
+189944,L. Gassama,Lamine Gassama,RB ,27,68.0,68.0,€750K,€8K,,,Alanyaspor,71.0
+211805,K. N'Diaye,Khadim N'Diaye,GK ,32,69.0,69.0,€0,€0,,,Senegal,76.0
+193554,D. Sakho,Diafra Sakho,ST ,27,75.0,75.0,€7M,€25K,,,Stade Rennais FC,74.0
+187084,M. Diouf,Mame Diouf (Mame Biram Diouf),ST RWB RM ,29,77.0,77.0,€9M,€77K,,,Stoke City,76.0
+235353,I. Sarr,Ismaïla Sarr,LM RM ST ,19,73.0,84.0,€6.5M,€13K,,,Stade Rennais FC,74.0
+188879,A. N'Diaye,Alfred N'Diaye (Alfred John Momar N'Diaye),CDM CM ,27,76.0,77.0,€7.5M,€32K,Wolverhampton Wanderers,74.0,Villarreal CF,94.0
+201956,S. Sané,Salif Sané,CB CDM ,26,80.0,80.0,€13M,€47K,,,Hannover 96,75.0
+237156,M. Wagué,Moussa Wagué,RB LB ,18,65.0,77.0,€775K,€2K,,,KAS Eupen,68.0
+197233,A. Diallo,Abdoulaye Diallo,GK ,25,70.0,74.0,€1.6M,€12K,,,Stade Rennais FC,74.0
+201976,A. Gomis,Alfred Gomis (Alfred Benjamin Gomis),GK ,23,74.0,82.0,€6M,€24K,SPAL,73.0,Torino,74.0
+198687,S. Ciss,Saliou Ciss,LB LM RM ,28,69.0,69.0,€825K,€13K,Valenciennes FC,68.0,Angers SCO,8.0
+219470,C. N'Doye,Cheikh N'Doye,CM CAM ,31,69.0,69.0,€900K,€17K,,,Birmingham City,70.0
+204077,M. Niang,M'Baye Niang (M'Baye Babacar Niang),LW ST ,22,77.0,83.0,€12M,€84K,Torino,77.0,Milan,1081.0
+211321,M. Konaté,Moussa Konaté (Pape Moussa Konaté),ST ,24,75.0,80.0,€9M,€19K,,,Amiens SC,73.0
+183256,H. Saivet,Henri Saivet,CM CAM CDM ,26,74.0,74.0,€6M,€58K,Sivasspor,71.0,Newcastle United,120.0
+194196,F. Diagne,Fallou Diagne,CB CDM ,27,73.0,73.0,€3.4M,€24K,FC Metz,72.0,SV Werder Bremen,20.0
+223283,F. Diedhiou,Famara Diedhiou,ST ,24,73.0,77.0,€5.5M,€40K,,,Bristol City,71.0
+222926,A. Mbengue,Adama Mbengue,LB LM ,23,69.0,76.0,€1.2M,€11K,,,Stade Malherbe Caen,73.0
+208339,O. Niasse,Oumar Niasse (El-Hadji Baye Oumar Niasse),ST ,27,75.0,75.0,€7M,€88K,,,Everton,79.0
+184271,Y. Sankharé,Younousse Sankharé,CM ,27,76.0,76.0,€8M,€45K,,,FC Girondins de Bordeaux,75.0
+192333,L. Sané,Lamine Sané (Ludovic Lamine Sané),CB ,30,76.0,76.0,€5.5M,€10K,,,Orlando City SC,70.0
+211099,O. Nguette,Opa Nguette (Opa N'Guette),LM RM LW ,22,70.0,75.0,€2.4M,€10K,,,FC Metz,72.0
+178250,P. Diop,Papakouli Diop (Papa Kouly Diop),CDM CM ,31,76.0,76.0,€5M,€22K,,,SD Eibar,77.0
+230144,A. Dioussé,Assane Dioussé (Assane Dioussé El Hadji),CDM CM ,19,72.0,80.0,€3.8M,€11K,,,AS Saint-Étienne,76.0
+210320,I. Mbaye,Ibrahima Mbaye,RB LB RM ,22,73.0,80.0,€4.7M,€36K,,,Bologna,76.0
+188556,M. Diamé,Mohamed Diamé,CM CAM ,30,74.0,74.0,€5M,€58K,,,Newcastle United,75.0
+223436,I. Sarr,Issa Sarr,CDM CM ,30,68.0,68.0,€675K,€1K,,,Orlando Pirates,68.0
+138704,I. Cissokho,Issa Cissokho,RB LB ,32,71.0,71.0,€1.3M,€13K,,,Amiens SC,73.0
+190196,Z. Touré,Zargo Touré,CB ,27,70.0,72.0,€1.7M,€6K,,,FC Lorient,70.0
+194718,A. Baby,Amara Baby,LM ,28,72.0,72.0,€3.1M,€12K,,,Sporting de Charleroi,70.0
+241761,P. Ndiaye,Pape Seydou Ndiaye,GK ,24,67.0,71.0,€0,€0,,,Senegal,76.0
+150525,P. Guerrero,Paolo Guerrero (José Paolo Guerrero González),ST ,33,81.0,81.0,€0,€0,,,Peru,76.0
+214692,C. Cueva,Christian Cueva (Christian Alberto Cueva Bravo),LM CAM RM ,26,75.0,76.0,€0,€0,,,Peru,72.0
+210951,E. Flores,Edison Flores,LM ,23,66.0,71.0,€850K,€4K,Aalborg BK,65.0,Peru,72.0
+203299,A. Carrillo,André Carrillo (André Martín Carrillo Díaz),RM RW ,26,77.0,78.0,€10.5M,€15K,Watford,77.0,Peru,72.0
+220673,R. Tapia,Renato Tapia,CB CM ,21,73.0,78.0,€4.6M,€11K,Feyenoord,76.0,Peru,72.0
+204542,Y. Yotún,Yoshimar Yotún (Víctor Yoshimar Yotún Flores),CM LM LB ,27,71.0,71.0,€2.4M,€7K,Orlando City SC,70.0,Peru,72.0
+225706,M. Trauco,Miguel Trauco,LB ,24,74.0,77.0,€0,€0,,,Peru,76.0
+168580,A. Rodríguez,Alberto Rodríguez (Alberto Junior Rodríguez Valdelomar),CB ,33,73.0,73.0,€1.6M,€4K,Junior FC,72.0,Peru,72.0
+196435,C. Ramos,Christian Ramos,CB ,28,70.0,71.0,€1.6M,€7K,Tiburones Rojos de Veracruz,69.0,Peru,72.0
+204539,L. Advíncula,Luis Advíncula (Luis Jan Piers Advíncula Castrillón),RB RWB ,27,73.0,73.0,€3.3M,€50K,Lobos BUAP,69.0,Peru,72.0
+225701,P. Gallese,Pedro Gallese,GK ,27,74.0,76.0,€4.6M,€7K,Tiburones Rojos de Veracruz,69.0,Peru,72.0
+204538,R. Ruidíaz,Raúl Ruidíaz (Raúl Mario Ruidíaz Misitich),ST ,26,76.0,77.0,€9M,€16K,Monarcas Morelia,71.0,Peru,72.0
+223637,A. Polo,Andy Polo,LM RM CM ,22,69.0,79.0,€1.7M,€6K,Portland Timbers,70.0,Peru,72.0
+236264,P. Aquino,Pedro Aquino,CDM CM ,22,70.0,75.0,€2M,€27K,Lobos BUAP,69.0,Peru,72.0
+221664,W. Cartagena,Wilder Cartagena (Wilder José Cartagena Mendoza),CDM ,22,66.0,72.0,€750K,€2K,,,Tiburones Rojos de Veracruz,69.0
+196688,A. Corzo,Aldo Corzo,RB RWB ,28,69.0,69.0,€0,€0,,,Peru,72.0
+226002,M. Araujo,Miguel Araujo,CB ,22,69.0,74.0,€0,€0,,,Peru,72.0
+234054,C. Cáceda,Carlos Cáceda,GK ,25,69.0,74.0,€0,€0,,,Peru,72.0
+158133,J. Farfán,Jefferson Farfán (Jefferson Agustín Farfán Guadalupe),RM ST ,32,79.0,79.0,€10M,€54K,Lokomotiv Moscow,76.0,Peru,72.0
+211124,P. Hurtado,Paolo Hurtado (Christopher Paolo César Hurtado Huertas),CAM ,26,75.0,76.0,€8M,€11K,Vitória Guimarães,74.0,Peru,72.0
+236260,A. Santamaría,Anderson Santamaría,CB ,25,64.0,67.0,€475K,€2K,Puebla FC,69.0,Peru,72.0
+236258,N. Loyola,Nilson Loyola,LB ,22,65.0,69.0,€0,€0,,,Peru,72.0
+186655,J. Carvallo,José Carvallo (José Aurelio Carvallo Alonso),GK ,31,68.0,68.0,€0,€0,,,Peru,72.0
+236259,S. Peña,Sergio Peña,CAM ,21,67.0,73.0,€1.1M,€5K,Granada CF,73.0,Peru,72.0
+234178,L. Abram,Luis Abram,CB ,21,66.0,75.0,€875K,€3K,,,Vélez Sarsfield,68.0
+187132,C. Zambrano,Carlos Zambrano (Carlos Augusto Zambrano Ochandarte),CB ,28,76.0,77.0,€7M,€25K,,,FC Basel 1893,73.0
+167305,J. Vargas,Juan Manuel Vargas (Juan Manuel Vargas Risco),LB ,33,75.0,75.0,€0,€0,,,Peru,76.0
+212509,C. Ascues,Carlos Ascues,CB CDM ,26,70.0,75.0,€2M,€5K,,,Orlando City SC,69.0
+196852,C. Lobatón,Carlos Lobatón,CM CDM ,37,72.0,72.0,€0,€0,,,Peru,76.0
+214000,Y. Reyna,Yordy Reyna (José Yordy Reyna Serna),CF CAM ,23,71.0,76.0,€3.2M,€6K,Vancouver Whitecaps FC,69.0,Peru,72.0
+196848,I. Ávila,Írven Ávila,ST ,26,72.0,72.0,€3.4M,€8K,,,Lobos BUAP,69.0
+210112,C. Benavente,Cristian Benavente,CAM ,23,72.0,77.0,€4.2M,€10K,,,Sporting de Charleroi,70.0
+228269,J. Céspedes,Jair Céspedes,LB ,33,68.0,68.0,€0,€0,,,Peru,76.0
+196434,J. Ballón,Josepmir Ballón,CDM CM ,29,68.0,68.0,€0,€0,,,Peru,76.0
+25420,C. Pizarro,Claudio Pizarro (Claudio Miguel Pizarro Bossio),ST ,38,75.0,75.0,€2.4M,€26K,,,1. FC Köln,76.0
+228271,C. Gonzales,Christofer Gonzales,LM ,24,67.0,69.0,€0,€0,,,Peru,76.0
+196853,J. Sánchez,Joel Sánchez,CAM LW ,28,68.0,68.0,€900K,€34K,Querétaro,70.0,Tigres U.A.N.L.,1.0
+231965,Beto da Silva,Luiz Humberto Da Silva Silva (Luiz Humberto da Silva Silva),LW RW ,20,66.0,76.0,€1M,€3K,Argentinos Juniors,66.0,Peru,72.0
+236262,C. Ortíz,César Ortíz,CDM ,33,61.0,61.0,€0,€0,,,Peru,76.0
+188610,D. Penny,Diego Penny (Diego Alonso Roberto Penny Valdéz),GK ,33,66.0,66.0,€0,€0,,,Peru,76.0
+184200,M. Arnautović,Marko Arnautović,ST LM RM ,28,81.0,81.0,€18.5M,€125K,West Ham United,77.0,Austria,77.0
+197445,D. Alaba,David Alaba (David Olatukunbo Alaba),LB CB CM ,25,85.0,87.0,€38.5M,€130K,FC Bayern München,86.0,Austria,77.0
+195038,F. Kainz,Florian Kainz,LM CAM CM CF ,24,75.0,78.0,€8.5M,€23K,SV Werder Bremen,76.0,Austria,77.0
+211147,V. Lazaro,Valentino Lazaro,RM CAM LM ,21,75.0,81.0,€9M,€21K,Hertha BSC,77.0,Austria,77.0
+228336,F. Grillitsch,Florian Grillitsch,CM CDM ,21,75.0,81.0,€9M,€25K,TSG 1899 Hoffenheim,78.0,Austria,77.0
+189606,J. Baumgartlinger,Julian Baumgartlinger,CDM ,29,78.0,78.0,€8M,€50K,Bayer 04 Leverkusen,79.0,Austria,77.0
+169324,A. Ulmer,Andreas Ulmer,LB ,31,73.0,73.0,€2.6M,€28K,FC Red Bull Salzburg,71.0,Austria,77.0
+189060,A. Dragović,Aleksandar Dragović,CB ,26,78.0,78.0,€9M,€47K,Leicester City,78.0,Austria,77.0
+177578,S. Prödl,Sebastian Prödl,CB ,30,76.0,76.0,€5.5M,€53K,Watford,77.0,Austria,77.0
+223724,S. Lainer,Stefan Lainer,RB ,24,71.0,74.0,€2.5M,€17K,FC Red Bull Salzburg,71.0,Austria,77.0
+193247,H. Lindner,Heinz Lindner,GK ,26,74.0,77.0,€4.9M,€15K,Grasshopper Club Zürich,67.0,Austria,77.0
+193584,G. Burgstaller,Guido Burgstaller,ST LW ,28,79.0,79.0,€13M,€55K,FC Schalke 04,79.0,Austria,77.0
+204923,M. Sabitzer,Marcel Sabitzer,CAM ST ,23,81.0,84.0,€22.5M,€63K,RB Leipzig,78.0,Austria,77.0
+199439,M. Gregoritsch,Michael Gregoritsch,CAM ST ,23,77.0,81.0,€11.5M,€25K,FC Augsburg,75.0,Austria,77.0
+194665,S. Ilsanker,Stefan Ilsanker,CDM CB RB ,28,75.0,75.0,€5.5M,€49K,RB Leipzig,78.0,Austria,77.0
+201922,M. Hinteregger,Martin Hinteregger,CB ,24,77.0,81.0,€10M,€23K,FC Augsburg,75.0,Austria,77.0
+204904,M. Bauer,Moritz Bauer,RB RWB RM ,25,75.0,78.0,€7M,€50K,Stoke City,76.0,Austria,77.0
+193277,J. Siebenhandl,Jörg Siebenhandl,GK ,27,69.0,70.0,€825K,€10K,SK Sturm Graz,68.0,Austria,77.0
+210476,M. Kuster,Markus Kuster,GK ,23,68.0,72.0,€825K,€9K,SV Mattersburg,64.0,Austria,77.0
+231838,M. Wöber,Maximilian Wöber,CB LB ,19,73.0,81.0,€4.9M,€6K,Ajax,76.0,Austria,77.0
+233195,X. Schlager,Xaver Schlager,CM CAM CDM ,19,69.0,83.0,€2.2M,€10K,FC Red Bull Salzburg,71.0,Austria,77.0
+210489,L. Schaub,Louis Schaub,RM LM CAM ,22,74.0,80.0,€7.5M,€20K,SK Rapid Wien,69.0,Austria,77.0
+220925,A. Schöpf,Alessandro Schöpf,RM RWB RW CM ,23,77.0,82.0,€12M,€35K,FC Schalke 04,79.0,Austria,77.0
+191565,Y. Ōsako,大迫 勇也,CF ST CAM ,27,75.0,75.0,€7M,€35K,,,1. FC Köln,76.0
+194365,S. Okazaki,岡崎 慎司,CF CAM ,31,77.0,77.0,€8M,€74K,,,Leicester City,78.0
+189358,S. Kagawa,香川 真司,CAM CF CM ,28,83.0,83.0,€26M,€75K,,,Borussia Dortmund,81.0
+205114,T. Inui,乾 貴士,LM RM ,29,78.0,78.0,€10M,€25K,,,SD Eibar,77.0
+186581,K. Honda,本田 圭佑,RM CAM RW ,31,79.0,79.0,€11M,€41K,,,Pachuca,72.0
+181098,M. Hasebe,長谷 部誠,CDM CM CB ,33,77.0,77.0,€3.6M,€29K,,,Eintracht Frankfurt,77.0
+194359,Y. Nagatomo,長友 佑都,LB RB ,30,74.0,74.0,€4.1M,€47K,Galatasaray SK,77.0,Inter,42.0
+232870,N. Ueda,植田 直通,CB ,22,70.0,78.0,€2.3M,€8K,,,Kashima Antlers,69.0
+232869,G. Shoji,昌子 源 (Gen Shōji),CB ,24,73.0,78.0,€4.5M,€11K,,,Kashima Antlers,69.0
+208520,H. Sakai,酒井 宏樹,RB ,27,77.0,77.0,€7.5M,€29K,,,Olympique de Marseille,78.0
+180739,E. Kawashima,川島 永嗣,GK ,34,74.0,74.0,€2.3M,€11K,,,FC Metz,72.0
+228717,Y. Mutō,武藤 嘉紀,ST ,24,76.0,81.0,€10.5M,€30K,,,1. FSV Mainz 05,75.0
+232883,G. Shibasaki,柴崎 岳,CDM CAM RM ST ,25,75.0,79.0,€7M,€20K,,,Getafe CF,74.0
+217648,G. Haraguchi,原口 元気,RM LM ,26,74.0,74.0,€6M,€27K,Fortuna Düsseldorf,71.0,Hertha BSC,30.0
+191648,M. Yoshida,吉田 麻也,CB ,28,75.0,75.0,€5.5M,€63K,,,Southampton,76.0
+207472,G. Sakai,酒井 髙徳,RB CDM LB ,26,74.0,74.0,€4.8M,€29K,,,Hamburger SV,74.0
+194361,T. Makino,槙野 智章,CB LB ,30,71.0,71.0,€1.8M,€9K,,,Urawa Red Diamonds,69.0
+232562,K. Nakamura,中村 航輔,GK ,22,71.0,78.0,€2.4M,€6K,,,Kashiwa Reysol,67.0
+232441,M. Higashiguchi,東口 順昭,GK ,31,72.0,72.0,€1.9M,€7K,,,Gamba Osaka,67.0
+222987,H. Yamaguchi,山口 蛍,CDM CM ,26,71.0,73.0,€2.4M,€5K,,,Cerezo Osaka,68.0
+232487,W. Endo,遠藤 航,CB RB ,24,70.0,71.0,€1.8M,€8K,,,Urawa Red Diamonds,69.0
+233147,R. Oshima,大島 僚太,CDM CM ,24,70.0,73.0,€1.9M,€5K,,,Kawasaki Frontale,69.0
+191388,T. Usami,宇佐美 貴史,LM ST ,25,74.0,75.0,€6.5M,€23K,Fortuna Düsseldorf,71.0,FC Augsburg,34.0
+232623,Y. Ideguchi,井手 口陽介,CDM CM ,20,70.0,80.0,€2.5M,€17K,Cultural Leonesa,69.0,Leeds United,64.0
+232610,T. Asano,浅野 佐藤,LM RM CF ,22,70.0,76.0,€2.4M,€50K,VfB Stuttgart,75.0,Arsenal,108.0
+191547,S. Koroki,興梠 慎三,ST ,30,72.0,72.0,€3M,€11K,,,Urawa Red Diamonds,69.0
+191378,S. Kurata,仓田 秋,CDM CAM CM ,28,69.0,69.0,€850K,€8K,,,Gamba Osaka,67.0
+233138,Y. Kobayashi,小林 悠,ST RM CAM ,29,76.0,76.0,€7.5M,€13K,,,Kawasaki Frontale,69.0
+217242,Y. Kubo,久保 裕也,CAM CF ,23,73.0,77.0,€5M,€19K,,,KAA Gent,73.0
+210126,H. Kiyotake,清武 弘嗣,RM CAM ,27,73.0,73.0,€4.2M,€8K,,,Cerezo Osaka,68.0
+222986,M. Morishige,森重 真人,CB ,30,72.0,72.0,€2.3M,€8K,,,FC Tokyo,67.0
+232736,Y. Kobayashi,小林 祐希,CM CDM ,25,72.0,74.0,€3.7M,€8K,,,SC Heerenveen,70.0
+207739,M. Havenaar,ハーフナー・マイク,ST ,30,69.0,69.0,€1M,€5K,,,Vissel Kobe,67.0
+226627,T. Minamino,南野 拓実,CAM ST ,22,73.0,80.0,€5.5M,€27K,,,FC Red Bull Salzburg,71.0
+222991,M. Saito,齋藤 学,LM RM ,27,70.0,70.0,€1.9M,€7K,,,Kawasaki Frontale,69.0
+213061,M. Kanazaki,金崎 夢生,ST ,28,73.0,73.0,€4.1M,€15K,,,Kashima Antlers,69.0
+217639,Y. Kashiwagi,柏木 陽介 (Yōsuke Kashiwagi),CM CAM ,29,70.0,70.0,€1.7M,€10K,,,Urawa Red Diamonds,69.0
+232510,T. Shiotani,塩谷 司,CB ,28,72.0,72.0,€0,€0,,,Japan,75.0
+237799,K. Sugimoto,杉本 健勇,ST ,24,73.0,76.0,€5M,€7K,,,Cerezo Osaka,68.0
+217646,S. Nishikawa,西川 周作 (Shusaku Nishikawa),GK ,31,71.0,71.0,€1.4M,€7K,,,Urawa Red Diamonds,69.0
+185195,O. Ighalo,Odion Ighalo (Odion Jude Ighalo),ST ,29,77.0,77.0,€9M,€16K,,,Changchun Yatai FC,66.0
+164477,J. Mikel,John Obi Mikel (John Michael Nchekwube Obinna),CDM ,31,76.0,76.0,€5M,€15K,,,Tianjin TEDA FC,64.0
+213655,A. Iwobi,Alex Iwobi,LM RW ,21,76.0,84.0,€11.5M,€76K,,,Arsenal,82.0
+172962,V. Moses,Victor Moses,RWB ,26,80.0,81.0,€14M,€115K,,,Chelsea,83.0
+202934,O. Onazi,Ogenyi Onazi (Ogenyi Eddy Onazi),CDM CM ,24,74.0,77.0,€6M,€23K,,,Trabzonspor,74.0
+226790,O. Ndidi,Onyinye Ndidi (Onyinye Wilfred Ndidi),CDM CM ,20,80.0,86.0,€17.5M,€57K,,,Leicester City,78.0
+185089,E. Echiéjilé,Elderson Echiéjilé (Elderson Uwa Echiejile),LB ,29,71.0,71.0,€0,€0,,,Nigeria,75.0
+188182,L. Balogun,Leon Balogun (Leon-Aderemi Balogun),CB RB ,29,74.0,75.0,€4.9M,€25K,,,1. FSV Mainz 05,75.0
+213414,W. Troost-Ekong,William Troost-Ekong,CB ,23,72.0,77.0,€3.5M,€10K,,,Bursaspor,73.0
+229026,S. Abdullahi,Shehu Abdullahi (Abdullahi Shehu),CB CDM CM ,24,70.0,75.0,€2M,€10K,,,Bursaspor,73.0
+239120,F. Uzoho,Francis Uzoho,GK ,18,68.0,82.0,€1.5M,€4K,,,Deportivo de La Coruña,77.0
+225719,K. Iheanacho,Kelechi Iheanacho,ST CF ,20,75.0,84.0,€10.5M,€50K,,,Leicester City,78.0
+193337,J. Obi,Joel Obi,CM ,26,75.0,76.0,€7.5M,€39K,,,Torino,77.0
+201818,A. Musa,Ahmed Musa,ST LM ,24,75.0,78.0,€8.5M,€55K,PFC CSKA Moscow,76.0,Leicester City,503.0
+234457,P. Etebo,Peter Etebo (Oghenekaro Etebo),LM CDM CM ,21,73.0,82.0,€6M,€9K,UD Las Palmas,75.0,CD Feirense,81.0
+232693,C. Awaziem,Chidozie Awaziem (Chidozie Collins Awaziem),CB ,20,74.0,81.0,€7M,€9K,FC Nantes,74.0,FC Porto,332.0
+224213,T. Ebuehi,Tyronne Ebuehi,RB ,21,66.0,71.0,€725K,€3K,,,ADO Den Haag,69.0
+241763,I. Ezenwa,Ikechukwu Ezenwa,GK ,28,68.0,69.0,€0,€0,,,Nigeria,75.0
+207624,K. Omeruo,Kenneth Omeruo (Kenneth Josiah Omeruo),CB ,23,73.0,80.0,€4.8M,€68K,Kasimpaşa SK,70.0,Chelsea,200.0
+212054,B. Idowu,Brian Idowu (Brian Oladapo Idowu),LWB LM CB RWB ,25,68.0,71.0,€925K,€12K,,,Amkar Perm,68.0
+199866,J. Ogu,John Ogu (John Ogochukwu Ogu),CM CDM CAM ,29,72.0,72.0,€0,€0,,,Nigeria,75.0
+241769,D. Akpeyi,Daniel Akpeyi,GK ,31,65.0,65.0,€0,€0,,,Nigeria,75.0
+219496,Simy,Simeon Tochukwu Nwankwo,ST ,25,69.0,72.0,€1.3M,€9K,,,Crotone,70.0
+216820,M. Simon,Moses Simon (Moses Daddy Simon),LM CF RM ,21,74.0,81.0,€8M,€17K,,,KAA Gent,73.0
+224656,O. Aina,Ola Aina (Temitayo Olufisayo Olaoluwa Aina),RB LB ,20,70.0,79.0,€2.4M,€6K,,,Hull City,71.0
+209984,M. Agu,Mikel Agu,CDM ,24,75.0,80.0,€7.5M,€11K,Bursaspor,73.0,FC Porto,33.0
+226289,U. Agbo,Uche Agbo,CDM CM ,21,72.0,80.0,€4M,€24K,Standard de Liège,73.0,Watford,26.0
+241770,D. Ajiboye,Dele Ajiboye,GK ,26,64.0,66.0,€0,€0,,,Nigeria,75.0
+234045,H. Onyekuru,Henry Onyekuru,LM ,20,76.0,86.0,€12.5M,€76K,RSC Anderlecht,74.0,Everton,1154.0
+241771,A. Nwakaeme,Anthony Nwakaeme,LW ST ,29,71.0,71.0,€2.3M,€21K,,,Trabzonspor,73.0
+186954,B. Ideye,Brown Ideye (Brown Ideye Aide),ST ,28,74.0,74.0,€6M,€25K,,,Málaga CF,75.0
+229235,M. Muhammed,Musa Muhammed,RB LB ,20,65.0,76.0,€0,€0,,,Nigeria,75.0
+186876,E. Ambrose,Efe Ambrose (Efetobore Ambrose Emuobo),CB RB ,28,70.0,70.0,€1.4M,€6K,,,Hibernian,66.0
+211048,O. Kayode,Olarenwaju Kayode (Olarenwaju Ayoba Kayode),ST ,24,74.0,78.0,€7.5M,€1K,,,Shakhtar Donetsk,77.0
+229495,C. Nwakali,Chidiebere Nwakali (Chidiebere Chijioke Nwakali),CM ST ,20,64.0,77.0,€850K,€2K,,,Aberdeen,69.0
+236313,K. Madu,Kingsley Madu,LB ,21,65.0,72.0,€650K,€3K,,,SV Zulte-Waregem,71.0
+137494,O. Martins,Obafemi Martins (Obafemi Akinwunmi Martins),ST ,32,74.0,74.0,€0,€0,,,Nigeria,75.0
+155532,C. Ikeme,Carl Ikeme,GK ,31,70.0,70.0,€1.1M,€25K,,,Wolverhampton Wanderers,74.0
+199752,S. Igboun,Sylvester Igboun,ST LM RM CF ,26,75.0,75.0,€7.5M,€29K,,,FC Ufa,70.0
+192098,N. Igiebor,Nosakhare Igiebor (Emmanuel Nosakhare Igiebor),CAM CM ,26,70.0,70.0,€0,€0,,,Nigeria,75.0
+202428,B. Wood,Bobby Wood (Bobby Shou Wood),ST ,24,73.0,77.0,€5.5M,€31K,Hamburger SV,74.0,United States,75.0
+176237,J. Altidore,Jozy Altidore,ST ,27,77.0,77.0,€9.5M,€12K,Toronto FC,72.0,United States,75.0
+227796,C. Pulisic,Christian Pulisic,RW LW RM LM ,18,79.0,89.0,€18.5M,€43K,Borussia Dortmund,81.0,United States,75.0
+202078,D. Nagbe,Darlington Nagbe,CM RM CDM ,26,73.0,73.0,€4.2M,€9K,Atlanta United,71.0,United States,75.0
+217714,P. Arriola,Paul Arriola (Paul Joseph Arriola Hendricks),RM CM ,22,72.0,77.0,€4.2M,€6K,DC United,68.0,United States,75.0
+155887,M. Bradley,Michael Bradley,CDM CM CB ,29,78.0,78.0,€8M,€10K,Toronto FC,72.0,United States,75.0
+184643,J. Villafaña,Jorge Villafaña (Jorge Antonio Flores Villafaña),LB ,27,70.0,70.0,€1.5M,€14K,Santos Laguna,72.0,United States,75.0
+204082,J. Brooks,John Brooks (John Anthony Brooks),CB ,24,80.0,85.0,€17M,€57K,VfL Wolfsburg,77.0,United States,75.0
+215565,M. Miazga,Matt Miazga,CB ,21,73.0,80.0,€4.9M,€60K,Vitesse,71.0,United States,75.0
+212722,D. Yedlin,DeAndre Yedlin,RB ,23,76.0,81.0,€8.5M,€54K,Newcastle United,75.0,United States,75.0
+16254,T. Howard,Tim Howard,GK ,38,75.0,75.0,€450K,€4K,,,Colorado Rapids,69.0
+155897,C. Dempsey,Clint Dempsey,CF CAM ST LM ,34,77.0,77.0,€4.7M,€12K,Seattle Sounders FC,72.0,United States,75.0
+177159,F. Johnson,Fabian Johnson,LM ,29,78.0,78.0,€10M,€40K,,,Borussia Mönchengladbach,78.0
+213209,K. Acosta,Kellyn Acosta,CDM CM ,21,72.0,80.0,€4M,€5K,FC Dallas,70.0,United States,75.0
+238744,W. McKennie,Weston McKennie,CM CDM ,18,70.0,84.0,€3.6M,€14K,FC Schalke 04,79.0,United States,75.0
+232999,T. Adams,Tyler Adams,CDM RWB ,18,71.0,84.0,€3.8M,€3K,New York Red Bulls,70.0,United States,75.0
+186672,G. Cameron,Geoff Cameron,CDM CB CM ,31,75.0,75.0,€4.5M,€52K,,,Stoke City,76.0
+164505,B. Guzan,Brad Guzan (Bradley Guzan),GK ,32,73.0,73.0,€2.3M,€7K,Atlanta United,71.0,United States,75.0
+190560,O. Gonzalez,Omar Gonzalez (Omar Alejandro González),CB ,28,74.0,74.0,€4.6M,€28K,Pachuca,72.0,United States,75.0
+184456,E. Lichaj,Eric Lichaj,RB LB RWB ,28,69.0,69.0,€825K,€16K,Nottingham Forest,71.0,United States,75.0
+197166,J. Agudelo,Juan Agudelo,ST LM ,24,69.0,71.0,€1.3M,€5K,,,New England Revolution,68.0
+234777,Z. Steffen,Zack Steffen,GK ,22,74.0,83.0,€6.5M,€6K,Columbus Crew SC,70.0,United States,75.0
+226035,J. Morris,Jordan Morris,ST LM RM ,22,70.0,78.0,€2.7M,€6K,,,Seattle Sounders FC,72.0
+169216,S. Long,Shane Long (Shane  Long),ST ,30,75.0,75.0,€6.5M,€72K,Southampton,76.0,Republic of Ireland,75.0
+200478,J. Hendrick,Jeff Hendrick,CAM CM ,25,75.0,77.0,€8M,€46K,Burnley,77.0,Republic of Ireland,75.0
+198489,J. McClean,James McClean,LM ,28,73.0,73.0,€4M,€60K,West Bromwich Albion,76.0,Republic of Ireland,75.0
+201884,R. Brady,Robbie Brady,LM LB ,25,77.0,78.0,€10.5M,€55K,Burnley,77.0,Republic of Ireland,75.0
+184469,H. Arter,Harry Arter,CM ,27,76.0,76.0,€8M,€66K,Bournemouth,76.0,Republic of Ireland,75.0
+187489,D. Meyler,David Meyler (David  Meyler),CM ,28,70.0,70.0,€1.8M,€10K,Hull City,71.0,Republic of Ireland,75.0
+165321,S. Ward,Stephen Ward,LB ,31,76.0,76.0,€5M,€53K,Burnley,77.0,Republic of Ireland,75.0
+183129,C. Clark,Ciaran Clark,CB ,27,76.0,77.0,€7.5M,€63K,Newcastle United,75.0,Republic of Ireland,75.0
+192622,S. Duffy,Shane Duffy,CB ,25,76.0,81.0,€8.5M,€46K,Brighton & Hove Albion,75.0,Republic of Ireland,75.0
+180216,S. Coleman,Séamus Coleman,RB RWB ,28,81.0,81.0,€14M,€115K,Everton,79.0,Republic of Ireland,75.0
+169697,D. Randolph,Darren Randolph,GK ,30,70.0,70.0,€1.1M,€10K,Middlesbrough,71.0,Republic of Ireland,75.0
+215374,S. Hogan,Scott Hogan,ST ,25,71.0,74.0,€3M,€26K,Aston Villa,73.0,Republic of Ireland,75.0
+193849,C. Hourihane,Conor Hourihane,CM CDM ,26,74.0,75.0,€6.5M,€35K,Aston Villa,73.0,Republic of Ireland,75.0
+202663,D. Horgan,Daryl Horgan,LM RM ,24,69.0,72.0,€1.3M,€8K,Preston North End,70.0,Republic of Ireland,75.0
+163156,R. Keogh,Richard Keogh,CB ,30,73.0,73.0,€3M,€47K,Derby County,72.0,Republic of Ireland,75.0
+201417,M. Doherty,Matt Doherty,RWB ,25,73.0,76.0,€4.1M,€41K,Wolverhampton Wanderers,74.0,Republic of Ireland,75.0
+200778,C. Christie,Cyrus Christie,RB ,24,72.0,77.0,€3.5M,€23K,Fulham,72.0,Republic of Ireland,75.0
+167931,R. Elliot,Rob Elliot,GK ,31,72.0,72.0,€1.9M,€30K,Newcastle United,75.0,Republic of Ireland,75.0
+188253,J. McCarthy,James McCarthy,CDM CM ,26,78.0,79.0,€10M,€88K,Everton,79.0,Republic of Ireland,75.0
+234378,D. Rice,Declan Rice,CB CDM ,18,67.0,82.0,€1.4M,€22K,West Ham United,77.0,Republic of Ireland,75.0
+194146,K. Long,Kevin Long,CB ,26,73.0,73.0,€3.5M,€44K,,,Burnley,77.0
+212223,S. Maguire,Sean Maguire,ST LW ,23,70.0,75.0,€2.4M,€11K,Preston North End,70.0,Republic of Ireland,75.0
+172939,K. Westwood,Keiren Westwood,GK ,32,75.0,75.0,€3.8M,€38K,Sheffield Wednesday,71.0,Republic of Ireland,75.0
+211513,T. Lawrence,Tom Lawrence,LM RM ,23,73.0,79.0,€5.5M,€44K,Derby County,72.0,Wales,74.0
+179746,S. Vokes,Sam Vokes,ST ,27,76.0,76.0,€8M,€63K,Burnley,77.0,Wales,74.0
+173731,G. Bale,Gareth Bale (Gareth Frank Bale),RW ST LW ,27,88.0,88.0,€62M,€370K,Real Madrid,86.0,Wales,74.0
+186561,A. Ramsey,Aaron Ramsey,CM CDM ,26,83.0,84.0,€30M,€130K,Arsenal,82.0,Wales,74.0
+184716,J. Allen,Joe Allen,CM CAM ,27,78.0,78.0,€10.5M,€68K,Stoke City,76.0,Wales,74.0
+173735,N. Taylor,Neil Taylor,LB ,28,71.0,71.0,€1.9M,€24K,Aston Villa,73.0,Wales,74.0
+205923,B. Davies,Ben Davies,LB LWB ,24,81.0,84.0,€18.5M,€79K,Tottenham Hotspur,83.0,Wales,74.0
+163824,A. Williams,Ashley Williams,CB ,32,77.0,77.0,€5M,€88K,Everton,79.0,Wales,74.0
+186130,J. Chester,James Chester,CB ,28,75.0,76.0,€6M,€34K,Aston Villa,73.0,Wales,74.0
+173752,C. Gunter,Chris Gunter,RB LB RWB CB ,27,67.0,67.0,€625K,€18K,Reading,70.0,Wales,74.0
+170084,W. Hennessey,Wayne Hennessey (Wayne  Hennessey),GK ,30,73.0,73.0,€2.6M,€36K,Crystal Palace,76.0,Wales,74.0
+198437,T. Bradshaw,Tom Bradshaw,ST ,24,69.0,73.0,€1.4M,€7K,Barnsley,68.0,Wales,74.0
+189776,M. Watkins,Marley Watkins,RM ST ,26,69.0,69.0,€1.1M,€21K,Norwich City,71.0,Wales,74.0
+220710,H. Wilson,Harry Wilson,LM LW ,20,68.0,82.0,€2M,€38K,Hull City,71.0,Liverpool,50.0
+165190,J. Ledley,Joe Ledley,CDM CM ,30,73.0,73.0,€3M,€47K,Derby County,72.0,Wales,74.0
+211204,D. John,Declan John,LB LWB ,22,69.0,77.0,€1.3M,€23K,Rangers FC,71.0,Wales,74.0
+211363,T. Lockyer,Tom Lockyer,CB ,22,68.0,75.0,€1.1M,€6K,Bristol Rovers,64.0,Wales,74.0
+209333,C. Maxwell,Chris Maxwell (Christopher Maxwell),GK ,26,71.0,74.0,€2.1M,€8K,Preston North End,70.0,Wales,74.0
+213105,L. Evans,Lee Evans,CM CDM ,22,68.0,73.0,€1.2M,€22K,Sheffield United,69.0,Wales,74.0
+200440,B. Bodin,Billy Bodin,RM LM RW ,25,69.0,70.0,€1.2M,€9K,Preston North End,70.0,Wales,74.0
+186578,A. King,Andy King,CM ,28,72.0,72.0,€3.1M,€43K,Swansea City,75.0,Wales,74.0
+193768,A. Matthews,Adam Matthews (Adam  Matthews),RB ,25,69.0,72.0,€1.1M,€6K,Sunderland,69.0,Wales,74.0
+217994,M. Crowe,Michael Crowe (Michael Thomas Tallaksen Crowe),GK ,21,60.0,68.0,€230K,€2K,Ipswich Town,70.0,Wales,74.0
+195586,A. Finnbogason,Alfreð Finnbogason,ST ,28,78.0,78.0,€10.5M,€33K,FC Augsburg,75.0,Iceland,72.0
+184484,G. Sigurðsson,Gylfi Sigurðsson (Gylfi Þór Sigurðsson),LM CAM LW ,27,81.0,81.0,€18.5M,€120K,Everton,79.0,Iceland,72.0
+175789,B. Bjarnason,Birkir Bjarnason,LM CAM CM RM ,29,71.0,71.0,€2.3M,€26K,Aston Villa,73.0,Iceland,72.0
+133249,E. Hallfreðsson,Emil Hallfreðsson,CM CDM ,33,72.0,72.0,€1.8M,€19K,Udinese,74.0,Iceland,72.0
+189167,A. Gunnarsson,Aron Gunnarsson (Aron Einar Gunnarsson),CDM CM ,28,72.0,72.0,€2.5M,€20K,Cardiff City,71.0,Iceland,72.0
+191076,J. Guðmundsson,Jóhann Berg Guðmundsson (Johann  Berg Guðmunds­son),RM LM ,26,78.0,78.0,€11M,€58K,Burnley,77.0,Iceland,72.0
+208522,H. Magnússon,Hörður Magnússon (Hörður Björgvin Magnússon),CB LB ,24,69.0,74.0,€1.2M,€19K,Bristol City,71.0,Iceland,72.0
+179897,R. Sigurðsson,Ragnar Sigurðsson,CB ,31,72.0,72.0,€2.1M,€21K,FC Rostov,71.0,Iceland,72.0
+166851,K. Árnason,Kári Árnason,CB ,34,69.0,69.0,€325K,€5K,Aberdeen,69.0,Iceland,72.0
+183122,B. Sævarsson,Birkir Már Sævarsson,RB ,32,66.0,66.0,€0,€0,,,Iceland,72.0
+206379,H. Halldórsson,Hannes Þór Halldórsson,GK ,33,67.0,67.0,€375K,€7K,Randers FC,65.0,Iceland,72.0
+190461,B. Sigurðarson,Björn Bergmann Sigurðarson,ST RM ,25,73.0,76.0,€5M,€34K,FC Rostov,71.0,Iceland,72.0
+212992,J. Böðvarsson,Jón Daði Böðvarsson,ST ,25,70.0,72.0,€2.2M,€25K,Reading,70.0,Iceland,72.0
+173667,R. Gíslason,Rúrik Gíslason,ST RM LM ,29,68.0,68.0,€900K,€6K,,,SV Sandhausen,69.0
+211177,A. Traustason,Arnór Ingvi Traustason,LM RM ,24,69.0,71.0,€1.3M,€4K,Malmö FF,69.0,Iceland,72.0
+221422,S. Ingason,Sverrir Ingi Ingason,CB RB ,23,73.0,78.0,€4.5M,€25K,FC Rostov,71.0,Iceland,72.0
+179899,A. Skúlason,Ari Skúlason (Ari Freyr Skúlason),LB ,30,67.0,67.0,€550K,€9K,Sporting Lokeren,69.0,Iceland,72.0
+222562,R. Rúnarsson,Rúnar Rúnarsson,GK ,22,66.0,76.0,€800K,€3K,FC Nordsjælland,65.0,Iceland,72.0
+160770,O. Skúlason,Ólafur Ingi Skúlason,CDM CM ,34,70.0,70.0,€550K,€10K,Kardemir Karabükspor,66.0,Iceland,72.0
+224418,S. Friðjónsson,Samúel Kári Friðjónsson,CM CAM CDM ,21,62.0,73.0,€525K,€1K,,,Vålerenga Fotball,66.0
+238004,A. Guðmundsson,Albert Guðmundsson (Albert Gudmundsson),RW LW CAM ,20,67.0,77.0,€1.2M,€8K,,,PSV,75.0
+188916,H. Eyjólfsson,Hólmar Örn Eyjólfsson,CB ,27,68.0,69.0,€0,€0,,,Iceland,72.0
+225489,F. Schram,Frederik Schram,GK ,23,56.0,66.0,€0,€0,,,Iceland,72.0
+208597,H. Hermannsson,Hjörtur Hermannsson,CB ,22,70.0,75.0,€2M,€11K,Brøndby IF,70.0,Iceland,72.0
+203929,J. Fjóluson,Jón Guðni Fjóluson,CB ,28,68.0,69.0,€825K,€4K,IFK Norrköping,66.0,Iceland,72.0
+189721,A. Smárason,Arnór Smárason,RM ,28,65.0,65.0,€550K,€2K,,,Hammarby IF,67.0
+221553,V. Kjartansson,Viðar Örn Kjartansson,ST ,27,71.0,71.0,€0,€0,,,Iceland,72.0
+213106,R. Sigurjónsson,Rúnar Már Sigurjónsson,CM CDM CAM ,27,70.0,71.0,€2M,€14K,FC St. Gallen,67.0,Iceland,72.0
+216817,O. Karlsson,Óttar Magnús Karlsson,ST ,21,62.0,70.0,€450K,€1K,Trelleborgs FF,62.0,Molde FK,7.0
+216633,O. Kristinsson,Ögmundur Kristinsson,GK ,28,63.0,65.0,€300K,€2K,,,Excelsior,68.0
+169448,E. Bjarnason,Elmar Bjarnason (Theódór Elmar Bjarnason),LM CM ,30,67.0,67.0,€0,€0,,,Iceland,75.0
+227509,E. Ómarsson,Elías Már Ómarsson,ST ,22,64.0,73.0,€700K,€2K,,,IFK Göteborg,65.0
+228266,I. Jónsson,Ingvar Jónsson,GK ,27,64.0,66.0,€375K,€1K,Sandefjord Fotball,63.0,Iceland,72.0
+169449,K. Finnbogason,Kjartan Finnbogason (Kjartan Henry Finnbogason),ST ,30,66.0,66.0,€625K,€4K,,,AC Horsens,62.0
+238195,V. Jónsson,Viðar Ari Jónsson (Vidar Ari Jonsson),RB LB ,23,64.0,71.0,€0,€0,,,Iceland,75.0
+233401,A. Sigurðarson,Aron Sigurðarson,LW RW ,24,66.0,69.0,€825K,€2K,,,IK Start,63.0
+226509,A. Þrándarson,Aron Elís Þrándarson,LM ST ,22,65.0,71.0,€750K,€2K,,,Aalesunds FK,61.0
+226538,H. Hauksson,Haukur Heiðar Hauksson,CB RWB ,25,65.0,68.0,€575K,€3K,,,AIK,68.0
+183483,K. Mitroglou,Konstantinos Mitroglou,ST ,29,78.0,78.0,€10.5M,€36K,Olympique de Marseille,78.0,Greece,76.0
+203980,K. Fortounis,Konstantinos Fortounis,CAM LM ,24,76.0,79.0,€10M,€1K,Olympiacos CFP,75.0,Greece,76.0
+202151,K. Stafylidis,Konstantinos Stafylidis,LB ,23,75.0,79.0,€7M,€19K,Stoke City,76.0,Greece,76.0
+178115,L. Christodoulopoulos,Lazaros Christodoulopoulos,LM RM ,30,75.0,75.0,€6.5M,€1K,AEK Athens,74.0,Greece,76.0
+208230,A. Samaris,Andreas Samaris,CDM CM ,28,76.0,76.0,€6M,€14K,SL Benfica,78.0,Greece,76.0
+168621,Zeca,José Carlos Gonçalves Rodrigues,CM ,28,74.0,74.0,€5.5M,€22K,FC København,71.0,Greece,76.0
+199060,G. Tzavellas,Georgios Tzavellas,CB LB ,29,70.0,70.0,€1.4M,€11K,Alanyaspor,71.0,Greece,76.0
+192774,K. Manolas,Kostas Manolas,CB ,26,85.0,87.0,€38.5M,€96K,Roma,81.0,Greece,76.0
+172879,Sokratis,Sokratis Papastathopoulos,CB ,29,85.0,85.0,€30M,€90K,Borussia Dortmund,81.0,Greece,76.0
+181459,V. Torosidis,Vassilis Torosidis,RB LB ,32,73.0,73.0,€2.2M,€42K,Bologna,76.0,Greece,76.0
+183497,O. Karnezis,Orestis Karnezis,GK ,31,80.0,80.0,€9M,€28K,Watford,77.0,Greece,76.0
+210947,N. Karelis,Nikos Karelis,ST ,25,73.0,76.0,€5M,€18K,KRC Genk,72.0,Greece,76.0
+208053,D. Pelkas,Dimitrios Pelkas,CAM RM LM CM ,23,74.0,78.0,€7.5M,€1K,PAOK,74.0,Greece,76.0
+142329,A. Tziolis,Alexandros Tziolis,CDM CB ,32,72.0,72.0,€1.8M,€14K,Al Fayha,66.0,Greece,76.0
+208250,A. Bakasetas,Anastasios Bakasetas,CAM RM ST ,24,72.0,76.0,€4.1M,€1K,AEK Athens,74.0,Greece,76.0
+207684,G. Gianniotas,Giannis Gianniotas,LM RM ,24,71.0,73.0,€2.9M,€7K,Real Valladolid CF,72.0,Greece,76.0
+184477,K. Papadopoulos,Kyriakos Papadopoulos,CB ,25,78.0,80.0,€10.5M,€33K,Hamburger SV,74.0,Greece,76.0
+210327,A. Gianniotis,Andreas Gianniotis,GK ,24,71.0,76.0,€0,€0,,,Greece,76.0
+205878,S. Kapino,Stefanos Kapino,GK ,23,74.0,79.0,€5.5M,€18K,Nottingham Forest,71.0,Greece,76.0
+227732,A. Donis,Anastasios Donis,ST LW RW ,20,73.0,83.0,€6.5M,€21K,VfB Stuttgart,75.0,Greece,76.0
+226075,M. Bakakis,Michalis Bakakis,RB LB CB ,26,72.0,73.0,€3M,€1K,AEK Athens,74.0,Greece,76.0
+190084,P. Tachtsidis,Panagiotis Tachtsidis,CDM CM ,26,74.0,76.0,€5.5M,€1K,Olympiacos CFP,75.0,Greece,76.0
+234986,P. Retsos,Panagiotis Retsos,CB RB LB ,18,74.0,85.0,€8M,€21K,Bayer 04 Leverkusen,79.0,Greece,76.0
+202539,L. Griffiths,Leigh Griffiths,ST ,26,75.0,76.0,€8M,€53K,Celtic,74.0,Scotland,74.0
+202282,S. Armstrong,Stuart Armstrong,CAM CDM ,25,75.0,77.0,€8M,€46K,Celtic,74.0,Scotland,74.0
+188166,M. Phillips,Matt Phillips,RM LM ,26,76.0,76.0,€8.5M,€68K,West Bromwich Albion,76.0,Scotland,74.0
+210881,J. McGinn,John McGinn,CM LM ,22,70.0,78.0,€2.6M,€5K,Hibernian,66.0,Scotland,74.0
+195202,T. Cairney,Tom Cairney,CM ,26,78.0,79.0,€12M,€50K,Fulham,72.0,Scotland,74.0
+200630,J. Forrest,James Forrest,RM ,25,75.0,76.0,€8M,€46K,Celtic,74.0,Scotland,74.0
+216267,A. Robertson,Andrew Robertson,LB LWB ,23,79.0,84.0,€14M,€91K,Liverpool,81.0,Scotland,74.0
+178417,C. Mulgrew,Charlie Mulgrew,CB CM ,31,71.0,71.0,€1.6M,€10K,Blackburn Rovers,68.0,Scotland,74.0
+156975,C. Berra,Christophe Berra,CB ,32,73.0,73.0,€2.3M,€9K,Heart of Midlothian,67.0,Scotland,74.0
+226491,K. Tierney,Kieran Tierney,LB LWB CB ,20,76.0,86.0,€11M,€40K,Celtic,74.0,Scotland,74.0
+53110,C. Gordon,Craig Gordon (Craig  Gordon),GK ,34,74.0,74.0,€2.3M,€36K,Celtic,74.0,Scotland,74.0
+219948,J. Cummings,Jason Cummings,ST ,21,67.0,75.0,€1.1M,€15K,Rangers FC,71.0,Scotland,74.0
+186395,M. Ritchie,Matt Ritchie,RM LM ,27,76.0,76.0,€8M,€68K,Newcastle United,75.0,Scotland,74.0
+211093,C. McGregor,Callum McGregor,CAM LM ,24,74.0,77.0,€7M,€42K,Celtic,74.0,Scotland,74.0
+237238,S. McTominay,Scott McTominay,CM CDM ,20,68.0,81.0,€1.7M,€43K,Manchester United,83.0,Scotland,74.0
+210724,C. Paterson,Callum Paterson,CM RB ,22,70.0,77.0,€2.5M,€18K,Cardiff City,71.0,Scotland,74.0
+225974,S. McKenna,Scott McKenna,CB ,20,66.0,81.0,€1.3M,€2K,Aberdeen,69.0,Scotland,74.0
+49000,A. McGregor,Allan McGregor,GK ,35,73.0,73.0,€950K,€6K,Hull City,71.0,Scotland,74.0
+207807,R. Fraser,Ryan Fraser,RM LM ,23,74.0,78.0,€7.5M,€49K,Bournemouth,76.0,Scotland,74.0
+200443,B. Douglas,Barry Douglas,LWB LB ,27,74.0,74.0,€4.6M,€43K,Wolverhampton Wanderers,74.0,Scotland,74.0
+138782,D. Fletcher,Darren Fletcher (Darren  Fletcher),CM CDM ,33,74.0,74.0,€3.3M,€57K,Stoke City,76.0,Scotland,74.0
+184747,C. Martin,Chris Martin,ST ,28,69.0,69.0,€1.1M,€34K,Reading,70.0,Scotland,74.0
+205352,J. Archer,Jordan Archer (Jordan  Archer),GK ,24,69.0,75.0,€1.1M,€13K,Millwall,69.0,Scotland,74.0
+213955,S. Azmoun,Sardar Azmoun,ST ,22,76.0,84.0,€11.5M,€46K,,,Rubin Kazan,71.0
+197136,K. Ansarifard,Karim Ansarifard,ST ,27,75.0,75.0,€7M,€1K,,,Olympiacos CFP,75.0
+241785,V. Amiri,Vahid Amiri,LW LM ,30,68.0,68.0,€850K,€13K,,,Trabzonspor,73.0
+188877,M. Shojaei,Masoud Shojaei (Masoud Shojaei Soleimani),CAM LM ,33,72.0,72.0,€1.9M,€1K,,,AEK Athens,74.0
+215871,A. Jahanbakhsh,Alireza Jahanbakhsh,RW ,23,78.0,80.0,€13M,€13K,,,AZ Alkmaar,73.0
+217444,O. Ebrahimi,Omid Ebrahimi,CM CDM ,29,61.0,61.0,€0,€0,,,Iran,74.0
+194354,E. Haji Safi,Ehsan Haji Safi (Ehsan Hajsafi),LB LM LWB ,27,70.0,70.0,€1.5M,€1K,,,Olympiacos CFP,75.0
+241803,R. Cheshmi,Roozbeh Cheshmi,CM CDM CB ,23,60.0,65.0,€0,€0,,,Iran,74.0
+227921,M. Pouraliganji,Morteza Pouraliganji,CB CDM CM ,26,70.0,73.0,€1.8M,€7K,,,KAS Eupen,68.0
+239675,R. Rezaeian,Ramin Rezaeian,RB RWB RM ,27,69.0,69.0,€875K,€9K,,,KV Oostende,70.0
+241790,A. Beiranvand,Alireza Beiranvand,GK ,24,75.0,81.0,€0,€0,,,Iran,74.0
+189717,R. Ghoochannejhad,Reza Ghoochannejhad (Reza Ghoochannejhad Nournia),ST ,29,70.0,70.0,€1.8M,€9K,,,SC Heerenveen,70.0
+239593,K. Rezaei,Kaveh Rezaei,ST ,25,73.0,75.0,€5M,€16K,,,Sporting de Charleroi,70.0
+241788,M. Taremi,Mehdi Taremi,LM LW ,24,74.0,76.0,€0,€0,,,Iran,74.0
+191578,P. Montazeri,Pejman Montazeri,CB ,33,74.0,74.0,€0,€0,,,Iran,74.0
+243549,M. Hosseini,Majid Hosseini (Seyed Majid Hosseini),CB ,22,61.0,67.0,€290K,€4K,,,Trabzonspor,73.0
+243548,M. Khanzadeh,Mohammad Reza Khanzadeh,CB ,26,61.0,65.0,€0,€0,,,Iran,74.0
+241796,M. Mazaheri,Mohammad Rashid Mazaheri,GK ,28,62.0,63.0,€0,€0,,,Iran,74.0
+231949,S. Ghoddos,Saman Ghoddos,ST ,23,72.0,76.0,€4.1M,€4K,,,Östersunds FK,66.0
+241784,M. Torabi,Mehdi Torabi,RM ,22,69.0,76.0,€0,€0,,,Iran,74.0
+233218,M. Mohammadi,Milad Mohammadi,LB LWB ,23,73.0,80.0,€4.7M,€25K,,,Terek Grozny,71.0
+237419,A. Abedzadeh,Amir Abedzadeh,GK ,24,66.0,71.0,€625K,€2K,,,Clube Sport Marítimo,71.0
+157427,A. Dejagah,Ashkan Dejagah,RM LM ,30,72.0,72.0,€2.9M,€21K,,,Nottingham Forest,71.0
+241786,V. Ghafouri,Vorya Ghafouri,RB RM ,29,68.0,68.0,€0,€0,,,Iran,74.0
+241799,S. Rafiei,Soroosh Rafiei,CM CDM ,27,60.0,60.0,€0,€0,,,Iran,74.0
+241798,M. Ansari,Mohammad Ansari,CB ,25,62.0,65.0,€0,€0,,,Iran,74.0
+241802,S. Aghaei,Saeed Aghaei,LB LM ,22,61.0,70.0,€0,€0,,,Iran,74.0
+241804,O. Noorafkan,Omid Noorafkan,CDM LB ,21,68.0,76.0,€1.1M,€4K,,,Sporting de Charleroi,70.0
+241797,D. Shojaeian,Dariush Shojaeian,CM CDM ,25,61.0,62.0,€0,€0,,,Iran,74.0
+217441,S. Makani,Sosha Makani,GK ,30,65.0,65.0,€0,€0,,,Iran,74.0
+241792,O. Alishah,Omid Alishah,LM ,25,66.0,67.0,€0,€0,,,Iran,74.0
+241793,A. Karimi,Ali Karimi,CDM CM ,23,65.0,73.0,€0,€0,,,Iran,74.0
+194350,J. Hosseini,Jalal Hosseini (Seyed Jalaleddin Hosseini Khoskebijari),CB ,35,72.0,72.0,€0,€0,,,Iran,74.0
+241794,M. Majidi,Meysam Majidi,LB ,30,63.0,63.0,€0,€0,,,Iran,74.0
+241787,E. Pourghaz,Ezzatollah Pourghaz,CB ,30,72.0,72.0,€0,€0,,,Iran,74.0
+175667,A. Teymourian,Andranik Teymourian (Andranik Timotian-Samarani),CDM CM RM ,34,72.0,72.0,€0,€0,,,Iran,74.0
+191589,A. Haghighi,Alireza Haghighi,GK ,29,73.0,73.0,€0,€0,,,Iran,74.0
+241801,H. Lak,Hamed Lak,GK ,26,61.0,63.0,€0,€0,,,Iran,74.0
+241789,M. Sharifi,Mehdi Sharifi,RM ,24,60.0,62.0,€0,€0,,,Iran,74.0
+233241,S. Ezatolahi,Saeid Ezatolahi,CM CDM ,20,68.0,79.0,€1.5M,€15K,Amkar Perm,68.0,FC Rostov,20.0
+166844,K. Lafferty,Kyle Lafferty,ST LM ,29,71.0,71.0,€2.4M,€8K,Heart of Midlothian,67.0,Northern Ireland,71.0
+203570,S. Dallas,Stuart Dallas,LM RM ,26,70.0,70.0,€1.9M,€24K,Leeds United,71.0,Northern Ireland,71.0
+204412,G. Saville,George Saville,CM LM ,24,73.0,77.0,€5M,€31K,Millwall,69.0,Northern Ireland,71.0
+151508,S. Davis,Steven Davis,CM CAM CDM ,32,75.0,75.0,€5M,€66K,Southampton,76.0,Northern Ireland,71.0
+164467,J. Ward,Jamie Ward,ST RM LM ,31,67.0,67.0,€675K,€19K,Cardiff City,71.0,Northern Ireland,71.0
+186143,O. Norwood,Oliver Norwood,CM CDM ,26,72.0,73.0,€3.6M,€31K,Fulham,72.0,Northern Ireland,71.0
+231292,J. Lewis,Jamal Lewis,LB LM ,19,64.0,81.0,€875K,€5K,Norwich City,71.0,Northern Ireland,71.0
+169588,J. Evans,Jonny Evans,CB ,29,79.0,79.0,€10M,€78K,West Bromwich Albion,76.0,Northern Ireland,71.0
+109852,G. McAuley,Gareth McAuley,CB ,37,75.0,75.0,€900K,€37K,West Bromwich Albion,76.0,Northern Ireland,71.0
+195480,C. McLaughlin,Conor McLaughlin,RB RWB ,25,70.0,72.0,€1.8M,€22K,Millwall,69.0,Northern Ireland,71.0
+163201,M. McGovern,Michael McGovern,GK ,32,68.0,68.0,€525K,€15K,Norwich City,71.0,Northern Ireland,71.0
+186562,J. Magennis,Josh Magennis,ST ,26,65.0,66.0,€650K,€4K,Charlton Athletic,66.0,Northern Ireland,71.0
+217758,C. Washington,Conor Washington,ST ,25,66.0,69.0,€825K,€9K,Queens Park Rangers,69.0,Northern Ireland,71.0
+186135,C. Evans,Corry Evans,CM CDM ,26,67.0,68.0,€875K,€9K,Blackburn Rovers,68.0,Northern Ireland,71.0
+213697,P. McNair,Paddy McNair,CDM CB RB ,22,70.0,78.0,€2.3M,€7K,Sunderland,69.0,Northern Ireland,71.0
+212680,J. Jones,Jordan Jones,LM LW CAM ,22,69.0,77.0,€1.5M,€5K,Kilmarnock,66.0,Northern Ireland,71.0
+17725,A. Hughes,Aaron Hughes (Aaron  Hughes),CB ,37,70.0,70.0,€240K,€5K,Heart of Midlothian,67.0,Northern Ireland,71.0
+166764,T. Carson,Trevor Carson,GK ,29,68.0,68.0,€600K,€4K,Motherwell,64.0,Northern Ireland,71.0
+186839,N. McGinn,Niall McGinn,RM ,29,72.0,72.0,€3M,€7K,Aberdeen,69.0,Northern Ireland,71.0
+192624,S. Ferguson,Shane Ferguson,LM LB ,25,65.0,66.0,€650K,€10K,Millwall,69.0,Northern Ireland,71.0
+193357,L. Hodson,Lee Hodson,RB LB ,25,66.0,69.0,€675K,€12K,Rangers FC,71.0,Northern Ireland,71.0
+180706,C. Cathcart,Craig Cathcart,CB RB ,28,73.0,73.0,€3.2M,€46K,Watford,77.0,Northern Ireland,71.0
+242289,C. Hazard,Conor Hazard,GK ,19,59.0,73.0,€0,€0,,,Northern Ireland,71.0
+205478,M. Krmenčík,Michael Krmenčík,ST ,24,74.0,79.0,€0,€0,,,Czech Republic,75.0
+236791,A. Barák,Antonín Barák,CM CAM ,22,77.0,84.0,€12.5M,€27K,Udinese,74.0,Czech Republic,75.0
+226592,J. Jankto,Jakub Jankto,CM ,21,76.0,85.0,€12M,€24K,Udinese,74.0,Czech Republic,75.0
+205365,J. Kopic,Jan Kopic,LM RM ,27,72.0,72.0,€0,€0,,,Czech Republic,75.0
+236792,T. Souček,Tomáš Souček,CDM ,22,70.0,79.0,€0,€0,,,Czech Republic,75.0
+201262,V. Darida,Vladimír Darida,CM CAM CDM ,26,79.0,80.0,€14.5M,€38K,Hertha BSC,77.0,Czech Republic,75.0
+205364,F. Novák,Filip Novák,CB LB ,27,71.0,74.0,€2.4M,€19K,Trabzonspor,74.0,Czech Republic,75.0
+181262,M. Suchý,Marek Suchý,CB ,29,78.0,78.0,€8M,€40K,FC Basel 1893,73.0,Czech Republic,75.0
+201122,T. Kalas,Tomáš Kalas,CB ,24,72.0,77.0,€3.5M,€23K,Fulham,72.0,Czech Republic,75.0
+203605,P. Kadeřábek,Pavel Kadeřábek,RWB RB RM ,25,78.0,81.0,€10.5M,€33K,TSG 1899 Hoffenheim,78.0,Czech Republic,75.0
+204120,T. Vaclík,Tomáš Vaclík,GK ,28,78.0,79.0,€8.5M,€32K,FC Basel 1893,73.0,Czech Republic,75.0
+234236,P. Schick,Patrik Schick,ST RW ,21,77.0,87.0,€14.5M,€54K,Roma,81.0,Czech Republic,75.0
+198429,S. Tecl,Stanislav Tecl,ST RW ,26,70.0,71.0,€0,€0,,,Czech Republic,75.0
+231077,M. Frýdek,Martin Frýdek,CM LB CDM ,25,69.0,72.0,€1.3M,€1K,Sparta Praha,72.0,Czech Republic,75.0
+241362,S. Falta,Šimon Falta,LM ,24,67.0,70.0,€0,€0,,,Czech Republic,75.0
+204125,J. Bořil,Jan Bořil,LB RB ,26,72.0,73.0,€0,€0,,,Czech Republic,75.0
+238940,J. Jugas,Jakub Jugas,CB ,25,71.0,75.0,€0,€0,,,Czech Republic,75.0
+236583,J. Pavlenka,Jiří Pavlenka,GK ,25,80.0,84.0,€13.5M,€26K,SV Werder Bremen,76.0,Czech Republic,75.0
+186330,T. Gebre Selassie,Theodor Gebre Selassie,RB RM ,30,75.0,75.0,€4.8M,€24K,SV Werder Bremen,76.0,Czech Republic,75.0
+239402,M. Lüftner,Michael Lüftner,CB ,23,69.0,75.0,€1.2M,€10K,FC København,71.0,Czech Republic,75.0
+243007,L. Masopust,Lukáš Masopust,RM RW RB ,24,68.0,71.0,€0,€0,,,Czech Republic,75.0
+243008,M. Trávník,Michal Trávník (Michal Travnik),CM CAM CDM ,23,70.0,76.0,€0,€0,,,Czech Republic,75.0
+200332,T. Koubek,Tomáš Koubek,GK ,24,76.0,79.0,€7M,€17K,Stade Rennais FC,74.0,Czech Republic,75.0
+204194,S. Khalifa,Saber Khalifa,ST RM ,30,73.0,73.0,€0,€0,,,Tunisia,73.0
+194845,W. Khazri,Wahbi Khazri,CF ST LM ,26,78.0,78.0,€11.5M,€15K,Stade Rennais FC,74.0,Sunderland,139.0
+205257,N. Sliti,Naïm Sliti,LM LW ST ,24,74.0,76.0,€7M,€33K,Dijon FCO,72.0,LOSC Lille,16.0
+223219,A. Badri,Anice Badri,LM RM ST ,26,71.0,71.0,€0,€0,,,Tunisia,73.0
+241753,M. Ben Amor,Mohamed Amine Ben Amor,CDM ,25,71.0,75.0,€2.6M,€23K,,,Al Ahli,72.0
+218215,F. Sassi,Ferjani Sassi,CDM ,25,68.0,73.0,€1M,€19K,,,Al Nassr,69.0
+218229,A. Maâloul,Ali Maâloul,LB LM ,27,70.0,70.0,€0,€0,,,Tunisia,73.0
+207788,S. Ben Youssef,Syam Ben Youssef,CB ,28,71.0,72.0,€2.2M,€11K,,,Kasimpaşa SK,70.0
+183288,Y. Benalouane,Yohan Benalouane,CB RB ,30,74.0,74.0,€4.2M,€52K,,,Leicester City,78.0
+241754,H. Nagguez,Hamdi Nagguez,RB ,24,72.0,74.0,€0,€0,,,Tunisia,73.0
+195834,A. Mathlouthi,Aymen Mathlouthi,GK ,32,73.0,73.0,€2.3M,€11K,,,Al Batin,63.0
+218214,F. Ben Youssef,Fakhereedine Ben Youssef (Fakhreddine Ben Youssef),ST ,26,66.0,67.0,€775K,€5K,,,Ettifaq FC,65.0
+225126,E. Skhiri,Ellyes Skhiri,CDM CM ,22,75.0,80.0,€7.5M,€20K,,,Montpellier HSC,74.0
+241757,G. Chaaleli,Ghaylène Chaaleli,CM CAM ,23,72.0,76.0,€0,€0,,,Tunisia,73.0
+237600,B. Srarfi,Bassem Srarfi (Bassem  Srarfi),RW CAM ,20,70.0,79.0,€2.8M,€19K,,,OGC Nice,77.0
+241746,Y. Meriah,Yassine Meriah,CB RB ,24,71.0,75.0,€2.6M,€1K,,,Olympiacos CFP,75.0
+241756,R. Bedoui,Rami Bedoui,CB RB ,27,70.0,70.0,€0,€0,,,Tunisia,73.0
+209483,M. Hassen,Mouez Hassen,GK ,22,69.0,76.0,€1.1M,€11K,La Berrichonne de Châteauroux,66.0,OGC Nice,97.0
+242945,A. Khalil,Ahmed Khalil (Ahmed  Khalil),CDM CB CM ,22,68.0,71.0,€0,€0,,,Tunisia,73.0
+237548,O. Haddadi,Oussama Haddadi,LB LWB ,25,66.0,69.0,€675K,€5K,,,Dijon FCO,72.0
+235565,D. Bronn,Dylan Bronn,CB RB ,22,72.0,78.0,€3.6M,€12K,,,KAA Gent,73.0
+220029,S. Khaoui,Saîf-Eddine Khaoui,CAM RM CM ,22,71.0,75.0,€3.1M,€17K,ESTAC Troyes,70.0,Olympique de Marseille,3.0
+218216,F. Ben Mustapha,Farouk Ben Mustapha,GK ,28,63.0,63.0,€260K,€5K,,,Al Shabab,65.0
+218176,M. Ben Chérifia,Moez Ben Chérifia (Moez Ben Cherifia),GK ,26,67.0,69.0,€0,€0,,,Tunisia,73.0
+200265,B. Mohsni,Bilel Mohsni,CB ,29,66.0,66.0,€0,€0,,,Tunisia,73.0
+203820,K. Aouadhi,Karim Aouadhi (Karim Ben Hassan Aouadhi),CDM CM ,31,69.0,69.0,€0,€0,,,Tunisia,73.0
+165240,F. Camus,Fabien Camus,CAM LM RM ,32,68.0,68.0,€700K,€9K,,,KV Mechelen,69.0
+205234,A. Akaichi,Ahmed Akaichi (Ahmed Akaïchi),ST ,28,69.0,69.0,€1.1M,€24K,,,Al Ittihad,68.0
+241749,M. Moncer,Mohamed Ali Moncer,CAM ,26,69.0,71.0,€0,€0,,,Tunisia,73.0
+197374,K. Chemmam,Khalil Chemmam,LB ,29,67.0,67.0,€0,€0,,,Tunisia,73.0
+186444,H. Harbaoui,Hamdi Harbaoui,ST ,32,73.0,73.0,€3.2M,€18K,,,SV Zulte-Waregem,71.0
+198076,A. Abdennour,Aymen Abdennour,CB ,27,75.0,76.0,€6.5M,€26K,Olympique de Marseille,78.0,Valencia CF,144.0
+218209,T. Khenissi,Taha Khenissi (Taha Yassine Khenissi),ST ,25,74.0,75.0,€0,€0,,,Tunisia,73.0
+203889,Y. Touzghar,Yoann Touzghar,ST ,30,70.0,70.0,€1.7M,€8K,,,FC Sochaux-Montbéliard,67.0
+177022,Y. Chikhaoui,Yassine Chikhaoui,CAM CF ,30,75.0,75.0,€0,€0,,,Tunisia,73.0
+218193,Y. Msakni,Youssef Msakni,LM LW CAM ,26,74.0,74.0,€0,€0,,,Tunisia,73.0
+241747,H. Mathlouthi,Hamza Mathlouthi,RB ,24,68.0,71.0,€0,€0,,,Tunisia,73.0
+195839,A. Jemal,Ammar Jemal,CB LB ,30,73.0,73.0,€0,€0,,,Tunisia,73.0
+241755,Z. Boughattas,Zied Boughattas,CB ,26,69.0,71.0,€0,€0,,,Tunisia,73.0
+176627,A. Ben-Hatira,Änis Ben-Hatira,LM CAM ,28,72.0,72.0,€0,€0,,,Tunisia,73.0
+202896,M. Ureña,Marco Ureña (Marcos Danilo Ureña Porras),ST ,28,68.0,68.0,€925K,€4K,,,Los Angeles FC,71.0
+175753,C. Bolaños,Christian Bolaños (Christian Bolaños Navarro),LM RM ,33,71.0,71.0,€0,€0,,,Costa Rica,73.0
+236999,D. Guzman,David Guzman,CDM ,27,72.0,73.0,€2.9M,€6K,,,Portland Timbers,70.0
+190799,C. Borges,Celso Borges (Celso Borges Mora),CDM CM CAM ,29,78.0,78.0,€8M,€26K,,,Deportivo de La Coruña,77.0
+176949,B. Ruíz,Bryan Ruíz (Bryan Ruiz González),LM CAM CM CF ,31,76.0,76.0,€7M,€19K,,,Sporting CP,79.0
+198335,B. Oviedo,Bryan Oviedo,LB LWB ,27,72.0,72.0,€2.6M,€8K,,,Sunderland,69.0
+216811,K. Waston,Kendall Waston (Kendall Jamaal Waston Manley),CB ,29,74.0,74.0,€4.4M,€9K,,,Vancouver Whitecaps FC,69.0
+216780,J. Acosta,Jhonny Acosta (Johnny Acosta Zamora),CB ,33,69.0,69.0,€425K,€2K,,,Rionegro Águilas,67.0
+208379,G. González,Giancarlo González (Giancarlo González Castro),CB ,29,76.0,76.0,€6M,€52K,,,Bologna,76.0
+198553,C. Gamboa,Cristian Gamboa (Cristian Gamboa Luna),RB ,27,70.0,70.0,€1.5M,€32K,,,Celtic,74.0
+193041,K. Navas,Keylor Navas,GK ,30,85.0,85.0,€24.5M,€165K,,,Real Madrid,86.0
+216782,D. Colindres,Daniel Colindres (Daniel Colindres Solera),ST LM ,32,63.0,63.0,€0,€0,,,Costa Rica,73.0
+204713,J. Campbell,Joel Campbell (Joel Nathaniel Campbell Samuels),RM LM CAM ,25,77.0,80.0,€11M,€92K,Real Betis,78.0,Arsenal,549.0
+175749,R. Azofeifa,Randall Azofeifa (Rándall Azofeifa Corrales),CM CAM ,32,71.0,71.0,€0,€0,,,Costa Rica,73.0
+216810,Y. Tejeda,Yeltsin Tejeda (Yeltsin Ignacio Tejeda Valverde),CM CDM ,25,68.0,70.0,€1.1M,€7K,,,FC Lausanne-Sport,65.0
+212772,O. Duarte,Óscar Duarte,CB ,28,76.0,76.0,€6M,€30K,,,RCD Espanyol,78.0
+213064,F. Calvo,Francisco Calvo,CB LB ,24,72.0,74.0,€3.2M,€5K,,,Minnesota United FC,68.0
+216805,L. Moreira,Leonel Moreira (Leonel Moreira Ledezma),GK ,27,62.0,64.0,€0,€0,,,Costa Rica,73.0
+241739,K. Gutiérrez,Kenner Gutiérrez,CB ,28,63.0,63.0,€0,€0,,,Costa Rica,73.0
+190588,R. Wallace,Rodney Wallace,LM LW ,29,68.0,68.0,€875K,€6K,,,New York City FC,70.0
+229996,J. Venegas,Johan Venegas (Johan Alberto Venegas Ulloa),CAM CM RM ,28,68.0,68.0,€0,€0,,,Costa Rica,73.0
+242551,I. Smith,Ian Smith (Ian Rey Smith Quiros),RWB RM ,19,53.0,67.0,€110K,€1K,,,IFK Norrköping,66.0
+197701,P. Pemberton,Patrick Pemberton (Patrick Alberto Pemberton Bernard),GK ,35,66.0,66.0,€0,€0,,,Costa Rica,73.0
+155821,M. Umaña,Michael Umaña (Michael Umaña Corrales),CB ,34,67.0,67.0,€0,€0,,,Costa Rica,73.0
+220293,Y. Ruíz,Yendrick Ruíz,ST ,30,62.0,62.0,€0,€0,,,Costa Rica,73.0
+241743,U. Segura,Ulises Segura,CM CDM ,24,66.0,69.0,€800K,€2K,,,DC United,68.0
+232230,R. Matarrita,Ronald Matarrita (Ronald Alberto Matarrita Ulate),LB LM ,22,71.0,78.0,€2.8M,€5K,,,New York City FC,70.0
+236992,J. Ortiz,José Guillermo Ortiz,ST ,25,64.0,67.0,€0,€0,,,Costa Rica,73.0
+188013,J. Díaz,Júnior Díaz (Júnior Enrique Díaz Campbell),LWB CB ,33,65.0,65.0,€0,€0,,,Costa Rica,73.0
+216806,A. Rodríguez,Ariel Rodríguez (Eithel Ariel Rodríguez Araya),CDM CM ,31,61.0,61.0,€0,€0,,,Costa Rica,73.0
+198040,E. Alvarado,Esteban Alvarado (Esteban Alvarado Brown),GK ,28,67.0,67.0,€525K,€14K,,,Trabzonspor,74.0
+216808,J. Salvatierra,José Salvatierra (José Andrés Salvatierra López),RWB LWB ,27,66.0,66.0,€0,€0,,,Costa Rica,73.0
+193048,O. Granados,Óscar Esteban Granados,CDM CM ,31,62.0,62.0,€0,€0,,,Costa Rica,73.0
+241742,J. Ordain,Jhamir Ordain,RWB ,23,60.0,65.0,€0,€0,,,Costa Rica,73.0
+239336,D. Carvajal,Danny Carvajal,GK ,28,62.0,62.0,€0,€0,,,Costa Rica,73.0
+193050,P. Salazar,Pablo Salazar,CB ,34,61.0,61.0,€0,€0,,,Costa Rica,73.0
+226733,D. Ramirez,David Ramirez (David Gerardo Ramírez Ruiz),ST ,24,63.0,69.0,€0,€0,,,Costa Rica,73.0
+216784,K. Cunningham,Kenny Cunningham (Kenny Cunningham Brown),LM ,32,61.0,61.0,€0,€0,,,Costa Rica,73.0
+155820,L. González,Leonardo González (Leonardo González Arce),LWB ,36,62.0,62.0,€0,€0,,,Costa Rica,73.0
+216804,N. Monge,Néstor Monge (Néstor Monge Guevara),CDM CM ,27,61.0,61.0,€0,€0,,,Costa Rica,73.0
+200104,H. Son,손흥민 孙兴慜 (Heung-Min Son),LM ST ,24,84.0,87.0,€39.5M,€125K,,,Tottenham Hotspur,83.0
+191910,Kim Shin Wook,김신욱 金信煜 (Shin-Wook Kim),ST ,29,74.0,74.0,€5.5M,€14K,,,Jeonbuk Hyundai Motors,71.0
+232000,Lee Seung Woo,이승우 李昇佑 (Seung-Woo Lee),LW RW ,19,68.0,77.0,€1.3M,€10K,,,Hellas Verona,72.0
+180283,Ki Sung Yueng,기성용 寄诚庸 (Sung-Yeung Ki),CM CDM ,28,76.0,76.0,€7.5M,€71K,,,Swansea City,75.0
+221671,Lee Jae Sung,이재성 李在成 (Jae-Sung Lee),CM ,24,76.0,80.0,€10M,€13K,,,Jeonbuk Hyundai Motors,71.0
+184337,Go Yo Han,고요한 高约翰 (Yo-Han Ko),CM RW ,29,71.0,71.0,€2.3M,€7K,,,FC Seoul,68.0
+191566,Park Joo Ho,박주호 朴柱昊 (Joo-Ho Park),LB CM ,30,73.0,73.0,€2.9M,€9K,,,Ulsan Hyundai FC,69.0
+201528,Kim Young Gwon,김영권 金英权 (Young-Gwon Kim),CB ,27,71.0,73.0,€0,€0,,,Korea Republic,73.0
+211005,Jang Hyeon Soo,장현수 张贤秀 (Hyun-Soo Jang),CB ,25,69.0,70.0,€1M,€6K,,,FC Tokyo,67.0
+200577,Lee Yong,이용 李镕,RB RM ,30,69.0,69.0,€750K,€7K,,,Jeonbuk Hyundai Motors,71.0
+191655,Kim Seung Gyu,김승규 金承奎 (Seung-Gyu Kim),GK ,26,70.0,72.0,€1.5M,€4K,,,Vissel Kobe,67.0
+226380,Hwang Hee Chan,황희찬 黄喜灿 (Hee-Chan Hwang),ST ,21,71.0,81.0,€3.9M,€19K,,,FC Red Bull Salzburg,71.0
+182152,Koo Ja Cheol,구자철 具滋哲,CAM CM RM ,28,76.0,76.0,€8M,€30K,,,FC Augsburg,75.0
+218471,Kim Min Woo,김민우 金敏佑 (Min-Woo Kim),LM CM ,27,73.0,73.0,€4.2M,€10K,Sangju Sangmu FC,69.0,Suwon Samsung Bluewings,3.0
+211003,Jung Woo Young,정우영 郑又荣 (Woo-Young Jung),CDM CB CM ,27,67.0,67.0,€650K,€4K,,,Vissel Kobe,67.0
+199238,Yun Young Sun,윤영선 允永舜 (Young-Sun Yun),CB ,28,71.0,71.0,€0,€0,,,Korea Republic,73.0
+207753,Oh Ban Suk,오반석 温班淑 (Ban-Suk Oh),CB ,29,70.0,70.0,€1.4M,€5K,,,Jeju United FC,67.0
+212432,Cho Hyun Woo,조현우 崔永宇,GK ,25,74.0,76.0,€4.8M,€5K,,,Daegu FC,64.0
+199236,Hong Chul,홍철 洪喆,LB RB ,26,74.0,75.0,€5.5M,€9K,Sangju Sangmu FC,69.0,Suwon Samsung Bluewings,196.0
+227790,Jeong Seung Hyun,정승현 郑承铉,CB ,23,71.0,77.0,€2.8M,€4K,,,Sagan Tosu,66.0
+208063,Ju Se Jong,주세종 朱世钟,CM CDM ,26,71.0,71.0,€0,€0,,,Korea Republic,73.0
+201936,Kim Jin Hyeon,김진현 金镇铉 (Jin-Hyeon Kim),GK ,29,71.0,71.0,€1.6M,€4K,,,Cerezo Osaka,68.0
+229694,Moon Seon Min,문선민 蒙善民 (Seon-Min Moon),LW ,25,67.0,70.0,€950K,€4K,,,Incheon United FC,65.0
+212778,Kwon Kyung Won,권경원 权敬源,CB CDM ,26,66.0,70.0,€700K,€6K,,,Tianjin Quanjian FC,66.0
+213317,Kim Jin Su,킴진수 金珍洙,LB LM ,26,72.0,73.0,€3M,€8K,,,Jeonbuk Hyundai Motors,69.0
+155355,Lee Chung Yong,이청용 李青龙 (Chung-Yong Lee),CAM LM ,28,70.0,70.0,€1.8M,€36K,,,Crystal Palace,76.0
+211927,C. Kwon,권창훈 权昶勋,RM CM RW ,23,73.0,79.0,€5.5M,€17K,,,Dijon FCO,72.0
+176403,Lee Keun Ho,이근호 李根镐 (Keun-Ho Lee),ST ,32,72.0,72.0,€2.5M,€6K,,,Gangwon FC,68.0
+176348,Yeom Ki Hun,염기훈 廉基勋 (Ki-Hun Yeom),ST LM ,34,73.0,73.0,€2.1M,€11K,,,Suwon Samsung Bluewings,70.0
+195912,Suk Hyun Jun,석현준 玄铉俊,ST ,26,74.0,76.0,€7M,€15K,ESTAC Troyes,70.0,FC Porto,76.0
+199266,Ji Dong Won,지동원 池东沅 (Dong-Won Ji),ST CAM LM ,26,71.0,72.0,€2.8M,€19K,SV Darmstadt 98,70.0,FC Augsburg,46.0
+221467,Lee Chang Min,이창민 李昌珉 (Chang-Min Lee),CAM CM ,23,71.0,78.0,€3.3M,€5K,,,Jeju United FC,67.0
+208636,Lee Myung Joo,이명주 李明柱 (Myeong-Ju Lee),CM CDM ,27,67.0,68.0,€0,€0,,,Korea Republic,73.0
+212791,Kim Seung Dae,김승대 金承大,CM ,26,70.0,70.0,€1.9M,€8K,,,Pohang Steelers,68.0
+176346,Choi Chul Soon,최철순 崔喆淳 (Chul-Soon Choi),RB LB ,30,73.0,73.0,€2.9M,€11K,,,Jeonbuk Hyundai Motors,71.0
+232065,Kim Dong Joon,金俊仁 (Dong-Jun Kim),GK ,22,71.0,77.0,€0,€0,,,Korea Republic,73.0
+165888,Kwak Tae Hwi,곽태휘 郭泰辉 (Tae-Hwi Kwak),CB ,35,64.0,64.0,€110K,€2K,,,FC Seoul,68.0
+193144,Nam Tae Hee,남태희 南泰熙,RM CM ,25,68.0,69.0,€0,€0,,,Korea Republic,73.0
+237086,Kim Min Jae,김민재 金敏在,CB ,20,73.0,83.0,€5.5M,€9K,,,Jeonbuk Hyundai Motors,71.0
+203002,Kim Kee Hee,김기희 金基熙 (Ki-Hee Kim),CB RB ,27,68.0,69.0,€850K,€5K,,,Seattle Sounders FC,72.0
+216549,A. Sørloth,Alexander Sørloth,ST LW ,21,71.0,78.0,€3.4M,€30K,Crystal Palace,76.0,Norway,74.0
+185422,J. King,Joshua King,CF ST CAM ,25,77.0,79.0,€11M,€69K,Bournemouth,76.0,Norway,74.0
+222665,M. Ødegaard,Martin Ødegaard,RW ,18,74.0,86.0,€9.5M,€71K,SC Heerenveen,70.0,Norway,74.0
+198658,F. Midtsjø,Fredrik Midtsjø,CM CDM ,23,75.0,79.0,€8.5M,€10K,,,AZ Alkmaar,73.0
+187043,S. Johansen,Stefan Johansen (Stefan Marius Johansen),CM ,26,74.0,75.0,€6.5M,€42K,Fulham,72.0,Norway,74.0
+203362,M. Elyounoussi,Mohamed Elyounoussi,LM CAM RM ,22,78.0,84.0,€14M,€36K,FC Basel 1893,73.0,Norway,74.0
+219466,B. Meling,Birger Solberg Meling (Birger Meling),LB CDM ,22,69.0,74.0,€1.2M,€4K,Rosenborg BK,70.0,Norway,74.0
+177280,T. Reginiussen,Tore Reginiussen,CB ,31,73.0,73.0,€2.7M,€8K,Rosenborg BK,70.0,Norway,74.0
+182888,H. Nordtveit,Håvard Nordtveit,CB CDM RB ,27,76.0,77.0,€7.5M,€35K,TSG 1899 Hoffenheim,78.0,Norway,74.0
+198657,J. Svensson,Jonas Svensson,RB ,24,75.0,79.0,€7M,€9K,AZ Alkmaar,73.0,Norway,74.0
+104389,R. Jarstein,Rune Almenning Jarstein (Rune  Almenning Jarstein),GK ,32,83.0,83.0,€15M,€30K,Hertha BSC,77.0,Norway,74.0
+201966,A. Søderlund,Alexander Søderlund (Alexander  Toft Søderlund),ST ,29,72.0,72.0,€3.1M,€7K,Rosenborg BK,70.0,Norway,74.0
+235320,B. Johnsen,Bjørn Johnsen (Björn Maars Johnsen),ST ,25,70.0,72.0,€2.2M,€10K,,,ADO Den Haag,69.0
+190549,M. Henriksen,Markus Henriksen,CM CAM ,24,71.0,74.0,€3M,€8K,Hull City,71.0,Norway,74.0
+201877,M. Møller Dæhli,Mats Møller Dæhli (Mats  Møller Dæhli),CAM LM ,22,71.0,76.0,€3.2M,€15K,FC St. Pauli,70.0,Norway,74.0
+224258,K. Ajer,Kristoffer Ajer (Kristoffer Vassbakk Ajer),CB ,19,69.0,79.0,€1.4M,€14K,Celtic,74.0,Norway,74.0
+186101,E. Hovland,Even Hovland,CB ,28,68.0,68.0,€725K,€5K,,,Rosenborg BK,70.0
+183475,S. Grytebust,Sten Michael Grytebust,GK ,27,72.0,73.0,€2.4M,€8K,Odense Boldklub,65.0,Norway,74.0
+198599,M. Linnes,Martin Linnes,RB LB ,25,73.0,75.0,€4M,€43K,Galatasaray SK,77.0,Norway,74.0
+169317,T. Elyounoussi,Tarik Elyounoussi,LM RM ST ,29,73.0,73.0,€3.9M,€11K,AIK,68.0,Norway,74.0
+204612,O. Selnæs,Ole Kristian Selnæs,CDM CM ,22,75.0,79.0,€7.5M,€25K,AS Saint-Étienne,76.0,Norway,74.0
+183339,J. Berget,Jo Inge Berget,ST LW ,26,70.0,70.0,€1.9M,€7K,,,New York City FC,70.0
+185427,O. Nyland,Ørjan Nyland (Ørjan  Håskjold Nyland),GK ,26,73.0,77.0,€3.6M,€17K,FC Ingolstadt 04,71.0,Norway,74.0
+212075,A. Nabbout,Andrew Nabbout,ST LM RM ,24,68.0,72.0,€1.2M,€8K,Urawa Red Diamonds,69.0,Australia,73.0
+207928,T. Rogić,Tom Rogić,CAM ,24,75.0,78.0,€8.5M,€42K,Celtic,74.0,Australia,73.0
+182440,R. Kruse,Robbie Kruse,RM CF LM ,28,73.0,73.0,€4M,€20K,VfL Bochum 1848,70.0,Australia,73.0
+195033,M. Leckie,Mathew Leckie,RM LM CF ,26,74.0,74.0,€6M,€27K,Hertha BSC,77.0,Australia,73.0
+194958,A. Mooy,Aaron Mooy,CM CDM CAM ,26,78.0,79.0,€12M,€52K,Huddersfield Town,74.0,Australia,73.0
+181483,M. Jedinák,Mile Jedinák,CDM CM ,32,73.0,73.0,€2.3M,€32K,Aston Villa,73.0,Australia,73.0
+202157,A. Behich,Aziz Behich (Aziz Eraltay Behich),LB LM ,26,74.0,75.0,€5.5M,€17K,Bursaspor,73.0,Australia,73.0
+176992,M. Milligan,Mark Milligan (Mark  Milligan),CDM CB ,31,73.0,73.0,€2.7M,€33K,Al Ahli,72.0,Australia,73.0
+199000,T. Sainsbury,Trent Sainsbury,CB ,25,73.0,76.0,€4.2M,€18K,Grasshopper Club Zürich,67.0,Australia,73.0
+202678,J. Risdon,Josh Risdon,RB ,24,70.0,75.0,€2M,€6K,Western Sydney Wanderers,66.0,Australia,73.0
+199005,M. Ryan,Mathew Ryan,GK ,25,78.0,81.0,€9M,€36K,Brighton & Hove Albion,75.0,Australia,73.0
+212232,J. Maclaren,Jamie Maclaren (Jamie MacLaren),ST ,23,70.0,73.0,€2.3M,€17K,Hibernian,66.0,SV Darmstadt 98,77.0
+213321,T. Jurić,Tomi Jurić,ST ,25,69.0,72.0,€1.3M,€8K,FC Luzern,65.0,Australia,73.0
+51412,T. Cahill,Tim Cahill,CAM ST CM ,37,70.0,70.0,€600K,€19K,Millwall,69.0,Australia,73.0
+234867,D. Arzani,Daniel Arzani,RM CAM ,18,66.0,82.0,€1.3M,€2K,Melbourne City FC,66.0,Australia,73.0
+192250,M. Jurman,Matthew Jurman,CB ,27,70.0,70.0,€1.5M,€7K,Suwon Samsung Bluewings,70.0,Australia,73.0
+229585,M. Degenek,Miloš Degenek,CB CDM CM ,23,70.0,76.0,€2.1M,€6K,Yokohama F. Marinos,66.0,Australia,73.0
+165735,B. Jones,Brad Jones,GK ,35,76.0,76.0,€1.8M,€9K,Feyenoord,76.0,Australia,73.0
+205347,M. Luongo,Massimo Luongo (Massimo  Luongo),CM CDM ,24,73.0,76.0,€5M,€25K,Queens Park Rangers,69.0,Australia,73.0
+173450,J. Meredith,James Meredith,LB ,29,70.0,70.0,€1.3M,€24K,Millwall,69.0,Australia,73.0
+211378,J. Irvine,Jackson Irvine,CAM CM CDM ,24,71.0,75.0,€3.1M,€8K,Hull City,71.0,Australia,73.0
+202208,D. Petratos,Dimitri Petratos,CAM ,24,69.0,74.0,€1.4M,€3K,,,Newcastle Jets,64.0
+181481,D. Vukovic,Danny Vukovic,GK ,32,71.0,71.0,€1.4M,€9K,KRC Genk,72.0,Australia,73.0
+172208,J. Troisi,James Troisi,CAM ,28,71.0,71.0,€2.4M,€8K,Melbourne Victory,65.0,Australia,73.0
+181866,N. Rukavytsya,Nikita Rukavytsya,ST CAM ,30,66.0,66.0,€0,€0,,,Australia,72.0
+179840,M. Spiranovic,Matthew Spiranovic (Matthew Špiranović),CB CDM ,30,71.0,71.0,€1.8M,€5K,,,Perth Glory,66.0
+182435,M. Langerak,Mitchell Langerak,GK ,29,73.0,74.0,€3.1M,€6K,,,Nagoya Grampus,66.0
+224297,A. Gersbach,Alex Gersbach,LB ,20,65.0,75.0,€750K,€2K,Racing Club de Lens,67.0,Rosenborg BK,149.0
+198810,B. Wright,Bailey Wright,CB RB ,24,72.0,78.0,€3.6M,€23K,,,Bristol City,71.0
+206435,A. Giannou,Apostolos Giannou,ST ,28,69.0,69.0,€0,€0,,,Australia,73.0
+160295,E. Galeković,Eugene Galeković,GK ,36,65.0,65.0,€70K,€2K,,,Melbourne City FC,66.0
+198330,I. Franjić,Ivan Franjić,RB RM LB ,29,67.0,67.0,€575K,€5K,,,Brisbane Roar,66.0
+173703,R. Williams,Rhys Williams (Rhys  Williams),CB ,28,72.0,72.0,€2.5M,€7K,,,Melbourne Victory,65.0
+209888,C. Goodwin,Craig Goodwin,LW LM ,26,66.0,67.0,€750K,€2K,,,Adelaide United,65.0
+188278,M. Birighitti,Mark Birighitti,GK ,26,66.0,69.0,€550K,€3K,,,NAC Breda,67.0
+228887,T. Mrčela,Tomislav Mrčela,CB ,26,68.0,70.0,€900K,€4K,,,Jeonnam Dragons,67.0
+190180,R. McGowan,Ryan McGowan,RB CB ,27,68.0,68.0,€750K,€7K,,,Bradford City,65.0
+212830,A. Mabil,Awer Mabil,RW RM ST ,21,68.0,76.0,€1.3M,€14K,FC Paços de Ferreira,71.0,FC Midtjylland,60.0
+179903,O. Bozanic,Oliver Bozanic (Oliver Bozanić),CM CDM ,28,66.0,66.0,€650K,€4K,,,Melbourne City FC,66.0
+204422,D. McGowan,Dylan McGowan,CB ,25,69.0,72.0,€1.1M,€6K,Gangwon FC,68.0,FC Paços de Ferreira,1.0
+165429,C. Keşerü,Claudiu Keşerü (Claudiu Andrei Keșerü),ST CF LW ,30,73.0,73.0,€0,€0,,,Romania,72.0
+225359,C. Budescu,Constantin Budescu,CAM ,28,76.0,76.0,€0,€0,,,Romania,72.0
+243000,N. Bancu,Nicușor Bancu (Nicușor Silviu Bancu),LM ,24,68.0,71.0,€0,€0,,,Romania,72.0
+212048,A. Chipciu,Alexandru Chipciu (Alexandru Mihăiță Chipciu),RM ,28,72.0,72.0,€3.1M,€17K,RSC Anderlecht,74.0,Romania,72.0
+212207,N. Stanciu,Nicolae Stanciu (Nicolae Claudiu Stanciu),CAM ,24,74.0,77.0,€7M,€1K,Sparta Praha,72.0,Romania,72.0
+235813,R. Marin,Răzvan Marin,CM CDM ,21,74.0,82.0,€8M,€13K,Standard de Liège,73.0,Romania,72.0
+233512,A. Toşca,Alin Toşca,CB LB ,25,70.0,75.0,€2M,€14K,Benevento,72.0,Romania,72.0
+208714,D. Grigore,Dragoş Grigore (Dragoș Grigore),CB CDM ,30,71.0,71.0,€0,€0,,,Romania,72.0
+147899,C. Moţi,Cosmin Moţi (Cosmin Iosif Moți),CB ,32,68.0,68.0,€0,€0,,,Romania,72.0
+235814,R. Benzar,Romario Benzar,RB ,25,73.0,76.0,€0,€0,,,Romania,72.0
+201325,C. Tătăruşanu,Ciprian Tătăruşanu (Anton Ciprian Tătărușanu),GK ,31,79.0,79.0,€7.5M,€25K,FC Nantes,74.0,Romania,72.0
+213107,G. Ţucudean,George Ţucudean,ST ,26,67.0,68.0,€0,€0,,,Romania,72.0
+212047,M. Pintilii,Mihai Pintilii (Mihai Doru Pintilii),CDM CM ,32,69.0,69.0,€0,€0,,,Romania,72.0
+222224,P. Anton,Paul Anton (Paul Viorel Anton),CDM CM RM ,26,71.0,73.0,€2.4M,€15K,FC Anzhi Makhachkala,69.0,Romania,72.0
+239978,D. Man,Dennis Man,RW CF ,18,69.0,83.0,€0,€0,,,Romania,72.0
+242614,I. Nedelcearu,Ionuţ Nedelcearu,CB ,21,70.0,78.0,€2.3M,€13K,FC Ufa,70.0,Romania,72.0
+223229,C. Manea,Cristian Manea,RB CB ,19,66.0,78.0,€0,€0,,,Romania,72.0
+238033,F. Nita,Florin Nita (Florin Constantin Niţă),GK ,29,72.0,72.0,€2.1M,€1K,Sparta Praha,72.0,Romania,72.0
+156221,C. Săpunaru,Cristian Săpunaru (Ionuț Cristian Săpunaru),CB RB CDM ,33,70.0,70.0,€725K,€10K,Kayserispor,72.0,Romania,72.0
+223074,D. Rotariu,Dorin Rotariu,RM ,21,70.0,77.0,€2.5M,€13K,Royal Excel Mouscron,67.0,Romania,72.0
+229804,A. Mitriţă,Alexandru Ionuţ Mitriţă (Alexandru Ionuț Mitriță),LW CF ,22,71.0,77.0,€0,€0,,,Romania,72.0
+220177,G. Grozav,Gheorghe Grozav,LM CAM LW ,26,70.0,70.0,€1.9M,€13K,Bursaspor,73.0,Romania,72.0
+205942,S. Lung,Silviu Lung,GK ,28,74.0,76.0,€4.7M,€12K,Kayserispor,72.0,Romania,72.0
+208916,M. Al Sahlawi,Mohammed Al Sahlawi (Mohammad Ibrahim Al Sahlawi),ST ,30,73.0,73.0,€3.9M,€39K,Al Nassr,69.0,Saudi Arabia,72.0
+210602,S. Al Dawsari,Salem Al Dawsari,RM LM CM CAM ,25,74.0,75.0,€6.5M,€35K,Villarreal CF,79.0,Saudi Arabia,72.0
+191269,S. Al Faraj,Salman Al Faraj (Salman Mohammed Al Faraj),CM LM CDM ,27,75.0,75.0,€7M,€36K,Al Hilal,73.0,Saudi Arabia,72.0
+168883,T. Al Jassam,Taiseer Al Jassam (Taisir Jabir Al Jassim),CDM CM CAM ,32,74.0,74.0,€3.2M,€33K,Al Ahli,72.0,Saudi Arabia,72.0
+209281,Y. Al Shehri,Yahia Sulaiman Al Shehri (Yehya Sulaiman Al Shehri),CAM RM LM CM ,27,70.0,70.0,€1.9M,€26K,CD Leganés,75.0,Saudi Arabia,72.0
+210926,A. Ateef,Abdullah Ateef,CDM CM ,24,71.0,76.0,€2.7M,€20K,Al Hilal,73.0,Saudi Arabia,72.0
+210603,Y. Al Shahrani,Yasser Al Shahrani,LB RB ,25,74.0,76.0,€5.5M,€32K,Al Hilal,73.0,Saudi Arabia,72.0
+208914,O. Hawsawi,Omar Hawsawi (Omar Ibrahim Omar Othman Hawsawi),CB ,31,74.0,74.0,€3.8M,€33K,Al Nassr,69.0,Saudi Arabia,72.0
+191256,O. Hawsawi,Osama Hawsawi (Osama Abdulrezag Hawsawi),CB ,33,75.0,75.0,€2.7M,€33K,Al Hilal,73.0,Saudi Arabia,72.0
+221370,M. Al Buraik,Mohammed Al Buraik (Mohammed Al Burayk),RB ,24,71.0,76.0,€2.6M,€20K,Al Hilal,73.0,Saudi Arabia,72.0
+210140,A. Al Mayoof,Abdullah Al Mayoof,GK ,30,70.0,70.0,€1.1M,€19K,Al Hilal,73.0,Saudi Arabia,72.0
+210209,M. Asiri,Muhannad Asiri,ST ,30,67.0,67.0,€725K,€23K,Al Ahli,72.0,Saudi Arabia,72.0
+208977,F. Al Muwallad,Fahad Al Muwallad (Fahad Mosaed Al Muwallad Al Harbi),RM LM ST CAM ,22,72.0,77.0,€4.2M,€23K,Levante UD,75.0,Saudi Arabia,72.0
+191843,A. Al Khaibari,Abdulmalek Al Khaibari (Abdulmalek Abdullah Al Khaibri),CDM ,31,71.0,71.0,€1.6M,€24K,Al Hilal,73.0,Saudi Arabia,72.0
+220075,M. Kanno,Mohamed Kanno,CAM CM CDM ,22,68.0,77.0,€1.4M,€19K,Al Hilal,73.0,Saudi Arabia,72.0
+225060,M. Hawsawi,Motaz Hawsawi,CB ,25,74.0,79.0,€6.5M,€32K,Al Ahli,72.0,Saudi Arabia,72.0
+210147,M. Al Harbi,Mansour Al Harbi,LB ,29,68.0,68.0,€675K,€21K,Al Ahli,72.0,Saudi Arabia,72.0
+197496,Y. Al Mosailem,Yasser Al Mosailem (Yasser Abdullah Al Mosailem),GK ,33,70.0,70.0,€900K,€19K,Al Ahli,72.0,Saudi Arabia,72.0
+237721,A. Al Khaibari,Abdullah Al Khaibari (Abdullah Alkhaibari),CDM ,20,57.0,67.0,€150K,€3K,Al Shabab,65.0,Saudi Arabia,72.0
+208974,H. Bahebri,Hattan Bahebri (Hattan Babhir),LM RM ,24,66.0,69.0,€825K,€8K,Al Shabab,65.0,Saudi Arabia,72.0
+229851,A. Al Bulayhi,Ali Al Bulayhi (Ali Albulayhi),CB LB ,27,63.0,63.0,€300K,€6K,,,Al Hilal,73.0
+209569,H. Al Moqahwi,Hussain Al Moqahwi (Hussain Al Mogahwi),CAM CM CDM LM ,29,71.0,71.0,€2.3M,€27K,Al Ahli,72.0,Saudi Arabia,72.0
+210923,M. Al Owais,Mohammed Khalil Al Owais,GK ,25,72.0,77.0,€3M,€18K,Al Ahli,72.0,Saudi Arabia,72.0
+208949,N. Al Abed,Nawaf Al Abed (Nawaf Shaker Al Abid),LM RM CAM ,27,76.0,76.0,€8M,€43K,Al Hilal,73.0,Saudi Arabia,72.0
+212039,S. Al Muwallad,Saeed Al Muwallad (Saeed Fawaz Al Mowalad),RB RM ,26,67.0,68.0,€725K,€20K,,,Al Ahli,72.0
+210182,M. Jahfali,Mohammed Jahfali,CB ,26,74.0,75.0,€5.5M,€33K,,,Al Hilal,73.0
+210184,A. Al Qarni,Assaf Ahmed Al Qarni,GK ,33,67.0,67.0,€375K,€16K,,,Al Ittihad,68.0
+210202,S. Muwashar,Salman Muwashar,LM ,28,73.0,73.0,€4M,€38K,,,Al Ahli,72.0
+213007,A. Aseri,Abdul Fatah Aseri,RM LM CAM ,23,72.0,78.0,€4.3M,€23K,,,Al Ahli,72.0
+191834,N. Al Shamrani,Nasser Al Shamrani (Nasser Ali Al Shamrani),ST ,33,70.0,70.0,€1.1M,€25K,,,Al Shabab,65.0
+191260,A. Al Zori,Abdullah Al Zori (Abdullah Mohammed Al Zoari Al Dossary),LB LWB CB ,29,66.0,66.0,€475K,€10K,,,Al Hilal,73.0
+210492,A. Al Jebreen,Abdulaziz Al Jebreen,CDM CM ,27,69.0,69.0,€875K,€20K,,,Al Nassr,69.0
+191848,W. Abdullah,Waleed Abdullah (Waleed Abdullah Ali),GK ,31,64.0,64.0,€270K,€8K,,,Al Nassr,69.0
+213009,A. Al Ghamdi,Abdulrahman Al Ghamdi,ST RM CAM ,22,67.0,73.0,€1.1M,€21K,,,Al Ittihad,68.0
+228627,A. Al Obaid,Abdulrahman Al Obaid,LB ,24,66.0,70.0,€700K,€8K,,,Al Nassr,69.0
+209001,M. Fallatah,Mukhtar Omar Fallatah (Mukhtar Fallatah),ST ,29,70.0,70.0,€1.8M,€29K,,,Al Hilal,73.0
+209051,A. Al Ruwaili,Abdulmajeed Al Ruwaili (Abdulmajeed Abdullah Al Ruwaili),CDM CM CAM ,30,69.0,69.0,€775K,€12K,Al Taawoun,65.0,Al Fayha,1.0
+191842,H. Fallatah,Hassan Muath Fallatah,RB RM ,31,70.0,70.0,€1.2M,€14K,Al Shabab,65.0,Al Fayha,8.0
+210134,M. Al Fatil,Mohammed Al Fatil,CB ,25,66.0,71.0,€725K,€9K,,,Al Ahli,72.0
+191409,N. Hazazi,Naif Ahmed Hazazi (Naif Ahmed Taib Hazazi),ST ,29,66.0,66.0,€650K,€7K,,,Ohod Club,64.0
+158309,Gao Lin,郜林,ST LW RW LM ,31,71.0,71.0,€0,€0,,,China PR,70.0
+182996,Xiao Zhi,肖智,ST CF ,32,67.0,67.0,€0,€0,,,China PR,70.0
+202855,Tan Long,谭龙,ST RM CF ,29,71.0,71.0,€0,€0,,,China PR,70.0
+182343,Hao Junmin,蒿俊闵,CM CDM CAM ,30,72.0,72.0,€0,€0,,,China PR,70.0
+175598,Zhao Xuri,赵旭日,CDM CM ,31,68.0,68.0,€0,€0,,,China PR,70.0
+158293,Zheng Zhi,郑智,CDM ,36,71.0,71.0,€0,€0,,,China PR,70.0
+182473,Li Xuepeng,李学鹏,LB CB ,28,70.0,70.0,€0,€0,,,China PR,70.0
+175589,Feng Xiaoting,冯潇霆,CB ,31,72.0,72.0,€0,€0,,,China PR,70.0
+200672,Zhang Linpeng,张琳芃,RB CB LB ,28,70.0,70.0,€0,€0,,,China PR,70.0
+237010,Deng Hanwen,邓涵文,RB ,22,70.0,78.0,€0,€0,,,China PR,70.0
+224599,Yan Junling,颜骏凌,GK ,26,72.0,73.0,€0,€0,,,China PR,70.0
+182411,Yu Hanchao,汉超于,LW RW LM RM ,30,70.0,70.0,€0,€0,,,China PR,70.0
+183997,Yu Dabao,于大宝,ST CAM RM ,29,69.0,69.0,€0,€0,,,China PR,70.0
+224608,Cai Huikang,蔡慧康,CDM ,27,69.0,69.0,€0,€0,,,China PR,70.0
+217160,Peng Xinli,彭欣力,CM CAM LM ,25,64.0,67.0,€0,€0,,,China PR,70.0
+222235,Ren Hang,任航,CB LB ,28,67.0,67.0,€0,€0,,,China PR,70.0
+241334,Liu Yiming,刘奕鸣,CB ,22,60.0,69.0,€0,€0,,,China PR,70.0
+182043,Zeng Cheng,曾诚,GK ,30,72.0,72.0,€0,€0,,,China PR,70.0
+222273,Jiang Zhipeng,姜至鹏,LB LWB ,28,69.0,69.0,€0,€0,,,China PR,70.0
+223344,Wei Shihao,韦世豪,LW RW ,22,69.0,77.0,€0,€0,,,China PR,70.0
+221445,Wu Lei,武磊,ST RM LM CF ,25,73.0,76.0,€0,€0,,,China PR,70.0
+224669,Yin Hongbo,尹鸿博,RM LM CAM CM ,27,66.0,66.0,€0,€0,,,China PR,70.0
+182224,Wang Dalei,王大雷,GK ,28,69.0,69.0,€0,€0,,,China PR,70.0
+174754,G. Torres,Gabriel Torres (Gabriel Arturo Torres Tejada),ST ,29,70.0,70.0,€1.8M,€4K,,,CD Huachipato,66.0
+174746,B. Pérez,Blas Pérez (Blas Antonio Miguel Pérez Ortega),ST CAM ,36,68.0,68.0,€0,€0,,,Panama,69.0
+241731,Y. Bárcenas,Yoel Bárcenas,LM RM ,24,68.0,71.0,€1.1M,€4K,,,Real Oviedo,71.0
+231875,V. Pimentel,Valentín Pimentel (Valentin Enrique Pimentel Armuelles),RM CAM ,26,67.0,68.0,€0,€0,,,Panama,69.0
+174732,G. Gómez,Gabriel Gómez (Gabriel Enrique Gómez Girón),CDM ,33,70.0,70.0,€725K,€2K,,,Atlético Bucaramanga,67.0
+217047,A. Godoy,Aníbal Godoy (Aníbal Cesis Godoy),CM CDM ,27,70.0,70.0,€1.8M,€7K,,,San Jose Earthquakes,68.0
+187259,L. Ovalle,Luis Carlos Ovalle (Luis Carlos Ovalle Victoria),LB ,28,65.0,65.0,€0,€0,,,Panama,69.0
+139882,F. Baloy,Felipe Baloy (Felipe Abdiel Baloy Ramírez),CB ,36,69.0,69.0,€0,€0,,,Panama,69.0
+214506,R. Torres,Román Torres (Román Aureliano Torres Morcillo),CB ,31,72.0,72.0,€2.1M,€6K,,,Seattle Sounders FC,72.0
+197154,A. Machado,Adolfo Machado (Adolfo Abdiel Machado),CB ,32,71.0,71.0,€1.4M,€6K,,,Houston Dynamo,68.0
+174745,J. Penedo,Jaime Penedo (Jaime Manuel Penedo Cano),GK ,35,68.0,68.0,€0,€0,,,Panama,69.0
+174753,L. Tejada,Luis Tejada (Luis Carlos Tejada Hansell),ST ,35,67.0,67.0,€0,€0,,,Panama,69.0
+235252,A. Arroyo,Abdiel Arroyo (Abdiel Arroyo Molinar),ST ,24,65.0,72.0,€775K,€2K,,,Santa Clara,69.0
+215163,A. Cooper,Armando Cooper,CM RM ,29,68.0,68.0,€850K,€8K,,,Universidad de Chile,71.0
+237841,M. Murillo,Michael Murillo (Michael Amir Murillo Bermudez),RB CB ,21,70.0,78.0,€2.2M,€5K,,,New York Red Bulls,70.0
+240196,F. Escobar,Fidel Escobar (Fidel Escobar Mendieta),CB ,22,67.0,73.0,€900K,€4K,,,New York Red Bulls,70.0
+217045,E. Davis,Eric Davis (Erick Javier Davis Grajales),LB ,26,63.0,63.0,€0,€0,,,Panama,69.0
+174727,J. Calderón,José de Jesús Calderón (José De Jesús Calderón Frías),GK ,31,62.0,62.0,€0,€0,,,Panama,69.0
+234726,J. Rodriguez,Jose Luis Rodriguez (José Luis Rodríguez Francis),RM LM ,19,60.0,76.0,€0,€0,,,Panama,69.0
+243543,R. Ávila,Ricardo Ávila (Ricardo Guardia Avila),CDM ,20,62.0,71.0,€0,€0,,,Panama,69.0
+231867,I. Díaz,Ismael Díaz (Ismael Díaz De León),LM ST ,20,66.0,79.0,€1.2M,€5K,,,Deportivo de La Coruña,77.0
+217054,H. Cummings,Harold Cummings (Harold Oshkaly Cummings Segura),CB ,25,66.0,67.0,€625K,€2K,,,San Jose Earthquakes,68.0
+217065,A. Rodríguez,Alex Rodríguez (Alex Raúl Rodríguez Ledezma),GK ,26,62.0,66.0,€0,€0,,,Panama,69.0
+194415,A. Quintero,Alberto Quintero (Alberto Abdiel Quintero Medina),RM LM ,29,70.0,70.0,€0,€0,,,Panama,69.0
+210749,R. Buitrago,Ricardo Buitrago,CAM LM RM ,32,67.0,67.0,€0,€0,,,Panama,69.0
+217061,R. Blackburn,Rolando Blackburn (Rolando Manrique Blackburn Ortega),ST ,27,63.0,63.0,€0,€0,,,Panama,69.0
+221523,J. González,José González (José Del Carmen González Joly),CAM RM ,26,64.0,65.0,€0,€0,,,Panama,69.0
+234154,C. Martinez,Cristian Martinez,RM LM ,20,66.0,71.0,€875K,€2K,,,Columbus Crew SC,70.0
+237192,M. Camargo,Miguel Camargo (Miguel Elias Camargo Cañizalez),CAM LM RM ,23,63.0,68.0,€0,€0,,,Panama,69.0
+214853,R. Addles,Renán Addles (Renán Yoriel Addles Daniels),ST ,27,61.0,61.0,€0,€0,,,Panama,69.0
+159195,R. Nurse,Roberto Nurse (Roberto Antonio Nurse Anguiano),ST ,33,64.0,64.0,€0,€0,,,Panama,69.0
+202089,L. Mejía,Luis Mejía (Luis Mejía Cajar),GK ,26,64.0,66.0,€0,€0,,,Panama,69.0
+217077,R. Chen,Roberto Chen (Roberto Leandro Chen Rodríguez),CB ,23,66.0,74.0,€0,€0,,,Panama,69.0
+205679,T. Taylor,Tony Taylor,RM ST ,27,63.0,63.0,€0,€0,,,Panama,69.0
+174737,L. Henríquez,Luis Henríquez (Luis Alfonso Henríquez Ledezma),LB ,35,64.0,64.0,€0,€0,,,Panama,69.0
+241734,J. Vargas,Jan Carlos Vargas,CB ,22,67.0,76.0,€0,€0,,,Panama,69.0
+241729,J. Núñez,Josiel Núñez,CAM RM ,24,63.0,67.0,€0,€0,,,Panama,69.0
+241732,M. Vargas,Manuel Vargas,CDM ,26,62.0,64.0,€0,€0,,,Panama,69.0
+241735,O. Villarreal,Óscar Villarreal,LM ,22,62.0,71.0,€0,€0,,,Panama,69.0
+217050,R. Miller,Roderick Miller (Roderick Alonso Miller Molina),CB ,26,64.0,68.0,€475K,€3K,,,CD Feirense,70.0
+226777,C. Larin,Cyle Larin,ST ,22,73.0,81.0,€6M,€41K,Beşiktaş JK,79.0,Canada,69.0
+189462,J. Hoilett,Junior Hoilett (David Junior Hoilett),LW LM ,27,75.0,75.0,€7M,€31K,Cardiff City,71.0,Canada,69.0
+178287,S. Arfield,Scott Arfield,LM CM ,28,73.0,73.0,€4M,€51K,Burnley,77.0,Canada,69.0
+134744,A. Hutchinson,Atiba Hutchinson,CDM CM ,34,80.0,80.0,€4.5M,€56K,Beşiktaş JK,79.0,Canada,69.0
+234396,A. Davies,Alphonso Davies,LM RM ,16,70.0,86.0,€3.5M,€2K,Vancouver Whitecaps FC,69.0,Canada,69.0
+213092,S. Piette,Samuel Piette,CDM CM ,22,69.0,74.0,€1.2M,€4K,Montreal Impact,69.0,Canada,69.0
+220028,S. Adekugbe,Sam Adekugbe,LB ,22,67.0,74.0,€900K,€3K,Vålerenga Fotball,66.0,Canada,69.0
+192528,Steven Vitória,Steven de Sousa Vitória,CB ,30,67.0,67.0,€575K,€6K,Lechia Gdańsk,69.0,Canada,69.0
+227847,M. James,Manjrekar James,CB CDM ,23,67.0,72.0,€0,€0,,,Canada,69.0
+212358,M. Petrasso,Michael Petrasso,RB RM ,21,64.0,72.0,€575K,€2K,Montreal Impact,69.0,Canada,69.0
+205211,M. Borjan,Milan Borjan,GK ,29,69.0,69.0,€0,€0,,,Canada,69.0
+221657,T. Akindele,Tesho Akindele,ST LM ,25,67.0,68.0,€925K,€6K,FC Dallas,70.0,Canada,69.0
+164568,W. Johnson,Will Johnson,CM CDM RB ,30,70.0,70.0,€1.6M,€7K,Orlando City SC,70.0,Canada,69.0
+213439,J. Osorio,Jonathan Osorio,CM CAM LM ,25,68.0,72.0,€1.1M,€5K,Toronto FC,72.0,Canada,69.0
+190720,T. Ricketts,Tosaint Ricketts,ST ,29,65.0,65.0,€550K,€3K,Toronto FC,72.0,Canada,69.0
+164581,M. de Jong,Marcel de Jong,LB CDM ,30,66.0,66.0,€475K,€2K,Vancouver Whitecaps FC,69.0,Canada,69.0
+172207,D. Edgar,David Edgar,CB ,30,67.0,67.0,€0,€0,,,Canada,69.0
+183347,J. Leutwiler,Jayson Leutwiler,GK ,28,66.0,66.0,€450K,€3K,Blackburn Rovers,68.0,Canada,69.0
+191218,D. Jaković,Dejan Jaković,CB ,31,66.0,66.0,€0,€0,,,Canada,69.0
+201864,S. Thomas,Simon Thomas,GK ,27,61.0,64.0,€0,€0,,,Canada,69.0
+238922,M. Kaye,Mark-Anthony Kaye,LM LB CM ,22,63.0,73.0,€0,€0,,,Canada,69.0
+203338,A. Morgan,Ashtone Morgan,LB LM LWB ,26,65.0,65.0,€450K,€2K,Toronto FC,72.0,Canada,69.0
+193728,D. Wotherspoon,David Wotherspoon,RM LM ,27,66.0,66.0,€675K,€3K,St. Johnstone FC,65.0,Canada,69.0
+192123,C. Wood,Chris Wood,ST ,25,77.0,79.0,€11M,€60K,Burnley,77.0,New Zealand,66.0
+182091,K. Barbarouses,Kosta Barbarouses,RW ST ,27,69.0,69.0,€1.1M,€7K,Melbourne Victory,65.0,New Zealand,66.0
+220763,R. Thomas,Ryan Thomas,CM ,22,76.0,84.0,€11M,€12K,PEC Zwolle,70.0,New Zealand,66.0
+169447,M. McGlinchey,Michael McGlinchey,CM CAM LW ,30,64.0,64.0,€425K,€2K,Wellington Phoenix,63.0,New Zealand,66.0
+193092,M. Rojas,Marco Rojas,RW LW ,25,71.0,72.0,€2.8M,€9K,SC Heerenveen,70.0,New Zealand,66.0
+226057,D. Wynne,Deklan Wynne,LB LWB CB ,22,62.0,71.0,€400K,€1K,,,Colorado Rapids,69.0
+186352,T. Smith,Tommy Smith,CB ,27,69.0,69.0,€875K,€5K,Colorado Rapids,69.0,New Zealand,66.0
+176285,W. Reid,Winston Reid (Winston  Reid),CB ,28,77.0,77.0,€7M,€87K,,,West Ham United,77.0
+202170,M. Boxall,Michael Boxall,CB RB ,28,67.0,67.0,€625K,€5K,Minnesota United FC,68.0,New Zealand,66.0
+213094,S. Roux,Storm Roux,RB ,24,65.0,69.0,€575K,€1K,,,Central Coast Mariners,64.0
+231056,S. Marinović,Stefan Marinović,GK ,25,68.0,73.0,€850K,€4K,Vancouver Whitecaps FC,69.0,New Zealand,66.0
+183113,J. Brockie,Jeremy Brockie,ST ,29,67.0,67.0,€0,€0,,,New Zealand,66.0
+241407,M. Bevan,Myer Bevan,ST LW ,20,61.0,73.0,€0,€0,,,New Zealand,66.0
+231063,C. Lewis,Clayton Lewis,CAM CM LW ,20,61.0,73.0,€450K,€2K,Scunthorpe United,66.0,New Zealand,66.0
+232669,S. Singh,Sarpreet Singh (Sarpeet Singh),CAM CM LW ,18,63.0,79.0,€750K,€1K,Wellington Phoenix,63.0,New Zealand,66.0
+163998,T. Tzimopoulos,Themistoklis Tzimopoulos,CB CDM ,31,68.0,68.0,€0,€0,,,New Zealand,66.0
+220886,B. Tuiloma,Bill Tuiloma,CB CDM ,22,62.0,68.0,€350K,€1K,,,Portland Timbers,70.0
+202921,J. Gleeson,Jake Gleeson,GK ,27,67.0,68.0,€600K,€4K,,,Portland Timbers,70.0
+237714,D. Ingham,Dane Ingham,RB RWB RM ,18,59.0,73.0,€290K,€1K,,,Brisbane Roar,66.0
+242953,N. Boxall,Nikko Boxall,CB ,25,61.0,63.0,€0,€0,,,New Zealand,66.0
+206566,M. Crocombe,Max Crocombe,GK ,23,60.0,66.0,€0,€0,,,New Zealand,66.0
+224769,T. Doyle,Tom Doyle (Thomas Doyle),LB CB ,25,63.0,65.0,€375K,€1K,Wellington Phoenix,63.0,New Zealand,66.0
+222402,J. Gulley,Justin Gulley,RB ,24,59.0,62.0,€0,€0,,,New Zealand,66.0
