@@ -1,0 +1,737 @@
+Player,Country,Pos,Birthday,Age,Caps,Club,Club Country,year
+Hugo Lloris,france,GK,1986-12-26,23,11,Lyon,france,2010
+Bacary Sagna,france,DF,1983-02-14,27,20,Arsenal,england,2010
+Éric Abidal,france,DF,1979-09-11,30,54,Barcelona,spain,2010
+Anthony Réveillère,france,DF,1979-11-10,30,6,Lyon,france,2010
+William Gallas,france,DF,1977-08-17,32,81,Arsenal,england,2010
+Marc Planus,france,DF,1982-03-07,28,1,Bordeaux,france,2010
+Franck Ribéry,france,MF,1983-04-07,27,45,Bayern Munich,germany,2010
+Yoann Gourcuff,france,MF,1986-07-11,23,20,Bordeaux,france,2010
+Djibril Cissé,france,FW,1981-08-12,28,39,Panathinaikos,greece,2010
+Sidney Govou,france,FW,1979-07-27,30,46,Lyon,france,2010
+André-Pierre Gignac,france,FW,1985-12-05,24,13,Toulouse,france,2010
+Thierry Henry,france,FW,1977-08-17,32,121,Barcelona,spain,2010
+Patrice Evra,france,DF,1981-05-15,29,30,Manchester United,england,2010
+Jérémy Toulalan,france,MF,1983-09-10,26,34,Lyon,france,2010
+Florent Malouda,france,MF,1980-06-13,29,54,Chelsea,england,2010
+Steve Mandanda,france,GK,1985-03-28,25,13,Marseille,france,2010
+Sébastien Squillaci,france,DF,1980-08-11,29,20,Sevilla,spain,2010
+Alou Diarra,france,MF,1981-07-15,28,25,Bordeaux,france,2010
+Abou Diaby,france,MF,1986-05-11,24,5,Arsenal,england,2010
+Mathieu Valbuena,france,MF,1984-09-28,25,2,Marseille,france,2010
+Nicolas Anelka,france,FW,1979-03-14,31,67,Chelsea,england,2010
+Gaël Clichy,france,DF,1985-07-26,24,4,Arsenal,england,2010
+Cédric Carrasso,france,GK,1981-12-30,28,0,Bordeaux,france,2010
+Óscar Pérez,mexico,GK,1973-02-01,37,52,Chiapas,mexico,2010
+Francisco Rodríguez,mexico,DF,1981-10-20,28,48,PSV Eindhoven,netherlands,2010
+Carlos Salcido,mexico,DF,1980-04-02,30,73,PSV Eindhoven,netherlands,2010
+Rafael Márquez,mexico,DF,1979-02-13,31,91,Barcelona,spain,2010
+Ricardo Osorio,mexico,DF,1980-03-30,30,76,VfB Stuttgart,germany,2010
+Gerardo Torrado,mexico,MF,1979-04-30,31,114,Cruz Azul,mexico,2010
+Pablo Barrera,mexico,MF,1987-06-21,22,21,UNAM,mexico,2010
+Israel Castro,mexico,MF,1980-12-29,29,31,UNAM,mexico,2010
+Guillermo Franco,mexico,FW,1976-11-03,33,21,West Ham United,england,2010
+Cuauhtémoc Blanco,mexico,FW,1973-01-17,37,115,Veracruz,mexico,2010
+Carlos Vela,mexico,FW,1989-03-01,21,28,Arsenal,england,2010
+Paul Aguilar,mexico,DF,1986-03-06,24,10,Pachuca,mexico,2010
+Guillermo Ochoa,mexico,GK,1985-07-13,24,37,América,mexico,2010
+Javier Hernández,mexico,FW,1988-06-01,22,12,Guadalajara,mexico,2010
+Héctor Moreno,mexico,DF,1988-01-17,22,10,AZ,netherlands,2010
+Efraín Juárez,mexico,DF,1988-02-22,22,19,UNAM,mexico,2010
+Giovani dos Santos,mexico,FW,1989-05-11,21,26,Galatasaray,turkey,2010
+Andrés Guardado,mexico,MF,1986-09-28,23,56,Deportivo La Coruña,spain,2010
+Jonny Magallón,mexico,DF,1981-11-21,28,52,Guadalajara,mexico,2010
+Jorge Torres Nilo,mexico,DF,1988-01-16,22,8,Atlas,mexico,2010
+Adolfo Bautista,mexico,FW,1979-05-15,31,37,Guadalajara,mexico,2010
+Alberto Medina,mexico,MF,1983-05-29,27,56,Guadalajara,mexico,2010
+Luis Ernesto Michel,mexico,GK,1979-07-21,30,4,Guadalajara,mexico,2010
+Moeneeb Josephs,south africa,GK,1980-05-19,30,17,Orlando Pirates,south africa,2010
+Siboniso Gaxa,south africa,DF,1984-04-06,26,37,Mamelodi Sundowns,south africa,2010
+Tsepo Masilela,south africa,DF,1985-05-05,25,31,Maccabi Haifa,israel,2010
+Aaron Mokoena,south africa,DF,1980-11-25,29,101,Portsmouth,england,2010
+Anele Ngcongca,south africa,DF,1987-10-20,22,5,Genk,belgium,2010
+MacBeth Sibaya,south africa,MF,1977-11-25,32,58,Rubin Kazan,russia,2010
+Lance Davids,south africa,MF,1985-04-11,25,22,Ajax Cape Town,south africa,2010
+Siphiwe Tshabalala,south africa,MF,1984-09-25,25,48,Kaizer Chiefs,south africa,2010
+Katlego Mphela,south africa,FW,1984-11-29,25,31,Mamelodi Sundowns,south africa,2010
+Steven Pienaar,south africa,MF,1982-03-17,28,50,Everton,england,2010
+Teko Modise,south africa,MF,1982-12-22,27,52,Orlando Pirates,south africa,2010
+Reneilwe Letsholonyane,south africa,MF,1982-06-09,28,13,Kaizer Chiefs,south africa,2010
+Kagisho Dikgacoi,south africa,MF,1984-11-24,25,37,Fulham,england,2010
+Matthew Booth,south africa,DF,1977-03-14,33,27,Mamelodi Sundowns,south africa,2010
+Lucas Thwala,south africa,DF,1981-10-19,28,24,Orlando Pirates,south africa,2010
+Itumeleng Khune,south africa,GK,1987-06-20,22,27,Kaizer Chiefs,south africa,2010
+Bernard Parker,south africa,FW,1986-03-16,24,28,Twente,netherlands,2010
+Siyabonga Nomvethe,south africa,FW,1977-12-02,32,76,Moroka Swallows,south africa,2010
+Surprise Moriri,south africa,MF,1980-03-20,30,34,Mamelodi Sundowns,south africa,2010
+Bongani Khumalo,south africa,DF,1987-01-06,23,14,Supersport United,south africa,2010
+Siyabonga Sangweni,south africa,DF,1981-09-29,28,8,Golden Arrows,south africa,2010
+Shu-Aib Walters,south africa,GK,1981-12-26,28,0,Maritzburg United,south africa,2010
+Thanduyise Khuboni,south africa,MF,1986-05-23,24,9,Golden Arrows,south africa,2010
+Fernando Muslera,uruguay,GK,1986-06-16,23,6,Lazio,italy,2010
+Diego Lugano,uruguay,DF,1980-11-02,29,42,Fenerbahçe,turkey,2010
+Diego Godín,uruguay,DF,1986-02-16,24,38,Villarreal,spain,2010
+Jorge Fucile,uruguay,DF,1984-11-19,25,24,Porto,portugal,2010
+Walter Gargano,uruguay,MF,1984-07-23,25,28,Napoli,italy,2010
+Mauricio Victorino,uruguay,DF,1982-10-11,27,4,Universidad de Chile,chile,2010
+Edinson Cavani,uruguay,FW,1987-02-14,23,14,Palermo,italy,2010
+Sebastián Eguren,uruguay,MF,1981-01-08,29,27,AIK,sweden,2010
+Luis Suárez,uruguay,FW,1987-01-24,23,30,Ajax,netherlands,2010
+Diego Forlán,uruguay,FW,1979-05-19,31,62,Atlético Madrid,spain,2010
+Álvaro Pereira,uruguay,MF,1985-11-28,24,15,Porto,portugal,2010
+Juan Castillo,uruguay,GK,1978-04-17,32,11,Deportivo Cali,colombia,2010
+Sebastián Abreu,uruguay,FW,1976-10-17,33,56,Botafogo,brazil,2010
+Nicolás Lodeiro,uruguay,MF,1989-03-21,21,4,Ajax,netherlands,2010
+Diego Pérez,uruguay,MF,1980-05-18,30,50,Monaco,france,2010
+Maxi Pereira,uruguay,DF,1984-06-08,26,37,Benfica,portugal,2010
+Egidio Arévalo Ríos,uruguay,MF,1982-01-01,28,6,Peñarol,uruguay,2010
+Ignacio González,uruguay,MF,1982-05-14,28,17,Levadiakos,greece,2010
+Andrés Scotti,uruguay,DF,1974-12-14,35,26,Colo-Colo,chile,2010
+Álvaro Fernández,uruguay,MF,1985-10-11,24,7,Universidad de Chile,chile,2010
+Sebastián Fernández,uruguay,FW,1985-05-23,25,6,Banfield,argentina,2010
+Martín Cáceres,uruguay,DF,1987-04-07,23,19,Sevilla,spain,2010
+Martín Silva,uruguay,GK,1983-03-25,27,1,Defensor Sporting,uruguay,2010
+Diego Pozo,argentina,GK,1978-02-16,32,3,Colón,argentina,2010
+Martín Demichelis,argentina,DF,1980-12-20,29,25,Bayern Munich,germany,2010
+Clemente Rodríguez,argentina,DF,1981-07-31,28,12,Estudiantes La Plata,argentina,2010
+Nicolás Burdisso,argentina,DF,1981-04-12,29,29,Roma,italy,2010
+Mario Bolatti,argentina,MF,1985-02-17,25,5,Fiorentina,italy,2010
+Gabriel Heinze,argentina,DF,1978-04-19,32,64,Marseille,france,2010
+Ángel Di María,argentina,MF,1988-02-14,22,8,Benfica,portugal,2010
+Juan Sebastián Verón,argentina,MF,1975-03-09,35,70,Estudiantes La Plata,argentina,2010
+Gonzalo Higuaín,argentina,FW,1987-12-10,22,5,Real Madrid,spain,2010
+Lionel Messi,argentina,FW,1987-06-24,22,45,Barcelona,spain,2010
+Carlos Tevez,argentina,FW,1984-02-05,26,54,Manchester City,england,2010
+Ariel Garcé,argentina,DF,1979-07-14,30,4,Colón,argentina,2010
+Walter Samuel,argentina,DF,1978-03-23,32,54,Internazionale,italy,2010
+Javier Mascherano,argentina,MF,1984-06-08,26,57,Liverpool,england,2010
+Nicolás Otamendi,argentina,DF,1988-02-12,22,7,Vélez Sársfield,argentina,2010
+Sergio Agüero,argentina,FW,1988-06-02,22,22,Atlético Madrid,spain,2010
+Jonás Gutiérrez,argentina,MF,1983-07-05,26,16,Newcastle United,england,2010
+Martín Palermo,argentina,FW,1973-11-07,36,14,Boca Juniors,argentina,2010
+Diego Milito,argentina,FW,1979-06-12,30,21,Internazionale,italy,2010
+Maxi Rodríguez,argentina,MF,1981-01-02,29,36,Liverpool,england,2010
+Mariano Andújar,argentina,GK,1983-07-30,26,4,Catania,italy,2010
+Sergio Romero,argentina,GK,1987-02-22,23,6,AZ,netherlands,2010
+Javier Pastore,argentina,MF,1989-06-20,20,1,Palermo,italy,2010
+Kostas Chalkias,greece,GK,1974-05-30,36,27,PAOK,greece,2010
+Giourkas Seitaridis,greece,DF,1981-06-04,29,69,Panathinaikos,greece,2010
+Christos Patsatzoglou,greece,DF,1979-03-19,31,43,Omonia,cyprus,2010
+Nikos Spiropoulos,greece,MF,1983-10-10,26,19,Panathinaikos,greece,2010
+Vangelis Moras,greece,DF,1981-08-18,28,11,Bologna,italy,2010
+Alexandros Tziolis,greece,MF,1985-02-13,25,19,Siena,italy,2010
+Georgios Samaras,greece,FW,1985-02-21,25,34,Celtic,scotland,2010
+Avraam Papadopoulos,greece,DF,1984-12-03,25,14,Olympiacos,greece,2010
+Angelos Charisteas,greece,FW,1980-02-09,30,84,1. FC Nürnberg,germany,2010
+Giorgos Karagounis,greece,MF,1977-03-06,33,93,Panathinaikos,greece,2010
+Loukas Vyntra,greece,DF,1981-02-05,29,29,Panathinaikos,greece,2010
+Alexandros Tzorvas,greece,GK,1982-08-12,27,8,Panathinaikos,greece,2010
+Michalis Sifakis,greece,GK,1984-09-09,25,2,Aris,greece,2010
+Dimitris Salpingidis,greece,FW,1981-08-18,28,36,Panathinaikos,greece,2010
+Vasilis Torosidis,greece,DF,1985-06-10,25,26,Olympiacos,greece,2010
+Sotirios Kyrgiakos,greece,DF,1979-07-23,30,58,Liverpool,england,2010
+Theofanis Gekas,greece,FW,1980-05-23,30,47,Hertha BSC,germany,2010
+Sotiris Ninis,greece,MF,1990-04-03,20,4,Panathinaikos,greece,2010
+Sokratis Papastathopoulos,greece,DF,1988-06-09,22,10,Genoa,italy,2010
+Pantelis Kapetanos,greece,FW,1983-06-08,27,3,Steaua București,romania,2010
+Kostas Katsouranis,greece,MF,1979-06-21,30,69,Panathinaikos,greece,2010
+Stelios Malezas,greece,DF,1985-03-11,25,0,PAOK,greece,2010
+Sakis Prittas,greece,MF,1979-01-09,31,0,Aris,greece,2010
+Vincent Enyeama,nigeria,GK,1982-08-29,27,51,Hapoel Tel Aviv,israel,2010
+Joseph Yobo,nigeria,DF,1980-09-06,29,64,Everton,england,2010
+Taye Taiwo,nigeria,DF,1985-04-16,25,35,Marseille,france,2010
+Nwankwo Kanu,nigeria,FW,1976-08-01,33,72,Portsmouth,england,2010
+Rabiu Afolabi,nigeria,DF,1980-04-18,30,12,Red Bull Salzburg,austria,2010
+Danny Shittu,nigeria,DF,1980-09-02,29,23,Bolton Wanderers,england,2010
+John Utaka,nigeria,FW,1982-01-08,28,41,Portsmouth,england,2010
+Yakubu,nigeria,FW,1982-11-22,27,47,Everton,england,2010
+Obafemi Martins,nigeria,FW,1984-10-28,25,27,VfL Wolfsburg,germany,2010
+Brown Ideye,nigeria,FW,1988-10-10,21,0,Sochaux,france,2010
+Peter Odemwingie,nigeria,FW,1981-07-15,28,43,Lokomotiv Moscow,russia,2010
+Kalu Uche,nigeria,FW,1982-11-15,27,18,Almería,spain,2010
+Ayila Yussuf,nigeria,MF,1984-11-04,25,24,Dynamo Kyiv,ukraine,2010
+Sani Kaita,nigeria,MF,1986-05-02,24,16,Alania Vladikavkaz,russia,2010
+Lukman Haruna,nigeria,MF,1990-04-12,20,5,Monaco,france,2010
+Austin Ejide,nigeria,GK,1984-04-08,26,16,Hapoel Petah Tikva,israel,2010
+Chidi Odiah,nigeria,DF,1983-12-17,26,21,CSKA Moscow,russia,2010
+Victor Obinna,nigeria,FW,1987-03-25,23,30,Málaga,spain,2010
+Chinedu Obasi,nigeria,FW,1986-06-01,24,17,1899 Hoffenheim,germany,2010
+Dickson Etuhu,nigeria,MF,1982-06-08,28,11,Fulham,england,2010
+Elderson Echiéjilé,nigeria,DF,1988-01-20,22,9,Rennes,france,2010
+Dele Adeleye,nigeria,DF,1988-12-25,21,5,Sparta Rotterdam,netherlands,2010
+Dele Aiyenugba,nigeria,GK,1983-11-20,26,9,Bnei Yehuda,israel,2010
+Lee Woon-jae,korea republic,GK,1973-04-26,37,130,Suwon Samsung Bluewings,korea republic,2010
+Oh Beom-seok,korea republic,DF,1984-07-29,25,37,Ulsan Hyundai,korea republic,2010
+Kim Hyung-il,korea republic,DF,1984-04-27,26,2,Pohang Steelers,korea republic,2010
+Cho Yong-hyung,korea republic,MF,1983-11-03,26,31,Jeju United,korea republic,2010
+Kim Nam-il,korea republic,MF,1977-03-14,33,92,Tom Tomsk,russia,2010
+Kim Bo-kyung,korea republic,MF,1989-10-06,20,6,Oita Trinita,japan,2010
+Park Ji-sung,korea republic,MF,1981-02-25,29,88,Manchester United,england,2010
+Kim Jung-woo,korea republic,FW,1982-05-09,28,54,Gwangju Sangmu,korea republic,2010
+Ahn Jung-hwan,korea republic,FW,1976-01-27,34,70,Dalian Shide,china pr,2010
+Park Chu-young,korea republic,FW,1985-07-10,24,40,Monaco,france,2010
+Lee Seung-yeoul,korea republic,FW,1989-03-06,21,8,FC Seoul,korea republic,2010
+Lee Young-pyo,korea republic,DF,1977-04-23,33,112,Al-Hilal,saudi arabia,2010
+Kim Jae-sung,korea republic,MF,1983-10-03,26,7,Pohang Steelers,korea republic,2010
+Lee Jung-soo,korea republic,DF,1980-01-08,30,24,Kashima Antlers,japan,2010
+Kim Dong-jin,korea republic,DF,1982-01-29,28,61,Ulsan Hyundai,korea republic,2010
+Ki Sung-yong,korea republic,MF,1989-01-24,21,21,Celtic,scotland,2010
+Lee Chung-yong,korea republic,MF,1988-07-02,21,23,Bolton Wanderers,england,2010
+Jung Sung-ryong,korea republic,GK,1985-01-04,25,15,Seongnam Ilhwa Chunma,korea republic,2010
+Yeom Ki-hun,korea republic,FW,1983-03-30,27,33,Suwon Samsung Bluewings,korea republic,2010
+Lee Dong-gook,korea republic,FW,1979-04-29,31,83,Jeonbuk Hyundai Motors,korea republic,2010
+Kim Young-kwang,korea republic,GK,1983-06-28,26,14,Ulsan Hyundai,korea republic,2010
+Cha Du-ri,korea republic,DF,1980-07-25,29,46,SC Freiburg,germany,2010
+Kang Min-soo,korea republic,DF,1986-02-14,24,31,Suwon Samsung Bluewings,korea republic,2010
+Lounès Gaouaoui,algeria,GK,1977-09-28,32,48,ASO Chlef,algeria,2010
+Madjid Bougherra,algeria,DF,1982-10-07,27,41,Rangers,scotland,2010
+Nadir Belhadj,algeria,DF,1982-06-18,27,45,Portsmouth,england,2010
+Antar Yahia,algeria,DF,1982-03-21,28,44,VfL Bochum,germany,2010
+Rafik Halliche,algeria,DF,1986-09-02,23,17,Nacional,portugal,2010
+Yazid Mansouri,algeria,MF,1978-02-25,32,67,Lorient,france,2010
+Ryad Boudebouz,algeria,MF,1990-02-19,20,2,Sochaux,france,2010
+Medhi Lacen,algeria,MF,1984-01-05,26,3,Racing Santander,spain,2010
+Abdelkader Ghezzal,algeria,FW,1984-12-05,25,19,Siena,italy,2010
+Rafik Saïfi,algeria,FW,1975-02-07,35,62,Istres,france,2010
+Rafik Djebbour,algeria,FW,1984-03-08,26,16,AEK Athens,greece,2010
+Habib Bellaïd,algeria,DF,1986-03-28,24,1,Eintracht Frankfurt,germany,2010
+Karim Matmour,algeria,FW,1985-06-25,24,23,Borussia Mönchengladbach,germany,2010
+Abdelkader Laïfaoui,algeria,DF,1981-07-29,28,7,ES Sétif,algeria,2010
+Karim Ziani,algeria,MF,1982-08-17,27,55,VfL Wolfsburg,germany,2010
+Faouzi Chaouchi,algeria,GK,1984-12-05,25,10,ES Sétif,algeria,2010
+Adlène Guedioura,algeria,MF,1985-11-12,24,2,Wolverhampton Wanderers,england,2010
+Carl Medjani,algeria,DF,1985-05-15,25,0,Ajaccio,france,2010
+Hassan Yebda,algeria,MF,1984-04-14,26,9,Portsmouth,england,2010
+Djamel Mesbah,algeria,DF,1984-10-09,25,1,Lecce,italy,2010
+Foued Kadir,algeria,MF,1983-12-05,26,2,Valenciennes,france,2010
+Djamel Abdoun,algeria,MF,1986-02-14,24,7,Nantes,france,2010
+Raïs M'Bohli,algeria,GK,1986-04-25,24,1,Slavia Sofia,bulgaria,2010
+David James,england,GK,1970-08-01,39,50,Portsmouth,england,2010
+Glen Johnson,england,DF,1984-08-23,25,22,Liverpool,england,2010
+Ashley Cole,england,DF,1980-12-20,29,78,Chelsea,england,2010
+Steven Gerrard,england,MF,1980-05-30,30,80,Liverpool,england,2010
+Michael Dawson,england,DF,1983-11-18,26,0,Tottenham Hotspur,england,2010
+John Terry,england,DF,1980-12-07,29,60,Chelsea,england,2010
+Aaron Lennon,england,MF,1987-04-16,23,17,Tottenham Hotspur,england,2010
+Frank Lampard,england,MF,1978-06-20,31,78,Chelsea,england,2010
+Peter Crouch,england,FW,1981-01-30,29,38,Tottenham Hotspur,england,2010
+Wayne Rooney,england,FW,1985-10-24,24,60,Manchester United,england,2010
+Joe Cole,england,MF,1981-11-08,28,54,Chelsea,england,2010
+Robert Green,england,GK,1980-01-18,30,10,West Ham United,england,2010
+Stephen Warnock,england,DF,1981-12-12,28,1,Aston Villa,england,2010
+Gareth Barry,england,MF,1981-02-23,29,36,Manchester City,england,2010
+Matthew Upson,england,DF,1979-04-18,31,19,West Ham United,england,2010
+James Milner,england,MF,1986-01-04,24,8,Aston Villa,england,2010
+Shaun Wright-Phillips,england,MF,1981-10-25,28,31,Manchester City,england,2010
+Jamie Carragher,england,DF,1978-01-28,32,36,Liverpool,england,2010
+Jermain Defoe,england,FW,1982-10-07,27,39,Tottenham Hotspur,england,2010
+Ledley King,england,DF,1980-10-12,29,20,Tottenham Hotspur,england,2010
+Emile Heskey,england,FW,1978-01-11,32,58,Aston Villa,england,2010
+Michael Carrick,england,MF,1981-07-28,28,22,Manchester United,england,2010
+Joe Hart,england,GK,1987-04-19,23,3,Birmingham City,england,2010
+Samir Handanović,slovenia,GK,1984-07-14,25,39,Udinese,italy,2010
+Mišo Brečko,slovenia,DF,1984-05-01,26,31,1. FC Köln,germany,2010
+Elvedin Džinić,slovenia,DF,1985-08-25,24,0,Maribor,slovenia,2010
+Marko Šuler,slovenia,DF,1983-03-09,27,17,Gent,belgium,2010
+Boštjan Cesar,slovenia,DF,1982-07-09,27,43,Grenoble,france,2010
+Branko Ilić,slovenia,DF,1983-02-06,27,37,Lokomotiv Moscow,russia,2010
+Nejc Pečnik,slovenia,FW,1986-01-03,24,8,Nacional,portugal,2010
+Robert Koren,slovenia,MF,1980-09-20,29,46,West Bromwich Albion,england,2010
+Zlatan Ljubijankić,slovenia,FW,1983-12-15,26,17,Gent,belgium,2010
+Valter Birsa,slovenia,FW,1986-08-07,23,34,Auxerre,france,2010
+Milivoje Novaković,slovenia,FW,1979-05-18,31,38,1. FC Köln,germany,2010
+Jasmin Handanović,slovenia,GK,1978-01-28,32,3,Mantova,italy,2010
+Bojan Jokić,slovenia,DF,1986-05-17,24,34,Chievo,italy,2010
+Zlatko Dedić,slovenia,FW,1984-05-10,26,24,VfL Bochum,germany,2010
+Rene Krhin,slovenia,MF,1990-05-21,20,4,Internazionale,italy,2010
+Aleksander Šeliga,slovenia,GK,1980-02-01,30,1,Sparta Rotterdam,netherlands,2010
+Andraž Kirm,slovenia,MF,1984-09-06,25,26,Wisła Kraków,poland,2010
+Aleksandar Radosavljević,slovenia,MF,1979-04-25,31,15,Larissa,greece,2010
+Suad Fileković,slovenia,DF,1978-09-16,31,14,Maribor,slovenia,2010
+Andrej Komac,slovenia,MF,1979-12-04,30,41,Maccabi Tel Aviv,israel,2010
+Dalibor Stevanović,slovenia,MF,1984-09-27,25,15,Vitesse,netherlands,2010
+Matej Mavrič,slovenia,DF,1979-01-29,31,32,TuS Koblenz,germany,2010
+Tim Matavž,slovenia,FW,1989-01-13,21,1,Groningen,netherlands,2010
+Tim Howard,usa,GK,1979-03-06,31,51,Everton,england,2010
+Jonathan Spector,usa,DF,1986-03-01,24,25,West Ham United,england,2010
+Carlos Bocanegra,usa,DF,1979-05-25,31,79,Rennes,france,2010
+Michael Bradley,usa,MF,1987-07-31,22,43,Borussia Mönchengladbach,germany,2010
+Oguchi Onyewu,usa,DF,1982-05-13,28,54,Milan,italy,2010
+Steve Cherundolo,usa,DF,1979-02-19,31,60,Hannover 96,germany,2010
+DaMarcus Beasley,usa,MF,1982-05-24,28,92,Rangers,scotland,2010
+Clint Dempsey,usa,MF,1983-03-09,27,62,Fulham,england,2010
+Herculez Gomez,usa,FW,1982-04-06,28,4,Puebla,mexico,2010
+Landon Donovan,usa,MF,1982-03-04,28,123,LA Galaxy,usa,2010
+Stuart Holden,usa,MF,1985-08-01,24,14,Bolton Wanderers,england,2010
+Jonathan Bornstein,usa,DF,1984-11-07,25,32,Chivas USA,usa,2010
+Ricardo Clark,usa,MF,1983-03-10,27,29,Eintracht Frankfurt,germany,2010
+Edson Buddle,usa,FW,1981-05-21,29,3,LA Galaxy,usa,2010
+Jay DeMerit,usa,DF,1979-12-04,30,19,Watford,england,2010
+José Francisco Torres,usa,MF,1987-10-29,22,10,Pachuca,mexico,2010
+Jozy Altidore,usa,FW,1989-11-06,20,25,Hull City,england,2010
+Brad Guzan,usa,GK,1984-09-09,25,16,Aston Villa,england,2010
+Maurice Edu,usa,MF,1986-04-18,24,13,Rangers,scotland,2010
+Robbie Findley,usa,FW,1985-08-04,24,6,Real Salt Lake,usa,2010
+Clarence Goodson,usa,DF,1982-05-17,28,14,Start,norway,2010
+Benny Feilhaber,usa,MF,1985-01-19,25,32,AGF,denmark,2010
+Marcus Hahnemann,usa,GK,1972-06-15,37,7,Wolverhampton Wanderers,england,2010
+Mark Schwarzer,australia,GK,1972-10-06,37,75,Fulham,england,2010
+Lucas Neill,australia,DF,1978-03-09,32,56,Galatasaray,turkey,2010
+Craig Moore,australia,DF,1975-12-12,34,50,,,2010
+Tim Cahill,australia,MF,1979-12-06,30,40,Everton,england,2010
+Jason Culina,australia,MF,1980-08-05,29,49,Gold Coast United,australia,2010
+Michael Beauchamp,australia,DF,1981-03-08,29,21,Al-Jazira,united arab emirates,2010
+Brett Emerton,australia,MF,1979-02-22,31,72,Blackburn Rovers,england,2010
+Luke Wilkshire,australia,DF,1981-10-01,28,42,Dynamo Moscow,russia,2010
+Joshua Kennedy,australia,FW,1982-08-20,27,19,Nagoya Grampus,japan,2010
+Harry Kewell,australia,FW,1978-09-22,31,45,Galatasaray,turkey,2010
+Scott Chipperfield,australia,DF,1975-12-30,34,65,Basel,switzerland,2010
+Adam Federici,australia,GK,1985-01-31,25,1,Reading,england,2010
+Vince Grella,australia,MF,1979-10-05,30,45,Blackburn Rovers,england,2010
+Brett Holman,australia,FW,1984-03-27,26,31,AZ,netherlands,2010
+Mile Jedinak,australia,MF,1984-08-03,25,11,Antalyaspor,turkey,2010
+Carl Valeri,australia,MF,1984-08-14,25,22,Sassuolo,italy,2010
+Nikita Rukavytsya,australia,FW,1987-06-22,22,3,Roeselare,belgium,2010
+Eugene Galekovic,australia,GK,1981-06-12,28,4,Adelaide United,australia,2010
+Richard Garcia,australia,MF,1981-09-04,28,7,Hull City,england,2010
+Mark Milligan,australia,DF,1985-09-04,24,10,JEF United,japan,2010
+David Carney,australia,DF,1983-11-30,26,25,Twente,netherlands,2010
+Dario Vidošić,australia,MF,1987-04-12,23,7,MSV Duisburg,germany,2010
+Mark Bresciano,australia,MF,1980-02-11,30,55,Palermo,italy,2010
+Manuel Neuer,germany,GK,1986-03-27,24,5,Schalke 04,germany,2010
+Marcell Jansen,germany,DF,1985-11-04,24,31,Hamburger SV,germany,2010
+Arne Friedrich,germany,DF,1979-05-29,31,72,Hertha BSC,germany,2010
+Dennis Aogo,germany,DF,1987-01-14,23,2,Hamburger SV,germany,2010
+Serdar Tasci,germany,DF,1987-04-24,23,12,VfB Stuttgart,germany,2010
+Sami Khedira,germany,MF,1987-04-04,23,5,VfB Stuttgart,germany,2010
+Bastian Schweinsteiger,germany,MF,1984-08-01,25,74,Bayern Munich,germany,2010
+Mesut Özil,germany,MF,1988-10-15,21,10,Werder Bremen,germany,2010
+Stefan Kießling,germany,FW,1984-01-25,26,4,Bayer Leverkusen,germany,2010
+Lukas Podolski,germany,MF,1985-06-04,25,73,1. FC Köln,germany,2010
+Miroslav Klose,germany,FW,1978-06-09,32,96,Bayern Munich,germany,2010
+Tim Wiese,germany,GK,1981-12-17,28,2,Werder Bremen,germany,2010
+Thomas Müller,germany,MF,1989-09-13,20,2,Bayern Munich,germany,2010
+Holger Badstuber,germany,DF,1989-03-13,21,2,Bayern Munich,germany,2010
+Piotr Trochowski,germany,MF,1984-03-22,26,31,Hamburger SV,germany,2010
+Philipp Lahm,germany,DF,1983-11-11,26,65,Bayern Munich,germany,2010
+Per Mertesacker,germany,DF,1984-09-29,25,62,Werder Bremen,germany,2010
+Toni Kroos,germany,MF,1990-01-04,20,4,Bayer Leverkusen,germany,2010
+Cacau,germany,FW,1981-03-27,29,8,VfB Stuttgart,germany,2010
+Jérôme Boateng,germany,DF,1988-09-03,21,5,Hamburger SV,germany,2010
+Marko Marin,germany,MF,1989-03-13,21,9,Werder Bremen,germany,2010
+Hans-Jörg Butt,germany,GK,1974-05-28,36,3,Bayern Munich,germany,2010
+Mario Gómez,germany,FW,1985-07-10,24,34,Bayern Munich,germany,2010
+Daniel Agyei,ghana,GK,1989-11-10,20,2,Liberty Professionals,ghana,2010
+Hans Sarpei,ghana,DF,1976-06-28,33,23,Bayer Leverkusen,germany,2010
+Asamoah Gyan,ghana,FW,1985-11-22,24,32,Rennes,france,2010
+John Paintsil,ghana,DF,1981-06-15,28,65,Fulham,england,2010
+John Mensah,ghana,DF,1982-11-29,27,58,Sunderland,england,2010
+Anthony Annan,ghana,MF,1986-07-21,23,38,Rosenborg,norway,2010
+Samuel Inkoom,ghana,DF,1989-06-01,21,15,Basel,switzerland,2010
+Jonathan Mensah,ghana,DF,1990-07-13,19,3,Granada,spain,2010
+Derek Boateng,ghana,MF,1983-05-02,27,19,Getafe,spain,2010
+Stephen Appiah,ghana,MF,1980-12-24,29,56,Bologna,italy,2010
+Sulley Muntari,ghana,MF,1984-08-27,25,52,Internazionale,italy,2010
+Prince Tagoe,ghana,FW,1986-11-09,23,17,1899 Hoffenheim,germany,2010
+André Ayew,ghana,MF,1989-12-17,20,15,Arles-Avignon,france,2010
+Matthew Amoah,ghana,FW,1980-10-24,29,31,NAC,netherlands,2010
+Isaac Vorsah,ghana,DF,1988-06-21,21,6,1899 Hoffenheim,germany,2010
+Stephen Ahorlu,ghana,GK,1989-05-10,21,0,Heart of Lions,ghana,2010
+Abdul Rahim Ayew,ghana,DF,1988-04-16,22,6,Zamalek,egypt,2010
+Dominic Adiyiah,ghana,FW,1989-11-29,20,4,Milan,italy,2010
+Lee Addy,ghana,DF,1985-09-26,24,3,Bechem Chelsea,ghana,2010
+Quincy Owusu-Abeyie,ghana,MF,1986-04-15,24,12,Al-Sadd,qatar,2010
+Kwadwo Asamoah,ghana,MF,1988-12-09,21,29,Udinese,italy,2010
+Richard Kingson,ghana,GK,1978-06-13,31,58,Wigan Athletic,england,2010
+Kevin-Prince Boateng,ghana,MF,1987-03-06,23,0,Portsmouth,england,2010
+Vladimir Stojković,serbia,GK,1983-07-29,26,33,Wigan Athletic,england,2010
+Antonio Rukavina,serbia,DF,1984-01-26,26,20,1860 Munich,germany,2010
+Aleksandar Kolarov,serbia,DF,1985-11-10,24,13,Lazio,italy,2010
+Gojko Kačar,serbia,MF,1987-01-26,23,17,Hertha BSC,germany,2010
+Nemanja Vidić,serbia,DF,1981-10-21,28,45,Manchester United,england,2010
+Branislav Ivanović,serbia,DF,1984-02-22,26,31,Chelsea,england,2010
+Zoran Tošić,serbia,MF,1987-04-28,23,21,1. FC Köln,germany,2010
+Danko Lazović,serbia,FW,1983-05-17,27,37,Zenit Saint Petersburg,russia,2010
+Marko Pantelić,serbia,FW,1978-09-15,31,32,Ajax,netherlands,2010
+Dejan Stanković,serbia,MF,1978-09-11,31,88,Internazionale,italy,2010
+Nenad Milijaš,serbia,MF,1983-04-30,27,17,Wolverhampton Wanderers,england,2010
+Bojan Isailović,serbia,GK,1980-03-25,30,4,Zagłębie Lubin,poland,2010
+Aleksandar Luković,serbia,DF,1982-10-23,27,21,Udinese,italy,2010
+Milan Jovanović,serbia,MF,1981-04-18,29,26,Standard Liège,belgium,2010
+Nikola Žigić,serbia,FW,1980-09-25,29,45,Valencia,spain,2010
+Ivan Obradović,serbia,DF,1988-07-25,21,12,Real Zaragoza,spain,2010
+Miloš Krasić,serbia,MF,1984-11-01,25,31,CSKA Moscow,russia,2010
+Miloš Ninković,serbia,MF,1984-12-25,25,9,Dynamo Kyiv,ukraine,2010
+Radosav Petrović,serbia,MF,1989-03-08,21,9,Partizan,serbia,2010
+Neven Subotić,serbia,DF,1988-12-10,21,13,Borussia Dortmund,germany,2010
+Dragan Mrđa,serbia,FW,1984-01-23,26,6,Vojvodina,serbia,2010
+Zdravko Kuzmanović,serbia,MF,1987-09-22,22,27,VfB Stuttgart,germany,2010
+Anđelko Đuričić,serbia,GK,1980-11-21,29,1,União de Leiria,portugal,2010
+Carlos Kameni,cameroon,GK,1984-02-18,26,58,Espanyol,spain,2010
+Benoît Assou-Ekotto,cameroon,DF,1984-03-24,26,4,Tottenham Hotspur,england,2010
+Nicolas N'Koulou,cameroon,DF,1990-03-27,20,6,Monaco,france,2010
+Rigobert Song,cameroon,DF,1976-07-01,33,133,Trabzonspor,turkey,2010
+Sébastien Bassong,cameroon,DF,1986-07-09,23,3,Tottenham Hotspur,england,2010
+Alex Song,cameroon,MF,1987-09-09,22,20,Arsenal,england,2010
+Landry N'Guémo,cameroon,MF,1985-11-28,24,17,Celtic,scotland,2010
+Geremi,cameroon,DF,1978-12-20,31,109,Ankaragücü,turkey,2010
+Samuel Eto'o,cameroon,FW,1981-03-10,29,92,Internazionale,italy,2010
+Achille Emana,cameroon,MF,1982-06-05,28,32,Real Betis,spain,2010
+Jean Makoun,cameroon,MF,1983-05-29,27,46,Lyon,france,2010
+Gaëtan Bong,cameroon,DF,1988-04-25,22,0,Valenciennes,france,2010
+Eric Maxim Choupo-Moting,cameroon,FW,1989-03-23,21,0,1. FC Nürnberg,germany,2010
+Aurélien Chedjou,cameroon,DF,1985-06-20,24,8,Lille,france,2010
+Pierre Webó,cameroon,FW,1982-01-20,28,39,Mallorca,spain,2010
+Souleymanou Hamidou,cameroon,GK,1973-11-22,36,40,Kayserispor,turkey,2010
+Mohammadou Idrissou,cameroon,FW,1980-03-08,30,28,SC Freiburg,germany,2010
+Eyong Enoh,cameroon,MF,1986-03-23,24,12,Ajax,netherlands,2010
+Stéphane Mbia,cameroon,DF,1986-05-20,24,29,Marseille,france,2010
+Georges Mandjeck,cameroon,MF,1988-12-09,21,4,1. FC Kaiserslautern,germany,2010
+Joël Matip,cameroon,MF,1991-08-08,18,1,Schalke 04,germany,2010
+Guy N'dy Assembé,cameroon,GK,1986-02-28,24,0,Valenciennes,france,2010
+Vincent Aboubakar,cameroon,FW,1992-01-22,18,0,Cotonsport Garoua,cameroon,2010
+Thomas Sørensen,denmark,GK,1976-06-12,33,86,Stoke City,england,2010
+Christian Poulsen,denmark,MF,1980-02-28,30,74,Juventus,italy,2010
+Simon Kjær,denmark,DF,1989-03-26,21,9,Palermo,italy,2010
+Daniel Agger,denmark,DF,1984-12-12,25,32,Liverpool,england,2010
+William Kvist,denmark,DF,1985-02-24,25,14,Copenhagen,denmark,2010
+Lars Jacobsen,denmark,DF,1979-09-20,30,31,Blackburn Rovers,england,2010
+Daniel Jensen,denmark,MF,1979-06-25,30,49,Werder Bremen,germany,2010
+Jesper Grønkjær,denmark,MF,1977-08-12,32,78,Copenhagen,denmark,2010
+Jon Dahl Tomasson,denmark,FW,1976-08-29,33,110,Feyenoord,netherlands,2010
+Martin Jørgensen,denmark,MF,1975-10-06,34,96,AGF,denmark,2010
+Nicklas Bendtner,denmark,FW,1988-01-16,22,32,Arsenal,england,2010
+Thomas Kahlenberg,denmark,MF,1983-03-20,27,31,VfL Wolfsburg,germany,2010
+Per Krøldrup,denmark,DF,1979-07-31,30,30,Fiorentina,italy,2010
+Jakob Poulsen,denmark,MF,1983-07-07,26,13,AGF,denmark,2010
+Simon Poulsen,denmark,DF,1984-10-07,25,5,AZ,netherlands,2010
+Stephan Andersen,denmark,GK,1981-11-26,28,7,Brøndby,denmark,2010
+Mikkel Beckmann,denmark,MF,1983-10-24,26,5,Randers,denmark,2010
+Søren Larsen,denmark,FW,1981-09-06,28,19,MSV Duisburg,germany,2010
+Dennis Rommedahl,denmark,MF,1978-07-22,31,96,Ajax,netherlands,2010
+Thomas Enevoldsen,denmark,MF,1987-07-27,22,6,Groningen,netherlands,2010
+Christian Eriksen,denmark,MF,1992-02-14,18,3,Ajax,netherlands,2010
+Jesper Christiansen,denmark,GK,1978-04-24,32,11,Copenhagen,denmark,2010
+Patrick Mtiliga,denmark,DF,1981-01-28,29,4,Málaga,spain,2010
+Seigo Narazaki,japan,GK,1976-04-15,34,76,Nagoya Grampus,japan,2010
+Yuki Abe,japan,MF,1981-09-06,28,45,Urawa Red Diamonds,japan,2010
+Yūichi Komano,japan,DF,1981-07-25,28,53,Júbilo Iwata,japan,2010
+Marcus Tulio Tanaka,japan,DF,1981-04-24,29,39,Nagoya Grampus,japan,2010
+Yuto Nagatomo,japan,DF,1986-09-12,23,26,FC Tokyo,japan,2010
+Atsuto Uchida,japan,DF,1988-03-27,22,31,Kashima Antlers,japan,2010
+Yasuhito Endō,japan,MF,1980-01-28,30,94,Gamba Osaka,japan,2010
+Daisuke Matsui,japan,FW,1981-05-11,29,23,Grenoble,france,2010
+Shinji Okazaki,japan,FW,1986-04-16,24,28,Shimizu S-Pulse,japan,2010
+Shunsuke Nakamura,japan,MF,1978-06-24,31,97,Yokohama F. Marinos,japan,2010
+Keiji Tamada,japan,FW,1980-04-11,30,70,Nagoya Grampus,japan,2010
+Kisho Yano,japan,FW,1984-04-05,26,18,Albirex Niigata,japan,2010
+Daiki Iwamasa,japan,DF,1982-01-30,28,2,Kashima Antlers,japan,2010
+Kengo Nakamura,japan,MF,1980-10-31,29,47,Kawasaki Frontale,japan,2010
+Yasuyuki Konno,japan,DF,1983-01-25,27,37,FC Tokyo,japan,2010
+Yoshito Ōkubo,japan,FW,1982-06-09,28,49,Vissel Kobe,japan,2010
+Makoto Hasebe,japan,MF,1984-01-18,26,31,VfL Wolfsburg,germany,2010
+Keisuke Honda,japan,MF,1986-06-13,23,15,CSKA Moscow,russia,2010
+Takayuki Morimoto,japan,FW,1988-05-07,22,6,Catania,italy,2010
+Junichi Inamoto,japan,MF,1979-09-18,30,80,Kawasaki Frontale,japan,2010
+Eiji Kawashima,japan,GK,1983-03-20,27,10,Kawasaki Frontale,japan,2010
+Yuji Nakazawa,japan,DF,1978-02-25,32,105,Yokohama F. Marinos,japan,2010
+Yoshikatsu Kawaguchi,japan,GK,1975-08-15,34,116,Júbilo Iwata,japan,2010
+Maarten Stekelenburg,netherlands,GK,1982-09-22,27,25,Ajax,netherlands,2010
+Gregory van der Wiel,netherlands,DF,1988-02-03,22,8,Ajax,netherlands,2010
+John Heitinga,netherlands,DF,1983-11-15,26,51,Everton,england,2010
+Joris Mathijsen,netherlands,DF,1980-04-05,30,53,Hamburger SV,germany,2010
+Giovanni van Bronckhorst,netherlands,DF,1975-02-05,35,97,Feyenoord,netherlands,2010
+Mark van Bommel,netherlands,MF,1977-04-22,33,54,Bayern Munich,germany,2010
+Dirk Kuyt,netherlands,FW,1980-07-22,29,60,Liverpool,england,2010
+Nigel de Jong,netherlands,MF,1984-11-30,25,40,Manchester City,england,2010
+Robin van Persie,netherlands,FW,1983-08-06,26,41,Arsenal,england,2010
+Wesley Sneijder,netherlands,MF,1984-06-09,26,59,Internazionale,italy,2010
+Arjen Robben,netherlands,FW,1984-01-23,26,46,Bayern Munich,germany,2010
+Khalid Boulahrouz,netherlands,DF,1981-12-28,28,28,VfB Stuttgart,germany,2010
+André Ooijer,netherlands,DF,1974-07-11,35,53,PSV Eindhoven,netherlands,2010
+Demy de Zeeuw,netherlands,MF,1983-05-26,27,23,Ajax,netherlands,2010
+Edson Braafheid,netherlands,DF,1983-04-08,27,5,Celtic,scotland,2010
+Michel Vorm,netherlands,GK,1983-10-20,26,3,Utrecht,netherlands,2010
+Eljero Elia,netherlands,FW,1987-02-13,23,5,Hamburger SV,germany,2010
+Stijn Schaars,netherlands,MF,1984-01-11,26,11,AZ,netherlands,2010
+Ryan Babel,netherlands,FW,1986-12-19,23,38,Liverpool,england,2010
+Ibrahim Afellay,netherlands,MF,1986-04-02,24,20,PSV Eindhoven,netherlands,2010
+Klaas-Jan Huntelaar,netherlands,FW,1983-08-12,26,30,Milan,italy,2010
+Sander Boschker,netherlands,GK,1970-10-20,39,1[7],Twente,netherlands,2010
+Rafael van der Vaart,netherlands,MF,1983-02-11,27,75,Real Madrid,spain,2010
+Gianluigi Buffon,italy,GK,1978-01-28,32,101,Juventus,italy,2010
+Christian Maggio,italy,DF,1982-02-11,28,5,Napoli,italy,2010
+Domenico Criscito,italy,DF,1986-12-30,23,7,Genoa,italy,2010
+Giorgio Chiellini,italy,DF,1984-08-14,25,29,Juventus,italy,2010
+Fabio Cannavaro,italy,DF,1973-09-13,36,133,Juventus,italy,2010
+Daniele De Rossi,italy,MF,1983-07-24,26,54,Roma,italy,2010
+Simone Pepe,italy,MF,1983-08-30,26,15,Udinese,italy,2010
+Gennaro Gattuso,italy,MF,1978-01-09,32,72,Milan,italy,2010
+Vincenzo Iaquinta,italy,FW,1979-11-21,30,37,Juventus,italy,2010
+Antonio Di Natale,italy,FW,1977-10-13,32,33,Udinese,italy,2010
+Alberto Gilardino,italy,FW,1982-07-05,27,41,Fiorentina,italy,2010
+Federico Marchetti,italy,GK,1983-02-07,27,5,Cagliari,italy,2010
+Salvatore Bocchetti,italy,DF,1986-11-30,23,5,Genoa,italy,2010
+Morgan De Sanctis,italy,GK,1977-03-26,33,3,Napoli,italy,2010
+Claudio Marchisio,italy,MF,1986-01-19,24,4,Juventus,italy,2010
+Mauro Camoranesi,italy,MF,1976-10-04,33,53,Juventus,italy,2010
+Angelo Palombo,italy,MF,1981-09-25,28,17,Sampdoria,italy,2010
+Fabio Quagliarella,italy,FW,1983-01-31,27,20,Napoli,italy,2010
+Gianluca Zambrotta,italy,DF,1977-02-19,33,94,Milan,italy,2010
+Giampaolo Pazzini,italy,FW,1984-08-02,25,8,Sampdoria,italy,2010
+Andrea Pirlo,italy,MF,1979-05-19,31,66,Milan,italy,2010
+Riccardo Montolivo,italy,MF,1985-01-18,25,13,Fiorentina,italy,2010
+Leonardo Bonucci,italy,DF,1987-05-01,23,2,Bari,italy,2010
+Mark Paston,new zealand,GK,1976-12-13,33,23,Wellington Phoenix,australia,2010
+Ben Sigmund,new zealand,DF,1981-02-03,29,14,Wellington Phoenix,australia,2010
+Tony Lochhead,new zealand,DF,1982-01-12,28,30,Wellington Phoenix,australia,2010
+Winston Reid,new zealand,DF,1988-07-03,21,3,Midtjylland,denmark,2010
+Ivan Vicelich,new zealand,DF,1976-09-03,33,66,Auckland City,new zealand,2010
+Ryan Nelsen,new zealand,DF,1977-10-18,32,41,Blackburn Rovers,england,2010
+Simon Elliott,new zealand,MF,1974-06-10,36,63,,,2010
+Tim Brown,new zealand,MF,1981-03-06,29,25,Wellington Phoenix,australia,2010
+Shane Smeltz,new zealand,FW,1981-09-29,28,30,Gold Coast United,australia,2010
+Chris Killen,new zealand,FW,1981-10-08,28,31,Middlesbrough,england,2010
+Leo Bertos,new zealand,MF,1981-12-20,28,34,Wellington Phoenix,australia,2010
+Glen Moss,new zealand,GK,1983-01-19,27,15,Melbourne Victory,australia,2010
+Andy Barron,new zealand,MF,1980-12-24,29,11,Team Wellington,new zealand,2010
+Rory Fallon,new zealand,FW,1982-03-20,28,7,Plymouth Argyle,england,2010
+Michael McGlinchey,new zealand,MF,1987-01-07,23,5,Motherwell,scotland,2010
+Aaron Clapham,new zealand,MF,1987-01-01,23,0,Canterbury United,new zealand,2010
+David Mulligan,new zealand,MF,1982-03-24,28,25,,,2010
+Andrew Boyens,new zealand,DF,1983-09-18,26,15,New York Red Bulls,usa,2010
+Tommy Smith,new zealand,DF,1990-03-31,20,4,Ipswich Town,england,2010
+Chris Wood,new zealand,FW,1991-12-07,18,9,West Bromwich Albion,england,2010
+Jeremy Christie,new zealand,MF,1983-05-22,27,22,Tampa Bay,usa,2010
+Jeremy Brockie,new zealand,MF,1987-10-07,22,18,Newcastle Jets,australia,2010
+James Bannatyne,new zealand,GK,1975-06-30,34,3,Team Wellington,new zealand,2010
+Justo Villar,paraguay,GK,1977-06-30,32,71,Real Valladolid,spain,2010
+Darío Verón,paraguay,DF,1979-06-26,30,27,UNAM,mexico,2010
+Claudio Morel,paraguay,DF,1978-02-02,32,25,Boca Juniors,argentina,2010
+Denis Caniza,paraguay,DF,1974-08-29,35,95,León,mexico,2010
+Julio César Cáceres,paraguay,DF,1979-10-05,30,59,Atlético Mineiro,brazil,2010
+Carlos Bonet,paraguay,DF,1977-10-02,32,60,Olimpia,paraguay,2010
+Óscar Cardozo,paraguay,FW,1983-05-20,27,29,Benfica,portugal,2010
+Édgar Barreto,paraguay,MF,1984-07-15,25,47,Atalanta,italy,2010
+Roque Santa Cruz,paraguay,FW,1981-08-16,28,66,Manchester City,england,2010
+Édgar Benítez,paraguay,FW,1987-11-08,22,12,Pachuca,mexico,2010
+Jonathan Santana,paraguay,MF,1981-10-19,28,21,VfL Wolfsburg,germany,2010
+Diego Barreto,paraguay,GK,1981-07-16,28,2,Cerro Porteño,paraguay,2010
+Enrique Vera,paraguay,MF,1979-03-10,31,25,LDU Quito,ecuador,2010
+Paulo da Silva,paraguay,DF,1980-02-01,30,67,Sunderland,england,2010
+Víctor Cáceres,paraguay,MF,1985-03-25,25,25,Libertad,paraguay,2010
+Cristian Riveros,paraguay,MF,1982-10-16,27,45,Cruz Azul,mexico,2010
+Aureliano Torres,paraguay,DF,1982-06-16,27,25,San Lorenzo,argentina,2010
+Nelson Valdez,paraguay,FW,1983-11-28,26,38,Borussia Dortmund,germany,2010
+Lucas Barrios,paraguay,FW,1984-11-13,25,3,Borussia Dortmund,germany,2010
+Néstor Ortigoza,paraguay,MF,1984-10-07,25,3,Argentinos Juniors,argentina,2010
+Antolín Alcaraz,paraguay,DF,1982-07-30,27,5,Club Brugge,belgium,2010
+Aldo Bobadilla,paraguay,GK,1976-04-20,34,18,Independiente Medellín,colombia,2010
+Rodolfo Gamarra,paraguay,FW,1988-12-10,21,2,Libertad,paraguay,2010
+Ján Mucha,slovakia,GK,1982-12-05,27,15,Legia Warszawa,poland,2010
+Peter Pekarík,slovakia,DF,1986-10-30,23,21,VfL Wolfsburg,germany,2010
+Martin Škrtel,slovakia,DF,1984-12-15,25,39,Liverpool,england,2010
+Marek Čech,slovakia,DF,1983-01-26,27,40,West Bromwich Albion,england,2010
+Radoslav Zabavník,slovakia,DF,1980-09-16,29,44,Mainz 05,germany,2010
+Zdeno Štrba,slovakia,MF,1976-06-09,34,21,Skoda Xanthi,greece,2010
+Vladimír Weiss,slovakia,MF,1989-11-30,20,9,Bolton Wanderers,england,2010
+Ján Kozák,slovakia,MF,1980-04-22,30,24,Timișoara,romania,2010
+Stanislav Šesták,slovakia,MF,1982-12-16,27,33,VfL Bochum,germany,2010
+Marek Sapara,slovakia,MF,1982-07-31,27,25,Ankaragücü,turkey,2010
+Róbert Vittek,slovakia,FW,1982-04-01,28,70,Ankaragücü,turkey,2010
+Dušan Perniš,slovakia,GK,1984-11-28,25,3,Dundee United,scotland,2010
+Filip Hološko,slovakia,FW,1984-01-17,26,38,Beşiktaş,turkey,2010
+Martin Jakubko,slovakia,FW,1980-02-26,30,24,Saturn Moscow Oblast,russia,2010
+Miroslav Stoch,slovakia,MF,1989-10-19,20,12,Twente,netherlands,2010
+Ján Ďurica,slovakia,DF,1981-12-10,28,39,Hannover 96,germany,2010
+Marek Hamšík,slovakia,MF,1987-07-27,22,32,Napoli,italy,2010
+Erik Jendrišek,slovakia,FW,1986-10-26,23,15,1. FC Kaiserslautern,germany,2010
+Juraj Kucka,slovakia,MF,1987-02-26,23,6,Sparta Prague,czech republic,2010
+Kamil Kopúnek,slovakia,MF,1984-05-18,26,9,Spartak Trnava,slovakia,2010
+Kornel Saláta,slovakia,DF,1985-01-04,25,4,Slovan Bratislava,slovakia,2010
+Martin Petráš,slovakia,DF,1979-11-02,30,38,Cesena,italy,2010
+Dušan Kuciak,slovakia,GK,1985-05-21,25,3,Vaslui,romania,2010
+Júlio César,brazil,GK,1979-09-03,30,48,Internazionale,italy,2010
+Maicon,brazil,DF,1981-07-26,28,58,Internazionale,italy,2010
+Lúcio,brazil,DF,1978-05-08,32,91,Internazionale,italy,2010
+Juan,brazil,DF,1979-02-01,31,74,Roma,italy,2010
+Felipe Melo,brazil,MF,1983-08-26,26,18,Juventus,italy,2010
+Michel Bastos,brazil,DF,1983-08-02,26,5,Lyon,france,2010
+Elano,brazil,MF,1981-06-14,28,43,Galatasaray,turkey,2010
+Gilberto Silva,brazil,MF,1976-10-07,33,88,Panathinaikos,greece,2010
+Luís Fabiano,brazil,FW,1980-11-08,29,38,Sevilla,spain,2010
+Kaká,brazil,MF,1982-04-22,28,78,Real Madrid,spain,2010
+Robinho,brazil,FW,1984-01-25,26,75,Santos,brazil,2010
+Heurelho Gomes,brazil,GK,1981-02-15,29,11,Tottenham Hotspur,england,2010
+Dani Alves,brazil,DF,1983-05-06,27,35,Barcelona,spain,2010
+Luisão,brazil,DF,1981-02-13,29,42,Benfica,portugal,2010
+Thiago Silva,brazil,DF,1984-09-22,25,7,Milan,italy,2010
+Gilberto,brazil,DF,1976-04-25,34,33,Cruzeiro,brazil,2010
+Josué,brazil,MF,1979-07-19,30,27,VfL Wolfsburg,germany,2010
+Ramires,brazil,MF,1987-03-24,23,12,Benfica,portugal,2010
+Júlio Baptista,brazil,MF,1981-10-01,28,46,Roma,italy,2010
+Kléberson,brazil,MF,1979-06-19,30,31,Flamengo,brazil,2010
+Nilmar,brazil,FW,1984-07-14,25,17,Villarreal,spain,2010
+Doni,brazil,GK,1979-10-22,30,10,Roma,italy,2010
+Grafite,brazil,FW,1979-04-02,31,3,VfL Wolfsburg,germany,2010
+Boubacar Barry,côte d'ivoire,GK,1979-12-30,30,45,Lokeren,belgium,2010
+Benjamin Angoua,côte d'ivoire,DF,1986-11-28,23,7,Valenciennes,france,2010
+Arthur Boka,côte d'ivoire,DF,1983-04-02,27,54,VfB Stuttgart,germany,2010
+Kolo Touré,côte d'ivoire,DF,1981-03-19,29,76,Manchester City,england,2010
+Didier Zokora,côte d'ivoire,MF,1980-12-14,29,80,Sevilla,spain,2010
+Steve Gohouri,côte d'ivoire,DF,1981-02-08,29,11,Wigan Athletic,england,2010
+Seydou Doumbia,côte d'ivoire,FW,1987-12-31,22,5,Young Boys,switzerland,2010
+Salomon Kalou,côte d'ivoire,FW,1985-08-05,24,28,Chelsea,england,2010
+Cheick Tioté,côte d'ivoire,MF,1986-06-21,23,8,Twente,netherlands,2010
+Gervinho,côte d'ivoire,FW,1987-05-27,23,15,Lille,france,2010
+Didier Drogba,côte d'ivoire,FW,1978-03-11,32,68,Chelsea,england,2010
+Jean-Jacques Gosso,côte d'ivoire,MF,1983-03-15,27,6,Monaco,france,2010
+Romaric,côte d'ivoire,MF,1983-06-04,27,38,Sevilla,spain,2010
+Emmanuel Koné,côte d'ivoire,MF,1986-12-31,23,12,Internațional,romania,2010
+Aruna Dindane,côte d'ivoire,FW,1980-11-26,29,54,Portsmouth,england,2010
+Aristide Zogbo,côte d'ivoire,GK,1981-12-30,28,6,Maccabi Netanya,israel,2010
+Siaka Tiéné,côte d'ivoire,DF,1982-03-22,28,55,Valenciennes,france,2010
+Kader Keïta,côte d'ivoire,MF,1981-08-06,28,55,Galatasaray,turkey,2010
+Yaya Touré,côte d'ivoire,MF,1983-05-13,27,47,Barcelona,spain,2010
+Guy Demel,côte d'ivoire,DF,1981-06-13,28,26,Hamburger SV,germany,2010
+Emmanuel Eboué,côte d'ivoire,DF,1983-06-04,27,52,Arsenal,england,2010
+Sol Bamba,côte d'ivoire,DF,1985-01-13,25,16,Hibernian,scotland,2010
+Daniel Yeboah,côte d'ivoire,GK,1984-11-13,25,4,ASEC Mimosas,côte d'ivoire,2010
+Ri Myong-guk,korea dpr,GK,1986-09-09,23,28,Pyongyang City,korea dpr,2010
+Cha Jong-hyok,korea dpr,DF,1985-09-25,24,31,Amrokgang,korea dpr,2010
+Ri Jun-il,korea dpr,DF,1987-08-24,22,26,Sobaeksu,korea dpr,2010
+Pak Nam-chol,korea dpr,MF,1985-07-02,24,35,April 25,korea dpr,2010
+Ri Kwang-chon,korea dpr,DF,1985-09-04,24,41,April 25,korea dpr,2010
+Kim Kum-il,korea dpr,MF,1987-10-10,22,11,April 25,korea dpr,2010
+An Chol-hyok,korea dpr,FW,1985-06-27,24,16,Rimyongsu,korea dpr,2010
+Ji Yun-nam,korea dpr,DF,1976-11-20,33,23,April 25,korea dpr,2010
+Jong Tae-se,korea dpr,FW,1984-03-02,26,20,Kawasaki Frontale,japan,2010
+Hong Yong-jo,korea dpr,FW,1982-05-22,28,40,Rostov,russia,2010
+Mun In-guk,korea dpr,MF,1978-09-29,31,42,April 25,korea dpr,2010
+Choe Kum-chol,korea dpr,FW,1987-02-09,23,16,April 25,korea dpr,2010
+Pak Chol-jin,korea dpr,DF,1985-09-05,24,34,Amrokgang,korea dpr,2010
+Pak Nam-Chol,korea dpr,DF,1988-10-03,21,12,Amrokgang,korea dpr,2010
+Kim Yong-jun,korea dpr,MF,1983-07-19,26,52,Pyongyang City,korea dpr,2010
+Nam Song-chol,korea dpr,DF,1982-05-07,28,41,April 25,korea dpr,2010
+An Yong-hak,korea dpr,MF,1978-10-25,31,24,Omiya Ardija,japan,2010
+Kim Myong-gil,korea dpr,GK,1984-10-16,25,10,Amrokgang,korea dpr,2010
+Ri Chol-myong,korea dpr,MF,1988-02-18,22,10,Pyongyang City,korea dpr,2010
+Kim Myong-won,korea dpr,GK,1983-07-15,26,9,Amrokgang,korea dpr,2010
+Ri Kwang-hyok,korea dpr,DF,1987-08-17,22,15,Kyonggongop,korea dpr,2010
+Kim Kyong-il,korea dpr,MF,1988-12-11,21,7,Rimyongsu,korea dpr,2010
+Pak Sung-hyok,korea dpr,MF,1990-05-30,20,3,Sobaeksu,korea dpr,2010
+Eduardo,portugal,GK,1982-09-19,27,15,Braga,portugal,2010
+Bruno Alves,portugal,DF,1981-11-27,28,31,Porto,portugal,2010
+Paulo Ferreira,portugal,DF,1979-01-18,31,61,Chelsea,england,2010
+Rolando,portugal,DF,1985-08-31,24,8,Porto,portugal,2010
+Duda,portugal,MF,1980-06-27,29,16,Málaga,spain,2010
+Ricardo Carvalho,portugal,DF,1978-05-18,32,63,Chelsea,england,2010
+Cristiano Ronaldo,portugal,FW,1985-02-05,25,72,Real Madrid,spain,2010
+Pedro Mendes,portugal,MF,1979-02-26,31,8,Sporting CP,portugal,2010
+Liédson,portugal,FW,1977-12-17,32,10,Sporting CP,portugal,2010
+Danny,portugal,MF,1983-08-07,26,11,Zenit Saint Petersburg,russia,2010
+Simão,portugal,MF,1979-10-31,30,81,Atlético Madrid,spain,2010
+Beto,portugal,GK,1982-05-01,28,1,Porto,portugal,2010
+Miguel,portugal,DF,1980-01-04,30,57,Valencia,spain,2010
+Miguel Veloso,portugal,MF,1986-05-11,24,12,Sporting CP,portugal,2010
+Pepe,portugal,DF,1983-02-26,27,25,Real Madrid,spain,2010
+Raul Meireles,portugal,MF,1983-03-17,27,34,Porto,portugal,2010
+Rúben Amorim,portugal,MF,1985-01-27,25,0,Benfica,portugal,2010
+Hugo Almeida,portugal,FW,1984-05-23,26,26,Werder Bremen,germany,2010
+Tiago,portugal,MF,1981-05-02,29,51,Atlético Madrid,spain,2010
+Deco,portugal,MF,1977-08-27,32,74,Chelsea,england,2010
+Ricardo Costa,portugal,DF,1981-05-16,29,8,Lille,france,2010
+Daniel Fernandes,portugal,GK,1983-09-25,26,2,Iraklis,greece,2010
+Fábio Coentrão,portugal,DF,1988-03-11,22,4,Benfica,portugal,2010
+Claudio Bravo,chile,GK,1983-04-13,27,41,Real Sociedad,spain,2010
+Ismael Fuentes,chile,DF,1981-08-04,28,25,Universidad Católica,chile,2010
+Waldo Ponce,chile,DF,1982-12-04,27,23,Universidad Católica,chile,2010
+Mauricio Isla,chile,MF,1988-06-12,21,10,Udinese,italy,2010
+Pablo Contreras,chile,DF,1978-09-11,31,49,PAOK,greece,2010
+Carlos Carmona,chile,MF,1987-02-21,23,18,Reggina,italy,2010
+Alexis Sánchez,chile,FW,1988-12-19,21,26,Udinese,italy,2010
+Arturo Vidal,chile,MF,1987-05-22,23,21,Bayer Leverkusen,germany,2010
+Humberto Suazo,chile,FW,1981-05-10,29,41,Real Zaragoza,spain,2010
+Jorge Valdivia,chile,MF,1983-10-19,26,36,Al-Ain,united arab emirates,2010
+Mark González,chile,FW,1984-07-10,25,38,CSKA Moscow,russia,2010
+Miguel Pinto,chile,GK,1983-07-04,26,13,Universidad de Chile,chile,2010
+Marco Estrada,chile,MF,1983-05-28,27,20,Universidad de Chile,chile,2010
+Matías Fernández,chile,MF,1986-05-15,24,35,Sporting CP,portugal,2010
+Jean Beausejour,chile,FW,1984-06-01,26,23,América,mexico,2010
+Fabián Orellana,chile,FW,1986-01-27,24,13,Xerez,spain,2010
+Gary Medel,chile,DF,1987-08-03,22,23,Boca Juniors,argentina,2010
+Gonzalo Jara,chile,DF,1985-08-29,24,31,West Bromwich Albion,england,2010
+Gonzalo Fierro,chile,MF,1983-03-21,27,16,Flamengo,brazil,2010
+Rodrigo Millar,chile,MF,1981-11-03,28,19,Colo-Colo,chile,2010
+Rodrigo Tello,chile,MF,1979-10-14,30,32,Beşiktaş,turkey,2010
+Esteban Paredes,chile,FW,1980-08-01,29,12,Colo-Colo,chile,2010
+Luis Marín,chile,GK,1983-05-18,27,2,Unión Española,chile,2010
+Ricardo Canales,honduras,GK,1982-05-30,28,2,Motagua,honduras,2010
+Osman Chávez,honduras,DF,1984-07-29,25,26,Platense,honduras,2010
+Maynor Figueroa,honduras,DF,1983-05-02,27,66,Wigan Athletic,england,2010
+Johnny Palacios,honduras,DF,1986-12-20,23,4,Olimpia,honduras,2010
+Víctor Bernárdez,honduras,DF,1982-05-24,28,40,Anderlecht,belgium,2010
+Hendry Thomas,honduras,MF,1985-02-23,25,39,Wigan Athletic,england,2010
+Ramón Núñez,honduras,MF,1984-11-14,25,16,Olimpia,honduras,2010
+Wilson Palacios,honduras,MF,1984-07-29,25,69,Tottenham Hotspur,england,2010
+Carlos Pavón,honduras,FW,1973-10-19,36,98,Real España,honduras,2010
+Jerry Palacios,honduras,FW,1982-11-01,27,11,Hangzhou Greentown,china pr,2010
+David Suazo,honduras,FW,1979-11-05,30,50,Genoa,italy,2010
+Georgie Welcome,honduras,FW,1985-03-09,25,11,Motagua,honduras,2010
+Roger Espinoza,honduras,FW,1986-10-25,23,10,Kansas City Wizards,usa,2010
+Boniek García,honduras,DF,1984-09-04,25,42,Olimpia,honduras,2010
+Walter Martínez,honduras,FW,1982-03-29,28,34,Marathón,honduras,2010
+Mauricio Sabillón,honduras,DF,1978-11-11,31,25,Hangzhou Greentown,china pr,2010
+Edgar Álvarez,honduras,MF,1980-01-09,30,46,Bari,italy,2010
+Noel Valladares,honduras,GK,1977-05-03,33,71,Olimpia,honduras,2010
+Danilo Turcios,honduras,MF,1978-05-08,32,82,Olimpia,honduras,2010
+Amado Guevara,honduras,MF,1976-05-02,34,133,Motagua,honduras,2010
+Emilio Izaguirre,honduras,DF,1986-05-10,24,39,Motagua,honduras,2010
+Donis Escober,honduras,GK,1980-02-03,30,11,Olimpia,honduras,2010
+Sergio Mendoza,honduras,DF,1981-05-23,29,46,Motagua,honduras,2010
+Iker Casillas,spain,GK,1981-05-20,29,104,Real Madrid,spain,2010
+Raúl Albiol,spain,DF,1985-09-04,24,23,Real Madrid,spain,2010
+Gerard Piqué,spain,DF,1987-02-02,23,16,Barcelona,spain,2010
+Carlos Marchena,spain,DF,1979-07-31,30,59,Valencia,spain,2010
+Carles Puyol,spain,DF,1978-04-13,32,83,Barcelona,spain,2010
+Andrés Iniesta,spain,MF,1984-05-11,26,43,Barcelona,spain,2010
+David Villa,spain,FW,1981-12-03,28,58,Valencia,spain,2010
+Xavi,spain,MF,1980-01-25,30,87,Barcelona,spain,2010
+Fernando Torres,spain,FW,1984-03-20,26,73,Liverpool,england,2010
+Cesc Fàbregas,spain,MF,1987-05-04,23,49,Arsenal,england,2010
+Joan Capdevila,spain,DF,1978-02-03,32,46,Villarreal,spain,2010
+Víctor Valdés,spain,GK,1982-01-14,28,1,Barcelona,spain,2010
+Juan Mata,spain,MF,1988-04-28,22,8,Valencia,spain,2010
+Xabi Alonso,spain,MF,1981-11-25,28,69,Real Madrid,spain,2010
+Sergio Ramos,spain,DF,1986-03-30,24,60,Real Madrid,spain,2010
+Sergio Busquets,spain,MF,1988-07-16,21,13,Barcelona,spain,2010
+Álvaro Arbeloa,spain,DF,1983-01-17,27,15,Real Madrid,spain,2010
+Pedro,spain,FW,1987-07-28,22,3,Barcelona,spain,2010
+Fernando Llorente,spain,FW,1985-02-26,25,7,Athletic Bilbao,spain,2010
+Javi Martínez,spain,MF,1988-09-02,21,2,Athletic Bilbao,spain,2010
+David Silva,spain,MF,1986-01-08,24,36,Valencia,spain,2010
+Jesús Navas,spain,MF,1985-11-21,24,6,Sevilla,spain,2010
+Pepe Reina,spain,GK,1982-08-31,27,20,Liverpool,england,2010
+Diego Benaglio,switzerland,GK,1983-09-08,26,27,VfL Wolfsburg,germany,2010
+Stephan Lichtsteiner,switzerland,DF,1984-01-16,26,28,Lazio,italy,2010
+Ludovic Magnin,switzerland,DF,1979-04-20,31,62,Zürich,switzerland,2010
+Philippe Senderos,switzerland,DF,1985-02-14,25,40,Everton,england,2010
+Steve von Bergen,switzerland,DF,1983-06-10,27,11,Hertha BSC,germany,2010
+Benjamin Huggel,switzerland,MF,1977-07-07,32,38,Basel,switzerland,2010
+Tranquillo Barnetta,switzerland,MF,1985-05-22,25,52,Bayer Leverkusen,germany,2010
+Gökhan Inler,switzerland,MF,1984-06-27,25,36,Udinese,italy,2010
+Alexander Frei,switzerland,FW,1979-07-15,30,75,Basel,switzerland,2010
+Blaise Nkufo,switzerland,FW,1975-05-25,35,31,Twente,netherlands,2010
+Valon Behrami,switzerland,MF,1985-04-19,25,27,West Ham United,england,2010
+Marco Wölfli,switzerland,GK,1982-08-22,27,5,Young Boys,switzerland,2010
+Stéphane Grichting,switzerland,DF,1979-03-30,31,35,Auxerre,france,2010
+Marco Padalino,switzerland,MF,1983-12-08,26,8,Sampdoria,italy,2010
+Hakan Yakin,switzerland,MF,1977-02-22,33,81,Luzern,switzerland,2010
+Gélson Fernandes,switzerland,MF,1986-09-02,23,24,Saint-Étienne,france,2010
+Reto Ziegler,switzerland,DF,1986-01-16,24,12,Sampdoria,italy,2010
+Albert Bunjaku,switzerland,FW,1983-11-29,26,3,1. FC Nürnberg,germany,2010
+Eren Derdiyok,switzerland,FW,1988-06-12,21,21,Bayer Leverkusen,germany,2010
+Pirmin Schwegler,switzerland,MF,1987-03-09,23,4,Eintracht Frankfurt,germany,2010
+Johnny Leoni,switzerland,GK,1984-06-30,25,0,Zürich,switzerland,2010
+Mario Eggimann,switzerland,DF,1981-01-24,29,8,Hannover 96,germany,2010
+Xherdan Shaqiri,switzerland,MF,1991-10-10,18,3,Basel,switzerland,2010

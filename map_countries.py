@@ -1,52 +1,49 @@
-init_country_mapping = {
-'Bahamas, The': 'Bahamas',
-'Bosnia and Herzegovina': 'Bosnia-Herzegovina',
-'Cape Verde Islands': 'Cape Verde',
-#We have no political intentions with this assignment. Also Taiwan is not included in wikipedia data we scrapped
-'China PR': 'China',
-'Chinese Taipei': 'Taiwan',
-'Congo, Dem. Rep.': 'Congo DR',
-'Congo, Rep.': 'Congo',
-#Apparently the two cote de ivoire use different characters. 
-"Côte d'Ivoire": 'Ivory Coast',
-"Côte d'Ivoire": 'Ivory Coast',
-'Democratic Republic of the Congo': 'Congo DR',
-'FYR Macedonia': 'Macedonia',
-'Gambia, The': 'Gambia',
-'IR Iran' : 'Iran',
-'Kyrgyz Republic' : 'Kyrgyzstan',
-'Myanmar': 'Burma',
-'North Korea': 'Korea DPR',
-'Republic of Ireland': 'Ireland',
-'Republic of the Congo': 'Congo',
-'Republic of Macedonia': 'Macedonia',
-'St Kitts and Nevis': 'St. Kitts and Nevis',
-'Saint Kitts and Nevis': 'St. Kitts and Nevis',
-'Saint Lucia': 'St. Lucia',
-'St Lucia': 'St. Lucia',
-'Saint Vincent and the Grenadines': 'St. Vincent and the Grenadines',
-'St Vincent and the Grenadines': 'St. Vincent and the Grenadines',
-'São Tomé e Príncipe': 'Sao Tome and Principe',
-'São Tomé and Príncipe': 'Sao Tome and Principe',
-'São Tomé and Príncipe': 'Sao Tome and Principe',
-'South Korea': 'Korea Republic',
-'Timor-Leste': 'East Timor',
-'The Gambia': 'Gambia',
-#Scotland is not that good. Just map to England for now. 
-'United Kingdom': 'England',
-'United States': 'USA'
+import re
+import pandas as pd
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 
-#no clue which virgin islands
-#'US Virgin Islands': 'Virgin Islands'
+
+rankings = pd.read_csv('data/fifa_ranking.csv')
+rankings['rank_date'] = pd.to_datetime(rankings['rank_date'])
+ranking_earliest_date = '2009-01-01'
+rankings_after = rankings[rankings['rank_date'] > pd.to_datetime(ranking_earliest_date)]
+fifa_teams = rankings_after.country_full.str.lower()
+fifa_teams = fifa_teams.str.replace(r'[,.]','')
+fifa_teams = set(fifa_teams)
+
+country_mapping = {
+'burma': 'myanmar',
+'congo dem rep': 'congo dr',
+'congo rep': 'congo',
+'democratic republic of the congo': 'congo dr',
+'kyrgyzstan': 'kyrgyz republic',
+'ivory coast': "côte d'ivoire",
+'north korea': 'korea dpr',
+'são tomé and príncipe': 'são tomé e príncipe',
+'sao tome and principe': 'são tomé e príncipe',
+'south korea': 'korea republic',
+'taiwan': 'chinese taipei',
+'united kingdom': 'england',
+'united koreans in japan': None,
+'united states': 'usa',
 }
 
-country_mapping = {}
-#lower case everything
-for key,value in init_country_mapping.items():
-    country_mapping[key.lower()] = value.lower()
+def map_country(country_string):
+    if country_string == None:
+        return None
+    country_string = country_string.lower()
+    #get rid of punctuation
+    country_string = re.sub(r'[,.]','', country_string.lower())
+    if country_string in country_mapping.keys():
+        return country_mapping[country_string]
+    elif country_string in fifa_teams:
+        return country_string
+    else:
+        match = process.extractOne(country_string, fifa_teams,  scorer=fuzz.token_set_ratio)
+        if match[1] >= 80:
+            return match[0]
+        else: 
+            print("Cannot map {}".format(country_string))
+            return None
 
-def map_countries(rankings_country):
-    rankings_country = rankings_country.lower()
-    if rankings_country in country_mapping.keys():
-        return country_mapping[rankings_country]
-    return rankings_country
