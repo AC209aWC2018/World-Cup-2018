@@ -20,13 +20,14 @@ country_mapping = {
 'kyrgyzstan': 'kyrgyz republic',
 'ivory coast': "côte d'ivoire",
 'north korea': 'korea dpr',
+'northern cyprus': None,
 'são tomé and príncipe': 'são tomé e príncipe',
 'sao tome and principe': 'são tomé e príncipe',
 'south korea': 'korea republic',
 'taiwan': 'chinese taipei',
 'united kingdom': 'england',
 'united koreans in japan': None,
-'united states': 'usa',
+'united states': 'usa', 
 }
 
 def map_country(country_string):
