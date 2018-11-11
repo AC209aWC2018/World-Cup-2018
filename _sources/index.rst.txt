@@ -13,16 +13,3 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
    
    doc/milestone2.md
    doc/milestone3.ipynb
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Notebooks:
-
-   scrape_country_information.ipynb
-   scrape_wcsquads.ipynb
-   sofifa-scraping.ipynb
-   make_train_test_datasets.ipynb
-   models.ipynb
-
-
