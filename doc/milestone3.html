@@ -1,0 +1,349 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Milestone 3 &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scrape Country Information" href="../scrape_country_information.html" />
+    <link rel="prev" title="Milestone 2" href="milestone2.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Milestone-3">
+<h1>Milestone 3<a class="headerlink" href="#Milestone-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Data-Sources">
+<h2>Data Sources<a class="headerlink" href="#Data-Sources" title="Permalink to this headline">¶</a></h2>
+<p>We were able to find a dataset on Kaggle that contains all FIFA
+international men teams’ rankings from August 1993 to June 2018
+(<a class="reference external" href="https://www.kaggle.com/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now">https://www.kaggle.com/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now</a>).
+This dataset will prove essential in building our baseline model using
+essentially only the FIFA rankings and basic summary statistics about
+the teams.</p>
+<p>We were able to find a dataset on Gitlab that contains the results of
+each match of the 2018 World Cup
+(<a class="reference external" href="https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv">https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv</a>).
+This allows us to easily construct a test set.</p>
+<p>We also wrote two scrapers for Wikipedia.</p>
+<ul class="simple">
+<li>One scraper scrapes the World Cup teams for each country
+(<a class="reference external" href="https://en.wikipedia.org/wiki/XXXX_FIFA_World_Cup_squads">https://en.wikipedia.org/wiki/XXXX_FIFA_World_Cup_squads</a>, where
+XXXX is the year)</li>
+<li>The other scraper scrapes information about countries like GDP PPP
+(<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP">https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP</a>)),
+population
+(<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations">https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations</a>)),
+and average yearly temperature
+(<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature">https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature</a>).</li>
+</ul>
+<p><a class="reference external" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.KD?name_desc=false">https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.KD?name_desc=false</a>
+<a class="reference external" href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD">https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD</a></p>
+</div>
+<div class="section" id="Data-Cleaning">
+<h2>Data Cleaning<a class="headerlink" href="#Data-Cleaning" title="Permalink to this headline">¶</a></h2>
+<p>One of the largest issues we encountered after we collected all the data
+was that we realized that we will not be able to merge all the rows.
+There are two different underlying problems:</p>
+<div class="section" id="1.-Different-Naming-Convention-for-Countries">
+<h3>1. Different Naming Convention for Countries<a class="headerlink" href="#1.-Different-Naming-Convention-for-Countries" title="Permalink to this headline">¶</a></h3>
+<p>Each dataset we collected had a different naming convention for the
+countries. In most cases, this was due to slight variation in spelling
+(i.e. St Lucia vs Saint Lucia). With all these different variations, we
+needed to map all the variations to just one name so that we could merge
+our datasets. We decided to use the official FIFA names of the countries
+found using the FIFA rankings dataset as the mapped names. Then, in
+order to tackle this problem, we decided to install the package
+<code class="docutils literal"><span class="pre">fuzzywuzzy</span></code> (<a class="reference external" href="https://github.com/seatgeek/fuzzywuzzy">https://github.com/seatgeek/fuzzywuzzy</a>), which
+essentially calculates a similarity score using Levenshtein Distance
+between two strings. We wrote the method <code class="docutils literal"><span class="pre">map_country()</span></code> that
+essentially calculates the Levenshtein Distance for a country_name
+string if the country_name string does not exactly match with the FIFA
+names and map the string to the FIFA name with the highest similarity
+score (in percentage). We only do this mapping if the highest similarity
+score is above a 80%, when we are very confident that this is the right
+mapping. From manual inspection, this turned out extremely well and we
+believe that there should be no wrong mapping.</p>
+<p>However, in some cases, we still needed to do some manual mapping for
+ones in which the Levenshtein Distance is not confident about the
+mapping, such as in the case of the two Koreas, but the
+<code class="docutils literal"><span class="pre">map_country()</span></code> function has saved us from doing many manual mappings.</p>
+</div>
+<div class="section" id="2.-Non-FIFA-Affiliated-Teams">
+<h3>2. Non-FIFA Affiliated Teams<a class="headerlink" href="#2.-Non-FIFA-Affiliated-Teams" title="Permalink to this headline">¶</a></h3>
+<p>There were teams that were not national teams at all (i.e. United
+Koreans in Japan, which is a team for the Korean population in Japan).</p>
+<p>However, as mentioned before, in the end, we only care about the
+national teams that are affiliated with FIFA. As such, we only keep the
+rows where both teams appeared on the FIFA rankings starting from 2010
+(All affiliated teams are ranked, and we only look after 2010 because
+some countries that were on older rankings no longer exist or changed
+names such as Zaire, which became Congo DR). Our method
+<code class="docutils literal"><span class="pre">map_country()</span></code> in <code class="docutils literal"><span class="pre">map_countries.py</span></code> easily takes care of this
+since in general there is no similarity score that is above 80% (except
+for a few edge cases such as Northern Cyprus, which is a different team
+than Cyprus and is not allowed to compete in FIFA).</p>
+<p>Since this was a decision we had to make, the final dataset might
+reflect some bias on our part, but we hope that this bias does not
+affect our model that much.</p>
+<p>All cleaned datasets can be found in the <code class="docutils literal"><span class="pre">data/cleaned</span></code> folder.</p>
+</div>
+</div>
+<div class="section" id="Feature-Engineering">
+<h2>Feature Engineering<a class="headerlink" href="#Feature-Engineering" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Exploratory-Data-Analysis">
+<h2>Exploratory Data Analysis<a class="headerlink" href="#Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Baseline-Models">
+<h2>Baseline Models<a class="headerlink" href="#Baseline-Models" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/doc/milestone3.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

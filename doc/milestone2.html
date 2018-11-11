@@ -1,0 +1,412 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Milestone 2 &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Milestone 3" href="milestone3.html" />
+    <link rel="prev" title="Predicting the 2018 World Cup" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Milestone-2">
+<h1>Milestone 2<a class="headerlink" href="#Milestone-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Group-#88">
+<h2>Group #88<a class="headerlink" href="#Group-#88" title="Permalink to this headline">¶</a></h2>
+<p>Team Members: * Brian Lin * Pat Sukhum * Shane Ong * Matteo (Yun
+Bin) Zhang</p>
+<p>We have met with our fellow teammates and teaching fellow to craft the
+following plans as detailed below.</p>
+</div>
+<div class="section" id="Project-Statement-&amp;-Problem-Trying-to-Solve">
+<h2>Project Statement &amp; Problem Trying to Solve<a class="headerlink" href="#Project-Statement-&-Problem-Trying-to-Solve" title="Permalink to this headline">¶</a></h2>
+<p>While soccer is one of the most popular sports in the world, its
+analytics is lackluster in comparison to other popular sports such as
+baseball, American football, hockey, and basketball. This is due to the
+fact that aside from the World Cup, international teams don’t play each
+other very frequently. Therefore, there is a lack of high quality data
+that can be immediately fed into models to perform predictions. Thus, we
+are interested in collecting data from various different sources and
+perform feature engineering to produce highly relevant features for
+soccer analytics. Finally, our end goal is to predict the results of
+World Cup as accurately as possible, while analyzing what factors might
+be significant in predicting the results. The World Cup is composed of
+64 matches in total - 48 matches in group stages and 16 matches in
+knockout (15 + 1 for third place). We plan to predict the outcome of
+each of the 64 matches independently instead of predicting which teams
+proceed in each round. This strategy allows our results to be comparable
+across models. By framing the problem in this way, we plan to approach
+this problem as a classification problem. Each game can be treated as a
+multi-class classification problem, where there are three outcomes: win
+for the home team (or team 1), win for the away team (or team 2), or a
+draw. In the case of knockouts, we limit the outcome to: win for the
+home team (or team 1), win for the away team (or team 2), as draws are
+not allowed. To validate how accurate FIFA rankings are, we also aim to
+use a baseline model that leverages FIFA rankings and some other simple
+predictors to predict the World Cup results. Along with that, we will
+also evaluate some simple baseline models such as randomly predicting
+the winner for each match and create a model as accurate as possible
+based on sources other than FIFA rankings. Finally, the analysis will be
+concluded by highlighting the best performing model and the features
+contributing to such results.</p>
+</div>
+<div class="section" id="Models-and-Predictors">
+<h2>Models and Predictors<a class="headerlink" href="#Models-and-Predictors" title="Permalink to this headline">¶</a></h2>
+<p>Potential models to test out: One vs All Logistic Regression and
+Multinomial Logistic Regression - the linearity in coefficients might
+give us an insight into what features might be relevant Random Forest -
+the go-to out of box model for classifications due to generally good
+performance even with little tuning XGBoost - tree gradient boosting
+method that performs the best in Kaggle competitions amongst
+non-ensemble models Neural networks - if we can find enough data, then
+this might be a good idea to test out Potential predictors that we
+believe it might help in the analysis: Win rate of teams in the past 4
+years - indicating how victorious the team might be overall since high
+win rate teams might keep winning and low win rate just keep losing Mean
+FIFA 18 rankings of players on each team - a summary of team strength to
+help determine which team is stronger Proportion of veterans and new
+players in each team - can be a penalty factor on the team strength if
+too many new players as coordination might be lacking Historical
+head-to-head win rate between each team - some team’s strategies/style
+might have an advantage over certain teams Average player strength of
+each team, derived by league match performances - again another summary
+of team strength</p>
+<p>Output: Multinomial classification - predicting the outcome of the match
+as win (team 1 wins), draw, lose (team 2 wins) ## Sources of
+Predictors/Data fifa.com: Provides the rankings of the national teams.
+In particular,
+<a class="reference external" href="https://www.fifa.com/fifa-world-ranking/ranking-table/men/rank=287/index.html">https://www.fifa.com/fifa-world-ranking/ranking-table/men/rank=287/index.html</a>
+provides the ranking of teams on June 7, 2018, just before the world
+cup. We need to scrape this link using BeautifulSoup in order to make a
+baseline model.</p>
+<p>The staff has provided several datasets on current players and their
+ratings scraped from sofifa.com. We can also scrape player data from the
+past.</p>
+<p>The staff has also provided us a dataset of past international matches
+(international_results.csv). This dataset tells us the home team, away
+team, home score, away score, tournament type, city, country, and
+neutrality for each match. There are also some results for the 2018
+World Cup, which we will have to remove. We also have to explicitly
+calculate the winner of each match, which can be easily engineered by
+the difference in home score and away score (&gt; 0 means home team win, =
+0 means draw, and &lt; 0 means away team win. Then map home team win to 1,
+home team loss to 0, and draw to 2). Then, this dataset would become a
+good basis for the training data. We might have to only keep data after
+a certain time due to the lack of data on players, change in conditions
+of countries, etc. from other data sources (Maybe after 2014?).</p>
+<p>Wikipedia lists out the squads of each participating country in each
+World Cup (i.e.
+<a class="reference external" href="https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads">https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads</a> for 2018.
+Replace 2018 with 2014 for 2014 squads, etc.). We can scrape this data
+and give each team an average rating for each position based on the
+players.</p>
+<p>Wikipedia also has demographic information about each country. There
+might be some correlation between variables such as real GDP, real GDP
+per capita, with the performance of the national team. We would need to
+scrape this data using BeautifulSoup.</p>
+</div>
+<div class="section" id="Relevant-Features-Engineering">
+<h2>Relevant Features Engineering<a class="headerlink" href="#Relevant-Features-Engineering" title="Permalink to this headline">¶</a></h2>
+<p>For filling the missing values, we are considering: 1. dropping the
+observations; 2. Imputing using other sources; 3. Imputing using linear
+regression or K-means where the feature containing missing values is
+treated as the dependent variable and other predictors are set as
+independent variables. We plan to create some aggregated features, such
+as the average strength of the players in the team, mean rankings of the
+players etc. as mentioned above in <code class="docutils literal"><span class="pre">predictors</span></code> section. After
+obtaining all the data, we will standardize non-categorical and
+non-percentage variable to make them on a comparable scale. Using
+logistic regression, we might try to control for some features to remove
+potentially irrelevant features. Another way of approaching this would
+be to use PCA to carry out dimensionality reduction. Finally, we will
+try to remove outliers by using 1.5 IQR or variance inflation factor
+methods.</p>
+</div>
+<div class="section" id="Metrics-and-Losses">
+<h2>Metrics and Losses<a class="headerlink" href="#Metrics-and-Losses" title="Permalink to this headline">¶</a></h2>
+<p>We plan to consider two metrics to evaluate our models. The first one is
+the accuracy of the predictions since we ultimately want to see what
+percentage of the time the model correctly predicts. The second is the
+negative log loss since we also care about how confident our model was
+in each of its right/wrong prediction. The loss that we will try to
+minimize is the sum of negative log loss as this will tell us how
+confident our model was when our prediction was correct and how far off
+we were when our prediction was wrong. In addition, log loss can also be
+easily adapted for multi-class classifications.</p>
+</div>
+<div class="section" id="How-to-Approach">
+<h2>How to Approach<a class="headerlink" href="#How-to-Approach" title="Permalink to this headline">¶</a></h2>
+<p>Collecting players’ data: Brian by November 2nd</p>
+<p>Collecting past matches: Pat by November 2nd</p>
+<p>Cleaning the data so that they are readily available, such as joining
+different data frames: Shane, Matteo by November 9th</p>
+<p>Feature engineering: imputing missing values, standardizing/scaling
+features and create new relevant features based on what’s available:
+Matteo by November 9th</p>
+<p>Baseline evaluations: Brian, Shane by November 13th</p>
+<p>Model building: Logistic regression, random forest, extreme gradient
+boosting (XGBoost), LDA, etc. Everyone will be in charge of a different
+model by November 20th</p>
+<p>Feature analysis: Everyone in charge of their own model by November 20th</p>
+<p>Milestone 3 Write Up: Split evenly depending on what task each one is
+responsible for by November 24th</p>
+<p>Milestone 3 Submission: Matteo, Brian, Shane will organize the write up
+and submit on canvas by November 27th</p>
+<p>Building website with good style: Pat will work on the website as we
+make more progress on project</p>
+</div>
+<div class="section" id="Preliminary-Exploratory-Data-Analysis">
+<h2>Preliminary Exploratory Data Analysis<a class="headerlink" href="#Preliminary-Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h2>
+<p>Intuitively, we would think that a team’s recent win rate is a good
+indicator of their performance in the World Cup. As such, we decided to
+look at a team’s win rate from 2014 to just before the world cup for
+teams in the 2018 World Cup. As we see, the teams with the highest win
+rate are indeed some of the top tier teams.</p>
+<div class="figure" id="id1">
+<img alt="image.png" src="../_images/winrate.png" />
+<p class="caption"><span class="caption-text">image.png</span></p>
+</div>
+<p>We also used data from sofifa provided by the staff get individual
+player ratings. We used the summary statistic ‘Overall’, which is a
+common measure of a player’s ability and performance. We then plotted a
+boxplot of the top 23 players ratings for each participating nation.
+Intuitively, this would give us an intuition into the spread of players
+ability for each participating nation. We can see that there are teams
+that are ‘top heavy’, and are over-reliant on a few good players (i.e.
+Argentina and Portugal).</p>
+<div class="figure" id="id2">
+<img alt="image.png" src="../_images/playerrating.jpg" />
+<p class="caption"><span class="caption-text">image.png</span></p>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/doc/milestone2.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

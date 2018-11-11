@@ -1,0 +1,1489 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Scrape Country Information &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Scrape World Cup Squads" href="scrape_wcsquads.html" />
+    <link rel="prev" title="Milestone 3" href="doc/milestone3.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Scrape-Country-Information">
+<h1>Scrape Country Information<a class="headerlink" href="#Scrape-Country-Information" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">unicodedata</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">map_countries</span> <span class="k">import</span> <span class="n">map_country</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">scrape_gdp_pp</span><span class="p">():</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)_per_capita&quot;</span>
+    <span class="n">my_page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">my_page</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    <span class="n">tables</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;wikitable sortable&#39;</span><span class="p">})</span>
+    <span class="n">country_rows</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+    <span class="n">countries_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">country_rows</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">country_data</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">country_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;NFKD&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">country_name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">gdp_pp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">country_data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
+<span class="c1">#         if (country_name in worldcup_teams):</span>
+        <span class="n">countries_data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">country_name</span><span class="p">,</span><span class="s1">&#39;gdp_pp&#39;</span><span class="p">:</span><span class="n">gdp_pp</span><span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">countries_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">gdp_df</span> <span class="o">=</span> <span class="n">scrape_gdp_pp</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">gdp_df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+<span class="n">gdp_df</span> <span class="o">=</span> <span class="n">gdp_df</span><span class="p">[</span><span class="o">~</span><span class="n">gdp_df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Cannot map world[n 1]
+Cannot map palau
+Cannot map nauru
+Cannot map tuvalu
+Cannot map marshall islands
+Cannot map micronesia
+Cannot map kiribati
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">scrape_temp</span><span class="p">():</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature&quot;</span>
+    <span class="n">my_page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">my_page</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    <span class="n">tables</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;wikitable sortable&#39;</span><span class="p">})</span>
+    <span class="n">country_rows</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+    <span class="n">countries_temp</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">country_rows</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">country_data</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">country_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;NFKD&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">country_name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">temp_str</span> <span class="o">=</span> <span class="n">country_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">temp_str</span> <span class="o">=</span> <span class="n">temp_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;−&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">temp_str</span><span class="p">)</span>
+<span class="c1">#         if (country_name in worldcup_teams):</span>
+        <span class="n">countries_temp</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">country_name</span><span class="p">,</span><span class="s1">&#39;temp&#39;</span><span class="p">:</span><span class="n">temp</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">countries_temp</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">temps</span> <span class="o">=</span> <span class="n">scrape_temp</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">temps</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">temps</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+<span class="n">temps</span> <span class="o">=</span> <span class="n">temps</span><span class="p">[</span><span class="o">~</span><span class="n">temps</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Cannot map kiribati
+Cannot map tuvalu
+Cannot map palau
+Cannot map marshall islands
+Cannot map federated states of micronesia
+Cannot map monaco
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="nb">set</span><span class="p">(</span><span class="n">gdp_df</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">temps</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[8]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>{&#39;chinese taipei&#39;,
+ &#39;hong kong&#39;,
+ &#39;kosovo&#39;,
+ &#39;macau&#39;,
+ &#39;puerto rico&#39;,
+ &#39;south sudan&#39;}
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="nb">set</span><span class="p">(</span><span class="n">temps</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">gdp_df</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[9]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>{&#39;andorra&#39;, &#39;cuba&#39;, &#39;korea dpr&#39;, &#39;liechtenstein&#39;, &#39;somalia&#39;, &#39;syria&#39;}
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">combined_df</span> <span class="o">=</span> <span class="n">temps</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">gdp_df</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">combined_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>temp</th>
+      <th>gdp_pp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>burkina faso</td>
+      <td>28.25</td>
+      <td>1884.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>mali</td>
+      <td>28.25</td>
+      <td>2169.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>djibouti</td>
+      <td>28.00</td>
+      <td>3567.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>senegal</td>
+      <td>27.85</td>
+      <td>2678.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mauritania</td>
+      <td>27.65</td>
+      <td>4474.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>maldives</td>
+      <td>27.65</td>
+      <td>19178.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>benin</td>
+      <td>27.55</td>
+      <td>2219.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>gambia</td>
+      <td>27.50</td>
+      <td>1686.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>ghana</td>
+      <td>27.20</td>
+      <td>4605.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>bahrain</td>
+      <td>27.15</td>
+      <td>51846.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>niger</td>
+      <td>27.15</td>
+      <td>1153.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>qatar</td>
+      <td>27.15</td>
+      <td>124927.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>seychelles</td>
+      <td>27.15</td>
+      <td>28712.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>togo</td>
+      <td>27.15</td>
+      <td>1612.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>somalia</td>
+      <td>27.05</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>united arab emirates</td>
+      <td>27.00</td>
+      <td>68245.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>sri lanka</td>
+      <td>26.95</td>
+      <td>13001.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>sudan</td>
+      <td>26.90</td>
+      <td>4580.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>brunei darussalam</td>
+      <td>26.85</td>
+      <td>76743.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>cambodia</td>
+      <td>26.80</td>
+      <td>4010.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>nigeria</td>
+      <td>26.80</td>
+      <td>5927.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>st vincent and the grenadines</td>
+      <td>26.80</td>
+      <td>11623.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>guinea-bissau</td>
+      <td>26.75</td>
+      <td>1806.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>samoa</td>
+      <td>26.70</td>
+      <td>5737.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>grenada</td>
+      <td>26.65</td>
+      <td>14779.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>chad</td>
+      <td>26.55</td>
+      <td>2433.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>singapore</td>
+      <td>26.45</td>
+      <td>90531.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>côte d'ivoire</td>
+      <td>26.35</td>
+      <td>3857.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>thailand</td>
+      <td>26.30</td>
+      <td>17786.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>sierra leone</td>
+      <td>26.05</td>
+      <td>1791.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>denmark</td>
+      <td>7.50</td>
+      <td>49613.0</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>bhutan</td>
+      <td>7.40</td>
+      <td>8720.0</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>armenia</td>
+      <td>7.15</td>
+      <td>9098.0</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>china pr</td>
+      <td>6.95</td>
+      <td>16624.0</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>slovakia</td>
+      <td>6.80</td>
+      <td>32895.0</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>kazakhstan</td>
+      <td>6.40</td>
+      <td>26071.0</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>austria</td>
+      <td>6.35</td>
+      <td>49247.0</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>belarus</td>
+      <td>6.15</td>
+      <td>18616.0</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>lithuania</td>
+      <td>6.20</td>
+      <td>31935.0</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>georgia</td>
+      <td>5.80</td>
+      <td>10644.0</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>korea dpr</td>
+      <td>5.70</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>liechtenstein</td>
+      <td>5.65</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>latvia</td>
+      <td>5.60</td>
+      <td>27291.0</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>switzerland</td>
+      <td>5.50</td>
+      <td>61360.0</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>estonia</td>
+      <td>5.10</td>
+      <td>31473.0</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>sweden</td>
+      <td>2.10</td>
+      <td>51264.0</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>tajikistan</td>
+      <td>2.00</td>
+      <td>3131.0</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>iceland</td>
+      <td>1.75</td>
+      <td>52150.0</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>finland</td>
+      <td>1.70</td>
+      <td>44050.0</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>kyrgyz republic</td>
+      <td>1.55</td>
+      <td>3652.0</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>norway</td>
+      <td>1.50</td>
+      <td>70590.0</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>mongolia</td>
+      <td>-0.70</td>
+      <td>12551.0</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>russia</td>
+      <td>-5.10</td>
+      <td>27890.0</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>canada</td>
+      <td>-5.35</td>
+      <td>48141.0</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>macau</td>
+      <td>NaN</td>
+      <td>114430.0</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>hong kong</td>
+      <td>NaN</td>
+      <td>61016.0</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>chinese taipei</td>
+      <td>NaN</td>
+      <td>49827.0</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>puerto rico</td>
+      <td>NaN</td>
+      <td>37895.0</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>kosovo</td>
+      <td>NaN</td>
+      <td>12003.0</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>south sudan</td>
+      <td>NaN</td>
+      <td>1503.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>191 rows × 3 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">scrape_population</span><span class="p">():</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)&quot;</span>
+    <span class="n">my_page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">my_page</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    <span class="n">tables</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;wikitable&#39;</span><span class="p">})</span>
+    <span class="n">country_rows</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+
+    <span class="n">countries_popu</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">country_rows</span><span class="p">[</span><span class="mi">2</span><span class="p">:]:</span>
+
+        <span class="n">country_data</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+
+        <span class="n">country_name_raw</span> <span class="o">=</span> <span class="n">country_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">country_name_raw</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;\[\w+\]&#39;</span><span class="p">,</span> <span class="n">country_name_raw</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">citation</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">country_name</span> <span class="o">=</span> <span class="n">country_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">citation</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="n">population</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">country_data</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
+
+<span class="c1">#         if (country_name in worldcup_teams):</span>
+        <span class="n">countries_popu</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">country_name</span><span class="p">,</span><span class="s1">&#39;population&#39;</span><span class="p">:</span><span class="n">population</span><span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">countries_popu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">countries_popu</span> <span class="o">=</span> <span class="n">scrape_population</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">countries_popu</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">countries_popu</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+<span class="n">countries_popu</span> <span class="o">=</span> <span class="n">countries_popu</span><span class="p">[</span><span class="o">~</span><span class="n">countries_popu</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Cannot map réunion
+Cannot map western sahara
+Cannot map guadeloupe
+Cannot map martinique
+Cannot map french polynesia
+Cannot map french guiana
+Cannot map mayotte
+Cannot map guernsey and  jersey
+Cannot map kiribati
+Cannot map federated states of micronesia
+Cannot map isle of man
+Cannot map greenland
+Cannot map northern mariana islands
+Cannot map marshall islands
+Cannot map sint maarten
+Cannot map monaco
+Cannot map palau
+Cannot map wallis and futuna
+Cannot map nauru
+Cannot map tuvalu
+Cannot map saint pierre and miquelon
+Cannot map saint helena ascension and tristan da cunha
+Cannot map falkland islands
+Cannot map niue
+Cannot map tokelau
+Cannot map vatican city
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="nb">set</span><span class="p">(</span><span class="n">combined_df</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">countries_popu</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[24]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>{&#39;kosovo&#39;}
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="nb">set</span><span class="p">(</span><span class="n">countries_popu</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">combined_df</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[25]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>{&#39;american samoa&#39;,
+ &#39;anguilla&#39;,
+ &#39;aruba&#39;,
+ &#39;bermuda&#39;,
+ &#39;british virgin islands&#39;,
+ &#39;cayman islands&#39;,
+ &#39;cook islands&#39;,
+ &#39;curaçao&#39;,
+ &#39;faroe islands&#39;,
+ &#39;gibraltar&#39;,
+ &#39;guam&#39;,
+ &#39;montserrat&#39;,
+ &#39;new caledonia&#39;,
+ &#39;palestine&#39;,
+ &#39;turks and caicos islands&#39;,
+ &#39;us virgin islands&#39;}
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">combined_df</span> <span class="o">=</span> <span class="n">combined_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">countries_popu</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">combined_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>temp</th>
+      <th>gdp_pp</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>burkina faso</td>
+      <td>28.25</td>
+      <td>1884.0</td>
+      <td>19193382.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>mali</td>
+      <td>28.25</td>
+      <td>2169.0</td>
+      <td>18541980.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>djibouti</td>
+      <td>28.00</td>
+      <td>3567.0</td>
+      <td>956985.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>senegal</td>
+      <td>27.85</td>
+      <td>2678.0</td>
+      <td>15850567.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mauritania</td>
+      <td>27.65</td>
+      <td>4474.0</td>
+      <td>4420184.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>maldives</td>
+      <td>27.65</td>
+      <td>19178.0</td>
+      <td>436330.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>benin</td>
+      <td>27.55</td>
+      <td>2219.0</td>
+      <td>11175692.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>gambia</td>
+      <td>27.50</td>
+      <td>1686.0</td>
+      <td>2100568.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>ghana</td>
+      <td>27.20</td>
+      <td>4605.0</td>
+      <td>28833629.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>bahrain</td>
+      <td>27.15</td>
+      <td>51846.0</td>
+      <td>1492584.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>niger</td>
+      <td>27.15</td>
+      <td>1153.0</td>
+      <td>21477348.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>qatar</td>
+      <td>27.15</td>
+      <td>124927.0</td>
+      <td>2639211.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>seychelles</td>
+      <td>27.15</td>
+      <td>28712.0</td>
+      <td>94737.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>togo</td>
+      <td>27.15</td>
+      <td>1612.0</td>
+      <td>7797694.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>somalia</td>
+      <td>27.05</td>
+      <td>NaN</td>
+      <td>14742523.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>united arab emirates</td>
+      <td>27.00</td>
+      <td>68245.0</td>
+      <td>9400145.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>sri lanka</td>
+      <td>26.95</td>
+      <td>13001.0</td>
+      <td>20876917.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>sudan</td>
+      <td>26.90</td>
+      <td>4580.0</td>
+      <td>40533330.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>brunei darussalam</td>
+      <td>26.85</td>
+      <td>76743.0</td>
+      <td>428697.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>cambodia</td>
+      <td>26.80</td>
+      <td>4010.0</td>
+      <td>16005373.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>nigeria</td>
+      <td>26.80</td>
+      <td>5927.0</td>
+      <td>190886311.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>st vincent and the grenadines</td>
+      <td>26.80</td>
+      <td>11623.0</td>
+      <td>109897.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>guinea-bissau</td>
+      <td>26.75</td>
+      <td>1806.0</td>
+      <td>1861283.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>samoa</td>
+      <td>26.70</td>
+      <td>5737.0</td>
+      <td>196440.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>grenada</td>
+      <td>26.65</td>
+      <td>14779.0</td>
+      <td>107825.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>chad</td>
+      <td>26.55</td>
+      <td>2433.0</td>
+      <td>14899994.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>singapore</td>
+      <td>26.45</td>
+      <td>90531.0</td>
+      <td>5708844.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>côte d'ivoire</td>
+      <td>26.35</td>
+      <td>3857.0</td>
+      <td>24294750.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>thailand</td>
+      <td>26.30</td>
+      <td>17786.0</td>
+      <td>69037513.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>sierra leone</td>
+      <td>26.05</td>
+      <td>1791.0</td>
+      <td>7557212.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>tajikistan</td>
+      <td>2.00</td>
+      <td>3131.0</td>
+      <td>8921343.0</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>iceland</td>
+      <td>1.75</td>
+      <td>52150.0</td>
+      <td>335025.0</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>finland</td>
+      <td>1.70</td>
+      <td>44050.0</td>
+      <td>5523231.0</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>kyrgyz republic</td>
+      <td>1.55</td>
+      <td>3652.0</td>
+      <td>6045117.0</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>norway</td>
+      <td>1.50</td>
+      <td>70590.0</td>
+      <td>5305383.0</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>mongolia</td>
+      <td>-0.70</td>
+      <td>12551.0</td>
+      <td>3075647.0</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>russia</td>
+      <td>-5.10</td>
+      <td>27890.0</td>
+      <td>143989754.0</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>canada</td>
+      <td>-5.35</td>
+      <td>48141.0</td>
+      <td>36624199.0</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>macau</td>
+      <td>NaN</td>
+      <td>114430.0</td>
+      <td>622567.0</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>hong kong</td>
+      <td>NaN</td>
+      <td>61016.0</td>
+      <td>7364883.0</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>chinese taipei</td>
+      <td>NaN</td>
+      <td>49827.0</td>
+      <td>23626456.0</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>puerto rico</td>
+      <td>NaN</td>
+      <td>37895.0</td>
+      <td>3663131.0</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>kosovo</td>
+      <td>NaN</td>
+      <td>12003.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>south sudan</td>
+      <td>NaN</td>
+      <td>1503.0</td>
+      <td>12575714.0</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>palestine</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4920724.0</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>new caledonia</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>276255.0</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>guam</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>164229.0</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>curaçao</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>160539.0</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>aruba</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>105264.0</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>us virgin islands</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>104901.0</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>cayman islands</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>61559.0</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>bermuda</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>61349.0</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>american samoa</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>55641.0</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>faroe islands</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>49290.0</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>turks and caicos islands</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>35446.0</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>gibraltar</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>34571.0</td>
+    </tr>
+    <tr>
+      <th>204</th>
+      <td>british virgin islands</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>31196.0</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>cook islands</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17380.0</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>anguilla</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14909.0</td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>montserrat</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5177.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>208 rows × 4 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="n">combined_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/country_demographics.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/scrape_country_information.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
