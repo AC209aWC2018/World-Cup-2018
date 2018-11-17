@@ -4,24 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Milestone 2 &#8212; World Cup  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Milestone 3" href="milestone3.html" />
@@ -32,12 +23,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
+          
+
           <div class="body" role="main">
             
   
@@ -292,11 +284,10 @@ good basis for the training data. We might have to only keep data after
 a certain time due to the lack of data on players, change in conditions
 of countries, etc. from other data sources (Maybe after 2014?).</p>
 <p>Wikipedia lists out the squads of each participating country in each
-World Cup (i.e.
-<a class="reference external" href="https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads">https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads</a> for 2018.
-Replace 2018 with 2014 for 2014 squads, etc.). We can scrape this data
-and give each team an average rating for each position based on the
-players.</p>
+World Cup (i.e.&nbsp;<a class="reference external" href="https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads">https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads</a>
+for 2018. Replace 2018 with 2014 for 2014 squads, etc.). We can scrape
+this data and give each team an average rating for each position based
+on the players.</p>
 <p>Wikipedia also has demographic information about each country. There
 might be some correlation between variables such as real GDP, real GDP
 per capita, with the performance of the national team. We would need to
@@ -310,7 +301,7 @@ regression or K-means where the feature containing missing values is
 treated as the dependent variable and other predictors are set as
 independent variables. We plan to create some aggregated features, such
 as the average strength of the players in the team, mean rankings of the
-players etc. as mentioned above in <code class="docutils literal"><span class="pre">predictors</span></code> section. After
+players etc. as mentioned above in <code class="docutils literal notranslate"><span class="pre">predictors</span></code> section. After
 obtaining all the data, we will standardize non-categorical and
 non-percentage variable to make them on a comparable scale. Using
 logistic regression, we might try to control for some features to remove
@@ -369,18 +360,18 @@ common measure of a player’s ability and performance. We then plotted a
 boxplot of the top 23 players ratings for each participating nation.
 Intuitively, this would give us an intuition into the spread of players
 ability for each participating nation. We can see that there are teams
-that are ‘top heavy’, and are over-reliant on a few good players (i.e.
-Argentina and Portugal).</p>
+that are ‘top heavy’, and are over-reliant on a few good players
+(i.e.&nbsp;Argentina and Portugal).</p>
 <div class="figure" id="id2">
 <img alt="image.png" src="../_images/playerrating.jpg" />
 <p class="caption"><span class="caption-text">image.png</span></p>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span>
 </pre></div>
 </div>
@@ -390,6 +381,7 @@ Argentina and Portugal).</p>
 
 
           </div>
+          
       </div>
       <div class="clearer"></div>
     </div>
@@ -397,8 +389,8 @@ Argentina and Portugal).</p>
       &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="../_sources/doc/milestone2.ipynb.txt"

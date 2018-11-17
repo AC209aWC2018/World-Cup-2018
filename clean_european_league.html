@@ -1,0 +1,2890 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [105]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#Credit to CS207</span>
+
+<span class="k">def</span> <span class="nf">viz_tables</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">framelist</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+        <span class="n">framelist</span><span class="p">[</span><span class="n">col_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">q</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">framelist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [106]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;data/database.sqlite&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [107]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;PRAGMA table_info(Match)&quot;</span><span class="p">)]</span>
+<span class="n">player_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;PRAGMA table_info(Player)&quot;</span><span class="p">)]</span>
+<span class="n">player_attr_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;PRAGMA table_info(Player_Attributes)&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [108]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;SELECT * FROM Match&#39;&#39;&#39;</span>
+<span class="n">match_df</span> <span class="o">=</span> <span class="n">viz_tables</span><span class="p">(</span><span class="n">match_cols</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [109]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;SELECT * FROM Player&#39;&#39;&#39;</span>
+<span class="n">player</span> <span class="o">=</span> <span class="n">viz_tables</span><span class="p">(</span><span class="n">player_cols</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [110]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;SELECT * FROM Player_Attributes&#39;&#39;&#39;</span>
+<span class="n">player_attr</span> <span class="o">=</span> <span class="n">viz_tables</span><span class="p">(</span><span class="n">player_attr_cols</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [327]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">player_attr</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[327]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>player_fifa_api_id</th>
+      <th>player_api_id</th>
+      <th>date</th>
+      <th>overall_rating</th>
+      <th>potential</th>
+      <th>preferred_foot</th>
+      <th>attacking_work_rate</th>
+      <th>defensive_work_rate</th>
+      <th>crossing</th>
+      <th>...</th>
+      <th>vision</th>
+      <th>penalties</th>
+      <th>marking</th>
+      <th>standing_tackle</th>
+      <th>sliding_tackle</th>
+      <th>gk_diving</th>
+      <th>gk_handling</th>
+      <th>gk_kicking</th>
+      <th>gk_positioning</th>
+      <th>gk_reflexes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2016-02-18 00:00:00</td>
+      <td>67.0</td>
+      <td>71.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>49.0</td>
+      <td>...</td>
+      <td>54.0</td>
+      <td>48.0</td>
+      <td>65.0</td>
+      <td>69.0</td>
+      <td>69.0</td>
+      <td>6.0</td>
+      <td>11.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2015-11-19 00:00:00</td>
+      <td>67.0</td>
+      <td>71.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>49.0</td>
+      <td>...</td>
+      <td>54.0</td>
+      <td>48.0</td>
+      <td>65.0</td>
+      <td>69.0</td>
+      <td>69.0</td>
+      <td>6.0</td>
+      <td>11.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2015-09-21 00:00:00</td>
+      <td>62.0</td>
+      <td>66.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>49.0</td>
+      <td>...</td>
+      <td>54.0</td>
+      <td>48.0</td>
+      <td>65.0</td>
+      <td>66.0</td>
+      <td>69.0</td>
+      <td>6.0</td>
+      <td>11.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2015-03-20 00:00:00</td>
+      <td>61.0</td>
+      <td>65.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>53.0</td>
+      <td>47.0</td>
+      <td>62.0</td>
+      <td>63.0</td>
+      <td>66.0</td>
+      <td>5.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2007-02-22 00:00:00</td>
+      <td>61.0</td>
+      <td>65.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>53.0</td>
+      <td>47.0</td>
+      <td>62.0</td>
+      <td>63.0</td>
+      <td>66.0</td>
+      <td>5.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2016-04-21 00:00:00</td>
+      <td>74.0</td>
+      <td>76.0</td>
+      <td>left</td>
+      <td>high</td>
+      <td>medium</td>
+      <td>80.0</td>
+      <td>...</td>
+      <td>66.0</td>
+      <td>59.0</td>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>78.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2016-04-07 00:00:00</td>
+      <td>74.0</td>
+      <td>76.0</td>
+      <td>left</td>
+      <td>high</td>
+      <td>medium</td>
+      <td>80.0</td>
+      <td>...</td>
+      <td>66.0</td>
+      <td>59.0</td>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>78.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2016-01-07 00:00:00</td>
+      <td>73.0</td>
+      <td>75.0</td>
+      <td>left</td>
+      <td>high</td>
+      <td>medium</td>
+      <td>79.0</td>
+      <td>...</td>
+      <td>65.0</td>
+      <td>59.0</td>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>78.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2015-12-24 00:00:00</td>
+      <td>73.0</td>
+      <td>75.0</td>
+      <td>left</td>
+      <td>high</td>
+      <td>medium</td>
+      <td>79.0</td>
+      <td>...</td>
+      <td>65.0</td>
+      <td>59.0</td>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>78.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2015-12-17 00:00:00</td>
+      <td>73.0</td>
+      <td>75.0</td>
+      <td>left</td>
+      <td>high</td>
+      <td>medium</td>
+      <td>79.0</td>
+      <td>...</td>
+      <td>65.0</td>
+      <td>59.0</td>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>78.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2015-10-16 00:00:00</td>
+      <td>73.0</td>
+      <td>77.0</td>
+      <td>left</td>
+      <td>high</td>
+      <td>medium</td>
+      <td>79.0</td>
+      <td>...</td>
+      <td>65.0</td>
+      <td>59.0</td>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>78.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2015-09-25 00:00:00</td>
+      <td>74.0</td>
+      <td>78.0</td>
+      <td>left</td>
+      <td>high</td>
+      <td>medium</td>
+      <td>79.0</td>
+      <td>...</td>
+      <td>65.0</td>
+      <td>59.0</td>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>78.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2015-09-21 00:00:00</td>
+      <td>73.0</td>
+      <td>77.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>79.0</td>
+      <td>...</td>
+      <td>65.0</td>
+      <td>59.0</td>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>78.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2015-01-09 00:00:00</td>
+      <td>71.0</td>
+      <td>75.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>78.0</td>
+      <td>...</td>
+      <td>64.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2014-12-05 00:00:00</td>
+      <td>71.0</td>
+      <td>77.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>78.0</td>
+      <td>...</td>
+      <td>64.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2014-11-07 00:00:00</td>
+      <td>71.0</td>
+      <td>77.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>78.0</td>
+      <td>...</td>
+      <td>64.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2014-09-18 00:00:00</td>
+      <td>70.0</td>
+      <td>77.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>64.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2014-05-02 00:00:00</td>
+      <td>70.0</td>
+      <td>79.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>64.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2014-04-04 00:00:00</td>
+      <td>70.0</td>
+      <td>79.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>64.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2014-03-14 00:00:00</td>
+      <td>70.0</td>
+      <td>79.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2013-12-13 00:00:00</td>
+      <td>70.0</td>
+      <td>79.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2013-11-08 00:00:00</td>
+      <td>70.0</td>
+      <td>79.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2013-10-04 00:00:00</td>
+      <td>69.0</td>
+      <td>79.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>58.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2013-09-20 00:00:00</td>
+      <td>69.0</td>
+      <td>79.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>58.0</td>
+      <td>58.0</td>
+      <td>73.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2013-05-03 00:00:00</td>
+      <td>69.0</td>
+      <td>80.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>58.0</td>
+      <td>58.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2013-03-22 00:00:00</td>
+      <td>69.0</td>
+      <td>80.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>58.0</td>
+      <td>58.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2013-03-15 00:00:00</td>
+      <td>69.0</td>
+      <td>80.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>58.0</td>
+      <td>58.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2013-02-22 00:00:00</td>
+      <td>69.0</td>
+      <td>80.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>58.0</td>
+      <td>58.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2013-02-15 00:00:00</td>
+      <td>69.0</td>
+      <td>80.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>58.0</td>
+      <td>58.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>189615</td>
+      <td>155782</td>
+      <td>2012-08-31 00:00:00</td>
+      <td>68.0</td>
+      <td>80.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>63.0</td>
+      <td>58.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>72.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>183948</th>
+      <td>183949</td>
+      <td>164680</td>
+      <td>111182</td>
+      <td>2012-02-22 00:00:00</td>
+      <td>68.0</td>
+      <td>76.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>73.0</td>
+      <td>...</td>
+      <td>45.0</td>
+      <td>53.0</td>
+      <td>64.0</td>
+      <td>68.0</td>
+      <td>66.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>183949</th>
+      <td>183950</td>
+      <td>164680</td>
+      <td>111182</td>
+      <td>2011-08-30 00:00:00</td>
+      <td>68.0</td>
+      <td>76.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>73.0</td>
+      <td>...</td>
+      <td>45.0</td>
+      <td>53.0</td>
+      <td>64.0</td>
+      <td>68.0</td>
+      <td>66.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>183950</th>
+      <td>183951</td>
+      <td>164680</td>
+      <td>111182</td>
+      <td>2011-02-22 00:00:00</td>
+      <td>68.0</td>
+      <td>79.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>71.0</td>
+      <td>...</td>
+      <td>65.0</td>
+      <td>53.0</td>
+      <td>71.0</td>
+      <td>69.0</td>
+      <td>69.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>183951</th>
+      <td>183952</td>
+      <td>164680</td>
+      <td>111182</td>
+      <td>2010-08-30 00:00:00</td>
+      <td>67.0</td>
+      <td>77.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>68.0</td>
+      <td>...</td>
+      <td>65.0</td>
+      <td>44.0</td>
+      <td>75.0</td>
+      <td>70.0</td>
+      <td>67.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>183952</th>
+      <td>183953</td>
+      <td>164680</td>
+      <td>111182</td>
+      <td>2007-02-22 00:00:00</td>
+      <td>67.0</td>
+      <td>77.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>68.0</td>
+      <td>...</td>
+      <td>65.0</td>
+      <td>44.0</td>
+      <td>75.0</td>
+      <td>70.0</td>
+      <td>67.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>183953</th>
+      <td>183954</td>
+      <td>111191</td>
+      <td>36491</td>
+      <td>2011-02-22 00:00:00</td>
+      <td>68.0</td>
+      <td>73.0</td>
+      <td>left</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>64.0</td>
+      <td>...</td>
+      <td>66.0</td>
+      <td>61.0</td>
+      <td>67.0</td>
+      <td>71.0</td>
+      <td>59.0</td>
+      <td>15.0</td>
+      <td>13.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>183954</th>
+      <td>183955</td>
+      <td>111191</td>
+      <td>36491</td>
+      <td>2010-08-30 00:00:00</td>
+      <td>68.0</td>
+      <td>73.0</td>
+      <td>left</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>64.0</td>
+      <td>...</td>
+      <td>66.0</td>
+      <td>61.0</td>
+      <td>71.0</td>
+      <td>71.0</td>
+      <td>59.0</td>
+      <td>15.0</td>
+      <td>13.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>183955</th>
+      <td>183956</td>
+      <td>111191</td>
+      <td>36491</td>
+      <td>2009-08-30 00:00:00</td>
+      <td>68.0</td>
+      <td>74.0</td>
+      <td>left</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>64.0</td>
+      <td>...</td>
+      <td>66.0</td>
+      <td>61.0</td>
+      <td>71.0</td>
+      <td>71.0</td>
+      <td>59.0</td>
+      <td>4.0</td>
+      <td>21.0</td>
+      <td>61.0</td>
+      <td>21.0</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>183956</th>
+      <td>183957</td>
+      <td>111191</td>
+      <td>36491</td>
+      <td>2009-02-22 00:00:00</td>
+      <td>68.0</td>
+      <td>74.0</td>
+      <td>left</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>64.0</td>
+      <td>...</td>
+      <td>66.0</td>
+      <td>61.0</td>
+      <td>71.0</td>
+      <td>71.0</td>
+      <td>59.0</td>
+      <td>4.0</td>
+      <td>21.0</td>
+      <td>61.0</td>
+      <td>21.0</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>183957</th>
+      <td>183958</td>
+      <td>111191</td>
+      <td>36491</td>
+      <td>2008-08-30 00:00:00</td>
+      <td>67.0</td>
+      <td>72.0</td>
+      <td>left</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>62.0</td>
+      <td>...</td>
+      <td>66.0</td>
+      <td>61.0</td>
+      <td>61.0</td>
+      <td>62.0</td>
+      <td>59.0</td>
+      <td>4.0</td>
+      <td>21.0</td>
+      <td>61.0</td>
+      <td>21.0</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>183958</th>
+      <td>183959</td>
+      <td>111191</td>
+      <td>36491</td>
+      <td>2007-08-30 00:00:00</td>
+      <td>67.0</td>
+      <td>72.0</td>
+      <td>left</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>62.0</td>
+      <td>...</td>
+      <td>66.0</td>
+      <td>61.0</td>
+      <td>43.0</td>
+      <td>52.0</td>
+      <td>59.0</td>
+      <td>4.0</td>
+      <td>21.0</td>
+      <td>52.0</td>
+      <td>21.0</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>183959</th>
+      <td>183960</td>
+      <td>111191</td>
+      <td>36491</td>
+      <td>2007-02-22 00:00:00</td>
+      <td>67.0</td>
+      <td>72.0</td>
+      <td>left</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>62.0</td>
+      <td>...</td>
+      <td>66.0</td>
+      <td>61.0</td>
+      <td>43.0</td>
+      <td>52.0</td>
+      <td>59.0</td>
+      <td>4.0</td>
+      <td>21.0</td>
+      <td>52.0</td>
+      <td>21.0</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>183960</th>
+      <td>183961</td>
+      <td>47058</td>
+      <td>35506</td>
+      <td>2011-02-22 00:00:00</td>
+      <td>67.0</td>
+      <td>78.0</td>
+      <td>right</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>63.0</td>
+      <td>45.0</td>
+      <td>65.0</td>
+      <td>66.0</td>
+      <td>65.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>15.0</td>
+      <td>10.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>183961</th>
+      <td>183962</td>
+      <td>47058</td>
+      <td>35506</td>
+      <td>2010-08-30 00:00:00</td>
+      <td>67.0</td>
+      <td>78.0</td>
+      <td>right</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>63.0</td>
+      <td>45.0</td>
+      <td>65.0</td>
+      <td>66.0</td>
+      <td>65.0</td>
+      <td>14.0</td>
+      <td>7.0</td>
+      <td>15.0</td>
+      <td>10.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>183962</th>
+      <td>183963</td>
+      <td>47058</td>
+      <td>35506</td>
+      <td>2010-02-22 00:00:00</td>
+      <td>67.0</td>
+      <td>78.0</td>
+      <td>right</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>63.0</td>
+      <td>70.0</td>
+      <td>65.0</td>
+      <td>66.0</td>
+      <td>65.0</td>
+      <td>14.0</td>
+      <td>25.0</td>
+      <td>51.0</td>
+      <td>25.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>183963</th>
+      <td>183964</td>
+      <td>47058</td>
+      <td>35506</td>
+      <td>2009-08-30 00:00:00</td>
+      <td>70.0</td>
+      <td>78.0</td>
+      <td>right</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>63.0</td>
+      <td>70.0</td>
+      <td>70.0</td>
+      <td>74.0</td>
+      <td>65.0</td>
+      <td>14.0</td>
+      <td>25.0</td>
+      <td>51.0</td>
+      <td>25.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>183964</th>
+      <td>183965</td>
+      <td>47058</td>
+      <td>35506</td>
+      <td>2009-02-22 00:00:00</td>
+      <td>70.0</td>
+      <td>78.0</td>
+      <td>right</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>63.0</td>
+      <td>70.0</td>
+      <td>70.0</td>
+      <td>74.0</td>
+      <td>65.0</td>
+      <td>14.0</td>
+      <td>25.0</td>
+      <td>51.0</td>
+      <td>25.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>183965</th>
+      <td>183966</td>
+      <td>47058</td>
+      <td>35506</td>
+      <td>2008-08-30 00:00:00</td>
+      <td>72.0</td>
+      <td>78.0</td>
+      <td>right</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>63.0</td>
+      <td>70.0</td>
+      <td>76.0</td>
+      <td>78.0</td>
+      <td>65.0</td>
+      <td>14.0</td>
+      <td>25.0</td>
+      <td>51.0</td>
+      <td>25.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>183966</th>
+      <td>183967</td>
+      <td>47058</td>
+      <td>35506</td>
+      <td>2007-08-30 00:00:00</td>
+      <td>75.0</td>
+      <td>78.0</td>
+      <td>right</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>63.0</td>
+      <td>70.0</td>
+      <td>76.0</td>
+      <td>78.0</td>
+      <td>65.0</td>
+      <td>14.0</td>
+      <td>25.0</td>
+      <td>51.0</td>
+      <td>25.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>183967</th>
+      <td>183968</td>
+      <td>47058</td>
+      <td>35506</td>
+      <td>2007-02-22 00:00:00</td>
+      <td>78.0</td>
+      <td>79.0</td>
+      <td>right</td>
+      <td>None</td>
+      <td>_0</td>
+      <td>38.0</td>
+      <td>...</td>
+      <td>63.0</td>
+      <td>72.0</td>
+      <td>79.0</td>
+      <td>84.0</td>
+      <td>65.0</td>
+      <td>14.0</td>
+      <td>9.0</td>
+      <td>48.0</td>
+      <td>7.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>183968</th>
+      <td>183969</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2012-08-31 00:00:00</td>
+      <td>78.0</td>
+      <td>78.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>77.0</td>
+      <td>...</td>
+      <td>82.0</td>
+      <td>78.0</td>
+      <td>22.0</td>
+      <td>31.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>13.0</td>
+      <td>8.0</td>
+      <td>15.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>183969</th>
+      <td>183970</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2012-02-22 00:00:00</td>
+      <td>81.0</td>
+      <td>81.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>80.0</td>
+      <td>...</td>
+      <td>87.0</td>
+      <td>78.0</td>
+      <td>22.0</td>
+      <td>31.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>13.0</td>
+      <td>8.0</td>
+      <td>15.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>183970</th>
+      <td>183971</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2011-08-30 00:00:00</td>
+      <td>81.0</td>
+      <td>81.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>80.0</td>
+      <td>...</td>
+      <td>87.0</td>
+      <td>78.0</td>
+      <td>22.0</td>
+      <td>31.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>13.0</td>
+      <td>8.0</td>
+      <td>15.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>183971</th>
+      <td>183972</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2011-02-22 00:00:00</td>
+      <td>81.0</td>
+      <td>85.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>81.0</td>
+      <td>...</td>
+      <td>87.0</td>
+      <td>73.0</td>
+      <td>22.0</td>
+      <td>31.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>13.0</td>
+      <td>8.0</td>
+      <td>15.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>183972</th>
+      <td>183973</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2010-08-30 00:00:00</td>
+      <td>83.0</td>
+      <td>85.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>84.0</td>
+      <td>...</td>
+      <td>88.0</td>
+      <td>73.0</td>
+      <td>22.0</td>
+      <td>31.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>13.0</td>
+      <td>8.0</td>
+      <td>15.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>183973</th>
+      <td>183974</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2009-08-30 00:00:00</td>
+      <td>83.0</td>
+      <td>85.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>84.0</td>
+      <td>...</td>
+      <td>88.0</td>
+      <td>83.0</td>
+      <td>22.0</td>
+      <td>31.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>20.0</td>
+      <td>84.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>183974</th>
+      <td>183975</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2009-02-22 00:00:00</td>
+      <td>78.0</td>
+      <td>80.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>74.0</td>
+      <td>...</td>
+      <td>88.0</td>
+      <td>70.0</td>
+      <td>32.0</td>
+      <td>31.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>20.0</td>
+      <td>73.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>183975</th>
+      <td>183976</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2008-08-30 00:00:00</td>
+      <td>77.0</td>
+      <td>80.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>74.0</td>
+      <td>...</td>
+      <td>88.0</td>
+      <td>70.0</td>
+      <td>32.0</td>
+      <td>31.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>20.0</td>
+      <td>73.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>183976</th>
+      <td>183977</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2007-08-30 00:00:00</td>
+      <td>78.0</td>
+      <td>81.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>74.0</td>
+      <td>...</td>
+      <td>88.0</td>
+      <td>53.0</td>
+      <td>28.0</td>
+      <td>32.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>20.0</td>
+      <td>73.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>183977</th>
+      <td>183978</td>
+      <td>102359</td>
+      <td>39902</td>
+      <td>2007-02-22 00:00:00</td>
+      <td>80.0</td>
+      <td>81.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>low</td>
+      <td>74.0</td>
+      <td>...</td>
+      <td>88.0</td>
+      <td>53.0</td>
+      <td>38.0</td>
+      <td>32.0</td>
+      <td>30.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>78.0</td>
+      <td>7.0</td>
+      <td>15.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>183978 rows × 42 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [111]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">match_df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+id
+country_id
+league_id
+season
+stage
+date
+match_api_id
+home_team_api_id
+away_team_api_id
+home_team_goal
+away_team_goal
+home_player_X1
+home_player_X2
+home_player_X3
+home_player_X4
+home_player_X5
+home_player_X6
+home_player_X7
+home_player_X8
+home_player_X9
+home_player_X10
+home_player_X11
+away_player_X1
+away_player_X2
+away_player_X3
+away_player_X4
+away_player_X5
+away_player_X6
+away_player_X7
+away_player_X8
+away_player_X9
+away_player_X10
+away_player_X11
+home_player_Y1
+home_player_Y2
+home_player_Y3
+home_player_Y4
+home_player_Y5
+home_player_Y6
+home_player_Y7
+home_player_Y8
+home_player_Y9
+home_player_Y10
+home_player_Y11
+away_player_Y1
+away_player_Y2
+away_player_Y3
+away_player_Y4
+away_player_Y5
+away_player_Y6
+away_player_Y7
+away_player_Y8
+away_player_Y9
+away_player_Y10
+away_player_Y11
+home_player_1
+home_player_2
+home_player_3
+home_player_4
+home_player_5
+home_player_6
+home_player_7
+home_player_8
+home_player_9
+home_player_10
+home_player_11
+away_player_1
+away_player_2
+away_player_3
+away_player_4
+away_player_5
+away_player_6
+away_player_7
+away_player_8
+away_player_9
+away_player_10
+away_player_11
+goal
+shoton
+shotoff
+foulcommit
+card
+cross
+corner
+possession
+B365H
+B365D
+B365A
+BWH
+BWD
+BWA
+IWH
+IWD
+IWA
+LBH
+LBD
+LBA
+PSH
+PSD
+PSA
+WHH
+WHD
+WHA
+SJH
+SJD
+SJA
+VCH
+VCD
+VCA
+GBH
+GBD
+GBA
+BSH
+BSD
+BSA
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[111]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None,
+ None]
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [112]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">match_df</span><span class="o">.</span><span class="n">home_team_goal</span> <span class="o">-</span> <span class="n">match_df</span><span class="o">.</span><span class="n">away_team_goal</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">match_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;home_team_goal&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;away_team_goal&#39;</span><span class="p">],</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [113]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">home_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+<span class="n">away_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">match_df</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">home_columns</span> <span class="o">+</span> <span class="n">away_columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [114]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[114]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>1    11917
+0     7466
+2     6596
+Name: home_win, dtype: int64
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [115]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#player_fifa_api_id refers to sofifa id. player_api_id is used as the columns in the match dataset.</span>
+<span class="n">player_attr</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[115]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Index([&#39;id&#39;, &#39;player_fifa_api_id&#39;, &#39;player_api_id&#39;, &#39;date&#39;, &#39;overall_rating&#39;,
+       &#39;potential&#39;, &#39;preferred_foot&#39;, &#39;attacking_work_rate&#39;,
+       &#39;defensive_work_rate&#39;, &#39;crossing&#39;, &#39;finishing&#39;, &#39;heading_accuracy&#39;,
+       &#39;short_passing&#39;, &#39;volleys&#39;, &#39;dribbling&#39;, &#39;curve&#39;, &#39;free_kick_accuracy&#39;,
+       &#39;long_passing&#39;, &#39;ball_control&#39;, &#39;acceleration&#39;, &#39;sprint_speed&#39;,
+       &#39;agility&#39;, &#39;reactions&#39;, &#39;balance&#39;, &#39;shot_power&#39;, &#39;jumping&#39;, &#39;stamina&#39;,
+       &#39;strength&#39;, &#39;long_shots&#39;, &#39;aggression&#39;, &#39;interceptions&#39;, &#39;positioning&#39;,
+       &#39;vision&#39;, &#39;penalties&#39;, &#39;marking&#39;, &#39;standing_tackle&#39;, &#39;sliding_tackle&#39;,
+       &#39;gk_diving&#39;, &#39;gk_handling&#39;, &#39;gk_kicking&#39;, &#39;gk_positioning&#39;,
+       &#39;gk_reflexes&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [116]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">player_attr</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;player_fifa_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;player_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [328]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">get_latest_rating</span><span class="p">(</span><span class="n">match</span><span class="p">[[</span><span class="s1">&#39;home_player_1&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">11110</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[328]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall_rating</th>
+      <th>potential</th>
+      <th>preferred_foot</th>
+      <th>attacking_work_rate</th>
+      <th>defensive_work_rate</th>
+      <th>crossing</th>
+      <th>finishing</th>
+      <th>heading_accuracy</th>
+      <th>short_passing</th>
+      <th>volleys</th>
+      <th>...</th>
+      <th>vision</th>
+      <th>penalties</th>
+      <th>marking</th>
+      <th>standing_tackle</th>
+      <th>sliding_tackle</th>
+      <th>gk_diving</th>
+      <th>gk_handling</th>
+      <th>gk_kicking</th>
+      <th>gk_positioning</th>
+      <th>gk_reflexes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>119537</th>
+      <td>74.0</td>
+      <td>75.0</td>
+      <td>right</td>
+      <td>stoc</td>
+      <td>tocky</td>
+      <td>14.0</td>
+      <td>13.0</td>
+      <td>27.0</td>
+      <td>43.0</td>
+      <td>15.0</td>
+      <td>...</td>
+      <td>41.0</td>
+      <td>14.0</td>
+      <td>29.0</td>
+      <td>29.0</td>
+      <td>22.0</td>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>68.0</td>
+      <td>75.0</td>
+      <td>76.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 38 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [174]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_latest_rating</span><span class="p">(</span><span class="n">player_match</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span><span class="p">):</span>
+    <span class="c1">#Get row of latest rating</span>
+    <span class="c1">#player_match is a row in match with first column being player id and second column being the date of the match.</span>
+    <span class="c1">#Could have also just found latest date and merge based on (date, player_api_id)</span>
+    <span class="n">player_api_id</span> <span class="o">=</span> <span class="n">player_match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">match_date</span> <span class="o">=</span> <span class="n">player_match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">player_api_id</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">df</span>
+    <span class="n">player</span> <span class="o">=</span> <span class="n">player_attr</span><span class="p">[(</span><span class="n">player_attr</span><span class="p">[</span><span class="s1">&#39;player_api_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">player_api_id</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">player_attr</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">match_date</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">player</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">player</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">match_final_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">home_column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">_&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">]</span>
+    <span class="n">away_column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">_&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">]</span>
+    <span class="n">home_player_columns</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">away_player_columns</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">match</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+        <span class="n">home_player_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_latest_rating</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">][[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;date&#39;</span><span class="p">]]))</span>
+        <span class="n">away_player_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_latest_rating</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">][[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;date&#39;</span><span class="p">]]))</span>
+    <span class="c1">#https://stackoverflow.com/questions/30471101/pandas-convert-series-of-dataframes-to-single-dataframe</span>
+    <span class="n">home_player_columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">home_player_columns</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">home_player_columns</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">home_column_names</span>
+    <span class="n">away_player_columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">away_player_columns</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">away_player_columns</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">away_column_names</span>
+    <span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match_final_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_player_columns</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match_final_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">away_player_columns</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">home_columns</span> <span class="o">+</span> <span class="n">away_columns</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/cleaned/european_matches.csv&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [216]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_sorted_date</span> <span class="o">=</span> <span class="n">match_df</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;home_team_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">match_sorted_date</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[216]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_team_api_id</th>
+      <th>away_team_api_id</th>
+      <th>home_win</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>24558</th>
+      <td>2008-07-18 00:00:00</td>
+      <td>10192</td>
+      <td>9931</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24559</th>
+      <td>2008-07-19 00:00:00</td>
+      <td>9930</td>
+      <td>10179</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>24560</th>
+      <td>2008-07-20 00:00:00</td>
+      <td>10199</td>
+      <td>9824</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24561</th>
+      <td>2008-07-20 00:00:00</td>
+      <td>7955</td>
+      <td>10243</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24613</th>
+      <td>2008-07-23 00:00:00</td>
+      <td>6493</td>
+      <td>7955</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [299]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_wins_in_last_matches</span><span class="p">(</span><span class="n">df_row</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">num_games</span><span class="p">,</span> <span class="n">team_id_col</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team_api_id&#39;</span><span class="p">],</span>
+                            <span class="n">against_each_other</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get number of wins for home team and away team for num_games before current game. If against_each_other</span>
+<span class="sd">    is True, get number of wins home team has against away team had in past num_games.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">home_team_id_colname</span> <span class="o">=</span> <span class="n">team_id_col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">away_team_id_colname</span> <span class="o">=</span> <span class="n">team_id_col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">against_each_other</span><span class="p">:</span>
+
+        <span class="c1">#Get past games for both home and away teams.</span>
+        <span class="n">home_past_games</span> <span class="o">=</span> <span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">])</span>\
+                            <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]))</span>\
+                             <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">df_row</span><span class="o">.</span><span class="n">date</span><span class="p">)][</span><span class="o">-</span><span class="n">num_games</span><span class="p">:]</span>
+        <span class="n">away_past_games</span> <span class="o">=</span> <span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span><span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">])</span>\
+                            <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]))</span>\
+                             <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">df_row</span><span class="o">.</span><span class="n">date</span><span class="p">)][</span><span class="o">-</span><span class="n">num_games</span><span class="p">:]</span>
+        <span class="c1">#if not enough games played, give indicator</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">home_past_games</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num_games</span><span class="p">:</span>
+            <span class="n">home_not_enough</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">home_not_enough</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">away_past_games</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num_games</span><span class="p">:</span>
+            <span class="n">away_not_enough</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">away_not_enough</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1">#get number of wins for home team</span>
+        <span class="n">home_wins</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">game</span> <span class="ow">in</span> <span class="n">home_past_games</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">home_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">home_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1">#get number of wins for away team</span>
+        <span class="n">away_wins</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">game</span> <span class="ow">in</span> <span class="n">away_past_games</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">away_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">away_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">home_wins</span><span class="p">,</span> <span class="n">away_wins</span><span class="p">,</span> <span class="n">home_not_enough</span><span class="p">,</span> <span class="n">away_not_enough</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1">#get past games where the two teams played against each other</span>
+        <span class="n">past_games</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(((</span><span class="n">df</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">])</span>\
+                            <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]))</span>\
+                        <span class="o">|</span> <span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">])</span>
+                        <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">])))</span>
+                        <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">df_row</span><span class="o">.</span><span class="n">date</span><span class="p">)][</span><span class="o">-</span><span class="n">num_games</span><span class="p">:]</span>
+        <span class="c1">#if not enough games played, give indicator</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">past_games</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num_games</span><span class="p">:</span>
+            <span class="n">not_enough</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">not_enough</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">wins</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">game</span> <span class="ow">in</span> <span class="n">past_games</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="c1">#home team wins in past game against away team as home team</span>
+            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">wins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c1">#home team wins in past game against away team as away team</span>
+            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">wins</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">wins</span><span class="p">,</span> <span class="n">not_enough</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [253]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wins_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wins_past_x_games</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_wins_in_last_matches</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">match_sorted_date</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [271]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">win_past_x_games_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">win_past_x_games_df</span> <span class="o">=</span> <span class="n">win_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
+             <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> \
+                        <span class="s1">&#39;home_not_enough_past_games_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_not_enough_past_games_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]),</span>\
+                        <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [294]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match_final_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">win_past_x_games_df</span><span class="p">,</span> <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [295]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">home_columns</span> <span class="o">+</span> <span class="n">away_columns</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/cleaned/european_matches.csv&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [300]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wins_against_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wins_against_past_x_games</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">wins_against_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">wins_against_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_wins_in_last_matches</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">match_sorted_date</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span>\
+                                                                     <span class="n">against_each_other</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [304]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">win_against_past_x_games_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">win_against_past_x_games_df</span> <span class="o">=</span> <span class="n">win_against_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">wins_against_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
+             <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;not_enough_past_games_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),]),</span>\
+                        <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [307]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match_final_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">win_against_past_x_games_df</span><span class="p">,</span> <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [308]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">home_columns</span> <span class="o">+</span> <span class="n">away_columns</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/cleaned/european_matches.csv&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [321]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="p">(</span><span class="n">match_df</span><span class="p">[[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]]</span> <span class="o">==</span> <span class="mi">158023</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[321]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>home_player_1     0
+home_player_2     0
+home_player_3     0
+home_player_4     0
+home_player_5     0
+home_player_6     0
+home_player_7     0
+home_player_8     0
+home_player_9     0
+home_player_10    0
+home_player_11    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [326]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">player</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">player_name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Messi&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[326]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>player_api_id</th>
+      <th>player_name</th>
+      <th>player_fifa_api_id</th>
+      <th>birthday</th>
+      <th>height</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6169</th>
+      <td>6176</td>
+      <td>30981</td>
+      <td>Lionel Messi</td>
+      <td>158023</td>
+      <td>1987-06-24 00:00:00</td>
+      <td>170.18</td>
+      <td>159</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [344]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sofifa_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/sofifa/CompleteDataset.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [351]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="p">[</span><span class="n">column</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">sofifa_df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[351]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[&#39;name&#39;,
+ &#39;age&#39;,
+ &#39;photo&#39;,
+ &#39;nationality&#39;,
+ &#39;flag&#39;,
+ &#39;overall&#39;,
+ &#39;potential&#39;,
+ &#39;club&#39;,
+ &#39;club_logo&#39;,
+ &#39;value&#39;,
+ &#39;wage&#39;,
+ &#39;special&#39;,
+ &#39;acceleration&#39;,
+ &#39;aggression&#39;,
+ &#39;agility&#39;,
+ &#39;balance&#39;,
+ &#39;ball_control&#39;,
+ &#39;composure&#39;,
+ &#39;crossing&#39;,
+ &#39;curve&#39;,
+ &#39;dribbling&#39;,
+ &#39;finishing&#39;,
+ &#39;free_kick_accuracy&#39;,
+ &#39;gk_diving&#39;,
+ &#39;gk_handling&#39;,
+ &#39;gk_kicking&#39;,
+ &#39;gk_positioning&#39;,
+ &#39;gk_reflexes&#39;,
+ &#39;heading_accuracy&#39;,
+ &#39;interceptions&#39;,
+ &#39;jumping&#39;,
+ &#39;long_passing&#39;,
+ &#39;long_shots&#39;,
+ &#39;marking&#39;,
+ &#39;penalties&#39;,
+ &#39;positioning&#39;,
+ &#39;reactions&#39;,
+ &#39;short_passing&#39;,
+ &#39;shot_power&#39;,
+ &#39;sliding_tackle&#39;,
+ &#39;sprint_speed&#39;,
+ &#39;stamina&#39;,
+ &#39;standing_tackle&#39;,
+ &#39;strength&#39;,
+ &#39;vision&#39;,
+ &#39;volleys&#39;,
+ &#39;cam&#39;,
+ &#39;cb&#39;,
+ &#39;cdm&#39;,
+ &#39;cf&#39;,
+ &#39;cm&#39;,
+ &#39;id&#39;,
+ &#39;lam&#39;,
+ &#39;lb&#39;,
+ &#39;lcb&#39;,
+ &#39;lcm&#39;,
+ &#39;ldm&#39;,
+ &#39;lf&#39;,
+ &#39;lm&#39;,
+ &#39;ls&#39;,
+ &#39;lw&#39;,
+ &#39;lwb&#39;,
+ &#39;preferred_positions&#39;,
+ &#39;ram&#39;,
+ &#39;rb&#39;,
+ &#39;rcb&#39;,
+ &#39;rcm&#39;,
+ &#39;rdm&#39;,
+ &#39;rf&#39;,
+ &#39;rm&#39;,
+ &#39;rs&#39;,
+ &#39;rw&#39;,
+ &#39;rwb&#39;,
+ &#39;st&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [353]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">player_pos</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s1">&#39;cam&#39;</span><span class="p">,</span>
+<span class="s1">&#39;cb&#39;</span><span class="p">,</span>
+<span class="s1">&#39;cdm&#39;</span><span class="p">,</span>
+<span class="s1">&#39;cf&#39;</span><span class="p">,</span>
+<span class="s1">&#39;cm&#39;</span><span class="p">,</span>
+<span class="s1">&#39;id&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lam&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lb&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lcb&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lcm&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ldm&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lf&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lm&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ls&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lw&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lwb&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ram&#39;</span><span class="p">,</span>
+<span class="s1">&#39;rb&#39;</span><span class="p">,</span>
+<span class="s1">&#39;rcb&#39;</span><span class="p">,</span>
+<span class="s1">&#39;rcm&#39;</span><span class="p">,</span>
+<span class="s1">&#39;rdm&#39;</span><span class="p">,</span>
+<span class="s1">&#39;rf&#39;</span><span class="p">,</span>
+<span class="s1">&#39;rm&#39;</span><span class="p">,</span>
+<span class="s1">&#39;rs&#39;</span><span class="p">,</span>
+<span class="s1">&#39;rw&#39;</span><span class="p">,</span>
+<span class="s1">&#39;rwb&#39;</span><span class="p">,</span>
+<span class="s1">&#39;st&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [349]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">player_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">column</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">match_final_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;home_player_11&quot;</span> <span class="ow">in</span> <span class="n">column</span><span class="p">]</span>
+<span class="n">player_columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[349]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[&#39;&#39;,
+ &#39;_overall_rating&#39;,
+ &#39;_potential&#39;,
+ &#39;_preferred_foot&#39;,
+ &#39;_attacking_work_rate&#39;,
+ &#39;_defensive_work_rate&#39;,
+ &#39;_crossing&#39;,
+ &#39;_finishing&#39;,
+ &#39;_heading_accuracy&#39;,
+ &#39;_short_passing&#39;,
+ &#39;_volleys&#39;,
+ &#39;_dribbling&#39;,
+ &#39;_curve&#39;,
+ &#39;_free_kick_accuracy&#39;,
+ &#39;_long_passing&#39;,
+ &#39;_ball_control&#39;,
+ &#39;_acceleration&#39;,
+ &#39;_sprint_speed&#39;,
+ &#39;_agility&#39;,
+ &#39;_reactions&#39;,
+ &#39;_balance&#39;,
+ &#39;_shot_power&#39;,
+ &#39;_jumping&#39;,
+ &#39;_stamina&#39;,
+ &#39;_strength&#39;,
+ &#39;_long_shots&#39;,
+ &#39;_aggression&#39;,
+ &#39;_interceptions&#39;,
+ &#39;_positioning&#39;,
+ &#39;_vision&#39;,
+ &#39;_penalties&#39;,
+ &#39;_marking&#39;,
+ &#39;_standing_tackle&#39;,
+ &#39;_sliding_tackle&#39;,
+ &#39;_gk_diving&#39;,
+ &#39;_gk_handling&#39;,
+ &#39;_gk_kicking&#39;,
+ &#39;_gk_positioning&#39;,
+ &#39;_gk_reflexes&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/clean_european_league.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

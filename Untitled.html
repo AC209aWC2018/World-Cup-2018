@@ -4,24 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>&lt;no title&gt; &#8212; World Cup  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
    
@@ -30,12 +21,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
+          
+
           <div class="body" role="main">
             
   
@@ -205,22 +197,22 @@ div.nboutput div.output_area.stderr {
 .ansi-underline { text-decoration: underline; }
 </style>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">map_countries</span> <span class="k">import</span> <span class="n">map_country</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">int_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/fifa/international_results.csv&#39;</span><span class="p">)</span>
 <span class="n">earliest_date</span> <span class="o">=</span> <span class="s1">&#39;2010-01-01&#39;</span>
 <span class="n">int_results_after</span> <span class="o">=</span> <span class="n">int_results</span><span class="p">[(</span><span class="n">int_results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-01-01&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">int_results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;2018-06-14&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -232,11 +224,11 @@ div.nboutput div.output_area.stderr {
 </div>
 <p><a class="reference external" href="https://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/">https://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/</a></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">for</span> <span class="n">team</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">int_results_after</span><span class="o">.</span><span class="n">home_team</span><span class="p">):</span>
     <span class="n">match</span> <span class="o">=</span> <span class="n">map_country</span><span class="p">(</span><span class="n">team</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">team</span><span class="p">,</span> <span class="n">match</span><span class="p">)</span>
@@ -513,11 +505,11 @@ Rwanda rwanda
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">rankings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/fifa_ranking.csv&#39;</span><span class="p">)</span>
 <span class="n">rankings</span><span class="p">[</span><span class="s1">&#39;rank_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">rankings</span><span class="p">[</span><span class="s1">&#39;rank_date&#39;</span><span class="p">])</span>
 <span class="n">ranking_earliest_date</span> <span class="o">=</span> <span class="s1">&#39;2009-01-01&#39;</span>
@@ -527,21 +519,21 @@ Rwanda rwanda
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">fifa_teams</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[5]:
 </pre></div>
 </div>
-<div class="output_area highlight-none"><div class="highlight"><pre>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>{&#39;afghanistan&#39;,
  &#39;albania&#39;,
  &#39;algeria&#39;,
@@ -758,11 +750,11 @@ Rwanda rwanda
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span>
 </pre></div>
 </div>
@@ -770,6 +762,7 @@ Rwanda rwanda
 
 
           </div>
+          
       </div>
       <div class="clearer"></div>
     </div>
@@ -777,8 +770,8 @@ Rwanda rwanda
       &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/Untitled.ipynb.txt"

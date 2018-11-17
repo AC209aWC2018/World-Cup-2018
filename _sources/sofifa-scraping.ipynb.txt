@@ -1,18 +1,9 @@
 {
  "cells": [
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "# Sofifa Scraping"
-   ]
-  },
-  {
    "cell_type": "code",
    "execution_count": 15,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "import numpy as np\n",
@@ -33,15 +24,20 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "# Web Scraping"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "https://sofifa.com"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 16,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "# referenced from https://realpython.com/python-web-scraping-practical-introduction/\n",
@@ -78,9 +74,7 @@
   {
    "cell_type": "code",
    "execution_count": 17,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "# Find all the href attributes for each national team\n",
@@ -103,9 +97,7 @@
   {
    "cell_type": "code",
    "execution_count": 18,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "teams_href = get_nation_href('?v=WC18&e=159126&set=true') # corresponds to FIFA WC18 Expansion Jun 16"
@@ -121,9 +113,7 @@
   {
    "cell_type": "code",
    "execution_count": 19,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "def get_players_href(teams_href, date_url):\n",
@@ -152,9 +142,7 @@
   {
    "cell_type": "code",
    "execution_count": 20,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "teams = get_players_href(teams_href, '?v=WC18&e=159126&set=true') # corresponds to FIFA WC18 Expansion Jun 16"
@@ -180,9 +168,7 @@
   {
    "cell_type": "code",
    "execution_count": 22,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "\n",
@@ -270,7 +256,7 @@
    "metadata": {},
    "source": [
     "\n",
-    "## still does not sort teams and clubs correctly\n",
+    "# still does not sort teams and clubs correctly\n",
     "def get_players(teams, date_url):\n",
     "    \"\"\"Given the output dictionary from get_players_href,  \n",
     "    and a segment of a date url, corresponding to a specific update of FIFA 18,\n",
@@ -359,9 +345,7 @@
   {
    "cell_type": "code",
    "execution_count": 23,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "# for players in FIFA WC18 Expansion Jun 16, get their stats from FIFA 18 Jun 14\n",
@@ -395,9 +379,7 @@
   {
    "cell_type": "code",
    "execution_count": 29,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "players.to_csv('../datasets/sofifa/sofifa_players.csv',index=False)"
@@ -406,9 +388,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": []
   }
@@ -429,7 +409,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.6.3"
+   "version": "3.6.6"
   }
  },
  "nbformat": 4,

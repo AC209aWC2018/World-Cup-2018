@@ -1,18 +1,9 @@
 {
  "cells": [
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "# Make Train and Test Datasets"
-   ]
-  },
-  {
    "cell_type": "code",
    "execution_count": 1,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "import numpy as np\n",
@@ -653,9 +644,7 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "# int_results_after['home_team_mapped'] = int_results_after['home_team'].copy().apply(map_country)\n",
@@ -2267,9 +2256,7 @@
   {
    "cell_type": "code",
    "execution_count": 24,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "demographics = pd.read_csv('data/cleaned/country_demographics.csv')\n",
@@ -2837,7 +2824,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.6.3"
+   "version": "3.6.6"
   }
  },
  "nbformat": 4,

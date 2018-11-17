@@ -4,24 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Make Train and Test Datasets &#8212; World Cup  documentation</title>
+    <title>&lt;no title&gt; &#8212; World Cup  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
    
@@ -30,12 +21,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
+          
+
           <div class="body" role="main">
             
   
@@ -204,14 +196,12 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 </style>
-<div class="section" id="Make-Train-and-Test-Datasets">
-<h1>Make Train and Test Datasets<a class="headerlink" href="#Make-Train-and-Test-Datasets" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -223,18 +213,18 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">int_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/fifa/international_results.csv&#39;</span><span class="p">)</span>
 <span class="n">int_results</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[2]:
 </pre></div>
 </div>
@@ -334,11 +324,11 @@ div.nboutput div.output_area.stderr {
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">earliest_date</span> <span class="o">=</span> <span class="s1">&#39;2010-01-01&#39;</span>
 <span class="n">int_results_after</span> <span class="o">=</span> <span class="n">int_results</span><span class="p">[(</span><span class="n">int_results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-01-01&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">int_results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;2018-06-14&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
@@ -347,11 +337,11 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">int_results_after</span><span class="o">.</span><span class="n">home_score</span> <span class="o">-</span> <span class="n">int_results_after</span><span class="o">.</span><span class="n">away_score</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">int_results_after</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;home_score&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;away_score&#39;</span><span class="p">],</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
@@ -832,22 +822,22 @@ Cannot map martinique
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># int_results_after[&#39;home_team_mapped&#39;] = int_results_after[&#39;home_team&#39;].copy().apply(map_country)</span>
 <span class="c1"># int_results_after[&#39;away_team_mapped&#39;] = int_results_after[&#39;away_team&#39;].copy().apply(map_country)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">winners</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">winner</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">int_results_after</span><span class="o">.</span><span class="n">home_win</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">winner</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -862,7 +852,7 @@ Cannot map martinique
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[7]:
 </pre></div>
 </div>
@@ -974,11 +964,11 @@ Cannot map martinique
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 
 <span></span><span class="n">int_results_after</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;home_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="n">locs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">()</span>
@@ -995,15 +985,15 @@ Cannot map martinique
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/make_train_test_datasets_7_0.png" src="_images/make_train_test_datasets_7_0.png" />
+<img alt="_images/make_train_test_datasets_6_0.png" src="_images/make_train_test_datasets_6_0.png" />
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">win_count</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Winner&#39;</span><span class="p">)[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">win_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="s1">&#39;Number of Wins&#39;</span><span class="p">]</span>
 <span class="n">win_count</span> <span class="o">=</span> <span class="n">win_count</span><span class="p">[</span><span class="n">win_count</span><span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Tie&#39;</span><span class="p">]</span>
@@ -1012,11 +1002,11 @@ Cannot map martinique
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">worldcup_teams</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Egypt&#39;</span><span class="p">,</span> <span class="s1">&#39;Russia&#39;</span><span class="p">,</span> <span class="s1">&#39;Saudi Arabia&#39;</span><span class="p">,</span> <span class="s1">&#39;Uruguay&#39;</span><span class="p">,</span> <span class="s1">&#39;Iran&#39;</span><span class="p">,</span> <span class="s1">&#39;Morocco&#39;</span><span class="p">,</span>
        <span class="s1">&#39;Portugal&#39;</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">,</span> <span class="s1">&#39;Australia&#39;</span><span class="p">,</span> <span class="s1">&#39;Denmark&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">,</span> <span class="s1">&#39;Peru&#39;</span><span class="p">,</span>
        <span class="s1">&#39;Argentina&#39;</span><span class="p">,</span> <span class="s1">&#39;Croatia&#39;</span><span class="p">,</span> <span class="s1">&#39;Iceland&#39;</span><span class="p">,</span> <span class="s1">&#39;Nigeria&#39;</span><span class="p">,</span> <span class="s1">&#39;Brazil&#39;</span><span class="p">,</span>
@@ -1029,11 +1019,11 @@ Cannot map martinique
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">games</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">team</span> <span class="ow">in</span> <span class="n">worldcup_team_win_count</span><span class="o">.</span><span class="n">Team</span><span class="p">:</span>
     <span class="n">games</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">int_results_after</span><span class="p">[</span><span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">team</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span> <span class="o">+</span>\
@@ -1066,7 +1056,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[11]:
 </pre></div>
 </div>
@@ -1318,11 +1308,11 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">worldcup_team_win_count</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="s1">&#39;Win Rate&#39;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Win Rate&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Country Win Rate in Matches From 2014 to Before 2018 World Cup&#39;</span><span class="p">,</span> <span class="p">)</span>
@@ -1336,15 +1326,15 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/make_train_test_datasets_11_0.png" src="_images/make_train_test_datasets_11_0.png" />
+<img alt="_images/make_train_test_datasets_10_0.png" src="_images/make_train_test_datasets_10_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1">#https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv</span>
 <span class="n">world_cup_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/world_cup_2018_stats.csv&quot;</span><span class="p">)</span>
 <span class="n">world_cup_results</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1352,7 +1342,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[13]:
 </pre></div>
 </div>
@@ -1525,22 +1515,22 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">world_cup_results</span><span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">world_cup_results</span><span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
 <span class="n">world_cup_results</span><span class="p">[</span><span class="s1">&#39;Opponent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">world_cup_results</span><span class="p">[</span><span class="s1">&#39;Opponent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">test</span> <span class="o">=</span> <span class="n">world_cup_results</span><span class="p">[</span><span class="n">world_cup_results</span><span class="o">.</span><span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[[</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="s1">&#39;Opponent&#39;</span><span class="p">,</span> <span class="s1">&#39;WDL&#39;</span><span class="p">]]</span>
 <span class="n">test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;WDL&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;WDL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1552,7 +1542,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[15]:
 </pre></div>
 </div>
@@ -1616,11 +1606,11 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1">#https://www.kaggle.com/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now</span>
 <span class="n">rankings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/fifa_ranking.csv&#39;</span><span class="p">)</span>
 <span class="n">rankings</span><span class="p">[</span><span class="s1">&#39;rank_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">rankings</span><span class="p">[</span><span class="s1">&#39;rank_date&#39;</span><span class="p">])</span>
@@ -1632,22 +1622,22 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">get_latest_ranking_date</span><span class="p">(</span><span class="n">match_date</span><span class="p">,</span> <span class="n">rankings_dates</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">rankings_dates</span><span class="p">[</span><span class="n">match_date</span><span class="o">.</span><span class="n">to_datetime64</span><span class="p">()</span> <span class="o">&gt;</span>  <span class="n">rankings_dates</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">rankings_dates_after</span> <span class="o">=</span> <span class="n">rankings_after</span><span class="o">.</span><span class="n">rank_date</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>\
                                         <span class="n">get_latest_ranking_date</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">rankings_dates_after</span><span class="p">])</span>
@@ -1656,17 +1646,17 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">int_results_after</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[19]:
 </pre></div>
 </div>
@@ -1784,11 +1774,11 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">rankings_after</span><span class="p">[</span><span class="s1">&#39;country_mapped&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rankings_after</span><span class="p">[</span><span class="s1">&#39;country_full&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1807,21 +1797,21 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">int_results_after</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[21]:
 </pre></div>
 </div>
-<div class="output_area highlight-none"><div class="highlight"><pre>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Index([&#39;date&#39;, &#39;home_team&#39;, &#39;away_team&#39;, &#39;home_score&#39;, &#39;away_score&#39;,
        &#39;tournament&#39;, &#39;city&#39;, &#39;country&#39;, &#39;neutral&#39;, &#39;home_win&#39;, &#39;Winner&#39;,
        &#39;latest_ranking_date&#39;],
@@ -1830,11 +1820,11 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">home_rankings_after</span> <span class="o">=</span> <span class="n">rankings_after</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">home_rankings_after</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_&#39;</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">home_rankings_after</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
 <span class="n">results_df</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_rankings_after</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">],</span>\
@@ -1848,7 +1838,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[22]:
 </pre></div>
 </div>
@@ -2021,11 +2011,11 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_rankings_after</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">],</span>\
                             <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_country_mapped&#39;</span><span class="p">,</span> <span class="s1">&#39;home_rank_date&#39;</span><span class="p">])</span>
 <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">away_rankings_after</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">,</span> <span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">],</span>\
@@ -2035,7 +2025,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[23]:
 </pre></div>
 </div>
@@ -2208,22 +2198,22 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">demographics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/country_demographics.csv&#39;</span><span class="p">)</span>
 <span class="n">demographics</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">demographics</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">home_demographics</span> <span class="o">=</span> <span class="n">demographics</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">home_demographics</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_&#39;</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">home_demographics</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
 <span class="n">results_df</span> <span class="o">=</span> <span class="n">results_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_demographics</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">],</span>
@@ -2239,21 +2229,21 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[25]:
 </pre></div>
 </div>
-<div class="output_area highlight-none"><div class="highlight"><pre>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>3628
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_demographics</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">],</span> <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_name&#39;</span><span class="p">])</span>
 <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">away_demographics</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">],</span> <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_name&#39;</span><span class="p">])</span>
 <span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -2261,7 +2251,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[26]:
 </pre></div>
 </div>
@@ -2434,21 +2424,21 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">results_df</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[27]:
 </pre></div>
 </div>
-<div class="output_area highlight-none"><div class="highlight"><pre>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Index([&#39;date&#39;, &#39;home_team&#39;, &#39;away_team&#39;, &#39;home_score&#39;, &#39;away_score&#39;,
        &#39;tournament&#39;, &#39;city&#39;, &#39;country&#39;, &#39;neutral&#39;, &#39;home_win&#39;, &#39;Winner&#39;,
        &#39;latest_ranking_date&#39;, &#39;home_rank&#39;, &#39;home_country_full&#39;,
@@ -2472,11 +2462,11 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;home_rank&#39;</span><span class="p">,</span> <span class="s1">&#39;away_rank&#39;</span><span class="p">,</span>\
             <span class="s1">&#39;home_cur_year_avg_weighted&#39;</span><span class="p">,</span> <span class="s1">&#39;home_total_points&#39;</span><span class="p">,</span><span class="s1">&#39;away_cur_year_avg_weighted&#39;</span><span class="p">,</span>
             <span class="s1">&#39;away_total_points&#39;</span><span class="p">,</span> <span class="s1">&#39;home_last_year_avg&#39;</span><span class="p">,</span> <span class="s1">&#39;away_last_year_avg&#39;</span><span class="p">,</span> <span class="s1">&#39;home_two_year_ago_avg&#39;</span><span class="p">,</span>
@@ -2489,11 +2479,11 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 
 <span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">objs</span><span class="o">=</span><span class="p">[</span><span class="n">final_results_df</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">final_test_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
@@ -2518,17 +2508,17 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[30]:
 </pre></div>
 </div>
@@ -2670,30 +2660,30 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [31]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">train_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/train.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">test_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/test.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span>
 </pre></div>
-</div>
 </div>
 </div>
 
 
           </div>
+          
       </div>
       <div class="clearer"></div>
     </div>
@@ -2701,8 +2691,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/make_train_test_datasets.ipynb.txt"

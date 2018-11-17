@@ -1,13 +1,6 @@
 {
  "cells": [
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "# Scrape World Cup Squads"
-   ]
-  },
-  {
    "cell_type": "code",
    "execution_count": 14,
    "metadata": {
@@ -72,9 +65,7 @@
   {
    "cell_type": "code",
    "execution_count": 16,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "years = [2010, 2014, 2018]\n",

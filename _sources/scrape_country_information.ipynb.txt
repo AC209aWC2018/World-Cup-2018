@@ -1,18 +1,9 @@
 {
  "cells": [
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "# Scrape Country Information"
-   ]
-  },
-  {
    "cell_type": "code",
    "execution_count": 1,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "from bs4 import BeautifulSoup\n",
@@ -118,9 +109,7 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "metadata": {
-    "collapsed": true
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "temps = scrape_temp()"
