@@ -1,0 +1,1326 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Explore &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Cleaning" href="clean_european_league.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Explore">
+<h1>Explore<a class="headerlink" href="#Explore" title="Permalink to this headline">¶</a></h1>
+<p>We will now explore the European matches dataset we had cleaned.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [55]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/european_matches.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[56]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_win</th>
+      <th>home_player_1_overall_rating</th>
+      <th>home_player_1_potential</th>
+      <th>home_player_1_preferred_foot</th>
+      <th>home_player_1_attacking_work_rate</th>
+      <th>home_player_1_defensive_work_rate</th>
+      <th>home_player_1_crossing</th>
+      <th>home_player_1_finishing</th>
+      <th>home_player_1_heading_accuracy</th>
+      <th>...</th>
+      <th>wins_past_1_games</th>
+      <th>not_enough_past_games_1</th>
+      <th>wins_past_2_games</th>
+      <th>not_enough_past_games_2</th>
+      <th>wins_past_3_games</th>
+      <th>not_enough_past_games_3</th>
+      <th>wins_past_4_games</th>
+      <th>not_enough_past_games_4</th>
+      <th>wins_past_5_games</th>
+      <th>not_enough_past_games_5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-08-17 00:00:00</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-08-16 00:00:00</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-08-16 00:00:00</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-08-17 00:00:00</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-08-16 00:00:00</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 868 columns</p>
+</div></div>
+</div>
+<p>We see that there is a lot of matches where we do not have much
+information about the players. We do not want the rows with too many
+missing values. We drop the rows that have fewer than 11 non-NA values.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#See what columns do we have for players.</span>
+<span class="n">player_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">column</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">european_matches</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;home_player_11&quot;</span> <span class="ow">in</span> <span class="n">column</span><span class="p">]</span>
+<span class="n">player_columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[57]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[&#39;_overall_rating&#39;,
+ &#39;_potential&#39;,
+ &#39;_preferred_foot&#39;,
+ &#39;_attacking_work_rate&#39;,
+ &#39;_defensive_work_rate&#39;,
+ &#39;_crossing&#39;,
+ &#39;_finishing&#39;,
+ &#39;_heading_accuracy&#39;,
+ &#39;_short_passing&#39;,
+ &#39;_volleys&#39;,
+ &#39;_dribbling&#39;,
+ &#39;_curve&#39;,
+ &#39;_free_kick_accuracy&#39;,
+ &#39;_long_passing&#39;,
+ &#39;_ball_control&#39;,
+ &#39;_acceleration&#39;,
+ &#39;_sprint_speed&#39;,
+ &#39;_agility&#39;,
+ &#39;_reactions&#39;,
+ &#39;_balance&#39;,
+ &#39;_shot_power&#39;,
+ &#39;_jumping&#39;,
+ &#39;_stamina&#39;,
+ &#39;_strength&#39;,
+ &#39;_long_shots&#39;,
+ &#39;_aggression&#39;,
+ &#39;_interceptions&#39;,
+ &#39;_positioning&#39;,
+ &#39;_vision&#39;,
+ &#39;_penalties&#39;,
+ &#39;_marking&#39;,
+ &#39;_standing_tackle&#39;,
+ &#39;_sliding_tackle&#39;,
+ &#39;_gk_diving&#39;,
+ &#39;_gk_handling&#39;,
+ &#39;_gk_kicking&#39;,
+ &#39;_gk_positioning&#39;,
+ &#39;_gk_reflexes&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [58]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">drop_columns_below_threshold</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">na_columns</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Drop rows with too many NAs in specified columns. threshold is min number of columns we want to have non-NA values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1">#Keep rows with number of non-NA values above threshold in specified columns</span>
+    <span class="n">keep_indices</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">na_columns</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span> <span class="o">=</span> <span class="n">threshold</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">keep_indices</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [59]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">home_rating_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">_overall_rating&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+<span class="n">away_rating_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">_overall_rating&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+
+
+<span class="n">european_matches</span> <span class="o">=</span> <span class="n">drop_columns_below_threshold</span><span class="p">(</span><span class="n">european_matches</span><span class="p">,</span> <span class="n">home_rating_columns</span> <span class="o">+</span> <span class="n">away_rating_columns</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[60]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_win</th>
+      <th>home_player_1_overall_rating</th>
+      <th>home_player_1_potential</th>
+      <th>home_player_1_preferred_foot</th>
+      <th>home_player_1_attacking_work_rate</th>
+      <th>home_player_1_defensive_work_rate</th>
+      <th>home_player_1_crossing</th>
+      <th>home_player_1_finishing</th>
+      <th>home_player_1_heading_accuracy</th>
+      <th>...</th>
+      <th>wins_past_1_games</th>
+      <th>not_enough_past_games_1</th>
+      <th>wins_past_2_games</th>
+      <th>not_enough_past_games_2</th>
+      <th>wins_past_3_games</th>
+      <th>not_enough_past_games_3</th>
+      <th>wins_past_4_games</th>
+      <th>not_enough_past_games_4</th>
+      <th>wins_past_5_games</th>
+      <th>not_enough_past_games_5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>144</th>
+      <td>2009-02-28 00:00:00</td>
+      <td>2</td>
+      <td>66.0</td>
+      <td>68.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>34.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>2009-02-27 00:00:00</td>
+      <td>1</td>
+      <td>58.0</td>
+      <td>67.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>25.0</td>
+      <td>25.0</td>
+      <td>25.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>2009-02-28 00:00:00</td>
+      <td>1</td>
+      <td>70.0</td>
+      <td>74.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>11.0</td>
+      <td>11.0</td>
+      <td>12.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>2009-03-01 00:00:00</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>2009-03-01 00:00:00</td>
+      <td>0</td>
+      <td>68.0</td>
+      <td>69.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>24.0</td>
+      <td>31.0</td>
+      <td>32.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 868 columns</p>
+</div></div>
+</div>
+<p>For each match, we compute the average statistics for the different
+ratings for each team and difference them. Just getting the total value
+would not unfortunately work due to some rows potentially having uneven
+number of values missing. We then take the difference in the statistic
+for the home team and away team. For goal keeping ratings, we will only
+look at the max of each team since in theory the goal keepers in a match
+should have the best goal keeper statistics.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [61]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">diff_cols</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">player_column</span> <span class="ow">in</span> <span class="n">player_columns</span><span class="p">:</span>
+    <span class="n">home_cols</span> <span class="o">=</span> <span class="n">european_matches</span><span class="p">[[</span><span class="s1">&#39;home_player_</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">player_column</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">away_cols</span> <span class="o">=</span> <span class="n">european_matches</span><span class="p">[[</span><span class="s1">&#39;away_player_</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">player_column</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1">#numeric column</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home_player_11</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">):</span>
+        <span class="c1">#since only one goal keeper, we just get max stat</span>
+        <span class="k">if</span> <span class="s1">&#39;gk&#39;</span> <span class="ow">in</span> <span class="n">player_column</span><span class="p">:</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span> <span class="n">home_cols</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span> <span class="n">away_cols</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;diff</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span>  <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">-</span> \
+                                                                <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span> <span class="n">home_cols</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span> <span class="n">away_cols</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;diff</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span>  <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">-</span> \
+                                                                <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span>
+        <span class="n">diff_cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;diff</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">))</span>
+    <span class="c1">#non-numeric column</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">continue</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [62]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="p">[</span><span class="n">diff_cols</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[62]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>diff_overall_rating</th>
+      <th>diff_potential</th>
+      <th>diff_crossing</th>
+      <th>diff_finishing</th>
+      <th>diff_heading_accuracy</th>
+      <th>diff_short_passing</th>
+      <th>diff_volleys</th>
+      <th>diff_dribbling</th>
+      <th>diff_curve</th>
+      <th>diff_free_kick_accuracy</th>
+      <th>...</th>
+      <th>diff_vision</th>
+      <th>diff_penalties</th>
+      <th>diff_marking</th>
+      <th>diff_standing_tackle</th>
+      <th>diff_sliding_tackle</th>
+      <th>diff_gk_diving</th>
+      <th>diff_gk_handling</th>
+      <th>diff_gk_kicking</th>
+      <th>diff_gk_positioning</th>
+      <th>diff_gk_reflexes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>144</th>
+      <td>-7.300000</td>
+      <td>-8.500000</td>
+      <td>-8.900000</td>
+      <td>1.000000</td>
+      <td>-2.600000</td>
+      <td>-10.300000</td>
+      <td>0.300000</td>
+      <td>-3.300000</td>
+      <td>-0.800000</td>
+      <td>-6.200000</td>
+      <td>...</td>
+      <td>-8.700000</td>
+      <td>-7.900000</td>
+      <td>-5.400000</td>
+      <td>-11.300000</td>
+      <td>-6.200000</td>
+      <td>0.0</td>
+      <td>-2.0</td>
+      <td>-21.0</td>
+      <td>-2.0</td>
+      <td>-2.0</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>-4.400000</td>
+      <td>-6.100000</td>
+      <td>-7.500000</td>
+      <td>-3.000000</td>
+      <td>1.800000</td>
+      <td>-1.200000</td>
+      <td>-8.711111</td>
+      <td>-4.300000</td>
+      <td>-7.222222</td>
+      <td>-3.700000</td>
+      <td>...</td>
+      <td>-1.955556</td>
+      <td>-6.900000</td>
+      <td>0.600000</td>
+      <td>-0.300000</td>
+      <td>3.411111</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>-1.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>1.571429</td>
+      <td>3.371429</td>
+      <td>6.000000</td>
+      <td>10.557143</td>
+      <td>7.042857</td>
+      <td>-2.271429</td>
+      <td>5.057143</td>
+      <td>12.528571</td>
+      <td>5.000000</td>
+      <td>2.814286</td>
+      <td>...</td>
+      <td>3.057143</td>
+      <td>-3.342857</td>
+      <td>-1.485714</td>
+      <td>-1.385714</td>
+      <td>-8.028571</td>
+      <td>-4.0</td>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>5.600000</td>
+      <td>6.400000</td>
+      <td>6.800000</td>
+      <td>5.400000</td>
+      <td>4.700000</td>
+      <td>2.800000</td>
+      <td>8.300000</td>
+      <td>12.500000</td>
+      <td>4.600000</td>
+      <td>2.300000</td>
+      <td>...</td>
+      <td>2.200000</td>
+      <td>7.700000</td>
+      <td>1.400000</td>
+      <td>4.900000</td>
+      <td>2.300000</td>
+      <td>-2.0</td>
+      <td>-2.0</td>
+      <td>12.0</td>
+      <td>-2.0</td>
+      <td>-2.0</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>-4.111111</td>
+      <td>-4.555556</td>
+      <td>-5.888889</td>
+      <td>-5.333333</td>
+      <td>-1.222222</td>
+      <td>-6.000000</td>
+      <td>-8.166667</td>
+      <td>-8.111111</td>
+      <td>-10.888889</td>
+      <td>-2.555556</td>
+      <td>...</td>
+      <td>-7.444444</td>
+      <td>-5.222222</td>
+      <td>0.333333</td>
+      <td>0.222222</td>
+      <td>-4.833333</td>
+      <td>3.0</td>
+      <td>-1.0</td>
+      <td>5.0</td>
+      <td>-1.0</td>
+      <td>-1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 35 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">len</span><span class="p">(</span><span class="n">diff_cols</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[63]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>35
+</pre></div>
+</div>
+</div>
+<p>Now let’s see if there are any differences in the distributions of the
+differences depending on whether the home team lost, won, or tied.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [64]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">)[</span><span class="n">diff_cols</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[64]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>diff_overall_rating</th>
+      <th>diff_potential</th>
+      <th>diff_crossing</th>
+      <th>diff_finishing</th>
+      <th>diff_heading_accuracy</th>
+      <th>diff_short_passing</th>
+      <th>diff_volleys</th>
+      <th>diff_dribbling</th>
+      <th>diff_curve</th>
+      <th>diff_free_kick_accuracy</th>
+      <th>...</th>
+      <th>diff_vision</th>
+      <th>diff_penalties</th>
+      <th>diff_marking</th>
+      <th>diff_standing_tackle</th>
+      <th>diff_sliding_tackle</th>
+      <th>diff_gk_diving</th>
+      <th>diff_gk_handling</th>
+      <th>diff_gk_kicking</th>
+      <th>diff_gk_positioning</th>
+      <th>diff_gk_reflexes</th>
+    </tr>
+    <tr>
+      <th>home_win</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.419516</td>
+      <td>-0.407976</td>
+      <td>-0.439642</td>
+      <td>-0.170056</td>
+      <td>-0.398941</td>
+      <td>-0.514052</td>
+      <td>-0.364226</td>
+      <td>-0.419433</td>
+      <td>-0.335357</td>
+      <td>-0.159442</td>
+      <td>...</td>
+      <td>-0.473570</td>
+      <td>-0.336995</td>
+      <td>-0.531586</td>
+      <td>-0.604938</td>
+      <td>-0.692773</td>
+      <td>0.007508</td>
+      <td>0.005423</td>
+      <td>-0.252225</td>
+      <td>0.008899</td>
+      <td>-0.017380</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.453436</td>
+      <td>0.400829</td>
+      <td>0.526705</td>
+      <td>0.653365</td>
+      <td>0.290365</td>
+      <td>0.493775</td>
+      <td>0.736320</td>
+      <td>0.613548</td>
+      <td>0.636275</td>
+      <td>0.551740</td>
+      <td>...</td>
+      <td>0.581423</td>
+      <td>0.589846</td>
+      <td>-0.169447</td>
+      <td>-0.104668</td>
+      <td>-0.089279</td>
+      <td>0.029288</td>
+      <td>0.028414</td>
+      <td>0.331264</td>
+      <td>0.028939</td>
+      <td>0.056916</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.036114</td>
+      <td>-0.045361</td>
+      <td>-0.039283</td>
+      <td>0.192313</td>
+      <td>-0.063800</td>
+      <td>-0.059223</td>
+      <td>0.047172</td>
+      <td>0.088586</td>
+      <td>0.062112</td>
+      <td>-0.012367</td>
+      <td>...</td>
+      <td>-0.001863</td>
+      <td>0.023110</td>
+      <td>-0.401185</td>
+      <td>-0.409736</td>
+      <td>-0.437567</td>
+      <td>-0.096896</td>
+      <td>-0.076729</td>
+      <td>-0.118481</td>
+      <td>-0.106507</td>
+      <td>-0.087600</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 35 columns</p>
+</div></div>
+</div>
+<p>From looking at the mean, it seems in general the mean value for a
+difference in rating when the home team wins is the greatest out of the
+three outcomes while the mean value for the difference in rating when
+the home team loses is the lowest ouf the three outcomes. This seems
+consistent with what we believe. However, the mean differences seem a
+little low for any of these cases, especially since the rating ranges
+from 0 to 100, so mean differences of such small magnitudes might not be
+significant. Let’s plot the distributions themselves.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [65]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">european_matches</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">diff_cols</span><span class="p">):</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/european_league_explore_european_league_17_0.png" src="../_images/european_league_explore_european_league_17_0.png" />
+</div>
+</div>
+<p>Wow! From looking at the plots the distributions of a difference in
+rating among the three outcome do not really seem that different.</p>
+<p>This might be an indication that using individual ratings and
+aggregating them might not be the way to go. Also, so far efforts to get
+the individual ratings for the actual World Cup data have been
+unsuccessful, so this may be a sign to find other set of features to
+predict the world cup. (Later we will see an attempt of using team
+statistics)</p>
+<p>Let us also look at whether previous match results will be good
+predictors.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [66]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">past_wins_columns</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;diff_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">-</span>\
+                                                             <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
+    <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;diff_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="c1">#games against each other</span>
+    <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">past_wins_columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[66]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>10
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [67]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">)[</span><span class="n">past_wins_columns</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[67]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>diff_wins_past_1_games</th>
+      <th>wins_past_1_games</th>
+      <th>diff_wins_past_2_games</th>
+      <th>wins_past_2_games</th>
+      <th>diff_wins_past_3_games</th>
+      <th>wins_past_3_games</th>
+      <th>diff_wins_past_4_games</th>
+      <th>wins_past_4_games</th>
+      <th>diff_wins_past_5_games</th>
+      <th>wins_past_5_games</th>
+    </tr>
+    <tr>
+      <th>home_win</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.231090</td>
+      <td>0.212736</td>
+      <td>-0.253754</td>
+      <td>0.429783</td>
+      <td>-0.410039</td>
+      <td>0.617353</td>
+      <td>-0.486096</td>
+      <td>0.788793</td>
+      <td>-0.615406</td>
+      <td>0.93743</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.048697</td>
+      <td>0.335198</td>
+      <td>0.101154</td>
+      <td>0.654835</td>
+      <td>0.134901</td>
+      <td>0.944571</td>
+      <td>0.239902</td>
+      <td>1.190505</td>
+      <td>0.293058</td>
+      <td>1.40278</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.133449</td>
+      <td>0.282023</td>
+      <td>-0.072160</td>
+      <td>0.546085</td>
+      <td>-0.161336</td>
+      <td>0.781629</td>
+      <td>-0.142429</td>
+      <td>0.978573</td>
+      <td>-0.180873</td>
+      <td>1.14369</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>We see a similar pattern as before, where home team winning has the
+highest mean valuesa and away team winning has the lowest mean values.
+This time the small magnitudes make sense however since we are only
+looking up to 5 games back. Let us also plot the distributions.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [81]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">european_matches</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">past_wins_columns</span><span class="p">):</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="c1">#odd plots are the plots of the teams against each other</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span> <span class="o">+</span> <span class="s2">&quot; (Past games of the home team against the away team)&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/european_league_explore_european_league_22_0.png" src="../_images/european_league_explore_european_league_22_0.png" />
+</div>
+</div>
+<p>This time it is a bit more obvious that home team winning tends to have
+higher values. It seems like we can probably calculate some kind of
+momentum and utilize it as a predictor. We will explore more of this
+concept later on.</p>
+<div class="section" id="Conclusion">
+<h2>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this headline">¶</a></h2>
+<p>From exploration of the European dataset, we saw that aggregating
+individual player ratings does not seem to help that much while previous
+matches seem to help. We will keep these discoveries in mind as well
+move on to the SOFIFA datasets.</p>
+</div>
+</div>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/european_league/explore_european_league.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

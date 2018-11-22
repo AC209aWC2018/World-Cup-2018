@@ -1,0 +1,1201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cleaning &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Explore" href="explore_european_league.html" />
+    <link rel="prev" title="Milestone 3" href="../doc/milestone3.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Cleaning">
+<h1>Cleaning<a class="headerlink" href="#Cleaning" title="Permalink to this headline">¶</a></h1>
+<p>Since the European datasets are stored in a SQLITE database, we would
+have to utilize to the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> package to access the data. Luckily,
+the datasets are still small enough such that we can load them into
+Python, so we would just need to perform very simple queries to extract
+the datasets of interest. In particular, we are interested in the Match
+dataset, the Player dataset, and Player Attributes dataset.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#Credit to David Sondak&#39;s Fall 2018 CS207 Class for the code.</span>
+<span class="k">def</span> <span class="nf">viz_tables</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">framelist</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+        <span class="n">framelist</span><span class="p">[</span><span class="n">col_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">q</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">framelist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;../data/database.sqlite&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;PRAGMA table_info(Match)&quot;</span><span class="p">)]</span>
+<span class="n">player_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;PRAGMA table_info(Player)&quot;</span><span class="p">)]</span>
+<span class="n">player_attr_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;PRAGMA table_info(Player_Attributes)&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;SELECT * FROM Match&#39;&#39;&#39;</span>
+<span class="n">match_df</span> <span class="o">=</span> <span class="n">viz_tables</span><span class="p">(</span><span class="n">match_cols</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>country_id</th>
+      <th>league_id</th>
+      <th>season</th>
+      <th>stage</th>
+      <th>date</th>
+      <th>match_api_id</th>
+      <th>home_team_api_id</th>
+      <th>away_team_api_id</th>
+      <th>home_team_goal</th>
+      <th>...</th>
+      <th>SJA</th>
+      <th>VCH</th>
+      <th>VCD</th>
+      <th>VCA</th>
+      <th>GBH</th>
+      <th>GBD</th>
+      <th>GBA</th>
+      <th>BSH</th>
+      <th>BSD</th>
+      <th>BSA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2008/2009</td>
+      <td>1</td>
+      <td>2008-08-17 00:00:00</td>
+      <td>492473</td>
+      <td>9987</td>
+      <td>9993</td>
+      <td>1</td>
+      <td>...</td>
+      <td>4.00</td>
+      <td>1.65</td>
+      <td>3.40</td>
+      <td>4.50</td>
+      <td>1.78</td>
+      <td>3.25</td>
+      <td>4.00</td>
+      <td>1.73</td>
+      <td>3.40</td>
+      <td>4.20</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2008/2009</td>
+      <td>1</td>
+      <td>2008-08-16 00:00:00</td>
+      <td>492474</td>
+      <td>10000</td>
+      <td>9994</td>
+      <td>0</td>
+      <td>...</td>
+      <td>3.80</td>
+      <td>2.00</td>
+      <td>3.25</td>
+      <td>3.25</td>
+      <td>1.85</td>
+      <td>3.25</td>
+      <td>3.75</td>
+      <td>1.91</td>
+      <td>3.25</td>
+      <td>3.60</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2008/2009</td>
+      <td>1</td>
+      <td>2008-08-16 00:00:00</td>
+      <td>492475</td>
+      <td>9984</td>
+      <td>8635</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2.50</td>
+      <td>2.35</td>
+      <td>3.25</td>
+      <td>2.65</td>
+      <td>2.50</td>
+      <td>3.20</td>
+      <td>2.50</td>
+      <td>2.30</td>
+      <td>3.20</td>
+      <td>2.75</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2008/2009</td>
+      <td>1</td>
+      <td>2008-08-17 00:00:00</td>
+      <td>492476</td>
+      <td>9991</td>
+      <td>9998</td>
+      <td>5</td>
+      <td>...</td>
+      <td>7.50</td>
+      <td>1.45</td>
+      <td>3.75</td>
+      <td>6.50</td>
+      <td>1.50</td>
+      <td>3.75</td>
+      <td>5.50</td>
+      <td>1.44</td>
+      <td>3.75</td>
+      <td>6.50</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2008/2009</td>
+      <td>1</td>
+      <td>2008-08-16 00:00:00</td>
+      <td>492477</td>
+      <td>7947</td>
+      <td>9985</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1.73</td>
+      <td>4.50</td>
+      <td>3.40</td>
+      <td>1.65</td>
+      <td>4.50</td>
+      <td>3.50</td>
+      <td>1.65</td>
+      <td>4.75</td>
+      <td>3.30</td>
+      <td>1.67</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 115 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;SELECT * FROM Player&#39;&#39;&#39;</span>
+<span class="n">player</span> <span class="o">=</span> <span class="n">viz_tables</span><span class="p">(</span><span class="n">player_cols</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">player</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>player_api_id</th>
+      <th>player_name</th>
+      <th>player_fifa_api_id</th>
+      <th>birthday</th>
+      <th>height</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>505942</td>
+      <td>Aaron Appindangoye</td>
+      <td>218353</td>
+      <td>1992-02-29 00:00:00</td>
+      <td>182.88</td>
+      <td>187</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>155782</td>
+      <td>Aaron Cresswell</td>
+      <td>189615</td>
+      <td>1989-12-15 00:00:00</td>
+      <td>170.18</td>
+      <td>146</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>162549</td>
+      <td>Aaron Doran</td>
+      <td>186170</td>
+      <td>1991-05-13 00:00:00</td>
+      <td>170.18</td>
+      <td>163</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>30572</td>
+      <td>Aaron Galindo</td>
+      <td>140161</td>
+      <td>1982-05-08 00:00:00</td>
+      <td>182.88</td>
+      <td>198</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>23780</td>
+      <td>Aaron Hughes</td>
+      <td>17725</td>
+      <td>1979-11-08 00:00:00</td>
+      <td>182.88</td>
+      <td>154</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;SELECT * FROM Player_Attributes&#39;&#39;&#39;</span>
+<span class="n">player_attr</span> <span class="o">=</span> <span class="n">viz_tables</span><span class="p">(</span><span class="n">player_attr_cols</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">player_attr</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>player_fifa_api_id</th>
+      <th>player_api_id</th>
+      <th>date</th>
+      <th>overall_rating</th>
+      <th>potential</th>
+      <th>preferred_foot</th>
+      <th>attacking_work_rate</th>
+      <th>defensive_work_rate</th>
+      <th>crossing</th>
+      <th>...</th>
+      <th>vision</th>
+      <th>penalties</th>
+      <th>marking</th>
+      <th>standing_tackle</th>
+      <th>sliding_tackle</th>
+      <th>gk_diving</th>
+      <th>gk_handling</th>
+      <th>gk_kicking</th>
+      <th>gk_positioning</th>
+      <th>gk_reflexes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2016-02-18 00:00:00</td>
+      <td>67.0</td>
+      <td>71.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>49.0</td>
+      <td>...</td>
+      <td>54.0</td>
+      <td>48.0</td>
+      <td>65.0</td>
+      <td>69.0</td>
+      <td>69.0</td>
+      <td>6.0</td>
+      <td>11.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2015-11-19 00:00:00</td>
+      <td>67.0</td>
+      <td>71.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>49.0</td>
+      <td>...</td>
+      <td>54.0</td>
+      <td>48.0</td>
+      <td>65.0</td>
+      <td>69.0</td>
+      <td>69.0</td>
+      <td>6.0</td>
+      <td>11.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2015-09-21 00:00:00</td>
+      <td>62.0</td>
+      <td>66.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>49.0</td>
+      <td>...</td>
+      <td>54.0</td>
+      <td>48.0</td>
+      <td>65.0</td>
+      <td>66.0</td>
+      <td>69.0</td>
+      <td>6.0</td>
+      <td>11.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2015-03-20 00:00:00</td>
+      <td>61.0</td>
+      <td>65.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>53.0</td>
+      <td>47.0</td>
+      <td>62.0</td>
+      <td>63.0</td>
+      <td>66.0</td>
+      <td>5.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>218353</td>
+      <td>505942</td>
+      <td>2007-02-22 00:00:00</td>
+      <td>61.0</td>
+      <td>65.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>48.0</td>
+      <td>...</td>
+      <td>53.0</td>
+      <td>47.0</td>
+      <td>62.0</td>
+      <td>63.0</td>
+      <td>66.0</td>
+      <td>5.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 42 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>We will make a column that indicates whether the home team of each match
+lost the game (0), won the game (1), or tied the game (2).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">match_df</span><span class="o">.</span><span class="n">home_team_goal</span> <span class="o">-</span> <span class="n">match_df</span><span class="o">.</span><span class="n">away_team_goal</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">match_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;home_team_goal&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;away_team_goal&#39;</span><span class="p">],</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[19]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>1    11917
+0     7466
+2     6596
+Name: home_win, dtype: int64
+</pre></div>
+</div>
+</div>
+<p>We are mostly interested in comparing the players in each match. While
+the Match dataset also contains columns about the betting odds of each
+match from different websites, we will not utilize this information. We
+at first thought we would because we initially believed that the betting
+odds came from the “wisdom of the crowd”, where the odds fluctuate
+depending on how many individuals bet on each team. However, upon
+further inspection of some of the betting websites, we realized that
+most of these sites have bookmakers determining the odds based on their
+own data. We do not want to develop a model that relies on basically
+other model predictions to make a prediction. Thus, we abstained from
+using betting odds.</p>
+<p>The columns <code class="docutils literal notranslate"><span class="pre">home_player_x</span></code> and <code class="docutils literal notranslate"><span class="pre">away_player_x</span></code> for x in [1, 11] are
+linked to <code class="docutils literal notranslate"><span class="pre">player_api_id</span></code> in the Player and Player Attribute datasets.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">home_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+<span class="n">away_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">match_df</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">home_columns</span> <span class="o">+</span> <span class="n">away_columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#player_fifa_api_id refers to sofifa id. player_api_id is used as the columns in the match dataset.</span>
+<span class="n">player_attr</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[23]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Index([&#39;id&#39;, &#39;player_fifa_api_id&#39;, &#39;player_api_id&#39;, &#39;date&#39;, &#39;overall_rating&#39;,
+       &#39;potential&#39;, &#39;preferred_foot&#39;, &#39;attacking_work_rate&#39;,
+       &#39;defensive_work_rate&#39;, &#39;crossing&#39;, &#39;finishing&#39;, &#39;heading_accuracy&#39;,
+       &#39;short_passing&#39;, &#39;volleys&#39;, &#39;dribbling&#39;, &#39;curve&#39;, &#39;free_kick_accuracy&#39;,
+       &#39;long_passing&#39;, &#39;ball_control&#39;, &#39;acceleration&#39;, &#39;sprint_speed&#39;,
+       &#39;agility&#39;, &#39;reactions&#39;, &#39;balance&#39;, &#39;shot_power&#39;, &#39;jumping&#39;, &#39;stamina&#39;,
+       &#39;strength&#39;, &#39;long_shots&#39;, &#39;aggression&#39;, &#39;interceptions&#39;, &#39;positioning&#39;,
+       &#39;vision&#39;, &#39;penalties&#39;, &#39;marking&#39;, &#39;standing_tackle&#39;, &#39;sliding_tackle&#39;,
+       &#39;gk_diving&#39;, &#39;gk_handling&#39;, &#39;gk_kicking&#39;, &#39;gk_positioning&#39;,
+       &#39;gk_reflexes&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">player_attr</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;player_fifa_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;player_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<p>We need to get the latest rating of each player.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [174]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_latest_rating</span><span class="p">(</span><span class="n">player_match</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span><span class="p">):</span>
+    <span class="c1">#Get row of latest rating</span>
+    <span class="c1">#player_match is a row in match with first column being player id and second column being the date of the match.</span>
+    <span class="c1">#Could have also just found latest date and merge based on (date, player_api_id)</span>
+    <span class="n">player_api_id</span> <span class="o">=</span> <span class="n">player_match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">match_date</span> <span class="o">=</span> <span class="n">player_match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">player_api_id</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">df</span>
+    <span class="n">player</span> <span class="o">=</span> <span class="n">player_attr</span><span class="p">[(</span><span class="n">player_attr</span><span class="p">[</span><span class="s1">&#39;player_api_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">player_api_id</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">player_attr</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">match_date</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">player</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">player</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>We will now get the ratings for all the players in each match.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">match_final_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">home_column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">_&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">]</span>
+    <span class="n">away_column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">_&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">]</span>
+    <span class="n">home_player_columns</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">away_player_columns</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">match</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+        <span class="n">home_player_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_latest_rating</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">][[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;date&#39;</span><span class="p">]]))</span>
+        <span class="n">away_player_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_latest_rating</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">][[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;date&#39;</span><span class="p">]]))</span>
+    <span class="c1">#https://stackoverflow.com/questions/30471101/pandas-convert-series-of-dataframes-to-single-dataframe</span>
+    <span class="n">home_player_columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">home_player_columns</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">home_player_columns</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">home_column_names</span>
+    <span class="n">away_player_columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">away_player_columns</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">away_player_columns</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">away_column_names</span>
+    <span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match_final_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_player_columns</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match_final_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">away_player_columns</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We are also interested in momentum. As such, we sort the Match by date
+and calculate for each match for each team the number of wins in their
+previous games.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [216]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_sorted_date</span> <span class="o">=</span> <span class="n">match_df</span><span class="p">[[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;home_team_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">match_sorted_date</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[216]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_team_api_id</th>
+      <th>away_team_api_id</th>
+      <th>home_win</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>24558</th>
+      <td>2008-07-18 00:00:00</td>
+      <td>10192</td>
+      <td>9931</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24559</th>
+      <td>2008-07-19 00:00:00</td>
+      <td>9930</td>
+      <td>10179</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>24560</th>
+      <td>2008-07-20 00:00:00</td>
+      <td>10199</td>
+      <td>9824</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24561</th>
+      <td>2008-07-20 00:00:00</td>
+      <td>7955</td>
+      <td>10243</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24613</th>
+      <td>2008-07-23 00:00:00</td>
+      <td>6493</td>
+      <td>7955</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [299]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_wins_in_last_matches</span><span class="p">(</span><span class="n">df_row</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">num_games</span><span class="p">,</span> <span class="n">team_id_col</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team_api_id&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team_api_id&#39;</span><span class="p">],</span>
+                            <span class="n">against_each_other</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get number of wins for home team and away team for num_games before current game. Also includes</span>
+<span class="sd">    indicators of whether the team has played enough games (for the matches in the beginning). If against_each_other</span>
+<span class="sd">    is True, get number of wins home team has against away team had in past num_games.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">home_team_id_colname</span> <span class="o">=</span> <span class="n">team_id_col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">away_team_id_colname</span> <span class="o">=</span> <span class="n">team_id_col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">against_each_other</span><span class="p">:</span>
+
+        <span class="c1">#Get past games for both home and away teams.</span>
+        <span class="n">home_past_games</span> <span class="o">=</span> <span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">])</span>\
+                            <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]))</span>\
+                             <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">df_row</span><span class="o">.</span><span class="n">date</span><span class="p">)][</span><span class="o">-</span><span class="n">num_games</span><span class="p">:]</span>
+        <span class="n">away_past_games</span> <span class="o">=</span> <span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span><span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">])</span>\
+                            <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]))</span>\
+                             <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">df_row</span><span class="o">.</span><span class="n">date</span><span class="p">)][</span><span class="o">-</span><span class="n">num_games</span><span class="p">:]</span>
+        <span class="c1">#if not enough games played, give indicator</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">home_past_games</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num_games</span><span class="p">:</span>
+            <span class="n">home_not_enough</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">home_not_enough</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">away_past_games</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num_games</span><span class="p">:</span>
+            <span class="n">away_not_enough</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">away_not_enough</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1">#get number of wins for home team</span>
+        <span class="n">home_wins</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">game</span> <span class="ow">in</span> <span class="n">home_past_games</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">home_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">home_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1">#get number of wins for away team</span>
+        <span class="n">away_wins</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">game</span> <span class="ow">in</span> <span class="n">away_past_games</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">away_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">away_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">home_wins</span><span class="p">,</span> <span class="n">away_wins</span><span class="p">,</span> <span class="n">home_not_enough</span><span class="p">,</span> <span class="n">away_not_enough</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1">#get past games where the two teams played against each other</span>
+        <span class="n">past_games</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(((</span><span class="n">df</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">])</span>\
+                            <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]))</span>\
+                        <span class="o">|</span> <span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">])</span>
+                        <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">])))</span>
+                        <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;</span> <span class="n">df_row</span><span class="o">.</span><span class="n">date</span><span class="p">)][</span><span class="o">-</span><span class="n">num_games</span><span class="p">:]</span>
+        <span class="c1">#if not enough games played, give indicator</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">past_games</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num_games</span><span class="p">:</span>
+            <span class="n">not_enough</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">not_enough</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">wins</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">game</span> <span class="ow">in</span> <span class="n">past_games</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="c1">#home team wins in past game against away team as home team</span>
+            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">wins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c1">#home team wins in past game against away team as away team</span>
+            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">wins</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">wins</span><span class="p">,</span> <span class="n">not_enough</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [253]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wins_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wins_past_x_games</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_wins_in_last_matches</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">match_sorted_date</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [271]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">win_past_x_games_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">win_past_x_games_df</span> <span class="o">=</span> <span class="n">win_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
+             <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> \
+                        <span class="s1">&#39;home_not_enough_past_games_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_not_enough_past_games_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]),</span>\
+                        <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [294]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#merge</span>
+<span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match_final_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">win_past_x_games_df</span><span class="p">,</span> <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We also think that some teams just do better against certain other
+teams. We will also calculate the number of wins the home team has
+against the away team for a match in the previous times they played.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [300]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wins_against_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wins_against_past_x_games</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">wins_against_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">wins_against_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_wins_in_last_matches</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">match_sorted_date</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span>\
+                                                                     <span class="n">against_each_other</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [304]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">win_against_past_x_games_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">win_against_past_x_games_df</span> <span class="o">=</span> <span class="n">win_against_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">wins_against_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">match_sorted_date</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
+             <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;not_enough_past_games_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),]),</span>\
+                        <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [307]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match_final_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">win_against_past_x_games_df</span><span class="p">,</span> <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Great. Now we will save this cleaned dataset and we will see if we find
+any interest insights.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [308]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">match_final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">home_columns</span> <span class="o">+</span> <span class="n">away_columns</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;../data/cleaned/european_matches.csv&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/european_league/clean_european_league.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -196,9 +196,9 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 </style>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<span></span>In [32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -210,200 +210,40 @@ div.nboutput div.output_area.stderr {
 <span class="kn">from</span> <span class="nn">sklearn.discriminant_analysis</span> <span class="k">import</span> <span class="n">QuadraticDiscriminantAnalysis</span>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">predict_test_data</span> <span class="k">import</span> <span class="n">predict_test_data</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="stderr output_area docutils container">
-<div class="highlight"><pre>
-C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
-  from numpy.core.umath_tests import inner1d
-</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<span></span>In [33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/train.csv&#39;</span><span class="p">)</span>
-<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/test.csv&#39;</span><span class="p">)</span>
+<span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/train_team.csv&#39;</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/test_team.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[3]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>home_win</th>
-      <th>home_cur_year_avg_weighted</th>
-      <th>home_total_points</th>
-      <th>away_cur_year_avg_weighted</th>
-      <th>away_total_points</th>
-      <th>home_last_year_avg</th>
-      <th>away_last_year_avg</th>
-      <th>home_two_year_ago_avg</th>
-      <th>away_two_year_ago_avg</th>
-      <th>CAF</th>
-      <th>CONCACAF</th>
-      <th>CONMEBOL</th>
-      <th>OFC</th>
-      <th>UEFA</th>
-      <th>gdp_pp_diff</th>
-      <th>rank_diff</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>174.70</td>
-      <td>291.66</td>
-      <td>343.17</td>
-      <td>535.63</td>
-      <td>102.82</td>
-      <td>152.19</td>
-      <td>163.78</td>
-      <td>266.37</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>39359.0</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>101.66</td>
-      <td>249.49</td>
-      <td>122.76</td>
-      <td>393.28</td>
-      <td>166.27</td>
-      <td>343.17</td>
-      <td>106.47</td>
-      <td>152.19</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>39359.0</td>
-      <td>41</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>151.41</td>
-      <td>289.46</td>
-      <td>257.72</td>
-      <td>436.97</td>
-      <td>131.81</td>
-      <td>102.61</td>
-      <td>151.92</td>
-      <td>242.16</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>39359.0</td>
-      <td>47</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2</td>
-      <td>111.05</td>
-      <td>256.68</td>
-      <td>90.43</td>
-      <td>298.50</td>
-      <td>151.41</td>
-      <td>257.72</td>
-      <td>131.81</td>
-      <td>102.61</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>39359.0</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>140.16</td>
-      <td>324.85</td>
-      <td>343.17</td>
-      <td>535.63</td>
-      <td>183.57</td>
-      <td>152.19</td>
-      <td>225.79</td>
-      <td>266.37</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>112440.0</td>
-      <td>38</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [50]:
+<span></span>In [34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2018</span><span class="p">)</span>
-<span class="n">train</span><span class="p">,</span> <span class="n">validation</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
-<span class="n">X_train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
-<span class="n">y_validation</span> <span class="o">=</span> <span class="n">validation</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
-<span class="n">X_validation</span> <span class="o">=</span> <span class="n">validation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
-
+<span class="n">train</span><span class="p">,</span> <span class="n">validation</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_validation</span> <span class="o">=</span> <span class="n">validation</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">X_validation</span> <span class="o">=</span> <span class="n">validation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [51]:
+<span></span>In [35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -413,7 +253,7 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [52]:
+<span></span>In [36]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -427,13 +267,13 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.5516884906960716
-0.5619834710743802
+0.5147058823529411
+0.5146666666666667
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [53]:
+<span></span>In [37]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -443,7 +283,7 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [54]:
+<span></span>In [38]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -457,13 +297,13 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.562026188835286
-0.5661157024793388
+0.517379679144385
+0.528
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [55]:
+<span></span>In [39]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -473,7 +313,7 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [56]:
+<span></span>In [40]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -487,13 +327,13 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.5503101309441765
-0.5482093663911846
+0.5668449197860963
+0.43733333333333335
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [57]:
+<span></span>In [41]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -503,7 +343,7 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [58]:
+<span></span>In [42]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -517,13 +357,13 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.6212956581667816
-0.5523415977961432
+0.6049465240641712
+0.5146666666666667
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [59]:
+<span></span>In [43]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -537,104 +377,185 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.4727773949000689
-0.47796143250688705
+0.43716577540106955
+0.4613333333333333
 </pre></div></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [60]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">y_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
-<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [61]:
+<span></span>In [44]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">lr_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">lr_model</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[0.26409419 0.29335991]]
+[[0.27344747 0.33659447]]
+[[0.12291911 0.27634627]]
+[[0.26183715 0.2873803 ]]
+[[0.18803981 0.28881251]]
+[[0.10543993 0.26620213]]
+[[0.30444117 0.30491284]]
+[[0.43038224 0.25068949]]
+[[0.3105627  0.31224456]]
+[[0.26380476 0.29569207]]
+[[0.4323178  0.28846051]]
+[[0.31696003 0.32665989]]
+[[0.27861549 0.32119866]]
+[[0.37527236 0.28398837]]
+[[0.2677672  0.28129988]]
+[[0.18995516 0.30400291]]
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[61]:
+<span></span>Out[44]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.53125
+<span></span>0.578125
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [62]:
+<span></span>In [45]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">lda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">lda_model</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[0.26193838 0.28513938]]
+[[0.341426   0.29100992]]
+[[0.16645257 0.31103294]]
+[[0.2833266  0.31428305]]
+[[0.16597684 0.3345894 ]]
+[[0.12276437 0.31041295]]
+[[0.31318224 0.33079425]]
+[[0.41864757 0.28640271]]
+[[0.40763154 0.2818376 ]]
+[[0.22611581 0.3258044 ]]
+[[0.39434658 0.35404268]]
+[[0.27205659 0.34518796]]
+[[0.21755775 0.33853319]]
+[[0.37162753 0.33978203]]
+[[0.27370571 0.33585716]]
+[[0.14336507 0.31349678]]
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[62]:
+<span></span>Out[45]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.5
+<span></span>0.5625
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [63]:
+<span></span>In [46]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">qda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">qda_model</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[0.65673393 0.03972735]]
+[[0.33769414 0.37921008]]
+[[0.15889935 0.3684634 ]]
+[[0.3993393  0.45807545]]
+[[0.04428403 0.35613357]]
+[[0.22942285 0.16987229]]
+[[0.34736171 0.07347198]]
+[[0.55124318 0.32442576]]
+[[0.45777323 0.18995174]]
+[[0.07313897 0.49748952]]
+[[0.46640889 0.02456441]]
+[[0.28979214 0.4998115 ]]
+[[0.20977394 0.13343026]]
+[[0.46931124 0.31258836]]
+[[0.18905779 0.25439044]]
+[[0.39050028 0.15071203]]
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[63]:
+<span></span>Out[46]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.546875
+<span></span>0.46875
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [64]:
+<span></span>In [47]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">rf_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rf_model</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[0.19990573 0.31661414]]
+[[0.31046801 0.36294215]]
+[[0.15080269 0.33115919]]
+[[0.19729153 0.32581477]]
+[[0.16380167 0.24197766]]
+[[0.11310393 0.24492373]]
+[[0.29040033 0.28701452]]
+[[0.42949788 0.28006843]]
+[[0.43730943 0.2515754 ]]
+[[0.27433375 0.26005043]]
+[[0.44802014 0.24399117]]
+[[0.28276635 0.38723018]]
+[[0.22324685 0.29753621]]
+[[0.3179384  0.31060451]]
+[[0.21173428 0.36230227]]
+[[0.19414093 0.33395531]]
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[64]:
+<span></span>Out[47]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.546875
+<span></span>0.5625
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [65]:
+<span></span>In [48]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -644,21 +565,11 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[65]:
+<span></span>Out[48]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>0.421875
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
 </pre></div>
 </div>
 </div>
@@ -687,7 +598,7 @@ C:\Users\shengsiong\Anaconda3\lib\site-packages\sklearn\ensemble\weight_boosting
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/models.ipynb.txt"
+      <a href="_sources/sofifa-model.ipynb.txt"
           rel="nofollow">Page source</a>
     </div>
 
