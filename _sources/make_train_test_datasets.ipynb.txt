@@ -2810,9 +2810,9 @@
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "Python 3",
+   "display_name": "Python [conda env:gen2]",
    "language": "python",
-   "name": "python3"
+   "name": "conda-env-gen2-py"
   },
   "language_info": {
    "codemirror_mode": {

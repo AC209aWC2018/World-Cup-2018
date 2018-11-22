@@ -13,11 +13,3 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
    
    doc/milestone2.md
    doc/milestone3.ipynb
-
-.. toctree:: 
-   :maxdepth: 1
-   :caption: European Soccer Database
-
-   european_league/clean_european_league.ipynb
-   european_league/explore_european_league.ipynb
-   

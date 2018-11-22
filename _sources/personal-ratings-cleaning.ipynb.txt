@@ -19,7 +19,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -36,7 +36,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [
     {
@@ -116,7 +116,7 @@
        "4  ['35', '52', '30', '24', '53', '35', '47', '47...  "
       ]
      },
-     "execution_count": 4,
+     "execution_count": 3,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -132,7 +132,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -142,7 +142,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -152,7 +152,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -163,159 +163,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>team</th>\n",
-       "      <th>date</th>\n",
-       "      <th>bup_speed</th>\n",
-       "      <th>bup_dribbling</th>\n",
-       "      <th>bup_passing</th>\n",
-       "      <th>cc_passing</th>\n",
-       "      <th>cc_crossing</th>\n",
-       "      <th>cc_shooting</th>\n",
-       "      <th>d_pressure</th>\n",
-       "      <th>d_aggresion</th>\n",
-       "      <th>d_width</th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>0</th>\n",
-       "      <td>Brazil</td>\n",
-       "      <td>2018-07-15 00:00:00+00:00</td>\n",
-       "      <td>51</td>\n",
-       "      <td>73</td>\n",
-       "      <td>50</td>\n",
-       "      <td>39</td>\n",
-       "      <td>33</td>\n",
-       "      <td>67</td>\n",
-       "      <td>76</td>\n",
-       "      <td>73</td>\n",
-       "      <td>63</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>1</th>\n",
-       "      <td>England</td>\n",
-       "      <td>2018-07-15 00:00:00+00:00</td>\n",
-       "      <td>36</td>\n",
-       "      <td>20</td>\n",
-       "      <td>39</td>\n",
-       "      <td>31</td>\n",
-       "      <td>41</td>\n",
-       "      <td>41</td>\n",
-       "      <td>43</td>\n",
-       "      <td>55</td>\n",
-       "      <td>49</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2</th>\n",
-       "      <td>Italy</td>\n",
-       "      <td>2018-07-15 00:00:00+00:00</td>\n",
-       "      <td>73</td>\n",
-       "      <td>60</td>\n",
-       "      <td>67</td>\n",
-       "      <td>64</td>\n",
-       "      <td>80</td>\n",
-       "      <td>78</td>\n",
-       "      <td>29</td>\n",
-       "      <td>26</td>\n",
-       "      <td>32</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>3</th>\n",
-       "      <td>Spain</td>\n",
-       "      <td>2018-07-15 00:00:00+00:00</td>\n",
-       "      <td>32</td>\n",
-       "      <td>41</td>\n",
-       "      <td>28</td>\n",
-       "      <td>27</td>\n",
-       "      <td>32</td>\n",
-       "      <td>20</td>\n",
-       "      <td>75</td>\n",
-       "      <td>62</td>\n",
-       "      <td>52</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>4</th>\n",
-       "      <td>France</td>\n",
-       "      <td>2018-07-15 00:00:00+00:00</td>\n",
-       "      <td>35</td>\n",
-       "      <td>52</td>\n",
-       "      <td>30</td>\n",
-       "      <td>24</td>\n",
-       "      <td>53</td>\n",
-       "      <td>35</td>\n",
-       "      <td>47</td>\n",
-       "      <td>47</td>\n",
-       "      <td>67</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "</div>"
-      ],
-      "text/plain": [
-       "      team                      date bup_speed bup_dribbling bup_passing  \\\n",
-       "0   Brazil 2018-07-15 00:00:00+00:00        51            73          50   \n",
-       "1  England 2018-07-15 00:00:00+00:00        36            20          39   \n",
-       "2    Italy 2018-07-15 00:00:00+00:00        73            60          67   \n",
-       "3    Spain 2018-07-15 00:00:00+00:00        32            41          28   \n",
-       "4   France 2018-07-15 00:00:00+00:00        35            52          30   \n",
-       "\n",
-       "  cc_passing cc_crossing cc_shooting d_pressure d_aggresion d_width  \n",
-       "0         39          33          67         76          73      63  \n",
-       "1         31          41          41         43          55      49  \n",
-       "2         64          80          78         29          26      32  \n",
-       "3         27          32          20         75          62      52  \n",
-       "4         24          53          35         47          47      67  "
-      ]
-     },
-     "metadata": {},
-     "output_type": "display_data"
-    },
-    {
-     "data": {
-      "text/plain": [
-       "team                          object\n",
-       "date             datetime64[ns, UTC]\n",
-       "bup_speed                     object\n",
-       "bup_dribbling                 object\n",
-       "bup_passing                   object\n",
-       "cc_passing                    object\n",
-       "cc_crossing                   object\n",
-       "cc_shooting                   object\n",
-       "d_pressure                    object\n",
-       "d_aggresion                   object\n",
-       "d_width                       object\n",
-       "dtype: object"
-      ]
-     },
-     "execution_count": 8,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "team_ext.columns = ['team', 'date', 'bup_speed', 'bup_dribbling', 'bup_passing',\n",
     "                   'cc_passing', 'cc_crossing', 'cc_shooting', 'd_pressure',\n",
@@ -326,31 +176,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "team                          object\n",
-       "date             datetime64[ns, UTC]\n",
-       "bup_speed                      int64\n",
-       "bup_dribbling                float64\n",
-       "bup_passing                    int64\n",
-       "cc_passing                     int64\n",
-       "cc_crossing                    int64\n",
-       "cc_shooting                    int64\n",
-       "d_pressure                     int64\n",
-       "d_aggresion                    int64\n",
-       "d_width                        int64\n",
-       "dtype: object"
-      ]
-     },
-     "execution_count": 9,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "# note that there are some missing values, which have no data in them\n",
     "team_ext['bup_speed'] = pd.to_numeric(team_ext.loc[:,'bup_speed'])\n",
@@ -368,20 +196,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "(2193, 11)"
-      ]
-     },
-     "execution_count": 10,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "team_ext[team_ext['bup_dribbling'].isnull()].shape"
    ]
@@ -395,20 +212,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "False"
-      ]
-     },
-     "execution_count": 11,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "team_ext.fillna(0, inplace=True)\n",
     "team_ext.isna().values.any()"
@@ -416,7 +222,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -432,7 +238,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [
     {
@@ -564,7 +370,7 @@
        "4  ['€0', '€0', '€0', '€0', '€0', '€0', '€0', '€0...  "
       ]
      },
-     "execution_count": 13,
+     "execution_count": 5,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -576,14 +382,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [
     {
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "100%|███████████████████████████████████████████████████████████████████████████| 26908/26908 [02:10<00:00, 205.63it/s]\n"
+      "100%|███████████████████████████████████████████████████████████████████████████| 26908/26908 [02:15<00:00, 199.22it/s]\n"
      ]
     }
    ],
@@ -607,7 +413,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 52,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [
     {
@@ -711,7 +517,7 @@
        "4    €0   €0  "
       ]
      },
-     "execution_count": 52,
+     "execution_count": 7,
      "metadata": {},
      "output_type": "execute_result"
     }

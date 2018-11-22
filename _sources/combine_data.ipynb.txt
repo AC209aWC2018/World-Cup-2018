@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -30,7 +30,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -46,7 +46,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -59,7 +59,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [
     {
@@ -295,7 +295,7 @@
        "dtype: object"
       ]
      },
-     "execution_count": 21,
+     "execution_count": 7,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -303,6 +303,27 @@
    "source": [
     "display(ratings.head())\n",
     "ratings.dtypes"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([  0.        ,  19.17391304,   4.91304348, ...,  34.04347826,\n",
+       "       136.60869565,          nan])"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ratings.wage_euros_thousands.unique()"
    ]
   },
   {
@@ -317,9 +338,9 @@
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "Python 3",
+   "display_name": "Python [conda env:gen2]",
    "language": "python",
-   "name": "python3"
+   "name": "conda-env-gen2-py"
   },
   "language_info": {
    "codemirror_mode": {
