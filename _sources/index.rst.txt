@@ -16,13 +16,13 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
 .. toctree::
   :maxdepth: 1
-  ::caption:: European Soccer Database
+  :caption: European Soccer Database
 
   european_league/clean_european_league.ipynb
   european_league/explore_european_league.ipynb
 
 .. toctree::
   :maxdepth: 1
-  ::caption:: Models
+  :caption: Models
 
   models/baseline_model.ipynb
