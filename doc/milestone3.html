@@ -15,6 +15,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cleaning" href="../european_league/clean_european_league.html" />
     <link rel="prev" title="Milestone 2" href="milestone2.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -223,8 +224,7 @@ population
 and average yearly temperature
 (<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature">https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature</a>).</li>
 </ul>
-<p><a class="reference external" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.KD?name_desc=false">https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.KD?name_desc=false</a>
-<a class="reference external" href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD">https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD</a></p>
+<p><a class="reference external" href="https://www.kaggle.com/hugomathien/soccer">https://www.kaggle.com/hugomathien/soccer</a></p>
 </div>
 <div class="section" id="Data-Cleaning">
 <h2>Data Cleaning<a class="headerlink" href="#Data-Cleaning" title="Permalink to this headline">¶</a></h2>
@@ -274,35 +274,42 @@ reflect some bias on our part, but we hope that this bias does not
 affect our model that much.</p>
 <p>All cleaned datasets can be found in the <code class="docutils literal notranslate"><span class="pre">data/cleaned</span></code> folder.</p>
 </div>
+<div class="section" id="European-Soccer-Database">
+<h3>European Soccer Database<a class="headerlink" href="#European-Soccer-Database" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="../_build/html/european_league/clean_european_league.html">Link</a></p>
+</div>
+<div class="section" id="Sofifa">
+<h3>Sofifa<a class="headerlink" href="#Sofifa" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <div class="section" id="Feature-Engineering">
 <h2>Feature Engineering<a class="headerlink" href="#Feature-Engineering" title="Permalink to this headline">¶</a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<p>Because in the case of the World Cup, home team does not actually mean
+anything (besides for Russia itself), we needed each feature in our
+models to be agnostic to which team is home and which team is away so
+that so that switching home team and away team does not result in
+different predictions despite everything else being the same. The most
+simple way to do so that also makes sense is to take the difference of
+home team features with away team features, as we can think of these as
+being difference in skills/abilities of the teams.</p>
 </div>
 <div class="section" id="Exploratory-Data-Analysis">
 <h2>Exploratory Data Analysis<a class="headerlink" href="#Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
+<div class="section" id="European-Soccer-Database">
+<h3>European Soccer Database<a class="headerlink" href="#European-Soccer-Database" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="../_build/html/european_league/explore_european_league.html">Link</a></p>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
+<div class="section" id="Sofifa">
+<h3>Sofifa<a class="headerlink" href="#Sofifa" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="Baseline-Models">
 <h2>Baseline Models<a class="headerlink" href="#Baseline-Models" title="Permalink to this headline">¶</a></h2>
+<p>We have two different simple baseline models, one where we just guess
+the majority outcome every time (home team wins), and the other where we
+utilize the FIFA rankings as well as some basic team features, including
+difference in attack ratings, difference in defense ratings, and
+difference in midfield ratings.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
