@@ -15,6 +15,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Explore" href="../european_league/explore_european_league.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -198,9 +199,10 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="section" id="Baseline-Model">
 <h1>Baseline Model<a class="headerlink" href="#Baseline-Model" title="Permalink to this headline">¶</a></h1>
+<p>We will first build some basic models.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<span></span>In [396]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -218,7 +220,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<span></span>In [397]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -229,7 +231,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<span></span>In [398]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -239,7 +241,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[4]:
+<span></span>Out[398]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -250,6 +252,7 @@ div.nboutput div.output_area.stderr {
        &#39;goalkeeeper_overall_diff&#39;, &#39;growth_diff&#39;, &#39;midfield_diff&#39;,
        &#39;overall_diff&#39;, &#39;prestige_diff&#39;, &#39;start_age_diff&#39;,
        &#39;value_euros_millions_diff&#39;, &#39;wage_euros_thousands_diff&#39;,
+       &#39;attack_home_defence_away_diff&#39;, &#39;attack_away_defence_home_diff&#39;,
        &#39;cur_year_avg_weighted_diff&#39;, &#39;cur_year_avg_diff&#39;,
        &#39;last_year_avg_weighted_diff&#39;, &#39;last_year_avg_diff&#39;,
        &#39;previous_points_diff&#39;, &#39;rank_change_diff&#39;, &#39;rank_diff&#39;,
@@ -260,9 +263,59 @@ div.nboutput div.output_area.stderr {
 </pre></div>
 </div>
 </div>
+<p>Our most basic model would be to just predict the majority class every
+time. In this case, <code class="docutils literal notranslate"><span class="pre">home_win</span></code> = 1 is the majority class. What are is
+the training accuracy from just doing this “prediction”?</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [399]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[399]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>0.4493341053850608
+</pre></div>
+</div>
+</div>
+<p>Pretty decent when we have 3 classes. What about the test accuracy?</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [400]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[400]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>0.421875
+</pre></div>
+</div>
+</div>
+<p>Still decent. Any model we build should be better than this test
+accuracy of just guessing.</p>
+<p>Our baseline model will be pretty simple. We will utilize the
+differences in FIFA rankings, offense ratings, defense ratings, midfield
+ratings, and overall ratings. We will make a train and validation set
+out of the original train set.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<span></span>In [422]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -273,23 +326,24 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<span></span>In [423]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2018</span><span class="p">)</span>
-<span class="n">train</span><span class="p">,</span> <span class="n">validation</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="n">X_train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">y_validation</span> <span class="o">=</span> <span class="n">validation</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="n">X_validation</span> <span class="o">=</span> <span class="n">validation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_validation</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_validation</span> <span class="o">=</span> <span class="n">X_validation</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">X_validation</span> <span class="o">=</span> <span class="n">X_validation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<p>We will first try out logistic regression.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<span></span>In [424]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -299,12 +353,12 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [425]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">lr_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lr_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_validation</span><span class="p">,</span> <span class="n">y_validation</span><span class="p">))</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logistic Regression Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logistic Regression Validation Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_validation</span><span class="p">,</span> <span class="n">y_validation</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -313,13 +367,94 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.5228095582910934
-0.5028901734104047
+Logistic Regression Train Score: 0.5206372194062274
+Logistic Regression Validation Score: 0.5260115606936416
 </pre></div></div>
 </div>
+<p>We will also try out Linear Discriminant Analysis. However, we need to
+first check whether the variances across the three outcomes are equal.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [426]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[426]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rank_diff</th>
+      <th>attack_diff</th>
+      <th>defence_diff</th>
+      <th>midfield_diff</th>
+      <th>overall_diff</th>
+    </tr>
+    <tr>
+      <th>home_win</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1031.324335</td>
+      <td>41.178286</td>
+      <td>36.447164</td>
+      <td>36.358733</td>
+      <td>30.316051</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1030.878211</td>
+      <td>43.164681</td>
+      <td>38.173861</td>
+      <td>37.613713</td>
+      <td>31.811819</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1100.677884</td>
+      <td>42.149203</td>
+      <td>40.387636</td>
+      <td>36.910224</td>
+      <td>32.722352</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Surprisingly, they are actually quite similar!</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [427]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -329,12 +464,12 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [428]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">lda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_validation</span><span class="p">,</span> <span class="n">y_validation</span><span class="p">))</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LDA Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LDA Validation Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_validation</span><span class="p">,</span> <span class="n">y_validation</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -343,13 +478,15 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.5170166545981173
-0.5144508670520231
+LDA Train Score: 0.5184648805213613
+LDA Validation Score: 0.5173410404624278
 </pre></div></div>
 </div>
+<p>We will also try out Quadratic Discriminant Analysis, which should
+perform similarly to LDA in this case due to the almost equal variances.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<span></span>In [429]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -359,12 +496,12 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<span></span>In [430]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">qda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">qda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_validation</span><span class="p">,</span> <span class="n">y_validation</span><span class="p">))</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;QDA Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">qda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;QDA Validation Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">qda_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_validation</span><span class="p">,</span> <span class="n">y_validation</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -373,13 +510,14 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.5286024619840695
-0.5028901734104047
+QDA Train Score: 0.5141202027516293
+QDA Validation Score: 0.5173410404624278
 </pre></div></div>
 </div>
+<p>We will also try out Random Forest.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [431]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -389,7 +527,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [432]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -403,18 +541,19 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.5619116582186822
-0.5057803468208093
+0.55756698044895
+0.5346820809248555
 </pre></div></div>
 </div>
+<p>Now let’s see how these models perform on the actual World Cup!</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [433]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">)),</span> <span class="n">y_train</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_validation</span><span class="p">)),</span> <span class="n">y_validation</span><span class="p">))</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logistic Regression Test Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span>
+                <span class="nb">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">lr_model</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
@@ -423,107 +562,75 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.44750181028240404
-0.45664739884393063
+Logistic Regression Test Score: 0.59375
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [434]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">lr_model</span><span class="p">))</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LDA Test Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">lda_model</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[16]:
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.59375
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+LDA Test Score: 0.59375
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [17]:
+<span></span>In [435]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">lda_model</span><span class="p">))</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;QDA Test Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">qda_model</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[17]:
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.59375
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+QDA Test Score: 0.640625
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [18]:
+<span></span>In [436]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">qda_model</span><span class="p">))</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Forest Test Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rf_model</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Random Forest Test Score: 0.625
+</pre></div></div>
+</div>
+<p>Impressive! We now have an idea of what our more advanced model should
+hope to achieve.</p>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[18]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.59375
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [19]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rf_model</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[19]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.625
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [20]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span> <span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[20]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.421875
+<span></span>
 </pre></div>
 </div>
 </div>
