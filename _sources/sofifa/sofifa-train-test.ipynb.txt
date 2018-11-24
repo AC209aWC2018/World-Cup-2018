@@ -139,7 +139,7 @@
     }
    ],
    "source": [
-    "results = pd.read_csv('data/fifa/international_results.csv')\n",
+    "results = pd.read_csv('../data/fifa/international_results.csv')\n",
     "results['date'] = pd.to_datetime(results['date'], utc=True)\n",
     "\n",
     "# restrict dates\n",
@@ -373,7 +373,7 @@
     }
    ],
    "source": [
-    "ratings = pd.read_csv('data/sofifa_final.csv')\n",
+    "ratings = pd.read_csv('../data/sofifa_final.csv')\n",
     "ratings['date'] = pd.to_datetime(ratings['date'])\n",
     "\n",
     "# restrict dates\n",
@@ -561,7 +561,7 @@
     }
    ],
    "source": [
-    "fifa_rankings = pd.read_csv('data/fifa_ranking.csv')\n",
+    "fifa_rankings = pd.read_csv('../data/fifa_ranking.csv')\n",
     "fifa_rankings['rank_date'] = pd.to_datetime(fifa_rankings['rank_date'])\n",
     "fifa_rankings.head()"
    ]
@@ -2410,7 +2410,7 @@
    "outputs": [],
    "source": [
     "# save to csv\n",
-    "train.to_csv('data/train_team.csv', index = False)"
+    "train.to_csv('../data/train_team.csv', index = False)"
    ]
   },
   {
@@ -2633,7 +2633,7 @@
     }
    ],
    "source": [
-    "ratings_wc = pd.read_csv('data/team_stats_final.csv')\n",
+    "ratings_wc = pd.read_csv('../data/team_stats_final.csv')\n",
     "ratings_wc['date'] = pd.to_datetime(ratings_wc['date'], utc=True)\n",
     "\n",
     "# restrict dates\n",
@@ -2876,7 +2876,7 @@
    ],
    "source": [
     "#https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv\n",
-    "results_wc = pd.read_csv(\"data/world_cup_2018_stats.csv\")\n",
+    "results_wc = pd.read_csv(\"../data/world_cup_2018_stats.csv\")\n",
     "results_wc.head()"
    ]
   },
@@ -4309,7 +4309,7 @@
    "outputs": [],
    "source": [
     "# save to csv\n",
-    "test.to_csv(\"data/test_team.csv\", index = False)"
+    "test.to_csv(\"../data/test_team.csv\", index = False)"
    ]
   },
   {

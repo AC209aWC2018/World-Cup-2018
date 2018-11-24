@@ -1,0 +1,1452 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Team Statistics &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">import</span> <span class="nn">tqdm</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [65]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sofifa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/sofifa_data.csv&#39;</span><span class="p">)</span>
+<span class="n">sofifa</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sofifa</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">sofifa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[65]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>date</th>
+      <th>attack</th>
+      <th>defence</th>
+      <th>ext_stats</th>
+      <th>full_age</th>
+      <th>midfield</th>
+      <th>name</th>
+      <th>overall</th>
+      <th>player_overall</th>
+      <th>potential</th>
+      <th>prestige</th>
+      <th>start_age</th>
+      <th>value</th>
+      <th>wage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brazil</td>
+      <td>2018-11-15 00:00:00+00:00</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>['52', '74', '51', '61', '44', '68', '75', '54...</td>
+      <td>29.48</td>
+      <td>80.0</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>81.0</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brazil</td>
+      <td>2018-11-13 00:00:00+00:00</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>['52', '74', '51', '61', '44', '68', '75', '54...</td>
+      <td>29.48</td>
+      <td>80.0</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>81.0</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Brazil</td>
+      <td>2018-11-05 00:00:00+00:00</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>['52', '74', '51', '61', '44', '68', '75', '54...</td>
+      <td>29.48</td>
+      <td>80.0</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>81.0</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Brazil</td>
+      <td>2018-11-01 00:00:00+00:00</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>['52', '74', '51', '61', '44', '68', '75', '54...</td>
+      <td>29.48</td>
+      <td>80.0</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>81.0</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Brazil</td>
+      <td>2018-10-29 00:00:00+00:00</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>['52', '74', '51', '61', '44', '68', '75', '54...</td>
+      <td>29.48</td>
+      <td>80.0</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>81.0</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The sofifa data that we have scraped consists of both team-based and
+individual player-based data. Let us split them accordingly for now.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [66]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sofifa_team</span> <span class="o">=</span> <span class="n">sofifa</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;overall&#39;</span><span class="p">,</span> <span class="s1">&#39;attack&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;midfield&#39;</span><span class="p">,</span> <span class="s1">&#39;defence&#39;</span><span class="p">,</span> <span class="s1">&#39;prestige&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;start_age&#39;</span><span class="p">,</span> <span class="s1">&#39;full_age&#39;</span><span class="p">,</span> <span class="s1">&#39;ext_stats&#39;</span><span class="p">]]</span>
+
+<span class="n">sofifa_player</span> <span class="o">=</span> <span class="n">sofifa</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;player_overall&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;potential&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;wage&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Team-Statistics">
+<h1>Team Statistics<a class="headerlink" href="#Team-Statistics" title="Permalink to this headline">¶</a></h1>
+<p>We then start by cleaning up the team-based data. Specifically, let us
+extract <code class="docutils literal notranslate"><span class="pre">ext_stats</span></code> which is a bunch of additional team based
+statistics.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [67]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">extract_team_stats</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;\[&#39;(.*)&#39;, &#39;(.*)&#39;, &#39;(.*)&#39;, &#39;(.*)&#39;, &#39;(.*)&#39;, &#39;(.*)&#39;, &#39;(.*)&#39;, &#39;(.*)&#39;, &#39;(.*)&#39;\]&quot;</span><span class="p">,</span><span class="n">row</span><span class="o">.</span><span class="n">ext_stats</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [68]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># convert from string to numeric</span>
+<span class="n">sofifa_team</span><span class="p">[</span><span class="s1">&#39;ext_stats&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sofifa_team</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">extract_team_stats</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [69]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># &#39;flatten&#39; to dataframe</span>
+<span class="n">team_stats</span> <span class="o">=</span> <span class="n">sofifa_team</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">ext_stats</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sofifa_team</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">sofifa_team</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;ext_stats&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">team_stats</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [70]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># rename columns</span>
+<span class="n">sofifa_team</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;bup_speed&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;bup_dribbling&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;bup_passing&#39;</span><span class="p">,</span>
+                   <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;cc_passing&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;cc_crossing&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;cc_shooting&#39;</span><span class="p">,</span>
+                   <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;d_pressure&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;d_aggresion&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;d_width&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">sofifa_team</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">sofifa_team</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>date</th>
+      <th>overall</th>
+      <th>attack</th>
+      <th>midfield</th>
+      <th>defence</th>
+      <th>prestige</th>
+      <th>start_age</th>
+      <th>full_age</th>
+      <th>bup_speed</th>
+      <th>bup_dribbling</th>
+      <th>bup_passing</th>
+      <th>cc_passing</th>
+      <th>cc_crossing</th>
+      <th>cc_shooting</th>
+      <th>d_pressure</th>
+      <th>d_aggresion</th>
+      <th>d_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brazil</td>
+      <td>2018-11-15 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52</td>
+      <td>74</td>
+      <td>51</td>
+      <td>61</td>
+      <td>44</td>
+      <td>68</td>
+      <td>75</td>
+      <td>54</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brazil</td>
+      <td>2018-11-13 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52</td>
+      <td>74</td>
+      <td>51</td>
+      <td>61</td>
+      <td>44</td>
+      <td>68</td>
+      <td>75</td>
+      <td>54</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Brazil</td>
+      <td>2018-11-05 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52</td>
+      <td>74</td>
+      <td>51</td>
+      <td>61</td>
+      <td>44</td>
+      <td>68</td>
+      <td>75</td>
+      <td>54</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Brazil</td>
+      <td>2018-11-01 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52</td>
+      <td>74</td>
+      <td>51</td>
+      <td>61</td>
+      <td>44</td>
+      <td>68</td>
+      <td>75</td>
+      <td>54</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Brazil</td>
+      <td>2018-10-29 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52</td>
+      <td>74</td>
+      <td>51</td>
+      <td>61</td>
+      <td>44</td>
+      <td>68</td>
+      <td>75</td>
+      <td>54</td>
+      <td>64</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[70]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>team                          object
+date             datetime64[ns, UTC]
+overall                      float64
+attack                       float64
+midfield                     float64
+defence                      float64
+prestige                     float64
+start_age                    float64
+full_age                     float64
+bup_speed                     object
+bup_dribbling                 object
+bup_passing                   object
+cc_passing                    object
+cc_crossing                   object
+cc_shooting                   object
+d_pressure                    object
+d_aggresion                   object
+d_width                       object
+dtype: object
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [71]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># https://stackoverflow.com/questions/36814100/pandas-to-numeric-for-multiple-columns</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">sofifa_team</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">sofifa_team</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">sofifa_team</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">sofifa_team</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+
+<span class="n">sofifa_team</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[71]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>team                          object
+date             datetime64[ns, UTC]
+overall                      float64
+attack                       float64
+midfield                     float64
+defence                      float64
+prestige                     float64
+start_age                    float64
+full_age                     float64
+bup_speed                    float64
+bup_dribbling                float64
+bup_passing                  float64
+cc_passing                   float64
+cc_crossing                  float64
+cc_shooting                  float64
+d_pressure                   float64
+d_aggresion                  float64
+d_width                      float64
+dtype: object
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [72]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">sofifa_team</span><span class="p">[</span><span class="n">sofifa_team</span><span class="p">[</span><span class="s1">&#39;bup_dribbling&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sofifa_team</span><span class="p">[</span><span class="n">sofifa_team</span><span class="p">[</span><span class="s1">&#39;bup_speed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(2058, 18)
+(250, 18)
+</pre></div></div>
+</div>
+<p>We can thus see that there are missing values in <code class="docutils literal notranslate"><span class="pre">bup_dribbling</span></code>. We
+check that there are 2058 missing values. This is because the statistic
+was not collected for earlier versions of the game. For the rest of the
+team based strategy statistics, we note that there are 250 missing
+values. This is because those statistics were only collected from FIFA
+10 onwards. As our training data starts from 2010, this missing data is
+not important. We replace them with zeros for now.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [74]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sofifa_team</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sofifa_team</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[74]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Individual-Player-Statistics">
+<h1>Individual Player Statistics<a class="headerlink" href="#Individual-Player-Statistics" title="Permalink to this headline">¶</a></h1>
+<p>After dealing with the extended team statistics, we can now look at the
+individual player data that we have.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [75]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sofifa_player</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[75]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>date</th>
+      <th>name</th>
+      <th>player_overall</th>
+      <th>potential</th>
+      <th>value</th>
+      <th>wage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brazil</td>
+      <td>2018-11-15 00:00:00+00:00</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brazil</td>
+      <td>2018-11-13 00:00:00+00:00</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Brazil</td>
+      <td>2018-11-05 00:00:00+00:00</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Brazil</td>
+      <td>2018-11-01 00:00:00+00:00</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Brazil</td>
+      <td>2018-10-29 00:00:00+00:00</td>
+      <td>['Raphaelito Anjos', 'Maikel Catarino', 'Juian...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['82', '79', '82', '83', '80', '80', '82', '79...</td>
+      <td>['€14M', '€3.6M', '€6.5M', '€22.5M', '€10.5M',...</td>
+      <td>['€32K', '€38K', '€39K', '€43K', '€34K', '€34K...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [76]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># loop through each row</span>
+<span class="n">player_stats</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">sofifa_player</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">sofifa_player</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">])</span>
+    <span class="n">overall</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">sofifa_player</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;player_overall&#39;</span><span class="p">])</span>
+    <span class="n">potential</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">sofifa_player</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;potential&#39;</span><span class="p">])</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">sofifa_player</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">])</span>
+    <span class="n">wage</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">sofifa_player</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;wage&#39;</span><span class="p">])</span>
+
+    <span class="n">dat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+                       <span class="s1">&#39;player_overall&#39;</span><span class="p">:</span> <span class="n">overall</span><span class="p">,</span>
+                       <span class="s1">&#39;potential&#39;</span><span class="p">:</span> <span class="n">potential</span><span class="p">,</span>
+                       <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span>
+                       <span class="s1">&#39;wage&#39;</span><span class="p">:</span> <span class="n">wage</span><span class="p">})</span>
+    <span class="n">player_stats</span><span class="p">[(</span><span class="n">sofifa_player</span><span class="o">.</span><span class="n">team</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sofifa_player</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">=</span> <span class="n">dat</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+100%|███████████████████████████████████████████████████████████████████████████| 20594/20594 [01:49&lt;00:00, 188.92it/s]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [77]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sofifa_player</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">player_stats</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">sofifa_player</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;level_2&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sofifa_player</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;level_0&#39;</span><span class="p">:</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;level_1&#39;</span><span class="p">:</span> <span class="s1">&#39;date&#39;</span><span class="p">},</span>
+                    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sofifa_player</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[77]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>date</th>
+      <th>name</th>
+      <th>player_overall</th>
+      <th>potential</th>
+      <th>value</th>
+      <th>wage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>R. Abbondanzieri</td>
+      <td>84</td>
+      <td>85</td>
+      <td>€0</td>
+      <td>€0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>N. Burdisso</td>
+      <td>72</td>
+      <td>76</td>
+      <td>€0</td>
+      <td>€0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>R. Ayala</td>
+      <td>86</td>
+      <td>86</td>
+      <td>€0</td>
+      <td>€0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>G. Heinze</td>
+      <td>85</td>
+      <td>84</td>
+      <td>€0</td>
+      <td>€0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>J. Sorín</td>
+      <td>76</td>
+      <td>78</td>
+      <td>€0</td>
+      <td>€0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Now that we have our data in tabular format, we should clean up some of
+the columns.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [78]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># edit value/wage columns into numeric data</span>
+<span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;wage&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;wage&#39;</span><span class="p">]</span>
+                         <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;€&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                         <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                         <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+<span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">val</span>
+                                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;€&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span><span class="o">*</span><span class="mi">1000</span> <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;K&#39;</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">val</span>
+                                                                                     <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;€&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                                                                                     <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span><span class="o">*</span><span class="mi">1000000</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]]</span>
+
+<span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1e6</span>
+
+<span class="n">sofifa_player</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;wage&#39;</span><span class="p">:</span> <span class="s1">&#39;wage_euros_thousands&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;value_euros_millions&#39;</span>
+<span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">sofifa_player</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[78]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>date</th>
+      <th>name</th>
+      <th>player_overall</th>
+      <th>potential</th>
+      <th>value_euros_millions</th>
+      <th>wage_euros_thousands</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>R. Abbondanzieri</td>
+      <td>84</td>
+      <td>85</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>N. Burdisso</td>
+      <td>72</td>
+      <td>76</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>R. Ayala</td>
+      <td>86</td>
+      <td>86</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>G. Heinze</td>
+      <td>85</td>
+      <td>84</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>J. Sorín</td>
+      <td>76</td>
+      <td>78</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Let us come up with some team statistics from these player data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [79]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;player_overall&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;player_overall&#39;</span><span class="p">])</span>
+<span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;potential&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;potential&#39;</span><span class="p">])</span>
+<span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;growth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;potential&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">sofifa_player</span><span class="p">[</span><span class="s1">&#39;player_overall&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [80]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sofifa_player_grp</span> <span class="o">=</span> <span class="n">sofifa_player</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">],</span>
+                                          <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;wage_euros_thousands&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+                                                               <span class="s1">&#39;value_euros_millions&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+                                                               <span class="s1">&#39;growth&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+                                                               <span class="s1">&#39;player_overall&#39;</span><span class="p">:</span> <span class="s1">&#39;first&#39;</span><span class="p">})</span> <span class="c1"># goalkeeper&#39;s overall</span>
+<span class="n">sofifa_player_grp</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;player_overall&#39;</span><span class="p">:</span> <span class="s1">&#39;goalkeeeper_overall&#39;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sofifa_player_grp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[80]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>date</th>
+      <th>wage_euros_thousands</th>
+      <th>value_euros_millions</th>
+      <th>growth</th>
+      <th>goalkeeeper_overall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>2006-08-30 00:00:00+00:00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.88</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Argentina</td>
+      <td>2007-02-22 00:00:00+00:00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5.32</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Argentina</td>
+      <td>2007-08-30 00:00:00+00:00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.84</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Argentina</td>
+      <td>2008-02-22 00:00:00+00:00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.84</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Argentina</td>
+      <td>2008-08-30 00:00:00+00:00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.00</td>
+      <td>82</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="Merge-Team-and-Individual-Player-Group-Statistics">
+<h1>Merge Team and Individual Player Group Statistics<a class="headerlink" href="#Merge-Team-and-Individual-Player-Group-Statistics" title="Permalink to this headline">¶</a></h1>
+<p>We can then merge our datasets together.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [81]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sofifa</span> <span class="o">=</span> <span class="n">sofifa_team</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sofifa_player_grp</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+                           <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [82]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">display</span><span class="p">(</span><span class="n">sofifa</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">sofifa</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>date</th>
+      <th>overall</th>
+      <th>attack</th>
+      <th>midfield</th>
+      <th>defence</th>
+      <th>prestige</th>
+      <th>start_age</th>
+      <th>full_age</th>
+      <th>bup_speed</th>
+      <th>...</th>
+      <th>cc_passing</th>
+      <th>cc_crossing</th>
+      <th>cc_shooting</th>
+      <th>d_pressure</th>
+      <th>d_aggresion</th>
+      <th>d_width</th>
+      <th>wage_euros_thousands</th>
+      <th>value_euros_millions</th>
+      <th>growth</th>
+      <th>goalkeeeper_overall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brazil</td>
+      <td>2018-11-15 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52.0</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>44.0</td>
+      <td>68.0</td>
+      <td>75.0</td>
+      <td>54.0</td>
+      <td>64.0</td>
+      <td>43.869565</td>
+      <td>15.795652</td>
+      <td>0.043478</td>
+      <td>82.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brazil</td>
+      <td>2018-11-13 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52.0</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>44.0</td>
+      <td>68.0</td>
+      <td>75.0</td>
+      <td>54.0</td>
+      <td>64.0</td>
+      <td>43.869565</td>
+      <td>15.795652</td>
+      <td>0.043478</td>
+      <td>82.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Brazil</td>
+      <td>2018-11-05 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52.0</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>44.0</td>
+      <td>68.0</td>
+      <td>75.0</td>
+      <td>54.0</td>
+      <td>64.0</td>
+      <td>43.869565</td>
+      <td>15.795652</td>
+      <td>0.043478</td>
+      <td>82.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Brazil</td>
+      <td>2018-11-01 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52.0</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>44.0</td>
+      <td>68.0</td>
+      <td>75.0</td>
+      <td>54.0</td>
+      <td>64.0</td>
+      <td>43.869565</td>
+      <td>15.795652</td>
+      <td>0.043478</td>
+      <td>82.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Brazil</td>
+      <td>2018-10-29 00:00:00+00:00</td>
+      <td>81.0</td>
+      <td>84.0</td>
+      <td>80.0</td>
+      <td>80.0</td>
+      <td>10.0</td>
+      <td>29.64</td>
+      <td>29.48</td>
+      <td>52.0</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>44.0</td>
+      <td>68.0</td>
+      <td>75.0</td>
+      <td>54.0</td>
+      <td>64.0</td>
+      <td>43.869565</td>
+      <td>15.795652</td>
+      <td>0.043478</td>
+      <td>82.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[82]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>team                                 object
+date                    datetime64[ns, UTC]
+overall                             float64
+attack                              float64
+midfield                            float64
+defence                             float64
+prestige                            float64
+start_age                           float64
+full_age                            float64
+bup_speed                           float64
+bup_dribbling                       float64
+bup_passing                         float64
+cc_passing                          float64
+cc_crossing                         float64
+cc_shooting                         float64
+d_pressure                          float64
+d_aggresion                         float64
+d_width                             float64
+wage_euros_thousands                float64
+value_euros_millions                float64
+growth                              float64
+goalkeeeper_overall                 float64
+dtype: object
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [83]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># save data</span>
+<span class="n">sofifa</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/sofifa_final.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/sofifa-cleaning.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

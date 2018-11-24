@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>&lt;no title&gt; &#8212; World Cup  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -218,7 +218,7 @@ div.nboutput div.output_area.stderr {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/fifa/international_results.csv&#39;</span><span class="p">)</span>
+<span></span><span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/fifa/international_results.csv&#39;</span><span class="p">)</span>
 <span class="n">results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># restrict dates</span>
@@ -347,7 +347,7 @@ div.nboutput div.output_area.stderr {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/sofifa_final.csv&#39;</span><span class="p">)</span>
+<span></span><span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/sofifa_final.csv&#39;</span><span class="p">)</span>
 <span class="n">ratings</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ratings</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
 
 <span class="c1"># restrict dates</span>
@@ -535,7 +535,7 @@ div.nboutput div.output_area.stderr {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fifa_rankings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/fifa_ranking.csv&#39;</span><span class="p">)</span>
+<span></span><span class="n">fifa_rankings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/fifa_ranking.csv&#39;</span><span class="p">)</span>
 <span class="n">fifa_rankings</span><span class="p">[</span><span class="s1">&#39;rank_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">fifa_rankings</span><span class="p">[</span><span class="s1">&#39;rank_date&#39;</span><span class="p">])</span>
 <span class="n">fifa_rankings</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -2206,7 +2206,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># save to csv</span>
-<span class="n">train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/train_team.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/train_team.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2217,7 +2217,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ratings_wc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/team_stats_final.csv&#39;</span><span class="p">)</span>
+<span></span><span class="n">ratings_wc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/team_stats_final.csv&#39;</span><span class="p">)</span>
 <span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># restrict dates</span>
@@ -2421,7 +2421,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1">#https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv</span>
-<span class="n">results_wc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/world_cup_2018_stats.csv&quot;</span><span class="p">)</span>
+<span class="n">results_wc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/world_cup_2018_stats.csv&quot;</span><span class="p">)</span>
 <span class="n">results_wc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3775,7 +3775,7 @@ start of the tournament.</p>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># save to csv</span>
-<span class="n">test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/test_team.csv&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;../data/test_team.csv&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3804,7 +3804,7 @@ start of the tournament.</p>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/team-ratings-cleaning.ipynb.txt"
+      <a href="../_sources/sofifa/sofifa-train-test.ipynb.txt"
           rel="nofollow">Page source</a>
     </div>
 

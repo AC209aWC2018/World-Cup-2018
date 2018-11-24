@@ -16,7 +16,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 396,
+   "execution_count": 454,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -33,7 +33,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 397,
+   "execution_count": 455,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -43,7 +43,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 398,
+   "execution_count": 456,
    "metadata": {},
    "outputs": [
     {
@@ -66,7 +66,7 @@
        "      dtype='object')"
       ]
      },
-     "execution_count": 398,
+     "execution_count": 456,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -84,16 +84,16 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 399,
+   "execution_count": 457,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "0.4493341053850608"
+       "0.44168962350780533"
       ]
      },
-     "execution_count": 399,
+     "execution_count": 457,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -111,7 +111,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 400,
+   "execution_count": 458,
    "metadata": {},
    "outputs": [
     {
@@ -120,7 +120,7 @@
        "0.421875"
       ]
      },
-     "execution_count": 400,
+     "execution_count": 458,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -140,17 +140,17 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 422,
+   "execution_count": 459,
    "metadata": {},
    "outputs": [],
    "source": [
-    "train = train[['rank_diff', 'home_win', 'attack_diff', 'defence_diff', 'midfield_diff', 'overall_diff']]\n",
-    "test = test[['rank_diff', 'home_win', 'attack_diff', 'defence_diff', 'midfield_diff', 'overall_diff', 'Group']]"
+    "train = train[['home_win', 'attack_diff', 'defence_diff', 'midfield_diff', 'overall_diff']]\n",
+    "test = test[['home_win', 'attack_diff', 'defence_diff', 'midfield_diff', 'overall_diff', 'Group']]"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 423,
+   "execution_count": 516,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -172,7 +172,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 424,
+   "execution_count": 517,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -181,15 +181,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 425,
+   "execution_count": 518,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Logistic Regression Train Score: 0.5206372194062274\n",
-      "Logistic Regression Validation Score: 0.5260115606936416\n"
+      "Logistic Regression Train Score: 0.5040183696900115\n",
+      "Logistic Regression Validation Score: 0.5596330275229358\n"
      ]
     }
    ],
@@ -207,7 +207,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 426,
+   "execution_count": 519,
    "metadata": {},
    "outputs": [
     {
@@ -231,7 +231,6 @@
        "  <thead>\n",
        "    <tr style=\"text-align: right;\">\n",
        "      <th></th>\n",
-       "      <th>rank_diff</th>\n",
        "      <th>attack_diff</th>\n",
        "      <th>defence_diff</th>\n",
        "      <th>midfield_diff</th>\n",
@@ -243,47 +242,43 @@
        "      <th></th>\n",
        "      <th></th>\n",
        "      <th></th>\n",
-       "      <th></th>\n",
        "    </tr>\n",
        "  </thead>\n",
        "  <tbody>\n",
        "    <tr>\n",
        "      <th>0</th>\n",
-       "      <td>1031.324335</td>\n",
-       "      <td>41.178286</td>\n",
-       "      <td>36.447164</td>\n",
-       "      <td>36.358733</td>\n",
-       "      <td>30.316051</td>\n",
+       "      <td>41.085986</td>\n",
+       "      <td>38.149920</td>\n",
+       "      <td>37.043922</td>\n",
+       "      <td>31.591642</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>1</th>\n",
-       "      <td>1030.878211</td>\n",
-       "      <td>43.164681</td>\n",
-       "      <td>38.173861</td>\n",
-       "      <td>37.613713</td>\n",
-       "      <td>31.811819</td>\n",
+       "      <td>47.649887</td>\n",
+       "      <td>40.311426</td>\n",
+       "      <td>38.643789</td>\n",
+       "      <td>34.945340</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>2</th>\n",
-       "      <td>1100.677884</td>\n",
-       "      <td>42.149203</td>\n",
-       "      <td>40.387636</td>\n",
-       "      <td>36.910224</td>\n",
-       "      <td>32.722352</td>\n",
+       "      <td>45.844219</td>\n",
+       "      <td>46.110013</td>\n",
+       "      <td>40.277586</td>\n",
+       "      <td>37.455115</td>\n",
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
        "</div>"
       ],
       "text/plain": [
-       "            rank_diff  attack_diff  defence_diff  midfield_diff  overall_diff\n",
-       "home_win                                                                     \n",
-       "0         1031.324335    41.178286     36.447164      36.358733     30.316051\n",
-       "1         1030.878211    43.164681     38.173861      37.613713     31.811819\n",
-       "2         1100.677884    42.149203     40.387636      36.910224     32.722352"
+       "          attack_diff  defence_diff  midfield_diff  overall_diff\n",
+       "home_win                                                        \n",
+       "0           41.085986     38.149920      37.043922     31.591642\n",
+       "1           47.649887     40.311426      38.643789     34.945340\n",
+       "2           45.844219     46.110013      40.277586     37.455115"
       ]
      },
-     "execution_count": 426,
+     "execution_count": 519,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -301,7 +296,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 427,
+   "execution_count": 520,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -310,15 +305,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 428,
+   "execution_count": 521,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "LDA Train Score: 0.5184648805213613\n",
-      "LDA Validation Score: 0.5173410404624278\n"
+      "LDA Train Score: 0.4971297359357061\n",
+      "LDA Validation Score: 0.5504587155963303\n"
      ]
     }
    ],
@@ -336,7 +331,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 429,
+   "execution_count": 522,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -345,15 +340,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 430,
+   "execution_count": 523,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Train Score: 0.5141202027516293\n",
-      "QDA Validation Score: 0.5173410404624278\n"
+      "QDA Train Score: 0.5086107921928817\n",
+      "QDA Validation Score: 0.5412844036697247\n"
      ]
     }
    ],
@@ -371,7 +366,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 431,
+   "execution_count": 524,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -380,21 +375,21 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 432,
+   "execution_count": 525,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "0.55756698044895\n",
-      "0.5346820809248555\n"
+      "Random Forest Train Score: 0.5327210103329506\n",
+      "Random Forest Validation Score 0.555045871559633\n"
      ]
     }
    ],
    "source": [
-    "print(rf_model.score(X_train, y_train))\n",
-    "print(rf_model.score(X_validation, y_validation))"
+    "print(\"Random Forest Train Score: {}\".format(rf_model.score(X_train, y_train)))\n",
+    "print(\"Random Forest Validation Score {}\".format(rf_model.score(X_validation, y_validation)))"
    ]
   },
   {
@@ -406,14 +401,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 433,
+   "execution_count": 526,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Logistic Regression Test Score: 0.59375\n"
+      "Logistic Regression Test Score: 0.609375\n"
      ]
     }
    ],
@@ -424,7 +419,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 434,
+   "execution_count": 527,
    "metadata": {},
    "outputs": [
     {
@@ -442,14 +437,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 435,
+   "execution_count": 528,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Test Score: 0.640625\n"
+      "QDA Test Score: 0.546875\n"
      ]
     }
    ],
@@ -460,7 +455,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 436,
+   "execution_count": 529,
    "metadata": {},
    "outputs": [
     {

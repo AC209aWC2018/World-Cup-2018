@@ -23,6 +23,13 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
 .. toctree::
   :maxdepth: 1
+  :caption: Sofifa
+
+  sofifa/sofifa-full-scraping
+  sofifa/sofifa-cleaning
+
+.. toctree::
+  :maxdepth: 1
   :caption: Models
 
   models/baseline_model.ipynb
