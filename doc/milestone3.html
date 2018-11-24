@@ -32,207 +32,116 @@
 
           <div class="body" role="main">
             
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput,
-div.nboutput {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput div.prompt pre {
-    color: #303F9F;
-}
-
-/* output prompt */
-div.nboutput div.prompt pre {
-    color: #D84315;
-}
-
-/* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
-    min-width: 8ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
-    text-align: right;
-    flex: 0;
-}
-@media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput div.prompt.empty {
-        padding: 0;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    background: #f7f7f7;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.pngmath center alignment in output cells */
-div.nboutput div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-</style>
-<div class="section" id="Milestone-3">
+  <div class="section" id="Milestone-3">
 <h1>Milestone 3<a class="headerlink" href="#Milestone-3" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Data-Sources">
 <h2>Data Sources<a class="headerlink" href="#Data-Sources" title="Permalink to this headline">¶</a></h2>
-<p>We were able to find a dataset on Kaggle that contains all FIFA
-international men teams’ rankings from August 1993 to June 2018
-(<a class="reference external" href="https://www.kaggle.com/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now">https://www.kaggle.com/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now</a>).
+<p>We were able to find a dataset on Kaggle that contains all <a class="reference external" href="https://www.kaggle.com/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now">FIFA
+international men teams’ rankings from August 1993 to June
+2018</a>.
 This dataset will prove essential in building our baseline model using
 essentially only the FIFA rankings and basic summary statistics about
 the teams.</p>
+<p>We also found a database on Kaggle that contains data about <a class="reference external" href="https://www.kaggle.com/hugomathien/soccer">European
+matches</a> for the seasons
+Seasons 2008 to 2016 that also contain information about the teams and
+players. We primarily used this database to see look at individual
+ratings of players.</p>
 <p>We were able to find a dataset on Gitlab that contains the results of
-each match of the 2018 World Cup
-(<a class="reference external" href="https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv">https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv</a>).
+each match of the <a class="reference external" href="https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv">2018 World
+Cup</a>.
 This allows us to easily construct a test set.</p>
 <p>We also wrote two scrapers for Wikipedia.</p>
 <ul class="simple">
-<li>One scraper scrapes the World Cup teams for each country
+<li>One scraper scrapes the <a class="reference external" href="https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads">World Cup
+teams</a>
+for each country
 (<a class="reference external" href="https://en.wikipedia.org/wiki/XXXX_FIFA_World_Cup_squads">https://en.wikipedia.org/wiki/XXXX_FIFA_World_Cup_squads</a>, where XXXX
-is the year)</li>
-<li>The other scraper scrapes information about countries like GDP PPP
-(<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP">https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP</a>)),
-population
-(<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations">https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations</a>)),
-and average yearly temperature
-(<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature">https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature</a>).</li>
+is the year).</li>
+<li>The other scraper scrapes information about countries like <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)">GDP
+PPP</a>,
+<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">population</a>,
+and <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature">average yearly
+temperature</a>.</li>
 </ul>
-<p><a class="reference external" href="https://www.kaggle.com/hugomathien/soccer">https://www.kaggle.com/hugomathien/soccer</a></p>
 </div>
 <div class="section" id="Data-Cleaning">
 <h2>Data Cleaning<a class="headerlink" href="#Data-Cleaning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="European-Soccer-Database">
+<h3>European Soccer Database<a class="headerlink" href="#European-Soccer-Database" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="../_build/html/european_league/clean_european_league.html">Link</a></p>
+</div>
+<div class="section" id="Sofifa">
+<h3>Sofifa<a class="headerlink" href="#Sofifa" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="../_build/html/sofifa/sofifa-cleaning.html">Link</a></p>
+</div>
+</div>
+<div class="section" id="Feature-Engineering">
+<h2>Feature Engineering<a class="headerlink" href="#Feature-Engineering" title="Permalink to this headline">¶</a></h2>
+<p>Because in the case of the World Cup, home team does not actually mean
+anything (besides for Russia itself), we needed each feature in our
+models to be agnostic to which team is home and which team is away so
+that so that switching home team and away team does not result in
+different predictions despite everything else being the same. The most
+simple way to do so that also makes sense is to take the difference of
+home team features with away team features, as we can think of these as
+being difference in skills/abilities of the teams.</p>
+</div>
+<div class="section" id="Exploratory-Data-Analysis">
+<h2>Exploratory Data Analysis<a class="headerlink" href="#Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="European-Soccer-Database">
+<h3>European Soccer Database<a class="headerlink" href="#European-Soccer-Database" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="../_build/html/european_league/explore_european_league.html">Link</a></p>
+<p>Summary:</p>
+<p>In this dataset, we focused primarily on seeing if individual player
+statistics were important predictors of the outcome of a match. We
+aggregated for each team different player statistics and differenced the
+aggregates. From looking at the plots the distributions of a difference
+in rating among the three outcome do not really seem that different.
+This might be an indication that using individual ratings and
+aggregating them might not be the way to go.</p>
+<p><img alt="image0" src="../_images/danilo.png" /></p>
+<p>On the other hand, it seems that previous match results will be good
+predictors. This time it is a bit more obvious that home team winning
+tends to have higher values. It seems like we can probably calculate
+some kind of momentum and utilize it as a predictor. We will explore
+more of this concept later on when we try to make more advanced models.</p>
+<p><img alt="image1" src="../_images/previous_wins.png" /></p>
+<p>We kept these discoveries in mind as we move on to the Sofifa datasets.</p>
+</div>
+<div class="section" id="Sofifa">
+<h3>Sofifa<a class="headerlink" href="#Sofifa" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="Baseline-Models">
+<h2>Baseline Models<a class="headerlink" href="#Baseline-Models" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../models/baseline_model.html"><span class="doc">Link</span></a></p>
+<p>Summary:</p>
+<p>We have two different simple baseline models, one where we just guess
+the majority outcome every time (home team wins). By just guessing the
+majority outcome every time, we could achieve a 42.1875% accuracy in
+predicting the World Cup results.</p>
+<p>The other baseline model utilizes the FIFA rankings as well as some
+basic team features, including difference in attack ratings, difference
+in defense ratings, and difference in midfield ratings. Through
+classification methods such as logistic regression, LDA, QDA, and Random
+Forest, we were able to achieve around 60% accuracy in predicting the
+World Cup results. We hope to at least match this accuracy in our more
+advanced model that does not utilize the FIFA rankings.</p>
+<p>Note that because in the World Cup starting from the Round of 16 there
+can no longer be ties, we decided for these matches if the model
+predicts a tie (i.e.&nbsp;tie is the highest probability), we take the result
+with the second highest probability as our prediction. This function can
+be found inside the <code class="docutils literal notranslate"><span class="pre">models</span></code> folder with the name
+<a class="reference external" href="../models/predict_test_data.py">predict_test_data.py</a>.</p>
+</div>
+<div class="section" id="Problems-Encountered-and-Attempts-to-Solve-the-Problems">
+<h2>Problems Encountered and Attempts to Solve the Problems<a class="headerlink" href="#Problems-Encountered-and-Attempts-to-Solve-the-Problems" title="Permalink to this headline">¶</a></h2>
 <p>One of the largest issues we encountered after we collected all the data
 was that we realized that we will not be able to merge all the rows.
 There are two different underlying problems:</p>
-<div class="section" id="1.-Different-Naming-Convention-for-Countries">
-<h3>1. Different Naming Convention for Countries<a class="headerlink" href="#1.-Different-Naming-Convention-for-Countries" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="1.-Different-Naming-Conventions-for-Countries,-Players,-and-Teams">
+<h3>1. Different Naming Conventions for Countries, Players, and Teams<a class="headerlink" href="#1.-Different-Naming-Conventions-for-Countries,-Players,-and-Teams" title="Permalink to this headline">¶</a></h3>
 <p>Each dataset we collected had a different naming convention for the
 countries. In most cases, this was due to slight variation in spelling
 (i.e.&nbsp;St Lucia vs Saint Lucia). With all these different variations, we
@@ -240,7 +149,7 @@ needed to map all the variations to just one name so that we could merge
 our datasets. We decided to use the official FIFA names of the countries
 found using the FIFA rankings dataset as the mapped names. Then, in
 order to tackle this problem, we decided to install the package
-<code class="docutils literal notranslate"><span class="pre">fuzzywuzzy</span></code> (<a class="reference external" href="https://github.com/seatgeek/fuzzywuzzy">https://github.com/seatgeek/fuzzywuzzy</a>), which
+<a class="reference external" href="https://github.com/seatgeek/fuzzywuzzy">fuzzywuzzy</a>, which
 essentially calculates a similarity score using Levenshtein Distance
 between two strings. We wrote the method <code class="docutils literal notranslate"><span class="pre">map_country()</span></code> that
 essentially calculates the Levenshtein Distance for a country_name
@@ -268,57 +177,37 @@ names such as Zaire, which became Congo DR). Our method
 <code class="docutils literal notranslate"><span class="pre">map_country()</span></code> in <code class="docutils literal notranslate"><span class="pre">map_countries.py</span></code> easily takes care of this
 since in general there is no similarity score that is above 80% (except
 for a few edge cases such as Northern Cyprus, which is a different team
-than Cyprus and is not allowed to compete in FIFA).</p>
-<p>Since this was a decision we had to make, the final dataset might
-reflect some bias on our part, but we hope that this bias does not
-affect our model that much.</p>
-<p>All cleaned datasets can be found in the <code class="docutils literal notranslate"><span class="pre">data/cleaned</span></code> folder.</p>
+than Cyprus and is not allowed to compete in FIFA). These we manually
+took care of.</p>
 </div>
-<div class="section" id="European-Soccer-Database">
-<h3>European Soccer Database<a class="headerlink" href="#European-Soccer-Database" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="../_build/html/european_league/clean_european_league.html">Link</a></p>
+<div class="section" id="Aftermath-for-1.-and-2.">
+<h3>Aftermath for 1. and 2.<a class="headerlink" href="#Aftermath-for-1.-and-2." title="Permalink to this headline">¶</a></h3>
+<p>In the end, however, we decided to scrap all of this effort since our
+main goal is to be able to predict the winner of each match in the World
+Cup, we decided to focus on the teams that have appeared in the World
+Cup before. By doing so, we basically rendered all the above effort
+pointless, but one can still see our code for all of this in the repo.</p>
 </div>
-<div class="section" id="Sofifa">
-<h3>Sofifa<a class="headerlink" href="#Sofifa" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="Feature-Engineering">
-<h2>Feature Engineering<a class="headerlink" href="#Feature-Engineering" title="Permalink to this headline">¶</a></h2>
-<p>Because in the case of the World Cup, home team does not actually mean
-anything (besides for Russia itself), we needed each feature in our
-models to be agnostic to which team is home and which team is away so
-that so that switching home team and away team does not result in
-different predictions despite everything else being the same. The most
-simple way to do so that also makes sense is to take the difference of
-home team features with away team features, as we can think of these as
-being difference in skills/abilities of the teams.</p>
-</div>
-<div class="section" id="Exploratory-Data-Analysis">
-<h2>Exploratory Data Analysis<a class="headerlink" href="#Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="European-Soccer-Database">
-<h3>European Soccer Database<a class="headerlink" href="#European-Soccer-Database" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="../_build/html/european_league/explore_european_league.html">Link</a></p>
-</div>
-<div class="section" id="Sofifa">
-<h3>Sofifa<a class="headerlink" href="#Sofifa" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="Baseline-Models">
-<h2>Baseline Models<a class="headerlink" href="#Baseline-Models" title="Permalink to this headline">¶</a></h2>
-<p>We have two different simple baseline models, one where we just guess
-the majority outcome every time (home team wins), and the other where we
-utilize the FIFA rankings as well as some basic team features, including
-difference in attack ratings, difference in defense ratings, and
-difference in midfield ratings.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
+<div class="section" id="3.-Correctly-Matching-the-Players-of-a-Team">
+<h3>3. Correctly Matching the Players of a Team<a class="headerlink" href="#3.-Correctly-Matching-the-Players-of-a-Team" title="Permalink to this headline">¶</a></h3>
+<p>While different naming conventions for countries did not prove much of a
+problem, different datasets having different naming conventions for the
+players themselves proved to be a major problem. Our attempts with fuzzy
+matching did not turn out turn out that successful in this case. This is
+exacerbated by the fact that there were actually a lot more players with
+the same name than we expected there to be (especially in the case of
+Brazil).</p>
+<p><img alt="image0" src="../_images/danilo.png" /></p>
+<p>While theoretically one could match the right player in the players with
+the same names with the club they played for, the clubs themselves also
+had different naming conventions, so correctly matching players would
+result in a TON of manual work.</p>
+<p>This is one of the main reasons we decided to try out the European
+Soccer Database to see if individual player ratings could be of use
+before we attempted anything further with player data since in that
+dataset we could identify each player by a unique id, and from the EDA,
+we saw that individual data did not really help at all. As such, we
+decided to forgo on using indiviual player data.</p>
 </div>
 </div>
 </div>

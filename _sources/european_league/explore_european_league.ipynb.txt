@@ -1373,7 +1373,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "This time it is a bit more obvious that home team winning tends to have higher values. It seems like we can probably calculate some kind of momentum and utilize it as a predictor. We will explore more of this concept later on."
+    "This time it is a bit more obvious that home team winning tends to have higher values. It seems like we can probably calculate some kind of momentum and utilize it as a predictor. We will explore more of this concept later on when we make our advanced model."
    ]
   },
   {
@@ -1387,7 +1387,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "From exploration of the European dataset, we saw that aggregating individual player ratings does not seem to help that much while previous matches seem to help. We will keep these discoveries in mind as well move on to the SOFIFA datasets."
+    "From exploration of the European dataset, we saw that aggregating individual player ratings does not seem to help that much while previous matches seem to help. We will keep these discoveries in mind as we move on to the SOFIFA datasets."
    ]
   }
  ],
