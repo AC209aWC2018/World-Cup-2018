@@ -46,12 +46,12 @@
     "### European Soccer Database\n",
     "\n",
     "\n",
-    "[Link](../_build/html/european_league/clean_european_league.html)\n",
+    "[Link](../european_league/clean_european_league.ipynb)\n",
     "\n",
     "\n",
     "### Sofifa\n",
     "\n",
-    "[Link](../_build/html/sofifa/sofifa-cleaning.html)"
+    "[Link](../sofifa/sofifa-cleaning.ipynb)"
    ]
   },
   {
@@ -84,14 +84,13 @@
    },
    "source": [
     "### European Soccer Database\n",
-    "[Link](../_build/html/european_league/explore_european_league.html)\n",
+    "[Link](../european_league/explore_european_league.ipynb)\n",
     "\n",
     "Summary:\n",
     "\n",
     "In this dataset, we focused primarily on seeing if individual player statistics were important predictors of the outcome of a match. We aggregated for each team different player statistics and differenced the aggregates. From looking at the plots the distributions of a difference in rating among the three outcome do not really seem that different. This might be an indication that using individual ratings and aggregating them might not be the way to go. \n",
     "\n",
     "![](img/european_league_differences.png)\n",
-    "\n",
     "\n",
     "\n",
     "\n",
@@ -169,6 +168,13 @@
     "\n",
     "\n"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
