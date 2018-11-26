@@ -16,7 +16,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 454,
+   "execution_count": 816,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -33,23 +33,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 455,
+   "execution_count": 817,
    "metadata": {},
    "outputs": [],
    "source": [
-    "train = pd.read_csv('../data/train_team.csv')\n",
-    "test = pd.read_csv('../data/test_team.csv')"
+    "train = pd.read_csv('../data/train_merged.csv')\n",
+    "test = pd.read_csv('../data/test_merged.csv')"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 456,
+   "execution_count": 818,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "Index(['home_win', 'attack_diff', 'bup_dribbling_diff', 'bup_passing_diff',\n",
+       "Index(['game_date', 'home_team', 'away_team', 'country', 'neutral', 'home_win',\n",
+       "       'attack_diff', 'bup_dribbling_diff', 'bup_passing_diff',\n",
        "       'bup_speed_diff', 'cc_crossing_diff', 'cc_passing_diff',\n",
        "       'cc_shooting_diff', 'd_aggresion_diff', 'd_pressure_diff',\n",
        "       'd_width_diff', 'defence_diff', 'full_age_diff',\n",
@@ -62,11 +63,11 @@
        "       'previous_points_diff', 'rank_change_diff', 'rank_diff',\n",
        "       'three_year_ago_avg_diff', 'three_year_ago_weighted_diff',\n",
        "       'total_points_diff', 'two_year_ago_avg_diff',\n",
-       "       'two_year_ago_weighted_diff'],\n",
+       "       'two_year_ago_weighted_diff', 'gdp_diff'],\n",
        "      dtype='object')"
       ]
      },
-     "execution_count": 456,
+     "execution_count": 818,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -84,16 +85,16 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 457,
+   "execution_count": 819,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "0.44168962350780533"
+       "0.4406651549508692"
       ]
      },
-     "execution_count": 457,
+     "execution_count": 819,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -111,7 +112,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 458,
+   "execution_count": 820,
    "metadata": {},
    "outputs": [
     {
@@ -120,7 +121,7 @@
        "0.421875"
       ]
      },
-     "execution_count": 458,
+     "execution_count": 820,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -140,7 +141,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 459,
+   "execution_count": 821,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -150,7 +151,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 516,
+   "execution_count": 882,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -172,7 +173,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 517,
+   "execution_count": 883,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -181,15 +182,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 518,
+   "execution_count": 884,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Logistic Regression Train Score: 0.5040183696900115\n",
-      "Logistic Regression Validation Score: 0.5596330275229358\n"
+      "Logistic Regression Train Score: 0.5122873345935728\n",
+      "Logistic Regression Validation Score: 0.5320754716981132\n"
      ]
     }
    ],
@@ -207,7 +208,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 519,
+   "execution_count": 885,
    "metadata": {},
    "outputs": [
     {
@@ -247,24 +248,24 @@
        "  <tbody>\n",
        "    <tr>\n",
        "      <th>0</th>\n",
-       "      <td>41.085986</td>\n",
-       "      <td>38.149920</td>\n",
-       "      <td>37.043922</td>\n",
-       "      <td>31.591642</td>\n",
+       "      <td>42.557163</td>\n",
+       "      <td>38.549357</td>\n",
+       "      <td>37.936027</td>\n",
+       "      <td>31.537804</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>1</th>\n",
-       "      <td>47.649887</td>\n",
-       "      <td>40.311426</td>\n",
-       "      <td>38.643789</td>\n",
-       "      <td>34.945340</td>\n",
+       "      <td>48.936282</td>\n",
+       "      <td>40.405204</td>\n",
+       "      <td>40.252079</td>\n",
+       "      <td>35.024385</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>2</th>\n",
-       "      <td>45.844219</td>\n",
-       "      <td>46.110013</td>\n",
-       "      <td>40.277586</td>\n",
-       "      <td>37.455115</td>\n",
+       "      <td>44.322274</td>\n",
+       "      <td>43.722156</td>\n",
+       "      <td>38.042605</td>\n",
+       "      <td>34.816576</td>\n",
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
@@ -273,12 +274,12 @@
       "text/plain": [
        "          attack_diff  defence_diff  midfield_diff  overall_diff\n",
        "home_win                                                        \n",
-       "0           41.085986     38.149920      37.043922     31.591642\n",
-       "1           47.649887     40.311426      38.643789     34.945340\n",
-       "2           45.844219     46.110013      40.277586     37.455115"
+       "0           42.557163     38.549357      37.936027     31.537804\n",
+       "1           48.936282     40.405204      40.252079     35.024385\n",
+       "2           44.322274     43.722156      38.042605     34.816576"
       ]
      },
-     "execution_count": 519,
+     "execution_count": 885,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -296,7 +297,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 520,
+   "execution_count": 886,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -305,15 +306,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 521,
+   "execution_count": 887,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "LDA Train Score: 0.4971297359357061\n",
-      "LDA Validation Score: 0.5504587155963303\n"
+      "LDA Train Score: 0.5113421550094518\n",
+      "LDA Validation Score: 0.5547169811320755\n"
      ]
     }
    ],
@@ -331,7 +332,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 522,
+   "execution_count": 888,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -340,15 +341,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 523,
+   "execution_count": 889,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Train Score: 0.5086107921928817\n",
-      "QDA Validation Score: 0.5412844036697247\n"
+      "QDA Train Score: 0.5\n",
+      "QDA Validation Score: 0.5358490566037736\n"
      ]
     }
    ],
@@ -366,7 +367,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 524,
+   "execution_count": 890,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -375,15 +376,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 525,
+   "execution_count": 891,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Random Forest Train Score: 0.5327210103329506\n",
-      "Random Forest Validation Score 0.555045871559633\n"
+      "Random Forest Train Score: 0.553875236294896\n",
+      "Random Forest Validation Score 0.5207547169811321\n"
      ]
     }
    ],
@@ -401,14 +402,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 526,
+   "execution_count": 892,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Logistic Regression Test Score: 0.609375\n"
+      "Logistic Regression Test Score: 0.625\n"
      ]
     }
    ],
@@ -419,14 +420,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 527,
+   "execution_count": 893,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "LDA Test Score: 0.59375\n"
+      "LDA Test Score: 0.609375\n"
      ]
     }
    ],
@@ -437,14 +438,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 528,
+   "execution_count": 894,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Test Score: 0.546875\n"
+      "QDA Test Score: 0.609375\n"
      ]
     }
    ],
@@ -455,14 +456,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 529,
+   "execution_count": 895,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Random Forest Test Score: 0.625\n"
+      "Random Forest Test Score: 0.578125\n"
      ]
     }
    ],
