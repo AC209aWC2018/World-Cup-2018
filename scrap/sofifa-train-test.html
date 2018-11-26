@@ -1,0 +1,974 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [75]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [76]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/fifa/international_results.csv&#39;</span><span class="p">)</span>
+<span class="n">results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># restrict dates</span>
+<span class="n">earliest_date</span> <span class="o">=</span> <span class="s1">&#39;2010-01-01&#39;</span>
+<span class="n">latest_date</span> <span class="o">=</span> <span class="s1">&#39;2018-06-14&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="p">[(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">earliest_date</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">latest_date</span><span class="p">)]</span>
+<span class="n">results</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[76]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
+      <th>city</th>
+      <th>country</th>
+      <th>neutral</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>31700</th>
+      <td>2010-01-02 00:00:00+00:00</td>
+      <td>Iran</td>
+      <td>Korea DPR</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Friendly</td>
+      <td>Doha</td>
+      <td>Qatar</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>31701</th>
+      <td>2010-01-02 00:00:00+00:00</td>
+      <td>Qatar</td>
+      <td>Mali</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Friendly</td>
+      <td>Doha</td>
+      <td>Qatar</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>31702</th>
+      <td>2010-01-02 00:00:00+00:00</td>
+      <td>Syria</td>
+      <td>Zimbabwe</td>
+      <td>6</td>
+      <td>0</td>
+      <td>Friendly</td>
+      <td>Kuala Lumpur</td>
+      <td>Malaysia</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>31703</th>
+      <td>2010-01-02 00:00:00+00:00</td>
+      <td>Yemen</td>
+      <td>Tajikistan</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Friendly</td>
+      <td>Sana'a</td>
+      <td>Yemen</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>31704</th>
+      <td>2010-01-03 00:00:00+00:00</td>
+      <td>Angola</td>
+      <td>Gambia</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Friendly</td>
+      <td>Vila Real de Santo António</td>
+      <td>Portugal</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [77]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/sofifa_final.csv&#39;</span><span class="p">)</span>
+<span class="n">ratings</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ratings</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+
+<span class="c1"># restrict dates</span>
+<span class="c1"># note that we use a different earliest data here to ensure</span>
+<span class="c1"># that our earliest match data has a matching ratings data</span>
+<span class="n">ratings</span> <span class="o">=</span> <span class="n">ratings</span><span class="p">[(</span><span class="n">ratings</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2009-08-29&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ratings</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">latest_date</span><span class="p">)]</span>
+<span class="n">ratings</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[77]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>date</th>
+      <th>overall</th>
+      <th>attack</th>
+      <th>midfield</th>
+      <th>defence</th>
+      <th>prestige</th>
+      <th>start_age</th>
+      <th>full_age</th>
+      <th>bup_speed</th>
+      <th>...</th>
+      <th>cc_passing</th>
+      <th>cc_crossing</th>
+      <th>cc_shooting</th>
+      <th>d_pressure</th>
+      <th>d_aggresion</th>
+      <th>d_width</th>
+      <th>wage_euros_thousands</th>
+      <th>value_euros_millions</th>
+      <th>growth</th>
+      <th>goalkeeeper_overall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>48</th>
+      <td>Brazil</td>
+      <td>2018-06-11</td>
+      <td>85.0</td>
+      <td>86.0</td>
+      <td>83.0</td>
+      <td>85.0</td>
+      <td>10.0</td>
+      <td>26.73</td>
+      <td>27.09</td>
+      <td>51.0</td>
+      <td>...</td>
+      <td>39.0</td>
+      <td>33.0</td>
+      <td>67.0</td>
+      <td>76.0</td>
+      <td>73.0</td>
+      <td>63.0</td>
+      <td>123.608696</td>
+      <td>32.5</td>
+      <td>1.826087</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Brazil</td>
+      <td>2018-06-07</td>
+      <td>85.0</td>
+      <td>86.0</td>
+      <td>83.0</td>
+      <td>85.0</td>
+      <td>10.0</td>
+      <td>26.73</td>
+      <td>27.09</td>
+      <td>51.0</td>
+      <td>...</td>
+      <td>39.0</td>
+      <td>33.0</td>
+      <td>67.0</td>
+      <td>76.0</td>
+      <td>73.0</td>
+      <td>63.0</td>
+      <td>123.608696</td>
+      <td>32.5</td>
+      <td>1.826087</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Brazil</td>
+      <td>2018-06-04</td>
+      <td>85.0</td>
+      <td>86.0</td>
+      <td>83.0</td>
+      <td>85.0</td>
+      <td>10.0</td>
+      <td>26.73</td>
+      <td>27.09</td>
+      <td>51.0</td>
+      <td>...</td>
+      <td>39.0</td>
+      <td>33.0</td>
+      <td>67.0</td>
+      <td>76.0</td>
+      <td>73.0</td>
+      <td>63.0</td>
+      <td>123.608696</td>
+      <td>32.5</td>
+      <td>1.826087</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Brazil</td>
+      <td>2018-05-31</td>
+      <td>85.0</td>
+      <td>86.0</td>
+      <td>83.0</td>
+      <td>85.0</td>
+      <td>10.0</td>
+      <td>26.73</td>
+      <td>27.09</td>
+      <td>51.0</td>
+      <td>...</td>
+      <td>39.0</td>
+      <td>33.0</td>
+      <td>67.0</td>
+      <td>76.0</td>
+      <td>73.0</td>
+      <td>63.0</td>
+      <td>123.608696</td>
+      <td>32.5</td>
+      <td>1.826087</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>Brazil</td>
+      <td>2018-05-28</td>
+      <td>85.0</td>
+      <td>86.0</td>
+      <td>83.0</td>
+      <td>85.0</td>
+      <td>10.0</td>
+      <td>26.73</td>
+      <td>27.09</td>
+      <td>51.0</td>
+      <td>...</td>
+      <td>39.0</td>
+      <td>33.0</td>
+      <td>67.0</td>
+      <td>76.0</td>
+      <td>73.0</td>
+      <td>63.0</td>
+      <td>123.608696</td>
+      <td>32.5</td>
+      <td>1.826087</td>
+      <td>84.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div></div>
+</div>
+<p>We now have to find the closest match in date between our FIFA team
+ratings and the match data that we have.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [78]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">ratings</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">teams</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [79]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># check that we found the corresponding team from team ratings in results</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">teams</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">home_team</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="o">==</span> <span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cannot Find </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">teams</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">away_team</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="o">==</span> <span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cannot Find </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Cannot Find Republic of Ireland
+Cannot Find United States
+Cannot Find China PR
+Cannot Find Côte d&#39;Ivoire
+Cannot Find Republic of Ireland
+Cannot Find United States
+Cannot Find China PR
+Cannot Find Côte d&#39;Ivoire
+</pre></div></div>
+</div>
+<p>Before we proceed with anything else, let’s check that country names are
+spelled similarly. We find that ‘Republic of Ireland’, ‘United States’,
+‘China PR’, and ‘Côte d’Ivoire’ might be spelled differently.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [80]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ratings</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Republic of Ireland&#39;</span><span class="p">,</span> <span class="s1">&#39;Ireland&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ratings</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ratings</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;China PR&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ratings</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Côte d&#39;Ivoire&quot;</span><span class="p">,</span> <span class="s1">&#39;Ivory Coast&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Now we finally have two datasets of teams spelled in the same way.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># find closest date that we have data on</span>
+<span class="k">def</span> <span class="nf">get_latest_date</span><span class="p">(</span><span class="n">match_date</span><span class="p">,</span> <span class="n">dates</span><span class="p">):</span>
+    <span class="n">match_date</span> <span class="o">=</span> <span class="n">match_date</span><span class="o">.</span><span class="n">to_datetime64</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">dates</span><span class="p">[</span><span class="n">match_date</span> <span class="o">&gt;</span>  <span class="n">dates</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># results[&#39;closest_date&#39;] = results.apply(lambda i: min(dates, key=lambda d: abs(d-i.date)), axis=1)</span>
+<span class="n">results</span><span class="p">[</span><span class="s1">&#39;closest_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_latest_date</span><span class="p">,</span> <span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="p">)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Now that we have the closest matching data for both of our datasets, we
+can merge on team and date. Note that we have merge twice in order to
+account for both teams in the results table.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># merge home team with their closest ratings</span>
+<span class="n">results_ratings1</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ratings</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+                                <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;closest_date&#39;</span><span class="p">,</span> <span class="s1">&#39;home_team&#39;</span><span class="p">],</span>
+                                <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">])</span>
+
+<span class="n">results_ratings2</span> <span class="o">=</span> <span class="n">results_ratings1</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ratings</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+                                       <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;closest_date&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team&#39;</span><span class="p">],</span>
+                                       <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">results_ratings2</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<p>We find that we have 1171 observations that can still be used after
+matching team ratings with the results dataframe with an inner merge. We
+now clean up the merged dataframe slightly.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># response variable</span>
+<span class="n">score_diff</span> <span class="o">=</span> <span class="n">results_ratings2</span><span class="p">[</span><span class="s1">&#39;home_score&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">results_ratings2</span><span class="p">[</span><span class="s1">&#39;away_score&#39;</span><span class="p">]</span>
+<span class="n">results_ratings2</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">score_diff</span><span class="p">]</span>
+
+<span class="c1"># drop useless columns</span>
+<span class="n">results_ratings2</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team&#39;</span><span class="p">,</span> <span class="s1">&#39;tournament&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;city&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;neutral&#39;</span><span class="p">,</span> <span class="s1">&#39;closest_date&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;team_x&#39;</span><span class="p">,</span> <span class="s1">&#39;date_y&#39;</span><span class="p">,</span> <span class="s1">&#39;team_y&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;home_score&#39;</span><span class="p">,</span> <span class="s1">&#39;away_score&#39;</span><span class="p">,</span> <span class="s1">&#39;date_x&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># reorder columns</span>
+<span class="n">results_ratings2</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results_ratings2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Our final training data is basically a difference in the various team
+ratings. Now let’s clean up the dataframe for our training.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ratings_base</span> <span class="o">=</span> <span class="n">results_ratings2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]]</span>
+<span class="n">ratings_base</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">diff_ratings</span> <span class="o">=</span> <span class="n">results_ratings2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">diff_ratings</span> <span class="o">=</span> <span class="n">diff_ratings</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ncol</span> <span class="o">=</span> <span class="n">diff_ratings</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># we only want every alternate column</span>
+<span class="n">diff_ratings</span> <span class="o">=</span> <span class="n">diff_ratings</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">ncol</span><span class="p">,</span> <span class="mi">2</span><span class="p">))]</span>
+
+<span class="c1"># we want our statistics to be from perspective of home team</span>
+<span class="n">diff_ratings</span> <span class="o">=</span> <span class="n">diff_ratings</span><span class="o">*-</span><span class="mi">1</span>
+<span class="n">diff_ratings</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_dribbling_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_passing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_speed_diff&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;cc_crossing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;cc_passing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;cc_shooting_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;d_aggresion_diff&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;d_pressure_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;d_width_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;full_age_diff&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;goalkeeper_overall_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;growth_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;overall_diff&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;prestige_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;start_age_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;avg_value_euros_millions_diff&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;avg_wage_euros_thousands_diff&#39;</span><span class="p">]</span>
+
+<span class="n">diff_ratings</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
+
+<span class="c1"># compile datframe</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">ratings_base</span><span class="p">,</span> <span class="n">diff_ratings</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="o">.</span><span class="n">avg_wage_euros_thousands_diff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="o">.</span><span class="n">avg_value_euros_millions_diff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Importantly, we note that 558 out of our 1171 observations have missing
+wage and value data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># save to csv</span>
+<span class="n">train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/train_team.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We now create our test set with actual world cup data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ratings_wc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/sofifa_final.csv&#39;</span><span class="p">)</span>
+<span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># restrict dates</span>
+<span class="n">latest_date</span> <span class="o">=</span> <span class="s1">&#39;2018-06-14&#39;</span>
+<span class="n">wc_pre</span> <span class="o">=</span> <span class="s1">&#39;2018-06-14&#39;</span> <span class="c1"># pre WC rating for values and wages</span>
+<span class="n">wc_start</span> <span class="o">=</span> <span class="s1">&#39;2018-06-16&#39;</span> <span class="c1"># first WC rating</span>
+<span class="n">wc_end</span> <span class="o">=</span> <span class="s1">&#39;2018-07-15&#39;</span>
+
+<span class="c1"># get values and wages data</span>
+<span class="n">wage</span> <span class="o">=</span> <span class="n">ratings_wc</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">wc_pre</span><span class="p">,</span> <span class="s1">&#39;wage_euros_thousands&#39;</span><span class="p">]</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">ratings_wc</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">wc_pre</span><span class="p">,</span> <span class="s1">&#39;value_euros_millions&#39;</span><span class="p">]</span>
+
+<span class="c1"># restrict dates</span>
+<span class="n">ratings_wc</span> <span class="o">=</span> <span class="n">ratings_wc</span><span class="p">[(</span><span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">wc_start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">wc_end</span><span class="p">)]</span>
+
+<span class="c1"># replace values and wage data</span>
+<span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;wage_euros_thousands&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wage</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;value_euros_millions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ratings_wc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dates_wc</span> <span class="o">=</span> <span class="n">ratings_wc</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">teams_wc</span> <span class="o">=</span> <span class="n">ratings_wc</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv</span>
+<span class="n">results_wc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/world_cup_2018_stats.csv&quot;</span><span class="p">)</span>
+<span class="n">results_wc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Before we proceed, let’s ensure that our country names match up
+similarly.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># check that we found the corresponding team from team ratings in results</span>
+<span class="c1"># but now we reverse it such that we try to find a rating for each wc team</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">results_wc</span><span class="o">.</span><span class="n">Team</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">teams_wc</span> <span class="o">==</span> <span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cannot Find </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ratings_wc</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Iran&#39;</span><span class="p">,</span> <span class="s1">&#39;IR Iran&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">results_wc</span> <span class="o">=</span> <span class="n">results_wc</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="s1">&#39;Opponent&#39;</span><span class="p">,</span> <span class="s1">&#39;WDL&#39;</span><span class="p">]]</span>
+<span class="n">results_wc</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">if</span> <span class="n">score</span> <span class="o">==</span> <span class="s1">&#39;L&#39;</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">score</span> <span class="o">==</span> <span class="s1">&#39;W&#39;</span> <span class="k">else</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">results_wc</span><span class="o">.</span><span class="n">WDL</span><span class="p">]</span>
+<span class="n">results_wc</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;WDL&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># we only want every alternate column</span>
+<span class="n">results_wc</span> <span class="o">=</span> <span class="n">results_wc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">results_wc</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)),:]</span>
+
+<span class="n">results_wc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Now we can match the ratings data to our test dataset as well. We note
+that there might be some value in using the updated FIFA ratings at each
+time of the match. However, for simplicity, let’s just assume that teams
+have the same rating throughout the tournament. We will take the rating
+at the start of the tournament.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ratings_wc_start</span> <span class="o">=</span> <span class="n">ratings_wc</span><span class="p">[</span><span class="n">ratings_wc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">wc_start</span><span class="p">]</span>
+
+<span class="c1"># merge ratings with results table</span>
+<span class="n">results_ratings_wc1</span> <span class="o">=</span> <span class="n">results_wc</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ratings_wc_start</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+                                     <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;team&#39;</span><span class="p">)</span>
+<span class="n">results_ratings_wc2</span> <span class="o">=</span> <span class="n">results_ratings_wc1</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ratings_wc_start</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+                                             <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Opponent&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;team&#39;</span><span class="p">)</span>
+
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># check that every team has a rating</span>
+<span class="k">assert</span> <span class="n">results_ratings_wc2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">results_wc</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># drop useless columns</span>
+<span class="n">results_ratings_wc2</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="s1">&#39;Opponent&#39;</span><span class="p">,</span> <span class="s1">&#39;team_x&#39;</span><span class="p">,</span> <span class="s1">&#39;team_y&#39;</span><span class="p">,</span> <span class="s1">&#39;date_y&#39;</span><span class="p">,</span> <span class="s1">&#39;date_x&#39;</span><span class="p">],</span>
+                         <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># reorder columns</span>
+<span class="n">results_ratings_wc2</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results_ratings_wc2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ratings_base_wc</span> <span class="o">=</span> <span class="n">results_ratings_wc2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]]</span>
+<span class="n">ratings_base_wc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">diff_ratings_wc</span> <span class="o">=</span> <span class="n">results_ratings_wc2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">diff_ratings_wc</span> <span class="o">=</span> <span class="n">diff_ratings_wc</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ncol_wc</span> <span class="o">=</span> <span class="n">diff_ratings_wc</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># we only want every alternate column</span>
+<span class="n">diff_ratings_wc</span> <span class="o">=</span> <span class="n">diff_ratings_wc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">ncol_wc</span><span class="p">,</span> <span class="mi">2</span><span class="p">))]</span>
+
+<span class="c1"># we want our statistics to be from perspective of home teams</span>
+<span class="n">diff_ratings_wc</span> <span class="o">=</span> <span class="n">diff_ratings_wc</span><span class="o">*-</span><span class="mi">1</span>
+<span class="n">diff_ratings_wc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">diff_ratings_wc</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
+
+<span class="c1"># compile datframe</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">ratings_base_wc</span><span class="p">,</span> <span class="n">diff_ratings_wc</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># save to csv</span>
+<span class="n">test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/test_team.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/scrap/sofifa-train-test.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

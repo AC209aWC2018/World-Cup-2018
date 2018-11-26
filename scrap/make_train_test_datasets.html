@@ -1,0 +1,2706 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">map_countries</span> <span class="k">import</span> <span class="n">map_country</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">int_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/fifa/international_results.csv&#39;</span><span class="p">)</span>
+<span class="n">int_results</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
+      <th>city</th>
+      <th>country</th>
+      <th>neutral</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1872-11-30</td>
+      <td>Scotland</td>
+      <td>England</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Friendly</td>
+      <td>Glasgow</td>
+      <td>Scotland</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1873-03-08</td>
+      <td>England</td>
+      <td>Scotland</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Friendly</td>
+      <td>London</td>
+      <td>England</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1874-03-07</td>
+      <td>Scotland</td>
+      <td>England</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Friendly</td>
+      <td>Glasgow</td>
+      <td>Scotland</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1875-03-06</td>
+      <td>England</td>
+      <td>Scotland</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Friendly</td>
+      <td>London</td>
+      <td>England</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1876-03-04</td>
+      <td>Scotland</td>
+      <td>England</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Friendly</td>
+      <td>Glasgow</td>
+      <td>Scotland</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">earliest_date</span> <span class="o">=</span> <span class="s1">&#39;2010-01-01&#39;</span>
+<span class="n">int_results_after</span> <span class="o">=</span> <span class="n">int_results</span><span class="p">[(</span><span class="n">int_results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-01-01&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">int_results</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;2018-06-14&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">int_results_after</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">int_results_after</span><span class="o">.</span><span class="n">home_score</span> <span class="o">-</span> <span class="n">int_results_after</span><span class="o">.</span><span class="n">away_score</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">int_results_after</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;home_score&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;away_score&#39;</span><span class="p">],</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+<span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+<span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Cannot map guadeloupe
+Cannot map iraqi kurdistan
+Cannot map abkhazia
+Cannot map darfur
+Cannot map ellan vannin
+Cannot map tamil eelam
+Cannot map sápmi
+Cannot map darfur
+Cannot map ellan vannin
+Cannot map tamil eelam
+Cannot map sápmi
+Cannot map south ossetia
+Cannot map artsakh
+Cannot map padania
+Cannot map abkhazia
+Cannot map arameans suryoye
+Cannot map ellan vannin
+Cannot map sápmi
+Cannot map darfur
+Cannot map padania
+Cannot map occitania
+Cannot map county of nice
+Cannot map arameans suryoye
+Cannot map sápmi
+Cannot map tamil eelam
+Cannot map abkhazia
+Cannot map padania
+Cannot map south ossetia
+Cannot map county of nice
+Cannot map northern mariana islands
+Cannot map bonaire
+Cannot map guadeloupe
+Cannot map martinique
+Cannot map székely land
+Cannot map padania
+Cannot map székely land
+Cannot map romani people
+Cannot map felvidék
+Cannot map padania
+Cannot map székely land
+Cannot map county of nice
+Cannot map padania
+Cannot map ellan vannin
+Cannot map county of nice
+Cannot map greenland
+Cannot map saare county
+Cannot map ynys môn
+Cannot map falkland islands
+Cannot map shetland
+Cannot map western isles
+Cannot map jersey
+Cannot map isle of man
+Cannot map jersey
+Cannot map åland islands
+Cannot map menorca
+Cannot map guersney
+Cannot map isle of wight
+Cannot map hitra
+Cannot map åland islands
+Cannot map greenland
+Cannot map isle of wight
+Cannot map falkland islands
+Cannot map jersey
+Cannot map alderney
+Cannot map hitra
+Cannot map falkland islands
+Cannot map jersey
+Cannot map isle of wight
+Cannot map menorca
+Cannot map shetland
+Cannot map menorca
+Cannot map guersney
+Cannot map zanzibar
+Cannot map zanzibar
+Cannot map martinique
+Cannot map guadeloupe
+Cannot map sint maarten
+Cannot map guadeloupe
+Cannot map martinique
+Cannot map sint maarten
+Cannot map martinique
+Cannot map abkhazia
+Cannot map iraqi kurdistan
+Cannot map padania
+Cannot map sápmi
+Cannot map chagos islands
+Cannot map raetia
+Cannot map sápmi
+Cannot map abkhazia
+Cannot map martinique
+Cannot map abkhazia
+Cannot map iraqi kurdistan
+Cannot map chagos islands
+Cannot map székely land
+Cannot map iraqi kurdistan
+Cannot map chagos islands
+Cannot map guadeloupe
+Cannot map abkhazia
+Cannot map padania
+Cannot map sápmi
+Cannot map padania
+Cannot map abkhazia
+Cannot map northern mariana islands
+Cannot map northern mariana islands
+Cannot map martinique
+Cannot map guadeloupe
+Cannot map abkhazia
+Cannot map padania
+Cannot map felvidék
+Cannot map kárpátalja
+Cannot map székely land
+Cannot map ellan vannin
+Cannot map south ossetia
+Cannot map ellan vannin
+Cannot map padania
+Cannot map south ossetia
+Cannot map kárpátalja
+Cannot map padania
+Cannot map székely land
+Cannot map martinique
+Cannot map martinique
+Cannot map menorca
+Cannot map alderney
+Cannot map western isles
+Cannot map guersney
+Cannot map saare county
+Cannot map isle of man
+Cannot map ynys môn
+Cannot map jersey
+Cannot map orkney
+Cannot map frøya
+Cannot map shetland
+Cannot map åland islands
+Cannot map falkland islands
+Cannot map hitra
+Cannot map menorca
+Cannot map orkney
+Cannot map frøya
+Cannot map guersney
+Cannot map åland islands
+Cannot map isle of man
+Cannot map hitra
+Cannot map falkland islands
+Cannot map saare county
+Cannot map hitra
+Cannot map orkney
+Cannot map ynys môn
+Cannot map greenland
+Cannot map guersney
+Cannot map menorca
+Cannot map greenland
+Cannot map martinique
+Cannot map zanzibar
+Cannot map tuvalu
+Cannot map guadeloupe
+Cannot map martinique
+Cannot map ellan vannin
+Cannot map barawa
+Cannot map abkhazia
+Cannot map székely land
+Cannot map padania
+Cannot map panjab
+Cannot map ellan vannin
+Cannot map barawa
+Cannot map abkhazia
+Cannot map székely land
+Cannot map padania
+Cannot map panjab
+Cannot map tamil eelam
+Cannot map barawa
+Cannot map abkhazia
+Cannot map kárpátalja
+Cannot map padania
+Cannot map tuvalu
+Cannot map panjab
+Cannot map martinique
+Cannot map matabeleland
+Cannot map abkhazia
+Cannot map barawa
+Cannot map padania
+Cannot map kárpátalja
+Cannot map guadeloupe
+Cannot map tamil eelam
+Cannot map tibet
+Cannot map abkhazia
+Cannot map barawa
+Cannot map cascadia
+Cannot map kárpátalja
+Cannot map matabeleland
+Cannot map tibet
+Cannot map kabylia
+Cannot map barawa
+Cannot map panjab
+Cannot map padania
+Cannot map martinique
+Cannot map bonaire
+Cannot map arameans suryoye
+Cannot map occitania
+Cannot map padania
+Cannot map artsakh
+Cannot map arameans suryoye
+Cannot map abkhazia
+Cannot map south ossetia
+Cannot map county of nice
+Cannot map iraqi kurdistan
+Cannot map occitania
+Cannot map padania
+Cannot map county of nice
+Cannot map county of nice
+Cannot map south ossetia
+Cannot map occitania
+Cannot map iraqi kurdistan
+Cannot map tamil eelam
+Cannot map artsakh
+Cannot map abkhazia
+Cannot map iraqi kurdistan
+Cannot map south ossetia
+Cannot map ellan vannin
+Cannot map artsakh
+Cannot map darfur
+Cannot map occitania
+Cannot map iraqi kurdistan
+Cannot map arameans suryoye
+Cannot map ellan vannin
+Cannot map northern mariana islands
+Cannot map northern mariana islands
+Cannot map st martin
+Cannot map martinique
+Cannot map martinique
+Cannot map bonaire
+Cannot map martinique
+Cannot map martinique
+Cannot map bonaire
+Cannot map bonaire
+Cannot map county of nice
+Cannot map romani people
+Cannot map felvidék
+Cannot map ellan vannin
+Cannot map county of nice
+Cannot map ellan vannin
+Cannot map romani people
+Cannot map ellan vannin
+Cannot map felvidék
+Cannot map felvidék
+Cannot map padania
+Cannot map menorca
+Cannot map åland islands
+Cannot map guersney
+Cannot map hitra
+Cannot map isle of wight
+Cannot map isle of man
+Cannot map alderney
+Cannot map alderney
+Cannot map western isles
+Cannot map greenland
+Cannot map saare county
+Cannot map ynys môn
+Cannot map falkland islands
+Cannot map shetland
+Cannot map menorca
+Cannot map saare county
+Cannot map ynys môn
+Cannot map guersney
+Cannot map hitra
+Cannot map shetland
+Cannot map isle of man
+Cannot map western isles
+Cannot map alderney
+Cannot map saare county
+Cannot map western isles
+Cannot map åland islands
+Cannot map ynys môn
+Cannot map greenland
+Cannot map guersney
+Cannot map isle of man
+Cannot map shetland
+Cannot map isle of man
+Cannot map zanzibar
+Cannot map guadeloupe
+Cannot map martinique
+Cannot map martinique
+Cannot map guadeloupe
+Cannot map chagos islands
+Cannot map székely land
+Cannot map székely land
+Cannot map padania
+Cannot map panjab
+Cannot map iraqi kurdistan
+Cannot map raetia
+Cannot map panjab
+Cannot map guadeloupe
+Cannot map sápmi
+Cannot map padania
+Cannot map panjab
+Cannot map raetia
+Cannot map sápmi
+Cannot map raetia
+Cannot map székely land
+Cannot map panjab
+Cannot map iraqi kurdistan
+Cannot map panjab
+Cannot map martinique
+Cannot map martinique
+Cannot map martinique
+Cannot map guadeloupe
+Cannot map kárpátalja
+Cannot map south ossetia
+Cannot map ellan vannin
+Cannot map székely land
+Cannot map south ossetia
+Cannot map abkhazia
+Cannot map padania
+Cannot map felvidék
+Cannot map abkhazia
+Cannot map kárpátalja
+Cannot map székely land
+Cannot map felvidék
+Cannot map felvidék
+Cannot map ellan vannin
+Cannot map székely land
+Cannot map abkhazia
+Cannot map abkhazia
+Cannot map padania
+Cannot map orkney
+Cannot map jersey
+Cannot map frøya
+Cannot map greenland
+Cannot map åland islands
+Cannot map shetland
+Cannot map hitra
+Cannot map falkland islands
+Cannot map menorca
+Cannot map alderney
+Cannot map western isles
+Cannot map greenland
+Cannot map guersney
+Cannot map saare county
+Cannot map isle of man
+Cannot map ynys môn
+Cannot map alderney
+Cannot map jersey
+Cannot map greenland
+Cannot map western isles
+Cannot map saare county
+Cannot map shetland
+Cannot map ynys môn
+Cannot map falkland islands
+Cannot map alderney
+Cannot map frøya
+Cannot map western isles
+Cannot map shetland
+Cannot map åland islands
+Cannot map jersey
+Cannot map menorca
+Cannot map isle of man
+Cannot map guersney
+Cannot map isle of man
+Cannot map martinique
+Cannot map martinique
+Cannot map tuvalu
+Cannot map zanzibar
+Cannot map zanzibar
+Cannot map tuvalu
+Cannot map zanzibar
+Cannot map tuvalu
+Cannot map zanzibar
+Cannot map zanzibar
+Cannot map cascadia
+Cannot map tamil eelam
+Cannot map tibet
+Cannot map kárpátalja
+Cannot map tuvalu
+Cannot map matabeleland
+Cannot map kabylia
+Cannot map tamil eelam
+Cannot map cascadia
+Cannot map kárpátalja
+Cannot map tibet
+Cannot map matabeleland
+Cannot map tuvalu
+Cannot map kabylia
+Cannot map cascadia
+Cannot map ellan vannin
+Cannot map tibet
+Cannot map székely land
+Cannot map matabeleland
+Cannot map kabylia
+Cannot map kabylia
+Cannot map tamil eelam
+Cannot map tuvalu
+Cannot map panjab
+Cannot map cascadia
+Cannot map székely land
+Cannot map tuvalu
+Cannot map kabylia
+Cannot map panjab
+Cannot map padania
+Cannot map székely land
+Cannot map tamil eelam
+Cannot map abkhazia
+Cannot map cascadia
+Cannot map székely land
+Cannot map kárpátalja
+Cannot map guadeloupe
+Cannot map martinique
+Cannot map martinique
+Cannot map guadeloupe
+Cannot map guadeloupe
+Cannot map guadeloupe
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map jersey
+Cannot map martinique
+Cannot map guadeloupe
+Cannot map sint maarten
+Cannot map guadeloupe
+Cannot map martinique
+Cannot map sint maarten
+Cannot map martinique
+Cannot map martinique
+Cannot map guadeloupe
+Cannot map monaco
+Cannot map french polynesia
+Cannot map martinique
+Cannot map guadeloupe
+Cannot map martinique
+Cannot map martinique
+Cannot map martinique
+Cannot map martinique
+Cannot map guadeloupe
+Cannot map martinique
+Cannot map martinique
+Cannot map martinique
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># int_results_after[&#39;home_team_mapped&#39;] = int_results_after[&#39;home_team&#39;].copy().apply(map_country)</span>
+<span class="c1"># int_results_after[&#39;away_team_mapped&#39;] = int_results_after[&#39;away_team&#39;].copy().apply(map_country)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">winners</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">winner</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">int_results_after</span><span class="o">.</span><span class="n">home_win</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">winner</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">winners</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">int_results_after</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;home_team&#39;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">winner</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">winners</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">int_results_after</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;away_team&#39;</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">winners</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Tie&#39;</span><span class="p">)</span>
+<span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;Winner&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">winners</span>
+<span class="n">int_results_after</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
+      <th>city</th>
+      <th>country</th>
+      <th>neutral</th>
+      <th>home_win</th>
+      <th>Winner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014-01-04</td>
+      <td>bahrain</td>
+      <td>jordan</td>
+      <td>0</td>
+      <td>1</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>True</td>
+      <td>0</td>
+      <td>jordan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2014-01-04</td>
+      <td>namibia</td>
+      <td>ghana</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Friendly</td>
+      <td>Windhoek</td>
+      <td>namibia</td>
+      <td>False</td>
+      <td>0</td>
+      <td>ghana</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014-01-04</td>
+      <td>nigeria</td>
+      <td>ethiopia</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Friendly</td>
+      <td>Abuja</td>
+      <td>nigeria</td>
+      <td>False</td>
+      <td>1</td>
+      <td>nigeria</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014-01-04</td>
+      <td>qatar</td>
+      <td>kuwait</td>
+      <td>3</td>
+      <td>0</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>False</td>
+      <td>1</td>
+      <td>qatar</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014-01-07</td>
+      <td>bahrain</td>
+      <td>kuwait</td>
+      <td>0</td>
+      <td>0</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>True</td>
+      <td>2</td>
+      <td>Tie</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="n">int_results_after</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;home_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">locs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">locs</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">,</span> <span class="s1">&#39;Tie&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Game Match Results after </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">earliest_date</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Home Team Won&#39;</span><span class="p">);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figs/gamematchresults.png&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/scrap_make_train_test_datasets_6_0.png" src="../_images/scrap_make_train_test_datasets_6_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">win_count</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Winner&#39;</span><span class="p">)[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">win_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="s1">&#39;Number of Wins&#39;</span><span class="p">]</span>
+<span class="n">win_count</span> <span class="o">=</span> <span class="n">win_count</span><span class="p">[</span><span class="n">win_count</span><span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Tie&#39;</span><span class="p">]</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">worldcup_teams</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Egypt&#39;</span><span class="p">,</span> <span class="s1">&#39;Russia&#39;</span><span class="p">,</span> <span class="s1">&#39;Saudi Arabia&#39;</span><span class="p">,</span> <span class="s1">&#39;Uruguay&#39;</span><span class="p">,</span> <span class="s1">&#39;Iran&#39;</span><span class="p">,</span> <span class="s1">&#39;Morocco&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Portugal&#39;</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">,</span> <span class="s1">&#39;Australia&#39;</span><span class="p">,</span> <span class="s1">&#39;Denmark&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">,</span> <span class="s1">&#39;Peru&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Argentina&#39;</span><span class="p">,</span> <span class="s1">&#39;Croatia&#39;</span><span class="p">,</span> <span class="s1">&#39;Iceland&#39;</span><span class="p">,</span> <span class="s1">&#39;Nigeria&#39;</span><span class="p">,</span> <span class="s1">&#39;Brazil&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Costa Rica&#39;</span><span class="p">,</span> <span class="s1">&#39;Serbia&#39;</span><span class="p">,</span> <span class="s1">&#39;Switzerland&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="s1">&#39;Mexico&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Korea Republic&#39;</span><span class="p">,</span> <span class="s1">&#39;Sweden&#39;</span><span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;England&#39;</span><span class="p">,</span> <span class="s1">&#39;Panama&#39;</span><span class="p">,</span> <span class="s1">&#39;Tunisia&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Colombia&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="s1">&#39;Poland&#39;</span><span class="p">,</span> <span class="s1">&#39;Senegal&#39;</span><span class="p">]</span>
+<span class="n">worldcup_teams</span> <span class="o">=</span> <span class="p">[</span><span class="n">team_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">team_name</span> <span class="ow">in</span> <span class="n">worldcup_teams</span><span class="p">]</span>
+<span class="n">worldcup_team_win_count</span> <span class="o">=</span> <span class="n">win_count</span><span class="p">[</span><span class="n">win_count</span><span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">worldcup_teams</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">games</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">team</span> <span class="ow">in</span> <span class="n">worldcup_team_win_count</span><span class="o">.</span><span class="n">Team</span><span class="p">:</span>
+    <span class="n">games</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">int_results_after</span><span class="p">[</span><span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">team</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span> <span class="o">+</span>\
+                <span class="nb">len</span><span class="p">(</span><span class="n">int_results_after</span><span class="p">[</span><span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">team</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()))</span>
+<span class="n">worldcup_team_win_count</span><span class="p">[</span><span class="s1">&#39;Number of Games&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">games</span>
+<span class="n">worldcup_team_win_count</span><span class="p">[</span><span class="s1">&#39;Win Rate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">worldcup_team_win_count</span><span class="p">[</span><span class="s1">&#39;Number of Wins&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="o">/</span>\
+                            <span class="n">worldcup_team_win_count</span><span class="p">[</span><span class="s1">&#39;Number of Games&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">worldcup_team_win_count</span> <span class="o">=</span> <span class="n">worldcup_team_win_count</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Win Rate&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">worldcup_team_win_count</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/Users/blin/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:4: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  after removing the cwd from sys.path.
+/Users/blin/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:5: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  &#34;&#34;&#34;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Team</th>
+      <th>Number of Wins</th>
+      <th>Number of Games</th>
+      <th>Win Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>18</th>
+      <td>belgium</td>
+      <td>37</td>
+      <td>52</td>
+      <td>0.711538</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>brazil</td>
+      <td>37</td>
+      <td>53</td>
+      <td>0.698113</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>france</td>
+      <td>39</td>
+      <td>58</td>
+      <td>0.672414</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>spain</td>
+      <td>33</td>
+      <td>50</td>
+      <td>0.660000</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>switzerland</td>
+      <td>29</td>
+      <td>46</td>
+      <td>0.630435</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>portugal</td>
+      <td>37</td>
+      <td>59</td>
+      <td>0.627119</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>germany</td>
+      <td>38</td>
+      <td>61</td>
+      <td>0.622951</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>england</td>
+      <td>31</td>
+      <td>51</td>
+      <td>0.607843</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>senegal</td>
+      <td>29</td>
+      <td>50</td>
+      <td>0.580000</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>croatia</td>
+      <td>28</td>
+      <td>49</td>
+      <td>0.571429</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>poland</td>
+      <td>25</td>
+      <td>44</td>
+      <td>0.568182</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>argentina</td>
+      <td>30</td>
+      <td>53</td>
+      <td>0.566038</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>egypt</td>
+      <td>25</td>
+      <td>45</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>japan</td>
+      <td>32</td>
+      <td>58</td>
+      <td>0.551724</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>morocco</td>
+      <td>30</td>
+      <td>55</td>
+      <td>0.545455</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>mexico</td>
+      <td>39</td>
+      <td>72</td>
+      <td>0.541667</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>korea republic</td>
+      <td>35</td>
+      <td>67</td>
+      <td>0.522388</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>peru</td>
+      <td>22</td>
+      <td>44</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>colombia</td>
+      <td>24</td>
+      <td>49</td>
+      <td>0.489796</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>saudi arabia</td>
+      <td>26</td>
+      <td>54</td>
+      <td>0.481481</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>uruguay</td>
+      <td>22</td>
+      <td>46</td>
+      <td>0.478261</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>iceland</td>
+      <td>25</td>
+      <td>55</td>
+      <td>0.454545</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>serbia</td>
+      <td>18</td>
+      <td>40</td>
+      <td>0.450000</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>nigeria</td>
+      <td>25</td>
+      <td>56</td>
+      <td>0.446429</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>australia</td>
+      <td>23</td>
+      <td>52</td>
+      <td>0.442308</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>tunisia</td>
+      <td>23</td>
+      <td>52</td>
+      <td>0.442308</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>denmark</td>
+      <td>18</td>
+      <td>43</td>
+      <td>0.418605</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>sweden</td>
+      <td>22</td>
+      <td>53</td>
+      <td>0.415094</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>russia</td>
+      <td>19</td>
+      <td>50</td>
+      <td>0.380000</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>costa rica</td>
+      <td>21</td>
+      <td>56</td>
+      <td>0.375000</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>panama</td>
+      <td>14</td>
+      <td>49</td>
+      <td>0.285714</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">worldcup_team_win_count</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="s1">&#39;Win Rate&#39;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Win Rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Country Win Rate in Matches From 2014 to Before 2018 World Cup&#39;</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figs/winrate.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/scrap_make_train_test_datasets_10_0.png" src="../_images/scrap_make_train_test_datasets_10_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv</span>
+<span class="n">world_cup_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/world_cup_2018_stats.csv&quot;</span><span class="p">)</span>
+<span class="n">world_cup_results</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Game</th>
+      <th>Group</th>
+      <th>Team</th>
+      <th>Opponent</th>
+      <th>Home/Away</th>
+      <th>Score</th>
+      <th>WDL</th>
+      <th>Pens?</th>
+      <th>Goals For</th>
+      <th>Goals Against</th>
+      <th>...</th>
+      <th>Passes Completed</th>
+      <th>Distance Covered km</th>
+      <th>Balls recovered</th>
+      <th>Tackles</th>
+      <th>Blocks</th>
+      <th>Clearances</th>
+      <th>Yellow cards</th>
+      <th>Red Cards</th>
+      <th>Second Yellow Card leading to Red Card</th>
+      <th>Fouls Committed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>A</td>
+      <td>Russia</td>
+      <td>Saudi Arabia</td>
+      <td>home</td>
+      <td>5-0</td>
+      <td>W</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>0</td>
+      <td>...</td>
+      <td>240</td>
+      <td>118</td>
+      <td>53</td>
+      <td>9</td>
+      <td>3</td>
+      <td>19</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>A</td>
+      <td>Saudi Arabia</td>
+      <td>Russia</td>
+      <td>away</td>
+      <td>5-0</td>
+      <td>L</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>5</td>
+      <td>...</td>
+      <td>442</td>
+      <td>105</td>
+      <td>48</td>
+      <td>16</td>
+      <td>3</td>
+      <td>31</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>A</td>
+      <td>Egypt</td>
+      <td>Uruguay</td>
+      <td>home</td>
+      <td>0-1</td>
+      <td>L</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>308</td>
+      <td>112</td>
+      <td>57</td>
+      <td>12</td>
+      <td>4</td>
+      <td>32</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>A</td>
+      <td>Uruguay</td>
+      <td>Egypt</td>
+      <td>away</td>
+      <td>0-1</td>
+      <td>W</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>508</td>
+      <td>111</td>
+      <td>54</td>
+      <td>8</td>
+      <td>2</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>B</td>
+      <td>Morocco</td>
+      <td>IR Iran</td>
+      <td>home</td>
+      <td>0-1</td>
+      <td>L</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>371</td>
+      <td>101</td>
+      <td>38</td>
+      <td>9</td>
+      <td>1</td>
+      <td>16</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>22</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 32 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">world_cup_results</span><span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">world_cup_results</span><span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+<span class="n">world_cup_results</span><span class="p">[</span><span class="s1">&#39;Opponent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">world_cup_results</span><span class="p">[</span><span class="s1">&#39;Opponent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test</span> <span class="o">=</span> <span class="n">world_cup_results</span><span class="p">[</span><span class="n">world_cup_results</span><span class="o">.</span><span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[[</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span> <span class="s1">&#39;Opponent&#39;</span><span class="p">,</span> <span class="s1">&#39;WDL&#39;</span><span class="p">]]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;WDL&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;WDL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;WDL&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;WDL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;WDL&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;WDL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">test</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_win</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>russia</td>
+      <td>saudi arabia</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>egypt</td>
+      <td>uruguay</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>morocco</td>
+      <td>ir iran</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>portugal</td>
+      <td>spain</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>france</td>
+      <td>australia</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#https://www.kaggle.com/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now</span>
+<span class="n">rankings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/fifa_ranking.csv&#39;</span><span class="p">)</span>
+<span class="n">rankings</span><span class="p">[</span><span class="s1">&#39;rank_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">rankings</span><span class="p">[</span><span class="s1">&#39;rank_date&#39;</span><span class="p">])</span>
+<span class="n">ranking_earliest_date</span> <span class="o">=</span> <span class="n">earliest_date</span>
+<span class="c1">#get one year before earliest date</span>
+<span class="n">ranking_earliest_date</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ranking_earliest_date</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">earliest_date</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+<span class="n">rankings_after</span> <span class="o">=</span> <span class="n">rankings</span><span class="p">[</span><span class="n">rankings</span><span class="p">[</span><span class="s1">&#39;rank_date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ranking_earliest_date</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_latest_ranking_date</span><span class="p">(</span><span class="n">match_date</span><span class="p">,</span> <span class="n">rankings_dates</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">rankings_dates</span><span class="p">[</span><span class="n">match_date</span><span class="o">.</span><span class="n">to_datetime64</span><span class="p">()</span> <span class="o">&gt;</span>  <span class="n">rankings_dates</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rankings_dates_after</span> <span class="o">=</span> <span class="n">rankings_after</span><span class="o">.</span><span class="n">rank_date</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>\
+                                        <span class="n">get_latest_ranking_date</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">rankings_dates_after</span><span class="p">])</span>
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_latest_ranking_date</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2018-6-14&#39;</span><span class="p">),</span> <span class="n">rankings_dates_after</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">int_results_after</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
+      <th>city</th>
+      <th>country</th>
+      <th>neutral</th>
+      <th>home_win</th>
+      <th>Winner</th>
+      <th>latest_ranking_date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014-01-04</td>
+      <td>bahrain</td>
+      <td>jordan</td>
+      <td>0</td>
+      <td>1</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>True</td>
+      <td>0</td>
+      <td>jordan</td>
+      <td>2013-12-19</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2014-01-04</td>
+      <td>namibia</td>
+      <td>ghana</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Friendly</td>
+      <td>Windhoek</td>
+      <td>namibia</td>
+      <td>False</td>
+      <td>0</td>
+      <td>ghana</td>
+      <td>2013-12-19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014-01-04</td>
+      <td>nigeria</td>
+      <td>ethiopia</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Friendly</td>
+      <td>Abuja</td>
+      <td>nigeria</td>
+      <td>False</td>
+      <td>1</td>
+      <td>nigeria</td>
+      <td>2013-12-19</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014-01-04</td>
+      <td>qatar</td>
+      <td>kuwait</td>
+      <td>3</td>
+      <td>0</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>False</td>
+      <td>1</td>
+      <td>qatar</td>
+      <td>2013-12-19</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014-01-07</td>
+      <td>bahrain</td>
+      <td>kuwait</td>
+      <td>0</td>
+      <td>0</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>True</td>
+      <td>2</td>
+      <td>Tie</td>
+      <td>2013-12-19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rankings_after</span><span class="p">[</span><span class="s1">&#39;country_mapped&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rankings_after</span><span class="p">[</span><span class="s1">&#39;country_full&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/Users/blin/anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:1: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">int_results_after</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[21]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Index([&#39;date&#39;, &#39;home_team&#39;, &#39;away_team&#39;, &#39;home_score&#39;, &#39;away_score&#39;,
+       &#39;tournament&#39;, &#39;city&#39;, &#39;country&#39;, &#39;neutral&#39;, &#39;home_win&#39;, &#39;Winner&#39;,
+       &#39;latest_ranking_date&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">home_rankings_after</span> <span class="o">=</span> <span class="n">rankings_after</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">home_rankings_after</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_&#39;</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">home_rankings_after</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">int_results_after</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_rankings_after</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">],</span>\
+                            <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_country_mapped&#39;</span><span class="p">,</span> <span class="s1">&#39;home_rank_date&#39;</span><span class="p">])</span>
+<span class="n">away_rankings_after</span> <span class="o">=</span> <span class="n">rankings_after</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">away_rankings_after</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_&#39;</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">away_rankings_after</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">results_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">away_rankings_after</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">,</span> <span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">],</span>\
+                            <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_country_mapped&#39;</span><span class="p">,</span> <span class="s1">&#39;away_rank_date&#39;</span><span class="p">])</span>
+<span class="n">results_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
+      <th>city</th>
+      <th>country</th>
+      <th>neutral</th>
+      <th>home_win</th>
+      <th>...</th>
+      <th>away_cur_year_avg_weighted</th>
+      <th>away_last_year_avg</th>
+      <th>away_last_year_avg_weighted</th>
+      <th>away_two_year_ago_avg</th>
+      <th>away_two_year_ago_weighted</th>
+      <th>away_three_year_ago_avg</th>
+      <th>away_three_year_ago_weighted</th>
+      <th>away_confederation</th>
+      <th>away_rank_date</th>
+      <th>away_country_mapped</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014-01-04</td>
+      <td>bahrain</td>
+      <td>jordan</td>
+      <td>0</td>
+      <td>1</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>343.17</td>
+      <td>152.19</td>
+      <td>76.10</td>
+      <td>266.37</td>
+      <td>79.91</td>
+      <td>182.25</td>
+      <td>36.45</td>
+      <td>AFC</td>
+      <td>2013-12-19</td>
+      <td>jordan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2014-01-07</td>
+      <td>qatar</td>
+      <td>jordan</td>
+      <td>2</td>
+      <td>0</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>False</td>
+      <td>1</td>
+      <td>...</td>
+      <td>343.17</td>
+      <td>152.19</td>
+      <td>76.10</td>
+      <td>266.37</td>
+      <td>79.91</td>
+      <td>182.25</td>
+      <td>36.45</td>
+      <td>AFC</td>
+      <td>2013-12-19</td>
+      <td>jordan</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014-01-07</td>
+      <td>bahrain</td>
+      <td>kuwait</td>
+      <td>0</td>
+      <td>0</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>True</td>
+      <td>2</td>
+      <td>...</td>
+      <td>172.78</td>
+      <td>95.79</td>
+      <td>47.90</td>
+      <td>187.73</td>
+      <td>56.32</td>
+      <td>189.73</td>
+      <td>37.95</td>
+      <td>AFC</td>
+      <td>2013-12-19</td>
+      <td>kuwait</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014-01-04</td>
+      <td>qatar</td>
+      <td>kuwait</td>
+      <td>3</td>
+      <td>0</td>
+      <td>WAFF Championship</td>
+      <td>Doha</td>
+      <td>qatar</td>
+      <td>False</td>
+      <td>1</td>
+      <td>...</td>
+      <td>172.78</td>
+      <td>95.79</td>
+      <td>47.90</td>
+      <td>187.73</td>
+      <td>56.32</td>
+      <td>189.73</td>
+      <td>37.95</td>
+      <td>AFC</td>
+      <td>2013-12-19</td>
+      <td>kuwait</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014-01-04</td>
+      <td>namibia</td>
+      <td>ghana</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Friendly</td>
+      <td>Windhoek</td>
+      <td>namibia</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>453.96</td>
+      <td>398.69</td>
+      <td>199.35</td>
+      <td>288.00</td>
+      <td>86.40</td>
+      <td>544.92</td>
+      <td>108.98</td>
+      <td>CAF</td>
+      <td>2013-12-19</td>
+      <td>ghana</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 46 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_rankings_after</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">],</span>\
+                            <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_country_mapped&#39;</span><span class="p">,</span> <span class="s1">&#39;home_rank_date&#39;</span><span class="p">])</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">away_rankings_after</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">,</span> <span class="s1">&#39;latest_ranking_date&#39;</span><span class="p">],</span>\
+                            <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_country_mapped&#39;</span><span class="p">,</span> <span class="s1">&#39;away_rank_date&#39;</span><span class="p">])</span>
+<span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[23]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_win</th>
+      <th>latest_ranking_date</th>
+      <th>home_rank</th>
+      <th>home_country_full</th>
+      <th>home_country_abrv</th>
+      <th>home_total_points</th>
+      <th>home_previous_points</th>
+      <th>home_rank_change</th>
+      <th>...</th>
+      <th>away_cur_year_avg_weighted</th>
+      <th>away_last_year_avg</th>
+      <th>away_last_year_avg_weighted</th>
+      <th>away_two_year_ago_avg</th>
+      <th>away_two_year_ago_weighted</th>
+      <th>away_three_year_ago_avg</th>
+      <th>away_three_year_ago_weighted</th>
+      <th>away_confederation</th>
+      <th>away_rank_date</th>
+      <th>away_country_mapped</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>russia</td>
+      <td>saudi arabia</td>
+      <td>1</td>
+      <td>2018-06-07</td>
+      <td>70</td>
+      <td>Russia</td>
+      <td>RUS</td>
+      <td>456.53</td>
+      <td>493</td>
+      <td>-4</td>
+      <td>...</td>
+      <td>143.89</td>
+      <td>360.20</td>
+      <td>180.10</td>
+      <td>380.91</td>
+      <td>114.27</td>
+      <td>135.09</td>
+      <td>27.02</td>
+      <td>AFC</td>
+      <td>2018-06-07</td>
+      <td>saudi arabia</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>uruguay</td>
+      <td>saudi arabia</td>
+      <td>1</td>
+      <td>2018-06-07</td>
+      <td>14</td>
+      <td>Uruguay</td>
+      <td>URU</td>
+      <td>1018.41</td>
+      <td>976</td>
+      <td>3</td>
+      <td>...</td>
+      <td>143.89</td>
+      <td>360.20</td>
+      <td>180.10</td>
+      <td>380.91</td>
+      <td>114.27</td>
+      <td>135.09</td>
+      <td>27.02</td>
+      <td>AFC</td>
+      <td>2018-06-07</td>
+      <td>saudi arabia</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>russia</td>
+      <td>egypt</td>
+      <td>1</td>
+      <td>2018-06-07</td>
+      <td>70</td>
+      <td>Russia</td>
+      <td>RUS</td>
+      <td>456.53</td>
+      <td>493</td>
+      <td>-4</td>
+      <td>...</td>
+      <td>208.27</td>
+      <td>582.07</td>
+      <td>291.04</td>
+      <td>331.62</td>
+      <td>99.48</td>
+      <td>253.18</td>
+      <td>50.64</td>
+      <td>CAF</td>
+      <td>2018-06-07</td>
+      <td>egypt</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>saudi arabia</td>
+      <td>egypt</td>
+      <td>1</td>
+      <td>2018-06-07</td>
+      <td>67</td>
+      <td>Saudi Arabia</td>
+      <td>KSA</td>
+      <td>465.28</td>
+      <td>462</td>
+      <td>0</td>
+      <td>...</td>
+      <td>208.27</td>
+      <td>582.07</td>
+      <td>291.04</td>
+      <td>331.62</td>
+      <td>99.48</td>
+      <td>253.18</td>
+      <td>50.64</td>
+      <td>CAF</td>
+      <td>2018-06-07</td>
+      <td>egypt</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>russia</td>
+      <td>croatia</td>
+      <td>0</td>
+      <td>2018-06-07</td>
+      <td>70</td>
+      <td>Russia</td>
+      <td>RUS</td>
+      <td>456.53</td>
+      <td>493</td>
+      <td>-4</td>
+      <td>...</td>
+      <td>397.75</td>
+      <td>672.78</td>
+      <td>336.39</td>
+      <td>335.96</td>
+      <td>100.79</td>
+      <td>551.26</td>
+      <td>110.25</td>
+      <td>UEFA</td>
+      <td>2018-06-07</td>
+      <td>croatia</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 38 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">demographics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/country_demographics.csv&#39;</span><span class="p">)</span>
+<span class="n">demographics</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">demographics</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_country</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">home_demographics</span> <span class="o">=</span> <span class="n">demographics</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">home_demographics</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_&#39;</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">home_demographics</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">results_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_demographics</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">],</span>
+                            <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_name&#39;</span><span class="p">])</span>
+
+<span class="n">away_demographics</span> <span class="o">=</span> <span class="n">demographics</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">away_demographics</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_&#39;</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">away_demographics</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">results_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">away_demographics</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">],</span>
+                            <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_name&#39;</span><span class="p">])</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">results_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[25]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>3628
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">home_demographics</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">],</span> <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_name&#39;</span><span class="p">])</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">away_demographics</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">],</span> <span class="n">right_on</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_name&#39;</span><span class="p">])</span>
+<span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_win</th>
+      <th>latest_ranking_date</th>
+      <th>home_rank</th>
+      <th>home_country_full</th>
+      <th>home_country_abrv</th>
+      <th>home_total_points</th>
+      <th>home_previous_points</th>
+      <th>home_rank_change</th>
+      <th>...</th>
+      <th>away_rank_date</th>
+      <th>away_country_mapped</th>
+      <th>home_name</th>
+      <th>home_temp</th>
+      <th>home_gdp_pp</th>
+      <th>home_population</th>
+      <th>away_name</th>
+      <th>away_temp</th>
+      <th>away_gdp_pp</th>
+      <th>away_population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>russia</td>
+      <td>saudi arabia</td>
+      <td>1</td>
+      <td>2018-06-07</td>
+      <td>70</td>
+      <td>Russia</td>
+      <td>RUS</td>
+      <td>456.53</td>
+      <td>493</td>
+      <td>-4</td>
+      <td>...</td>
+      <td>2018-06-07</td>
+      <td>saudi arabia</td>
+      <td>russia</td>
+      <td>-5.10</td>
+      <td>27890.0</td>
+      <td>143989754.0</td>
+      <td>saudi arabia</td>
+      <td>24.65</td>
+      <td>55263.0</td>
+      <td>32938213.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>uruguay</td>
+      <td>saudi arabia</td>
+      <td>1</td>
+      <td>2018-06-07</td>
+      <td>14</td>
+      <td>Uruguay</td>
+      <td>URU</td>
+      <td>1018.41</td>
+      <td>976</td>
+      <td>3</td>
+      <td>...</td>
+      <td>2018-06-07</td>
+      <td>saudi arabia</td>
+      <td>uruguay</td>
+      <td>17.55</td>
+      <td>22445.0</td>
+      <td>3456750.0</td>
+      <td>saudi arabia</td>
+      <td>24.65</td>
+      <td>55263.0</td>
+      <td>32938213.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>russia</td>
+      <td>egypt</td>
+      <td>1</td>
+      <td>2018-06-07</td>
+      <td>70</td>
+      <td>Russia</td>
+      <td>RUS</td>
+      <td>456.53</td>
+      <td>493</td>
+      <td>-4</td>
+      <td>...</td>
+      <td>2018-06-07</td>
+      <td>egypt</td>
+      <td>russia</td>
+      <td>-5.10</td>
+      <td>27890.0</td>
+      <td>143989754.0</td>
+      <td>egypt</td>
+      <td>22.10</td>
+      <td>12994.0</td>
+      <td>97553151.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>saudi arabia</td>
+      <td>egypt</td>
+      <td>1</td>
+      <td>2018-06-07</td>
+      <td>67</td>
+      <td>Saudi Arabia</td>
+      <td>KSA</td>
+      <td>465.28</td>
+      <td>462</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2018-06-07</td>
+      <td>egypt</td>
+      <td>saudi arabia</td>
+      <td>24.65</td>
+      <td>55263.0</td>
+      <td>32938213.0</td>
+      <td>egypt</td>
+      <td>22.10</td>
+      <td>12994.0</td>
+      <td>97553151.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>russia</td>
+      <td>croatia</td>
+      <td>0</td>
+      <td>2018-06-07</td>
+      <td>70</td>
+      <td>Russia</td>
+      <td>RUS</td>
+      <td>456.53</td>
+      <td>493</td>
+      <td>-4</td>
+      <td>...</td>
+      <td>2018-06-07</td>
+      <td>croatia</td>
+      <td>russia</td>
+      <td>-5.10</td>
+      <td>27890.0</td>
+      <td>143989754.0</td>
+      <td>croatia</td>
+      <td>10.90</td>
+      <td>24095.0</td>
+      <td>4189353.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 46 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">results_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[27]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Index([&#39;date&#39;, &#39;home_team&#39;, &#39;away_team&#39;, &#39;home_score&#39;, &#39;away_score&#39;,
+       &#39;tournament&#39;, &#39;city&#39;, &#39;country&#39;, &#39;neutral&#39;, &#39;home_win&#39;, &#39;Winner&#39;,
+       &#39;latest_ranking_date&#39;, &#39;home_rank&#39;, &#39;home_country_full&#39;,
+       &#39;home_country_abrv&#39;, &#39;home_total_points&#39;, &#39;home_previous_points&#39;,
+       &#39;home_rank_change&#39;, &#39;home_cur_year_avg&#39;, &#39;home_cur_year_avg_weighted&#39;,
+       &#39;home_last_year_avg&#39;, &#39;home_last_year_avg_weighted&#39;,
+       &#39;home_two_year_ago_avg&#39;, &#39;home_two_year_ago_weighted&#39;,
+       &#39;home_three_year_ago_avg&#39;, &#39;home_three_year_ago_weighted&#39;,
+       &#39;home_confederation&#39;, &#39;home_rank_date&#39;, &#39;home_country_mapped&#39;,
+       &#39;away_rank&#39;, &#39;away_country_full&#39;, &#39;away_country_abrv&#39;,
+       &#39;away_total_points&#39;, &#39;away_previous_points&#39;, &#39;away_rank_change&#39;,
+       &#39;away_cur_year_avg&#39;, &#39;away_cur_year_avg_weighted&#39;, &#39;away_last_year_avg&#39;,
+       &#39;away_last_year_avg_weighted&#39;, &#39;away_two_year_ago_avg&#39;,
+       &#39;away_two_year_ago_weighted&#39;, &#39;away_three_year_ago_avg&#39;,
+       &#39;away_three_year_ago_weighted&#39;, &#39;away_confederation&#39;, &#39;away_rank_date&#39;,
+       &#39;away_country_mapped&#39;, &#39;home_name&#39;, &#39;home_temp&#39;, &#39;home_gdp_pp&#39;,
+       &#39;home_population&#39;, &#39;away_name&#39;, &#39;away_temp&#39;, &#39;away_gdp_pp&#39;,
+       &#39;away_population&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;home_rank&#39;</span><span class="p">,</span> <span class="s1">&#39;away_rank&#39;</span><span class="p">,</span>\
+            <span class="s1">&#39;home_cur_year_avg_weighted&#39;</span><span class="p">,</span> <span class="s1">&#39;home_total_points&#39;</span><span class="p">,</span><span class="s1">&#39;away_cur_year_avg_weighted&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;away_total_points&#39;</span><span class="p">,</span> <span class="s1">&#39;home_last_year_avg&#39;</span><span class="p">,</span> <span class="s1">&#39;away_last_year_avg&#39;</span><span class="p">,</span> <span class="s1">&#39;home_two_year_ago_avg&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;away_two_year_ago_avg&#39;</span><span class="p">,</span> <span class="s1">&#39;home_confederation&#39;</span><span class="p">,</span> <span class="s1">&#39;home_gdp_pp&#39;</span><span class="p">,</span> <span class="s1">&#39;away_gdp_pp&#39;</span><span class="p">]</span>
+
+<span class="c1"># columns += [&#39;home_population&#39;, &#39;away_population&#39;]</span>
+<span class="n">final_results_df</span> <span class="o">=</span> <span class="n">results_df</span><span class="p">[</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">final_test_df</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">objs</span><span class="o">=</span><span class="p">[</span><span class="n">final_results_df</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">final_test_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">tournament_dummies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;home_confederation&#39;</span><span class="p">],</span> <span class="n">drop_first</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">dataset</span><span class="p">[</span><span class="n">tournament_dummies</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span> <span class="o">=</span> <span class="n">tournament_dummies</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_confederation&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;home_gdp_pp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[[</span><span class="s1">&#39;home_gdp_pp&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;home_gdp_pp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;away_gdp_pp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[[</span><span class="s1">&#39;away_gdp_pp&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;away_gdp_pp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;gdp_pp_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;home_gdp_pp&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;away_gdp_pp&#39;</span><span class="p">]</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_gdp_pp&#39;</span><span class="p">,</span> <span class="s1">&#39;away_gdp_pp&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;rank_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;home_rank&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;away_rank&#39;</span><span class="p">]</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_rank&#39;</span><span class="p">,</span> <span class="s1">&#39;away_rank&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># dataset[&#39;pop_diff&#39;] = dataset[&#39;home_population&#39;] - dataset[&#39;away_population&#39;]</span>
+<span class="c1"># dataset = dataset.drop([&#39;home_population&#39;, &#39;away_population&#39;], axis = 1)</span>
+
+
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">final_results_df</span><span class="p">)]</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">final_results_df</span><span class="p">):]</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[30]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>home_win</th>
+      <th>home_cur_year_avg_weighted</th>
+      <th>home_total_points</th>
+      <th>away_cur_year_avg_weighted</th>
+      <th>away_total_points</th>
+      <th>home_last_year_avg</th>
+      <th>away_last_year_avg</th>
+      <th>home_two_year_ago_avg</th>
+      <th>away_two_year_ago_avg</th>
+      <th>CAF</th>
+      <th>CONCACAF</th>
+      <th>CONMEBOL</th>
+      <th>OFC</th>
+      <th>UEFA</th>
+      <th>gdp_pp_diff</th>
+      <th>rank_diff</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>174.70</td>
+      <td>291.66</td>
+      <td>343.17</td>
+      <td>535.63</td>
+      <td>102.82</td>
+      <td>152.19</td>
+      <td>163.78</td>
+      <td>266.37</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>39359.0</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>101.66</td>
+      <td>249.49</td>
+      <td>122.76</td>
+      <td>393.28</td>
+      <td>166.27</td>
+      <td>343.17</td>
+      <td>106.47</td>
+      <td>152.19</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>39359.0</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>151.41</td>
+      <td>289.46</td>
+      <td>257.72</td>
+      <td>436.97</td>
+      <td>131.81</td>
+      <td>102.61</td>
+      <td>151.92</td>
+      <td>242.16</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>39359.0</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>111.05</td>
+      <td>256.68</td>
+      <td>90.43</td>
+      <td>298.50</td>
+      <td>151.41</td>
+      <td>257.72</td>
+      <td>131.81</td>
+      <td>102.61</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>39359.0</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>140.16</td>
+      <td>324.85</td>
+      <td>343.17</td>
+      <td>535.63</td>
+      <td>183.57</td>
+      <td>152.19</td>
+      <td>225.79</td>
+      <td>266.37</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112440.0</td>
+      <td>38</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/train.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">test_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/test.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/scrap/make_train_test_datasets.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

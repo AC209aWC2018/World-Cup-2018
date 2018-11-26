@@ -16,7 +16,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 245,
+   "execution_count": 44,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -33,17 +33,17 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 246,
+   "execution_count": 45,
    "metadata": {},
    "outputs": [],
    "source": [
-    "train = pd.read_csv('../data/train_merged.csv')\n",
-    "test = pd.read_csv('../data/test_merged.csv')"
+    "train = pd.read_csv('../data/cleaned/train_final.csv')\n",
+    "test = pd.read_csv('../data/cleaned/test_final.csv')"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 247,
+   "execution_count": 46,
    "metadata": {},
    "outputs": [
     {
@@ -63,11 +63,16 @@
        "       'previous_points_diff', 'rank_change_diff', 'rank_diff',\n",
        "       'three_year_ago_avg_diff', 'three_year_ago_weighted_diff',\n",
        "       'total_points_diff', 'two_year_ago_avg_diff',\n",
-       "       'two_year_ago_weighted_diff', 'gdp_diff'],\n",
+       "       'two_year_ago_weighted_diff', 'gdp_diff', 'wins_past_1_games_diff',\n",
+       "       'wins_home_against_away_1_games', 'wins_past_2_games_diff',\n",
+       "       'wins_home_against_away_2_games', 'wins_past_3_games_diff',\n",
+       "       'wins_home_against_away_3_games', 'wins_past_4_games_diff',\n",
+       "       'wins_home_against_away_4_games', 'wins_past_5_games_diff',\n",
+       "       'wins_home_against_away_5_games'],\n",
        "      dtype='object')"
       ]
      },
-     "execution_count": 247,
+     "execution_count": 46,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -85,16 +90,16 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 248,
+   "execution_count": 47,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "0.4406651549508692"
+       "0.43806009488666314"
       ]
      },
-     "execution_count": 248,
+     "execution_count": 47,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -112,7 +117,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 249,
+   "execution_count": 48,
    "metadata": {},
    "outputs": [
     {
@@ -121,7 +126,7 @@
        "0.421875"
       ]
      },
-     "execution_count": 249,
+     "execution_count": 48,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -141,7 +146,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 250,
+   "execution_count": 49,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -151,11 +156,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 251,
+   "execution_count": 50,
    "metadata": {},
    "outputs": [],
    "source": [
-    "np.random.seed(2018)\n",
+    "np.random.seed(3)\n",
     "X_train, X_validation = train_test_split(train, test_size = 0.2)\n",
     "y_train = X_train['home_win'].ravel()\n",
     "X_train = X_train.drop(['home_win'], axis = 1)\n",
@@ -173,7 +178,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 252,
+   "execution_count": 51,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -182,15 +187,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 253,
+   "execution_count": 52,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Logistic Regression Train Score: 0.5207939508506616\n",
-      "Logistic Regression Validation Score: 0.5245283018867924\n"
+      "Logistic Regression Train Score: 0.5260382333553065\n",
+      "Logistic Regression Validation Score: 0.4921052631578947\n"
      ]
     }
    ],
@@ -208,7 +213,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 254,
+   "execution_count": 53,
    "metadata": {},
    "outputs": [
     {
@@ -249,42 +254,42 @@
        "  </thead>\n",
        "  <tbody>\n",
        "    <tr>\n",
+       "      <th>-1</th>\n",
+       "      <td>916.793268</td>\n",
+       "      <td>40.858572</td>\n",
+       "      <td>37.554931</td>\n",
+       "      <td>38.133908</td>\n",
+       "      <td>31.393396</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
        "      <th>0</th>\n",
-       "      <td>884.691050</td>\n",
-       "      <td>42.557163</td>\n",
-       "      <td>38.549357</td>\n",
-       "      <td>37.936027</td>\n",
-       "      <td>31.537804</td>\n",
+       "      <td>960.540851</td>\n",
+       "      <td>47.654088</td>\n",
+       "      <td>43.559341</td>\n",
+       "      <td>41.798216</td>\n",
+       "      <td>36.158215</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>1</th>\n",
-       "      <td>937.780800</td>\n",
-       "      <td>48.936282</td>\n",
-       "      <td>40.405204</td>\n",
-       "      <td>40.252079</td>\n",
-       "      <td>35.024385</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2</th>\n",
-       "      <td>1033.408308</td>\n",
-       "      <td>44.322274</td>\n",
-       "      <td>43.722156</td>\n",
-       "      <td>38.042605</td>\n",
-       "      <td>34.816576</td>\n",
+       "      <td>936.866455</td>\n",
+       "      <td>49.295727</td>\n",
+       "      <td>43.509512</td>\n",
+       "      <td>42.634416</td>\n",
+       "      <td>37.105145</td>\n",
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
        "</div>"
       ],
       "text/plain": [
-       "            rank_diff  attack_diff  defence_diff  midfield_diff  overall_diff\n",
-       "home_win                                                                     \n",
-       "0          884.691050    42.557163     38.549357      37.936027     31.537804\n",
-       "1          937.780800    48.936282     40.405204      40.252079     35.024385\n",
-       "2         1033.408308    44.322274     43.722156      38.042605     34.816576"
+       "           rank_diff  attack_diff  defence_diff  midfield_diff  overall_diff\n",
+       "home_win                                                                    \n",
+       "-1        916.793268    40.858572     37.554931      38.133908     31.393396\n",
+       " 0        960.540851    47.654088     43.559341      41.798216     36.158215\n",
+       " 1        936.866455    49.295727     43.509512      42.634416     37.105145"
       ]
      },
-     "execution_count": 254,
+     "execution_count": 53,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -302,7 +307,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 255,
+   "execution_count": 54,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -311,15 +316,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 256,
+   "execution_count": 55,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "LDA Train Score: 0.5122873345935728\n",
-      "LDA Validation Score: 0.5207547169811321\n"
+      "LDA Train Score: 0.5227422544495716\n",
+      "LDA Validation Score: 0.5026315789473684\n"
      ]
     }
    ],
@@ -337,7 +342,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 257,
+   "execution_count": 56,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -346,15 +351,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 258,
+   "execution_count": 57,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Train Score: 0.5245746691871456\n",
-      "QDA Validation Score: 0.5056603773584906\n"
+      "QDA Train Score: 0.5280158206987475\n",
+      "QDA Validation Score: 0.48947368421052634\n"
      ]
     }
    ],
@@ -372,7 +377,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 259,
+   "execution_count": 58,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -381,15 +386,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 260,
+   "execution_count": 59,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Random Forest Train Score: 0.5500945179584121\n",
-      "Random Forest Validation Score 0.5245283018867924\n"
+      "Random Forest Train Score: 0.5695451549110085\n",
+      "Random Forest Validation Score 0.49473684210526314\n"
      ]
     }
    ],
@@ -407,14 +412,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 261,
+   "execution_count": 60,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Logistic Regression Test Score: 0.59375\n"
+      "Logistic Regression Test Score: 0.609375\n"
      ]
     }
    ],
@@ -425,7 +430,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 262,
+   "execution_count": 61,
    "metadata": {},
    "outputs": [
     {
@@ -443,14 +448,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 263,
+   "execution_count": 62,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Test Score: 0.609375\n"
+      "QDA Test Score: 0.59375\n"
      ]
     }
    ],
@@ -461,14 +466,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 264,
+   "execution_count": 63,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Random Forest Test Score: 0.609375\n"
+      "Random Forest Test Score: 0.65625\n"
      ]
     }
    ],

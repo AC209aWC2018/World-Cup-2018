@@ -15,6 +15,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Explore" href="explore_european_league.html" />
+    <link rel="prev" title="Milestone 3" href="../doc/milestone3.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -233,7 +235,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -267,7 +269,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -277,7 +279,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[9]:
+<span></span>Out[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -450,7 +452,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -461,7 +463,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -471,7 +473,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[14]:
+<span></span>Out[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -559,7 +561,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -570,7 +572,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -580,7 +582,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[8]:
+<span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -753,7 +755,7 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -762,21 +764,21 @@ dataset, the Player dataset, and Player Attributes dataset.</p>
 </div>
 </div>
 <p>We will make a column that indicates whether the home team of each match
-lost the game (0), won the game (1), or tied the game (2).</p>
+lost the game (-1), won the game (1), or tied the game (0).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">match_df</span><span class="o">.</span><span class="n">home_team_goal</span> <span class="o">-</span> <span class="n">match_df</span><span class="o">.</span><span class="n">away_team_goal</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">match_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;home_team_goal&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;away_team_goal&#39;</span><span class="p">],</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">match_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;home_team_goal&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">match_df</span><span class="p">[</span><span class="s1">&#39;away_team_goal&#39;</span><span class="p">],</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [19]:
+<span></span>In [13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -786,13 +788,13 @@ lost the game (0), won the game (1), or tied the game (2).</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[19]:
+<span></span>Out[13]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>1    11917
-0     7466
-2     6596
+<span></span> 1    11917
+-1     7466
+ 0     6596
 Name: home_win, dtype: int64
 </pre></div>
 </div>
@@ -812,7 +814,7 @@ using betting odds.</p>
 linked to <code class="docutils literal notranslate"><span class="pre">player_api_id</span></code> in the Player and Player Attribute datasets.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [21]:
+<span></span>In [14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -824,7 +826,7 @@ linked to <code class="docutils literal notranslate"><span class="pre">player_ap
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [23]:
+<span></span>In [15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -835,7 +837,7 @@ linked to <code class="docutils literal notranslate"><span class="pre">player_ap
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[23]:
+<span></span>Out[15]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -855,7 +857,7 @@ linked to <code class="docutils literal notranslate"><span class="pre">player_ap
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [24]:
+<span></span>In [16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -866,7 +868,7 @@ linked to <code class="docutils literal notranslate"><span class="pre">player_ap
 <p>We need to get the latest rating of each player.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [174]:
+<span></span>In [17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -892,15 +894,14 @@ linked to <code class="docutils literal notranslate"><span class="pre">player_ap
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span></span><span class="c1">#CAUTION: Takes a long time to run.</span>
+<span class="n">match_final_df</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">match_final_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
     <span class="n">home_column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">_&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">]</span>
     <span class="n">away_column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">_&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">]</span>
     <span class="n">home_player_columns</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">away_player_columns</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">match</span><span class="p">)):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
         <span class="n">home_player_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_latest_rating</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">][[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;date&#39;</span><span class="p">]]))</span>
         <span class="n">away_player_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_latest_rating</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">j</span><span class="p">][[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;date&#39;</span><span class="p">]]))</span>
     <span class="c1">#https://stackoverflow.com/questions/30471101/pandas-convert-series-of-dataframes-to-single-dataframe</span>
@@ -918,7 +919,7 @@ and calculate for each match for each team the number of wins in their
 previous games.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [216]:
+<span></span>In [20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -929,7 +930,7 @@ previous games.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[216]:
+<span></span>Out[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -963,7 +964,7 @@ previous games.</p>
       <td>2008-07-18 00:00:00</td>
       <td>10192</td>
       <td>9931</td>
-      <td>0</td>
+      <td>-1</td>
     </tr>
     <tr>
       <th>24559</th>
@@ -977,21 +978,21 @@ previous games.</p>
       <td>2008-07-20 00:00:00</td>
       <td>10199</td>
       <td>9824</td>
-      <td>0</td>
+      <td>-1</td>
     </tr>
     <tr>
       <th>24561</th>
       <td>2008-07-20 00:00:00</td>
       <td>7955</td>
       <td>10243</td>
-      <td>0</td>
+      <td>-1</td>
     </tr>
     <tr>
       <th>24613</th>
       <td>2008-07-23 00:00:00</td>
       <td>6493</td>
       <td>7955</td>
-      <td>0</td>
+      <td>-1</td>
     </tr>
   </tbody>
 </table>
@@ -999,7 +1000,7 @@ previous games.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [299]:
+<span></span>In [21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1074,7 +1075,7 @@ previous games.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [253]:
+<span></span>In [22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1089,7 +1090,7 @@ previous games.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [271]:
+<span></span>In [23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1106,7 +1107,7 @@ previous games.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [294]:
+<span></span>In [24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1120,7 +1121,7 @@ teams. We will also calculate the number of wins the home team has
 against the away team for a match in the previous times they played.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [300]:
+<span></span>In [25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1136,7 +1137,7 @@ against the away team for a match in the previous times they played.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [304]:
+<span></span>In [26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1152,7 +1153,7 @@ against the away team for a match in the previous times they played.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [307]:
+<span></span>In [27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1164,11 +1165,21 @@ against the away team for a match in the previous times they played.</p>
 any interest insights.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [308]:
+<span></span>In [28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">match_final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">home_columns</span> <span class="o">+</span> <span class="n">away_columns</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;../data/cleaned/european_matches.csv&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
 </pre></div>
 </div>
 </div>
