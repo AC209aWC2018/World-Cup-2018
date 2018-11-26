@@ -377,14 +377,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 156,
+   "execution_count": 210,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Proportion of Oucomes Grouped By Neutrality\n"
+      "Proportion of Outcomes Grouped By Neutrality\n"
      ]
     },
     {
@@ -400,13 +400,13 @@
        "Name: game_date, dtype: float64"
       ]
      },
-     "execution_count": 156,
+     "execution_count": 210,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "print(\"Proportion of Oucomes Grouped By Neutrality\")\n",
+    "print(\"Proportion of Outcomes Grouped By Neutrality\")\n",
     "train.groupby(['neutral', 'home_win'])['game_date'].count() / train.groupby(['neutral'])['game_date'].count()"
    ]
   },
