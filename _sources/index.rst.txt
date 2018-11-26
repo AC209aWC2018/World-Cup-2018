@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Predicting the 2018 World Cup
+4 Guys Who Barely Know Anything about Soccer Try Predicting the 2018 World Cup 
 =====================================
 Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
