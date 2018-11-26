@@ -1,0 +1,41 @@
+country_mapping = {
+'Bosnia and Herzegovina': 'Bosnia-Herzegovina',
+'Cape Verde Islands': 'Cape Verde',
+#We have no political intentions with this assignment. Also Taiwan is not included in wikipedia data we scrapped
+'China PR': 'China',
+'Chinese Taipei': 'Taiwan',
+'Congo, Dem. Rep.', 'Congo DR',
+'Congo, Rep.', 'Congo',
+"Côte d'Ivoire'": 'Ivory Coast',
+'Democratic Republic of the Congo', 'Congo DR'
+'FYR Macedonia': 'Macedonia',
+'Gambia, The', 'Gambia'
+'IR Iran' : 'Iran',
+'Kyrgyz Republic' : 'Kyrgyzstan',
+'Myanmar': 'Burma',
+'North Korea': 'Korea DPR'
+'Republic of Ireland': 'Ireland',
+'Republic of the Congo', 'Congo',
+'Republic of Macdeonia', 'Macedonia',
+'St Kitts and Nevis': 'St. Kitts and Nevis',
+'Saint Kitts and Nevis': 'St. Kitts and Nevis',
+'Saint Lucia': 'St. Lucia',
+'St Lucia': 'St. Lucia',
+'Saint Vincent and the Grenadines': 'St. Vincent and the Grenadines',
+'St Vincent and the Grenadines': 'St. Vincent and the Grenadines',
+'São Tomé e Príncipe'.lower(): 'São Tomé and Príncipe'.lower(),
+'South Korea': 'Korea Republic'
+'Timor-Leste': 'East Timor',
+'The Gambia': 'Gambia'
+#Scotland is not that good. Just map to England for now. 
+'United Kingdom': 'England'
+'United States': 'USA'
+
+#no clue which virgin islands
+#     'US Virgin Islands': 'Virgin Islands'
+}
+
+def map_countries(rankings_country):
+    if rankings_country in country_mapping.keys():
+        return country_mapping[rankings_country]
+    return rankings_country
