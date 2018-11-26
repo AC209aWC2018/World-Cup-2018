@@ -1333,7 +1333,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "We see a similar pattern as before, where home team winning has the highest mean valuesa and away team winning has the lowest mean values. This time the small magnitudes make sense however since we are only looking up to 5 games back. Let us also plot the distributions."
+    "We see a similar pattern as before, where home team winning has the highest mean values and away team winning has the lowest mean values. This time the small magnitudes make sense however since we are only looking up to 5 games back. Let us also plot the distributions."
    ]
   },
   {
