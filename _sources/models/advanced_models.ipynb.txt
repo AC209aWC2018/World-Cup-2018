@@ -4,19 +4,12 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# Baseline Model"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "We will first build some basic models."
+    "# Advanced Models"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 245,
+   "execution_count": 486,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -33,17 +26,17 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 246,
+   "execution_count": 487,
    "metadata": {},
    "outputs": [],
    "source": [
-    "train = pd.read_csv('../data/train_merged.csv')\n",
-    "test = pd.read_csv('../data/test_merged.csv')"
+    "train = pd.read_csv('../data/cleaned/train_final.csv')\n",
+    "test = pd.read_csv('../data/cleaned/test_final.csv')"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 247,
+   "execution_count": 488,
    "metadata": {},
    "outputs": [
     {
@@ -63,11 +56,16 @@
        "       'previous_points_diff', 'rank_change_diff', 'rank_diff',\n",
        "       'three_year_ago_avg_diff', 'three_year_ago_weighted_diff',\n",
        "       'total_points_diff', 'two_year_ago_avg_diff',\n",
-       "       'two_year_ago_weighted_diff', 'gdp_diff'],\n",
+       "       'two_year_ago_weighted_diff', 'gdp_diff', 'wins_past_1_games_diff',\n",
+       "       'wins_home_against_away_1_games', 'wins_past_2_games_diff',\n",
+       "       'wins_home_against_away_2_games', 'wins_past_3_games_diff',\n",
+       "       'wins_home_against_away_3_games', 'wins_past_4_games_diff',\n",
+       "       'wins_home_against_away_4_games', 'wins_past_5_games_diff',\n",
+       "       'wins_home_against_away_5_games'],\n",
        "      dtype='object')"
       ]
      },
-     "execution_count": 247,
+     "execution_count": 488,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -77,85 +75,39 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "Our most basic model would be to just predict the majority class every time. In this case, `home_win` = 1 is the majority class. What are is the training accuracy from just doing this \"prediction\"? "
-   ]
-  },
-  {
    "cell_type": "code",
-   "execution_count": 248,
+   "execution_count": 489,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "0.4406651549508692"
-      ]
-     },
-     "execution_count": 248,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
-    "train['home_win'].value_counts()[1] / len(train)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "Pretty decent when we have 3 classes. What about the test accuracy? "
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 249,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "0.421875"
-      ]
-     },
-     "execution_count": 249,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "accuracy_score(test['home_win'], np.ones(len(test)))"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "Still decent. Any model we build should be better than this test accuracy of just guessing.\n",
+    "train_columns = ['home_win', 'attack_diff', 'defence_diff', 'midfield_diff', 'overall_diff', \n",
+    "                 'wins_past_1_games_diff', 'wins_past_2_games_diff', 'wins_past_3_games_diff',\n",
+    "                'wins_past_4_games_diff', 'wins_past_5_games_diff', 'full_age_diff', 'start_age_diff']\n",
     "\n",
-    "Our baseline model will be pretty simple. We will utilize the differences in FIFA rankings, offense ratings, defense ratings, midfield ratings, overall ratings, and whether the home team is actually playing at home. We will make a train and validation set out of the original train set. "
+    "# train_columns = ['home_win', 'attack_diff', 'defence_diff', 'midfield_diff', 'overall_diff', \n",
+    "#                  'full_age_diff', 'start_age_diff', 'gdp_diff']\n",
+    "# train_columns = [column for column in train.columns if \"diff\" in column]  + ['home_win']\n",
+    "\n",
+    "test_columns = train_columns + ['Group']"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 250,
+   "execution_count": 490,
    "metadata": {},
    "outputs": [],
    "source": [
-    "train = train[['home_win', 'rank_diff', 'attack_diff', 'defence_diff', 'midfield_diff', 'overall_diff']]\n",
-    "test = test[['home_win', 'rank_diff', 'attack_diff', 'defence_diff', 'midfield_diff', 'overall_diff', 'Group']]"
+    "train = train[train_columns]\n",
+    "test = test[test_columns]"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 251,
+   "execution_count": 535,
    "metadata": {},
    "outputs": [],
    "source": [
-    "np.random.seed(2018)\n",
+    "np.random.seed(3)\n",
     "X_train, X_validation = train_test_split(train, test_size = 0.2)\n",
     "y_train = X_train['home_win'].ravel()\n",
     "X_train = X_train.drop(['home_win'], axis = 1)\n",
@@ -173,7 +125,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 252,
+   "execution_count": 536,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -182,15 +134,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 253,
+   "execution_count": 537,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Logistic Regression Train Score: 0.5207939508506616\n",
-      "Logistic Regression Validation Score: 0.5245283018867924\n"
+      "Logistic Regression Train Score: 0.5283553875236295\n",
+      "Logistic Regression Validation Score: 0.5509433962264151\n"
      ]
     }
    ],
@@ -208,7 +160,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 254,
+   "execution_count": 538,
    "metadata": {},
    "outputs": [
     {
@@ -232,14 +184,26 @@
        "  <thead>\n",
        "    <tr style=\"text-align: right;\">\n",
        "      <th></th>\n",
-       "      <th>rank_diff</th>\n",
        "      <th>attack_diff</th>\n",
        "      <th>defence_diff</th>\n",
        "      <th>midfield_diff</th>\n",
        "      <th>overall_diff</th>\n",
+       "      <th>wins_past_1_games_diff</th>\n",
+       "      <th>wins_past_2_games_diff</th>\n",
+       "      <th>wins_past_3_games_diff</th>\n",
+       "      <th>wins_past_4_games_diff</th>\n",
+       "      <th>wins_past_5_games_diff</th>\n",
+       "      <th>full_age_diff</th>\n",
+       "      <th>start_age_diff</th>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>home_win</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
        "      <th></th>\n",
        "      <th></th>\n",
        "      <th></th>\n",
@@ -250,41 +214,77 @@
        "  <tbody>\n",
        "    <tr>\n",
        "      <th>0</th>\n",
-       "      <td>884.691050</td>\n",
        "      <td>42.557163</td>\n",
        "      <td>38.549357</td>\n",
        "      <td>37.936027</td>\n",
        "      <td>31.537804</td>\n",
+       "      <td>0.449364</td>\n",
+       "      <td>0.738820</td>\n",
+       "      <td>1.194859</td>\n",
+       "      <td>1.670412</td>\n",
+       "      <td>2.111897</td>\n",
+       "      <td>2.342569</td>\n",
+       "      <td>4.045431</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>1</th>\n",
-       "      <td>937.780800</td>\n",
        "      <td>48.936282</td>\n",
        "      <td>40.405204</td>\n",
        "      <td>40.252079</td>\n",
        "      <td>35.024385</td>\n",
+       "      <td>0.454280</td>\n",
+       "      <td>0.930523</td>\n",
+       "      <td>1.342676</td>\n",
+       "      <td>1.883892</td>\n",
+       "      <td>2.475347</td>\n",
+       "      <td>2.445268</td>\n",
+       "      <td>4.047967</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>2</th>\n",
-       "      <td>1033.408308</td>\n",
        "      <td>44.322274</td>\n",
        "      <td>43.722156</td>\n",
        "      <td>38.042605</td>\n",
        "      <td>34.816576</td>\n",
+       "      <td>0.441126</td>\n",
+       "      <td>0.843680</td>\n",
+       "      <td>1.376074</td>\n",
+       "      <td>1.959188</td>\n",
+       "      <td>2.698364</td>\n",
+       "      <td>2.432931</td>\n",
+       "      <td>4.192845</td>\n",
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
        "</div>"
       ],
       "text/plain": [
-       "            rank_diff  attack_diff  defence_diff  midfield_diff  overall_diff\n",
-       "home_win                                                                     \n",
-       "0          884.691050    42.557163     38.549357      37.936027     31.537804\n",
-       "1          937.780800    48.936282     40.405204      40.252079     35.024385\n",
-       "2         1033.408308    44.322274     43.722156      38.042605     34.816576"
+       "          attack_diff  defence_diff  midfield_diff  overall_diff  \\\n",
+       "home_win                                                           \n",
+       "0           42.557163     38.549357      37.936027     31.537804   \n",
+       "1           48.936282     40.405204      40.252079     35.024385   \n",
+       "2           44.322274     43.722156      38.042605     34.816576   \n",
+       "\n",
+       "          wins_past_1_games_diff  wins_past_2_games_diff  \\\n",
+       "home_win                                                   \n",
+       "0                       0.449364                0.738820   \n",
+       "1                       0.454280                0.930523   \n",
+       "2                       0.441126                0.843680   \n",
+       "\n",
+       "          wins_past_3_games_diff  wins_past_4_games_diff  \\\n",
+       "home_win                                                   \n",
+       "0                       1.194859                1.670412   \n",
+       "1                       1.342676                1.883892   \n",
+       "2                       1.376074                1.959188   \n",
+       "\n",
+       "          wins_past_5_games_diff  full_age_diff  start_age_diff  \n",
+       "home_win                                                         \n",
+       "0                       2.111897       2.342569        4.045431  \n",
+       "1                       2.475347       2.445268        4.047967  \n",
+       "2                       2.698364       2.432931        4.192845  "
       ]
      },
-     "execution_count": 254,
+     "execution_count": 538,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -297,12 +297,12 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Surprisingly, besides `rank_diff`, they are actually quite similar! "
+    "Surprisingly, they are actually quite similar! "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 255,
+   "execution_count": 539,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -311,15 +311,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 256,
+   "execution_count": 540,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "LDA Train Score: 0.5122873345935728\n",
-      "LDA Validation Score: 0.5207547169811321\n"
+      "LDA Train Score: 0.5311909262759924\n",
+      "LDA Validation Score: 0.5471698113207547\n"
      ]
     }
    ],
@@ -337,7 +337,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 257,
+   "execution_count": 541,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -346,15 +346,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 258,
+   "execution_count": 542,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Train Score: 0.5245746691871456\n",
-      "QDA Validation Score: 0.5056603773584906\n"
+      "QDA Train Score: 0.556710775047259\n",
+      "QDA Validation Score: 0.5169811320754717\n"
      ]
     }
    ],
@@ -372,24 +372,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 259,
+   "execution_count": 555,
    "metadata": {},
    "outputs": [],
    "source": [
-    "rf_model = RandomForestClassifier(min_samples_leaf = 20, n_estimators=100).fit(X_train, y_train)"
+    "rf_model = RandomForestClassifier(min_samples_leaf = 30, n_estimators=100).fit(X_train, y_train)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 260,
+   "execution_count": 556,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Random Forest Train Score: 0.5500945179584121\n",
-      "Random Forest Validation Score 0.5245283018867924\n"
+      "Random Forest Train Score: 0.5519848771266541\n",
+      "Random Forest Validation Score 0.5283018867924528\n"
      ]
     }
    ],
@@ -407,7 +407,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 261,
+   "execution_count": 557,
    "metadata": {},
    "outputs": [
     {
@@ -425,14 +425,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 262,
+   "execution_count": 558,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "LDA Test Score: 0.59375\n"
+      "LDA Test Score: 0.5625\n"
      ]
     }
    ],
@@ -443,14 +443,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 263,
+   "execution_count": 559,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Test Score: 0.609375\n"
+      "QDA Test Score: 0.5\n"
      ]
     }
    ],
@@ -461,14 +461,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 264,
+   "execution_count": 560,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Random Forest Test Score: 0.609375\n"
+      "Random Forest Test Score: 0.65625\n"
      ]
     }
    ],
@@ -478,11 +478,63 @@
    ]
   },
   {
-   "cell_type": "markdown",
+   "cell_type": "code",
+   "execution_count": 561,
    "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([0.21221366, 0.12770022, 0.17150244, 0.25464042, 0.00688856,\n",
+       "       0.00957136, 0.01365356, 0.02254769, 0.03867942, 0.06483754,\n",
+       "       0.07776514])"
+      ]
+     },
+     "execution_count": 561,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
    "source": [
-    "Impressive! We now have an idea of what our more advanced model should hope to achieve. \n"
+    "rf_model.feature_importances_"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 564,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['attack_diff',\n",
+       " 'defence_diff',\n",
+       " 'midfield_diff',\n",
+       " 'overall_diff',\n",
+       " 'wins_past_1_games_diff',\n",
+       " 'wins_past_2_games_diff',\n",
+       " 'wins_past_3_games_diff',\n",
+       " 'wins_past_4_games_diff',\n",
+       " 'wins_past_5_games_diff',\n",
+       " 'full_age_diff',\n",
+       " 'start_age_diff']"
+      ]
+     },
+     "execution_count": 564,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train_columns[1:]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Baseline Model &#8212; World Cup  documentation</title>
+    <title>Advanced Models &#8212; World Cup  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Cleaning" href="../sofifa/sofifa-cleaning.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -197,12 +196,11 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 </style>
-<div class="section" id="Baseline-Model">
-<h1>Baseline Model<a class="headerlink" href="#Baseline-Model" title="Permalink to this headline">¶</a></h1>
-<p>We will first build some basic models.</p>
+<div class="section" id="Advanced-Models">
+<h1>Advanced Models<a class="headerlink" href="#Advanced-Models" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [245]:
+<span></span>In [486]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -220,18 +218,18 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [246]:
+<span></span>In [487]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/train_merged.csv&#39;</span><span class="p">)</span>
-<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/test_merged.csv&#39;</span><span class="p">)</span>
+<span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/train_final.csv&#39;</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/test_final.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [247]:
+<span></span>In [488]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -241,7 +239,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[247]:
+<span></span>Out[488]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -259,80 +257,52 @@ div.nboutput div.output_area.stderr {
        &#39;previous_points_diff&#39;, &#39;rank_change_diff&#39;, &#39;rank_diff&#39;,
        &#39;three_year_ago_avg_diff&#39;, &#39;three_year_ago_weighted_diff&#39;,
        &#39;total_points_diff&#39;, &#39;two_year_ago_avg_diff&#39;,
-       &#39;two_year_ago_weighted_diff&#39;, &#39;gdp_diff&#39;],
+       &#39;two_year_ago_weighted_diff&#39;, &#39;gdp_diff&#39;, &#39;wins_past_1_games_diff&#39;,
+       &#39;wins_home_against_away_1_games&#39;, &#39;wins_past_2_games_diff&#39;,
+       &#39;wins_home_against_away_2_games&#39;, &#39;wins_past_3_games_diff&#39;,
+       &#39;wins_home_against_away_3_games&#39;, &#39;wins_past_4_games_diff&#39;,
+       &#39;wins_home_against_away_4_games&#39;, &#39;wins_past_5_games_diff&#39;,
+       &#39;wins_home_against_away_5_games&#39;],
       dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
-<p>Our most basic model would be to just predict the majority class every
-time. In this case, <code class="docutils literal notranslate"><span class="pre">home_win</span></code> = 1 is the majority class. What are is
-the training accuracy from just doing this “prediction”?</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [248]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[248]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.4406651549508692
-</pre></div>
-</div>
-</div>
-<p>Pretty decent when we have 3 classes. What about the test accuracy?</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [249]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[249]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0.421875
-</pre></div>
-</div>
-</div>
-<p>Still decent. Any model we build should be better than this test
-accuracy of just guessing.</p>
-<p>Our baseline model will be pretty simple. We will utilize the
-differences in FIFA rankings, offense ratings, defense ratings, midfield
-ratings, overall ratings, and whether the home team is actually playing
-at home. We will make a train and validation set out of the original
-train set.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [250]:
+<span></span>In [489]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;rank_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;overall_diff&#39;</span><span class="p">]]</span>
-<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;rank_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;overall_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">]]</span>
+<span></span><span class="n">train_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;overall_diff&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;wins_past_1_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;wins_past_2_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;wins_past_3_games_diff&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;wins_past_4_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;wins_past_5_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;full_age_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;start_age_diff&#39;</span><span class="p">]</span>
+
+<span class="c1"># train_columns = [&#39;home_win&#39;, &#39;attack_diff&#39;, &#39;defence_diff&#39;, &#39;midfield_diff&#39;, &#39;overall_diff&#39;,</span>
+<span class="c1">#                  &#39;full_age_diff&#39;, &#39;start_age_diff&#39;, &#39;gdp_diff&#39;]</span>
+<span class="c1"># train_columns = [column for column in train.columns if &quot;diff&quot; in column]  + [&#39;home_win&#39;]</span>
+
+<span class="n">test_columns</span> <span class="o">=</span> <span class="n">train_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [251]:
+<span></span>In [490]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2018</span><span class="p">)</span>
+<span></span><span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train_columns</span><span class="p">]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="n">test_columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [535]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_validation</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
 <span class="n">y_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
@@ -345,7 +315,7 @@ train set.</p>
 <p>We will first try out logistic regression.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [252]:
+<span></span>In [536]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -355,7 +325,7 @@ train set.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [253]:
+<span></span>In [537]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -369,15 +339,15 @@ train set.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Logistic Regression Train Score: 0.5207939508506616
-Logistic Regression Validation Score: 0.5245283018867924
+Logistic Regression Train Score: 0.5283553875236295
+Logistic Regression Validation Score: 0.5509433962264151
 </pre></div></div>
 </div>
 <p>We will also try out Linear Discriminant Analysis. However, we need to
 first check whether the variances across the three outcomes are equal.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [254]:
+<span></span>In [538]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -387,7 +357,7 @@ first check whether the variances across the three outcomes are equal.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[254]:
+<span></span>Out[538]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -409,14 +379,26 @@ first check whether the variances across the three outcomes are equal.</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>rank_diff</th>
       <th>attack_diff</th>
       <th>defence_diff</th>
       <th>midfield_diff</th>
       <th>overall_diff</th>
+      <th>wins_past_1_games_diff</th>
+      <th>wins_past_2_games_diff</th>
+      <th>wins_past_3_games_diff</th>
+      <th>wins_past_4_games_diff</th>
+      <th>wins_past_5_games_diff</th>
+      <th>full_age_diff</th>
+      <th>start_age_diff</th>
     </tr>
     <tr>
       <th>home_win</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -427,36 +409,54 @@ first check whether the variances across the three outcomes are equal.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>884.691050</td>
       <td>42.557163</td>
       <td>38.549357</td>
       <td>37.936027</td>
       <td>31.537804</td>
+      <td>0.449364</td>
+      <td>0.738820</td>
+      <td>1.194859</td>
+      <td>1.670412</td>
+      <td>2.111897</td>
+      <td>2.342569</td>
+      <td>4.045431</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>937.780800</td>
       <td>48.936282</td>
       <td>40.405204</td>
       <td>40.252079</td>
       <td>35.024385</td>
+      <td>0.454280</td>
+      <td>0.930523</td>
+      <td>1.342676</td>
+      <td>1.883892</td>
+      <td>2.475347</td>
+      <td>2.445268</td>
+      <td>4.047967</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1033.408308</td>
       <td>44.322274</td>
       <td>43.722156</td>
       <td>38.042605</td>
       <td>34.816576</td>
+      <td>0.441126</td>
+      <td>0.843680</td>
+      <td>1.376074</td>
+      <td>1.959188</td>
+      <td>2.698364</td>
+      <td>2.432931</td>
+      <td>4.192845</td>
     </tr>
   </tbody>
 </table>
 </div></div>
 </div>
-<p>Surprisingly, besides <code class="docutils literal notranslate"><span class="pre">rank_diff</span></code>, they are actually quite similar!</p>
+<p>Surprisingly, they are actually quite similar!</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [255]:
+<span></span>In [539]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -466,7 +466,7 @@ first check whether the variances across the three outcomes are equal.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [256]:
+<span></span>In [540]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -480,15 +480,15 @@ first check whether the variances across the three outcomes are equal.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-LDA Train Score: 0.5122873345935728
-LDA Validation Score: 0.5207547169811321
+LDA Train Score: 0.5311909262759924
+LDA Validation Score: 0.5471698113207547
 </pre></div></div>
 </div>
 <p>We will also try out Quadratic Discriminant Analysis, which should
 perform similarly to LDA in this case due to the almost equal variances.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [257]:
+<span></span>In [541]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -498,7 +498,7 @@ perform similarly to LDA in this case due to the almost equal variances.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [258]:
+<span></span>In [542]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -512,24 +512,24 @@ perform similarly to LDA in this case due to the almost equal variances.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-QDA Train Score: 0.5245746691871456
-QDA Validation Score: 0.5056603773584906
+QDA Train Score: 0.556710775047259
+QDA Validation Score: 0.5169811320754717
 </pre></div></div>
 </div>
 <p>We will also try out Random Forest.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [259]:
+<span></span>In [555]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">min_samples_leaf</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span></span><span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">min_samples_leaf</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [260]:
+<span></span>In [556]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -543,14 +543,14 @@ QDA Validation Score: 0.5056603773584906
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Random Forest Train Score: 0.5500945179584121
-Random Forest Validation Score 0.5245283018867924
+Random Forest Train Score: 0.5519848771266541
+Random Forest Validation Score 0.5283018867924528
 </pre></div></div>
 </div>
 <p>Now let’s see how these models perform on the actual World Cup!</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [261]:
+<span></span>In [557]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -569,7 +569,7 @@ Logistic Regression Test Score: 0.59375
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [262]:
+<span></span>In [558]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -583,12 +583,12 @@ Logistic Regression Test Score: 0.59375
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-LDA Test Score: 0.59375
+LDA Test Score: 0.5625
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [263]:
+<span></span>In [559]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -602,12 +602,12 @@ LDA Test Score: 0.59375
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-QDA Test Score: 0.609375
+QDA Test Score: 0.5
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [264]:
+<span></span>In [560]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -621,11 +621,71 @@ QDA Test Score: 0.609375
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Random Forest Test Score: 0.609375
+Random Forest Test Score: 0.65625
 </pre></div></div>
 </div>
-<p>Impressive! We now have an idea of what our more advanced model should
-hope to achieve.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [561]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rf_model</span><span class="o">.</span><span class="n">feature_importances_</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[561]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([0.21221366, 0.12770022, 0.17150244, 0.25464042, 0.00688856,
+       0.00957136, 0.01365356, 0.02254769, 0.03867942, 0.06483754,
+       0.07776514])
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [564]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[564]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[&#39;attack_diff&#39;,
+ &#39;defence_diff&#39;,
+ &#39;midfield_diff&#39;,
+ &#39;overall_diff&#39;,
+ &#39;wins_past_1_games_diff&#39;,
+ &#39;wins_past_2_games_diff&#39;,
+ &#39;wins_past_3_games_diff&#39;,
+ &#39;wins_past_4_games_diff&#39;,
+ &#39;wins_past_5_games_diff&#39;,
+ &#39;full_age_diff&#39;,
+ &#39;start_age_diff&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -642,7 +702,7 @@ hope to achieve.</p>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../_sources/models/baseline_model.ipynb.txt"
+      <a href="../_sources/models/advanced_models.ipynb.txt"
           rel="nofollow">Page source</a>
     </div>
 
