@@ -1259,6 +1259,549 @@ anything.</p>
 </pre></div>
 </div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [124]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;goalkeeeper_overall_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[124]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>game_date</th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>country</th>
+      <th>neutral</th>
+      <th>home_win</th>
+      <th>attack_diff</th>
+      <th>bup_dribbling_diff</th>
+      <th>bup_passing_diff</th>
+      <th>bup_speed_diff</th>
+      <th>...</th>
+      <th>midfield_diff</th>
+      <th>overall_diff</th>
+      <th>prestige_diff</th>
+      <th>start_age_diff</th>
+      <th>value_euros_millions_diff</th>
+      <th>wage_euros_thousands_diff</th>
+      <th>attack_home_defence_away_diff</th>
+      <th>attack_away_defence_home_diff</th>
+      <th>rank_diff</th>
+      <th>gdp_diff</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>128</th>
+      <td>2008-06-01 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Wales</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>1.09</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.0</td>
+      <td>-4.0</td>
+      <td>-42.0</td>
+      <td>1.228381</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>2009-02-11 00:00:00+00:00</td>
+      <td>Tunisia</td>
+      <td>Netherlands</td>
+      <td>Tunisia</td>
+      <td>False</td>
+      <td>0</td>
+      <td>-12.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>-12.0</td>
+      <td>-13.0</td>
+      <td>-10.0</td>
+      <td>1.91</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-8.0</td>
+      <td>8.0</td>
+      <td>42.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>2008-10-15 00:00:00+00:00</td>
+      <td>Norway</td>
+      <td>Netherlands</td>
+      <td>Norway</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>-4.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>-6.0</td>
+      <td>-8.0</td>
+      <td>-6.0</td>
+      <td>-0.91</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>7.0</td>
+      <td>34.0</td>
+      <td>1.317420</td>
+    </tr>
+    <tr>
+      <th>315</th>
+      <td>2008-02-06 00:00:00+00:00</td>
+      <td>Croatia</td>
+      <td>Netherlands</td>
+      <td>Croatia</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>-1.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>-6.0</td>
+      <td>-5.0</td>
+      <td>-2.0</td>
+      <td>2.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>9.0</td>
+      <td>1.0</td>
+      <td>0.449685</td>
+    </tr>
+    <tr>
+      <th>316</th>
+      <td>2007-10-13 00:00:00+00:00</td>
+      <td>Romania</td>
+      <td>Netherlands</td>
+      <td>Romania</td>
+      <td>False</td>
+      <td>1</td>
+      <td>-8.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>-9.0</td>
+      <td>-7.0</td>
+      <td>-7.0</td>
+      <td>0.82</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-3.0</td>
+      <td>10.0</td>
+      <td>7.0</td>
+      <td>0.447744</td>
+    </tr>
+    <tr>
+      <th>327</th>
+      <td>2007-09-08 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Bulgaria</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>-3.27</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.0</td>
+      <td>-3.0</td>
+      <td>-22.0</td>
+      <td>2.483177</td>
+    </tr>
+    <tr>
+      <th>330</th>
+      <td>2007-10-17 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Slovenia</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>1</td>
+      <td>12.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>14.0</td>
+      <td>12.0</td>
+      <td>10.0</td>
+      <td>1.36</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.0</td>
+      <td>-7.0</td>
+      <td>-70.0</td>
+      <td>1.573026</td>
+    </tr>
+    <tr>
+      <th>372</th>
+      <td>2008-05-29 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Denmark</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>0</td>
+      <td>7.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>-2.91</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.0</td>
+      <td>-2.0</td>
+      <td>-23.0</td>
+      <td>1.079999</td>
+    </tr>
+    <tr>
+      <th>380</th>
+      <td>2008-03-26 00:00:00+00:00</td>
+      <td>Austria</td>
+      <td>Netherlands</td>
+      <td>Austria</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>-17.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>-11.0</td>
+      <td>-10.0</td>
+      <td>-5.0</td>
+      <td>-0.54</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-12.0</td>
+      <td>11.0</td>
+      <td>79.0</td>
+      <td>0.919096</td>
+    </tr>
+    <tr>
+      <th>381</th>
+      <td>2008-08-20 00:00:00+00:00</td>
+      <td>Russia</td>
+      <td>Netherlands</td>
+      <td>Russia</td>
+      <td>False</td>
+      <td>0</td>
+      <td>-9.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>-7.0</td>
+      <td>-5.0</td>
+      <td>-4.0</td>
+      <td>-0.09</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-4.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>0.520511</td>
+    </tr>
+    <tr>
+      <th>408</th>
+      <td>2008-06-09 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Italy</td>
+      <td>Switzerland</td>
+      <td>True</td>
+      <td>1</td>
+      <td>-1.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>-2.0</td>
+      <td>-3.0</td>
+      <td>-4.0</td>
+      <td>-4.64</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-1.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>1.411167</td>
+    </tr>
+    <tr>
+      <th>421</th>
+      <td>2008-06-21 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Russia</td>
+      <td>Switzerland</td>
+      <td>True</td>
+      <td>-1</td>
+      <td>9.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>0.09</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.0</td>
+      <td>-4.0</td>
+      <td>-14.0</td>
+      <td>1.921190</td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>2008-06-13 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>France</td>
+      <td>Switzerland</td>
+      <td>True</td>
+      <td>1</td>
+      <td>-3.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>-3.0</td>
+      <td>-3.0</td>
+      <td>-4.0</td>
+      <td>-4.73</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>3.0</td>
+      <td>1.230356</td>
+    </tr>
+    <tr>
+      <th>436</th>
+      <td>2008-05-24 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Ukraine</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>1.0</td>
+      <td>-3.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.0</td>
+      <td>-1.0</td>
+      <td>-22.0</td>
+      <td>6.190157</td>
+    </tr>
+    <tr>
+      <th>438</th>
+      <td>2008-06-17 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Romania</td>
+      <td>Switzerland</td>
+      <td>True</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>-0.82</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10.0</td>
+      <td>-3.0</td>
+      <td>-2.0</td>
+      <td>2.233421</td>
+    </tr>
+    <tr>
+      <th>500</th>
+      <td>2008-11-19 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Sweden</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>1</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>-1.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>-25.0</td>
+      <td>1.045217</td>
+    </tr>
+    <tr>
+      <th>513</th>
+      <td>2008-09-06 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Australia</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>5.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>-1.73</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.0</td>
+      <td>-1.0</td>
+      <td>-35.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>551</th>
+      <td>2009-03-28 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Scotland</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>0.82</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.0</td>
+      <td>-4.0</td>
+      <td>-25.0</td>
+      <td>1.228381</td>
+    </tr>
+    <tr>
+      <th>553</th>
+      <td>2009-06-10 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Norway</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>6.0</td>
+      <td>0.18</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.0</td>
+      <td>-2.0</td>
+      <td>-45.0</td>
+      <td>0.759059</td>
+    </tr>
+    <tr>
+      <th>555</th>
+      <td>2009-08-12 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>England</td>
+      <td>Netherlands</td>
+      <td>False</td>
+      <td>0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>...</td>
+      <td>-5.0</td>
+      <td>-2.0</td>
+      <td>-1.0</td>
+      <td>-1.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-1.0</td>
+      <td>4.0</td>
+      <td>-4.0</td>
+      <td>1.228381</td>
+    </tr>
+  </tbody>
+</table>
+<p>20 rows × 30 columns</p>
+</div></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:

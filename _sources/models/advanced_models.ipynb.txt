@@ -9,7 +9,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 641,
+   "execution_count": 660,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -26,7 +26,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 642,
+   "execution_count": 661,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -36,7 +36,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 643,
+   "execution_count": 662,
    "metadata": {},
    "outputs": [
     {
@@ -51,12 +51,7 @@
        "       'overall_diff', 'prestige_diff', 'start_age_diff',\n",
        "       'value_euros_millions_diff', 'wage_euros_thousands_diff',\n",
        "       'attack_home_defence_away_diff', 'attack_away_defence_home_diff',\n",
-       "       'cur_year_avg_weighted_diff', 'cur_year_avg_diff',\n",
-       "       'last_year_avg_weighted_diff', 'last_year_avg_diff',\n",
-       "       'previous_points_diff', 'rank_change_diff', 'rank_diff',\n",
-       "       'three_year_ago_avg_diff', 'three_year_ago_weighted_diff',\n",
-       "       'total_points_diff', 'two_year_ago_avg_diff',\n",
-       "       'two_year_ago_weighted_diff', 'gdp_diff', 'wins_past_1_games_diff',\n",
+       "       'rank_diff', 'gdp_diff', 'wins_past_1_games_diff',\n",
        "       'wins_home_against_away_1_games', 'wins_past_2_games_diff',\n",
        "       'wins_home_against_away_2_games', 'wins_past_3_games_diff',\n",
        "       'wins_home_against_away_3_games', 'wins_past_4_games_diff',\n",
@@ -65,7 +60,7 @@
        "      dtype='object')"
       ]
      },
-     "execution_count": 643,
+     "execution_count": 662,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -76,7 +71,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 644,
+   "execution_count": 667,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -92,7 +87,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 645,
+   "execution_count": 668,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -102,7 +97,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 646,
+   "execution_count": 669,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -124,7 +119,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 647,
+   "execution_count": 670,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -133,7 +128,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 648,
+   "execution_count": 671,
    "metadata": {},
    "outputs": [
     {
@@ -159,7 +154,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 649,
+   "execution_count": 672,
    "metadata": {},
    "outputs": [
     {
@@ -251,7 +246,7 @@
        " 1              4.359358       2.406626  "
       ]
      },
-     "execution_count": 649,
+     "execution_count": 672,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -269,7 +264,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 650,
+   "execution_count": 673,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -278,7 +273,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 651,
+   "execution_count": 674,
    "metadata": {},
    "outputs": [
     {
@@ -304,7 +299,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 652,
+   "execution_count": 675,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -313,7 +308,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 653,
+   "execution_count": 676,
    "metadata": {},
    "outputs": [
     {
@@ -339,7 +334,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 654,
+   "execution_count": 677,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -348,7 +343,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 655,
+   "execution_count": 678,
    "metadata": {},
    "outputs": [
     {
@@ -374,7 +369,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 656,
+   "execution_count": 679,
    "metadata": {},
    "outputs": [
     {
@@ -392,7 +387,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 657,
+   "execution_count": 680,
    "metadata": {},
    "outputs": [
     {
@@ -410,7 +405,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 658,
+   "execution_count": 681,
    "metadata": {},
    "outputs": [
     {
@@ -428,7 +423,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 659,
+   "execution_count": 682,
    "metadata": {},
    "outputs": [
     {
