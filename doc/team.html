@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Project Statement &#8212; World Cup  documentation</title>
+    <title>Team Members &#8212; World Cup  documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Team Members" href="team.html" />
-    <link rel="prev" title="Predicting the 2018 World Cup" href="../index.html" />
+    <link rel="next" title="Milestone 2" href="milestone2.html" />
+    <link rel="prev" title="Project Statement" href="problem_statement.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -54,8 +54,8 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Project Statement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="team.html">Team Members</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problem_statement.html">Project Statement</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Team Members</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Milestones:</span></p>
 <ul>
@@ -79,7 +79,13 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Project Statement</a></li>
+<li><a class="reference internal" href="#">Team Members</a><ul>
+<li><a class="reference internal" href="#Brian-Lin">Brian Lin</a></li>
+<li><a class="reference internal" href="#Shane-Ong">Shane Ong</a></li>
+<li><a class="reference internal" href="#Matteo-Zhang">Matteo Zhang</a></li>
+<li><a class="reference internal" href="#Pat-Sukhum">Pat Sukhum</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -89,11 +95,11 @@
               
                 
   <li>
-    <a href="../index.html" title="Previous Chapter: Predicting the 2018 World Cup"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Predicting th...</span>
+    <a href="problem_statement.html" title="Previous Chapter: Project Statement"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Project Statement</span>
     </a>
   </li>
   <li>
-    <a href="team.html" title="Next Chapter: Team Members"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Team Members &raquo;</span>
+    <a href="milestone2.html" title="Next Chapter: Milestone 2"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Milestone 2 &raquo;</span>
     </a>
   </li>
               
@@ -103,7 +109,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/doc/problem_statement.md.txt"
+  <a href="../_sources/doc/team.ipynb.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -127,11 +133,36 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="project-statement">
-<h1>Project Statement<a class="headerlink" href="#project-statement" title="Permalink to this headline">¶</a></h1>
-<p>While soccer is one of the most popular sports in the world, its analytics is lackluster in comparison to other popular sports such as baseball, American football, hockey, and basketball. This is due to the fact that aside from the World Cup, international teams don’t play each other very frequently. Therefore, there is a lack of high quality data that can be immediately fed into models to perform predictions.</p>
-<p>The World Cup is composed of 64 matches in total - 48 matches in group stages and 16 matches in knockout (15 + 1 for third place). We plan to predict the outcome of each of the 64 matches independently instead of predicting which teams proceed in each round. This strategy allows our results to be comparable across models. By framing the problem in this way, we plan to approach this problem as a classification problem. Each game can be treated as a multi-class classification problem, where there are three outcomes: win for the home team (or team 1, indicated with 1), win for the away team (or team 2, indicated with -1), or a draw (indicated with 0). In the case of knockouts, we limit the outcome to: win for the home team (or team 1), win for the away team (or team 2), as draws are not allowed.</p>
-<p>To validate how accurate FIFA rankings are, we aim to use a baseline model that leverages FIFA rankings and some other simple predictors to predict the World Cup results. We plan to create a more advanced model, without relying on FIFA rankings but instead based on features collected and engineered by us that are proven to be relevant in the initial EDA. Ultimately, our analysis attempts to create a model that can predict the World Cup results as accurately as possible, while offering an insight into the features helpful in soccer analytics.</p>
+  <div class="section" id="Team-Members">
+<h1>Team Members<a class="headerlink" href="#Team-Members" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Brian-Lin">
+<h2>Brian Lin<a class="headerlink" href="#Brian-Lin" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<img alt="Brian" src="../_images/pavlos.jpeg" />
+<p class="caption"><span class="caption-text">Brian</span></p>
+</div>
+</div>
+<div class="section" id="Shane-Ong">
+<h2>Shane Ong<a class="headerlink" href="#Shane-Ong" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id2">
+<img alt="Shane" src="../_images/boba.jpg" />
+<p class="caption"><span class="caption-text">Shane</span></p>
+</div>
+</div>
+<div class="section" id="Matteo-Zhang">
+<h2>Matteo Zhang<a class="headerlink" href="#Matteo-Zhang" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id3">
+<img alt="Matteo" src="../_images/pikachu.jpg" />
+<p class="caption"><span class="caption-text">Matteo</span></p>
+</div>
+</div>
+<div class="section" id="Pat-Sukhum">
+<h2>Pat Sukhum<a class="headerlink" href="#Pat-Sukhum" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id4">
+<img alt="Pat" src="../_images/leetcode.png" />
+<p class="caption"><span class="caption-text">Pat</span></p>
+</div>
+</div>
 </div>
 
 

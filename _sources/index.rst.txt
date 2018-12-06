@@ -10,6 +10,7 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
    :caption: Introduction:
 
    doc/problem_statement.md
+   doc/team.ipynb
    
 
 .. toctree::

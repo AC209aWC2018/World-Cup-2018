@@ -35,7 +35,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+        <a class="navbar-brand" href="../index.html">
           World Cup</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -52,7 +52,12 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Milestones:</span></p>
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problem_statement.html">Project Statement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team Members</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Milestones:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="milestone2.html">Milestone 2</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Milestone 3</a></li>
@@ -135,7 +140,173 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="Milestone-3">
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 9ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Milestone-3">
 <h1>Milestone 3<a class="headerlink" href="#Milestone-3" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Project-Statement">
 <h2>Project Statement<a class="headerlink" href="#Project-Statement" title="Permalink to this headline">¶</a></h2>
@@ -296,27 +467,31 @@ aggregates. From looking at the plots the distributions of a difference
 in rating among the three outcome do not really seem that different.
 This might be an indication that using individual ratings and
 aggregating them might not be the way to go.</p>
-<p><img alt="image0" src="../_images/baseline_result.png" /></p>
+<div class="figure" id="id1">
+<img alt="European League Distributions" src="../_images/european_league_differences.png" />
+<p class="caption"><span class="caption-text">European League Distributions</span></p>
+</div>
 </div>
 <div class="section" id="Exploring-Other-Features">
 <h2>Exploring Other Features<a class="headerlink" href="#Exploring-Other-Features" title="Permalink to this headline">¶</a></h2>
-<p><img alt="image0" src="../_images/baseline_result.png" /> The spearman correlation plot gives us an idea of how well
-these features correlate with our dependent variable. In other words,
-the highly correlated features, such as overall difference in ratings
-should give us a fairly good idea of team 1/home team winning.</p>
-<p><img alt="image0" src="../_images/baseline_result.png" /> In fact, from the distribution plot we see that the features,
-such as overall difference in ratings and goalkeeper rating difference,
-that can better discriminate win, loss for team 1 are more highly
-correlated with the win/lose. Similarly, features, such as build up
-dribbling difference, which have low correlation barely show any
+<p><img alt="Spearman Correlation Plot" src="../_images/spear_corr.png" /> The spearman correlation plot gives us an
+idea of how well these features correlate with our dependent variable.
+In other words, the highly correlated features, such as overall
+difference in ratings should give us a fairly good idea of team 1/home
+team winning.</p>
+<p><img alt="Distribution Plot" src="../_images/distr_plot.png" /> In fact, from the distribution plot we see that the
+features, such as overall difference in ratings and goalkeeper rating
+difference, that can better discriminate win, loss for team 1 are more
+highly correlated with the win/lose. Similarly, features, such as build
+up dribbling difference, which have low correlation barely show any
 difference between distribution of different outcomes.</p>
-<p><img alt="image0" src="../_images/baseline_result.png" /> Inspecting one of the highly correlated features closely, we
-see that when the difference is positive (team 1 has an advantage), the
-likelihood of winning is much higher whereas when it’s negative it’s
+<p><img alt="Goal Rating" src="../_images/goal_rating.png" /> Inspecting one of the highly correlated features closely,
+we see that when the difference is positive (team 1 has an advantage),
+the likelihood of winning is much higher whereas when it’s negative it’s
 much more likely to lose.</p>
-<p><img alt="image0" src="../_images/baseline_result.png" /> However, there are also some features that don’t have really
-high correlation and can still discriminate well the win/lose situations
-when the difference is large. For instance, for the team wage
+<p><img alt="Wage Difference" src="../_images/wage_diff.png" /> However, there are also some features that don’t have
+really high correlation and can still discriminate well the win/lose
+situations when the difference is large. For instance, for the team wage
 difference, we see when the difference is large, it is much more likely
 to win/lose, but there is barely any difference in the middle peaking at
 0. This is happening because we imputed missing values with 0 to encode
@@ -329,7 +504,10 @@ predictors. This time it is a bit more obvious that home team winning
 tends to have higher values. It seems like we can probably calculate
 some kind of momentum and utilize it as a predictor. We will explore
 more of this concept later on when we try to make more advanced models.</p>
-<p><img alt="image0" src="../_images/baseline_result.png" /></p>
+<div class="figure" id="id2">
+<img alt="Previous Wins Sofifa" src="../_images/previous_wins.png" />
+<p class="caption"><span class="caption-text">Previous Wins Sofifa</span></p>
+</div>
 </div>
 <div class="section" id="Exploring-PCA">
 <h2>Exploring PCA<a class="headerlink" href="#Exploring-PCA" title="Permalink to this headline">¶</a></h2>
@@ -340,7 +518,10 @@ features.</p>
 <p>To check how useful PCA is, we find the validation performance of cross
 validated models over different number of PCA components and compare it
 against the cross validated models on the data without PCA.</p>
-<p><img alt="image0" src="../_images/baseline_result.png" /></p>
+<div class="figure" id="id3">
+<img alt="PCA Results" src="../_images/pca_res.png" />
+<p class="caption"><span class="caption-text">PCA Results</span></p>
+</div>
 <p>First of all, we notice that PCA helps models like LDA and QDA perhaps
 because of the independent assumption of components imposed by PCA. On
 the other hand, the performance for Logistic Regression, Random Forest,
@@ -368,7 +549,10 @@ in defense ratings, and difference in midfield ratings. Through
 classification methods such as logistic regression, LDA, QDA, Random
 Forest and XGBoost and cross validation, we picked LDA as the final
 baseline model as it gave the highest validation accuracy.</p>
-<p><img alt="image0" src="../_images/baseline_result.png" /></p>
+<div class="figure" id="id4">
+<img alt="Baseline Results" src="../_images/baseline_result.png" />
+<p class="caption"><span class="caption-text">Baseline Results</span></p>
+</div>
 <p>With this model, we were able to achieve around 59.4% accuracy in
 predicting the 2018 World Cup results. We hope to at least match this
 accuracy in our more advanced model that does not utilize the FIFA
@@ -379,6 +563,16 @@ predicts a tie (i.e.&nbsp;tie is the highest probability), we take the result
 with the second highest probability as our prediction. For this reason,
 the test accuracy is also higher because half of the matches can only
 have 2 outcomes instead of 3.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
