@@ -1,35 +1,117 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Feature Engineering + Exploratory Data Analysis &#8212; World Cup  documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
 
   </head><body>
-  
 
-    <div class="document">
-      <div class="documentwrapper">
-          
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+          World Cup</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
 
-          <div class="body" role="main">
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
             
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Milestones:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc/milestone2.html">Milestone 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc/milestone3-report.html">Milestone 3</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Models:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../models/baseline_model.html">Baseline Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/beyond_baseline.html">Modeling with Feature Engineered Features</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Feature Engineering + Exploratory Data Analysis</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/sofifa/feature_engineering_and_eda.ipynb.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
   
 <style>
 /* CSS for nbsphinx extension */
@@ -96,7 +178,7 @@ div.nboutput div.prompt pre {
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 8ex;
+    min-width: 9ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -200,7 +282,7 @@ div.nboutput div.output_area.stderr {
 <h1>Feature Engineering + Exploratory Data Analysis<a class="headerlink" href="#Feature-Engineering-+-Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [93]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -217,18 +299,18 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [94]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/train_merged.csv&#39;</span><span class="p">)</span>
-<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/test_merged.csv&#39;</span><span class="p">)</span>
+<span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/train_team.csv&#39;</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/test_team.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [95]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -238,7 +320,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[95]:
+<span></span>Out[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -263,24 +345,24 @@ div.nboutput div.output_area.stderr {
       <th>game_date</th>
       <th>home_team</th>
       <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
       <th>country</th>
       <th>neutral</th>
-      <th>home_win</th>
-      <th>attack_diff</th>
+      <th>overall_diff</th>
+      <th>attack_away_defence_home_diff</th>
+      <th>...</th>
       <th>bup_dribbling_diff</th>
       <th>bup_passing_diff</th>
       <th>bup_speed_diff</th>
-      <th>...</th>
-      <th>midfield_diff</th>
-      <th>overall_diff</th>
-      <th>prestige_diff</th>
-      <th>start_age_diff</th>
-      <th>value_euros_millions_diff</th>
-      <th>wage_euros_thousands_diff</th>
-      <th>attack_home_defence_away_diff</th>
-      <th>attack_away_defence_home_diff</th>
-      <th>rank_diff</th>
-      <th>gdp_diff</th>
+      <th>cc_crossing_diff</th>
+      <th>cc_passing_diff</th>
+      <th>cc_shooting_diff</th>
+      <th>d_aggresion_diff</th>
+      <th>d_pressure_diff</th>
+      <th>d_width_diff</th>
+      <th>home_win</th>
     </tr>
   </thead>
   <tbody>
@@ -289,131 +371,131 @@ div.nboutput div.output_area.stderr {
       <td>2006-09-01 00:00:00+00:00</td>
       <td>Denmark</td>
       <td>Portugal</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Friendly</td>
       <td>Denmark</td>
       <td>False</td>
-      <td>1</td>
-      <td>-1.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
       <td>-3.0</td>
-      <td>-3.0</td>
-      <td>-2.0</td>
-      <td>-0.27</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-4.0</td>
       <td>3.0</td>
-      <td>9.0</td>
-      <td>1.639666</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2006-10-11 00:00:00+00:00</td>
       <td>Poland</td>
       <td>Portugal</td>
+      <td>2</td>
+      <td>1</td>
+      <td>UEFA Euro qualification</td>
       <td>Poland</td>
       <td>False</td>
-      <td>1</td>
-      <td>-4.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-10.0</td>
-      <td>-7.0</td>
-      <td>-4.0</td>
-      <td>1.09</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
       <td>-7.0</td>
       <td>10.0</td>
-      <td>26.0</td>
-      <td>0.966720</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2006-09-06 00:00:00+00:00</td>
       <td>Finland</td>
       <td>Portugal</td>
+      <td>1</td>
+      <td>1</td>
+      <td>UEFA Euro qualification</td>
       <td>Finland</td>
       <td>False</td>
-      <td>0</td>
-      <td>-6.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-13.0</td>
       <td>-7.0</td>
-      <td>-9.0</td>
-      <td>0.91</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-9.0</td>
       <td>9.0</td>
-      <td>59.0</td>
-      <td>1.455813</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>2006-10-07 00:00:00+00:00</td>
       <td>Denmark</td>
       <td>Northern Ireland</td>
+      <td>0</td>
+      <td>0</td>
+      <td>UEFA Euro qualification</td>
       <td>Denmark</td>
       <td>False</td>
-      <td>0</td>
-      <td>13.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>10.0</td>
       <td>9.0</td>
-      <td>8.0</td>
-      <td>-0.27</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>12.0</td>
       <td>-11.0</td>
-      <td>-42.0</td>
-      <td>0.683074</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2006-10-11 00:00:00+00:00</td>
       <td>Austria</td>
       <td>Switzerland</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Friendly</td>
       <td>Austria</td>
       <td>False</td>
-      <td>1</td>
-      <td>-6.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-7.0</td>
       <td>-3.0</td>
-      <td>-1.0</td>
-      <td>-0.73</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-7.0</td>
       <td>4.0</td>
-      <td>56.0</td>
-      <td>0.802591</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 30 columns</p>
+<p>5 rows × 32 columns</p>
 </div></div>
 </div>
 <p>We first need to see for matches that are not neutral (i.e.&nbsp;home team is
 actually playing at home), if playing at home actually is an advantage.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [96]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -424,7 +506,7 @@ actually playing at home), if playing at home actually is an advantage.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[96]:
+<span></span>Out[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -449,35 +531,35 @@ actually playing at home), if playing at home actually is an advantage.</p>
       <th>game_date</th>
       <th>home_team</th>
       <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
       <th>country</th>
       <th>neutral</th>
-      <th>home_win</th>
-      <th>attack_diff</th>
+      <th>overall_diff</th>
+      <th>attack_away_defence_home_diff</th>
+      <th>...</th>
       <th>bup_dribbling_diff</th>
       <th>bup_passing_diff</th>
       <th>bup_speed_diff</th>
-      <th>...</th>
-      <th>midfield_diff</th>
-      <th>overall_diff</th>
-      <th>prestige_diff</th>
-      <th>start_age_diff</th>
-      <th>value_euros_millions_diff</th>
-      <th>wage_euros_thousands_diff</th>
-      <th>attack_home_defence_away_diff</th>
-      <th>attack_away_defence_home_diff</th>
-      <th>rank_diff</th>
-      <th>gdp_diff</th>
+      <th>cc_crossing_diff</th>
+      <th>cc_passing_diff</th>
+      <th>cc_shooting_diff</th>
+      <th>d_aggresion_diff</th>
+      <th>d_pressure_diff</th>
+      <th>d_width_diff</th>
+      <th>home_win</th>
     </tr>
   </thead>
   <tbody>
   </tbody>
 </table>
-<p>0 rows × 30 columns</p>
+<p>0 rows × 32 columns</p>
 </div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [97]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -496,7 +578,7 @@ Proportion of Outcomes
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[97]:
+<span></span>Out[5]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -510,7 +592,7 @@ Name: game_date, dtype: float64
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [98]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -529,7 +611,7 @@ Proportion of Outcomes Grouped By Neutrality
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[98]:
+<span></span>Out[6]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -551,7 +633,7 @@ features. As such, we do the same thing here and calculate the number of
 wins by the home team and away team and the past matches.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [99]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -561,7 +643,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [100]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -626,7 +708,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [101]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -641,7 +723,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [102]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -658,7 +740,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [103]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -675,7 +757,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [104]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -691,7 +773,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [105]:
+<span></span>In [13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -713,7 +795,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[105]:
+<span></span>Out[13]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -732,7 +814,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [109]:
+<span></span>In [14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -744,7 +826,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[109]:
+<span></span>Out[14]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -769,13 +851,13 @@ wins by the home team and away team and the past matches.</p>
       <th>game_date</th>
       <th>home_team</th>
       <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
       <th>country</th>
       <th>neutral</th>
-      <th>home_win</th>
-      <th>attack_diff</th>
-      <th>bup_dribbling_diff</th>
-      <th>bup_passing_diff</th>
-      <th>bup_speed_diff</th>
+      <th>overall_diff</th>
+      <th>attack_away_defence_home_diff</th>
       <th>...</th>
       <th>wins_past_1_games_diff</th>
       <th>wins_home_against_away_1_games</th>
@@ -795,13 +877,13 @@ wins by the home team and away team and the past matches.</p>
       <td>2018-06-09 00:00:00+00:00</td>
       <td>Tunisia</td>
       <td>Spain</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Friendly</td>
       <td>Russia</td>
       <td>True</td>
-      <td>-1</td>
-      <td>-11.0</td>
-      <td>34.0</td>
-      <td>40.0</td>
-      <td>40.0</td>
+      <td>-13.0</td>
+      <td>12.0</td>
       <td>...</td>
       <td>1</td>
       <td>0</td>
@@ -819,13 +901,13 @@ wins by the home team and away team and the past matches.</p>
       <td>2018-06-10 00:00:00+00:00</td>
       <td>Austria</td>
       <td>Brazil</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Friendly</td>
       <td>Austria</td>
       <td>False</td>
-      <td>-1</td>
-      <td>-6.0</td>
-      <td>-49.0</td>
-      <td>-11.0</td>
-      <td>-11.0</td>
+      <td>-8.0</td>
+      <td>11.0</td>
       <td>...</td>
       <td>1</td>
       <td>0</td>
@@ -843,13 +925,13 @@ wins by the home team and away team and the past matches.</p>
       <td>2018-06-11 00:00:00+00:00</td>
       <td>Korea Republic</td>
       <td>Senegal</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Friendly</td>
       <td>Austria</td>
       <td>True</td>
-      <td>-1</td>
-      <td>-6.0</td>
-      <td>24.0</td>
-      <td>-2.0</td>
-      <td>-1.0</td>
+      <td>-3.0</td>
+      <td>7.0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
@@ -867,13 +949,13 @@ wins by the home team and away team and the past matches.</p>
       <td>2018-06-11 00:00:00+00:00</td>
       <td>Belgium</td>
       <td>Costa Rica</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Friendly</td>
       <td>Belgium</td>
       <td>False</td>
-      <td>1</td>
-      <td>17.0</td>
-      <td>14.0</td>
+      <td>11.0</td>
       <td>-16.0</td>
-      <td>-13.0</td>
       <td>...</td>
       <td>1</td>
       <td>0</td>
@@ -891,13 +973,13 @@ wins by the home team and away team and the past matches.</p>
       <td>2018-06-12 00:00:00+00:00</td>
       <td>Japan</td>
       <td>Paraguay</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Friendly</td>
       <td>Austria</td>
       <td>True</td>
-      <td>1</td>
       <td>1.0</td>
-      <td>3.0</td>
-      <td>19.0</td>
-      <td>20.0</td>
+      <td>2.0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
@@ -912,12 +994,12 @@ wins by the home team and away team and the past matches.</p>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 40 columns</p>
+<p>5 rows × 42 columns</p>
 </div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [110]:
+<span></span>In [15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -950,7 +1032,7 @@ set each match to be one day after the other and it will not affect
 anything.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [111]:
+<span></span>In [16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -960,7 +1042,7 @@ anything.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [112]:
+<span></span>In [17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -975,7 +1057,7 @@ anything.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [113]:
+<span></span>In [18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -991,7 +1073,7 @@ anything.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [114]:
+<span></span>In [19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1008,7 +1090,7 @@ anything.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [115]:
+<span></span>In [20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1024,7 +1106,7 @@ anything.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [116]:
+<span></span>In [21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1046,7 +1128,7 @@ anything.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[116]:
+<span></span>Out[21]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -1065,7 +1147,7 @@ anything.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [117]:
+<span></span>In [22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1077,7 +1159,7 @@ anything.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[117]:
+<span></span>Out[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1102,13 +1184,13 @@ anything.</p>
       <th>game_date</th>
       <th>home_team</th>
       <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
       <th>country</th>
       <th>neutral</th>
-      <th>home_win</th>
-      <th>attack_diff</th>
-      <th>bup_dribbling_diff</th>
-      <th>bup_passing_diff</th>
-      <th>bup_speed_diff</th>
+      <th>overall_diff</th>
+      <th>attack_away_defence_home_diff</th>
       <th>...</th>
       <th>wins_past_1_games_diff</th>
       <th>wins_home_against_away_1_games</th>
@@ -1128,13 +1210,13 @@ anything.</p>
       <td>2018-08-12</td>
       <td>Russia</td>
       <td>Croatia</td>
+      <td>2</td>
+      <td>2</td>
+      <td>FIFA World Cup</td>
       <td>Russia</td>
       <td>False</td>
-      <td>-1</td>
       <td>-1.0</td>
-      <td>19.0</td>
-      <td>-2.0</td>
-      <td>-1.0</td>
+      <td>4.0</td>
       <td>...</td>
       <td>-1</td>
       <td>0</td>
@@ -1152,13 +1234,13 @@ anything.</p>
       <td>2018-08-13</td>
       <td>France</td>
       <td>Belgium</td>
+      <td>1</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
       <td>Russia</td>
       <td>True</td>
-      <td>1</td>
-      <td>-0.0</td>
       <td>2.0</td>
-      <td>-6.0</td>
-      <td>-1.0</td>
+      <td>4.0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
@@ -1176,13 +1258,13 @@ anything.</p>
       <td>2018-08-14</td>
       <td>Croatia</td>
       <td>England</td>
+      <td>2</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
       <td>Russia</td>
       <td>True</td>
-      <td>1</td>
-      <td>-2.0</td>
-      <td>38.0</td>
-      <td>12.0</td>
-      <td>15.0</td>
+      <td>-1.0</td>
+      <td>5.0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
@@ -1200,13 +1282,13 @@ anything.</p>
       <td>2018-08-15</td>
       <td>Belgium</td>
       <td>England</td>
+      <td>2</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
       <td>Russia</td>
       <td>True</td>
-      <td>1</td>
       <td>2.0</td>
-      <td>30.0</td>
-      <td>-3.0</td>
-      <td>-0.0</td>
+      <td>0.0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
@@ -1224,13 +1306,13 @@ anything.</p>
       <td>2018-08-16</td>
       <td>France</td>
       <td>Croatia</td>
+      <td>4</td>
+      <td>2</td>
+      <td>FIFA World Cup</td>
       <td>Russia</td>
       <td>True</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>-6.0</td>
-      <td>-21.0</td>
-      <td>-16.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
       <td>...</td>
       <td>0</td>
       <td>0</td>
@@ -1245,562 +1327,19 @@ anything.</p>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 41 columns</p>
+<p>5 rows × 43 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [118]:
+<span></span>In [23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/train_final.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">test_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/test_final.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span></span><span class="n">train_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/train_momentum.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">test_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/test_momentum.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [124]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;goalkeeeper_overall_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[124]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>game_date</th>
-      <th>home_team</th>
-      <th>away_team</th>
-      <th>country</th>
-      <th>neutral</th>
-      <th>home_win</th>
-      <th>attack_diff</th>
-      <th>bup_dribbling_diff</th>
-      <th>bup_passing_diff</th>
-      <th>bup_speed_diff</th>
-      <th>...</th>
-      <th>midfield_diff</th>
-      <th>overall_diff</th>
-      <th>prestige_diff</th>
-      <th>start_age_diff</th>
-      <th>value_euros_millions_diff</th>
-      <th>wage_euros_thousands_diff</th>
-      <th>attack_home_defence_away_diff</th>
-      <th>attack_away_defence_home_diff</th>
-      <th>rank_diff</th>
-      <th>gdp_diff</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>128</th>
-      <td>2008-06-01 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Wales</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>1</td>
-      <td>9.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>8.0</td>
-      <td>10.0</td>
-      <td>8.0</td>
-      <td>1.09</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>12.0</td>
-      <td>-4.0</td>
-      <td>-42.0</td>
-      <td>1.228381</td>
-    </tr>
-    <tr>
-      <th>274</th>
-      <td>2009-02-11 00:00:00+00:00</td>
-      <td>Tunisia</td>
-      <td>Netherlands</td>
-      <td>Tunisia</td>
-      <td>False</td>
-      <td>0</td>
-      <td>-12.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-12.0</td>
-      <td>-13.0</td>
-      <td>-10.0</td>
-      <td>1.91</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>-8.0</td>
-      <td>8.0</td>
-      <td>42.0</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>275</th>
-      <td>2008-10-15 00:00:00+00:00</td>
-      <td>Norway</td>
-      <td>Netherlands</td>
-      <td>Norway</td>
-      <td>False</td>
-      <td>-1</td>
-      <td>-4.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-6.0</td>
-      <td>-8.0</td>
-      <td>-6.0</td>
-      <td>-0.91</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>7.0</td>
-      <td>34.0</td>
-      <td>1.317420</td>
-    </tr>
-    <tr>
-      <th>315</th>
-      <td>2008-02-06 00:00:00+00:00</td>
-      <td>Croatia</td>
-      <td>Netherlands</td>
-      <td>Croatia</td>
-      <td>False</td>
-      <td>-1</td>
-      <td>-1.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-6.0</td>
-      <td>-5.0</td>
-      <td>-2.0</td>
-      <td>2.00</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4.0</td>
-      <td>9.0</td>
-      <td>1.0</td>
-      <td>0.449685</td>
-    </tr>
-    <tr>
-      <th>316</th>
-      <td>2007-10-13 00:00:00+00:00</td>
-      <td>Romania</td>
-      <td>Netherlands</td>
-      <td>Romania</td>
-      <td>False</td>
-      <td>1</td>
-      <td>-8.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-9.0</td>
-      <td>-7.0</td>
-      <td>-7.0</td>
-      <td>0.82</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>-3.0</td>
-      <td>10.0</td>
-      <td>7.0</td>
-      <td>0.447744</td>
-    </tr>
-    <tr>
-      <th>327</th>
-      <td>2007-09-08 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Bulgaria</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>1</td>
-      <td>8.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>6.0</td>
-      <td>-3.27</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>12.0</td>
-      <td>-3.0</td>
-      <td>-22.0</td>
-      <td>2.483177</td>
-    </tr>
-    <tr>
-      <th>330</th>
-      <td>2007-10-17 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Slovenia</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>1</td>
-      <td>12.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>14.0</td>
-      <td>12.0</td>
-      <td>10.0</td>
-      <td>1.36</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>17.0</td>
-      <td>-7.0</td>
-      <td>-70.0</td>
-      <td>1.573026</td>
-    </tr>
-    <tr>
-      <th>372</th>
-      <td>2008-05-29 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Denmark</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>0</td>
-      <td>7.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>5.0</td>
-      <td>4.0</td>
-      <td>2.0</td>
-      <td>-2.91</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>6.0</td>
-      <td>-2.0</td>
-      <td>-23.0</td>
-      <td>1.079999</td>
-    </tr>
-    <tr>
-      <th>380</th>
-      <td>2008-03-26 00:00:00+00:00</td>
-      <td>Austria</td>
-      <td>Netherlands</td>
-      <td>Austria</td>
-      <td>False</td>
-      <td>-1</td>
-      <td>-17.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-11.0</td>
-      <td>-10.0</td>
-      <td>-5.0</td>
-      <td>-0.54</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>-12.0</td>
-      <td>11.0</td>
-      <td>79.0</td>
-      <td>0.919096</td>
-    </tr>
-    <tr>
-      <th>381</th>
-      <td>2008-08-20 00:00:00+00:00</td>
-      <td>Russia</td>
-      <td>Netherlands</td>
-      <td>Russia</td>
-      <td>False</td>
-      <td>0</td>
-      <td>-9.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-7.0</td>
-      <td>-5.0</td>
-      <td>-4.0</td>
-      <td>-0.09</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>-4.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
-      <td>0.520511</td>
-    </tr>
-    <tr>
-      <th>408</th>
-      <td>2008-06-09 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Italy</td>
-      <td>Switzerland</td>
-      <td>True</td>
-      <td>1</td>
-      <td>-1.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-2.0</td>
-      <td>-3.0</td>
-      <td>-4.0</td>
-      <td>-4.64</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>-1.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>1.411167</td>
-    </tr>
-    <tr>
-      <th>421</th>
-      <td>2008-06-21 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Russia</td>
-      <td>Switzerland</td>
-      <td>True</td>
-      <td>-1</td>
-      <td>9.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>7.0</td>
-      <td>5.0</td>
-      <td>4.0</td>
-      <td>0.09</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>7.0</td>
-      <td>-4.0</td>
-      <td>-14.0</td>
-      <td>1.921190</td>
-    </tr>
-    <tr>
-      <th>423</th>
-      <td>2008-06-13 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>France</td>
-      <td>Switzerland</td>
-      <td>True</td>
-      <td>1</td>
-      <td>-3.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-3.0</td>
-      <td>-3.0</td>
-      <td>-4.0</td>
-      <td>-4.73</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>8.0</td>
-      <td>3.0</td>
-      <td>1.230356</td>
-    </tr>
-    <tr>
-      <th>436</th>
-      <td>2008-05-24 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Ukraine</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>5.0</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>-3.00</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>15.0</td>
-      <td>-1.0</td>
-      <td>-22.0</td>
-      <td>6.190157</td>
-    </tr>
-    <tr>
-      <th>438</th>
-      <td>2008-06-17 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Romania</td>
-      <td>Switzerland</td>
-      <td>True</td>
-      <td>1</td>
-      <td>8.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>9.0</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>-0.82</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>10.0</td>
-      <td>-3.0</td>
-      <td>-2.0</td>
-      <td>2.233421</td>
-    </tr>
-    <tr>
-      <th>500</th>
-      <td>2008-11-19 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Sweden</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>1</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>-1.00</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>8.0</td>
-      <td>4.0</td>
-      <td>-25.0</td>
-      <td>1.045217</td>
-    </tr>
-    <tr>
-      <th>513</th>
-      <td>2008-09-06 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Australia</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>-1</td>
-      <td>5.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>6.0</td>
-      <td>8.0</td>
-      <td>5.0</td>
-      <td>-1.73</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>12.0</td>
-      <td>-1.0</td>
-      <td>-35.0</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>551</th>
-      <td>2009-03-28 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Scotland</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>1</td>
-      <td>8.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>3.0</td>
-      <td>6.0</td>
-      <td>5.0</td>
-      <td>0.82</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>9.0</td>
-      <td>-4.0</td>
-      <td>-25.0</td>
-      <td>1.228381</td>
-    </tr>
-    <tr>
-      <th>553</th>
-      <td>2009-06-10 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>Norway</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>5.0</td>
-      <td>8.0</td>
-      <td>6.0</td>
-      <td>0.18</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>9.0</td>
-      <td>-2.0</td>
-      <td>-45.0</td>
-      <td>0.759059</td>
-    </tr>
-    <tr>
-      <th>555</th>
-      <td>2009-08-12 00:00:00+00:00</td>
-      <td>Netherlands</td>
-      <td>England</td>
-      <td>Netherlands</td>
-      <td>False</td>
-      <td>0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-5.0</td>
-      <td>-2.0</td>
-      <td>-1.0</td>
-      <td>-1.00</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>-1.0</td>
-      <td>4.0</td>
-      <td>-4.0</td>
-      <td>1.228381</td>
-    </tr>
-  </tbody>
-</table>
-<p>20 rows × 30 columns</p>
-</div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -1815,25 +1354,21 @@ anything.</p>
 </div>
 
 
-          </div>
-          
-      </div>
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
       
-      |
-      <a href="../_sources/sofifa/feature_engineering_and_eda.ipynb.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
+    </p>
+    <p>
+        &copy; Copyright 2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
   </body>
 </html>

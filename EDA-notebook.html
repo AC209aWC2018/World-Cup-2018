@@ -1,0 +1,2551 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Exploratory Data Analysis &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><span><img src="_static/iacs.png"></span>
+          World Cup</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Milestones:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="doc/milestone2.html">Milestone 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/milestone3-report.html">Milestone 3</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Models:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="models/baseline_model.html">Baseline Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/beyond_baseline.html">Modeling with Feature Engineered Features</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Exploratory Data Analysis</a><ul>
+<li><a class="reference internal" href="#European-Matches">European Matches</a></li>
+<li><a class="reference internal" href="#Conclusion-From-Europen-Dataset">Conclusion From Europen Dataset</a></li>
+<li><a class="reference internal" href="#Further-Exploring-Other-Features">Further Exploring Other Features</a></li>
+<li><a class="reference internal" href="#Exploring-PCA">Exploring PCA</a></li>
+<li><a class="reference internal" href="#Summary">Summary</a></li>
+<li><a class="reference internal" href="#Interpreting-PCA">Interpreting PCA</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/EDA-notebook.ipynb.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 9ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Exploratory-Data-Analysis">
+<h1>Exploratory Data Analysis<a class="headerlink" href="#Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h1>
+<p>To rerun this notebook, please clone <a class="reference external" href="https://github.com/AC209aWC2018/World-Cup-2018">World Cup 2018 Github
+Repository</a> and run
+<a class="reference external" href="https://github.com/AC209aWC2018/World-Cup-2018/blob/master/EDA-notebook.ipynb">EDA
+Notebook</a></p>
+<div class="section" id="European-Matches">
+<h2>European Matches<a class="headerlink" href="#European-Matches" title="Permalink to this headline">¶</a></h2>
+<p>We will now explore the European matches dataset we had cleaned.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/european_matches.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_win</th>
+      <th>home_player_1_overall_rating</th>
+      <th>home_player_1_potential</th>
+      <th>home_player_1_preferred_foot</th>
+      <th>home_player_1_attacking_work_rate</th>
+      <th>home_player_1_defensive_work_rate</th>
+      <th>home_player_1_crossing</th>
+      <th>home_player_1_finishing</th>
+      <th>home_player_1_heading_accuracy</th>
+      <th>...</th>
+      <th>wins_past_1_games</th>
+      <th>not_enough_past_games_1</th>
+      <th>wins_past_2_games</th>
+      <th>not_enough_past_games_2</th>
+      <th>wins_past_3_games</th>
+      <th>not_enough_past_games_3</th>
+      <th>wins_past_4_games</th>
+      <th>not_enough_past_games_4</th>
+      <th>wins_past_5_games</th>
+      <th>not_enough_past_games_5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2008-08-17 00:00:00</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2008-08-16 00:00:00</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008-08-16 00:00:00</td>
+      <td>-1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2008-08-17 00:00:00</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2008-08-16 00:00:00</td>
+      <td>-1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 868 columns</p>
+</div></div>
+</div>
+<p>We see that there is a lot of matches where we do not have much
+information about the players. We do not want the rows with too many
+missing values. We drop the rows that have fewer than 11 non-NA values.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#See what columns do we have for players.</span>
+<span class="n">player_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">column</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">european_matches</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;home_player_11&quot;</span> <span class="ow">in</span> <span class="n">column</span><span class="p">]</span>
+<span class="n">player_columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[4]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>[&#39;_overall_rating&#39;,
+ &#39;_potential&#39;,
+ &#39;_preferred_foot&#39;,
+ &#39;_attacking_work_rate&#39;,
+ &#39;_defensive_work_rate&#39;,
+ &#39;_crossing&#39;,
+ &#39;_finishing&#39;,
+ &#39;_heading_accuracy&#39;,
+ &#39;_short_passing&#39;,
+ &#39;_volleys&#39;,
+ &#39;_dribbling&#39;,
+ &#39;_curve&#39;,
+ &#39;_free_kick_accuracy&#39;,
+ &#39;_long_passing&#39;,
+ &#39;_ball_control&#39;,
+ &#39;_acceleration&#39;,
+ &#39;_sprint_speed&#39;,
+ &#39;_agility&#39;,
+ &#39;_reactions&#39;,
+ &#39;_balance&#39;,
+ &#39;_shot_power&#39;,
+ &#39;_jumping&#39;,
+ &#39;_stamina&#39;,
+ &#39;_strength&#39;,
+ &#39;_long_shots&#39;,
+ &#39;_aggression&#39;,
+ &#39;_interceptions&#39;,
+ &#39;_positioning&#39;,
+ &#39;_vision&#39;,
+ &#39;_penalties&#39;,
+ &#39;_marking&#39;,
+ &#39;_standing_tackle&#39;,
+ &#39;_sliding_tackle&#39;,
+ &#39;_gk_diving&#39;,
+ &#39;_gk_handling&#39;,
+ &#39;_gk_kicking&#39;,
+ &#39;_gk_positioning&#39;,
+ &#39;_gk_reflexes&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">drop_columns_below_threshold</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">na_columns</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Drop rows with too many NAs in specified columns. threshold is min number of columns we want to have non-NA values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1">#Keep rows with number of non-NA values above threshold in specified columns</span>
+    <span class="n">keep_indices</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">na_columns</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span> <span class="o">=</span> <span class="n">threshold</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">keep_indices</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">home_rating_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_player_</span><span class="si">{}</span><span class="s1">_overall_rating&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+<span class="n">away_rating_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;away_player_</span><span class="si">{}</span><span class="s1">_overall_rating&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+
+
+<span class="n">european_matches</span> <span class="o">=</span> <span class="n">drop_columns_below_threshold</span><span class="p">(</span><span class="n">european_matches</span><span class="p">,</span> <span class="n">home_rating_columns</span> <span class="o">+</span> <span class="n">away_rating_columns</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>home_win</th>
+      <th>home_player_1_overall_rating</th>
+      <th>home_player_1_potential</th>
+      <th>home_player_1_preferred_foot</th>
+      <th>home_player_1_attacking_work_rate</th>
+      <th>home_player_1_defensive_work_rate</th>
+      <th>home_player_1_crossing</th>
+      <th>home_player_1_finishing</th>
+      <th>home_player_1_heading_accuracy</th>
+      <th>...</th>
+      <th>wins_past_1_games</th>
+      <th>not_enough_past_games_1</th>
+      <th>wins_past_2_games</th>
+      <th>not_enough_past_games_2</th>
+      <th>wins_past_3_games</th>
+      <th>not_enough_past_games_3</th>
+      <th>wins_past_4_games</th>
+      <th>not_enough_past_games_4</th>
+      <th>wins_past_5_games</th>
+      <th>not_enough_past_games_5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>144</th>
+      <td>2009-02-28 00:00:00</td>
+      <td>0</td>
+      <td>66.0</td>
+      <td>68.0</td>
+      <td>left</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>34.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>2009-02-27 00:00:00</td>
+      <td>1</td>
+      <td>58.0</td>
+      <td>67.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>25.0</td>
+      <td>25.0</td>
+      <td>25.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>2009-02-28 00:00:00</td>
+      <td>1</td>
+      <td>70.0</td>
+      <td>74.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>11.0</td>
+      <td>11.0</td>
+      <td>12.0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>2009-03-01 00:00:00</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>2009-03-01 00:00:00</td>
+      <td>-1</td>
+      <td>68.0</td>
+      <td>69.0</td>
+      <td>right</td>
+      <td>medium</td>
+      <td>medium</td>
+      <td>24.0</td>
+      <td>31.0</td>
+      <td>32.0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 868 columns</p>
+</div></div>
+</div>
+<p>For each match, we compute the average statistics for the different
+ratings for each team and difference them. Just getting the total value
+would not unfortunately work due to some rows potentially having uneven
+number of values missing. We then take the difference in the statistic
+for the home team and away team. For goal keeping ratings, we will only
+look at the max of each team since in theory the goal keepers in a match
+should have the best goal keeper statistics.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">diff_cols</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">player_column</span> <span class="ow">in</span> <span class="n">player_columns</span><span class="p">:</span>
+    <span class="n">home_cols</span> <span class="o">=</span> <span class="n">european_matches</span><span class="p">[[</span><span class="s1">&#39;home_player_</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">player_column</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">away_cols</span> <span class="o">=</span> <span class="n">european_matches</span><span class="p">[[</span><span class="s1">&#39;away_player_</span><span class="si">{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">player_column</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1">#numeric column</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home_player_11</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">):</span>
+        <span class="c1">#since only one goal keeper, we just get max stat</span>
+        <span class="k">if</span> <span class="s1">&#39;gk&#39;</span> <span class="ow">in</span> <span class="n">player_column</span><span class="p">:</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span> <span class="n">home_cols</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span> <span class="n">away_cols</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;diff</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span>  <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">-</span> \
+                                                                <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span> <span class="n">home_cols</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span> <span class="n">away_cols</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;diff</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">=</span>  <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span> <span class="o">-</span> \
+                                                                <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">)]</span>
+        <span class="n">diff_cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;diff</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">player_column</span><span class="p">))</span>
+    <span class="c1">#non-numeric column</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">continue</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="p">[</span><span class="n">diff_cols</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>diff_overall_rating</th>
+      <th>diff_potential</th>
+      <th>diff_crossing</th>
+      <th>diff_finishing</th>
+      <th>diff_heading_accuracy</th>
+      <th>diff_short_passing</th>
+      <th>diff_volleys</th>
+      <th>diff_dribbling</th>
+      <th>diff_curve</th>
+      <th>diff_free_kick_accuracy</th>
+      <th>...</th>
+      <th>diff_vision</th>
+      <th>diff_penalties</th>
+      <th>diff_marking</th>
+      <th>diff_standing_tackle</th>
+      <th>diff_sliding_tackle</th>
+      <th>diff_gk_diving</th>
+      <th>diff_gk_handling</th>
+      <th>diff_gk_kicking</th>
+      <th>diff_gk_positioning</th>
+      <th>diff_gk_reflexes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>144</th>
+      <td>-7.300000</td>
+      <td>-8.500000</td>
+      <td>-8.900000</td>
+      <td>1.000000</td>
+      <td>-2.600000</td>
+      <td>-10.300000</td>
+      <td>0.300000</td>
+      <td>-3.300000</td>
+      <td>-0.800000</td>
+      <td>-6.200000</td>
+      <td>...</td>
+      <td>-8.700000</td>
+      <td>-7.900000</td>
+      <td>-5.400000</td>
+      <td>-11.300000</td>
+      <td>-6.200000</td>
+      <td>0.0</td>
+      <td>-2.0</td>
+      <td>-21.0</td>
+      <td>-2.0</td>
+      <td>-2.0</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>-4.400000</td>
+      <td>-6.100000</td>
+      <td>-7.500000</td>
+      <td>-3.000000</td>
+      <td>1.800000</td>
+      <td>-1.200000</td>
+      <td>-8.711111</td>
+      <td>-4.300000</td>
+      <td>-7.222222</td>
+      <td>-3.700000</td>
+      <td>...</td>
+      <td>-1.955556</td>
+      <td>-6.900000</td>
+      <td>0.600000</td>
+      <td>-0.300000</td>
+      <td>3.411111</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>-1.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>1.571429</td>
+      <td>3.371429</td>
+      <td>6.000000</td>
+      <td>10.557143</td>
+      <td>7.042857</td>
+      <td>-2.271429</td>
+      <td>5.057143</td>
+      <td>12.528571</td>
+      <td>5.000000</td>
+      <td>2.814286</td>
+      <td>...</td>
+      <td>3.057143</td>
+      <td>-3.342857</td>
+      <td>-1.485714</td>
+      <td>-1.385714</td>
+      <td>-8.028571</td>
+      <td>-4.0</td>
+      <td>0.0</td>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>5.600000</td>
+      <td>6.400000</td>
+      <td>6.800000</td>
+      <td>5.400000</td>
+      <td>4.700000</td>
+      <td>2.800000</td>
+      <td>8.300000</td>
+      <td>12.500000</td>
+      <td>4.600000</td>
+      <td>2.300000</td>
+      <td>...</td>
+      <td>2.200000</td>
+      <td>7.700000</td>
+      <td>1.400000</td>
+      <td>4.900000</td>
+      <td>2.300000</td>
+      <td>-2.0</td>
+      <td>-2.0</td>
+      <td>12.0</td>
+      <td>-2.0</td>
+      <td>-2.0</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>-4.111111</td>
+      <td>-4.555556</td>
+      <td>-5.888889</td>
+      <td>-5.333333</td>
+      <td>-1.222222</td>
+      <td>-6.000000</td>
+      <td>-8.166667</td>
+      <td>-8.111111</td>
+      <td>-10.888889</td>
+      <td>-2.555556</td>
+      <td>...</td>
+      <td>-7.444444</td>
+      <td>-5.222222</td>
+      <td>0.333333</td>
+      <td>0.222222</td>
+      <td>-4.833333</td>
+      <td>3.0</td>
+      <td>-1.0</td>
+      <td>5.0</td>
+      <td>-1.0</td>
+      <td>-1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 35 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">len</span><span class="p">(</span><span class="n">diff_cols</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[10]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>35
+</pre></div>
+</div>
+</div>
+<p>Now let’s see if there are any differences in the distributions of the
+differences depending on whether the home team lost, won, or tied.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">)[</span><span class="n">diff_cols</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>diff_overall_rating</th>
+      <th>diff_potential</th>
+      <th>diff_crossing</th>
+      <th>diff_finishing</th>
+      <th>diff_heading_accuracy</th>
+      <th>diff_short_passing</th>
+      <th>diff_volleys</th>
+      <th>diff_dribbling</th>
+      <th>diff_curve</th>
+      <th>diff_free_kick_accuracy</th>
+      <th>...</th>
+      <th>diff_vision</th>
+      <th>diff_penalties</th>
+      <th>diff_marking</th>
+      <th>diff_standing_tackle</th>
+      <th>diff_sliding_tackle</th>
+      <th>diff_gk_diving</th>
+      <th>diff_gk_handling</th>
+      <th>diff_gk_kicking</th>
+      <th>diff_gk_positioning</th>
+      <th>diff_gk_reflexes</th>
+    </tr>
+    <tr>
+      <th>home_win</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>-1</th>
+      <td>-0.419516</td>
+      <td>-0.407976</td>
+      <td>-0.439642</td>
+      <td>-0.170056</td>
+      <td>-0.398941</td>
+      <td>-0.514052</td>
+      <td>-0.364226</td>
+      <td>-0.419433</td>
+      <td>-0.335357</td>
+      <td>-0.159442</td>
+      <td>...</td>
+      <td>-0.473570</td>
+      <td>-0.336995</td>
+      <td>-0.531586</td>
+      <td>-0.604938</td>
+      <td>-0.692773</td>
+      <td>0.007508</td>
+      <td>0.005423</td>
+      <td>-0.252225</td>
+      <td>0.008899</td>
+      <td>-0.017380</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>-0.036114</td>
+      <td>-0.045361</td>
+      <td>-0.039283</td>
+      <td>0.192313</td>
+      <td>-0.063800</td>
+      <td>-0.059223</td>
+      <td>0.047172</td>
+      <td>0.088586</td>
+      <td>0.062112</td>
+      <td>-0.012367</td>
+      <td>...</td>
+      <td>-0.001863</td>
+      <td>0.023110</td>
+      <td>-0.401185</td>
+      <td>-0.409736</td>
+      <td>-0.437567</td>
+      <td>-0.096896</td>
+      <td>-0.076729</td>
+      <td>-0.118481</td>
+      <td>-0.106507</td>
+      <td>-0.087600</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.453436</td>
+      <td>0.400829</td>
+      <td>0.526705</td>
+      <td>0.653365</td>
+      <td>0.290365</td>
+      <td>0.493775</td>
+      <td>0.736320</td>
+      <td>0.613548</td>
+      <td>0.636275</td>
+      <td>0.551740</td>
+      <td>...</td>
+      <td>0.581423</td>
+      <td>0.589846</td>
+      <td>-0.169447</td>
+      <td>-0.104668</td>
+      <td>-0.089279</td>
+      <td>0.029288</td>
+      <td>0.028414</td>
+      <td>0.331264</td>
+      <td>0.028939</td>
+      <td>0.056916</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 35 columns</p>
+</div></div>
+</div>
+<p>From looking at the mean, it seems in general the mean value for a
+difference in rating when the home team wins is the greatest out of the
+three outcomes while the mean value for the difference in rating when
+the home team loses is the lowest ouf the three outcomes. This seems
+consistent with what we believe. However, the mean differences seem a
+little low for any of these cases, especially since the rating ranges
+from 0 to 100, so mean differences of such small magnitudes might not be
+significant. Let’s plot the distributions themselves.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">european_matches</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">diff_cols</span><span class="p">):</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_18_0.png" src="_images/EDA-notebook_18_0.png" />
+</div>
+</div>
+<p>Wow! From looking at the plots the distributions of a difference in
+rating among the three outcome do not really seem that different.</p>
+<p>This might be an indication that using individual ratings and
+aggregating them might not be the way to go. Also, so far efforts to get
+the individual ratings for the actual World Cup data have been
+unsuccessful, so this may be a sign to find other set of features to
+predict the world cup. (Later we will see an attempt of using team
+statistics)</p>
+<p>Let us also look at whether previous match results will be good
+predictors.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">past_wins_columns</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;diff_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;home_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">-</span>\
+                                                             <span class="n">european_matches</span><span class="p">[</span><span class="s1">&#39;away_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
+    <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;diff_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="c1">#games against each other</span>
+    <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">past_wins_columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[13]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>10
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">european_matches</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">)[</span><span class="n">past_wins_columns</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>diff_wins_past_1_games</th>
+      <th>wins_past_1_games</th>
+      <th>diff_wins_past_2_games</th>
+      <th>wins_past_2_games</th>
+      <th>diff_wins_past_3_games</th>
+      <th>wins_past_3_games</th>
+      <th>diff_wins_past_4_games</th>
+      <th>wins_past_4_games</th>
+      <th>diff_wins_past_5_games</th>
+      <th>wins_past_5_games</th>
+    </tr>
+    <tr>
+      <th>home_win</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>-1</th>
+      <td>-0.203977</td>
+      <td>0.240128</td>
+      <td>-0.171301</td>
+      <td>0.468993</td>
+      <td>-0.273776</td>
+      <td>0.672414</td>
+      <td>-0.301307</td>
+      <td>0.849833</td>
+      <td>-0.375834</td>
+      <td>1.000139</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>-0.145738</td>
+      <td>0.261383</td>
+      <td>-0.074366</td>
+      <td>0.517725</td>
+      <td>-0.161651</td>
+      <td>0.745392</td>
+      <td>-0.144635</td>
+      <td>0.936033</td>
+      <td>-0.160548</td>
+      <td>1.101780</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.100192</td>
+      <td>0.288337</td>
+      <td>0.026666</td>
+      <td>0.585679</td>
+      <td>0.009617</td>
+      <td>0.851985</td>
+      <td>0.091974</td>
+      <td>1.077024</td>
+      <td>0.103689</td>
+      <td>1.271201</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>We see a similar pattern as before, where home team winning has the
+highest mean values and away team winning has the lowest mean values.
+This time the small magnitudes make sense however since we are only
+looking up to 5 games back. Let us also plot the distributions.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">european_matches</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">past_wins_columns</span><span class="p">):</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="c1">#odd plots are the plots of the teams against each other</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span> <span class="o">+</span> <span class="s2">&quot; (Past games of the home team against the away team)&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_23_0.png" src="_images/EDA-notebook_23_0.png" />
+</div>
+</div>
+<p>This time it is a bit more obvious that home team winning tends to have
+higher values. It seems like we can probably calculate some kind of
+momentum and utilize it as a predictor. We will explore more of this
+concept later on when we make our advanced model.</p>
+</div>
+<div class="section" id="Conclusion-From-Europen-Dataset">
+<h2>Conclusion From Europen Dataset<a class="headerlink" href="#Conclusion-From-Europen-Dataset" title="Permalink to this headline">¶</a></h2>
+<p>From exploration of the European dataset, we saw that aggregating
+individual player ratings does not seem to help that much while previous
+matches seem to help. Thus, we decided to only keep the summary
+statistics of the team rather than players’ individual statistics. We
+will keep these discoveries in mind as we move on to the SOFIFA
+datasets.</p>
+</div>
+<div class="section" id="Further-Exploring-Other-Features">
+<h2>Further Exploring Other Features<a class="headerlink" href="#Further-Exploring-Other-Features" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/train_final.csv&#39;</span><span class="p">)</span>
+<span class="n">custom_log</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;log_gdp_diff&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;gdp_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">custom_log</span><span class="p">)</span>
+<span class="n">win_corr</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">)</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">win_corr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">0.75</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">win_corr</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">ind</span><span class="o">+</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">win_corr</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Spearman Correlation&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Spearman Correlation with Home Team Winning (Train Set)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_29_0.png" src="_images/EDA-notebook_29_0.png" />
+</div>
+</div>
+<p>The spearman correlation plot gives us an idea of how well these
+features correlate with our dependent variable. In other words, the
+highly correlated features, such as overall difference in ratings should
+give us a fairly good idea of team 1/home team winning.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_plot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_plot</span><span class="o">.</span><span class="n">neutral</span> <span class="o">=</span> <span class="n">df_plot</span><span class="o">.</span><span class="n">neutral</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">df_group</span> <span class="ow">in</span> <span class="n">df_plot</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">win_corr</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+        <span class="n">df_group</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_31_0.png" src="_images/EDA-notebook_31_0.png" />
+</div>
+</div>
+<p>In fact, from the distribution plot we see that the features, such as
+overall difference in ratings and goalkeeper rating difference, that can
+better discriminate win, loss for team 1 are more highly correlated with
+the win/lose. Similarly, features, such as build up dribbling
+difference, which have low correlation barely show any difference
+between distribution of different outcomes.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">df_group</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">):</span>
+    <span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;goalkeeeper_overall_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;same rating cutoff&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Goalkeeper Overall Rating Difference&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Distribution of goalkeeper ratings difference&quot;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;goalkeeeper_overall_diff&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;same rating cutoff&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Boxplot of goalkeeper rating difference&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[21]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 1.0, &#39;Boxplot of goalkeeper rating difference&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_33_1.png" src="_images/EDA-notebook_33_1.png" />
+</div>
+</div>
+<p>Inspecting one of the highly correlated features closely, we see that
+when the difference is positive (team 1 has an advantage), the
+likelihood of winning is much higher whereas when it’s negative it’s
+much more likely to lose.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">df_group</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">):</span>
+    <span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;wage_euros_thousands_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="c1">#plt.axvline(0, label = &quot;cutoff same GDP ratio&quot;, color = &#39;black&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Team Wage Different in Euro&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of team wage difference&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[22]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&lt;matplotlib.legend.Legend at 0x127516d68&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_35_1.png" src="_images/EDA-notebook_35_1.png" />
+</div>
+</div>
+<p>However, there are also some features that don’t have really high
+correlation and can still discriminate well the win/lose situations when
+the difference is large. For instance, for the team wage difference, we
+see when the difference is large, it is much more likely to win/lose,
+but there is barely any difference in the middle peaking at 0. This is
+happening because we imputed missing values with 0 to encode lack of
+information. In fact, in these cases we have a lot of distributions with
+a really high peak at 0, causing low correlation. Nonetheless, they can
+still be useful when we do possess the information.</p>
+</div>
+<div class="section" id="Exploring-PCA">
+<h2>Exploring PCA<a class="headerlink" href="#Exploring-PCA" title="Permalink to this headline">¶</a></h2>
+<p>Inspecting these distribution of features, we noticed them a large
+proportion of them are similarly shaped and distributed. Therefore, we
+considered PCA to perform dimensionality reduction, aggregating similar
+features.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">xgboost</span> <span class="k">import</span> <span class="n">XGBClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LogisticRegressionCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.discriminant_analysis</span> <span class="k">import</span> <span class="n">LinearDiscriminantAnalysis</span>
+<span class="kn">from</span> <span class="nn">sklearn.discriminant_analysis</span> <span class="k">import</span> <span class="n">QuadraticDiscriminantAnalysis</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">RandomizedSearchCV</span><span class="p">,</span> <span class="n">GridSearchCV</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-1-d163e133991f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">      5</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sklearn<span class="ansi-yellow-intense-fg ansi-bold">.</span>decomposition <span class="ansi-green-intense-fg ansi-bold">import</span> PCA
+<span class="ansi-green-fg">      6</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sklearn<span class="ansi-yellow-intense-fg ansi-bold">.</span>preprocessing <span class="ansi-green-intense-fg ansi-bold">import</span> StandardScaler
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 7</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-green-intense-fg ansi-bold">from</span> xgboost <span class="ansi-green-intense-fg ansi-bold">import</span> XGBClassifier
+<span class="ansi-green-fg">      8</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sklearn<span class="ansi-yellow-intense-fg ansi-bold">.</span>metrics <span class="ansi-green-intense-fg ansi-bold">import</span> accuracy_score
+<span class="ansi-green-fg">      9</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sklearn<span class="ansi-yellow-intense-fg ansi-bold">.</span>linear_model <span class="ansi-green-intense-fg ansi-bold">import</span> LogisticRegressionCV
+
+<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>: No module named &#39;xgboost&#39;
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># import data</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/train_final.csv&#39;</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/test_final.csv&#39;</span><span class="p">)</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_validation</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_validation</span> <span class="o">=</span> <span class="n">X_validation</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">X_validation</span> <span class="o">=</span> <span class="n">X_validation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [125]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train_scores</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">val_scores</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">xgb_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;min_child_weight&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+        <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+        <span class="s1">&#39;subsample&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+        <span class="s1">&#39;colsample_bytree&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+        <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+        <span class="p">}</span>
+
+<span class="n">rf_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bootstrap&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+     <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+<span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">],</span>
+ <span class="s1">&#39;min_samples_leaf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+ <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+ <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]}</span>
+
+<span class="n">rf_estimator</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">XGBClassifier</span><span class="p">(</span><span class="n">objective</span><span class="o">=</span><span class="s1">&#39;multi:softmax&#39;</span><span class="p">,</span> <span class="n">num_class</span> <span class="o">=</span> <span class="mi">3</span><span class="p">),</span> <span class="n">param_distributions</span><span class="o">=</span><span class="n">xgb_params</span><span class="p">,</span>\
+            <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">xgb_estimator</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(),</span> <span class="n">param_distributions</span><span class="o">=</span><span class="n">rf_params</span><span class="p">,</span>\
+                <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">lr_estimator</span> <span class="o">=</span> <span class="n">LogisticRegressionCV</span><span class="p">(</span><span class="n">solver</span> <span class="o">=</span> <span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span> <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;multinomial&#39;</span><span class="p">)</span>
+
+<span class="n">lda_estimator</span> <span class="o">=</span> <span class="n">LinearDiscriminantAnalysis</span><span class="p">()</span>
+
+<span class="n">qda_estimator</span> <span class="o">=</span> <span class="n">QuadraticDiscriminantAnalysis</span><span class="p">()</span>
+
+<span class="n">models</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Random Forest&#39;</span><span class="p">:</span> <span class="n">rf_estimator</span><span class="p">,</span> <span class="s1">&#39;XGBoost&#39;</span><span class="p">:</span> <span class="n">xgb_estimator</span><span class="p">,</span> \
+         <span class="s1">&#39;Logistic Regression&#39;</span><span class="p">:</span> <span class="n">lr_estimator</span><span class="p">,</span> <span class="s1">&#39;LDA&#39;</span><span class="p">:</span> <span class="n">lda_estimator</span><span class="p">,</span> \
+         <span class="s1">&#39;QDA&#39;</span><span class="p">:</span> <span class="n">qda_estimator</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">16</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;working on </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">comp</span><span class="p">))</span>
+    <span class="n">X_tr</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">6</span><span class="p">:]</span>
+
+    <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+    <span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr</span><span class="p">)</span>
+    <span class="n">X_tr_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_tr</span><span class="p">)</span>
+
+    <span class="n">dim</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">comp</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr_scaled</span><span class="p">)</span>
+    <span class="n">X_tr_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_tr_scaled</span><span class="p">)</span>
+    <span class="n">new_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PCA Comp </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">comp</span><span class="p">)]</span>
+
+    <span class="n">X_val</span> <span class="o">=</span> <span class="n">X_validation</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">6</span><span class="p">:]</span><span class="c1">#test.drop([&#39;Group&#39;],axis=1).iloc[:,6:]</span>
+    <span class="n">X_val_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+    <span class="n">X_val_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_val_scaled</span><span class="p">)</span>
+
+    <span class="n">train_scores</span><span class="p">[</span><span class="n">comp</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">val_scores</span><span class="p">[</span><span class="n">comp</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">estimator</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr_pca</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+        <span class="n">train_scores</span><span class="p">[</span><span class="n">comp</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_tr_pca</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+        <span class="n">val_scores</span><span class="p">[</span><span class="n">comp</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_val_pca</span><span class="p">,</span> <span class="n">y_validation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+working on 2
+working on 3
+working on 4
+working on 5
+working on 6
+working on 7
+working on 8
+working on 9
+working on 10
+working on 11
+working on 12
+working on 13
+working on 14
+working on 15
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [126]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_train_score</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_scores</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">df_val_score</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">val_scores</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [127]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_train_score</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[127]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LDA</th>
+      <th>Logistic Regression</th>
+      <th>QDA</th>
+      <th>Random Forest</th>
+      <th>XGBoost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>0.523401</td>
+      <td>0.524061</td>
+      <td>0.516809</td>
+      <td>0.526038</td>
+      <td>0.529993</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.518787</td>
+      <td>0.518787</td>
+      <td>0.507581</td>
+      <td>0.526697</td>
+      <td>0.783125</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.515491</td>
+      <td>0.518128</td>
+      <td>0.520765</td>
+      <td>0.531971</td>
+      <td>0.530653</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.516150</td>
+      <td>0.518787</td>
+      <td>0.526038</td>
+      <td>0.528016</td>
+      <td>0.529334</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.518787</td>
+      <td>0.521424</td>
+      <td>0.528675</td>
+      <td>0.528016</td>
+      <td>0.531971</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.514832</td>
+      <td>0.520765</td>
+      <td>0.533949</td>
+      <td>0.530653</td>
+      <td>0.536585</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.517469</td>
+      <td>0.519446</td>
+      <td>0.528675</td>
+      <td>0.533289</td>
+      <td>0.532630</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.520765</td>
+      <td>0.518787</td>
+      <td>0.526038</td>
+      <td>0.550428</td>
+      <td>0.535926</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.518787</td>
+      <td>0.520105</td>
+      <td>0.532630</td>
+      <td>0.541200</td>
+      <td>0.535267</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.515491</td>
+      <td>0.520765</td>
+      <td>0.529993</td>
+      <td>0.539881</td>
+      <td>0.531971</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.518787</td>
+      <td>0.520765</td>
+      <td>0.533949</td>
+      <td>0.683586</td>
+      <td>0.564272</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.522742</td>
+      <td>0.520765</td>
+      <td>0.538563</td>
+      <td>0.557020</td>
+      <td>0.565590</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.519446</td>
+      <td>0.518128</td>
+      <td>0.549110</td>
+      <td>0.536585</td>
+      <td>0.535267</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.523401</td>
+      <td>0.517469</td>
+      <td>0.546473</td>
+      <td>0.559657</td>
+      <td>0.910349</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [128]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># without PCA</span>
+<span class="n">original_scores</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;train_score&#39;</span><span class="p">:{},</span> <span class="s1">&#39;validation_score&#39;</span><span class="p">:{}}</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">estimator</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">6</span><span class="p">:],</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">original_scores</span><span class="p">[</span><span class="s1">&#39;train_score&#39;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">6</span><span class="p">:],</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">original_scores</span><span class="p">[</span><span class="s1">&#39;validation_score&#39;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_validation</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">6</span><span class="p">:],</span> <span class="n">y_validation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [129]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_ori_score</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">original_scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [130]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_ori_score</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[130]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>train_score</th>
+      <th>validation_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>LDA</th>
+      <td>0.526038</td>
+      <td>0.486842</td>
+    </tr>
+    <tr>
+      <th>Logistic Regression</th>
+      <td>0.522083</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>QDA</th>
+      <td>0.601846</td>
+      <td>0.415789</td>
+    </tr>
+    <tr>
+      <th>Random Forest</th>
+      <td>0.612393</td>
+      <td>0.507895</td>
+    </tr>
+    <tr>
+      <th>XGBoost</th>
+      <td>0.535267</td>
+      <td>0.492105</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [131]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_val_score</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[131]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LDA</th>
+      <th>Logistic Regression</th>
+      <th>QDA</th>
+      <th>Random Forest</th>
+      <th>XGBoost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>0.484211</td>
+      <td>0.481579</td>
+      <td>0.494737</td>
+      <td>0.473684</td>
+      <td>0.476316</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.473684</td>
+      <td>0.473684</td>
+      <td>0.489474</td>
+      <td>0.478947</td>
+      <td>0.468421</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.492105</td>
+      <td>0.473684</td>
+      <td>0.486842</td>
+      <td>0.476316</td>
+      <td>0.489474</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.489474</td>
+      <td>0.489474</td>
+      <td>0.494737</td>
+      <td>0.486842</td>
+      <td>0.486842</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.497368</td>
+      <td>0.489474</td>
+      <td>0.494737</td>
+      <td>0.486842</td>
+      <td>0.473684</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [132]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_val_score</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_ori_score</span><span class="o">.</span><span class="n">validation_score</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> without PCA&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">df_ori_score</span><span class="o">.</span><span class="n">validation_score</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Validation Performance PCA vs without PCA&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Number of PCA components&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[132]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 0, &#39;Number of PCA components&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_47_1.png" src="_images/EDA-notebook_47_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [133]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">best_model</span> <span class="o">=</span> <span class="n">df_val_score</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model with highest validation score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">best_model</span><span class="p">))</span>
+<span class="n">best_comp</span> <span class="o">=</span> <span class="n">df_val_score</span><span class="p">[</span><span class="n">best_model</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of PCA components that produce best model: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">best_comp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Model with highest validation score: QDA
+Number of PCA components that produce best model: 9
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Summary">
+<h2>Summary<a class="headerlink" href="#Summary" title="Permalink to this headline">¶</a></h2>
+<p>First of all, we notice that PCA helps models like LDA and QDA perhaps
+because of the independent assumption of components imposed by PCA. On
+the other hand, the performance for Logistic Regression, Random Forest,
+XGBoost seem to be slightly hurt by the reduced information from PCA.</p>
+<p>Nonetheless, we see that the best model is QDA with 9 components from
+PCA. This probably means that performing dimensionality reduction is
+probably quite helpful in summarizing the information from the data with
+similar distributions. We will keep this in mind when picking the final
+model.</p>
+</div>
+<div class="section" id="Interpreting-PCA">
+<h2>Interpreting PCA<a class="headerlink" href="#Interpreting-PCA" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="k">import</span> <span class="n">cm</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [142]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># import data</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cleaned/train_final.csv&#39;</span><span class="p">)</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">6</span><span class="p">:]</span>
+
+<span class="c1"># scale data</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># pca decomposition</span>
+<span class="n">dim</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">)</span>
+
+<span class="c1"># correlation between PCs and data</span>
+<span class="n">pc_cors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">rowvar</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">:]</span> <span class="c1"># only want cor(x, y)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [143]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># # https://stackoverflow.com/questions/37815987/plot-a-correlation-circle-in-python</span>
+<span class="c1"># https://stackoverflow.com/questions/4971269/how-to-pick-a-new-color-for-each-plotted-line-within-a-figure-in-matplotlib</span>
+
+
+<span class="c1"># get top 20</span>
+<span class="n">vec_len</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pc_cors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">pc_cors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">dim</span><span class="p">)]</span>
+<span class="n">top20_vec</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vec_len</span><span class="p">)),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">vec_len</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">35</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">35</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">pc_cors</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">pc_cors</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="n">color</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">tab20</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">dim</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">dim</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top20_vec</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pc_cors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">pc_cors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                  <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">angles</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span>
+                  <span class="n">scale_units</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span>
+                  <span class="n">width</span><span class="o">=</span><span class="mf">0.002</span><span class="p">,</span>
+                  <span class="n">label</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                  <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pc_cors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">pc_cors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                  <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">angles</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span>
+                  <span class="n">scale_units</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span>
+                  <span class="n">width</span><span class="o">=</span><span class="mf">0.002</span><span class="p">)</span>
+
+
+<span class="n">an</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">an</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">an</span><span class="p">))</span>  <span class="c1"># Add a unit circle for scale</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Circle of Correlation&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;PC1&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;PC2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_54_0.png" src="_images/EDA-notebook_54_0.png" />
+</div>
+</div>
+<p>We only highlighted the top 20 predictors with largest correlation
+magnitude as these are likely to be the more important predictors.</p>
+<p><code class="docutils literal notranslate"><span class="pre">start_age_diff</span></code> and <code class="docutils literal notranslate"><span class="pre">full_age_diff</span></code> are naturally correlated, and
+seem to explain a substantial amount of variation in the data.
+<code class="docutils literal notranslate"><span class="pre">growth_diff</span></code>, which is on the other side of the correlation circle,
+seems to explain variation that is almost the opposite of
+<code class="docutils literal notranslate"><span class="pre">start_age_diff</span></code> and <code class="docutils literal notranslate"><span class="pre">full_age_diff</span></code>. This makes intuitive sense as
+we would expect younger players to have more room for growth.</p>
+<p><code class="docutils literal notranslate"><span class="pre">attack_away_defence_home_diff</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_diff</span></code> also seem to be
+explain similar variation in the data. The rest of the predictors are
+all clustered at the 3 o’clock region of the circle, right across the
+predictors <code class="docutils literal notranslate"><span class="pre">attack_away_defence_home_diff</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_diff</span></code>. This
+suggests that these predictors explain similar variation in the data and
+might be correlated.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [144]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># import data</span>
+<span class="n">sofifa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/sofifa_final.csv&#39;</span><span class="p">)</span>
+<span class="n">sofifa</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sofifa</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">teams</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Russia&#39;</span><span class="p">,</span> <span class="s1">&#39;Saudi Arabia&#39;</span><span class="p">,</span> <span class="s1">&#39;Egypt&#39;</span><span class="p">,</span> <span class="s1">&#39;Uruguay&#39;</span><span class="p">,</span> <span class="s1">&#39;Morocco&#39;</span><span class="p">,</span> <span class="s1">&#39;Iran&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Portugal&#39;</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">,</span> <span class="s1">&#39;Australia&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">,</span> <span class="s1">&#39;Iceland&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Peru&#39;</span><span class="p">,</span> <span class="s1">&#39;Denmark&#39;</span><span class="p">,</span> <span class="s1">&#39;Croatia&#39;</span><span class="p">,</span> <span class="s1">&#39;Nigeria&#39;</span><span class="p">,</span> <span class="s1">&#39;Costa Rica&#39;</span><span class="p">,</span> <span class="s1">&#39;Serbia&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="s1">&#39;Mexico&#39;</span><span class="p">,</span> <span class="s1">&#39;Brazil&#39;</span><span class="p">,</span> <span class="s1">&#39;Switzerland&#39;</span><span class="p">,</span> <span class="s1">&#39;Sweden&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Korea Republic&#39;</span><span class="p">,</span> <span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;Panama&#39;</span><span class="p">,</span> <span class="s1">&#39;Tunisia&#39;</span><span class="p">,</span> <span class="s1">&#39;England&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;Colombia&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="s1">&#39;Poland&#39;</span><span class="p">,</span> <span class="s1">&#39;Senegal&#39;</span><span class="p">]</span>
+
+<span class="n">pre_wc_rating</span> <span class="o">=</span> <span class="n">sofifa</span><span class="p">[(</span><span class="n">sofifa</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">teams</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">sofifa</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="s1">&#39;2018-06-16&#39;</span><span class="p">)]</span>
+<span class="n">teams_wc</span> <span class="o">=</span> <span class="n">pre_wc_rating</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">values</span>
+<span class="n">pre_wc_rating</span> <span class="o">=</span> <span class="n">pre_wc_rating</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [145]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># check that we have 32 teams</span>
+<span class="k">assert</span> <span class="n">pre_wc_rating</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">32</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [146]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># scale data</span>
+<span class="n">scaler_wc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">pre_wc_rating</span><span class="p">)</span>
+<span class="n">pre_wc_rating_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">pre_wc_rating</span><span class="p">)</span>
+
+
+<span class="n">pca_wc_mod</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">pre_wc_rating_scaled</span><span class="p">)</span>
+<span class="n">pca_wc</span> <span class="o">=</span> <span class="n">pca_wc_mod</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">pre_wc_rating_scaled</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">pca_wc</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">pca_wc</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [147]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">pre_wc_rating_scaled</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span>
+            <span class="n">pre_wc_rating_scaled</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">teams_wc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Overall VS Starting Age&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Overall&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Starting Age&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_59_0.png" src="_images/EDA-notebook_59_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [148]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">pre_wc_rating_scaled</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span>
+            <span class="n">pre_wc_rating_scaled</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">teams_wc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Offense VS Defense&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Offense&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Defense&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_60_0.png" src="_images/EDA-notebook_60_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [149]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">pca_wc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">pca_wc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">teams_wc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PCA plot&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;PC1&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;PC2&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/EDA-notebook_61_0.png" src="_images/EDA-notebook_61_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [150]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">loadings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pca_wc_mod</span><span class="o">.</span><span class="n">components_</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">pre_wc_rating</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">loadings</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[150]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>attack</th>
+      <th>midfield</th>
+      <th>defence</th>
+      <th>prestige</th>
+      <th>start_age</th>
+      <th>full_age</th>
+      <th>bup_speed</th>
+      <th>bup_dribbling</th>
+      <th>bup_passing</th>
+      <th>cc_passing</th>
+      <th>cc_crossing</th>
+      <th>cc_shooting</th>
+      <th>d_pressure</th>
+      <th>d_aggresion</th>
+      <th>d_width</th>
+      <th>wage_euros_thousands</th>
+      <th>value_euros_millions</th>
+      <th>growth</th>
+      <th>goalkeeeper_overall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.344615</td>
+      <td>0.297234</td>
+      <td>0.330777</td>
+      <td>0.346562</td>
+      <td>0.314398</td>
+      <td>-0.088694</td>
+      <td>-0.033031</td>
+      <td>-0.305547</td>
+      <td>-0.102811</td>
+      <td>-0.305913</td>
+      <td>-0.273772</td>
+      <td>-0.076316</td>
+      <td>-0.230965</td>
+      <td>0.175877</td>
+      <td>0.072288</td>
+      <td>0.004841</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.042762</td>
+      <td>0.293134</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.092605</td>
+      <td>0.132644</td>
+      <td>0.047415</td>
+      <td>0.032724</td>
+      <td>0.074232</td>
+      <td>-0.482917</td>
+      <td>-0.555090</td>
+      <td>0.080062</td>
+      <td>0.240904</td>
+      <td>0.081064</td>
+      <td>0.062521</td>
+      <td>-0.048824</td>
+      <td>0.139404</td>
+      <td>-0.193788</td>
+      <td>-0.068769</td>
+      <td>0.264955</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.462669</td>
+      <td>-0.019433</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>We can see that PC1 is greatly influenced by <code class="docutils literal notranslate"><span class="pre">overall</span></code>, <code class="docutils literal notranslate"><span class="pre">defence</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">midfield</span></code>, while PC2 is greatly influenced by <code class="docutils literal notranslate"><span class="pre">full_age</span></code>
+(negative), <code class="docutils literal notranslate"><span class="pre">start_age</span></code> (negative), and <code class="docutils literal notranslate"><span class="pre">growth</span></code>. This gives us a
+good way to think about the 2D representation of our dataset summarized
+by the first two PCs. Teams with higher PC2s generally have lower ages
+and thus more potential for growth. They are likely to have lots of
+young, promising players. Teams with higher PC1s are statistically
+better all-round teams.</p>
+<p>While this PCA plot is not a measure of how likely a team will win the
+World Cup (since PCAs only involve the predictors), it can still give us
+an intuition into the various World Cup teams.</p>
+<p>We immediately see that France is probably a strong all-round team that
+also has young, promising players. Nigeria is probably a below-average
+team but with young, promising players. Costa Rica is probably a
+below-average team with older players near their peak. Spain is probably
+a strong all-round team but with older players near their peak. These
+largely corroborates what we know about those teams.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

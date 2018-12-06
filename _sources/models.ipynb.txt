@@ -1,19 +1,19 @@
 {
  "cells": [
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Modeling"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 1,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "C:\\Users\\shengsiong\\Anaconda3\\lib\\site-packages\\sklearn\\ensemble\\weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.\n",
-      "  from numpy.core.umath_tests import inner1d\n"
-     ]
-    }
-   ],
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
    "source": [
     "import pandas as pd\n",
     "import numpy as np\n",
@@ -28,7 +28,9 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "metadata": {},
+   "metadata": {
+    "collapsed": true
+   },
    "outputs": [],
    "source": [
     "train_df = pd.read_csv('data/cleaned/train.csv')\n",
@@ -38,189 +40,6 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>home_win</th>\n",
-       "      <th>home_cur_year_avg_weighted</th>\n",
-       "      <th>home_total_points</th>\n",
-       "      <th>away_cur_year_avg_weighted</th>\n",
-       "      <th>away_total_points</th>\n",
-       "      <th>home_last_year_avg</th>\n",
-       "      <th>away_last_year_avg</th>\n",
-       "      <th>home_two_year_ago_avg</th>\n",
-       "      <th>away_two_year_ago_avg</th>\n",
-       "      <th>CAF</th>\n",
-       "      <th>CONCACAF</th>\n",
-       "      <th>CONMEBOL</th>\n",
-       "      <th>OFC</th>\n",
-       "      <th>UEFA</th>\n",
-       "      <th>gdp_pp_diff</th>\n",
-       "      <th>rank_diff</th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>0</th>\n",
-       "      <td>0</td>\n",
-       "      <td>174.70</td>\n",
-       "      <td>291.66</td>\n",
-       "      <td>343.17</td>\n",
-       "      <td>535.63</td>\n",
-       "      <td>102.82</td>\n",
-       "      <td>152.19</td>\n",
-       "      <td>163.78</td>\n",
-       "      <td>266.37</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>39359.0</td>\n",
-       "      <td>45</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>1</th>\n",
-       "      <td>1</td>\n",
-       "      <td>101.66</td>\n",
-       "      <td>249.49</td>\n",
-       "      <td>122.76</td>\n",
-       "      <td>393.28</td>\n",
-       "      <td>166.27</td>\n",
-       "      <td>343.17</td>\n",
-       "      <td>106.47</td>\n",
-       "      <td>152.19</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>39359.0</td>\n",
-       "      <td>41</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2</th>\n",
-       "      <td>2</td>\n",
-       "      <td>151.41</td>\n",
-       "      <td>289.46</td>\n",
-       "      <td>257.72</td>\n",
-       "      <td>436.97</td>\n",
-       "      <td>131.81</td>\n",
-       "      <td>102.61</td>\n",
-       "      <td>151.92</td>\n",
-       "      <td>242.16</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>39359.0</td>\n",
-       "      <td>47</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>3</th>\n",
-       "      <td>2</td>\n",
-       "      <td>111.05</td>\n",
-       "      <td>256.68</td>\n",
-       "      <td>90.43</td>\n",
-       "      <td>298.50</td>\n",
-       "      <td>151.41</td>\n",
-       "      <td>257.72</td>\n",
-       "      <td>131.81</td>\n",
-       "      <td>102.61</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>39359.0</td>\n",
-       "      <td>16</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>4</th>\n",
-       "      <td>1</td>\n",
-       "      <td>140.16</td>\n",
-       "      <td>324.85</td>\n",
-       "      <td>343.17</td>\n",
-       "      <td>535.63</td>\n",
-       "      <td>183.57</td>\n",
-       "      <td>152.19</td>\n",
-       "      <td>225.79</td>\n",
-       "      <td>266.37</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>0</td>\n",
-       "      <td>112440.0</td>\n",
-       "      <td>38</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "</div>"
-      ],
-      "text/plain": [
-       "   home_win  home_cur_year_avg_weighted  home_total_points  \\\n",
-       "0         0                      174.70             291.66   \n",
-       "1         1                      101.66             249.49   \n",
-       "2         2                      151.41             289.46   \n",
-       "3         2                      111.05             256.68   \n",
-       "4         1                      140.16             324.85   \n",
-       "\n",
-       "   away_cur_year_avg_weighted  away_total_points  home_last_year_avg  \\\n",
-       "0                      343.17             535.63              102.82   \n",
-       "1                      122.76             393.28              166.27   \n",
-       "2                      257.72             436.97              131.81   \n",
-       "3                       90.43             298.50              151.41   \n",
-       "4                      343.17             535.63              183.57   \n",
-       "\n",
-       "   away_last_year_avg  home_two_year_ago_avg  away_two_year_ago_avg  CAF  \\\n",
-       "0              152.19                 163.78                 266.37    0   \n",
-       "1              343.17                 106.47                 152.19    0   \n",
-       "2              102.61                 151.92                 242.16    0   \n",
-       "3              257.72                 131.81                 102.61    0   \n",
-       "4              152.19                 225.79                 266.37    0   \n",
-       "\n",
-       "   CONCACAF  CONMEBOL  OFC  UEFA  gdp_pp_diff  rank_diff  \n",
-       "0         0         0    0     0      39359.0         45  \n",
-       "1         0         0    0     0      39359.0         41  \n",
-       "2         0         0    0     0      39359.0         47  \n",
-       "3         0         0    0     0      39359.0         16  \n",
-       "4         0         0    0     0     112440.0         38  "
-      ]
-     },
-     "execution_count": 3,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "train_df.head()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 50,
    "metadata": {
     "collapsed": true
    },
@@ -236,7 +55,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 51,
+   "execution_count": 4,
    "metadata": {
     "collapsed": true
    },
@@ -247,7 +66,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 52,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [
     {
@@ -266,7 +85,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 53,
+   "execution_count": 6,
    "metadata": {
     "collapsed": true
    },
@@ -277,7 +96,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 54,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [
     {
@@ -296,7 +115,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 55,
+   "execution_count": 8,
    "metadata": {
     "collapsed": true
    },
@@ -307,7 +126,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 56,
+   "execution_count": 9,
    "metadata": {},
    "outputs": [
     {
@@ -326,7 +145,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 57,
+   "execution_count": 10,
    "metadata": {
     "collapsed": true
    },
@@ -337,7 +156,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 58,
+   "execution_count": 11,
    "metadata": {},
    "outputs": [
     {
@@ -356,7 +175,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 59,
+   "execution_count": 12,
    "metadata": {},
    "outputs": [
     {
@@ -375,7 +194,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 60,
+   "execution_count": 13,
    "metadata": {
     "collapsed": true
    },
@@ -387,7 +206,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 61,
+   "execution_count": 14,
    "metadata": {},
    "outputs": [
     {
@@ -396,7 +215,7 @@
        "0.53125"
       ]
      },
-     "execution_count": 61,
+     "execution_count": 14,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -407,7 +226,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 62,
+   "execution_count": 15,
    "metadata": {},
    "outputs": [
     {
@@ -416,7 +235,7 @@
        "0.5"
       ]
      },
-     "execution_count": 62,
+     "execution_count": 15,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -427,7 +246,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 63,
+   "execution_count": 16,
    "metadata": {},
    "outputs": [
     {
@@ -436,7 +255,7 @@
        "0.546875"
       ]
      },
-     "execution_count": 63,
+     "execution_count": 16,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -447,7 +266,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 64,
+   "execution_count": 17,
    "metadata": {},
    "outputs": [
     {
@@ -456,7 +275,7 @@
        "0.546875"
       ]
      },
-     "execution_count": 64,
+     "execution_count": 17,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -467,7 +286,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 65,
+   "execution_count": 18,
    "metadata": {},
    "outputs": [
     {
@@ -476,7 +295,7 @@
        "0.421875"
       ]
      },
-     "execution_count": 65,
+     "execution_count": 18,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -520,7 +339,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.0"
+   "version": "3.6.3"
   }
  },
  "nbformat": 4,

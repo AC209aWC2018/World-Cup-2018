@@ -4,15 +4,24 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Web Scraping &#8212; World Cup  documentation</title>
+    <title>Sofifa Scraping &#8212; World Cup  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
    
@@ -21,13 +30,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head><body>
+  </head>
+  <body>
   
 
     <div class="document">
       <div class="documentwrapper">
-          
-
           <div class="body" role="main">
             
   
@@ -196,12 +204,14 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 </style>
+<div class="section" id="Sofifa-Scraping">
+<h1>Sofifa Scraping<a class="headerlink" href="#Sofifa-Scraping" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -217,15 +227,13 @@ div.nboutput div.output_area.stderr {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Web-Scraping">
-<h1>Web Scraping<a class="headerlink" href="#Web-Scraping" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://sofifa.com">https://sofifa.com</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># referenced from https://realpython.com/python-web-scraping-practical-introduction/</span>
 <span class="k">def</span> <span class="nf">simple_get</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -260,11 +268,11 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># Find all the href attributes for each national team</span>
 
 <span class="k">def</span> <span class="nf">get_nation_href</span><span class="p">(</span><span class="n">date_url</span><span class="p">):</span>
@@ -284,11 +292,11 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="n">teams_href</span> <span class="o">=</span> <span class="n">get_nation_href</span><span class="p">(</span><span class="s1">&#39;?v=WC18&amp;e=159126&amp;set=true&#39;</span><span class="p">)</span> <span class="c1"># corresponds to FIFA WC18 Expansion Jun 16</span>
 </pre></div>
 </div>
@@ -298,11 +306,11 @@ urls link to the most recent ratings of the teams. We can find the urls
 of all players in the national teams from this page as well. We start by
 collecting the urls of all players in the national teams.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">get_players_href</span><span class="p">(</span><span class="n">teams_href</span><span class="p">,</span> <span class="n">date_url</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Given a dictionary of team hrefs and names and a segment of a date url, corresponding to a specific update of FIFA 18</span>
 <span class="sd">    returns a dictionary containing the original href, a list of all players in the team, and a list of all</span>
@@ -328,11 +336,11 @@ collecting the urls of all players in the national teams.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="n">teams</span> <span class="o">=</span> <span class="n">get_players_href</span><span class="p">(</span><span class="n">teams_href</span><span class="p">,</span> <span class="s1">&#39;?v=WC18&amp;e=159126&amp;set=true&#39;</span><span class="p">)</span> <span class="c1"># corresponds to FIFA WC18 Expansion Jun 16</span>
 </pre></div>
 </div>
@@ -341,17 +349,17 @@ collecting the urls of all players in the national teams.</p>
 can collect the individual player data. We will collect the key
 summarized data for now.</p>
 <p>url_player =
-‘<a class="reference external" href="https://sofifa.com/player/231747/kylian-mbappe/">https://sofifa.com/player/231747/kylian-mbappe/</a>’+‘?v=18&amp;e=159124&amp;set=true’
+‘<a class="reference external" href="https://sofifa.com/player/231747/kylian-mbappe/'+">https://sofifa.com/player/231747/kylian-mbappe/’+</a>’?v=18&amp;e=159124&amp;set=true’
 html_player = BeautifulSoup(simple_get(url_player), ‘html.parser’)
 club_nation = html_player.find_all(‘figure’, attrs={‘class’: “avatar
 avatar-sm”}) club_nation[0].find_next(‘a’, attrs={‘href’:
 re.compile(“^/team/.*”)}).find_next(‘span’).get_text()</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 
 <span></span><span class="c1"># still does not sort teams and clubs correctly</span>
 <span class="k">def</span> <span class="nf">get_players</span><span class="p">(</span><span class="n">teams</span><span class="p">,</span> <span class="n">date_url</span><span class="p">):</span>
@@ -432,18 +440,20 @@ re.compile(“^/team/.*”)}).find_next(‘span’).get_text()</p>
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="still-does-not-sort-teams-and-clubs-correctly">
-<h1>still does not sort teams and clubs correctly<a class="headerlink" href="#still-does-not-sort-teams-and-clubs-correctly" title="Permalink to this headline">¶</a></h1>
-<p>def get_players(teams, date_url): “”“Given the output dictionary from
-get_players_href,
-and a segment of a date url, corresponding to a specific update of FIFA
-18, returns a dataframe containing the summary data for each player in
-the teams””” summary = [] for tname, _ in teams.items(): player_href =
-teams[tname][‘players_href’] for i, player in enumerate(player_href):
-url_player = ‘<a class="reference external" href="https://sofifa.com">https://sofifa.com</a>’+player+date_url html_player =
-BeautifulSoup(simple_get(url_player), ‘html.parser’)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="n">h1</span> <span class="o">=</span> <span class="n">html_player</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">)</span>
+<h2>still does not sort teams and clubs correctly<a class="headerlink" href="#still-does-not-sort-teams-and-clubs-correctly" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">def get_players(teams, date_url): “”“Given the output dictionary
+from get_players_href,</div>
+<div class="line">and a segment of a date url, corresponding to a specific update of
+FIFA 18, returns a dataframe containing the summary data for each
+player in the teams”“” summary = [] for tname, _ in teams.items():
+player_href = teams[tname][‘players_href’] for i, player in
+enumerate(player_href): url_player =
+‘<a class="reference external" href="https://sofifa.com'+player+date_url">https://sofifa.com’+player+date_url</a> html_player =
+BeautifulSoup(simple_get(url_player), ‘html.parser’)</div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>        <span class="n">h1</span> <span class="o">=</span> <span class="n">html_player</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">)</span>
 
         <span class="n">name_id</span> <span class="o">=</span> <span class="n">h1</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">name_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -517,22 +527,22 @@ BeautifulSoup(simple_get(url_player), ‘html.parser’)</p>
 </pre></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># for players in FIFA WC18 Expansion Jun 16, get their stats from FIFA 18 Jun 14</span>
 <span class="n">players</span> <span class="o">=</span> <span class="n">get_players</span><span class="p">(</span><span class="n">teams</span><span class="p">,</span> <span class="s1">&#39;?v=18&amp;e=159124&amp;set=true&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="n">players</span><span class="p">[</span><span class="n">players</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">204713</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -572,30 +582,30 @@ BeautifulSoup(simple_get(url_player), ‘html.parser’)</p>
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="n">players</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../datasets/sofifa/sofifa_players.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
 
 
           </div>
-          
       </div>
       <div class="clearer"></div>
     </div>
@@ -603,8 +613,8 @@ BeautifulSoup(simple_get(url_player), ‘html.parser’)</p>
       &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="_sources/sofifa-scraping.ipynb.txt"

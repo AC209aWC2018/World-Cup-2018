@@ -1,0 +1,916 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Baseline Model"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We will first build some basic models."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "from xgboost import XGBClassifier\n",
+    "from sklearn.metrics import accuracy_score\n",
+    "from sklearn.linear_model import LogisticRegressionCV\n",
+    "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis\n",
+    "from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis\n",
+    "from sklearn.ensemble import RandomForestClassifier\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "from sklearn.model_selection import RandomizedSearchCV, GridSearchCV\n",
+    "from predict_test_data import predict_test_data\n",
+    "\n",
+    "import warnings\n",
+    "warnings.filterwarnings('ignore')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "train = pd.read_csv('../data/cleaned/train_final.csv')\n",
+    "test = pd.read_csv('../data/cleaned/test_final.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Index(['game_date', 'home_team', 'away_team', 'home_score', 'away_score',\n",
+       "       'tournament', 'country', 'neutral', 'overall_diff',\n",
+       "       'attack_away_defence_home_diff', 'attack_diff',\n",
+       "       'attack_home_defence_away_diff', 'defence_diff', 'midfield_diff',\n",
+       "       'rank_diff', 'prestige_diff', 'growth_diff', 'full_age_diff',\n",
+       "       'start_age_diff', 'value_euros_millions_diff',\n",
+       "       'wage_euros_thousands_diff', 'goalkeeper_overall_diff',\n",
+       "       'bup_dribbling_diff', 'bup_passing_diff', 'bup_speed_diff',\n",
+       "       'cc_crossing_diff', 'cc_passing_diff', 'cc_shooting_diff',\n",
+       "       'd_aggresion_diff', 'd_pressure_diff', 'd_width_diff', 'home_win',\n",
+       "       'gdp_diff', 'is_home', 'raw_gdp_diff', 'score_past_3_games_diff',\n",
+       "       'wins_past_5_games_diff', 'wins_home_against_away_3_games',\n",
+       "       'score_past_4_games_diff', 'wins_home_against_away_1_games',\n",
+       "       'score_past_5_games_diff', 'score_conceded_past_1_games_diff',\n",
+       "       'wins_past_4_games_diff', 'wins_past_2_games_diff',\n",
+       "       'wins_home_against_away_5_games', 'wins_past_1_games_diff',\n",
+       "       'wins_home_against_away_4_games', 'score_past_1_games_diff',\n",
+       "       'wins_past_3_games_diff', 'score_conceded_past_4_games_diff',\n",
+       "       'score_conceded_past_5_games_diff', 'score_past_2_games_diff',\n",
+       "       'wins_home_against_away_2_games', 'score_conceded_past_3_games_diff',\n",
+       "       'score_conceded_past_2_games_diff'],\n",
+       "      dtype='object')"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train.columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Index(['game_date', 'home_team', 'away_team', 'home_score', 'away_score',\n",
+       "       'tournament', 'country', 'neutral', 'overall_diff',\n",
+       "       'attack_away_defence_home_diff', 'attack_diff',\n",
+       "       'attack_home_defence_away_diff', 'defence_diff', 'midfield_diff',\n",
+       "       'rank_diff', 'prestige_diff', 'growth_diff', 'full_age_diff',\n",
+       "       'start_age_diff', 'value_euros_millions_diff',\n",
+       "       'wage_euros_thousands_diff', 'goalkeeper_overall_diff',\n",
+       "       'bup_dribbling_diff', 'bup_passing_diff', 'bup_speed_diff',\n",
+       "       'cc_crossing_diff', 'cc_passing_diff', 'cc_shooting_diff',\n",
+       "       'd_aggresion_diff', 'd_pressure_diff', 'd_width_diff', 'home_win',\n",
+       "       'home_win_no_pk', 'Group', 'gdp_diff', 'is_home', 'raw_gdp_diff',\n",
+       "       'score_past_3_games_diff', 'wins_past_5_games_diff',\n",
+       "       'wins_home_against_away_3_games', 'score_past_4_games_diff',\n",
+       "       'wins_home_against_away_1_games', 'score_past_5_games_diff',\n",
+       "       'score_conceded_past_1_games_diff', 'wins_past_4_games_diff',\n",
+       "       'wins_past_2_games_diff', 'wins_home_against_away_5_games',\n",
+       "       'wins_past_1_games_diff', 'wins_home_against_away_4_games',\n",
+       "       'score_past_1_games_diff', 'wins_past_3_games_diff',\n",
+       "       'score_conceded_past_4_games_diff', 'score_conceded_past_5_games_diff',\n",
+       "       'score_past_2_games_diff', 'wins_home_against_away_2_games',\n",
+       "       'score_conceded_past_3_games_diff', 'score_conceded_past_2_games_diff'],\n",
+       "      dtype='object')"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "test.columns"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Our most basic model would be to just predict the majority class every time. In this case, `home_win` = 1 is the majority class. What are is the training accuracy from just doing this \"prediction\"? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0.43806009488666314"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train['home_win'].value_counts()[1] / len(train)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Pretty decent when we have 3 classes. What about the test accuracy? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0.421875"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "accuracy_score(test['home_win'], np.ones(len(test)))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Still decent. Any model we build should be better than this test accuracy of just guessing.\n",
+    "\n",
+    "Our baseline model will be pretty simple. We will utilize the differences in FIFA rankings, offense ratings, defense ratings, midfield ratings, overall ratings, and whether the home team is actually playing at home. We will make a train and validation set out of the original train set. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "train_columns = ['overall_diff', 'attack_away_defence_home_diff', 'attack_home_defence_away_diff', 'attack_diff',\n",
+    "           'defence_diff', 'midfield_diff',\n",
+    "           'prestige_diff', 'growth_diff', 'full_age_diff',\n",
+    "           'start_age_diff', 'value_euros_millions_diff',\n",
+    "           'wage_euros_thousands_diff', 'goalkeeper_overall_diff',\n",
+    "           'bup_dribbling_diff', 'bup_passing_diff', 'bup_speed_diff',\n",
+    "           'cc_crossing_diff', 'cc_passing_diff', 'cc_shooting_diff',\n",
+    "           'd_aggresion_diff', 'd_pressure_diff', 'd_width_diff', 'home_win',\n",
+    "           'gdp_diff', 'is_home', 'raw_gdp_diff', \n",
+    "           'wins_home_against_away_3_games',\n",
+    "           'wins_home_against_away_1_games',\n",
+    "           'wins_past_4_games_diff', 'wins_past_2_games_diff',\n",
+    "           'wins_past_1_games_diff',\n",
+    "           'wins_home_against_away_4_games', \n",
+    "           'wins_past_3_games_diff', \n",
+    "           'wins_home_against_away_2_games']\n",
+    "\n",
+    "\n",
+    "test_columns = train_columns + ['Group']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "train = train[train_columns]\n",
+    "test = test[test_columns]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "np.random.seed(14)\n",
+    "X_train, X_validation = train_test_split(train, test_size = 0.2)\n",
+    "y_train = X_train['home_win'].ravel()\n",
+    "X_train = X_train.drop(['home_win'], axis = 1)\n",
+    "y_validation = X_validation['home_win'].ravel()\n",
+    "X_validation = X_validation.drop(['home_win'], axis = 1)\n",
+    "y_test = test['home_win'].ravel()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.preprocessing import StandardScaler\n",
+    "# scale data\n",
+    "scaler = StandardScaler()\n",
+    "scaler.fit(X_train)\n",
+    "X_train_scaled = scaler.transform(X_train)\n",
+    "X_validation_scaled = scaler.transform(X_validation)\n",
+    "test_scaled_columns = scaler.transform(test.drop(['Group', 'home_win'], axis = 1).values)\n",
+    "test_scaled = test.copy()\n",
+    "test_scaled[test_scaled.drop(['Group', 'home_win'], axis = 1).columns] = test_scaled_columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# stores the score of each model\n",
+    "score = {}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We will first try out logistic regression. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "lr_model = LogisticRegressionCV(solver = 'lbfgs', max_iter = 5000, cv = 5, multi_class='multinomial').fit(X_train_scaled, y_train)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logistic Regression Train Score: 0.5234014502307185\n",
+      "Logistic Regression Validation Score: 0.5368421052631579\n"
+     ]
+    }
+   ],
+   "source": [
+    "score[\"Logistic Regression\"] = {}\n",
+    "score[\"Logistic Regression\"][\"model\"] = lr_model\n",
+    "score[\"Logistic Regression\"][\"Train Score\"] = lr_model.score(X_train_scaled, y_train)\n",
+    "score[\"Logistic Regression\"][\"Validation Score\"] = lr_model.score(X_validation_scaled, y_validation)\n",
+    "\n",
+    "print(\"Logistic Regression Train Score: {}\".format(score[\"Logistic Regression\"][\"Train Score\"]))\n",
+    "print(\"Logistic Regression Validation Score: {}\".format(score[\"Logistic Regression\"][\"Validation Score\"]))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We will also try out Linear Discriminant Analysis. However, we need to first check whether the variances across the three outcomes are equal. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>overall_diff</th>\n",
+       "      <th>attack_away_defence_home_diff</th>\n",
+       "      <th>attack_home_defence_away_diff</th>\n",
+       "      <th>attack_diff</th>\n",
+       "      <th>defence_diff</th>\n",
+       "      <th>midfield_diff</th>\n",
+       "      <th>prestige_diff</th>\n",
+       "      <th>growth_diff</th>\n",
+       "      <th>full_age_diff</th>\n",
+       "      <th>start_age_diff</th>\n",
+       "      <th>...</th>\n",
+       "      <th>is_home</th>\n",
+       "      <th>raw_gdp_diff</th>\n",
+       "      <th>wins_home_against_away_3_games</th>\n",
+       "      <th>wins_home_against_away_1_games</th>\n",
+       "      <th>wins_past_4_games_diff</th>\n",
+       "      <th>wins_past_2_games_diff</th>\n",
+       "      <th>wins_past_1_games_diff</th>\n",
+       "      <th>wins_home_against_away_4_games</th>\n",
+       "      <th>wins_past_3_games_diff</th>\n",
+       "      <th>wins_home_against_away_2_games</th>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>home_win</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>-1</th>\n",
+       "      <td>31.393396</td>\n",
+       "      <td>38.015113</td>\n",
+       "      <td>41.497639</td>\n",
+       "      <td>40.858572</td>\n",
+       "      <td>37.554931</td>\n",
+       "      <td>38.133908</td>\n",
+       "      <td>25.423806</td>\n",
+       "      <td>2.770866</td>\n",
+       "      <td>2.489490</td>\n",
+       "      <td>4.552043</td>\n",
+       "      <td>...</td>\n",
+       "      <td>0.249014</td>\n",
+       "      <td>8.437606e+08</td>\n",
+       "      <td>0.107476</td>\n",
+       "      <td>0.154517</td>\n",
+       "      <td>0.128351</td>\n",
+       "      <td>0.245064</td>\n",
+       "      <td>0.492116</td>\n",
+       "      <td>0.105429</td>\n",
+       "      <td>0.160882</td>\n",
+       "      <td>0.111833</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>36.158215</td>\n",
+       "      <td>46.202150</td>\n",
+       "      <td>46.137393</td>\n",
+       "      <td>47.654088</td>\n",
+       "      <td>43.559341</td>\n",
+       "      <td>41.798216</td>\n",
+       "      <td>30.781631</td>\n",
+       "      <td>2.593080</td>\n",
+       "      <td>2.596855</td>\n",
+       "      <td>4.532752</td>\n",
+       "      <td>...</td>\n",
+       "      <td>0.159003</td>\n",
+       "      <td>8.036942e+08</td>\n",
+       "      <td>0.113178</td>\n",
+       "      <td>0.153128</td>\n",
+       "      <td>0.118615</td>\n",
+       "      <td>0.226939</td>\n",
+       "      <td>0.460832</td>\n",
+       "      <td>0.111858</td>\n",
+       "      <td>0.159603</td>\n",
+       "      <td>0.120386</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>37.105145</td>\n",
+       "      <td>47.913430</td>\n",
+       "      <td>45.265228</td>\n",
+       "      <td>49.295727</td>\n",
+       "      <td>43.509512</td>\n",
+       "      <td>42.634416</td>\n",
+       "      <td>26.985673</td>\n",
+       "      <td>2.953428</td>\n",
+       "      <td>2.406626</td>\n",
+       "      <td>4.359358</td>\n",
+       "      <td>...</td>\n",
+       "      <td>0.199472</td>\n",
+       "      <td>7.765742e+08</td>\n",
+       "      <td>0.109862</td>\n",
+       "      <td>0.146556</td>\n",
+       "      <td>0.124287</td>\n",
+       "      <td>0.209184</td>\n",
+       "      <td>0.427071</td>\n",
+       "      <td>0.107973</td>\n",
+       "      <td>0.149652</td>\n",
+       "      <td>0.114938</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>3 rows × 33 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "          overall_diff  attack_away_defence_home_diff  \\\n",
+       "home_win                                                \n",
+       "-1           31.393396                      38.015113   \n",
+       " 0           36.158215                      46.202150   \n",
+       " 1           37.105145                      47.913430   \n",
+       "\n",
+       "          attack_home_defence_away_diff  attack_diff  defence_diff  \\\n",
+       "home_win                                                             \n",
+       "-1                            41.497639    40.858572     37.554931   \n",
+       " 0                            46.137393    47.654088     43.559341   \n",
+       " 1                            45.265228    49.295727     43.509512   \n",
+       "\n",
+       "          midfield_diff  prestige_diff  growth_diff  full_age_diff  \\\n",
+       "home_win                                                             \n",
+       "-1            38.133908      25.423806     2.770866       2.489490   \n",
+       " 0            41.798216      30.781631     2.593080       2.596855   \n",
+       " 1            42.634416      26.985673     2.953428       2.406626   \n",
+       "\n",
+       "          start_age_diff               ...                 is_home  \\\n",
+       "home_win                               ...                           \n",
+       "-1              4.552043               ...                0.249014   \n",
+       " 0              4.532752               ...                0.159003   \n",
+       " 1              4.359358               ...                0.199472   \n",
+       "\n",
+       "          raw_gdp_diff  wins_home_against_away_3_games  \\\n",
+       "home_win                                                 \n",
+       "-1        8.437606e+08                        0.107476   \n",
+       " 0        8.036942e+08                        0.113178   \n",
+       " 1        7.765742e+08                        0.109862   \n",
+       "\n",
+       "          wins_home_against_away_1_games  wins_past_4_games_diff  \\\n",
+       "home_win                                                           \n",
+       "-1                              0.154517                0.128351   \n",
+       " 0                              0.153128                0.118615   \n",
+       " 1                              0.146556                0.124287   \n",
+       "\n",
+       "          wins_past_2_games_diff  wins_past_1_games_diff  \\\n",
+       "home_win                                                   \n",
+       "-1                      0.245064                0.492116   \n",
+       " 0                      0.226939                0.460832   \n",
+       " 1                      0.209184                0.427071   \n",
+       "\n",
+       "          wins_home_against_away_4_games  wins_past_3_games_diff  \\\n",
+       "home_win                                                           \n",
+       "-1                              0.105429                0.160882   \n",
+       " 0                              0.111858                0.159603   \n",
+       " 1                              0.107973                0.149652   \n",
+       "\n",
+       "          wins_home_against_away_2_games  \n",
+       "home_win                                  \n",
+       "-1                              0.111833  \n",
+       " 0                              0.120386  \n",
+       " 1                              0.114938  \n",
+       "\n",
+       "[3 rows x 33 columns]"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "train.groupby('home_win').var()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Surprisingly, besides `rank_diff`, they are actually quite similar! "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "lda_model = LinearDiscriminantAnalysis().fit(X_train_scaled, y_train)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "LDA Train Score: 0.5214238628872775\n",
+      "LDA Validation Score: 0.5368421052631579\n"
+     ]
+    }
+   ],
+   "source": [
+    "score[\"LDA\"] = {}\n",
+    "score[\"LDA\"][\"model\"] = lda_model\n",
+    "score[\"LDA\"][\"Train Score\"] = lda_model.score(X_train_scaled, y_train)\n",
+    "score[\"LDA\"][\"Validation Score\"] = lda_model.score(X_validation_scaled, y_validation)\n",
+    "print(\"LDA Train Score: {}\".format(score[\"LDA\"][\"Train Score\"]))\n",
+    "print(\"LDA Validation Score: {}\".format(score[\"LDA\"][\"Validation Score\"]))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We will also try out Quadratic Discriminant Analysis, which should perform similarly to LDA in this case due to the almost equal variances."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "qda_model = QuadraticDiscriminantAnalysis().fit(X_train_scaled, y_train)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "QDA Train Score: 0.5583388266315096\n",
+      "QDA Validation Score: 0.3894736842105263\n"
+     ]
+    }
+   ],
+   "source": [
+    "score[\"QDA\"] = {}\n",
+    "score[\"QDA\"]['model'] = qda_model\n",
+    "score[\"QDA\"][\"Train Score\"] = qda_model.score(X_train_scaled, y_train)\n",
+    "score[\"QDA\"][\"Validation Score\"] = qda_model.score(X_validation_scaled, y_validation)\n",
+    "print(\"QDA Train Score: {}\".format(score[\"QDA\"][\"Train Score\"]))\n",
+    "print(\"QDA Validation Score: {}\".format(score[\"QDA\"][\"Validation Score\"]))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We will also try out Random Forest."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fitting 5 folds for each of 50 candidates, totalling 250 fits\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.\n",
+      "[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:    6.7s\n",
+      "[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   26.9s\n",
+      "[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:   36.9s finished\n"
+     ]
+    }
+   ],
+   "source": [
+    "rf_params = {'bootstrap': [True, False],\n",
+    "     'max_depth': [3, 5, 10, 20, 30, 40, None],\n",
+    "'max_features': ['auto', 'sqrt'],\n",
+    " 'min_samples_leaf': [1, 2, 4, 10, 20],\n",
+    " 'min_samples_split': [2, 5, 10],\n",
+    " 'n_estimators': [10, 50, 100, 200, 500]}\n",
+    "\n",
+    "rf_model = RandomizedSearchCV(estimator=RandomForestClassifier(), param_distributions=rf_params,\\\n",
+    "                                   n_iter=50, scoring='accuracy', n_jobs=-1, cv=5, verbose=1).fit(X_train_scaled, y_train)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Random Forest Train Score: 0.5260382333553065\n",
+      "Random Forest Validation Score 0.5342105263157895\n"
+     ]
+    }
+   ],
+   "source": [
+    "score[\"Random Forest\"] = {}\n",
+    "score[\"Random Forest\"]['model'] = rf_model\n",
+    "score[\"Random Forest\"][\"Train Score\"] = rf_model.score(X_train_scaled, y_train)\n",
+    "score[\"Random Forest\"][\"Validation Score\"] = rf_model.score(X_validation_scaled, y_validation)\n",
+    "print(\"Random Forest Train Score: {}\".format(score[\"Random Forest\"][\"Train Score\"]))\n",
+    "print(\"Random Forest Validation Score {}\".format(score[\"Random Forest\"][\"Validation Score\"]))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Let's also not forget XGBoost."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fitting 5 folds for each of 50 candidates, totalling 250 fits\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.\n",
+      "[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   13.4s\n",
+      "[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   55.9s\n",
+      "[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:  1.2min finished\n"
+     ]
+    }
+   ],
+   "source": [
+    "xgb_params = {\n",
+    "    'min_child_weight': [1, 5, 10],\n",
+    "    'gamma': [0.5, 1, 1.5, 2, 5],\n",
+    "    'subsample': [0.6, 0.8, 1.0],\n",
+    "    'colsample_bytree': [0.6, 0.8, 1.0],\n",
+    "    'max_depth': [3, 4, 5]\n",
+    "    }\n",
+    "xgb_model = RandomizedSearchCV(estimator=XGBClassifier(objective='multi:softmax', num_class = 3), param_distributions=xgb_params,\\\n",
+    "                                   n_iter=50, scoring='accuracy', n_jobs=-1, cv=5, verbose=1).fit(X_train_scaled, y_train)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "XGBoost Train Score: 0.5260382333553065\n",
+      "XGBoost Validation Score 0.5342105263157895\n"
+     ]
+    }
+   ],
+   "source": [
+    "score[\"XGBoost\"] = {}\n",
+    "score[\"XGBoost\"]['model'] = xgb_model\n",
+    "score[\"XGBoost\"][\"Train Score\"] = xgb_model.score(X_train_scaled, y_train)\n",
+    "score[\"XGBoost\"][\"Validation Score\"] = xgb_model.score(X_validation_scaled, y_validation)\n",
+    "print(\"XGBoost Train Score: {}\".format(score[\"Random Forest\"][\"Train Score\"]))\n",
+    "print(\"XGBoost Validation Score {}\".format(score[\"Random Forest\"][\"Validation Score\"]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df_result = pd.DataFrame(score).T"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Train Score</th>\n",
+       "      <th>Validation Score</th>\n",
+       "      <th>model</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>Logistic Regression</th>\n",
+       "      <td>0.523401</td>\n",
+       "      <td>0.536842</td>\n",
+       "      <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>LDA</th>\n",
+       "      <td>0.521424</td>\n",
+       "      <td>0.536842</td>\n",
+       "      <td>LinearDiscriminantAnalysis(n_components=None, ...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>QDA</th>\n",
+       "      <td>0.558339</td>\n",
+       "      <td>0.389474</td>\n",
+       "      <td>QuadraticDiscriminantAnalysis(priors=None, reg...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>Random Forest</th>\n",
+       "      <td>0.526038</td>\n",
+       "      <td>0.534211</td>\n",
+       "      <td>RandomizedSearchCV(cv=5, error_score='raise-de...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>XGBoost</th>\n",
+       "      <td>0.540541</td>\n",
+       "      <td>0.542105</td>\n",
+       "      <td>RandomizedSearchCV(cv=5, error_score='raise-de...</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                    Train Score Validation Score  \\\n",
+       "Logistic Regression    0.523401         0.536842   \n",
+       "LDA                    0.521424         0.536842   \n",
+       "QDA                    0.558339         0.389474   \n",
+       "Random Forest          0.526038         0.534211   \n",
+       "XGBoost                0.540541         0.542105   \n",
+       "\n",
+       "                                                                 model  \n",
+       "Logistic Regression  LogisticRegressionCV(Cs=10, class_weight=None,...  \n",
+       "LDA                  LinearDiscriminantAnalysis(n_components=None, ...  \n",
+       "QDA                  QuadraticDiscriminantAnalysis(priors=None, reg...  \n",
+       "Random Forest        RandomizedSearchCV(cv=5, error_score='raise-de...  \n",
+       "XGBoost              RandomizedSearchCV(cv=5, error_score='raise-de...  "
+      ]
+     },
+     "execution_count": 24,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df_result"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "We choose the final model to be the one with the highest validation score, which is XGBoost in this case\n"
+     ]
+    }
+   ],
+   "source": [
+    "model_name = df_result['Validation Score'].astype(float).argmax()\n",
+    "print(\"We choose the final model to be the one with the highest validation score,\\\n",
+    " which is {} in this case\".format(model_name))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "For the best Model, XGBoost, the test accuracy is 0.625\n"
+     ]
+    }
+   ],
+   "source": [
+    "test_pred = predict_test_data(test_scaled, X_train.columns, df_result.loc[model_name].model)\n",
+    "test_score = accuracy_score(y_test, test_pred)\n",
+    "\n",
+    "# print(\"For the best Model, {}, the test accuracy is {:.3f}\".format(model_name,\n",
+    "#     df_result.loc[model_name].model.score(test[X_train.columns], y_test)))\n",
+    "print(\"For the best Model, {}, the test accuracy is {:.3f}\".format(model_name, test_score))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

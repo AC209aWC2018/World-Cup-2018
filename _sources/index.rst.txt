@@ -1,29 +1,33 @@
 .. World Cup documentation master file, created by
    sphinx-quickstart on Sun Nov 11 10:22:49 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
-Predicting the 2018 World Cup 
+Predicting the 2018 World Cup
 =====================================
 Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Introduction:
+
+   doc/problem_statement.md
+   
 
 .. toctree::
-  :maxdepth: 1
-  :caption: European Soccer Database
-
-  european_league/clean_european_league.ipynb
-  european_league/explore_european_league.ipynb
-
-.. toctree::
-  :maxdepth: 1
-  :caption: Sofifa
-
-  sofifa/sofifa-full-scraping
-  sofifa/sofifa-cleaning
+   :maxdepth: 1
+   :caption: Milestones:
+   
+   doc/milestone2.ipynb
+   doc/milestone3-report.ipynb
 
 .. toctree::
-  :maxdepth: 1
-  :caption: Models
+   :maxdepth: 1
+   :caption: Exploratory Data Analysis
 
-  models/baseline_model.ipynb
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Models:
+   
+   models/baseline_model.ipynb
+   models/beyond_baseline.ipynb
+

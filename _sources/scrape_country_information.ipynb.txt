@@ -1,19 +1,19 @@
 {
  "cells": [
   {
-   "cell_type": "code",
-   "execution_count": 2,
+   "cell_type": "markdown",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "/anaconda3/lib/python3.6/site-packages/fuzzywuzzy/fuzz.py:11: UserWarning: Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning\n",
-      "  warnings.warn('Using slow pure-python SequenceMatcher. Install python-Levenshtein to remove this warning')\n"
-     ]
-    }
-   ],
+   "source": [
+    "# Scrape Country Information"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
    "source": [
     "from bs4 import BeautifulSoup\n",
     "import requests\n",
@@ -25,8 +25,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
-   "metadata": {},
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": true
+   },
    "outputs": [],
    "source": [
     "def scrape_gdp_pp():\n",
@@ -51,8 +53,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
-   "metadata": {},
+   "execution_count": 3,
+   "metadata": {
+    "collapsed": true
+   },
    "outputs": [],
    "source": [
     "gdp_df = scrape_gdp_pp()"
@@ -60,7 +64,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [
     {
@@ -84,8 +88,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
-   "metadata": {},
+   "execution_count": 5,
+   "metadata": {
+    "collapsed": true
+   },
    "outputs": [],
    "source": [
     "def scrape_temp():\n",
@@ -111,8 +117,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
-   "metadata": {},
+   "execution_count": 6,
+   "metadata": {
+    "collapsed": true
+   },
    "outputs": [],
    "source": [
     "temps = scrape_temp()"
@@ -120,7 +128,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [
     {
@@ -143,7 +151,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 8,
    "metadata": {},
    "outputs": [
     {
@@ -157,7 +165,7 @@
        " 'south sudan'}"
       ]
      },
-     "execution_count": 9,
+     "execution_count": 8,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -168,7 +176,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 9,
    "metadata": {},
    "outputs": [
     {
@@ -177,7 +185,7 @@
        "{'andorra', 'cuba', 'korea dpr', 'liechtenstein', 'somalia', 'syria'}"
       ]
      },
-     "execution_count": 10,
+     "execution_count": 9,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -188,8 +196,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 12,
    "metadata": {
+    "collapsed": true,
     "scrolled": true
    },
    "outputs": [],
@@ -199,24 +208,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 13,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/html": [
        "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
+       "<style>\n",
+       "    .dataframe thead tr:only-child th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: left;\n",
        "    }\n",
        "\n",
        "    .dataframe tbody tr th {\n",
        "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
        "    }\n",
        "</style>\n",
        "<table border=\"1\" class=\"dataframe\">\n",
@@ -667,7 +676,7 @@
        "[191 rows x 3 columns]"
       ]
      },
-     "execution_count": 12,
+     "execution_count": 13,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -678,8 +687,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
-   "metadata": {},
+   "execution_count": 14,
+   "metadata": {
+    "collapsed": true
+   },
    "outputs": [],
    "source": [
     "def scrape_population():\n",
@@ -712,8 +723,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
-   "metadata": {},
+   "execution_count": 22,
+   "metadata": {
+    "collapsed": true
+   },
    "outputs": [],
    "source": [
     "countries_popu = scrape_population()"
@@ -721,7 +734,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 23,
    "metadata": {},
    "outputs": [
     {
@@ -764,7 +777,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 24,
    "metadata": {},
    "outputs": [
     {
@@ -773,7 +786,7 @@
        "{'kosovo'}"
       ]
      },
-     "execution_count": 16,
+     "execution_count": 24,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -784,7 +797,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 25,
    "metadata": {},
    "outputs": [
     {
@@ -808,7 +821,7 @@
        " 'us virgin islands'}"
       ]
      },
-     "execution_count": 17,
+     "execution_count": 25,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -819,8 +832,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
-   "metadata": {},
+   "execution_count": 26,
+   "metadata": {
+    "collapsed": true
+   },
    "outputs": [],
    "source": [
     "combined_df = combined_df.merge(countries_popu, on = 'name', how = 'outer')\n"
@@ -828,24 +843,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 27,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/html": [
        "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
+       "<style>\n",
+       "    .dataframe thead tr:only-child th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: left;\n",
        "    }\n",
        "\n",
        "    .dataframe tbody tr th {\n",
        "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
        "    }\n",
        "</style>\n",
        "<table border=\"1\" class=\"dataframe\">\n",
@@ -1358,7 +1373,7 @@
        "[208 rows x 4 columns]"
       ]
      },
-     "execution_count": 19,
+     "execution_count": 27,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1377,65 +1392,6 @@
    "source": [
     "combined_df.to_csv('data/cleaned/country_demographics.csv', index = False)"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 58,
-   "metadata": {
-    "scrolled": true
-   },
-   "outputs": [],
-   "source": [
-    "def get_countries_by_continent():    \n",
-    "    url = \"https://simple.wikipedia.org/wiki/List_of_countries_by_continents\"\n",
-    "    my_page = requests.get(url)\n",
-    "    soup = BeautifulSoup(my_page.content, \"lxml\")\n",
-    "    continents = soup.findAll('span',{'class':'mw-headline'})\n",
-    "    continents = continents[:-2]\n",
-    "    country_to_continent = {}\n",
-    "    \n",
-    "    for continent in continents:\n",
-    "        raw_countries = continent.findNext('ul')\n",
-    "        raw_countries = raw_countries.findAll('li')\n",
-    "        for c in raw_countries:\n",
-    "            country_name = c.text.split(\"-\")[0]\n",
-    "            # remove secondary names\n",
-    "            idx = country_name.find('(')\n",
-    "            idx2 = country_name.find('[')\n",
-    "            if idx != -1:\n",
-    "                country_name = country_name[:idx]\n",
-    "            if idx != -2:\n",
-    "                country_name = country_name[:idx2].strip()\n",
-    "            country_name = country_name.replace('*','')\n",
-    "            country_to_continent[country_name] = continent.text\n",
-    "    \n",
-    "    return country_to_continent"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 59,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "country_to_continent = get_countries_by_continent()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 61,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# country_to_continent"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   },
   {
    "cell_type": "code",
@@ -1463,7 +1419,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.6.5"
+   "version": "3.6.3"
   }
  },
  "nbformat": 4,

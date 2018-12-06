@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Milestone 3 &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Baseline Model" href="../models/baseline_model.html" />
+    <link rel="prev" title="Milestone 2" href="milestone2.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+          World Cup</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Milestones:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="milestone2.html">Milestone 2</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Milestone 3</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Models:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../models/baseline_model.html">Baseline Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/beyond_baseline.html">Modeling with Feature Engineered Features</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Milestone 3</a><ul>
+<li><a class="reference internal" href="#Project-Statement">Project Statement</a></li>
+<li><a class="reference internal" href="#Description-of-Data">Description of Data</a><ul>
+<li><a class="reference internal" href="#Data-Cleaning">Data Cleaning</a></li>
+<li><a class="reference internal" href="#Feature-Engineering">Feature Engineering</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Exploratory-Data-Analysis">Exploratory Data Analysis</a></li>
+<li><a class="reference internal" href="#Exploring-Other-Features">Exploring Other Features</a></li>
+<li><a class="reference internal" href="#Exploring-PCA">Exploring PCA</a></li>
+<li><a class="reference internal" href="#Interpreting-PCA">Interpreting PCA</a></li>
+<li><a class="reference internal" href="#Baseline-Models">Baseline Models</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="milestone2.html" title="Previous Chapter: Milestone 2"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Milestone 2</span>
+    </a>
+  </li>
+  <li>
+    <a href="../models/baseline_model.html" title="Next Chapter: Baseline Model"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Baseline Model &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/doc/milestone3-report.ipynb.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="Milestone-3">
+<h1>Milestone 3<a class="headerlink" href="#Milestone-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Project-Statement">
+<h2>Project Statement<a class="headerlink" href="#Project-Statement" title="Permalink to this headline">¶</a></h2>
+<p>While soccer is one of the most popular sports in the world, its
+analytics is lackluster in comparison to other popular sports such as
+baseball, American football, hockey, and basketball. This is due to the
+fact that aside from the World Cup, international teams don’t play each
+other very frequently. Therefore, there is a lack of high quality data
+that can be immediately fed into models to perform predictions.</p>
+<p>The World Cup is composed of 64 matches in total - 48 matches in group
+stages and 16 matches in knockout (15 + 1 for third place). We plan to
+predict the outcome of each of the 64 matches independently instead of
+predicting which teams proceed in each round. This strategy allows our
+results to be comparable across models. By framing the problem in this
+way, we plan to approach this problem as a classification problem. Each
+game can be treated as a multi-class classification problem, where there
+are three outcomes: win for the home team (or team 1, indicated with 1),
+win for the away team (or team 2, indicated with -1), or a draw
+(indicated with 0). In the case of knockouts, we limit the outcome to:
+win for the home team (or team 1), win for the away team (or team 2), as
+draws are not allowed.</p>
+<p>To validate how accurate FIFA rankings are, we aim to use a baseline
+model that leverages FIFA rankings and some other simple predictors to
+predict the World Cup results. We plan to create a more advanced model,
+without relying on FIFA rankings but instead based on features collected
+and engineered by us that are proven to be relevant in the initial EDA.
+Ultimately, our analysis attempts to create a model that can predict the
+World Cup results as accurately as possible, while offering an insight
+into the features helpful in soccer analytics.</p>
+</div>
+<div class="section" id="Description-of-Data">
+<h2>Description of Data<a class="headerlink" href="#Description-of-Data" title="Permalink to this headline">¶</a></h2>
+<p><strong>Rankings and outcomes</strong>: As the baseline model relies on FIFA ranking,
+we obtained the rankings, points and the corresponding changes from
+<a class="reference external" href="https://www.kaggle.com/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now">FIFA international men teams’ rankings from August 1993 to June
+2018</a>.
+FIFA outcomes between 1872 and 2017 dataset from Kaggle is used to
+construct the dependent variables for our training and validation sets.
+Similarly, we found <a class="reference external" href="https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv">World Cup 2018
+Stats</a>
+to construct our test set results. In addition, we scraped from
+<a class="reference external" href="https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads">Wikipedia: World Cup
+Teams</a> for
+countries involved in The World Cup at the given year
+(<a class="reference external" href="https://en.wikipedia.org/wiki/XXXX_FIFA_World_Cup_squads">https://en.wikipedia.org/wiki/XXXX_FIFA_World_Cup_squads</a>, where XXXX is
+the year).</p>
+<p><strong>Player and team statistics</strong>: Player data, which include ratings,
+positional data and wages, is provided from sofifa.com and also
+collected from other sources, such as <a class="reference external" href="https://www.kaggle.com/hugomathien/soccer">European
+matches</a>. However, as it
+was infeasible to reconcile the different naming conventions from
+different datasets for players’ name along with a lot more players with
+the same name than we expected there to be (especially in the case of
+Brazil), it became an infesiable task to uniquely identify the players.
+This would require an extensive effort to manually curate the data,
+which would yield minimal benefit according to our EDA (see EDA section
+for details). Thus, we only aggregated the summary statistics of players
+data for each team to approximate the talent available in each team
+rather than inspecting the invidual statistics of each player.</p>
+<p><strong>Country statistics</strong>: Looking at the past World Cup champions, we
+noticed that the stronger teams tend to be the more economically wealthy
+ones in their own confederations. Therefore, we scraped from Wikipedia
+information about countries like <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)">GDP
+PPP</a>
+and
+<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">population</a>.</p>
+<p><strong>Detailed description of each collected feature</strong> can be found in the
+following notebook
+<a class="reference external" href="https://github.com/AC209aWC2018/World-Cup-2018/blob/master/doc/Feature%20Descriptions.ipynb">here</a></p>
+<div class="section" id="Data-Cleaning">
+<h3>Data Cleaning<a class="headerlink" href="#Data-Cleaning" title="Permalink to this headline">¶</a></h3>
+<p>We relied on <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> to query from European Soccer Database and web
+scrapers to scrape from Wikipedia. One of the key challenges involves
+matching different naming conventions for countries, players and teams
+used by each data source. In most cases, this was due to slight
+variation in spelling (i.e.&nbsp;St Lucia vs Saint Lucia). With all these
+different variations, we needed to map all the variations to just one
+name so that we could merge our datasets. We wrote the method
+<code class="docutils literal notranslate"><span class="pre">map_country()</span></code>, using
+<a class="reference external" href="https://github.com/seatgeek/fuzzywuzzy">fuzzywuzzy</a>, that
+essentially calculates the Levenshtein Distance for a country_name
+string if the country_name string does not exactly match with the FIFA
+names and map the string to the FIFA name with the highest similarity
+score (in percentage). We only do this mapping if the highest similarity
+score is above a 80%, when we are very confident that this is the right
+mapping. From manual inspection, this turned out extremely well and we
+believe that there should be no wrong mapping. However, in some cases,
+we still needed to do some manual mapping for ones in which the
+Levenshtein Distance is not confident about the mapping, such as in the
+case of the two Koreas, but the <code class="docutils literal notranslate"><span class="pre">map_country()</span></code> function has saved us
+from doing many manual mappings.</p>
+<p>In addition, there were teams that were not national teams at all
+(i.e.&nbsp;United Koreans in Japan, which is a team for the Korean population
+in Japan). However, as mentioned before, in the end, we only care about
+the national teams that are affiliated with FIFA. As such, we only keep
+the rows where both teams appeared on the FIFA rankings starting from
+2006 (All affiliated teams are ranked, and we only look after 2006
+because some countries that were on older rankings no longer exist or
+changed names such as Zaire, which became Congo DR). Our method
+<code class="docutils literal notranslate"><span class="pre">map_country()</span></code> in <code class="docutils literal notranslate"><span class="pre">map_countries.py</span></code> easily takes care of this
+since in general there is no similarity score that is above 80% (except
+for a few edge cases such as Northern Cyprus, which is a different team
+than Cyprus and is not allowed to compete in FIFA). These we manually
+took care of.</p>
+</div>
+<div class="section" id="Feature-Engineering">
+<h3>Feature Engineering<a class="headerlink" href="#Feature-Engineering" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><strong>Representation of home and away team</strong>: Because in the case of the
+World Cup, home team does not actually mean anything (besides for
+Russia itself), we needed each feature in our models to be agnostic
+to which team is home and which team is away so that so that
+switching home team and away team does not result in different
+predictions despite everything else being the same. The simplest way
+to do so that also makes sense is to take the difference of home team
+features with away team features, as we can think of these as being
+difference in skills/abilities of the teams.</li>
+<li><strong>Missing value representation</strong>: As some of the statistics, such as
+attack, defense and midfield ratings, we are interested in are only
+collected from FIFA 06 onwards, our training data starts from 2006.
+This has, for the most part, also solved the missing values issues
+present in the datasets. For the remaining missing values, we imputed
+them with 0 as our data is represented in differences between 2
+teams, and 0 encodes the lack of information which gives neither
+advantage nor disadvantage to any team.</li>
+<li><strong>Momentum</strong>: In sports, we can often notice that one team tends to
+keep winning or keep losing as they gain momentum due to teams’
+morale, conditions and other factors. This can be represented by
+taking into account exponential moving average of the number of wins
+in the past games.</li>
+<li><strong>Wage of players</strong>: One of the most simplest and effective ways to
+judge the quality of a team is to calculate the total wage of the
+players in that team as clubs tend to pay higher wages for better
+players. For the players without wage report, we impute using the
+average wage in the country where the player belongs.</li>
+<li><strong>Statistics of players</strong>: We aggregate players’ statitics together
+as part of a team’s offensive, defensive abilities. One exception is
+the goalkeepers’ ratings, as they are essential in preventing the
+opposing team from scoring and is the only category with a clearly
+defined role. Thus, we single out goalkeepers’ ratings and include
+them as part of the features.</li>
+<li><strong>GDP within the same confederation</strong>: Rather than considering the
+overall GDP difference, GDP difference within the same confederation
+seems a better indicator of how well a team is doing against another.
+When not in the same confederation, this is encoded again with 0 to
+indicate the lack of information which gives neither advantage nor
+disadvantage to any team.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="Exploratory-Data-Analysis">
+<h2>Exploratory Data Analysis<a class="headerlink" href="#Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h2>
+<p>Summary:</p>
+<p>In this dataset, we focused primarily on seeing if individual player
+statistics were important predictors of the outcome of a match. We
+aggregated for each team different player statistics and differenced the
+aggregates. From looking at the plots the distributions of a difference
+in rating among the three outcome do not really seem that different.
+This might be an indication that using individual ratings and
+aggregating them might not be the way to go.</p>
+<p><img alt="image0" src="../_images/baseline_result.png" /></p>
+</div>
+<div class="section" id="Exploring-Other-Features">
+<h2>Exploring Other Features<a class="headerlink" href="#Exploring-Other-Features" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image0" src="../_images/baseline_result.png" /> The spearman correlation plot gives us an idea of how well
+these features correlate with our dependent variable. In other words,
+the highly correlated features, such as overall difference in ratings
+should give us a fairly good idea of team 1/home team winning.</p>
+<p><img alt="image0" src="../_images/baseline_result.png" /> In fact, from the distribution plot we see that the features,
+such as overall difference in ratings and goalkeeper rating difference,
+that can better discriminate win, loss for team 1 are more highly
+correlated with the win/lose. Similarly, features, such as build up
+dribbling difference, which have low correlation barely show any
+difference between distribution of different outcomes.</p>
+<p><img alt="image0" src="../_images/baseline_result.png" /> Inspecting one of the highly correlated features closely, we
+see that when the difference is positive (team 1 has an advantage), the
+likelihood of winning is much higher whereas when it’s negative it’s
+much more likely to lose.</p>
+<p><img alt="image0" src="../_images/baseline_result.png" /> However, there are also some features that don’t have really
+high correlation and can still discriminate well the win/lose situations
+when the difference is large. For instance, for the team wage
+difference, we see when the difference is large, it is much more likely
+to win/lose, but there is barely any difference in the middle peaking at
+0. This is happening because we imputed missing values with 0 to encode
+lack of information. In fact, in these cases we have a lot of
+distributions with a really high peak at 0, causing low correlation.
+Nonetheless, they can still be useful when we do possess the
+information.</p>
+<p>In addition, it seems that previous match results will be good
+predictors. This time it is a bit more obvious that home team winning
+tends to have higher values. It seems like we can probably calculate
+some kind of momentum and utilize it as a predictor. We will explore
+more of this concept later on when we try to make more advanced models.</p>
+<p><img alt="image0" src="../_images/baseline_result.png" /></p>
+</div>
+<div class="section" id="Exploring-PCA">
+<h2>Exploring PCA<a class="headerlink" href="#Exploring-PCA" title="Permalink to this headline">¶</a></h2>
+<p>Inspecting these distribution of features, we noticed them a large
+proportion of them are similarly shaped and distributed. Therefore, we
+considered PCA to perform dimensionality reduction, aggregating similar
+features.</p>
+<p>To check how useful PCA is, we find the validation performance of cross
+validated models over different number of PCA components and compare it
+against the cross validated models on the data without PCA.</p>
+<p><img alt="image0" src="../_images/baseline_result.png" /></p>
+<p>First of all, we notice that PCA helps models like LDA and QDA perhaps
+because of the independent assumption of components imposed by PCA. On
+the other hand, the performance for Logistic Regression, Random Forest,
+XGBoost seem to be slightly hurt by the reduced information from PCA.</p>
+<p>Nonetheless, we see that the best model is QDA with 9 components from
+PCA. This probably means that performing dimensionality reduction is
+probably quite helpful in summarizing the information from the data with
+similar distributions. We will keep this in mind when picking the final
+model.</p>
+</div>
+<div class="section" id="Interpreting-PCA">
+<h2>Interpreting PCA<a class="headerlink" href="#Interpreting-PCA" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Baseline-Models">
+<h2>Baseline Models<a class="headerlink" href="#Baseline-Models" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/AC209aWC2018/World-Cup-2018/blob/master/models/baseline_model.ipynb">Baseline Notebook can be found
+here</a></p>
+<p>We have two different simple baseline models. For the naive one, we just
+guess the majority outcome every time (home team wins). By just guessing
+the majority outcome every time, we could achieve a 42.1875% accuracy in
+predicting the World Cup results.</p>
+<p>The other baseline model utilizes the FIFA rankings as well as some
+basic team features, including difference in attack ratings, difference
+in defense ratings, and difference in midfield ratings. Through
+classification methods such as logistic regression, LDA, QDA, Random
+Forest and XGBoost and cross validation, we picked LDA as the final
+baseline model as it gave the highest validation accuracy.</p>
+<p><img alt="image0" src="../_images/baseline_result.png" /></p>
+<p>With this model, we were able to achieve around 59.4% accuracy in
+predicting the 2018 World Cup results. We hope to at least match this
+accuracy in our more advanced model that does not utilize the FIFA
+rankings.</p>
+<p>Note that because in the World Cup starting from the Round of 16 there
+can no longer be ties, we decided for these matches if the model
+predicts a tie (i.e.&nbsp;tie is the highest probability), we take the result
+with the second highest probability as our prediction. For this reason,
+the test accuracy is also higher because half of the matches can only
+have 2 outcomes instead of 3.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

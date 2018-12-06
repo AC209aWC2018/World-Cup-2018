@@ -9,7 +9,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 660,
+   "execution_count": 1,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -26,7 +26,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 661,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -36,31 +36,37 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 662,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "Index(['game_date', 'home_team', 'away_team', 'country', 'neutral', 'home_win',\n",
-       "       'attack_diff', 'bup_dribbling_diff', 'bup_passing_diff',\n",
-       "       'bup_speed_diff', 'cc_crossing_diff', 'cc_passing_diff',\n",
-       "       'cc_shooting_diff', 'd_aggresion_diff', 'd_pressure_diff',\n",
-       "       'd_width_diff', 'defence_diff', 'full_age_diff',\n",
-       "       'goalkeeeper_overall_diff', 'growth_diff', 'midfield_diff',\n",
-       "       'overall_diff', 'prestige_diff', 'start_age_diff',\n",
-       "       'value_euros_millions_diff', 'wage_euros_thousands_diff',\n",
-       "       'attack_home_defence_away_diff', 'attack_away_defence_home_diff',\n",
-       "       'rank_diff', 'gdp_diff', 'wins_past_1_games_diff',\n",
-       "       'wins_home_against_away_1_games', 'wins_past_2_games_diff',\n",
-       "       'wins_home_against_away_2_games', 'wins_past_3_games_diff',\n",
-       "       'wins_home_against_away_3_games', 'wins_past_4_games_diff',\n",
-       "       'wins_home_against_away_4_games', 'wins_past_5_games_diff',\n",
-       "       'wins_home_against_away_5_games'],\n",
+       "Index(['game_date', 'home_team', 'away_team', 'home_score', 'away_score',\n",
+       "       'tournament', 'country', 'neutral', 'overall_diff',\n",
+       "       'attack_away_defence_home_diff', 'attack_diff',\n",
+       "       'attack_home_defence_away_diff', 'defence_diff', 'midfield_diff',\n",
+       "       'rank_diff', 'prestige_diff', 'growth_diff', 'full_age_diff',\n",
+       "       'start_age_diff', 'value_euros_millions_diff',\n",
+       "       'wage_euros_thousands_diff', 'goalkeeper_overall_diff',\n",
+       "       'bup_dribbling_diff', 'bup_passing_diff', 'bup_speed_diff',\n",
+       "       'cc_crossing_diff', 'cc_passing_diff', 'cc_shooting_diff',\n",
+       "       'd_aggresion_diff', 'd_pressure_diff', 'd_width_diff', 'home_win',\n",
+       "       'gdp_diff', 'is_home', 'raw_gdp_diff', 'prev_champ',\n",
+       "       'score_past_2_games_diff', 'score_conceded_past_5_games_diff',\n",
+       "       'score_past_4_games_diff', 'wins_past_2_games_diff',\n",
+       "       'score_past_3_games_diff', 'wins_past_4_games_diff',\n",
+       "       'score_conceded_past_3_games_diff', 'score_conceded_past_1_games_diff',\n",
+       "       'score_past_1_games_diff', 'score_conceded_past_4_games_diff',\n",
+       "       'score_past_5_games_diff', 'wins_home_against_away_3_games',\n",
+       "       'wins_past_3_games_diff', 'wins_past_1_games_diff',\n",
+       "       'wins_home_against_away_2_games', 'wins_home_against_away_4_games',\n",
+       "       'wins_past_5_games_diff', 'wins_home_against_away_5_games',\n",
+       "       'wins_home_against_away_1_games', 'score_conceded_past_2_games_diff'],\n",
        "      dtype='object')"
       ]
      },
-     "execution_count": 662,
+     "execution_count": 3,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -71,23 +77,31 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 667,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
-    "train_columns = ['home_win', 'attack_diff', 'defence_diff', 'midfield_diff', \n",
-    "                 'overall_diff', 'gdp_diff', 'start_age_diff', 'full_age_diff']\n",
-    "\n",
-    "# train_columns = ['home_win', 'attack_diff', 'defence_diff', 'midfield_diff', 'overall_diff', \n",
-    "#                  'full_age_diff', 'start_age_diff', 'gdp_diff']\n",
-    "# train_columns = [column for column in train.columns if \"diff\" in column]  + ['home_win']\n",
+    "train_columns = ['overall_diff', 'attack_away_defence_home_diff', 'attack_diff',\n",
+    "           'attack_home_defence_away_diff', 'defence_diff', 'midfield_diff',\n",
+    "           'rank_diff', 'prestige_diff', 'growth_diff', 'full_age_diff',\n",
+    "           'start_age_diff', 'value_euros_millions_diff',\n",
+    "           'wage_euros_thousands_diff', 'goalkeeper_overall_diff',\n",
+    "           'bup_dribbling_diff', 'bup_passing_diff', 'bup_speed_diff',\n",
+    "           'cc_crossing_diff', 'cc_passing_diff', 'cc_shooting_diff',\n",
+    "           'd_aggresion_diff', 'd_pressure_diff', 'd_width_diff', 'home_win',\n",
+    "           'gdp_diff', 'is_home', 'raw_gdp_diff', 'wins_past_1_games_diff',\n",
+    "           'wins_home_against_away_1_games', 'wins_past_2_games_diff',\n",
+    "           'wins_home_against_away_2_games', 'wins_past_3_games_diff',\n",
+    "           'wins_home_against_away_3_games', 'wins_past_4_games_diff',\n",
+    "           'wins_home_against_away_4_games', 'wins_past_5_games_diff',\n",
+    "           'wins_home_against_away_5_games']\n",
     "\n",
     "test_columns = train_columns + ['Group']"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 668,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -97,9 +111,38 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 669,
+   "execution_count": 6,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "ename": "KeyError",
+     "evalue": "'home_win'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+      "\u001b[0;32m~/anaconda3/lib/python3.6/site-packages/pandas/core/indexes/base.py\u001b[0m in \u001b[0;36mget_loc\u001b[0;34m(self, key, method, tolerance)\u001b[0m\n\u001b[1;32m   3077\u001b[0m             \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 3078\u001b[0;31m                 \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   3079\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/index.pyx\u001b[0m in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/index.pyx\u001b[0m in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/hashtable_class_helper.pxi\u001b[0m in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/hashtable_class_helper.pxi\u001b[0m in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;31mKeyError\u001b[0m: 'home_win'",
+      "\nDuring handling of the above exception, another exception occurred:\n",
+      "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-6-f5226714799b>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrandom\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mseed\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m3\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0mX_train\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mX_validation\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mtrain_test_split\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mtrain\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtest_size\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;36m0.2\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0my_train\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mX_train\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'home_win'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mravel\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      4\u001b[0m \u001b[0mX_train\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mX_train\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mdrop\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'home_win'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0maxis\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;36m1\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0my_validation\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mX_validation\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'home_win'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mravel\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py\u001b[0m in \u001b[0;36m__getitem__\u001b[0;34m(self, key)\u001b[0m\n\u001b[1;32m   2686\u001b[0m             \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_getitem_multilevel\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   2687\u001b[0m         \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 2688\u001b[0;31m             \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_getitem_column\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   2689\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   2690\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0m_getitem_column\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py\u001b[0m in \u001b[0;36m_getitem_column\u001b[0;34m(self, key)\u001b[0m\n\u001b[1;32m   2693\u001b[0m         \u001b[0;31m# get column\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   2694\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcolumns\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mis_unique\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 2695\u001b[0;31m             \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_get_item_cache\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   2696\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   2697\u001b[0m         \u001b[0;31m# duplicate columns & possible reduce dimensionality\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.6/site-packages/pandas/core/generic.py\u001b[0m in \u001b[0;36m_get_item_cache\u001b[0;34m(self, item)\u001b[0m\n\u001b[1;32m   2487\u001b[0m         \u001b[0mres\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mcache\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mitem\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   2488\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mres\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 2489\u001b[0;31m             \u001b[0mvalues\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_data\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mitem\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   2490\u001b[0m             \u001b[0mres\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_box_item_values\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mitem\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mvalues\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   2491\u001b[0m             \u001b[0mcache\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mitem\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mres\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.6/site-packages/pandas/core/internals.py\u001b[0m in \u001b[0;36mget\u001b[0;34m(self, item, fastpath)\u001b[0m\n\u001b[1;32m   4113\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   4114\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0misna\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mitem\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 4115\u001b[0;31m                 \u001b[0mloc\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mitems\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mitem\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   4116\u001b[0m             \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   4117\u001b[0m                 \u001b[0mindexer\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0marange\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mlen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mitems\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0misna\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mitems\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.6/site-packages/pandas/core/indexes/base.py\u001b[0m in \u001b[0;36mget_loc\u001b[0;34m(self, key, method, tolerance)\u001b[0m\n\u001b[1;32m   3078\u001b[0m                 \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3079\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyError\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 3080\u001b[0;31m                 \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_loc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_maybe_cast_indexer\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   3081\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   3082\u001b[0m         \u001b[0mindexer\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_indexer\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mmethod\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mmethod\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtolerance\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mtolerance\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/index.pyx\u001b[0m in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/index.pyx\u001b[0m in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/hashtable_class_helper.pxi\u001b[0m in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;32mpandas/_libs/hashtable_class_helper.pxi\u001b[0m in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;31mKeyError\u001b[0m: 'home_win'"
+     ]
+    }
+   ],
    "source": [
     "np.random.seed(3)\n",
     "X_train, X_validation = train_test_split(train, test_size = 0.2)\n",
@@ -119,7 +162,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 670,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -128,18 +171,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 671,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Logistic Regression Train Score: 0.5234014502307185\n",
-      "Logistic Regression Validation Score: 0.49473684210526314\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "print(\"Logistic Regression Train Score: {}\".format(lr_model.score(X_train, y_train)))\n",
     "print(\"Logistic Regression Validation Score: {}\".format(lr_model.score(X_validation, y_validation)))"
@@ -154,7 +188,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 672,
+   "execution_count": 28,
    "metadata": {},
    "outputs": [
     {
@@ -178,16 +212,44 @@
        "  <thead>\n",
        "    <tr style=\"text-align: right;\">\n",
        "      <th></th>\n",
+       "      <th>overall_diff</th>\n",
+       "      <th>attack_away_defence_home_diff</th>\n",
        "      <th>attack_diff</th>\n",
+       "      <th>attack_home_defence_away_diff</th>\n",
        "      <th>defence_diff</th>\n",
        "      <th>midfield_diff</th>\n",
-       "      <th>overall_diff</th>\n",
-       "      <th>gdp_diff</th>\n",
-       "      <th>start_age_diff</th>\n",
+       "      <th>rank_diff</th>\n",
+       "      <th>prestige_diff</th>\n",
+       "      <th>growth_diff</th>\n",
        "      <th>full_age_diff</th>\n",
+       "      <th>...</th>\n",
+       "      <th>wins_past_1_games_diff</th>\n",
+       "      <th>wins_home_against_away_1_games</th>\n",
+       "      <th>wins_past_2_games_diff</th>\n",
+       "      <th>wins_home_against_away_2_games</th>\n",
+       "      <th>wins_past_3_games_diff</th>\n",
+       "      <th>wins_home_against_away_3_games</th>\n",
+       "      <th>wins_past_4_games_diff</th>\n",
+       "      <th>wins_home_against_away_4_games</th>\n",
+       "      <th>wins_past_5_games_diff</th>\n",
+       "      <th>wins_home_against_away_5_games</th>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>home_win</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
        "      <th></th>\n",
        "      <th></th>\n",
        "      <th></th>\n",
@@ -200,53 +262,140 @@
        "  <tbody>\n",
        "    <tr>\n",
        "      <th>-1</th>\n",
+       "      <td>31.393396</td>\n",
+       "      <td>38.015113</td>\n",
        "      <td>40.858572</td>\n",
+       "      <td>41.497639</td>\n",
        "      <td>37.554931</td>\n",
        "      <td>38.133908</td>\n",
-       "      <td>31.393396</td>\n",
-       "      <td>0.980510</td>\n",
-       "      <td>4.552043</td>\n",
+       "      <td>916.793268</td>\n",
+       "      <td>25.423806</td>\n",
+       "      <td>2.770866</td>\n",
        "      <td>2.489490</td>\n",
+       "      <td>...</td>\n",
+       "      <td>0.435829</td>\n",
+       "      <td>0.153430</td>\n",
+       "      <td>0.870057</td>\n",
+       "      <td>0.298516</td>\n",
+       "      <td>1.385007</td>\n",
+       "      <td>0.449573</td>\n",
+       "      <td>1.843190</td>\n",
+       "      <td>0.524987</td>\n",
+       "      <td>2.360183</td>\n",
+       "      <td>0.572848</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>0</th>\n",
+       "      <td>36.158215</td>\n",
+       "      <td>46.202150</td>\n",
        "      <td>47.654088</td>\n",
+       "      <td>46.137393</td>\n",
        "      <td>43.559341</td>\n",
        "      <td>41.798216</td>\n",
-       "      <td>36.158215</td>\n",
-       "      <td>0.833373</td>\n",
-       "      <td>4.532752</td>\n",
+       "      <td>960.540851</td>\n",
+       "      <td>30.781631</td>\n",
+       "      <td>2.593080</td>\n",
        "      <td>2.596855</td>\n",
+       "      <td>...</td>\n",
+       "      <td>0.464170</td>\n",
+       "      <td>0.142747</td>\n",
+       "      <td>0.831052</td>\n",
+       "      <td>0.271855</td>\n",
+       "      <td>1.301640</td>\n",
+       "      <td>0.394347</td>\n",
+       "      <td>1.830456</td>\n",
+       "      <td>0.514720</td>\n",
+       "      <td>2.296130</td>\n",
+       "      <td>0.574361</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>1</th>\n",
+       "      <td>37.105145</td>\n",
+       "      <td>47.913430</td>\n",
        "      <td>49.295727</td>\n",
+       "      <td>45.265228</td>\n",
        "      <td>43.509512</td>\n",
        "      <td>42.634416</td>\n",
-       "      <td>37.105145</td>\n",
-       "      <td>0.897915</td>\n",
-       "      <td>4.359358</td>\n",
+       "      <td>936.866455</td>\n",
+       "      <td>26.985673</td>\n",
+       "      <td>2.953428</td>\n",
        "      <td>2.406626</td>\n",
+       "      <td>...</td>\n",
+       "      <td>0.464225</td>\n",
+       "      <td>0.153419</td>\n",
+       "      <td>0.910385</td>\n",
+       "      <td>0.303771</td>\n",
+       "      <td>1.297064</td>\n",
+       "      <td>0.434109</td>\n",
+       "      <td>1.789283</td>\n",
+       "      <td>0.523213</td>\n",
+       "      <td>2.200281</td>\n",
+       "      <td>0.603517</td>\n",
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
+       "<p>3 rows × 36 columns</p>\n",
        "</div>"
       ],
       "text/plain": [
-       "          attack_diff  defence_diff  midfield_diff  overall_diff  gdp_diff  \\\n",
-       "home_win                                                                     \n",
-       "-1          40.858572     37.554931      38.133908     31.393396  0.980510   \n",
-       " 0          47.654088     43.559341      41.798216     36.158215  0.833373   \n",
-       " 1          49.295727     43.509512      42.634416     37.105145  0.897915   \n",
+       "          overall_diff  attack_away_defence_home_diff  attack_diff  \\\n",
+       "home_win                                                             \n",
+       "-1           31.393396                      38.015113    40.858572   \n",
+       " 0           36.158215                      46.202150    47.654088   \n",
+       " 1           37.105145                      47.913430    49.295727   \n",
        "\n",
-       "          start_age_diff  full_age_diff  \n",
-       "home_win                                 \n",
-       "-1              4.552043       2.489490  \n",
-       " 0              4.532752       2.596855  \n",
-       " 1              4.359358       2.406626  "
+       "          attack_home_defence_away_diff  defence_diff  midfield_diff  \\\n",
+       "home_win                                                               \n",
+       "-1                            41.497639     37.554931      38.133908   \n",
+       " 0                            46.137393     43.559341      41.798216   \n",
+       " 1                            45.265228     43.509512      42.634416   \n",
+       "\n",
+       "           rank_diff  prestige_diff  growth_diff  full_age_diff  \\\n",
+       "home_win                                                          \n",
+       "-1        916.793268      25.423806     2.770866       2.489490   \n",
+       " 0        960.540851      30.781631     2.593080       2.596855   \n",
+       " 1        936.866455      26.985673     2.953428       2.406626   \n",
+       "\n",
+       "                       ...                wins_past_1_games_diff  \\\n",
+       "home_win               ...                                         \n",
+       "-1                     ...                              0.435829   \n",
+       " 0                     ...                              0.464170   \n",
+       " 1                     ...                              0.464225   \n",
+       "\n",
+       "          wins_home_against_away_1_games  wins_past_2_games_diff  \\\n",
+       "home_win                                                           \n",
+       "-1                              0.153430                0.870057   \n",
+       " 0                              0.142747                0.831052   \n",
+       " 1                              0.153419                0.910385   \n",
+       "\n",
+       "          wins_home_against_away_2_games  wins_past_3_games_diff  \\\n",
+       "home_win                                                           \n",
+       "-1                              0.298516                1.385007   \n",
+       " 0                              0.271855                1.301640   \n",
+       " 1                              0.303771                1.297064   \n",
+       "\n",
+       "          wins_home_against_away_3_games  wins_past_4_games_diff  \\\n",
+       "home_win                                                           \n",
+       "-1                              0.449573                1.843190   \n",
+       " 0                              0.394347                1.830456   \n",
+       " 1                              0.434109                1.789283   \n",
+       "\n",
+       "          wins_home_against_away_4_games  wins_past_5_games_diff  \\\n",
+       "home_win                                                           \n",
+       "-1                              0.524987                2.360183   \n",
+       " 0                              0.514720                2.296130   \n",
+       " 1                              0.523213                2.200281   \n",
+       "\n",
+       "          wins_home_against_away_5_games  \n",
+       "home_win                                  \n",
+       "-1                              0.572848  \n",
+       " 0                              0.574361  \n",
+       " 1                              0.603517  \n",
+       "\n",
+       "[3 rows x 36 columns]"
       ]
      },
-     "execution_count": 672,
+     "execution_count": 28,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -264,24 +413,33 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 673,
+   "execution_count": 29,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/Users/blin/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:388: UserWarning: Variables are collinear.\n",
+      "  warnings.warn(\"Variables are collinear.\")\n"
+     ]
+    }
+   ],
    "source": [
     "lda_model = LinearDiscriminantAnalysis().fit(X_train, y_train)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 674,
+   "execution_count": 30,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "LDA Train Score: 0.5247198417930126\n",
-      "LDA Validation Score: 0.49736842105263157\n"
+      "LDA Train Score: 0.5266974291364536\n",
+      "LDA Validation Score: 0.5026315789473684\n"
      ]
     }
    ],
@@ -299,24 +457,33 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 675,
+   "execution_count": 31,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/Users/blin/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:686: UserWarning: Variables are collinear\n",
+      "  warnings.warn(\"Variables are collinear\")\n"
+     ]
+    }
+   ],
    "source": [
     "qda_model = QuadraticDiscriminantAnalysis().fit(X_train, y_train)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 676,
+   "execution_count": 32,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Train Score: 0.5286750164798946\n",
-      "QDA Validation Score: 0.5105263157894737\n"
+      "QDA Train Score: 0.5398813447593935\n",
+      "QDA Validation Score: 0.35789473684210527\n"
      ]
     }
    ],
@@ -334,7 +501,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 677,
+   "execution_count": 33,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -343,15 +510,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 678,
+   "execution_count": 34,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Random Forest Train Score: 0.5497692814765985\n",
-      "Random Forest Validation Score 0.49736842105263157\n"
+      "Random Forest Train Score: 0.5589980224126566\n",
+      "Random Forest Validation Score 0.5210526315789473\n"
      ]
     }
    ],
@@ -369,14 +536,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 679,
+   "execution_count": 35,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Logistic Regression Test Score: 0.5625\n"
+      "Logistic Regression Test Score: 0.59375\n"
      ]
     }
    ],
@@ -387,14 +554,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 680,
+   "execution_count": 36,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "LDA Test Score: 0.546875\n"
+      "LDA Test Score: 0.640625\n"
      ]
     }
    ],
@@ -405,14 +572,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 681,
+   "execution_count": 37,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "QDA Test Score: 0.59375\n"
+      "QDA Test Score: 0.53125\n"
      ]
     }
    ],
@@ -423,14 +590,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 682,
+   "execution_count": 38,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Random Forest Test Score: 0.53125\n"
+      "Random Forest Test Score: 0.625\n"
      ]
     }
    ],

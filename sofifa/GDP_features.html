@@ -1,35 +1,117 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Wikipedia Scraping &#8212; World Cup  documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
 
   </head><body>
-  
 
-    <div class="document">
-      <div class="documentwrapper">
-          
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+          World Cup</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
 
-          <div class="body" role="main">
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
             
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Milestones:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc/milestone2.html">Milestone 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc/milestone3-report.html">Milestone 3</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Models:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../models/baseline_model.html">Baseline Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/beyond_baseline.html">Modeling with Feature Engineered Features</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Wikipedia Scraping</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/sofifa/GDP_features.ipynb.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
   
 <style>
 /* CSS for nbsphinx extension */
@@ -96,7 +178,7 @@ div.nboutput div.prompt pre {
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 8ex;
+    min-width: 9ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -200,7 +282,7 @@ div.nboutput div.output_area.stderr {
 <h1>Wikipedia Scraping<a class="headerlink" href="#Wikipedia-Scraping" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [160]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -216,7 +298,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [161]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -227,7 +309,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [162]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -237,7 +319,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[162]:
+<span></span>Out[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -262,24 +344,24 @@ div.nboutput div.output_area.stderr {
       <th>game_date</th>
       <th>home_team</th>
       <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
       <th>country</th>
       <th>neutral</th>
-      <th>home_win</th>
-      <th>attack_diff</th>
+      <th>overall_diff</th>
+      <th>attack_away_defence_home_diff</th>
+      <th>...</th>
       <th>bup_dribbling_diff</th>
       <th>bup_passing_diff</th>
       <th>bup_speed_diff</th>
-      <th>...</th>
-      <th>growth_diff</th>
-      <th>midfield_diff</th>
-      <th>overall_diff</th>
-      <th>prestige_diff</th>
-      <th>start_age_diff</th>
-      <th>value_euros_millions_diff</th>
-      <th>wage_euros_thousands_diff</th>
-      <th>attack_home_defence_away_diff</th>
-      <th>attack_away_defence_home_diff</th>
-      <th>rank_diff</th>
+      <th>cc_crossing_diff</th>
+      <th>cc_passing_diff</th>
+      <th>cc_shooting_diff</th>
+      <th>d_aggresion_diff</th>
+      <th>d_pressure_diff</th>
+      <th>d_width_diff</th>
+      <th>home_win</th>
     </tr>
   </thead>
   <tbody>
@@ -288,129 +370,129 @@ div.nboutput div.output_area.stderr {
       <td>2006-09-01 00:00:00+00:00</td>
       <td>Denmark</td>
       <td>Portugal</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Friendly</td>
       <td>Denmark</td>
       <td>False</td>
-      <td>1</td>
-      <td>-1.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>1.000000</td>
       <td>-3.0</td>
-      <td>-3.0</td>
-      <td>-2.0</td>
-      <td>-0.27</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-4.0</td>
       <td>3.0</td>
-      <td>9.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2006-10-11 00:00:00+00:00</td>
       <td>Poland</td>
       <td>Portugal</td>
+      <td>2</td>
+      <td>1</td>
+      <td>UEFA Euro qualification</td>
       <td>Poland</td>
       <td>False</td>
-      <td>1</td>
-      <td>-4.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-0.260870</td>
-      <td>-10.0</td>
-      <td>-7.0</td>
-      <td>-4.0</td>
-      <td>1.09</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
       <td>-7.0</td>
       <td>10.0</td>
-      <td>26.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2006-09-06 00:00:00+00:00</td>
       <td>Finland</td>
       <td>Portugal</td>
+      <td>1</td>
+      <td>1</td>
+      <td>UEFA Euro qualification</td>
       <td>Finland</td>
       <td>False</td>
-      <td>0</td>
-      <td>-6.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-1.260870</td>
-      <td>-13.0</td>
       <td>-7.0</td>
-      <td>-9.0</td>
-      <td>0.91</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-9.0</td>
       <td>9.0</td>
-      <td>59.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>2006-10-07 00:00:00+00:00</td>
       <td>Denmark</td>
       <td>Northern Ireland</td>
+      <td>0</td>
+      <td>0</td>
+      <td>UEFA Euro qualification</td>
       <td>Denmark</td>
       <td>False</td>
-      <td>0</td>
-      <td>13.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>0.695652</td>
-      <td>10.0</td>
       <td>9.0</td>
-      <td>8.0</td>
-      <td>-0.27</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>12.0</td>
       <td>-11.0</td>
-      <td>-42.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2006-10-11 00:00:00+00:00</td>
       <td>Austria</td>
       <td>Switzerland</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Friendly</td>
       <td>Austria</td>
       <td>False</td>
-      <td>1</td>
-      <td>-6.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-1.217391</td>
-      <td>-7.0</td>
       <td>-3.0</td>
-      <td>-1.0</td>
-      <td>-0.73</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-7.0</td>
       <td>4.0</td>
-      <td>56.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 29 columns</p>
+<p>5 rows × 32 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [163]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -452,7 +534,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [164]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -462,7 +544,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [165]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -472,7 +554,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[165]:
+<span></span>Out[6]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -480,8 +562,8 @@ div.nboutput div.output_area.stderr {
  &#39;Antarctica&#39;,
  &#39;Asia&#39;,
  &#39;Europe&#39;,
- &#39;America&#39;,
- &#39;North America&#39;,
+ &#39;American&#39;,
+ &#39;North&#39;,
  &#39;Central America and the Antilles&#39;,
  &#39;South America&#39;,
  &#39;Oceania&#39;,
@@ -490,249 +572,19 @@ div.nboutput div.output_area.stderr {
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [166]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">country_to_continent</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[166]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>{&#39;Algeria&#39;: &#39;Africa&#39;,
- &#39;Angola&#39;: &#39;Africa&#39;,
- &#39;Benin&#39;: &#39;Africa&#39;,
- &#39;Botswana&#39;: &#39;Africa&#39;,
- &#39;Burkina Faso&#39;: &#39;Africa&#39;,
- &#39;Burundi&#39;: &#39;Africa&#39;,
- &#39;Cameroon&#39;: &#39;Africa&#39;,
- &#39;Cape Verde&#39;: &#39;Africa&#39;,
- &#39;Central African Republic&#39;: &#39;Africa&#39;,
- &#39;Chad&#39;: &#39;Africa&#39;,
- &#39;Comoros&#39;: &#39;Africa&#39;,
- &#39;Republic of the Congo&#39;: &#39;Africa&#39;,
- &#39;Democratic Republic of the Congo&#39;: &#39;Africa&#39;,
- &quot;Côte d&#39;Ivoire&quot;: &#39;Africa&#39;,
- &#39;Djibouti&#39;: &#39;Africa&#39;,
- &#39;Egypt&#39;: &#39;Africa&#39;,
- &#39;Equatorial Guinea&#39;: &#39;Africa&#39;,
- &#39;Eritrea&#39;: &#39;Africa&#39;,
- &#39;Ethiopia&#39;: &#39;Africa&#39;,
- &#39;Gabon&#39;: &#39;Africa&#39;,
- &#39;The Gambia&#39;: &#39;Africa&#39;,
- &#39;Ghana&#39;: &#39;Africa&#39;,
- &#39;Guinea&#39;: &#39;Africa&#39;,
- &#39;Guine&#39;: &#39;Africa&#39;,
- &#39;Kenya&#39;: &#39;Africa&#39;,
- &#39;Lesotho&#39;: &#39;Africa&#39;,
- &#39;Liberia&#39;: &#39;Africa&#39;,
- &#39;Libya&#39;: &#39;Africa&#39;,
- &#39;Madagascar&#39;: &#39;Africa&#39;,
- &#39;Malawi&#39;: &#39;Africa&#39;,
- &#39;Mali&#39;: &#39;Africa&#39;,
- &#39;Mauritania&#39;: &#39;Africa&#39;,
- &#39;Mauritius&#39;: &#39;Africa&#39;,
- &#39;Morocco&#39;: &#39;Africa&#39;,
- &#39;Mozambique&#39;: &#39;Africa&#39;,
- &#39;Namibia&#39;: &#39;Africa&#39;,
- &#39;Niger&#39;: &#39;Africa&#39;,
- &#39;Nigeria&#39;: &#39;Africa&#39;,
- &#39;Rwanda&#39;: &#39;Africa&#39;,
- &#39;São Tomé and Príncipe&#39;: &#39;Africa&#39;,
- &#39;Senegal&#39;: &#39;Africa&#39;,
- &#39;Seychelles&#39;: &#39;Africa&#39;,
- &#39;Sierra Leone&#39;: &#39;Africa&#39;,
- &#39;Somalia&#39;: &#39;Africa&#39;,
- &#39;South Africa&#39;: &#39;Africa&#39;,
- &#39;South Sudan&#39;: &#39;Africa&#39;,
- &#39;Sudan&#39;: &#39;Africa&#39;,
- &#39;Swaziland&#39;: &#39;Africa&#39;,
- &#39;Tanzania&#39;: &#39;Africa&#39;,
- &#39;Togo&#39;: &#39;Africa&#39;,
- &#39;Tunisia&#39;: &#39;Africa&#39;,
- &#39;Uganda&#39;: &#39;Africa&#39;,
- &#39;Western Sahara&#39;: &#39;Africa&#39;,
- &#39;Zambia&#39;: &#39;Africa&#39;,
- &#39;Zimbabwe&#39;: &#39;Africa&#39;,
- &#39;Afghanistan&#39;: &#39;Asia&#39;,
- &#39;Armenia&#39;: &#39;Asia&#39;,
- &#39;Azerbaijan&#39;: &#39;Asia&#39;,
- &#39;Bahrain&#39;: &#39;Asia&#39;,
- &#39;Bangladesh&#39;: &#39;Asia&#39;,
- &#39;Bhutan&#39;: &#39;Asia&#39;,
- &#39;Brunei&#39;: &#39;Asia&#39;,
- &#39;Cambodia&#39;: &#39;Asia&#39;,
- &#39;China&#39;: &#39;Asia&#39;,
- &#39;Cyprus&#39;: &#39;Asia&#39;,
- &#39;Taiwan&#39;: &#39;Asia&#39;,
- &#39;East Timor&#39;: &#39;Asia&#39;,
- &#39;Georgia&#39;: &#39;Asia&#39;,
- &#39;Hongkong&#39;: &#39;Asia&#39;,
- &#39;India&#39;: &#39;Asia&#39;,
- &#39;Indonesia&#39;: &#39;Asia&#39;,
- &#39;Iran&#39;: &#39;Asia&#39;,
- &#39;Iraq&#39;: &#39;Asia&#39;,
- &#39;Israel&#39;: &#39;Asia&#39;,
- &#39;Japan&#39;: &#39;Asia&#39;,
- &#39;Jordan&#39;: &#39;Asia&#39;,
- &#39;Kazakhstan&#39;: &#39;Asia&#39;,
- &#39;Kuwait&#39;: &#39;Asia&#39;,
- &#39;Kyrgyzstan&#39;: &#39;Asia&#39;,
- &#39;Laos&#39;: &#39;Asia&#39;,
- &#39;Lebanon&#39;: &#39;Asia&#39;,
- &#39;Malaysia&#39;: &#39;Asia&#39;,
- &#39;Maldives&#39;: &#39;Asia&#39;,
- &#39;Mongolia&#39;: &#39;Asia&#39;,
- &#39;Myanmar&#39;: &#39;Asia&#39;,
- &#39;Nepal&#39;: &#39;Asia&#39;,
- &#39;North Korea&#39;: &#39;Asia&#39;,
- &#39;Oman&#39;: &#39;Asia&#39;,
- &#39;Pakistan&#39;: &#39;Asia&#39;,
- &#39;Philippines&#39;: &#39;Asia&#39;,
- &#39;Palestine&#39;: &#39;Asia&#39;,
- &#39;Qatar&#39;: &#39;Asia&#39;,
- &#39;Saudi Arabia&#39;: &#39;Asia&#39;,
- &#39;Singapore&#39;: &#39;Asia&#39;,
- &#39;South Korea&#39;: &#39;Asia&#39;,
- &#39;Sri Lanka&#39;: &#39;Asia&#39;,
- &#39;Syria&#39;: &#39;Asia&#39;,
- &#39;Tajikistan&#39;: &#39;Asia&#39;,
- &#39;Thailand&#39;: &#39;Asia&#39;,
- &#39;Turkey&#39;: &#39;Asia&#39;,
- &#39;Turkmenistan&#39;: &#39;Asia&#39;,
- &#39;United Arab Emirates&#39;: &#39;Asia&#39;,
- &#39;Uzbekistan&#39;: &#39;Asia&#39;,
- &#39;Vietnam&#39;: &#39;Asia&#39;,
- &#39;Yemen&#39;: &#39;Asia&#39;,
- &#39;Albania&#39;: &#39;Europe&#39;,
- &#39;Andorra&#39;: &#39;Europe&#39;,
- &#39;Austria&#39;: &#39;Europe&#39;,
- &#39;Belarus&#39;: &#39;Europe&#39;,
- &#39;Belgium&#39;: &#39;Europe&#39;,
- &#39;Bosnia and Herzegovina&#39;: &#39;Europe&#39;,
- &#39;Bulgaria&#39;: &#39;Europe&#39;,
- &#39;Croatia&#39;: &#39;Europe&#39;,
- &#39;Czech Republic&#39;: &#39;Europe&#39;,
- &#39;Denmark&#39;: &#39;Europe&#39;,
- &#39;Estonia&#39;: &#39;Europe&#39;,
- &#39;Finland&#39;: &#39;Europe&#39;,
- &#39;France&#39;: &#39;Europe&#39;,
- &#39;Germany&#39;: &#39;Europe&#39;,
- &#39;Greece&#39;: &#39;Europe&#39;,
- &#39;Hungary&#39;: &#39;Europe&#39;,
- &#39;Eastern Iceland&#39;: &#39;Europe&#39;,
- &#39;Republic of Ireland&#39;: &#39;Europe&#39;,
- &#39;Italy&#39;: &#39;Europe&#39;,
- &#39;Kosovo&#39;: &#39;Europe&#39;,
- &#39;Latvia&#39;: &#39;Europe&#39;,
- &#39;Liechtenstein&#39;: &#39;Europe&#39;,
- &#39;Lithuania&#39;: &#39;Europe&#39;,
- &#39;Luxembourg&#39;: &#39;Europe&#39;,
- &#39;Macedonia&#39;: &#39;Europe&#39;,
- &#39;Malta&#39;: &#39;Europe&#39;,
- &#39;Moldova&#39;: &#39;Europe&#39;,
- &#39;Monaco&#39;: &#39;Europe&#39;,
- &#39;Montenegro&#39;: &#39;Europe&#39;,
- &#39;Netherlands&#39;: &#39;Europe&#39;,
- &#39;Norway&#39;: &#39;Europe&#39;,
- &#39;Poland&#39;: &#39;Europe&#39;,
- &#39;Portugal&#39;: &#39;Europe&#39;,
- &#39;Romania&#39;: &#39;Europe&#39;,
- &#39;Russia&#39;: &#39;Europe&#39;,
- &#39;San Marino&#39;: &#39;Europe&#39;,
- &#39;Serbia&#39;: &#39;Europe&#39;,
- &#39;Slovakia&#39;: &#39;Europe&#39;,
- &#39;Slovenia&#39;: &#39;Europe&#39;,
- &#39;Spain&#39;: &#39;Europe&#39;,
- &#39;Sweden&#39;: &#39;Europe&#39;,
- &#39;Switzerland&#39;: &#39;Europe&#39;,
- &#39;Ukraine&#39;: &#39;Europe&#39;,
- &#39;United Kingdom&#39;: &#39;Europe&#39;,
- &#39;Vatican City&#39;: &#39;Europe&#39;,
- &#39;Canada&#39;: &#39;North America&#39;,
- &#39;Greenland&#39;: &#39;North America&#39;,
- &#39;Western Iceland&#39;: &#39;North America&#39;,
- &#39;United States of America&#39;: &#39;North America&#39;,
- &#39;Mexico&#39;: &#39;North America&#39;,
- &#39;Bermuda&#39;: &#39;North America&#39;,
- &#39;Antigua and Barbuda&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Aruba&#39;: &#39;Central America and the Antilles&#39;,
- &#39;The Bahamas&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Barbados&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Belize&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Bonaire&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Costa Rica&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Cuba&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Curaçao&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Dominica&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Dominican Republic&#39;: &#39;Central America and the Antilles&#39;,
- &#39;El Salvador&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Grenada&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Guatemala&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Haiti&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Honduras&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Jamaica&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Nicaragua&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Panama&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Puerto Rico&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Saba&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Saint Kitts and Nevis&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Saint Martin&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Saint Lucia&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Saint Vincent and the Grenadines&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Sint Eustatius&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Sint Maarten&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Trinidad and Tobago&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Turks and Caicos&#39;: &#39;Central America and the Antilles&#39;,
- &#39;Argentina&#39;: &#39;South America&#39;,
- &#39;Bolivia&#39;: &#39;South America&#39;,
- &#39;Brazil&#39;: &#39;South America&#39;,
- &#39;Chile&#39;: &#39;South America&#39;,
- &#39;Colombia&#39;: &#39;South America&#39;,
- &#39;Ecuador&#39;: &#39;South America&#39;,
- &#39;French Guiana&#39;: &#39;South America&#39;,
- &#39;Guyana&#39;: &#39;South America&#39;,
- &#39;Paraguay&#39;: &#39;South America&#39;,
- &#39;Peru&#39;: &#39;South America&#39;,
- &#39;Suriname&#39;: &#39;South America&#39;,
- &#39;Uruguay&#39;: &#39;South America&#39;,
- &#39;Venezuela&#39;: &#39;South America&#39;,
- &#39;Australia&#39;: &#39;Australia&#39;,
- &#39;Federated States of Micronesia&#39;: &#39;Australia&#39;,
- &#39;Fiji&#39;: &#39;Australia&#39;,
- &#39;Kiribati&#39;: &#39;Australia&#39;,
- &#39;Marshall Islands&#39;: &#39;Australia&#39;,
- &#39;Nauru&#39;: &#39;Australia&#39;,
- &#39;New Zealand&#39;: &#39;Australia&#39;,
- &#39;Palau&#39;: &#39;Australia&#39;,
- &#39;Papua New Guinea&#39;: &#39;Australia&#39;,
- &#39;Samoa&#39;: &#39;Australia&#39;,
- &#39;Solomon Islands&#39;: &#39;Australia&#39;,
- &#39;Tonga&#39;: &#39;Australia&#39;,
- &#39;Tuvalu&#39;: &#39;Australia&#39;,
- &#39;Vanuatu&#39;: &#39;Australia&#39;,
- &#39;Australi&#39;: &#39;Australasian&#39;,
- &#39;Flore&#39;: &#39;Australasian&#39;,
- &#39;Lombo&#39;: &#39;Australasian&#39;,
- &#39;Melanesi&#39;: &#39;Australasian&#39;,
- &#39;New Caledoni&#39;: &#39;Australasian&#39;,
- &#39;New Guine&#39;: &#39;Australasian&#39;,
- &#39;Sulawes&#39;: &#39;Australasian&#39;,
- &#39;Sumbaw&#39;: &#39;Australasian&#39;,
- &#39;Timo&#39;: &#39;Australasian&#39;}
+<span></span><span class="c1"># country_to_continent</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [167]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -745,12 +597,14 @@ div.nboutput div.output_area.stderr {
 <span class="n">country_to_continent</span><span class="p">[</span><span class="s1">&#39;Iceland&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">country_to_continent</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Eastern Iceland&quot;</span><span class="p">)</span>
 <span class="n">country_to_continent</span><span class="p">[</span><span class="s1">&#39;Wales&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="s1">&#39;England&#39;</span><span class="p">]</span>
 <span class="n">country_to_continent</span><span class="p">[</span><span class="s1">&#39;Scotland&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="s1">&#39;England&#39;</span><span class="p">]</span>
+
+<span class="n">country_to_continent</span><span class="p">[</span><span class="s1">&#39;Réunion&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Africa&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [168]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -761,294 +615,56 @@ div.nboutput div.output_area.stderr {
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [169]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">my_set</span>
+<span></span><span class="c1"># my_set</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[169]:
+<span></span>In [11]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>{&#39;Afghanistan&#39;,
- &#39;Albania&#39;,
- &#39;Algeria&#39;,
- &#39;Andorra&#39;,
- &#39;Angola&#39;,
- &#39;Antigua and Barbuda&#39;,
- &#39;Argentina&#39;,
- &#39;Armenia&#39;,
- &#39;Aruba&#39;,
- &#39;Australi&#39;,
- &#39;Australia&#39;,
- &#39;Austria&#39;,
- &#39;Azerbaijan&#39;,
- &#39;Bahrain&#39;,
- &#39;Bangladesh&#39;,
- &#39;Barbados&#39;,
- &#39;Belarus&#39;,
- &#39;Belgium&#39;,
- &#39;Belize&#39;,
- &#39;Benin&#39;,
- &#39;Bermuda&#39;,
- &#39;Bhutan&#39;,
- &#39;Bolivia&#39;,
- &#39;Bonaire&#39;,
- &#39;Bosnia and Herzegovina&#39;,
- &#39;Botswana&#39;,
- &#39;Brazil&#39;,
- &#39;Brunei&#39;,
- &#39;Bulgaria&#39;,
- &#39;Burkina Faso&#39;,
- &#39;Burundi&#39;,
- &#39;Cambodia&#39;,
- &#39;Cameroon&#39;,
- &#39;Canada&#39;,
- &#39;Cape Verde&#39;,
- &#39;Central African Republic&#39;,
- &#39;Chad&#39;,
- &#39;Chile&#39;,
- &#39;China&#39;,
- &#39;Colombia&#39;,
- &#39;Comoros&#39;,
- &#39;Costa Rica&#39;,
- &#39;Croatia&#39;,
- &#39;Cuba&#39;,
- &#39;Curaçao&#39;,
- &#39;Cyprus&#39;,
- &#39;Czech Republic&#39;,
- &#39;Democratic Republic of the Congo&#39;,
- &#39;Denmark&#39;,
- &#39;Djibouti&#39;,
- &#39;Dominica&#39;,
- &#39;Dominican Republic&#39;,
- &#39;East Timor&#39;,
- &#39;Ecuador&#39;,
- &#39;Egypt&#39;,
- &#39;El Salvador&#39;,
- &#39;England&#39;,
- &#39;Equatorial Guinea&#39;,
- &#39;Eritrea&#39;,
- &#39;Estonia&#39;,
- &#39;Ethiopia&#39;,
- &#39;Federated States of Micronesia&#39;,
- &#39;Fiji&#39;,
- &#39;Finland&#39;,
- &#39;Flore&#39;,
- &#39;France&#39;,
- &#39;French Guiana&#39;,
- &#39;Gabon&#39;,
- &#39;Georgia&#39;,
- &#39;Germany&#39;,
- &#39;Ghana&#39;,
- &#39;Greece&#39;,
- &#39;Greenland&#39;,
- &#39;Grenada&#39;,
- &#39;Guatemala&#39;,
- &#39;Guine&#39;,
- &#39;Guinea&#39;,
- &#39;Guyana&#39;,
- &#39;Haiti&#39;,
- &#39;Honduras&#39;,
- &#39;Hongkong&#39;,
- &#39;Hungary&#39;,
- &#39;Iceland&#39;,
- &#39;India&#39;,
- &#39;Indonesia&#39;,
- &#39;Iran&#39;,
- &#39;Iraq&#39;,
- &#39;Ireland&#39;,
- &#39;Israel&#39;,
- &#39;Italy&#39;,
- &#39;Ivory Coast&#39;,
- &#39;Jamaica&#39;,
- &#39;Japan&#39;,
- &#39;Jordan&#39;,
- &#39;Kazakhstan&#39;,
- &#39;Kenya&#39;,
- &#39;Kiribati&#39;,
- &#39;Korea Republic&#39;,
- &#39;Kosovo&#39;,
- &#39;Kuwait&#39;,
- &#39;Kyrgyzstan&#39;,
- &#39;Laos&#39;,
- &#39;Latvia&#39;,
- &#39;Lebanon&#39;,
- &#39;Lesotho&#39;,
- &#39;Liberia&#39;,
- &#39;Libya&#39;,
- &#39;Liechtenstein&#39;,
- &#39;Lithuania&#39;,
- &#39;Lombo&#39;,
- &#39;Luxembourg&#39;,
- &#39;Macedonia&#39;,
- &#39;Madagascar&#39;,
- &#39;Malawi&#39;,
- &#39;Malaysia&#39;,
- &#39;Maldives&#39;,
- &#39;Mali&#39;,
- &#39;Malta&#39;,
- &#39;Marshall Islands&#39;,
- &#39;Mauritania&#39;,
- &#39;Mauritius&#39;,
- &#39;Melanesi&#39;,
- &#39;Mexico&#39;,
- &#39;Moldova&#39;,
- &#39;Monaco&#39;,
- &#39;Mongolia&#39;,
- &#39;Montenegro&#39;,
- &#39;Morocco&#39;,
- &#39;Mozambique&#39;,
- &#39;Myanmar&#39;,
- &#39;Namibia&#39;,
- &#39;Nauru&#39;,
- &#39;Nepal&#39;,
- &#39;Netherlands&#39;,
- &#39;New Caledoni&#39;,
- &#39;New Guine&#39;,
- &#39;New Zealand&#39;,
- &#39;Nicaragua&#39;,
- &#39;Niger&#39;,
- &#39;Nigeria&#39;,
- &#39;North Korea&#39;,
- &#39;Northern Ireland&#39;,
- &#39;Norway&#39;,
- &#39;Oman&#39;,
- &#39;Pakistan&#39;,
- &#39;Palau&#39;,
- &#39;Palestine&#39;,
- &#39;Panama&#39;,
- &#39;Papua New Guinea&#39;,
- &#39;Paraguay&#39;,
- &#39;Peru&#39;,
- &#39;Philippines&#39;,
- &#39;Poland&#39;,
- &#39;Portugal&#39;,
- &#39;Puerto Rico&#39;,
- &#39;Qatar&#39;,
- &#39;Republic of the Congo&#39;,
- &#39;Romania&#39;,
- &#39;Russia&#39;,
- &#39;Rwanda&#39;,
- &#39;Saba&#39;,
- &#39;Saint Kitts and Nevis&#39;,
- &#39;Saint Lucia&#39;,
- &#39;Saint Martin&#39;,
- &#39;Saint Vincent and the Grenadines&#39;,
- &#39;Samoa&#39;,
- &#39;San Marino&#39;,
- &#39;Saudi Arabia&#39;,
- &#39;Scotland&#39;,
- &#39;Senegal&#39;,
- &#39;Serbia&#39;,
- &#39;Seychelles&#39;,
- &#39;Sierra Leone&#39;,
- &#39;Singapore&#39;,
- &#39;Sint Eustatius&#39;,
- &#39;Sint Maarten&#39;,
- &#39;Slovakia&#39;,
- &#39;Slovenia&#39;,
- &#39;Solomon Islands&#39;,
- &#39;Somalia&#39;,
- &#39;South Africa&#39;,
- &#39;South Sudan&#39;,
- &#39;Spain&#39;,
- &#39;Sri Lanka&#39;,
- &#39;Sudan&#39;,
- &#39;Sulawes&#39;,
- &#39;Sumbaw&#39;,
- &#39;Suriname&#39;,
- &#39;Swaziland&#39;,
- &#39;Sweden&#39;,
- &#39;Switzerland&#39;,
- &#39;Syria&#39;,
- &#39;São Tomé and Príncipe&#39;,
- &#39;Taiwan&#39;,
- &#39;Tajikistan&#39;,
- &#39;Tanzania&#39;,
- &#39;Thailand&#39;,
- &#39;The Bahamas&#39;,
- &#39;The Gambia&#39;,
- &#39;Timo&#39;,
- &#39;Togo&#39;,
- &#39;Tonga&#39;,
- &#39;Trinidad and Tobago&#39;,
- &#39;Tunisia&#39;,
- &#39;Turkey&#39;,
- &#39;Turkmenistan&#39;,
- &#39;Turks and Caicos&#39;,
- &#39;Tuvalu&#39;,
- &#39;USA&#39;,
- &#39;Uganda&#39;,
- &#39;Ukraine&#39;,
- &#39;United Arab Emirates&#39;,
- &#39;Uruguay&#39;,
- &#39;Uzbekistan&#39;,
- &#39;Vanuatu&#39;,
- &#39;Vatican City&#39;,
- &#39;Venezuela&#39;,
- &#39;Vietnam&#39;,
- &#39;Wales&#39;,
- &#39;Western Iceland&#39;,
- &#39;Western Sahara&#39;,
- &#39;Yemen&#39;,
- &#39;Zambia&#39;,
- &#39;Zimbabwe&#39;}
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">relevant_countries</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">c1</span><span class="p">,</span><span class="n">c2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">home_team</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span><span class="n">train</span><span class="o">.</span><span class="n">away_team</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
+    <span class="n">relevant_countries</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+    <span class="n">relevant_countries</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [170]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1">#Ensure all countries properly mapped</span>
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">my_set</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">home_team</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">my_set</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">away_team</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">relevant_countries</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">my_set</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Réunion
-</pre></div></div>
-</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [171]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">country_to_continent</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">home_team</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
-         <span class="n">countries</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<span></span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [172]:
+<span></span>In [13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1075,86 +691,283 @@ Réunion
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [173]:
+<span></span>In [14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">gdp_countries</span> <span class="o">=</span> <span class="n">scrape_gdp_pp</span><span class="p">()</span>
-<span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;Ivory Coast&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_countries</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Côte d&#39;Ivoire&quot;</span><span class="p">)</span>
-<span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;England&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_countries</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;United Kingdom&quot;</span><span class="p">)</span>
-<span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;Korea Republic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_countries</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;South Korea&quot;</span><span class="p">)</span>
-<span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;USA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_countries</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;United States&quot;</span><span class="p">)</span>
-<span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;Northern Ireland&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;Ireland&#39;</span><span class="p">]</span>
-<span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;Wales&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;England&#39;</span><span class="p">]</span>
-<span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;Scotland&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_countries</span><span class="p">[</span><span class="s1">&#39;England&#39;</span><span class="p">]</span>
+<span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Côte d&#39;Ivoire&quot;</span><span class="p">:</span><span class="s1">&#39;Ivory Coast&#39;</span><span class="p">,</span><span class="s2">&quot;United Kingdom&quot;</span><span class="p">:</span><span class="s2">&quot;England&quot;</span><span class="p">,</span><span class="s2">&quot;Korea, South&quot;</span><span class="p">:</span><span class="s2">&quot;Korea Republic&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;United States&quot;</span><span class="p">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Ireland&quot;</span><span class="p">:</span> <span class="s2">&quot;Northern Ireland&quot;</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">map_countries</span><span class="p">(</span><span class="n">cur_str</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cur_str</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mapping</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">cur_str</span>
+    <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">cur_str</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">scrape_gdp_pp_by_year</span><span class="p">():</span>
+    <span class="c1"># {(2010) -&gt; {(US) -&gt; 300k}}</span>
+    <span class="n">gdp_date_obj</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/List_of_countries_by_past_and_projected_GDP_(nominal)_per_capita&quot;</span>
+    <span class="n">my_page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">my_page</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    <span class="n">sections</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">)</span>
+
+    <span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2006</span><span class="p">,</span><span class="mi">2007</span><span class="p">,</span><span class="mi">2008</span><span class="p">,</span><span class="mi">2009</span><span class="p">]</span>
+    <span class="n">header1</span> <span class="o">=</span> <span class="n">sections</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">all_countries1</span> <span class="o">=</span> <span class="n">header1</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+
+    <span class="n">country_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">interval_sz</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_countries1</span><span class="p">),</span> <span class="n">interval_sz</span><span class="p">):</span>
+        <span class="n">cur_country</span> <span class="o">=</span> <span class="n">all_countries1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">interval_sz</span><span class="o">-</span><span class="n">offset</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">interval_sz</span><span class="p">]</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">all_countries1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;NFKD&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">country_name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">map_countries</span><span class="p">(</span><span class="n">country_name</span><span class="p">,</span><span class="n">mapping</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">country_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">relevant_countries</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">country_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">country_name</span><span class="p">)</span>
+        <span class="n">country_gdps</span> <span class="o">=</span> <span class="n">cur_country</span>
+        <span class="k">for</span> <span class="n">country_gdp</span><span class="p">,</span><span class="n">year</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">country_gdps</span><span class="p">,</span><span class="n">years</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">year</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gdp_date_obj</span><span class="p">:</span>
+                <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">gdp_amount</span> <span class="o">=</span> <span class="n">country_gdp</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="c1"># Impute missing data (Egypt) with previous year data and the previous percentage increase</span>
+            <span class="k">if</span> <span class="n">gdp_amount</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="n">prev_year</span> <span class="o">=</span> <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">country_name</span><span class="p">]</span>
+                <span class="n">prev2_year</span> <span class="o">=</span> <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="n">country_name</span><span class="p">]</span>
+                <span class="n">prev_year_pct_increase</span> <span class="o">=</span> <span class="n">prev_year</span><span class="o">/</span><span class="n">prev2_year</span>
+                <span class="n">gdp_amount</span> <span class="o">=</span> <span class="n">prev_year</span><span class="o">*</span><span class="n">prev_year_pct_increase</span>
+            <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="n">country_name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">gdp_amount</span><span class="p">)</span>
+
+
+    <span class="n">header</span> <span class="o">=</span> <span class="n">sections</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">all_countries</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+
+
+    <span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2010</span><span class="p">,</span><span class="mi">2011</span><span class="p">,</span><span class="mi">2012</span><span class="p">,</span><span class="mi">2013</span><span class="p">,</span><span class="mi">2014</span><span class="p">,</span><span class="mi">2015</span><span class="p">,</span><span class="mi">2016</span><span class="p">,</span><span class="mi">2017</span><span class="p">,</span><span class="mi">2018</span><span class="p">]</span>
+    <span class="n">interval_sz</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_countries</span><span class="p">),</span> <span class="n">interval_sz</span><span class="p">):</span>
+        <span class="n">cur_country</span> <span class="o">=</span> <span class="n">all_countries</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">interval_sz</span><span class="p">]</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">cur_country</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;NFKD&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">country_name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">country_name</span> <span class="o">=</span> <span class="n">map_countries</span><span class="p">(</span><span class="n">country_name</span><span class="p">,</span><span class="n">mapping</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">country_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">relevant_countries</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">country_gdps</span> <span class="o">=</span> <span class="n">cur_country</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">country_gdp</span><span class="p">,</span><span class="n">year</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">country_gdps</span><span class="p">,</span><span class="n">years</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">year</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gdp_date_obj</span><span class="p">:</span>
+                <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">gdp_amount</span> <span class="o">=</span> <span class="n">country_gdp</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="c1"># Impute missing data (Egypt) with previous year data and the previous percentage increase</span>
+            <span class="k">if</span> <span class="n">gdp_amount</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="n">prev_year</span> <span class="o">=</span> <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">country_name</span><span class="p">]</span>
+                <span class="n">prev2_year</span> <span class="o">=</span> <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="n">country_name</span><span class="p">]</span>
+                <span class="n">prev_year_pct_increase</span> <span class="o">=</span> <span class="n">prev_year</span><span class="o">/</span><span class="n">prev2_year</span>
+                <span class="n">gdp_amount</span> <span class="o">=</span> <span class="n">prev_year</span><span class="o">*</span><span class="n">prev_year_pct_increase</span>
+            <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="n">country_name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">gdp_amount</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">gdp_date_obj</span><span class="p">,</span><span class="n">country_set</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">gdp_date_obj</span><span class="p">,</span><span class="n">country_set</span> <span class="o">=</span> <span class="n">scrape_gdp_pp_by_year</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">keys</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="mi">2006</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2006</span><span class="p">,</span><span class="mi">2019</span><span class="p">):</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">keys</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">unmappable_countries</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">relevant_countries</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">country_set</span><span class="p">:</span>
+        <span class="n">unmappable_countries</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="n">unmappable_countries</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[18]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>{&#39;Ireland&#39;, &#39;Monaco&#39;, &#39;Réunion&#39;, &#39;Scotland&#39;, &#39;Wales&#39;}
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Hardcoded values from manual searching</span>
+<span class="n">gdp_pp_scotland</span> <span class="o">=</span> <span class="mi">43740</span>
+<span class="n">gdp_pp_wales</span> <span class="o">=</span> <span class="mi">24226</span>
+<span class="n">gdp_pp_monaco</span> <span class="o">=</span> <span class="mi">168000</span>
+<span class="n">gdp_pp_reunion</span> <span class="o">=</span> <span class="mi">23501</span>
 
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [174]:
+<span></span>In [20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">countryset</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">gdp_countries</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">countries</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">countryset</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span></span><span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2006</span><span class="p">,</span><span class="mi">2019</span><span class="p">):</span>
+    <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="s1">&#39;Ireland&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="s1">&#39;Northern Ireland&#39;</span><span class="p">]</span>
+    <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="s1">&#39;Scotland&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_pp_scotland</span>
+    <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="s1">&#39;Monaco&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_pp_monaco</span>
+    <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="s1">&#39;Wales&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_pp_wales</span>
+    <span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="s1">&#39;Réunion&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_pp_reunion</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create a column of GDP difference corresponding to that year</span>
+
+
+<span class="n">gdp_col_train</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">home_team_train</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">raw_gdp_train</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="k">for</span> <span class="n">team1</span><span class="p">,</span> <span class="n">team2</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">home</span><span class="p">,</span> <span class="n">neutral</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">],</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">],</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;neutral&#39;</span><span class="p">]):</span>
+
+    <span class="n">date</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team2</span><span class="p">]:</span>
+        <span class="n">gdp_col_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">gdp_col_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">date</span><span class="p">][</span><span class="n">team1</span><span class="p">]</span><span class="o">/</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">date</span><span class="p">][</span><span class="n">team2</span><span class="p">]))</span>
+
+
+
+    <span class="k">if</span> <span class="n">team1</span> <span class="o">==</span> <span class="n">home</span><span class="p">:</span>
+        <span class="n">home_team_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">neutral</span> <span class="ow">and</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team1</span><span class="p">]</span> <span class="o">==</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">home</span><span class="p">]</span>
+          <span class="ow">and</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">home</span><span class="p">]):</span>
+        <span class="n">home_team_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">team2</span> <span class="o">==</span> <span class="n">home</span><span class="p">:</span>
+        <span class="n">home_team_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">neutral</span> <span class="ow">and</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">home</span><span class="p">]</span>
+          <span class="ow">and</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team2</span><span class="p">]</span> <span class="o">==</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">home</span><span class="p">]):</span>
+        <span class="n">home_team_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">home_team_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">raw_gdp_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">date</span><span class="p">][</span><span class="n">team1</span><span class="p">]</span><span class="o">-</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="n">date</span><span class="p">][</span><span class="n">team2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># train.loc[train[&#39;neutral&#39;]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;gdp_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_col_train</span>
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;is_home&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">home_team_train</span>
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;raw_gdp_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">raw_gdp_train</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [175]:
+<span></span>In [24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span> <span class="n">country</span><span class="p">,</span><span class="n">_</span> <span class="ow">in</span> <span class="n">gdp_countries</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">country</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">country_to_continent</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
+<span></span><span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;is_home&#39;</span><span class="p">]</span><span class="o">==-</span><span class="mi">1</span><span class="p">]),</span><span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;is_home&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Macau
-Hong Kong
-Bahamas, The
-World[n 1]
-Congo, Rep.
-Timor-Leste
-Micronesia
-São Tomé and Príncipe
-Guinea-Bissau
-Gambia, The
-Congo, Dem. Rep.
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [176]:
+<span></span>Out[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">gdp_col</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">col1</span><span class="p">,</span><span class="n">col2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-    <span class="n">team1</span> <span class="o">=</span> <span class="n">col1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">team2</span> <span class="o">=</span> <span class="n">col2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team2</span><span class="p">]:</span>
-        <span class="n">gdp_col</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">gdp_col</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">gdp_countries</span><span class="p">[</span><span class="n">team1</span><span class="p">])</span><span class="o">/</span><span class="n">gdp_countries</span><span class="p">[</span><span class="n">team2</span><span class="p">])</span>
-<span class="n">train</span><span class="p">[</span><span class="s1">&#39;gdp_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_col</span>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(42, 298)
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [177]:
+<span></span>In [25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1164,7 +977,7 @@ Congo, Dem. Rep.
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[177]:
+<span></span>Out[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1189,24 +1002,24 @@ Congo, Dem. Rep.
       <th>game_date</th>
       <th>home_team</th>
       <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
       <th>country</th>
       <th>neutral</th>
-      <th>home_win</th>
-      <th>attack_diff</th>
-      <th>bup_dribbling_diff</th>
-      <th>bup_passing_diff</th>
-      <th>bup_speed_diff</th>
-      <th>...</th>
-      <th>midfield_diff</th>
       <th>overall_diff</th>
-      <th>prestige_diff</th>
-      <th>start_age_diff</th>
-      <th>value_euros_millions_diff</th>
-      <th>wage_euros_thousands_diff</th>
-      <th>attack_home_defence_away_diff</th>
       <th>attack_away_defence_home_diff</th>
-      <th>rank_diff</th>
+      <th>...</th>
+      <th>cc_crossing_diff</th>
+      <th>cc_passing_diff</th>
+      <th>cc_shooting_diff</th>
+      <th>d_aggresion_diff</th>
+      <th>d_pressure_diff</th>
+      <th>d_width_diff</th>
+      <th>home_win</th>
       <th>gdp_diff</th>
+      <th>is_home</th>
+      <th>raw_gdp_diff</th>
     </tr>
   </thead>
   <tbody>
@@ -1215,157 +1028,706 @@ Congo, Dem. Rep.
       <td>2006-09-01 00:00:00+00:00</td>
       <td>Denmark</td>
       <td>Portugal</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Friendly</td>
       <td>Denmark</td>
       <td>False</td>
-      <td>1</td>
-      <td>-1.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
       <td>-3.0</td>
-      <td>-3.0</td>
-      <td>-2.0</td>
-      <td>-0.27</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-4.0</td>
       <td>3.0</td>
-      <td>9.0</td>
-      <td>1.639666</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>0.965957</td>
+      <td>1</td>
+      <td>32284.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2006-10-11 00:00:00+00:00</td>
       <td>Poland</td>
       <td>Portugal</td>
+      <td>2</td>
+      <td>1</td>
+      <td>UEFA Euro qualification</td>
       <td>Poland</td>
       <td>False</td>
-      <td>1</td>
-      <td>-4.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-10.0</td>
-      <td>-7.0</td>
-      <td>-4.0</td>
-      <td>1.09</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
       <td>-7.0</td>
       <td>10.0</td>
-      <td>26.0</td>
-      <td>0.966720</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>-0.790870</td>
+      <td>1</td>
+      <td>-10843.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2006-09-06 00:00:00+00:00</td>
       <td>Finland</td>
       <td>Portugal</td>
+      <td>1</td>
+      <td>1</td>
+      <td>UEFA Euro qualification</td>
       <td>Finland</td>
       <td>False</td>
-      <td>0</td>
-      <td>-6.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-13.0</td>
       <td>-7.0</td>
-      <td>-9.0</td>
-      <td>0.91</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-9.0</td>
       <td>9.0</td>
-      <td>59.0</td>
-      <td>1.455813</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>0.731759</td>
+      <td>1</td>
+      <td>21401.0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>2006-10-07 00:00:00+00:00</td>
       <td>Denmark</td>
       <td>Northern Ireland</td>
+      <td>0</td>
+      <td>0</td>
+      <td>UEFA Euro qualification</td>
       <td>Denmark</td>
       <td>False</td>
-      <td>0</td>
-      <td>13.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>10.0</td>
       <td>9.0</td>
-      <td>8.0</td>
-      <td>-0.27</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>12.0</td>
       <td>-11.0</td>
-      <td>-42.0</td>
-      <td>0.683074</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>-0.031258</td>
+      <td>1</td>
+      <td>-1655.0</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2006-10-11 00:00:00+00:00</td>
       <td>Austria</td>
       <td>Switzerland</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Friendly</td>
       <td>Austria</td>
       <td>False</td>
-      <td>1</td>
-      <td>-6.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>...</td>
-      <td>-7.0</td>
       <td>-3.0</td>
-      <td>-1.0</td>
-      <td>-0.73</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-7.0</td>
       <td>4.0</td>
-      <td>56.0</td>
-      <td>0.802591</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>-0.356411</td>
+      <td>1</td>
+      <td>-17329.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 30 columns</p>
+<p>5 rows × 35 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [178]:
+<span></span>In [26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">gdp_col</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">col1</span><span class="p">,</span><span class="n">col2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-    <span class="n">team1</span> <span class="o">=</span> <span class="n">col1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">team2</span> <span class="o">=</span> <span class="n">col2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span></span><span class="n">gdp_col_test</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">home_team_test</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">raw_gdp_test</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">team1</span><span class="p">,</span><span class="n">team2</span><span class="p">,</span><span class="n">home</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">],</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">],</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team2</span><span class="p">]:</span>
-        <span class="n">gdp_col</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">gdp_col_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">gdp_col</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">gdp_countries</span><span class="p">[</span><span class="n">team1</span><span class="p">])</span><span class="o">/</span><span class="n">gdp_countries</span><span class="p">[</span><span class="n">team2</span><span class="p">])</span>
-<span class="n">test</span><span class="p">[</span><span class="s1">&#39;gdp_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_col</span>
+        <span class="n">gdp_col_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="mi">2018</span><span class="p">][</span><span class="n">team1</span><span class="p">])</span><span class="o">/</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="mi">2018</span><span class="p">][</span><span class="n">team2</span><span class="p">]))</span>
+
+    <span class="k">if</span> <span class="n">team1</span> <span class="o">==</span> <span class="n">home</span><span class="p">:</span>
+        <span class="n">home_team_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">country_to_continent</span><span class="p">[</span><span class="n">team1</span><span class="p">]</span> <span class="o">==</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">home</span><span class="p">]</span>
+          <span class="ow">and</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">home</span><span class="p">]):</span>
+        <span class="n">home_team_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">team2</span> <span class="o">==</span> <span class="n">home</span><span class="p">:</span>
+        <span class="n">home_team_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">country_to_continent</span><span class="p">[</span><span class="n">team1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">home</span><span class="p">]</span>
+          <span class="ow">and</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">team2</span><span class="p">]</span> <span class="o">==</span> <span class="n">country_to_continent</span><span class="p">[</span><span class="n">home</span><span class="p">]):</span>
+        <span class="n">home_team_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">home_team_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">raw_gdp_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="mi">2018</span><span class="p">][</span><span class="n">team1</span><span class="p">]</span><span class="o">-</span><span class="n">gdp_date_obj</span><span class="p">[</span><span class="mi">2018</span><span class="p">][</span><span class="n">team2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [179]:
+<span></span>In [27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span></span><span class="nb">len</span><span class="p">(</span><span class="n">home_team_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[179]:
+<span></span>Out[27]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>64
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;gdp_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_col_test</span>
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;is_home&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">home_team_test</span>
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;raw_gdp_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">raw_gdp_test</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">[[</span><span class="s1">&#39;home_team&#39;</span><span class="p">,</span><span class="s1">&#39;away_team&#39;</span><span class="p">,</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span><span class="s1">&#39;is_home&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;is_home&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[29]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>26
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test</span><span class="p">[[</span><span class="s1">&#39;home_team&#39;</span><span class="p">,</span><span class="s1">&#39;away_team&#39;</span><span class="p">,</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span><span class="s1">&#39;is_home&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[30]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_win</th>
+      <th>is_home</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Russia</td>
+      <td>Saudi Arabia</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Egypt</td>
+      <td>Uruguay</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Morocco</td>
+      <td>Iran</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Portugal</td>
+      <td>Spain</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>France</td>
+      <td>Australia</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Argentina</td>
+      <td>Iceland</td>
+      <td>0</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Peru</td>
+      <td>Denmark</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Croatia</td>
+      <td>Nigeria</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Costa Rica</td>
+      <td>Serbia</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Germany</td>
+      <td>Mexico</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Brazil</td>
+      <td>Switzerland</td>
+      <td>0</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Sweden</td>
+      <td>Korea Republic</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Belgium</td>
+      <td>Panama</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Tunisia</td>
+      <td>England</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Colombia</td>
+      <td>Japan</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Poland</td>
+      <td>Senegal</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Russia</td>
+      <td>Egypt</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Portugal</td>
+      <td>Morocco</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Uruguay</td>
+      <td>Saudi Arabia</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Iran</td>
+      <td>Spain</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Denmark</td>
+      <td>Australia</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>France</td>
+      <td>Peru</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Argentina</td>
+      <td>Croatia</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Brazil</td>
+      <td>Costa Rica</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Nigeria</td>
+      <td>Iceland</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Serbia</td>
+      <td>Switzerland</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Belgium</td>
+      <td>Tunisia</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Korea Republic</td>
+      <td>Mexico</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Germany</td>
+      <td>Sweden</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>England</td>
+      <td>Panama</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Spain</td>
+      <td>Morocco</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Iran</td>
+      <td>Portugal</td>
+      <td>0</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Australia</td>
+      <td>Peru</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Denmark</td>
+      <td>France</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Nigeria</td>
+      <td>Argentina</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Iceland</td>
+      <td>Croatia</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Korea Republic</td>
+      <td>Germany</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Mexico</td>
+      <td>Sweden</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Serbia</td>
+      <td>Brazil</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Switzerland</td>
+      <td>Costa Rica</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Japan</td>
+      <td>Poland</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Senegal</td>
+      <td>Colombia</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Panama</td>
+      <td>Tunisia</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>England</td>
+      <td>Belgium</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>France</td>
+      <td>Argentina</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Uruguay</td>
+      <td>Portugal</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Russia</td>
+      <td>Spain</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Croatia</td>
+      <td>Denmark</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>Brazil</td>
+      <td>Mexico</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>Belgium</td>
+      <td>Japan</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>Sweden</td>
+      <td>Switzerland</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>Colombia</td>
+      <td>England</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>Uruguay</td>
+      <td>France</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Brazil</td>
+      <td>Belgium</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Sweden</td>
+      <td>England</td>
+      <td>-1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Russia</td>
+      <td>Croatia</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>France</td>
+      <td>Belgium</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>Croatia</td>
+      <td>England</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>Belgium</td>
+      <td>England</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>France</td>
+      <td>Croatia</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>64 rows × 4 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;tournament&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;FIFA World Cup&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Spain&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[31]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1390,160 +1752,337 @@ Congo, Dem. Rep.
       <th>game_date</th>
       <th>home_team</th>
       <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
       <th>country</th>
       <th>neutral</th>
-      <th>home_win</th>
-      <th>attack_diff</th>
-      <th>bup_dribbling_diff</th>
-      <th>bup_passing_diff</th>
-      <th>bup_speed_diff</th>
-      <th>...</th>
       <th>overall_diff</th>
-      <th>prestige_diff</th>
-      <th>start_age_diff</th>
-      <th>value_euros_millions_diff</th>
-      <th>wage_euros_thousands_diff</th>
-      <th>attack_home_defence_away_diff</th>
       <th>attack_away_defence_home_diff</th>
-      <th>rank_diff</th>
-      <th>Group</th>
+      <th>...</th>
+      <th>cc_crossing_diff</th>
+      <th>cc_passing_diff</th>
+      <th>cc_shooting_diff</th>
+      <th>d_aggresion_diff</th>
+      <th>d_pressure_diff</th>
+      <th>d_width_diff</th>
+      <th>home_win</th>
       <th>gdp_diff</th>
+      <th>is_home</th>
+      <th>raw_gdp_diff</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>Russia</td>
-      <td>Saudi Arabia</td>
-      <td>Russia</td>
-      <td>False</td>
-      <td>1</td>
-      <td>9.0</td>
-      <td>9.0</td>
-      <td>-17.0</td>
-      <td>-19.0</td>
-      <td>...</td>
-      <td>7.0</td>
-      <td>2.0</td>
-      <td>-0.18</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>9.0</td>
-      <td>-6.0</td>
-      <td>3.0</td>
-      <td>A</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NaN</td>
-      <td>Egypt</td>
-      <td>Uruguay</td>
-      <td>Russia</td>
-      <td>True</td>
-      <td>-1</td>
-      <td>-14.0</td>
-      <td>-8.0</td>
-      <td>13.0</td>
-      <td>14.0</td>
-      <td>...</td>
-      <td>-4.0</td>
-      <td>-2.0</td>
-      <td>1.55</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-7.0</td>
-      <td>12.0</td>
-      <td>31.0</td>
-      <td>A</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NaN</td>
-      <td>Morocco</td>
-      <td>Iran</td>
-      <td>Russia</td>
-      <td>True</td>
-      <td>-1</td>
-      <td>-7.0</td>
-      <td>-15.0</td>
-      <td>-31.0</td>
-      <td>-31.0</td>
-      <td>...</td>
-      <td>2.0</td>
-      <td>-0.0</td>
-      <td>0.28</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>B</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NaN</td>
-      <td>Portugal</td>
+      <th>691</th>
+      <td>2010-06-16 00:00:00+00:00</td>
       <td>Spain</td>
-      <td>Russia</td>
-      <td>True</td>
+      <td>Switzerland</td>
       <td>0</td>
-      <td>-0.0</td>
-      <td>27.0</td>
-      <td>22.0</td>
-      <td>19.0</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>9.0</td>
+      <td>-8.0</td>
       <td>...</td>
-      <td>-1.0</td>
-      <td>-1.0</td>
-      <td>-1.54</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>0.0</td>
+      <td>-20.0</td>
       <td>3.0</td>
-      <td>-6.0</td>
-      <td>B</td>
-      <td>0.792696</td>
+      <td>-5.0</td>
+      <td>-15.0</td>
+      <td>15.0</td>
+      <td>10.0</td>
+      <td>-1</td>
+      <td>-0.888649</td>
+      <td>0</td>
+      <td>-44105.0</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>NaN</td>
-      <td>France</td>
-      <td>Australia</td>
-      <td>Russia</td>
-      <td>True</td>
+      <th>806</th>
+      <td>2010-06-29 00:00:00+00:00</td>
+      <td>Spain</td>
+      <td>Portugal</td>
       <td>1</td>
-      <td>16.0</td>
-      <td>6.0</td>
-      <td>-19.0</td>
-      <td>-14.0</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>3.0</td>
+      <td>-5.0</td>
       <td>...</td>
-      <td>13.0</td>
-      <td>4.0</td>
-      <td>-3.27</td>
+      <td>-25.0</td>
       <td>-0.0</td>
+      <td>-5.0</td>
+      <td>5.0</td>
+      <td>25.0</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0.310503</td>
+      <td>0</td>
+      <td>8222.0</td>
+    </tr>
+    <tr>
+      <th>1279</th>
+      <td>2014-06-13 00:00:00+00:00</td>
+      <td>Spain</td>
+      <td>Netherlands</td>
+      <td>1</td>
+      <td>5</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>6.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>-15.0</td>
+      <td>-14.0</td>
+      <td>17.0</td>
       <td>-0.0</td>
-      <td>15.0</td>
-      <td>-12.0</td>
-      <td>-29.0</td>
-      <td>C</td>
+      <td>-11.0</td>
+      <td>8.0</td>
+      <td>-1</td>
+      <td>-0.565914</td>
+      <td>0</td>
+      <td>-22576.0</td>
+    </tr>
+    <tr>
+      <th>1290</th>
+      <td>2014-06-18 00:00:00+00:00</td>
+      <td>Spain</td>
+      <td>Chile</td>
+      <td>0</td>
+      <td>2</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>9.0</td>
+      <td>-7.0</td>
+      <td>...</td>
+      <td>-13.0</td>
+      <td>-24.0</td>
+      <td>2.0</td>
+      <td>6.0</td>
+      <td>2.0</td>
+      <td>10.0</td>
+      <td>-1</td>
       <td>0.000000</td>
+      <td>-1</td>
+      <td>15041.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 31 columns</p>
+<p>4 rows × 35 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [180]:
+<span></span>In [32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/train_merged.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/test_merged.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span></span><span class="c1"># 2006 Italy</span>
+<span class="c1"># 2010 spain</span>
+<span class="c1"># 2014 germany</span>
+<span class="c1"># temp = train.loc[train[&#39;tournament&#39;] == &#39;FIFA World Cup&#39;]</span>
+<span class="n">prev_champs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Italy&#39;</span><span class="p">,</span><span class="s1">&#39;Spain&#39;</span><span class="p">]</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2010</span><span class="p">,</span><span class="mi">2014</span><span class="p">]</span>
+<span class="n">prev_wc_champ</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">date</span><span class="p">,</span><span class="n">tour</span><span class="p">,</span><span class="n">team1</span><span class="p">,</span><span class="n">team2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;tournament&#39;</span><span class="p">],</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">],</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">tour</span> <span class="o">!=</span> <span class="s1">&#39;FIFA World Cup&#39;</span><span class="p">:</span>
+        <span class="n">prev_wc_champ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">date_str</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">year</span><span class="p">,</span><span class="n">prev_champ</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">years</span><span class="p">,</span><span class="n">prev_champs</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">year</span> <span class="o">==</span> <span class="n">date_str</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">team1</span> <span class="o">==</span> <span class="n">prev_champ</span><span class="p">:</span>
+                    <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">elif</span> <span class="n">team2</span> <span class="o">==</span> <span class="n">prev_champ</span><span class="p">:</span>
+                    <span class="n">val</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">prev_wc_champ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;prev_champ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prev_wc_champ</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># train.loc[train[&#39;prev_champ&#39;] == 1]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 2018</span>
+<span class="n">test_prev_champ</span> <span class="o">=</span> <span class="s1">&#39;Germany&#39;</span>
+
+<span class="n">test_prev_wc_champ</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">team1</span><span class="p">,</span><span class="n">team2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">],</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;away_team&#39;</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">team1</span> <span class="o">==</span> <span class="n">test_prev_champ</span><span class="p">:</span>
+        <span class="n">test_prev_wc_champ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">team2</span> <span class="o">==</span> <span class="n">test_prev_champ</span><span class="p">:</span>
+        <span class="n">test_prev_wc_champ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">test_prev_wc_champ</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;prev_champ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_prev_wc_champ</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[37]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>game_date</th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
+      <th>country</th>
+      <th>neutral</th>
+      <th>overall_diff</th>
+      <th>attack_away_defence_home_diff</th>
+      <th>...</th>
+      <th>d_aggresion_diff</th>
+      <th>d_pressure_diff</th>
+      <th>d_width_diff</th>
+      <th>home_win</th>
+      <th>home_win_no_pk</th>
+      <th>Group</th>
+      <th>gdp_diff</th>
+      <th>is_home</th>
+      <th>raw_gdp_diff</th>
+      <th>prev_champ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9</th>
+      <td>NaN</td>
+      <td>Germany</td>
+      <td>Mexico</td>
+      <td>0</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>Russia</td>
+      <td>True</td>
+      <td>7.0</td>
+      <td>-5.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-2.0</td>
+      <td>20.0</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>F</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>37514.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>NaN</td>
+      <td>Germany</td>
+      <td>Sweden</td>
+      <td>2</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>Russia</td>
+      <td>True</td>
+      <td>9.0</td>
+      <td>-7.0</td>
+      <td>...</td>
+      <td>-5.0</td>
+      <td>-0.0</td>
+      <td>25.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>F</td>
+      <td>-0.195228</td>
+      <td>0</td>
+      <td>-10248.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 38 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/train_gdp.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/test_gdp.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
 </pre></div>
 </div>
 </div>
@@ -1560,25 +2099,21 @@ Congo, Dem. Rep.
 </div>
 
 
-          </div>
-          
-      </div>
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
       
-      |
-      <a href="../_sources/sofifa/GDP_features.ipynb.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
+    </p>
+    <p>
+        &copy; Copyright 2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
   </body>
 </html>
