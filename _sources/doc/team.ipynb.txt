@@ -29,18 +29,18 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Matteo Zhang\n",
+    "## Pat Sukhum\n",
     "\n",
-    "![Matteo](img/pikachu.jpg) \n"
+    "![Pat](img/leetcode.png) \n"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Pat Sukhum\n",
+    "## Matteo Zhang\n",
     "\n",
-    "![Pat](img/leetcode.png) \n"
+    "![Matteo](img/pikachu.jpg) \n"
    ]
   }
  ],
