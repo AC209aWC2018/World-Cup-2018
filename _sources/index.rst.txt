@@ -21,7 +21,6 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
    doc/EDA-notebook.ipynb
 
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Models:
@@ -31,6 +30,6 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
 .. toctree::
    :maxdepth: 1
-   :caption: Conclusion 
+   :caption: Conclusion:
 
-   models/summary.ipynb
+   doc/summary.ipynb
