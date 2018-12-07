@@ -11,18 +11,15 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
    doc/problem_statement.md
    doc/team.ipynb
-   
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Milestones:
-   
-   doc/milestone2.ipynb
-   doc/milestone3-report.ipynb
+   doc/related_works.ipynb
+   doc/data_description.ipynb
 
 .. toctree::
    :maxdepth: 1
    :caption: Exploratory Data Analysis
+
+   doc/EDA-notebook.ipynb
+
 
 
 .. toctree::
@@ -32,3 +29,8 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
    models/baseline_model.ipynb
    models/beyond_baseline.ipynb
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Conclusion 
+
+   models/summary.ipynb

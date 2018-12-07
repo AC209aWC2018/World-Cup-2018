@@ -1,4 +1,4 @@
-Project Statement
+Overview and Motivation
 ******************
 
 While soccer is one of the most popular sports in the world, its analytics is lackluster in comparison to other popular sports such as baseball, American football, hockey, and basketball. This is due to the fact that aside from the World Cup, international teams don’t play each other very frequently. Therefore, there is a lack of high quality data that can be immediately fed into models to perform predictions.
