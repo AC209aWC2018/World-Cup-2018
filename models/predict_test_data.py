@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def predict_test_data(test, model):
+def predict_test_data(test, model, softmax = True, wc_playoff_model = None):
 #     predictions = []
 #     for i in range(len(test)):
 #         #Rounds where there are ties
@@ -16,9 +16,13 @@ def predict_test_data(test, model):
 #                 predictions.append(1)
 #             else:
 #                 predictions.append(-1)
+    if softmax:
                 
-    return [np.where(np.argsort(val) == 1)[0][0]-1 if (i >= 48) & (np.argmax(val) == 1)
-                       else np.argmax(val)-1 for i, val in enumerate(model.predict_proba(test))]
+        return [np.where(np.argsort(val) == 1)[0][0]-1 if (i >= 48) & (np.argmax(val) == 1)
+                           else np.argmax(val)-1 for i, val in enumerate(model.predict_proba(test))]
+    
+    else: 
+        
+        return list(model.predict(test[:48])) + list(wc_playoff_model.predict(test[48:]))
             
-    return predictions
         
