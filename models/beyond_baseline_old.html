@@ -18,8 +18,6 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Summary and Future Work" href="../doc/summary.html" />
-    <link rel="prev" title="Baseline Model" href="baseline_model.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -64,9 +62,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../doc/EDA-notebook.html">Exploratory Data Analysis</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Models:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="baseline_model.html">Baseline Model</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Modeling with Feature Engineered Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beyond_baseline.html">Modeling with Feature Engineered Features</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Conclusion:</span></p>
 <ul>
@@ -88,7 +86,8 @@
 <li><a class="reference internal" href="#Fitting-the-Models">Fitting the Models</a></li>
 <li><a class="reference internal" href="#Stacking">Stacking</a></li>
 <li><a class="reference internal" href="#Principal-Component-Regression">Principal Component Regression</a></li>
-<li><a class="reference internal" href="#Partial-Least-Squares-Regression">Partial Least Squares Regression</a></li>
+<li><a class="reference internal" href="#Partial-Least-Squares">Partial Least Squares</a></li>
+<li><a class="reference internal" href="#Analysis">Analysis</a></li>
 </ul>
 </li>
 </ul>
@@ -99,14 +98,6 @@
             
               
                 
-  <li>
-    <a href="baseline_model.html" title="Previous Chapter: Baseline Model"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Baseline Model</span>
-    </a>
-  </li>
-  <li>
-    <a href="../doc/summary.html" title="Next Chapter: Summary and Future Work"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Summary and F... &raquo;</span>
-    </a>
-  </li>
               
             
             
@@ -114,7 +105,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/models/beyond_baseline.ipynb.txt"
+  <a href="../_sources/models/beyond_baseline_old.ipynb.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -361,24 +352,23 @@ engineered.</p>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;overall_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_away_defence_home_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;attack_home_defence_away_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;prestige_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;growth_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;full_age_diff&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;rank_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;prestige_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;growth_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;full_age_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;start_age_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;value_euros_millions_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;wage_euros_thousands_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;goalkeeper_overall_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;bup_dribbling_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_passing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_speed_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;cc_crossing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;cc_passing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;cc_shooting_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;d_aggresion_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;d_pressure_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;d_width_diff&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;gdp_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;is_home&#39;</span><span class="p">,</span> <span class="s1">&#39;raw_gdp_diff&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;win_momentum_past_1_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;lose_momentum_past_1_games_diff&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;win_momentum_past_2_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;lose_momentum_past_2_games_diff&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;win_momentum_past_3_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;lose_momentum_past_3_games_diff&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;win_momentum_past_4_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;lose_momentum_past_4_games_diff&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;win_momentum_past_5_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;lose_momentum_past_5_games_diff&#39;</span><span class="p">,</span>
-<span class="p">]</span>
+           <span class="s1">&#39;gdp_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;is_home&#39;</span><span class="p">,</span> <span class="s1">&#39;raw_gdp_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;wins_past_1_games_diff&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;wins_home_against_away_1_games&#39;</span><span class="p">,</span> <span class="s1">&#39;wins_past_2_games_diff&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;wins_home_against_away_2_games&#39;</span><span class="p">,</span> <span class="s1">&#39;wins_past_3_games_diff&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;wins_home_against_away_3_games&#39;</span><span class="p">,</span> <span class="s1">&#39;wins_past_4_games_diff&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;wins_home_against_away_4_games&#39;</span><span class="p">,</span> <span class="s1">&#39;wins_past_5_games_diff&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;wins_home_against_away_5_games&#39;</span><span class="p">,</span> <span class="s1">&#39;score_past_1_games_diff&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;score_conceded_past_1_games_diff&#39;</span><span class="p">]</span>
 
 <span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]]</span>
-<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="n">columns</span>  <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win_no_pk&#39;</span><span class="p">]]</span>
 <span class="n">wc_train</span> <span class="o">=</span> <span class="n">wc_playoffs_train</span><span class="p">[</span><span class="n">columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]]</span>
-
+<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="n">columns</span>  <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win_no_pk&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -439,8 +429,8 @@ data and select the one with the best validation accuracy.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Logistic Regression Train Score: 0.5069215557020436
-Logistic Regression Validation Score: 0.5368421052631579
+Logistic Regression Train Score: 0.5108767303889256
+Logistic Regression Validation Score: 0.5263157894736842
 </pre></div></div>
 </div>
 <p>Like before, we first check whether the variances across the three
@@ -485,21 +475,21 @@ outcomes are equal, and they do seem quite equal.</p>
       <th>attack_home_defence_away_diff</th>
       <th>defence_diff</th>
       <th>midfield_diff</th>
+      <th>rank_diff</th>
       <th>prestige_diff</th>
       <th>growth_diff</th>
       <th>full_age_diff</th>
-      <th>start_age_diff</th>
       <th>...</th>
-      <th>win_momentum_past_1_games_diff</th>
-      <th>lose_momentum_past_1_games_diff</th>
-      <th>win_momentum_past_2_games_diff</th>
-      <th>lose_momentum_past_2_games_diff</th>
-      <th>win_momentum_past_3_games_diff</th>
-      <th>lose_momentum_past_3_games_diff</th>
-      <th>win_momentum_past_4_games_diff</th>
-      <th>lose_momentum_past_4_games_diff</th>
-      <th>win_momentum_past_5_games_diff</th>
-      <th>lose_momentum_past_5_games_diff</th>
+      <th>wins_past_2_games_diff</th>
+      <th>wins_home_against_away_2_games</th>
+      <th>wins_past_3_games_diff</th>
+      <th>wins_home_against_away_3_games</th>
+      <th>wins_past_4_games_diff</th>
+      <th>wins_home_against_away_4_games</th>
+      <th>wins_past_5_games_diff</th>
+      <th>wins_home_against_away_5_games</th>
+      <th>score_past_1_games_diff</th>
+      <th>score_conceded_past_1_games_diff</th>
     </tr>
     <tr>
       <th>home_win</th>
@@ -535,21 +525,21 @@ outcomes are equal, and they do seem quite equal.</p>
       <td>41.497639</td>
       <td>37.554931</td>
       <td>38.133908</td>
+      <td>916.793268</td>
       <td>25.423806</td>
       <td>2.770866</td>
       <td>2.489490</td>
-      <td>4.552043</td>
       <td>...</td>
-      <td>0.294715</td>
-      <td>0.028413</td>
-      <td>0.582006</td>
-      <td>0.055080</td>
-      <td>0.838886</td>
-      <td>0.080313</td>
-      <td>1.163321</td>
-      <td>0.113674</td>
-      <td>1.431640</td>
-      <td>0.143578</td>
+      <td>0.245064</td>
+      <td>0.111833</td>
+      <td>0.160882</td>
+      <td>0.107476</td>
+      <td>0.128351</td>
+      <td>0.105429</td>
+      <td>0.104187</td>
+      <td>0.105104</td>
+      <td>3.458817</td>
+      <td>2.980564</td>
     </tr>
     <tr>
       <th>0</th>
@@ -559,21 +549,21 @@ outcomes are equal, and they do seem quite equal.</p>
       <td>46.137393</td>
       <td>43.559341</td>
       <td>41.798216</td>
+      <td>960.540851</td>
       <td>30.781631</td>
       <td>2.593080</td>
       <td>2.596855</td>
-      <td>4.532752</td>
       <td>...</td>
-      <td>0.271093</td>
-      <td>0.028312</td>
-      <td>0.523516</td>
-      <td>0.054950</td>
-      <td>0.808391</td>
-      <td>0.087430</td>
-      <td>1.049194</td>
-      <td>0.111427</td>
-      <td>1.315560</td>
-      <td>0.141014</td>
+      <td>0.226939</td>
+      <td>0.120386</td>
+      <td>0.159603</td>
+      <td>0.113178</td>
+      <td>0.118615</td>
+      <td>0.111858</td>
+      <td>0.097423</td>
+      <td>0.111192</td>
+      <td>3.370146</td>
+      <td>2.821887</td>
     </tr>
     <tr>
       <th>1</th>
@@ -583,25 +573,25 @@ outcomes are equal, and they do seem quite equal.</p>
       <td>45.265228</td>
       <td>43.509512</td>
       <td>42.634416</td>
+      <td>936.866455</td>
       <td>26.985673</td>
       <td>2.953428</td>
       <td>2.406626</td>
-      <td>4.359358</td>
       <td>...</td>
-      <td>0.248230</td>
-      <td>0.026205</td>
-      <td>0.465120</td>
-      <td>0.049671</td>
-      <td>0.717445</td>
-      <td>0.076786</td>
-      <td>1.023086</td>
-      <td>0.111290</td>
-      <td>1.291213</td>
-      <td>0.144669</td>
+      <td>0.209184</td>
+      <td>0.114938</td>
+      <td>0.149652</td>
+      <td>0.109862</td>
+      <td>0.124287</td>
+      <td>0.107973</td>
+      <td>0.104463</td>
+      <td>0.108109</td>
+      <td>2.869865</td>
+      <td>2.709063</td>
     </tr>
   </tbody>
 </table>
-<p>3 rows × 35 columns</p>
+<p>3 rows × 38 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -634,7 +624,7 @@ outcomes are equal, and they do seem quite equal.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-LDA Train Score: 0.5247198417930126
+LDA Train Score: 0.5240606460118655
 LDA Validation Score: 0.5473684210526316
 </pre></div></div>
 </div>
@@ -669,10 +659,11 @@ LDA Validation Score: 0.5473684210526316
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-QDA Train Score: 0.4963744232036915
-QDA Validation Score: 0.45263157894736844
+QDA Train Score: 0.5135135135135135
+QDA Validation Score: 0.4052631578947368
 </pre></div></div>
 </div>
+<p>Wow, QDA is not doing a great job at all.</p>
 <p>We will also try out Random Forest.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -681,11 +672,11 @@ QDA Validation Score: 0.45263157894736844
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">rf_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bootstrap&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
-             <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
-             <span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">],</span>
-             <span class="s1">&#39;min_samples_leaf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
-             <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
-             <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">]}</span>
+     <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+<span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">],</span>
+ <span class="s1">&#39;min_samples_leaf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+ <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+ <span class="s1">&#39;n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">]}</span>
 
 <span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(),</span> <span class="n">param_distributions</span><span class="o">=</span><span class="n">rf_params</span><span class="p">,</span>\
                                    <span class="n">n_iter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -713,8 +704,8 @@ QDA Validation Score: 0.45263157894736844
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Random Forest Train Score: 0.5266974291364536
-Random Forest Validation Score 0.5184210526315789
+Random Forest Train Score: 0.5510876730388925
+Random Forest Validation Score 0.5394736842105263
 </pre></div></div>
 </div>
 <p>Finally, XGBoost.</p>
@@ -746,8 +737,8 @@ Random Forest Validation Score 0.5184210526315789
 <span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xgb_model</span>
 <span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGBoost Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGBoost Validation Score </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGBoost Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;Random Forest&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGBoost Validation Score </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;Random Forest&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -756,8 +747,8 @@ Random Forest Validation Score 0.5184210526315789
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-XGBoost Train Score: 0.5398813447593935
-XGBoost Validation Score 0.5342105263157895
+XGBoost Train Score: 0.5510876730388925
+XGBoost Validation Score 0.5394736842105263
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -803,32 +794,32 @@ XGBoost Validation Score 0.5342105263157895
   <tbody>
     <tr>
       <th>Logistic Regression</th>
-      <td>0.506922</td>
-      <td>0.536842</td>
+      <td>0.510877</td>
+      <td>0.526316</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>LDA</th>
-      <td>0.52472</td>
+      <td>0.524061</td>
       <td>0.547368</td>
       <td>LinearDiscriminantAnalysis(n_components=None, ...</td>
     </tr>
     <tr>
       <th>QDA</th>
-      <td>0.496374</td>
-      <td>0.452632</td>
+      <td>0.513514</td>
+      <td>0.405263</td>
       <td>QuadraticDiscriminantAnalysis(priors=None, reg...</td>
     </tr>
     <tr>
       <th>Random Forest</th>
-      <td>0.526697</td>
-      <td>0.518421</td>
+      <td>0.551088</td>
+      <td>0.539474</td>
       <td>RandomizedSearchCV(cv=5, error_score='raise-de...</td>
     </tr>
     <tr>
       <th>XGBoost</th>
-      <td>0.539881</td>
-      <td>0.534211</td>
+      <td>0.575478</td>
+      <td>0.536842</td>
       <td>RandomizedSearchCV(cv=5, error_score='raise-de...</td>
     </tr>
   </tbody>
@@ -855,12 +846,9 @@ XGBoost Validation Score 0.5342105263157895
 We choose the final model to be the one with the highest validation score, which is LDA in this case
 </pre></div></div>
 </div>
-<p>Now to predict the test set. Similar to before, we will use three
-different approaches. For the WC Playoff Model approach, we will still
-use logistic regression for now.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [18]:
+<span></span>In [41]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -870,17 +858,10 @@ use logistic regression for now.</p>
 <span class="n">test_score</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">test_pred</span><span class="p">)</span>
 <span class="n">test_score_playoff</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">test_pred_playoff</span><span class="p">)</span>
 <span class="n">test_score_no_pk</span> <span class="o">=</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test_no_pk</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{}</span><span class="s2"> at 90 mins&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score_no_pk</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{}</span><span class="s2"> at end (Softmax)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{}</span><span class="s2"> at end (WC Playoff Model)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score_playoff</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{:.3f}</span><span class="s2"> at 90 mins&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score_no_pk</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{:.3f}</span><span class="s2"> at end (Softmax)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{:.3f}</span><span class="s2"> at end (WC Playoff Model)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score_playoff</span><span class="p">))</span>
 
-<span class="n">final_models_score</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s1">&#39;Train Score&#39;</span><span class="p">]</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s1">&#39;Validation Score&#39;</span><span class="p">]</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s2">&quot;Test Score (90 mins)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_score_no_pk</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s2">&quot;Test Score (Softmax)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_score</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s2">&quot;Test Score (WC Playoff Model)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_score_playoff</span>
 </pre></div>
 </div>
 </div>
@@ -889,51 +870,14 @@ use logistic regression for now.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-For the best Model, LDA, the test accuracy is 0.640625 at 90 mins
-For the best Model, LDA, the test accuracy is 0.671875 at end (Softmax)
-For the best Model, LDA, the test accuracy is 0.65625 at end (WC Playoff Model)
+For the best Model, LDA, the test accuracy is 0.625 at 90 mins
+For the best Model, LDA, the test accuracy is 0.656 at end (Softmax)
+For the best Model, LDA, the test accuracy is 0.625 at end (WC Playoff Model)
 </pre></div></div>
 </div>
-<p>Wow! It seems that our model with all the features is a decent
-improvement to the baseline model for the test set in all three
-approaches. However, the lower train and validation scores in general is
-a bit concerning.</p>
-<p>Like before, random forest seems to perform similarly to the best model,
-so we will utilize its feature importance again.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [19]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">feature_importances</span> <span class="o">=</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">feature_importances_</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;RF Feature Importances&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)),</span> <span class="n">feature_importances</span><span class="p">[</span><span class="n">indices</span><span class="p">],</span>
-       <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">columns</span><span class="p">)[</span><span class="n">indices</span><span class="p">],</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Feature Importances&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)]);</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_28_0.png" src="../_images/models_beyond_baseline_28_0.png" />
-</div>
-</div>
-<p>Like before, the ratings of the team are pretty important features. Many
-of the features we have engineered seem to be decent features as well,
-which should not be surprising from the EDA. Besides 3 of them, many of
-the momentum features are near the bottom, and this might be due to the
-fact that these momentum features are obviously highly correlated with
-each other, and this may be causing the lower train and validation
-scores. Many of the features in our feature are highly correlated; we
-would want to deal with this multicollinearity somehow to see if we can
-achieve better results.</p>
+<p>It seems that our model with all the features is an improvement to the
+baseline model for the test set. However, the lower validation scores in
+general is a bit concerning.</p>
 </div>
 <div class="section" id="Stacking">
 <h2>Stacking<a class="headerlink" href="#Stacking" title="Permalink to this headline">¶</a></h2>
@@ -943,7 +887,7 @@ stack the logistic regression, LDA, QDA, Random Forest, and XGBoost
 models.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [20]:
+<span></span>In [23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -970,7 +914,7 @@ models.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [21]:
+<span></span>In [24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -988,13 +932,13 @@ models.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Stacking Model Train Score: 0.5346077785102176
+Stacking Model Train Score: 0.5517468688200395
 Stacking Model Validation Score: 0.5342105263157895
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [22]:
+<span></span>In [46]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1014,15 +958,6 @@ Stacking Model Validation Score: 0.5342105263157895
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stacking Model Test Score at end (Softmax): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stack_model_test_acc</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stacking Model Test Score at end (WC Playoff Model): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stack_model_test_acc_wc_model</span><span class="p">))</span>
 
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;Stacking&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;Stacking&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">stack_model_predict</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">stack_model</span><span class="p">,</span>
-                                                                                         <span class="n">X_train</span><span class="p">))</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;Stacking&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">stack_model_predict</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">stack_model</span><span class="p">,</span>
-                                                                                         <span class="n">X_valid</span><span class="p">))</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;Stacking&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (90 mins)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stack_model_test_acc_no_pk</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;Stacking&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (Softmax)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stack_model_test_acc</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;Stacking&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (WC Playoff Model)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stack_model_test_acc_wc_model</span>
-
 </pre></div>
 </div>
 </div>
@@ -1032,39 +967,19 @@ Stacking Model Validation Score: 0.5342105263157895
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Stacking Model Test Score at 90 mins: 0.625
-Stacking Model Test Score at end (Softmax): 0.65625
-Stacking Model Test Score at end (WC Playoff Model): 0.65625
+Stacking Model Test Score at end (Softmax): 0.640625
+Stacking Model Test Score at end (WC Playoff Model): 0.625
 </pre></div></div>
 </div>
-<p>It seems that stacking in this case did not really help that much. The
-test accuarcies are quite low, although still higher than those of the
-baseline model.</p>
-<p>As mentioned before, we are a bit concerned about the fact that our
-features are highly correlated, which potentially affects our
-predictions.</p>
+<p>It seems that stacking in this case did not really help that much.</p>
+<p>We are a bit concerned about the fact that our features are collinear,
+which potentially affects our predictions.</p>
 </div>
 <div class="section" id="Principal-Component-Regression">
 <h2>Principal Component Regression<a class="headerlink" href="#Principal-Component-Regression" title="Permalink to this headline">¶</a></h2>
-<p>Principal Component Analysis (PCA) is a way to reduce the dimensionality
-of dataset by summarizing the variation in our data into a set of new
-predictors called principal components. These principal components are
-linear combinations of our original predictors. By selecting the top few
-principal components, we are projecting our dataset into the space
-defined by these components. This means that we are projecting our
-dataset onto a space of smaller dimensionality. Importantly, this will
-help us reduce the multicollinearity that might be affecting our
-predictions. Each principal component is constructed such that they are
-orthogonal with each other. Nonetheless, we understand that this will
-limit the interpretability of our coefficients.</p>
-<p>Principal Component Regression (PCR) is basically using the new
-predictors of reduced dimensionality in a regression problem. In this
-problem, we inputed the new principal components into our standard
-logistic regression. In order to decide the number of principal
-components to keep, we cross-validated the number of principal
-components that gives us the best validation accuracy.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [23]:
+<span></span>In [35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1085,7 +1000,7 @@ components that gives us the best validation accuracy.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [24]:
+<span></span>In [79]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1103,42 +1018,22 @@ components that gives us the best validation accuracy.</p>
                                       <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span>
                                       <span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
                                       <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;multinomial&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_pca_cv</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="n">pcr_wc_mod</span> <span class="o">=</span> <span class="n">LogisticRegressionCV</span><span class="p">(</span><span class="n">solver</span> <span class="o">=</span> <span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span>
+                                      <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span>
+                                      <span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+                                      <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;multinomial&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_wc_pca</span><span class="p">,</span> <span class="n">y_wc</span><span class="p">)</span>
+
+
     <span class="n">pcr_train_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pcr_cv_mod</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_pca_cv</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
     <span class="n">pcr_valid_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pcr_cv_mod</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_valid_pca_cv</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">))</span>
-
-    <span class="c1">#X_wc has very few samples</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">X_wc</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-        <span class="n">pcr_wc_mod</span> <span class="o">=</span> <span class="n">LogisticRegressionCV</span><span class="p">(</span><span class="n">solver</span> <span class="o">=</span> <span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span>
-                                          <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span>
-                                          <span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
-                                          <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;multinomial&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_wc_pca</span><span class="p">,</span> <span class="n">y_wc</span><span class="p">)</span>
-        <span class="n">pcr_wc_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pcr_wc_mod</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_wc_pca</span><span class="p">,</span> <span class="n">y_wc</span><span class="p">))</span>
+    <span class="n">pcr_wc_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pcr_wc_mod</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_wc_pca</span><span class="p">,</span> <span class="n">y_wc</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [25]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">X_wc_pca</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[25]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>34
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [26]:
+<span></span>In [37]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1157,12 +1052,12 @@ components that gives us the best validation accuracy.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_41_0.png" src="../_images/models_beyond_baseline_41_0.png" />
+<img alt="../_images/models_beyond_baseline_old_36_0.png" src="../_images/models_beyond_baseline_old_36_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [27]:
+<span></span>In [38]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1176,12 +1071,12 @@ components that gives us the best validation accuracy.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Best Validation Accuracy Number of Components: 3
+Best Validation Accuracy Number of Components: 23
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [28]:
+<span></span>In [39]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1205,7 +1100,7 @@ Best Validation Accuracy Number of Components: 3
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [29]:
+<span></span>In [40]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1225,18 +1120,17 @@ Best Validation Accuracy Number of Components: 3
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-PCR (Best) Train Score: 0.5042847725774555
-PCR (Best) Validation Score: 0.5473684210526316
+PCR (Best) Train Score: 0.5108767303889256
+PCR (Best) Validation Score: 0.5526315789473685
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [30]:
+<span></span>In [84]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># test set</span>
-<span class="c1"># For third approach, find number of components that maximize the training score of the WC Playoff model.</span>
 <span class="n">pca_best_com_wc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pcr_wc_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
 <span class="n">pca_best_wc</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">pca_best_com_wc</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_wc_scaled</span><span class="p">)</span>
 <span class="n">X_wc_pca_best</span> <span class="o">=</span> <span class="n">pca_best_wc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_wc_scaled</span><span class="p">)</span>
@@ -1256,14 +1150,6 @@ PCR (Best) Validation Score: 0.5473684210526316
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PCR (Best) Test Score at 90 mins: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pcr_best_test_acc_no_pk</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PCR (Best) Test Score at end (Softmax): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pcr_best_test_acc</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PCR (Best) Test Score at end (WC Playoffs Model): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pcr_best_test_acc_wc_model</span><span class="p">))</span>
-
-
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PCR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PCR&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span><span class="p">[</span><span class="s1">&#39;pcr_best&#39;</span><span class="p">][</span><span class="s1">&#39;Train Score&#39;</span><span class="p">]</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PCR&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span><span class="p">[</span><span class="s1">&#39;pcr_best&#39;</span><span class="p">][</span><span class="s1">&#39;Validation Score&#39;</span><span class="p">]</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PCR&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (90 mins)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pcr_best_test_acc_no_pk</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PCR&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (Softmax)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pcr_best_test_acc</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PCR&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (WC Playoff Model)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pcr_best_test_acc_wc_model</span>
 </pre></div>
 </div>
 </div>
@@ -1272,120 +1158,63 @@ PCR (Best) Validation Score: 0.5473684210526316
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-PCR (Best) Test Score at 90 mins: 0.5625
-PCR (Best) Test Score at end (Softmax): 0.578125
-PCR (Best) Test Score at end (WC Playoffs Model): 0.609375
+PCR (Best) Test Score at 90 mins: 0.625
+PCR (Best) Test Score at end (Softmax): 0.65625
+PCR (Best) Test Score at end (WC Playoffs Model): 0.6875
 </pre></div></div>
 </div>
-<p>In this case, PCR was not a good option. The test accuracy decreased
-quite significantly. We may need to take into the account the outcome as
-well when we reduce the dimension of our feature set.</p>
 </div>
-<div class="section" id="Partial-Least-Squares-Regression">
-<h2>Partial Least Squares Regression<a class="headerlink" href="#Partial-Least-Squares-Regression" title="Permalink to this headline">¶</a></h2>
-<p>Another way that can help us deal with the issues of multicollinearity
-in our dataset is Partial Least Squares Regression (PLSR). Similar to
-PCA, PLSR involves projecting the predictors onto orthogonal components.
-However, the PLSR components are constructed such that they not only
-approximate the predictors, but are also well correlated with the
-response. As such, we assume that both the predictors and the response
-are functions of (reduced) principal components. In this problem, our
-response variable is a multi-class categorical variable. As such, we
-could use the PLS2 algorithm which simultaneously decomposes on the
-multi-class variable directly. We could also use the PLS1 algorithm on
-each category in our response variable separately.</p>
-<p>To demonstrate how the Partial Least Squares algorithms works, we have
-included a pseudo-code for PLS1:</p>
-<p>Set <span class="math notranslate nohighlight">\(X_0 = X\)</span>, and <span class="math notranslate nohighlight">\(y_0 = y\)</span></p>
-<p>for <span class="math notranslate nohighlight">\(h = 1, 2, ... r\)</span> do (where r is the dimension of the
-predictors)</p>
-<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{w_h} = \mathbf{X^T_{h-1}y_{h-1}/y^T_{h-1}y_{h-1}}\)</span>
-(regress predictors <span class="math notranslate nohighlight">\(x_j\)</span> on response <span class="math notranslate nohighlight">\(y\)</span>)</p>
-<p><span class="math notranslate nohighlight">\(\hspace{1cm} ||\mathbf{w_h}|| = 1\)</span> (normalize)</p>
-<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{z_h} = \mathbf{X_{h-1}w_h/w^T_hw_h}\)</span>
-(regress predictors <span class="math notranslate nohighlight">\(x_j\)</span> on weights <span class="math notranslate nohighlight">\(w_h\)</span>)</p>
-<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{p_h} = \mathbf{X^T_{h-1}z_h/z^T_hz_h}\)</span>
-(regress predictors <span class="math notranslate nohighlight">\(x_j\)</span> on components <span class="math notranslate nohighlight">\(z_h\)</span>)</p>
-<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{X_h} = \mathbf{X_{h-1} - z_hp^T_h}\)</span> (deflate
-<span class="math notranslate nohighlight">\(X_{h-1}\)</span>)</p>
-<p><span class="math notranslate nohighlight">\(\hspace{1cm} d_h = \mathbf{y^T_hz_h/z^T_hz_h}\)</span> (regress response
-<span class="math notranslate nohighlight">\(y_h\)</span> onto components <span class="math notranslate nohighlight">\(z_h\)</span>)</p>
-<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{y_h} = \mathbf{y_{h-1} - d_hz_h}\)</span> (deflate
-<span class="math notranslate nohighlight">\(y_{h-1}\)</span>)</p>
-<p>end for</p>
-<p>The PLS2 algorithm is just an extension for a multi-dimensional response
-variable.</p>
-<p>Importantly, PLS selects components which gives us the greatest
-reduction in the covariance of our predictors and response. If we
-represent our components as <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, and the response as
-<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, it can be shown that PLSR optimizes with respect to
-the weights <span class="math notranslate nohighlight">\(\mathbf{w}\)</span></p>
-<div class="math notranslate nohighlight">
-\[\arg\max_{\mathbf{w}} cor^2(\mathbf{y, z})var(\mathbf{y})var(\mathbf{z})\]</div>
-<p>It can thus be seen that PLSR tries to maximize the correlation between
-the components and the response whilst trying to maximize the variance
-captured by the components.</p>
-<p>This not only allows us to resolve the multicollinearity issues through
-the creation of orthogonal components just as in PCR, but also allows us
-to create components that are correlated with the response. It is likely
-that this might perform even better than PCR.</p>
+<div class="section" id="Partial-Least-Squares">
+<h2>Partial Least Squares<a class="headerlink" href="#Partial-Least-Squares" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [31]:
+<span></span>In [60]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">lb</span> <span class="o">=</span> <span class="n">LabelBinarizer</span><span class="p">()</span>
 <span class="n">y_train_lb</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
-<span class="n">y_valid_lb</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_valid</span><span class="p">)</span>
 <span class="n">y_wc_lb</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_wc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [32]:
+<span></span>In [86]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plsda1_train_score</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">plsda1_valid_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span></span><span class="n">plsda_train_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plsda_valid_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plsda_wc_score</span> <span class="o">=</span> <span class="p">[]</span>
 
 
-<span class="c1"># PLS1</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-    <span class="c1"># initialize empty array</span>
-    <span class="n">train_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">y_train_lb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-    <span class="n">valid_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">y_valid_lb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">plsda_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plsda_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">)</span>
 
-    <span class="n">plsda1_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">train_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-    <span class="n">valid_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-    <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">train_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-    <span class="n">valid_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-    <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
-    <span class="n">train_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-    <span class="n">valid_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">plsda_train_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">plsda_valid_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 
+    <span class="c1">#When there are only two labels, &gt;0 means class 1 have higher probability</span>
+    <span class="n">plsda_mod_wc</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plsda_mod_wc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_wc_scaled</span><span class="p">,</span> <span class="n">y_wc_lb</span><span class="p">)</span>
+    <span class="n">plsda_wc_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_wc</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">plsda_wc_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_wc_scaled</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))))</span>
 
-    <span class="n">plsda1_train_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="n">plsda1_valid_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">valid_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [33]:
+<span></span>In [50]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda1_train_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda1_train_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda1_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda1_valid_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda_train_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda_train_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda_valid_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Accuracy for Different PLS1-DA Components&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PLS1-DA Components&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Accuracy for Different PLS-DA Components&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PLS-DA Components&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
@@ -1395,17 +1224,17 @@ that this might perform even better than PCR.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_51_0.png" src="../_images/models_beyond_baseline_51_0.png" />
+<img alt="../_images/models_beyond_baseline_old_44_0.png" src="../_images/models_beyond_baseline_old_44_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [34]:
+<span></span>In [52]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plsda1_best_com</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda1_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Best Validation Accuracy Number of Components: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plsda1_best_com</span><span class="p">))</span>
+<span></span><span class="n">plsda_best_com</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Best Validation Accuracy Number of Components: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plsda_best_com</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1414,359 +1243,86 @@ that this might perform even better than PCR.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Best Validation Accuracy Number of Components: 16
+Best Validation Accuracy Number of Components: 12
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [35]:
+<span></span>In [53]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># check test accuracy</span>
-<span class="c1"># initialize arrays</span>
-<span class="n">best_train_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">y_train_lb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="n">best_valid_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">y_valid_lb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="n">best_test_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span>
-
-<span class="c1"># fit model</span>
-<span class="n">plsda1_best_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">plsda1_best_com</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># predict</span>
-<span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">best_train_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="n">best_valid_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="n">best_test_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-
-<span class="c1"># predict</span>
-<span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">best_train_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="n">best_valid_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="n">best_test_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-
-<span class="c1"># predict</span>
-<span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">best_train_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="n">best_valid_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="n">best_test_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-
-
-
+<span class="n">plsda_best_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">plsda_best_com</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plsda_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Best Validation Accuracy</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda_best_mod</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS-DA (Best) Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS-DA (Best) Validation Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+PLS-DA (Best) Train Score: 0.5253790375741595
+PLS-DA (Best) Validation Score: 0.55
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [87]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plsda_best_com_wc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_wc_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+
+
+<span class="n">plsda_wc_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">plsda_best_com_wc</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_wc_scaled</span><span class="p">,</span> <span class="n">y_wc_lb</span><span class="p">)</span>
+
+<span class="n">plsda_best_test_pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">48</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+                       <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))]</span>
+
+<span class="n">plsda_best_test_pred_wc</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">[:</span><span class="mi">48</span><span class="p">])]</span> <span class="o">+</span>\
+                        <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">plsda_wc_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">[</span><span class="mi">48</span><span class="p">:])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS-DA (Best) Test Score at 90 mins: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test_no_pk</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS-DA (Best) Test Score at end (Softmax): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda_best_test_pred</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS-DA (Best) Test Score (WC Playoffs Model): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda_best_test_pred_wc</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+PLS-DA (Best) Test Score: 0.625
+PLS-DA (Best) Test Score: 0.671875
+PLS-DA (Best) Test Score: 0.640625
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Analysis">
+<h2>Analysis<a class="headerlink" href="#Analysis" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [36]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Best Validation Accuracy</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">best_train_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">best_valid_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS1-DA (Best) Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS1-DA (Best) Validation Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-PLS1-DA (Best) Train Score: 0.5227422544495716
-PLS1-DA (Best) Validation Score: 0.5552631578947368
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [37]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plsda2_train_score</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">plsda2_valid_score</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">plsda_wc_score</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># PLS2</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-    <span class="n">plsda2_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">plsda2_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">)</span>
-
-    <span class="n">plsda2_train_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="n">plsda2_valid_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">X_wc</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-        <span class="c1">#When there are only two labels, &gt;0 means class 1 have higher probability</span>
-        <span class="n">plsda_mod_wc</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">plsda_mod_wc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_wc_scaled</span><span class="p">,</span> <span class="n">y_wc_lb</span><span class="p">)</span>
-        <span class="n">plsda_wc_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_wc</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">plsda_mod_wc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_wc_scaled</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))))</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [38]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda2_train_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda2_train_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda2_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda2_valid_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Accuracy for Different PLS2-DA Components&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PLS2-DA Components&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_56_0.png" src="../_images/models_beyond_baseline_56_0.png" />
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [39]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plsda2_best_com</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Best Validation Accuracy Number of Components: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plsda2_best_com</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Best Validation Accuracy Number of Components: 9
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [40]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plsda2_best_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">plsda2_best_com</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [41]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Best Validation Accuracy</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda2_best_mod</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS2-DA (Best) Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS2-DA (Best) Validation Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-PLS2-DA (Best) Train Score: 0.5181278839815425
-PLS2-DA (Best) Validation Score: 0.5526315789473685
-</pre></div></div>
-</div>
-<p>In the case of binary labels, PLS1-DA and PLS2-DA are the same, so we
-will look at the third approach in PLS2-DA.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [42]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-
-
-<span></span><span class="n">plsda2_best_com_wc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_wc_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
-
-
-<span class="n">plsda2_wc_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">plsda2_best_com_wc</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_wc_scaled</span><span class="p">,</span> <span class="n">y_wc_lb</span><span class="p">)</span>
-
-<span class="n">plsda2_best_test_pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">48</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-                       <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))]</span>
-
-<span class="n">plsda2_best_test_pred_wc</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">[:</span><span class="mi">48</span><span class="p">])]</span> <span class="o">+</span>\
-                        <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">plsda2_wc_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">[</span><span class="mi">48</span><span class="p">:])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-
-<span class="n">plsda1_best_test_pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">48</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-                       <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">best_test_pred</span><span class="p">)]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS1-DA (Best) Test Score at 90 mins: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test_no_pk</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">best_test_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS1-DA (Best) Test Score at end (Softmax): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda1_best_test_pred</span><span class="p">)))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS2-DA (Best) Test Score at 90 mins: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test_no_pk</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS2-DA (Best) Test Score at end (Softmax): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda2_best_test_pred</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS1-DA/PLS2-DA (Best) Test Score at end (WC Playoffs Model): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda2_best_test_pred_wc</span><span class="p">)))</span>
-
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS1-DA&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS1-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span><span class="p">[</span><span class="s1">&#39;plsda1_best&#39;</span><span class="p">][</span><span class="s1">&#39;Train Score&#39;</span><span class="p">]</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS1-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span><span class="p">[</span><span class="s1">&#39;plsda1_best&#39;</span><span class="p">][</span><span class="s1">&#39;Validation Score&#39;</span><span class="p">]</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS1-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (90 mins)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test_no_pk</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">best_test_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS1-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (Softmax)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda1_best_test_pred</span><span class="p">)</span>
-<span class="c1">#Same as PLS2-DA as mentioned</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS1-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (WC Playoff Model)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda2_best_test_pred_wc</span><span class="p">)</span>
-
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS2-DA&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS2-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span><span class="p">[</span><span class="s1">&#39;plsda2_best&#39;</span><span class="p">][</span><span class="s1">&#39;Train Score&#39;</span><span class="p">]</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS2-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span><span class="p">[</span><span class="s1">&#39;plsda2_best&#39;</span><span class="p">][</span><span class="s1">&#39;Validation Score&#39;</span><span class="p">]</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS2-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (90 mins)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test_no_pk</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS2-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (Softmax)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda2_best_test_pred</span><span class="p">)</span>
-<span class="n">final_models_score</span><span class="p">[</span><span class="s2">&quot;PLS2-DA&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score (WC Playoff Model)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda2_best_test_pred_wc</span><span class="p">)</span>
-
-
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-PLS1-DA (Best) Test Score at 90 mins: 0.640625
-PLS1-DA (Best) Test Score at end (Softmax): 0.6875
-PLS2-DA (Best) Test Score at 90 mins: 0.59375
-PLS2-DA (Best) Test Score at end (Softmax): 0.625
-PLS1-DA/PLS2-DA (Best) Test Score at end (WC Playoffs Model): 0.65625
-</pre></div></div>
-</div>
-<p>Compared to the full model, we do not see much change in the PLS1-DA
-model on the test set while we see a decrease in performance of PLS2-DA
-on the test set, although PLS1-DA does perform better in the second
-approach than the full model does; thus PLS1-DA is the best model we
-have seen so far! What’s more important is that the validation scores
-for PLS1-DA were higher than those in the full model. It is likely that
-multicollinearity was causing the decrease in our validation scores.</p>
-<p>Now, suppose we don’t actually know anything about the test set. Which
-model would we have actually chosen? Like before, we can only look at
-the validation scores.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [43]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">final_df_result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">final_models_score</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="n">final_df_result</span> <span class="o">=</span> <span class="n">final_df_result</span><span class="p">[[</span><span class="s1">&#39;Train Score&#39;</span><span class="p">,</span> <span class="s1">&#39;Validation Score&#39;</span><span class="p">,</span> <span class="s1">&#39;Test Score (90 mins)&#39;</span><span class="p">,</span> <span class="s1">&#39;Test Score (Softmax)&#39;</span><span class="p">,</span>
-                                  <span class="s1">&#39;Test Score (WC Playoff Model)&#39;</span><span class="p">]]</span>
-<span class="n">final_df_result</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[43]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Train Score</th>
-      <th>Validation Score</th>
-      <th>Test Score (90 mins)</th>
-      <th>Test Score (Softmax)</th>
-      <th>Test Score (WC Playoff Model)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>LDA</th>
-      <td>0.524720</td>
-      <td>0.547368</td>
-      <td>0.640625</td>
-      <td>0.671875</td>
-      <td>0.656250</td>
-    </tr>
-    <tr>
-      <th>Stacking</th>
-      <td>0.534608</td>
-      <td>0.534211</td>
-      <td>0.625000</td>
-      <td>0.656250</td>
-      <td>0.656250</td>
-    </tr>
-    <tr>
-      <th>PCR</th>
-      <td>0.504285</td>
-      <td>0.547368</td>
-      <td>0.562500</td>
-      <td>0.578125</td>
-      <td>0.609375</td>
-    </tr>
-    <tr>
-      <th>PLS1-DA</th>
-      <td>0.522742</td>
-      <td>0.555263</td>
-      <td>0.640625</td>
-      <td>0.687500</td>
-      <td>0.656250</td>
-    </tr>
-    <tr>
-      <th>PLS2-DA</th>
-      <td>0.518128</td>
-      <td>0.552632</td>
-      <td>0.593750</td>
-      <td>0.625000</td>
-      <td>0.656250</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
-</div>
-<p>Based on validation scores, we would have chosen PLS1-DA, the best
-model!</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1">#Combine with baseline model results and save to csv</span>
-<span class="n">baseline_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;baseline_model_results.csv&#39;</span><span class="p">)</span>
-<span class="n">final_df_result</span><span class="p">[</span><span class="s1">&#39;Model Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">final_df_result</span><span class="o">.</span><span class="n">index</span>
-<span class="n">all_model_results</span> <span class="o">=</span> <span class="n">baseline_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">final_df_result</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">))</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">all_model_results</span> <span class="o">=</span> <span class="n">all_model_results</span><span class="p">[[</span><span class="s1">&#39;Model Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Train Score&#39;</span><span class="p">,</span> <span class="s1">&#39;Validation Score&#39;</span><span class="p">,</span> <span class="s1">&#39;Test Score (90 mins)&#39;</span><span class="p">,</span> <span class="s1">&#39;Test Score (Softmax)&#39;</span><span class="p">,</span>
-                                  <span class="s1">&#39;Test Score (WC Playoff Model)&#39;</span><span class="p">]]</span>
-<span class="n">all_model_results</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;all_model_results.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>Let’s see the confusion matrices for our best model, PLS1-DA.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [45]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1804,31 +1360,25 @@ model!</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [46]:
+<span></span>In [37]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-
-<span class="n">train_cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">best_train_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">test_90mins_cm</span> <span class="o">=</span>  <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test_no_pk</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">best_test_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">test_cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda1_best_test_pred</span><span class="p">)</span>
-<span class="n">test_wc_cm</span> <span class="o">=</span>  <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda2_best_test_pred_wc</span><span class="p">)</span>
+<span class="n">train_cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">test_cm</span> <span class="o">=</span>  <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda_best_test_pred</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [47]:
+<span></span>In [38]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
-<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">train_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Train&#39;</span><span class="p">)</span>
-<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">test_90mins_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Test (90 Mins)&#39;</span><span class="p">)</span>
-<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">test_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Test (Softmax)&#39;</span><span class="p">)</span>
-<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">test_wc_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Test (WC Playoff Model)&#39;</span><span class="p">)</span>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">train_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Train&#39;</span><span class="p">)</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">test_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1837,26 +1387,25 @@ model!</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_69_0.png" src="../_images/models_beyond_baseline_69_0.png" />
+<img alt="../_images/models_beyond_baseline_old_52_0.png" src="../_images/models_beyond_baseline_old_52_0.png" />
 </div>
 </div>
-<p>The model is actually predicting some draws now for the training set and
-test set, although still very little. As mentioned before, it is just
-very hard to predict draws, but this is definitely an improvement
-compared to the baseline model.</p>
-<p>Compared to the baseline model, it seems that the model is better in
-predicting when “home” team loses in the test set in all three
-approaches. This might be due to some bias of how we feature engineer.
-Since none of us really were experts in soccer, we chose features that
-we observed from the World Cup alone, so these features might be biased
-toward the test set.</p>
-<p>The Softmax approach had higher home loss and home win accuracies than
-the WC Playoff Model approach; this might be due to the small training
-set for the playoff matches, so we could just be overfitting to the
-traing set. As mentioned in the baseline model, we cannot really compare
-the confusion matrices of the three approaches to the test set, as the
-true labels between the 90 minutes approach are different from those
-than the true labels in the other two approaches.</p>
+<p>The model is actually predicting some draws now, although still very
+little. Also, compared to the baseline model, it seems that the model is
+better in predicting when “home” team loses in the test set. This might
+be due to some bias of how we feature engineer. Since none of us really
+were experts in soccer, we chose features that we observed from the
+World Cup alone, so these features might be biased toward the test set.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

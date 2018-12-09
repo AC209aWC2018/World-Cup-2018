@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -18,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Description of Data" href="data_description.html" />
-    <link rel="prev" title="Team Members" href="team.html" />
+    <link rel="prev" title="Overview and Motivation" href="problem_statement.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -35,7 +36,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+        <a class="navbar-brand" href="../index.html">
           World Cup</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -55,11 +56,10 @@
       aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="problem_statement.html">Overview and Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="team.html">Team Members</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Exploratory Data Analysis</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="EDA-notebook.html">Exploratory Data Analysis</a></li>
 </ul>
@@ -94,7 +94,7 @@
               
                 
   <li>
-    <a href="team.html" title="Previous Chapter: Team Members"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Team Members</span>
+    <a href="problem_statement.html" title="Previous Chapter: Overview and Motivation"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Overview and ...</span>
     </a>
   </li>
   <li>
@@ -132,184 +132,44 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput,
-div.nboutput {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput div.prompt pre {
-    color: #303F9F;
-}
-
-/* output prompt */
-div.nboutput div.prompt pre {
-    color: #D84315;
-}
-
-/* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
-    min-width: 9ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
-    text-align: right;
-    flex: 0;
-}
-@media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput div.prompt.empty {
-        padding: 0;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    background: #f7f7f7;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.pngmath center alignment in output cells */
-div.nboutput div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-</style>
-<div class="section" id="Literature-Review-and-Related-Works">
+  <div class="section" id="Literature-Review-and-Related-Works">
 <h1>Literature Review and Related Works<a class="headerlink" href="#Literature-Review-and-Related-Works" title="Permalink to this headline">¶</a></h1>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<p>As mentioned before, soccer analytics is not a well-established field.
+However, some have attempted to model the 2018 World Cup using machine
+learning techniques.</p>
+<p>For example, Andreas Groll and his team at the University of Dortmound
+utilized <a class="reference external" href="https://arxiv.org/abs/1806.03208">Poisson regression, random forest, and ranking
+methods</a> to simulate the World Cup
+100,000 times. Features that Groll used “include economic factors such
+as a country’s GDP and population, FIFA’s ranking of national teams, and
+the properties of the teams themselves, such as their average age, the
+number of Champions League players they have, whether they have home
+advantage, and so on.”
+(<a class="reference external" href="https://www.technologyreview.com/s/611397/machine-learning-predicts-world-cup-winner/">https://www.technologyreview.com/s/611397/machine-learning-predicts-world-cup-winner/</a>)
+Through these simulations, Groll’s model predicted Spain as the most
+likely winner of the World Cup followed by Germany.</p>
+<p>Similarly, Gerald Muriuki utilized <a class="reference external" href="https://scotch.io/&#64;itsmuriuki/predicting-fifa-world-cup-2018-using-machine-learning">logistic
+regression</a>
+to simulate the World Cup. Using the historic match dataset as his train
+set, Muriuki only trained on matches in which both teams are playing in
+the 2018 World Cup. The only feature he used was one-hot encoding all
+the teams, essentially representing a team’s past performance against
+the other teams as a feature. The model predicted Brazil as the most
+likely winner.</p>
+<p>Finally, Rodrigo Nader utilized
+<a class="reference external" href="https://towardsdatascience.com/using-machine-learning-to-simulate-world-cup-matches-959e24d0731">SVM</a>
+to simulate the World Cup. Nader used ratings (Atk, Mid, Def, ovr) about
+the teams scraped from Fifa Index to build his model. The model
+predicted Spain as the most likely winner, defeating Brazil in the
+finals.</p>
+<p>As we can see, there were many attempts before the World Cup to predict
+it, with Spain or Brazil prevailing in most cases. However, we could not
+find any works reflecting back on the actual results of the World Cup to
+see what was the most common error.</p>
+<p>It is evident that the data we chose to use and features we chose to
+engineer were inspired by the related works. We hope to combine the
+features used individually by these related works to make a model of our
+own.</p>
 </div>
 
 

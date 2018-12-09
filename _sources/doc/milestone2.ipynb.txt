@@ -106,7 +106,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "![Win Rate](img/winrate.png)"
+    "![](img/winrate.png)"
    ]
   },
   {
@@ -120,7 +120,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "![Player Rating](img/playerrating.jpg)"
+    "![](img/playerrating.jpg)"
    ]
   },
   {

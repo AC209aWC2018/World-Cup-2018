@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -33,7 +34,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+        <a class="navbar-brand" href="../index.html">
           World Cup</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -53,11 +54,10 @@
       aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/problem_statement.html">Overview and Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../doc/team.html">Team Members</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Exploratory Data Analysis</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/EDA-notebook.html">Exploratory Data Analysis</a></li>
 </ul>
@@ -363,8 +363,6 @@ div.nboutput div.output_area.stderr {
       <th>overall_diff</th>
       <th>attack_away_defence_home_diff</th>
       <th>...</th>
-      <th>bup_dribbling_diff</th>
-      <th>bup_passing_diff</th>
       <th>bup_speed_diff</th>
       <th>cc_crossing_diff</th>
       <th>cc_passing_diff</th>
@@ -373,6 +371,8 @@ div.nboutput div.output_area.stderr {
       <th>d_pressure_diff</th>
       <th>d_width_diff</th>
       <th>home_win</th>
+      <th>x_rating</th>
+      <th>y_rating</th>
     </tr>
   </thead>
   <tbody>
@@ -396,9 +396,9 @@ div.nboutput div.output_area.stderr {
       <td>-0.0</td>
       <td>-0.0</td>
       <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
       <td>1</td>
+      <td>78.0</td>
+      <td>81.0</td>
     </tr>
     <tr>
       <th>1</th>
@@ -420,9 +420,9 @@ div.nboutput div.output_area.stderr {
       <td>-0.0</td>
       <td>-0.0</td>
       <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
       <td>1</td>
+      <td>74.0</td>
+      <td>81.0</td>
     </tr>
     <tr>
       <th>2</th>
@@ -444,9 +444,9 @@ div.nboutput div.output_area.stderr {
       <td>-0.0</td>
       <td>-0.0</td>
       <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
       <td>0</td>
+      <td>74.0</td>
+      <td>81.0</td>
     </tr>
     <tr>
       <th>3</th>
@@ -468,9 +468,9 @@ div.nboutput div.output_area.stderr {
       <td>-0.0</td>
       <td>-0.0</td>
       <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
       <td>0</td>
+      <td>78.0</td>
+      <td>69.0</td>
     </tr>
     <tr>
       <th>4</th>
@@ -492,20 +492,51 @@ div.nboutput div.output_area.stderr {
       <td>-0.0</td>
       <td>-0.0</td>
       <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
       <td>1</td>
+      <td>73.0</td>
+      <td>76.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 32 columns</p>
+<p>5 rows × 34 columns</p>
 </div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[4]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Index([&#39;game_date&#39;, &#39;home_team&#39;, &#39;away_team&#39;, &#39;home_score&#39;, &#39;away_score&#39;,
+       &#39;tournament&#39;, &#39;country&#39;, &#39;neutral&#39;, &#39;overall_diff&#39;,
+       &#39;attack_away_defence_home_diff&#39;, &#39;attack_diff&#39;,
+       &#39;attack_home_defence_away_diff&#39;, &#39;defence_diff&#39;, &#39;midfield_diff&#39;,
+       &#39;rank_diff&#39;, &#39;prestige_diff&#39;, &#39;growth_diff&#39;, &#39;full_age_diff&#39;,
+       &#39;start_age_diff&#39;, &#39;value_euros_millions_diff&#39;,
+       &#39;wage_euros_thousands_diff&#39;, &#39;goalkeeper_overall_diff&#39;,
+       &#39;bup_dribbling_diff&#39;, &#39;bup_passing_diff&#39;, &#39;bup_speed_diff&#39;,
+       &#39;cc_crossing_diff&#39;, &#39;cc_passing_diff&#39;, &#39;cc_shooting_diff&#39;,
+       &#39;d_aggresion_diff&#39;, &#39;d_pressure_diff&#39;, &#39;d_width_diff&#39;, &#39;home_win&#39;,
+       &#39;x_rating&#39;, &#39;y_rating&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
 </div>
 <p>We first need to see for matches that are not neutral (i.e.&nbsp;home team is
 actually playing at home), if playing at home actually is an advantage.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -516,7 +547,7 @@ actually playing at home), if playing at home actually is an advantage.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[4]:
+<span></span>Out[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -549,8 +580,6 @@ actually playing at home), if playing at home actually is an advantage.</p>
       <th>overall_diff</th>
       <th>attack_away_defence_home_diff</th>
       <th>...</th>
-      <th>bup_dribbling_diff</th>
-      <th>bup_passing_diff</th>
       <th>bup_speed_diff</th>
       <th>cc_crossing_diff</th>
       <th>cc_passing_diff</th>
@@ -559,17 +588,19 @@ actually playing at home), if playing at home actually is an advantage.</p>
       <th>d_pressure_diff</th>
       <th>d_width_diff</th>
       <th>home_win</th>
+      <th>x_rating</th>
+      <th>y_rating</th>
     </tr>
   </thead>
   <tbody>
   </tbody>
 </table>
-<p>0 rows × 32 columns</p>
+<p>0 rows × 34 columns</p>
 </div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -588,7 +619,7 @@ Proportion of Outcomes
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[5]:
+<span></span>Out[6]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -602,7 +633,7 @@ Name: game_date, dtype: float64
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -621,7 +652,7 @@ Proportion of Outcomes Grouped By Neutrality
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[6]:
+<span></span>Out[7]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -643,7 +674,7 @@ features. As such, we do the same thing here and calculate the number of
 wins by the home team and away team and the past matches.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -651,24 +682,207 @@ wins by the home team and away team and the past matches.</p>
 </pre></div>
 </div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train_sorted</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>game_date</th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
+      <th>country</th>
+      <th>neutral</th>
+      <th>overall_diff</th>
+      <th>attack_away_defence_home_diff</th>
+      <th>...</th>
+      <th>bup_speed_diff</th>
+      <th>cc_crossing_diff</th>
+      <th>cc_passing_diff</th>
+      <th>cc_shooting_diff</th>
+      <th>d_aggresion_diff</th>
+      <th>d_pressure_diff</th>
+      <th>d_width_diff</th>
+      <th>home_win</th>
+      <th>x_rating</th>
+      <th>y_rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2006-09-01 00:00:00+00:00</td>
+      <td>Denmark</td>
+      <td>Portugal</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Friendly</td>
+      <td>Denmark</td>
+      <td>False</td>
+      <td>-3.0</td>
+      <td>3.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>78.0</td>
+      <td>81.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2006-09-02 00:00:00+00:00</td>
+      <td>Romania</td>
+      <td>Bulgaria</td>
+      <td>2</td>
+      <td>2</td>
+      <td>UEFA Euro qualification</td>
+      <td>Romania</td>
+      <td>False</td>
+      <td>-1.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>73.0</td>
+      <td>74.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2006-09-02 00:00:00+00:00</td>
+      <td>Poland</td>
+      <td>Finland</td>
+      <td>1</td>
+      <td>3</td>
+      <td>UEFA Euro qualification</td>
+      <td>Poland</td>
+      <td>False</td>
+      <td>-0.0</td>
+      <td>4.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-1</td>
+      <td>74.0</td>
+      <td>74.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2006-09-02 00:00:00+00:00</td>
+      <td>Hungary</td>
+      <td>Norway</td>
+      <td>1</td>
+      <td>4</td>
+      <td>UEFA Euro qualification</td>
+      <td>Hungary</td>
+      <td>False</td>
+      <td>-7.0</td>
+      <td>7.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-1</td>
+      <td>68.0</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2006-09-02 00:00:00+00:00</td>
+      <td>Germany</td>
+      <td>Ireland</td>
+      <td>1</td>
+      <td>0</td>
+      <td>UEFA Euro qualification</td>
+      <td>Germany</td>
+      <td>False</td>
+      <td>8.0</td>
+      <td>-8.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>84.0</td>
+      <td>76.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 34 columns</p>
+</div></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">get_wins_in_last_matches</span><span class="p">(</span><span class="n">df_row</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">num_games</span><span class="p">,</span> <span class="n">team_id_col</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team&#39;</span><span class="p">],</span>
                             <span class="n">against_each_other</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Get number of wins for home team and away team for num_games before current game. Also includes</span>
+<span class="sd">    Get number of wins for home team and away team as well as win and lose momentum for num_games before current game. Also includes</span>
 <span class="sd">    indicators of whether the team has played enough games (for the matches in the beginning). If against_each_other</span>
 <span class="sd">    is True, get number of wins home team has against away team had in past num_games.</span>
 
-<span class="sd">    Also returns the number of games actually found.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">home_team_id_colname</span> <span class="o">=</span> <span class="n">team_id_col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">away_team_id_colname</span> <span class="o">=</span> <span class="n">team_id_col</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
     <span class="k">if</span> <span class="ow">not</span> <span class="n">against_each_other</span><span class="p">:</span>
 
         <span class="c1">#Get past games for both home and away teams.</span>
@@ -679,26 +893,52 @@ wins by the home team and away team and the past matches.</p>
                             <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]))</span>\
                              <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">game_date</span> <span class="o">&lt;</span> <span class="n">df_row</span><span class="o">.</span><span class="n">game_date</span><span class="p">)][</span><span class="o">-</span><span class="n">num_games</span><span class="p">:]</span>
 
+
         <span class="c1">#get number of wins for home team</span>
         <span class="n">home_wins</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">home_win_momentum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">home_lose_momentum</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">game</span> <span class="ow">in</span> <span class="n">home_past_games</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">home_wins</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">home_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">home_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">home_win_momentum</span> <span class="o">+=</span> <span class="n">df_row</span><span class="p">[</span><span class="s1">&#39;y_rating&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">home_lose_momentum</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">df_row</span><span class="p">[</span><span class="s1">&#39;y_rating&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">home_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">home_win_momentum</span> <span class="o">+=</span> <span class="n">df_row</span><span class="p">[</span><span class="s1">&#39;x_rating&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">home_lose_momentum</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">df_row</span><span class="p">[</span><span class="s1">&#39;x_rating&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+
+
 
         <span class="c1">#get number of wins for away team</span>
         <span class="n">away_wins</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">away_win_momentum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">away_lose_momentum</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">game</span> <span class="ow">in</span> <span class="n">away_past_games</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">away_wins</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="ow">and</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">away_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="n">home_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">away_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">away_win_momentum</span> <span class="o">+=</span> <span class="n">df_row</span><span class="p">[</span><span class="s1">&#39;y_rating&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">away_lose_momentum</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">df_row</span><span class="p">[</span><span class="s1">&#39;y_rating&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">game</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]</span> <span class="o">==</span> <span class="n">df_row</span><span class="p">[</span><span class="n">away_team_id_colname</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">home_win</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">away_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">away_win_momentum</span> <span class="o">+=</span> <span class="n">df_row</span><span class="p">[</span><span class="s1">&#39;x_rating&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">away_lose_momentum</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">df_row</span><span class="p">[</span><span class="s1">&#39;x_rating&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+
+
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">home_past_games</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">home_wins</span> <span class="o">=</span> <span class="n">home_wins</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">home_past_games</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">away_past_games</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">away_wins</span> <span class="o">=</span> <span class="n">away_wins</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">away_past_games</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">home_wins</span><span class="p">,</span> <span class="n">away_wins</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">home_wins</span><span class="p">,</span> <span class="n">away_wins</span><span class="p">,</span><span class="n">home_win_momentum</span><span class="p">,</span><span class="n">home_lose_momentum</span><span class="p">,</span><span class="n">away_win_momentum</span><span class="p">,</span><span class="n">away_lose_momentum</span><span class="p">)</span>
 <span class="c1">#         return (home_wins, away_wins, len(home_past_games), len(away_past_games))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1">#get past games where the two teams played against each other</span>
@@ -724,22 +964,32 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">wins_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">win_momentum_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">lose_momentum_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">train_sorted</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wins_past_x_games</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_wins_in_last_matches</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">train_sorted</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+            <span class="n">win_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">lose_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># results = (home_wins, away_wins,home_win_momentum,home_lose_momentum,away_win_momentum,away_lose_momentum)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">get_wins_in_last_matches</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">train_sorted</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+        <span class="c1"># these stats are saved in (home,away) format</span>
+        <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">results</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">win_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">results</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">results</span><span class="p">[</span><span class="mi">4</span><span class="p">]))</span>
+        <span class="n">lose_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">results</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">results</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -747,17 +997,206 @@ wins by the home team and away team and the past matches.</p>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
     <span class="n">wins_past_x_games_df</span> <span class="o">=</span> <span class="n">wins_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
             <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">train_sorted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
-<span class="c1">#              columns = [&#39;home_wins_past_{}_games&#39;.format(i), &#39;away_wins_past_{}_games&#39;.format(i), \</span>
-<span class="c1">#                         &#39;home_num_past_games_{}&#39;.format(i), &#39;away_num_past_games_{}&#39;.format(i)]),\</span>
-<span class="c1">#                         left_index = True, right_index = True)</span>
              <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]),</span> \
+                        <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">wins_past_x_games_df</span> <span class="o">=</span> <span class="n">wins_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">win_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">train_sorted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
+             <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_win_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_win_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]),</span> \
+                        <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">wins_past_x_games_df</span> <span class="o">=</span> <span class="n">wins_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lose_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">train_sorted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
+             <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]),</span> \
                         <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wins_past_x_games_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>home_wins_past_1_games</th>
+      <th>away_wins_past_1_games</th>
+      <th>home_win_momentum_past_1_games</th>
+      <th>away_win_momentum_past_1_games</th>
+      <th>home_lose_momentum_past_1_games</th>
+      <th>away_lose_momentum_past_1_games</th>
+      <th>home_wins_past_2_games</th>
+      <th>away_wins_past_2_games</th>
+      <th>home_win_momentum_past_2_games</th>
+      <th>away_win_momentum_past_2_games</th>
+      <th>...</th>
+      <th>home_win_momentum_past_4_games</th>
+      <th>away_win_momentum_past_4_games</th>
+      <th>home_lose_momentum_past_4_games</th>
+      <th>away_lose_momentum_past_4_games</th>
+      <th>home_wins_past_5_games</th>
+      <th>away_wins_past_5_games</th>
+      <th>home_win_momentum_past_5_games</th>
+      <th>away_win_momentum_past_5_games</th>
+      <th>home_lose_momentum_past_5_games</th>
+      <th>away_lose_momentum_past_5_games</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1892</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.73</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>-0.14</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>1.46</td>
+      <td>0.86</td>
+      <td>...</td>
+      <td>1.46</td>
+      <td>2.32</td>
+      <td>-0.41</td>
+      <td>-0.14</td>
+      <td>0.4</td>
+      <td>0.8</td>
+      <td>1.46</td>
+      <td>3.18</td>
+      <td>-0.55</td>
+      <td>-0.14</td>
+    </tr>
+    <tr>
+      <th>1893</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.85</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>-0.23</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.70</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>3.40</td>
+      <td>0.77</td>
+      <td>0.00</td>
+      <td>-0.69</td>
+      <td>1.0</td>
+      <td>0.4</td>
+      <td>4.25</td>
+      <td>1.62</td>
+      <td>0.00</td>
+      <td>-0.69</td>
+    </tr>
+    <tr>
+      <th>1894</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>-0.24</td>
+      <td>-0.27</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-1.02</td>
+      <td>-0.27</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-1.26</td>
+      <td>-0.27</td>
+    </tr>
+    <tr>
+      <th>1895</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.73</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>-0.16</td>
+      <td>0.5</td>
+      <td>0.5</td>
+      <td>0.73</td>
+      <td>0.73</td>
+      <td>...</td>
+      <td>1.46</td>
+      <td>0.73</td>
+      <td>-0.54</td>
+      <td>-0.16</td>
+      <td>0.4</td>
+      <td>0.5</td>
+      <td>1.46</td>
+      <td>0.73</td>
+      <td>-0.70</td>
+      <td>-0.16</td>
+    </tr>
+    <tr>
+      <th>1896</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>-0.25</td>
+      <td>-0.25</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.25</td>
+      <td>-1.02</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.25</td>
+      <td>-1.27</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 30 columns</p>
+</div></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<span></span>In [14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -774,7 +1213,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<span></span>In [15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -791,7 +1230,42 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wins_past_x_games_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[16]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Index([&#39;home_wins_past_1_games&#39;, &#39;away_wins_past_1_games&#39;,
+       &#39;home_win_momentum_past_1_games&#39;, &#39;away_win_momentum_past_1_games&#39;,
+       &#39;home_lose_momentum_past_1_games&#39;, &#39;away_lose_momentum_past_1_games&#39;,
+       &#39;home_wins_past_2_games&#39;, &#39;away_wins_past_2_games&#39;,
+       &#39;home_win_momentum_past_2_games&#39;, &#39;away_win_momentum_past_2_games&#39;,
+       &#39;home_lose_momentum_past_2_games&#39;, &#39;away_lose_momentum_past_2_games&#39;,
+       &#39;home_wins_past_3_games&#39;, &#39;away_wins_past_3_games&#39;,
+       &#39;home_win_momentum_past_3_games&#39;, &#39;away_win_momentum_past_3_games&#39;,
+       &#39;home_lose_momentum_past_3_games&#39;, &#39;away_lose_momentum_past_3_games&#39;,
+       &#39;home_wins_past_4_games&#39;, &#39;away_wins_past_4_games&#39;,
+       &#39;home_win_momentum_past_4_games&#39;, &#39;away_win_momentum_past_4_games&#39;,
+       &#39;home_lose_momentum_past_4_games&#39;, &#39;away_lose_momentum_past_4_games&#39;,
+       &#39;home_wins_past_5_games&#39;, &#39;away_wins_past_5_games&#39;,
+       &#39;home_win_momentum_past_5_games&#39;, &#39;away_win_momentum_past_5_games&#39;,
+       &#39;home_lose_momentum_past_5_games&#39;, &#39;away_lose_momentum_past_5_games&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -801,38 +1275,30 @@ wins by the home team and away team and the past matches.</p>
         <span class="p">(</span><span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;home_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">-</span>\
          <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;away_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
     <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;wins_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+    <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;win_momentum_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span>\
+        <span class="p">(</span><span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;home_win_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">-</span>\
+         <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;away_win_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
+    <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;win_momentum_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+    <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span>\
+        <span class="p">(</span><span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;home_lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">-</span>\
+         <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;away_lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
+    <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
 <span class="c1">#     past_wins_columns.append(&#39;home_num_past_games{}&#39;.format(i))</span>
     <span class="c1">#games against each other</span>
     <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;wins_home_against_away_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> \
                             <span class="n">wins_home_against_away_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;wins_home_against_away_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span>
     <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;wins_home_against_away_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 
-<span class="n">past_wins_columns</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[13]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[&#39;wins_past_1_games_diff&#39;,
- &#39;wins_home_against_away_1_games&#39;,
- &#39;wins_past_2_games_diff&#39;,
- &#39;wins_home_against_away_2_games&#39;,
- &#39;wins_past_3_games_diff&#39;,
- &#39;wins_home_against_away_3_games&#39;,
- &#39;wins_past_4_games_diff&#39;,
- &#39;wins_home_against_away_4_games&#39;,
- &#39;wins_past_5_games_diff&#39;,
- &#39;wins_home_against_away_5_games&#39;]
+
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -844,7 +1310,7 @@ wins by the home team and away team and the past matches.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[14]:
+<span></span>Out[18]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -877,15 +1343,15 @@ wins by the home team and away team and the past matches.</p>
       <th>overall_diff</th>
       <th>attack_away_defence_home_diff</th>
       <th>...</th>
-      <th>wins_past_1_games_diff</th>
-      <th>wins_home_against_away_1_games</th>
-      <th>wins_past_2_games_diff</th>
-      <th>wins_home_against_away_2_games</th>
-      <th>wins_past_3_games_diff</th>
+      <th>lose_momentum_past_3_games_diff</th>
       <th>wins_home_against_away_3_games</th>
       <th>wins_past_4_games_diff</th>
+      <th>win_momentum_past_4_games_diff</th>
+      <th>lose_momentum_past_4_games_diff</th>
       <th>wins_home_against_away_4_games</th>
       <th>wins_past_5_games_diff</th>
+      <th>win_momentum_past_5_games_diff</th>
+      <th>lose_momentum_past_5_games_diff</th>
       <th>wins_home_against_away_5_games</th>
     </tr>
   </thead>
@@ -903,15 +1369,15 @@ wins by the home team and away team and the past matches.</p>
       <td>-13.0</td>
       <td>12.0</td>
       <td>...</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.000000</td>
+      <td>0.00</td>
       <td>0.0</td>
       <td>-0.25</td>
+      <td>-0.86</td>
+      <td>-0.27</td>
       <td>0.0</td>
       <td>-0.4</td>
+      <td>-1.72</td>
+      <td>-0.41</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -927,15 +1393,15 @@ wins by the home team and away team and the past matches.</p>
       <td>-8.0</td>
       <td>11.0</td>
       <td>...</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.000000</td>
+      <td>0.69</td>
       <td>0.0</td>
       <td>0.75</td>
+      <td>2.63</td>
+      <td>0.69</td>
       <td>0.0</td>
       <td>0.6</td>
+      <td>2.63</td>
+      <td>0.69</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -951,15 +1417,15 @@ wins by the home team and away team and the past matches.</p>
       <td>-3.0</td>
       <td>7.0</td>
       <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
+      <td>-0.51</td>
       <td>0.0</td>
       <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.75</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>0.00</td>
+      <td>-0.99</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -975,15 +1441,15 @@ wins by the home team and away team and the past matches.</p>
       <td>11.0</td>
       <td>-16.0</td>
       <td>...</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.166667</td>
+      <td>-0.11</td>
       <td>0.0</td>
       <td>0.00</td>
+      <td>0.73</td>
+      <td>-0.38</td>
       <td>0.0</td>
       <td>-0.1</td>
+      <td>0.73</td>
+      <td>-0.54</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -999,39 +1465,45 @@ wins by the home team and away team and the past matches.</p>
       <td>1.0</td>
       <td>2.0</td>
       <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
+      <td>0.51</td>
       <td>0.0</td>
       <td>0.00</td>
+      <td>0.00</td>
+      <td>0.77</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>0.00</td>
+      <td>1.02</td>
       <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 42 columns</p>
+<p>5 rows × 54 columns</p>
 </div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
 <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
 <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">train_final</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;home_win&#39;</span><span class="p">):</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">past_wins_columns</span><span class="p">):</span>
-        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">counter</span><span class="p">])</span>
         <span class="c1">#odd plots are the plots of the teams against each other</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span> <span class="o">+</span> <span class="s2">&quot; (Past games of the home team against the away team)&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">counter</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span> <span class="o">+</span> <span class="s2">&quot; (Past games of the home team against the away team)&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">counter</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">counter</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -1040,7 +1512,7 @@ wins by the home team and away team and the past matches.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/sofifa_momentum_17_0.png" src="../_images/sofifa_momentum_17_0.png" />
+<img alt="../_images/sofifa_momentum_21_0.png" src="../_images/sofifa_momentum_21_0.png" />
 </div>
 </div>
 <p>We realized that the test set is already sorted by earliest game in the
@@ -1050,7 +1522,7 @@ set each match to be one day after the other and it will not affect
 anything.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1060,22 +1532,65 @@ anything.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [17]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">wins_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">test</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wins_past_x_games</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_wins_in_last_matches</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+
+<span></span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [18]:
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#func12</span>
+<span class="n">wins_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">win_momentum_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">lose_momentum_past_x_games</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">test</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wins_past_x_games</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">win_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">lose_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">get_wins_in_last_matches</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+
+        <span class="c1"># these stats are saved in (home,away) format</span>
+        <span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">results</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">win_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">results</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">results</span><span class="p">[</span><span class="mi">4</span><span class="p">]))</span>
+        <span class="n">lose_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">results</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">results</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># wins_past_x_games</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1083,17 +1598,24 @@ anything.</p>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
     <span class="n">wins_past_x_games_df</span> <span class="o">=</span> <span class="n">wins_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
             <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">wins_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
-<span class="c1">#              columns = [&#39;home_wins_past_{}_games&#39;.format(i), &#39;away_wins_past_{}_games&#39;.format(i), \</span>
-<span class="c1">#                         &#39;home_num_past_games_{}&#39;.format(i), &#39;away_num_past_games_{}&#39;.format(i)]),\</span>
-<span class="c1">#                         left_index = True, right_index = True)</span>
              <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]),</span> \
+                        <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">wins_past_x_games_df</span> <span class="o">=</span> <span class="n">wins_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">win_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
+             <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_win_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_win_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]),</span> \
+                        <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">wins_past_x_games_df</span> <span class="o">=</span> <span class="n">wins_past_x_games_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lose_momentum_past_x_games</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>\
+             <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;home_lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;away_lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]),</span> \
                         <span class="n">left_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [19]:
+<span></span>In [24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1110,7 +1632,7 @@ anything.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [20]:
+<span></span>In [25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1126,9 +1648,9 @@ anything.</p>
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [21]:
+<span></span>In [26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1138,38 +1660,30 @@ anything.</p>
         <span class="p">(</span><span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;home_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">-</span>\
          <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;away_wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
     <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;wins_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+
+    <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;win_momentum_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span>\
+        <span class="p">(</span><span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;home_win_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">-</span>\
+         <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;away_win_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
+    <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;win_momentum_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+    <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span>\
+        <span class="p">(</span><span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;home_lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">-</span>\
+         <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;away_lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
+    <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;lose_momentum_past_</span><span class="si">{}</span><span class="s1">_games_diff&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
 <span class="c1">#     past_wins_columns.append(&#39;home_num_past_games{}&#39;.format(i))</span>
     <span class="c1">#games against each other</span>
     <span class="n">wins_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;wins_home_against_away_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> \
                             <span class="n">wins_home_against_away_past_x_games_df</span><span class="p">[</span><span class="s1">&#39;wins_home_against_away_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span>
     <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;wins_home_against_away_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 
-<span class="n">past_wins_columns</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[21]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[&#39;wins_past_1_games_diff&#39;,
- &#39;wins_home_against_away_1_games&#39;,
- &#39;wins_past_2_games_diff&#39;,
- &#39;wins_home_against_away_2_games&#39;,
- &#39;wins_past_3_games_diff&#39;,
- &#39;wins_home_against_away_3_games&#39;,
- &#39;wins_past_4_games_diff&#39;,
- &#39;wins_home_against_away_4_games&#39;,
- &#39;wins_past_5_games_diff&#39;,
- &#39;wins_home_against_away_5_games&#39;]
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [22]:
+<span></span>In [27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1181,7 +1695,7 @@ anything.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[22]:
+<span></span>Out[27]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1214,15 +1728,15 @@ anything.</p>
       <th>overall_diff</th>
       <th>attack_away_defence_home_diff</th>
       <th>...</th>
-      <th>wins_past_1_games_diff</th>
-      <th>wins_home_against_away_1_games</th>
-      <th>wins_past_2_games_diff</th>
-      <th>wins_home_against_away_2_games</th>
-      <th>wins_past_3_games_diff</th>
+      <th>lose_momentum_past_3_games_diff</th>
       <th>wins_home_against_away_3_games</th>
       <th>wins_past_4_games_diff</th>
+      <th>win_momentum_past_4_games_diff</th>
+      <th>lose_momentum_past_4_games_diff</th>
       <th>wins_home_against_away_4_games</th>
       <th>wins_past_5_games_diff</th>
+      <th>win_momentum_past_5_games_diff</th>
+      <th>lose_momentum_past_5_games_diff</th>
       <th>wins_home_against_away_5_games</th>
     </tr>
   </thead>
@@ -1240,15 +1754,15 @@ anything.</p>
       <td>-1.0</td>
       <td>4.0</td>
       <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.333333</td>
+      <td>0.22</td>
       <td>0.0</td>
       <td>0.25</td>
+      <td>0.80</td>
+      <td>0.22</td>
       <td>0.0</td>
       <td>0.25</td>
+      <td>0.80</td>
+      <td>0.22</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -1264,15 +1778,15 @@ anything.</p>
       <td>2.0</td>
       <td>4.0</td>
       <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.333333</td>
+      <td>0.15</td>
       <td>0.0</td>
       <td>0.25</td>
+      <td>0.85</td>
+      <td>0.15</td>
       <td>0.0</td>
       <td>0.20</td>
+      <td>0.85</td>
+      <td>0.15</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -1288,15 +1802,15 @@ anything.</p>
       <td>-1.0</td>
       <td>5.0</td>
       <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.5</td>
-      <td>0.0</td>
-      <td>0.333333</td>
+      <td>0.19</td>
       <td>0.0</td>
       <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.01</td>
       <td>0.0</td>
       <td>0.20</td>
+      <td>0.81</td>
+      <td>0.19</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -1312,15 +1826,15 @@ anything.</p>
       <td>2.0</td>
       <td>0.0</td>
       <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.333333</td>
+      <td>0.17</td>
       <td>0.0</td>
       <td>0.25</td>
+      <td>0.81</td>
+      <td>0.19</td>
       <td>0.0</td>
       <td>0.20</td>
+      <td>0.81</td>
+      <td>0.19</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -1336,25 +1850,35 @@ anything.</p>
       <td>5.0</td>
       <td>0.0</td>
       <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
+      <td>0.00</td>
       <td>0.0</td>
       <td>0.25</td>
+      <td>0.85</td>
+      <td>0.15</td>
       <td>0.0</td>
       <td>0.40</td>
+      <td>1.65</td>
+      <td>0.30</td>
       <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 44 columns</p>
+<p>5 rows × 56 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [23]:
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># test_final</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1442,49 +1966,13 @@ anything.</p>
 </pre></div>
 </div>
 </div>
+<p>Note: although we calculated and saved wins_past_x_games_diff to the
+dataframe, win_momentum_past_x_games_diff and
+lose_momentum_past_x_games_diff are much better ways to represent
+momentum, so we don’t actually do anything with it.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [24]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train_past_goals</span> <span class="o">=</span> <span class="n">make_past_columns</span><span class="p">(</span><span class="n">train_sorted</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [25]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train_final</span><span class="p">[</span><span class="n">train_past_goals</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_past_goals</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [26]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">test_past_goals</span> <span class="o">=</span> <span class="n">make_past_columns</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [27]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">test_final</span><span class="p">[</span><span class="n">test_past_goals</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_past_goals</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [28]:
+<span></span>In [30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>

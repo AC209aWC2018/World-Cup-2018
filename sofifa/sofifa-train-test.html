@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -33,7 +34,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+        <a class="navbar-brand" href="../index.html">
           World Cup</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -53,11 +54,10 @@
       aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/problem_statement.html">Overview and Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../doc/team.html">Team Members</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Exploratory Data Analysis</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/EDA-notebook.html">Exploratory Data Analysis</a></li>
 </ul>
@@ -289,7 +289,7 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<span></span>In [14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -305,7 +305,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<span></span>In [15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -327,7 +327,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[2]:
+<span></span>Out[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -427,7 +427,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<span></span>In [16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -439,7 +439,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<span></span>In [17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -458,7 +458,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[5]:
+<span></span>Out[17]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -631,7 +631,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<span></span>In [18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -644,7 +644,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[6]:
+<span></span>Out[18]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -715,7 +715,7 @@ div.nboutput div.output_area.stderr {
 <p>We now have to find for each match the latest team ratings and ranking.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<span></span>In [19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -726,7 +726,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -774,7 +774,7 @@ spelled similarly. We find that ‘Republic of Ireland’, ‘United States’,
 manually substitute these in.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -794,7 +794,7 @@ manually substitute these in.</p>
 <p>Now we finally have two datasets of teams spelled in the same way.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -813,7 +813,7 @@ manually substitute these in.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<span></span>In [23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -832,7 +832,7 @@ manually substitute these in.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<span></span>In [24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -846,7 +846,7 @@ manually substitute these in.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -856,7 +856,7 @@ manually substitute these in.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[13]:
+<span></span>Out[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -991,7 +991,7 @@ dataset.</p>
 in order to account for both home and away teams.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1013,7 +1013,7 @@ in order to account for both home and away teams.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[14]:
+<span></span>Out[28]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1186,7 +1186,7 @@ in order to account for both home and away teams.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1196,7 +1196,7 @@ in order to account for both home and away teams.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[15]:
+<span></span>Out[29]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -1206,7 +1206,7 @@ in order to account for both home and away teams.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1216,7 +1216,7 @@ in order to account for both home and away teams.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[16]:
+<span></span>Out[30]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -1234,12 +1234,24 @@ in order to account for both home and away teams.</p>
 </pre></div>
 </div>
 </div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [72]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Saving rating information for momentum</span>
+<span class="n">x_rating_train</span> <span class="o">=</span> <span class="n">results_ratings2</span><span class="p">[</span><span class="s1">&#39;overall_x&#39;</span><span class="p">]</span>
+<span class="n">y_rating_train</span> <span class="o">=</span> <span class="n">results_ratings2</span><span class="p">[</span><span class="s1">&#39;overall_y&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 <p>We find that we have 1897 observations that can still be used after
 matching team ratings with the results dataframe with an inner merge. We
 now clean up the merged dataframe slightly.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [17]:
+<span></span>In [37]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1258,7 +1270,7 @@ now clean up the merged dataframe slightly.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[17]:
+<span></span>Out[37]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1433,7 +1445,7 @@ now clean up the merged dataframe slightly.</p>
 ratings. Now let’s clean up the dataframe for our training.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [18]:
+<span></span>In [38]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1444,7 +1456,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[18]:
+<span></span>Out[38]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1496,7 +1508,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [19]:
+<span></span>In [39]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1518,7 +1530,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[19]:
+<span></span>Out[39]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1684,7 +1696,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [20]:
+<span></span>In [40]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1707,7 +1719,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[20]:
+<span></span>Out[40]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1881,7 +1893,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 <p>Now we do the same for rankings.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [21]:
+<span></span>In [41]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1899,7 +1911,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [22]:
+<span></span>In [42]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1919,7 +1931,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[22]:
+<span></span>Out[42]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1977,7 +1989,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [23]:
+<span></span>In [43]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2001,7 +2013,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[23]:
+<span></span>Out[43]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -2059,7 +2071,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [24]:
+<span></span>In [44]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2069,7 +2081,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [25]:
+<span></span>In [70]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2079,17 +2091,17 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[25]:
+<span></span>Out[70]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(1897, 32)
+<span></span>(1897, 34)
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [26]:
+<span></span>In [71]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2099,7 +2111,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[26]:
+<span></span>Out[71]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -2129,19 +2141,19 @@ ratings. Now let’s clean up the dataframe for our training.</p>
       <th>tournament</th>
       <th>country</th>
       <th>neutral</th>
-      <th>home_win</th>
-      <th>attack_diff</th>
-      <th>...</th>
-      <th>growth_diff</th>
-      <th>midfield_diff</th>
       <th>overall_diff</th>
-      <th>prestige_diff</th>
-      <th>start_age_diff</th>
-      <th>value_euros_millions_diff</th>
-      <th>wage_euros_thousands_diff</th>
-      <th>attack_home_defence_away_diff</th>
       <th>attack_away_defence_home_diff</th>
-      <th>rank_diff</th>
+      <th>...</th>
+      <th>bup_speed_diff</th>
+      <th>cc_crossing_diff</th>
+      <th>cc_passing_diff</th>
+      <th>cc_shooting_diff</th>
+      <th>d_aggresion_diff</th>
+      <th>d_pressure_diff</th>
+      <th>d_width_diff</th>
+      <th>home_win</th>
+      <th>x_rating</th>
+      <th>y_rating</th>
     </tr>
   </thead>
   <tbody>
@@ -2155,19 +2167,19 @@ ratings. Now let’s clean up the dataframe for our training.</p>
       <td>Friendly</td>
       <td>Denmark</td>
       <td>False</td>
-      <td>1</td>
-      <td>-1.0</td>
-      <td>...</td>
-      <td>1.000000</td>
       <td>-3.0</td>
-      <td>-3.0</td>
-      <td>-2.0</td>
-      <td>-0.27</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-4.0</td>
       <td>3.0</td>
-      <td>9.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>78.0</td>
+      <td>81.0</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2179,19 +2191,19 @@ ratings. Now let’s clean up the dataframe for our training.</p>
       <td>UEFA Euro qualification</td>
       <td>Poland</td>
       <td>False</td>
-      <td>1</td>
-      <td>-4.0</td>
-      <td>...</td>
-      <td>-0.260870</td>
-      <td>-10.0</td>
-      <td>-7.0</td>
-      <td>-4.0</td>
-      <td>1.09</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
       <td>-7.0</td>
       <td>10.0</td>
-      <td>26.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>74.0</td>
+      <td>81.0</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2203,19 +2215,19 @@ ratings. Now let’s clean up the dataframe for our training.</p>
       <td>UEFA Euro qualification</td>
       <td>Finland</td>
       <td>False</td>
-      <td>0</td>
-      <td>-6.0</td>
-      <td>...</td>
-      <td>-1.260870</td>
-      <td>-13.0</td>
       <td>-7.0</td>
-      <td>-9.0</td>
-      <td>0.91</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-9.0</td>
       <td>9.0</td>
-      <td>59.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>74.0</td>
+      <td>81.0</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2227,19 +2239,19 @@ ratings. Now let’s clean up the dataframe for our training.</p>
       <td>UEFA Euro qualification</td>
       <td>Denmark</td>
       <td>False</td>
-      <td>0</td>
-      <td>13.0</td>
-      <td>...</td>
-      <td>0.695652</td>
-      <td>10.0</td>
       <td>9.0</td>
-      <td>8.0</td>
-      <td>-0.27</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>12.0</td>
       <td>-11.0</td>
-      <td>-42.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>78.0</td>
+      <td>69.0</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2251,29 +2263,29 @@ ratings. Now let’s clean up the dataframe for our training.</p>
       <td>Friendly</td>
       <td>Austria</td>
       <td>False</td>
-      <td>1</td>
-      <td>-6.0</td>
-      <td>...</td>
-      <td>-1.217391</td>
-      <td>-7.0</td>
       <td>-3.0</td>
-      <td>-1.0</td>
-      <td>-0.73</td>
-      <td>-0.0</td>
-      <td>-0.0</td>
-      <td>-7.0</td>
       <td>4.0</td>
-      <td>56.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>73.0</td>
+      <td>76.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 32 columns</p>
+<p>5 rows × 34 columns</p>
 </div></div>
 </div>
 <p>We now create our test set with actual world cup data.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [80]:
+<span></span>In [74]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2308,7 +2320,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[80]:
+<span></span>Out[74]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -2481,7 +2493,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [81]:
+<span></span>In [75]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2491,7 +2503,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [90]:
+<span></span>In [115]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2503,7 +2515,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[90]:
+<span></span>Out[115]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -2678,7 +2690,7 @@ ratings. Now let’s clean up the dataframe for our training.</p>
 similarly.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [91]:
+<span></span>In [116]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2709,7 +2721,7 @@ Cannot Find in Rankings IR Iran
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [92]:
+<span></span>In [117]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2719,7 +2731,7 @@ Cannot Find in Rankings IR Iran
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [93]:
+<span></span>In [118]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2745,7 +2757,7 @@ Cannot Find in Rankings IR Iran
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[93]:
+<span></span>Out[118]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -2918,7 +2930,7 @@ Cannot Find in Rankings IR Iran
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [94]:
+<span></span>In [119]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2935,7 +2947,7 @@ Cannot Find in Rankings IR Iran
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[94]:
+<span></span>Out[119]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3047,7 +3059,7 @@ throughout the tournament. We will take the rating and rankings at the
 start of the tournament.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [95]:
+<span></span>In [120]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3060,7 +3072,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [97]:
+<span></span>In [121]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3077,7 +3089,7 @@ start of the tournament.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[97]:
+<span></span>Out[121]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3159,7 +3171,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [98]:
+<span></span>In [122]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3180,7 +3192,7 @@ start of the tournament.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[98]:
+<span></span>Out[122]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3232,7 +3244,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [99]:
+<span></span>In [123]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3249,7 +3261,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [100]:
+<span></span>In [124]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3259,7 +3271,7 @@ start of the tournament.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[100]:
+<span></span>Out[124]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3432,7 +3444,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [101]:
+<span></span>In [125]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3442,7 +3454,7 @@ start of the tournament.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[101]:
+<span></span>Out[125]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3615,7 +3627,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [102]:
+<span></span>In [126]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3632,7 +3644,7 @@ start of the tournament.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[102]:
+<span></span>Out[126]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3803,9 +3815,21 @@ start of the tournament.</p>
 <p>5 rows × 44 columns</p>
 </div></div>
 </div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [127]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Saving test rating for momentum</span>
+<span class="n">x_rating_test</span> <span class="o">=</span> <span class="n">results_ratings_wc3</span><span class="p">[</span><span class="s1">&#39;overall_x&#39;</span><span class="p">]</span>
+<span class="n">y_rating_test</span> <span class="o">=</span> <span class="n">results_ratings_wc3</span><span class="p">[</span><span class="s1">&#39;overall_y&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [103]:
+<span></span>In [128]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3816,7 +3840,7 @@ start of the tournament.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[103]:
+<span></span>Out[128]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3868,7 +3892,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [104]:
+<span></span>In [129]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3893,7 +3917,7 @@ start of the tournament.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[104]:
+<span></span>Out[129]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -4066,7 +4090,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [110]:
+<span></span>In [142]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -4105,7 +4129,7 @@ start of the tournament.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[110]:
+<span></span>Out[142]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -4278,7 +4302,32 @@ start of the tournament.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [111]:
+<span></span>In [143]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Restore rating column for momentum</span>
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;x_rating&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_rating_train</span>
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;y_rating&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_rating_train</span>
+<span class="k">assert</span> <span class="p">((</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;x_rating&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;y_rating&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;overall_diff&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [144]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;x_rating&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_rating_test</span>
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;y_rating&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_rating_test</span>
+<span class="k">assert</span> <span class="p">((</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;x_rating&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">test</span><span class="p">[</span><span class="s1">&#39;y_rating&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;overall_diff&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [145]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -4288,7 +4337,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [112]:
+<span></span>In [146]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -4299,7 +4348,7 @@ start of the tournament.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [115]:
+<span></span>In [147]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -4309,7 +4358,7 @@ start of the tournament.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[115]:
+<span></span>Out[147]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -4342,8 +4391,6 @@ start of the tournament.</p>
       <th>overall_diff</th>
       <th>attack_away_defence_home_diff</th>
       <th>...</th>
-      <th>bup_speed_diff</th>
-      <th>cc_crossing_diff</th>
       <th>cc_passing_diff</th>
       <th>cc_shooting_diff</th>
       <th>d_aggresion_diff</th>
@@ -4351,6 +4398,8 @@ start of the tournament.</p>
       <th>d_width_diff</th>
       <th>home_win</th>
       <th>home_win_no_pk</th>
+      <th>x_rating</th>
+      <th>y_rating</th>
       <th>Group</th>
     </tr>
   </thead>
@@ -4368,8 +4417,6 @@ start of the tournament.</p>
       <td>-1.0</td>
       <td>4.0</td>
       <td>...</td>
-      <td>-1.0</td>
-      <td>-21.0</td>
       <td>11.0</td>
       <td>-12.0</td>
       <td>-9.0</td>
@@ -4377,6 +4424,8 @@ start of the tournament.</p>
       <td>-12.0</td>
       <td>-1</td>
       <td>0</td>
+      <td>79.0</td>
+      <td>80.0</td>
       <td>Quarter-finals</td>
     </tr>
     <tr>
@@ -4392,8 +4441,6 @@ start of the tournament.</p>
       <td>2.0</td>
       <td>4.0</td>
       <td>...</td>
-      <td>-1.0</td>
-      <td>-13.0</td>
       <td>-12.0</td>
       <td>-21.0</td>
       <td>-19.0</td>
@@ -4401,6 +4448,8 @@ start of the tournament.</p>
       <td>31.0</td>
       <td>1</td>
       <td>1</td>
+      <td>85.0</td>
+      <td>83.0</td>
       <td>Semi-finals</td>
     </tr>
     <tr>
@@ -4416,8 +4465,6 @@ start of the tournament.</p>
       <td>-1.0</td>
       <td>5.0</td>
       <td>...</td>
-      <td>15.0</td>
-      <td>17.0</td>
       <td>21.0</td>
       <td>17.0</td>
       <td>-3.0</td>
@@ -4425,6 +4472,8 @@ start of the tournament.</p>
       <td>9.0</td>
       <td>1</td>
       <td>1</td>
+      <td>80.0</td>
+      <td>81.0</td>
       <td>Semi-finals</td>
     </tr>
     <tr>
@@ -4440,8 +4489,6 @@ start of the tournament.</p>
       <td>2.0</td>
       <td>0.0</td>
       <td>...</td>
-      <td>-0.0</td>
-      <td>25.0</td>
       <td>5.0</td>
       <td>15.0</td>
       <td>11.0</td>
@@ -4449,6 +4496,8 @@ start of the tournament.</p>
       <td>-13.0</td>
       <td>1</td>
       <td>1</td>
+      <td>83.0</td>
+      <td>81.0</td>
       <td>Play-off for third place</td>
     </tr>
     <tr>
@@ -4464,8 +4513,6 @@ start of the tournament.</p>
       <td>5.0</td>
       <td>0.0</td>
       <td>...</td>
-      <td>-16.0</td>
-      <td>-5.0</td>
       <td>-28.0</td>
       <td>-23.0</td>
       <td>-5.0</td>
@@ -4473,16 +4520,28 @@ start of the tournament.</p>
       <td>9.0</td>
       <td>1</td>
       <td>1</td>
+      <td>85.0</td>
+      <td>80.0</td>
       <td>Final</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 34 columns</p>
+<p>5 rows × 36 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [114]:
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [148]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>

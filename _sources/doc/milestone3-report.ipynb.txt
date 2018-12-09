@@ -76,7 +76,7 @@
     "\n",
     "In this dataset, we focused primarily on seeing if individual player statistics were important predictors of the outcome of a match. We aggregated for each team different player statistics and differenced the aggregates. From looking at the plots the distributions of a difference in rating among the three outcome do not really seem that different. This might be an indication that using individual ratings and aggregating them might not be the way to go. \n",
     "\n",
-    "![European League Distributions](img/european_league_differences.png)"
+    "![](img/european_league_differences.png)"
    ]
   },
   {
@@ -85,7 +85,7 @@
    "source": [
     "## Exploring Other Features\n",
     "\n",
-    "![Spearman Correlation Plot](img/spear_corr.png)\n",
+    "![](img/spear_corr.png)\n",
     "The spearman correlation plot gives us an idea of how well these features correlate with our dependent variable. In other words, the highly correlated features, such as overall difference in ratings should give us a fairly good idea of team 1/home team winning. "
    ]
   },
@@ -93,7 +93,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "![Distribution Plot](img/distr_plot.png)\n",
+    "![](img/distr_plot.png)\n",
     "In fact, from the distribution plot we see that the features, such as overall difference in ratings and goalkeeper rating difference, that can better discriminate win, loss for team 1 are more highly correlated with the win/lose. Similarly, features, such as build up dribbling difference, which have low correlation barely show any difference between distribution of different outcomes."
    ]
   },
@@ -101,7 +101,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "![Goal Rating](img/goal_rating.png)\n",
+    "![](img/goal_rating.png)\n",
     "Inspecting one of the highly correlated features closely, we see that when the difference is positive (team 1 has an advantage), the likelihood of winning is much higher whereas when it's negative it's much more likely to lose. "
    ]
   },
@@ -109,7 +109,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "![Wage Difference](img/wage_diff.png)\n",
+    "![](img/wage_diff.png)\n",
     "However, there are also some features that don't have really high correlation and can still discriminate well the win/lose situations when the difference is large. For instance, for the team wage difference, we see when the difference is large, it is much more likely to win/lose, but there is barely any difference in the middle peaking at 0. This is happening because we imputed missing values with 0 to encode lack of information. In fact, in these cases we have a lot of distributions with a really high peak at 0, causing low correlation. Nonetheless, they can still be useful when we do possess the information. "
    ]
   },
@@ -119,7 +119,7 @@
    "source": [
     "In addition, it seems that previous match results will be good predictors. This time it is a bit more obvious that home team winning tends to have higher values. It seems like we can probably calculate some kind of momentum and utilize it as a predictor. We will explore more of this concept later on when we try to make more advanced models.\n",
     "\n",
-    "![Previous Wins Sofifa](img/previous_wins.png)"
+    "![](img/previous_wins.png)"
    ]
   },
   {
@@ -137,7 +137,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "![PCA Results](img/pca_res.png)\n",
+    "![](img/pca_res.png)\n",
     "\n",
     "First of all, we notice that PCA helps models like LDA and QDA perhaps because of the independent assumption of components imposed by PCA. On the other hand, the performance for Logistic Regression, Random Forest, XGBoost seem to be slightly hurt by the reduced information from PCA. \n",
     "\n",
@@ -170,20 +170,13 @@
     "\n",
     "The other baseline model utilizes the FIFA rankings as well as some basic team features, including difference in attack ratings, difference in defense ratings, and difference in midfield ratings. Through classification methods such as logistic regression, LDA, QDA, Random Forest and XGBoost and cross validation, we picked LDA as the final baseline model as it gave the highest validation accuracy.\n",
     "\n",
-    "![Baseline Results](img/baseline_result.png)\n",
+    "![](img/baseline_result.png)\n",
     "\n",
     "With this model, we were able to achieve around 59.4% accuracy in predicting the 2018 World Cup results. We hope to at least match this accuracy in our more advanced model that does not utilize the FIFA rankings.\n",
     "\n",
     "Note that because in the World Cup starting from the Round of 16 there can no longer be ties, we decided for these matches if the model predicts a tie (i.e. tie is the highest probability), we take the result with the second highest probability as our prediction. For this reason, the test accuracy is also higher because half of the matches can only have 2 outcomes instead of 3. \n",
     "\n"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
@@ -202,7 +195,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.6.6"
+   "version": "3.7.0"
   }
  },
  "nbformat": 4,

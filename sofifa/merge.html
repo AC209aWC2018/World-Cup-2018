@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -33,7 +34,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+        <a class="navbar-brand" href="../index.html">
           World Cup</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -53,11 +54,10 @@
       aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/problem_statement.html">Overview and Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../doc/team.html">Team Members</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Exploratory Data Analysis</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/EDA-notebook.html">Exploratory Data Analysis</a></li>
 </ul>
@@ -289,7 +289,7 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<span></span>In [87]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -299,7 +299,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<span></span>In [88]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -310,7 +310,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<span></span>In [89]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -321,7 +321,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<span></span>In [90]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -332,7 +332,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<span></span>In [91]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -343,7 +343,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<span></span>In [92]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -353,7 +353,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<span></span>In [93]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -364,7 +364,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [94]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -376,7 +376,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [95]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -386,7 +386,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[9]:
+<span></span>Out[95]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -419,16 +419,16 @@ div.nboutput div.output_area.stderr {
       <th>overall_diff</th>
       <th>attack_away_defence_home_diff</th>
       <th>...</th>
-      <th>score_past_5_games_diff</th>
-      <th>wins_home_against_away_3_games</th>
-      <th>wins_past_3_games_diff</th>
+      <th>lose_momentum_past_1_games_diff</th>
+      <th>lose_momentum_past_4_games_diff</th>
+      <th>lose_momentum_past_5_games_diff</th>
+      <th>lose_momentum_past_2_games_diff</th>
+      <th>win_momentum_past_4_games_diff</th>
+      <th>win_momentum_past_3_games_diff</th>
       <th>wins_past_1_games_diff</th>
       <th>wins_home_against_away_2_games</th>
-      <th>wins_home_against_away_4_games</th>
-      <th>wins_past_5_games_diff</th>
       <th>wins_home_against_away_5_games</th>
-      <th>wins_home_against_away_1_games</th>
-      <th>score_conceded_past_2_games_diff</th>
+      <th>lose_momentum_past_3_games_diff</th>
     </tr>
   </thead>
   <tbody>
@@ -554,17 +554,722 @@ div.nboutput div.output_area.stderr {
     </tr>
   </tbody>
 </table>
-<p>5 rows × 56 columns</p>
+<p>5 rows × 57 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [96]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">gdp_train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/train_final.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">gdp_test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/test_final.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [97]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wc_playoff_matches</span> <span class="o">=</span> <span class="n">gdp_train</span><span class="p">[((</span><span class="n">gdp_train</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2010-06-26&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gdp_train</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;2010-07-12&#39;</span><span class="p">))</span>
+             <span class="o">|</span> <span class="p">((</span><span class="n">gdp_train</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2014-06-28&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gdp_train</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;2014-07-14&#39;</span><span class="p">))]</span>
+<span class="n">wc_playoff_matches</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[97]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>game_date</th>
+      <th>home_team</th>
+      <th>away_team</th>
+      <th>home_score</th>
+      <th>away_score</th>
+      <th>tournament</th>
+      <th>country</th>
+      <th>neutral</th>
+      <th>overall_diff</th>
+      <th>attack_away_defence_home_diff</th>
+      <th>...</th>
+      <th>lose_momentum_past_1_games_diff</th>
+      <th>lose_momentum_past_4_games_diff</th>
+      <th>lose_momentum_past_5_games_diff</th>
+      <th>lose_momentum_past_2_games_diff</th>
+      <th>win_momentum_past_4_games_diff</th>
+      <th>win_momentum_past_3_games_diff</th>
+      <th>wins_past_1_games_diff</th>
+      <th>wins_home_against_away_2_games</th>
+      <th>wins_home_against_away_5_games</th>
+      <th>lose_momentum_past_3_games_diff</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>521</th>
+      <td>2010-06-26 00:00:00+00:00</td>
+      <td>Uruguay</td>
+      <td>Korea Republic</td>
+      <td>2</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>8.0</td>
+      <td>-7.0</td>
+      <td>...</td>
+      <td>-0.22</td>
+      <td>-0.52</td>
+      <td>-0.82</td>
+      <td>-0.22</td>
+      <td>-1.48</td>
+      <td>-1.48</td>
+      <td>-1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.52</td>
+    </tr>
+    <tr>
+      <th>522</th>
+      <td>2010-06-27 00:00:00+00:00</td>
+      <td>Germany</td>
+      <td>England</td>
+      <td>4</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>-1.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.02</td>
+      <td>0.18</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>523</th>
+      <td>2010-06-27 00:00:00+00:00</td>
+      <td>Argentina</td>
+      <td>Mexico</td>
+      <td>3</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>6.0</td>
+      <td>-5.0</td>
+      <td>...</td>
+      <td>0.06</td>
+      <td>0.23</td>
+      <td>0.23</td>
+      <td>0.23</td>
+      <td>0.71</td>
+      <td>0.71</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.23</td>
+    </tr>
+    <tr>
+      <th>524</th>
+      <td>2010-06-29 00:00:00+00:00</td>
+      <td>Spain</td>
+      <td>Portugal</td>
+      <td>1</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>3.0</td>
+      <td>-5.0</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>-0.15</td>
+      <td>-0.15</td>
+      <td>0.00</td>
+      <td>-0.82</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>525</th>
+      <td>2010-07-02 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Brazil</td>
+      <td>2</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>-4.0</td>
+      <td>7.0</td>
+      <td>...</td>
+      <td>-0.20</td>
+      <td>0.20</td>
+      <td>0.40</td>
+      <td>0.00</td>
+      <td>0.88</td>
+      <td>0.04</td>
+      <td>-1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>526</th>
+      <td>2010-07-03 00:00:00+00:00</td>
+      <td>Argentina</td>
+      <td>Germany</td>
+      <td>0</td>
+      <td>4</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.18</td>
+      <td>0.19</td>
+      <td>0.01</td>
+      <td>0.82</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>527</th>
+      <td>2010-07-03 00:00:00+00:00</td>
+      <td>Paraguay</td>
+      <td>Spain</td>
+      <td>0</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>-10.0</td>
+      <td>10.0</td>
+      <td>...</td>
+      <td>-0.15</td>
+      <td>-0.50</td>
+      <td>-0.40</td>
+      <td>0.00</td>
+      <td>-1.80</td>
+      <td>-0.95</td>
+      <td>-1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.25</td>
+    </tr>
+    <tr>
+      <th>528</th>
+      <td>2010-07-06 00:00:00+00:00</td>
+      <td>Uruguay</td>
+      <td>Netherlands</td>
+      <td>2</td>
+      <td>3</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>-2.0</td>
+      <td>7.0</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>-0.42</td>
+      <td>-0.64</td>
+      <td>0.00</td>
+      <td>-1.60</td>
+      <td>-0.80</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.22</td>
+    </tr>
+    <tr>
+      <th>529</th>
+      <td>2010-07-07 00:00:00+00:00</td>
+      <td>Germany</td>
+      <td>Spain</td>
+      <td>0</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>-3.0</td>
+      <td>4.0</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.18</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>530</th>
+      <td>2010-07-10 00:00:00+00:00</td>
+      <td>Uruguay</td>
+      <td>Germany</td>
+      <td>2</td>
+      <td>3</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>-4.0</td>
+      <td>7.0</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>-0.04</td>
+      <td>-0.22</td>
+      <td>0.22</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>531</th>
+      <td>2010-07-11 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Spain</td>
+      <td>0</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>South Africa</td>
+      <td>True</td>
+      <td>-5.0</td>
+      <td>7.0</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.15</td>
+      <td>0.15</td>
+      <td>0.20</td>
+      <td>0.85</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1208</th>
+      <td>2014-06-28 00:00:00+00:00</td>
+      <td>Brazil</td>
+      <td>Chile</td>
+      <td>1</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>False</td>
+      <td>7.0</td>
+      <td>-8.0</td>
+      <td>...</td>
+      <td>0.17</td>
+      <td>0.27</td>
+      <td>0.27</td>
+      <td>0.10</td>
+      <td>1.52</td>
+      <td>0.76</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>0.5</td>
+      <td>0.10</td>
+    </tr>
+    <tr>
+      <th>1209</th>
+      <td>2014-06-28 00:00:00+00:00</td>
+      <td>Colombia</td>
+      <td>Uruguay</td>
+      <td>2</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>-0.0</td>
+      <td>9.0</td>
+      <td>...</td>
+      <td>0.23</td>
+      <td>0.00</td>
+      <td>-0.23</td>
+      <td>0.23</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>0.5</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1210</th>
+      <td>2014-06-29 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Mexico</td>
+      <td>2</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>...</td>
+      <td>0.21</td>
+      <td>0.04</td>
+      <td>-0.21</td>
+      <td>0.00</td>
+      <td>-0.04</td>
+      <td>-0.79</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>-0.21</td>
+    </tr>
+    <tr>
+      <th>1211</th>
+      <td>2014-06-30 00:00:00+00:00</td>
+      <td>France</td>
+      <td>Nigeria</td>
+      <td>2</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>4.0</td>
+      <td>-2.0</td>
+      <td>...</td>
+      <td>0.23</td>
+      <td>0.23</td>
+      <td>0.42</td>
+      <td>0.23</td>
+      <td>0.77</td>
+      <td>0.00</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1212</th>
+      <td>2014-07-01 00:00:00+00:00</td>
+      <td>Belgium</td>
+      <td>USA</td>
+      <td>2</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>7.0</td>
+      <td>-4.0</td>
+      <td>...</td>
+      <td>0.07</td>
+      <td>0.14</td>
+      <td>0.07</td>
+      <td>0.33</td>
+      <td>0.00</td>
+      <td>0.74</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>0.5</td>
+      <td>0.33</td>
+    </tr>
+    <tr>
+      <th>1213</th>
+      <td>2014-07-01 00:00:00+00:00</td>
+      <td>Argentina</td>
+      <td>Switzerland</td>
+      <td>1</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>5.0</td>
+      <td>-6.0</td>
+      <td>...</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>0.5</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <th>1214</th>
+      <td>2014-07-04 00:00:00+00:00</td>
+      <td>France</td>
+      <td>Germany</td>
+      <td>0</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>-3.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>0.19</td>
+      <td>0.16</td>
+      <td>0.16</td>
+      <td>0.19</td>
+      <td>0.81</td>
+      <td>0.81</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.16</td>
+    </tr>
+    <tr>
+      <th>1215</th>
+      <td>2014-07-04 00:00:00+00:00</td>
+      <td>Brazil</td>
+      <td>Colombia</td>
+      <td>2</td>
+      <td>1</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>False</td>
+      <td>6.0</td>
+      <td>-7.0</td>
+      <td>...</td>
+      <td>-0.23</td>
+      <td>-0.23</td>
+      <td>-0.23</td>
+      <td>-0.23</td>
+      <td>-0.77</td>
+      <td>-1.54</td>
+      <td>-1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.46</td>
+    </tr>
+    <tr>
+      <th>1216</th>
+      <td>2014-07-05 00:00:00+00:00</td>
+      <td>Argentina</td>
+      <td>Belgium</td>
+      <td>1</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.01</td>
+      <td>0.00</td>
+      <td>0.01</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1217</th>
+      <td>2014-07-08 00:00:00+00:00</td>
+      <td>Brazil</td>
+      <td>Germany</td>
+      <td>1</td>
+      <td>7</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>False</td>
+      <td>-1.0</td>
+      <td>-2.0</td>
+      <td>...</td>
+      <td>0.17</td>
+      <td>0.18</td>
+      <td>0.34</td>
+      <td>0.18</td>
+      <td>0.84</td>
+      <td>0.84</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.18</td>
+    </tr>
+    <tr>
+      <th>1218</th>
+      <td>2014-07-09 00:00:00+00:00</td>
+      <td>Netherlands</td>
+      <td>Argentina</td>
+      <td>0</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>-3.0</td>
+      <td>9.0</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>-0.21</td>
+      <td>-0.21</td>
+      <td>0.00</td>
+      <td>-0.82</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1219</th>
+      <td>2014-07-12 00:00:00+00:00</td>
+      <td>Brazil</td>
+      <td>Netherlands</td>
+      <td>0</td>
+      <td>3</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>False</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>-0.04</td>
+      <td>-0.08</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-0.79</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.21</td>
+    </tr>
+    <tr>
+      <th>1220</th>
+      <td>2014-07-13 00:00:00+00:00</td>
+      <td>Germany</td>
+      <td>Argentina</td>
+      <td>1</td>
+      <td>0</td>
+      <td>FIFA World Cup</td>
+      <td>Brazil</td>
+      <td>True</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>...</td>
+      <td>-0.16</td>
+      <td>-0.32</td>
+      <td>-0.50</td>
+      <td>-0.32</td>
+      <td>-1.66</td>
+      <td>-2.48</td>
+      <td>-1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.48</td>
+    </tr>
+  </tbody>
+</table>
+<p>24 rows × 57 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [98]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wc_playoff_matches</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">wc_playoff_matches</span><span class="p">[</span><span class="s1">&#39;home_score&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">wc_playoff_matches</span><span class="p">[</span><span class="s1">&#39;away_score&#39;</span><span class="p">],</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [99]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wc_playoff_matches</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[99]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>521     1
+522     1
+523     1
+524     1
+525     1
+526    -1
+527    -1
+528    -1
+529    -1
+530    -1
+531    -1
+1208    1
+1209    1
+1210    1
+1211    1
+1212    1
+1213    1
+1214   -1
+1215    1
+1216    1
+1217   -1
+1218   -1
+1219   -1
+1220    1
+Name: home_win, dtype: int64
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [100]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wc_playoff_matches</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/wc_playoffs_final.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

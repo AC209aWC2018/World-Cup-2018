@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -35,7 +36,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+        <a class="navbar-brand" href="../index.html">
           World Cup</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -55,11 +56,10 @@
       aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/problem_statement.html">Overview and Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../doc/team.html">Team Members</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Exploratory Data Analysis</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/EDA-notebook.html">Exploratory Data Analysis</a></li>
 </ul>
@@ -303,7 +303,7 @@ div.nboutput div.output_area.stderr {
 <p>We will first build some basic models.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [81]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -337,90 +337,7 @@ div.nboutput div.output_area.stderr {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/train_final.csv&#39;</span><span class="p">)</span>
 <span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/test_final.csv&#39;</span><span class="p">)</span>
-
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[3]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Index([&#39;game_date&#39;, &#39;home_team&#39;, &#39;away_team&#39;, &#39;home_score&#39;, &#39;away_score&#39;,
-       &#39;tournament&#39;, &#39;country&#39;, &#39;neutral&#39;, &#39;overall_diff&#39;,
-       &#39;attack_away_defence_home_diff&#39;, &#39;attack_diff&#39;,
-       &#39;attack_home_defence_away_diff&#39;, &#39;defence_diff&#39;, &#39;midfield_diff&#39;,
-       &#39;rank_diff&#39;, &#39;prestige_diff&#39;, &#39;growth_diff&#39;, &#39;full_age_diff&#39;,
-       &#39;start_age_diff&#39;, &#39;value_euros_millions_diff&#39;,
-       &#39;wage_euros_thousands_diff&#39;, &#39;goalkeeper_overall_diff&#39;,
-       &#39;bup_dribbling_diff&#39;, &#39;bup_passing_diff&#39;, &#39;bup_speed_diff&#39;,
-       &#39;cc_crossing_diff&#39;, &#39;cc_passing_diff&#39;, &#39;cc_shooting_diff&#39;,
-       &#39;d_aggresion_diff&#39;, &#39;d_pressure_diff&#39;, &#39;d_width_diff&#39;, &#39;home_win&#39;,
-       &#39;gdp_diff&#39;, &#39;is_home&#39;, &#39;raw_gdp_diff&#39;, &#39;prev_champ&#39;,
-       &#39;score_past_2_games_diff&#39;, &#39;score_conceded_past_5_games_diff&#39;,
-       &#39;score_past_4_games_diff&#39;, &#39;wins_past_2_games_diff&#39;,
-       &#39;score_past_3_games_diff&#39;, &#39;wins_past_4_games_diff&#39;,
-       &#39;score_conceded_past_3_games_diff&#39;, &#39;score_conceded_past_1_games_diff&#39;,
-       &#39;score_past_1_games_diff&#39;, &#39;score_conceded_past_4_games_diff&#39;,
-       &#39;score_past_5_games_diff&#39;, &#39;wins_home_against_away_3_games&#39;,
-       &#39;wins_past_3_games_diff&#39;, &#39;wins_past_1_games_diff&#39;,
-       &#39;wins_home_against_away_2_games&#39;, &#39;wins_home_against_away_4_games&#39;,
-       &#39;wins_past_5_games_diff&#39;, &#39;wins_home_against_away_5_games&#39;,
-       &#39;wins_home_against_away_1_games&#39;, &#39;score_conceded_past_2_games_diff&#39;],
-      dtype=&#39;object&#39;)
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">test</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[4]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Index([&#39;game_date&#39;, &#39;home_team&#39;, &#39;away_team&#39;, &#39;home_score&#39;, &#39;away_score&#39;,
-       &#39;tournament&#39;, &#39;country&#39;, &#39;neutral&#39;, &#39;overall_diff&#39;,
-       &#39;attack_away_defence_home_diff&#39;, &#39;attack_diff&#39;,
-       &#39;attack_home_defence_away_diff&#39;, &#39;defence_diff&#39;, &#39;midfield_diff&#39;,
-       &#39;rank_diff&#39;, &#39;prestige_diff&#39;, &#39;growth_diff&#39;, &#39;full_age_diff&#39;,
-       &#39;start_age_diff&#39;, &#39;value_euros_millions_diff&#39;,
-       &#39;wage_euros_thousands_diff&#39;, &#39;goalkeeper_overall_diff&#39;,
-       &#39;bup_dribbling_diff&#39;, &#39;bup_passing_diff&#39;, &#39;bup_speed_diff&#39;,
-       &#39;cc_crossing_diff&#39;, &#39;cc_passing_diff&#39;, &#39;cc_shooting_diff&#39;,
-       &#39;d_aggresion_diff&#39;, &#39;d_pressure_diff&#39;, &#39;d_width_diff&#39;, &#39;home_win&#39;,
-       &#39;home_win_no_pk&#39;, &#39;Group&#39;, &#39;gdp_diff&#39;, &#39;is_home&#39;, &#39;raw_gdp_diff&#39;,
-       &#39;prev_champ&#39;, &#39;score_past_2_games_diff&#39;,
-       &#39;score_conceded_past_5_games_diff&#39;, &#39;score_past_4_games_diff&#39;,
-       &#39;wins_past_2_games_diff&#39;, &#39;score_past_3_games_diff&#39;,
-       &#39;wins_past_4_games_diff&#39;, &#39;score_conceded_past_3_games_diff&#39;,
-       &#39;score_conceded_past_1_games_diff&#39;, &#39;score_past_1_games_diff&#39;,
-       &#39;score_conceded_past_4_games_diff&#39;, &#39;score_past_5_games_diff&#39;,
-       &#39;wins_home_against_away_3_games&#39;, &#39;wins_past_3_games_diff&#39;,
-       &#39;wins_past_1_games_diff&#39;, &#39;wins_home_against_away_2_games&#39;,
-       &#39;wins_home_against_away_4_games&#39;, &#39;wins_past_5_games_diff&#39;,
-       &#39;wins_home_against_away_5_games&#39;, &#39;wins_home_against_away_1_games&#39;,
-       &#39;score_conceded_past_2_games_diff&#39;],
-      dtype=&#39;object&#39;)
+<span class="n">wc_playoffs_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/cleaned/wc_playoffs_final.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -429,7 +346,7 @@ time. In this case, <code class="docutils literal notranslate"><span class="pre"
 the training accuracy from just doing this “prediction”?</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -439,7 +356,7 @@ the training accuracy from just doing this “prediction”?</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[5]:
+<span></span>Out[3]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -450,7 +367,7 @@ the training accuracy from just doing this “prediction”?</p>
 <p>Pretty decent when we have 3 classes. What about the test accuracy?</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -460,7 +377,7 @@ the training accuracy from just doing this “prediction”?</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[6]:
+<span></span>Out[4]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -477,18 +394,19 @@ at home. We will make a train and validation set out of the original
 train set.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;rank_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;overall_diff&#39;</span><span class="p">]]</span>
-<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;rank_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;overall_diff&#39;</span><span class="p">]]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win_no_pk&#39;</span><span class="p">,</span> <span class="s1">&#39;rank_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;overall_diff&#39;</span><span class="p">]]</span>
+<span class="n">wc_train</span> <span class="o">=</span> <span class="n">wc_playoffs_train</span><span class="p">[[</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;rank_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;overall_diff&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -499,13 +417,16 @@ train set.</p>
 <span class="n">y_validation</span> <span class="o">=</span> <span class="n">X_validation</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
 <span class="n">X_validation</span> <span class="o">=</span> <span class="n">X_validation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="n">X_test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y_test_no_pk</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;home_win_no_pk&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win_no_pk&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y_wc</span> <span class="o">=</span> <span class="n">wc_train</span><span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">X_wc</span> <span class="o">=</span> <span class="n">wc_train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;home_win&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -517,7 +438,7 @@ train set.</p>
 <p>We will first try out logistic regression.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -527,7 +448,7 @@ train set.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -554,7 +475,7 @@ Logistic Regression Validation Score: 0.5684210526315789
 first check whether the variances across the three outcomes are equal.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -564,7 +485,7 @@ first check whether the variances across the three outcomes are equal.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[12]:
+<span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -633,7 +554,7 @@ first check whether the variances across the three outcomes are equal.</p>
 <p>Surprisingly, besides <code class="docutils literal notranslate"><span class="pre">rank_diff</span></code>, they are actually quite similar!</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -643,7 +564,7 @@ first check whether the variances across the three outcomes are equal.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -669,7 +590,7 @@ LDA Validation Score: 0.5578947368421052
 perform similarly to LDA in this case due to the almost equal variances.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -679,7 +600,7 @@ perform similarly to LDA in this case due to the almost equal variances.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -704,7 +625,7 @@ QDA Validation Score: 0.5368421052631579
 <p>We will also try out Random Forest.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [17]:
+<span></span>In [15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -734,14 +655,14 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
 [Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.
-[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:    5.9s
-[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   20.9s
-[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:   27.9s finished
+[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:    5.8s
+[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   20.8s
+[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:   28.0s finished
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [18]:
+<span></span>In [16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -766,7 +687,7 @@ Random Forest Validation Score 0.5552631578947368
 <p>Let’s also not forget XGBoost.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [19]:
+<span></span>In [17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -796,14 +717,14 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
 [Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.
-[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:    3.5s
-[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   16.7s
-[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:   21.0s finished
+[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:    3.7s
+[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   14.0s
+[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:   18.2s finished
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [20]:
+<span></span>In [18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -811,8 +732,8 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
 <span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xgb_model</span>
 <span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_validation</span><span class="p">,</span> <span class="n">y_validation</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGBoost Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;Random Forest&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGBoost Validation Score </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;Random Forest&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGBoost Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGBoost Validation Score </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;XGBoost&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -821,13 +742,13 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-XGBoost Train Score: 0.5115359261700725
-XGBoost Validation Score 0.5552631578947368
+XGBoost Train Score: 0.5095583388266315
+XGBoost Validation Score 0.5578947368421052
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [21]:
+<span></span>In [19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -837,7 +758,7 @@ XGBoost Validation Score 0.5552631578947368
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [22]:
+<span></span>In [20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -847,7 +768,7 @@ XGBoost Validation Score 0.5552631578947368
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[22]:
+<span></span>Out[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -911,7 +832,7 @@ XGBoost Validation Score 0.5552631578947368
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [23]:
+<span></span>In [21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -929,15 +850,44 @@ XGBoost Validation Score 0.5552631578947368
 We choose the final model to be the one with the highest validation score, which is Logistic Regression in this case
 </pre></div></div>
 </div>
+<p>Due to the elimination style during playoffs of the World Cup, there are
+no draws in these playoff matches. We will attempt three different
+approaches to predicting the outcome of theese playoff matches.</p>
+<p>The first approach is to predict the outcome at 90 minutes (when a
+regular game ends so that our train set and test set are more “similar”
+to each other) before accounting for penalty kicks and overtime,
+allowing the model which trained on the training set to also predict
+draws in the playoff matches of the World Cup.</p>
+<p>In the second approach, we will predict the outcome at the end of the
+match; for a playoff match, if the model predicts a draw as most likely,
+then we instead predict the second most likely outcome of that match. We
+will call this approach the “Softmax Approach”.</p>
+<p>The third approach also attempts to predict the outcome at the end of
+the match. Instead of just predicting the second most likely outcome for
+a playoff match, we instead just train another model specifically on
+past World Cup playoff matches on the final outcome of these matches. We
+then just use this model to predict the playoff matches while the model
+trained on the training set will predict the preliminaries match. The
+third approach should be the more robust approach compared to the second
+approach. Since we have limited amount of past World Cup playoff matches
+(only 24 matches because some of them were removed to accomodate the
+team ratings dataset), we will train a basic logistic regression model
+as this model. We will call this approach the “WC Playoff Model”.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [24]:
+<span></span>In [22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">test_pred</span> <span class="o">=</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+<span></span><span class="n">wc_model</span> <span class="o">=</span> <span class="n">LogisticRegressionCV</span><span class="p">(</span><span class="n">solver</span> <span class="o">=</span> <span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span> <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;multinomial&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_wc</span><span class="p">,</span> <span class="n">y_wc</span><span class="p">)</span>
+<span class="n">test_pred</span> <span class="o">=</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+<span class="n">test_pred_playoff</span> <span class="o">=</span> <span class="n">predict_test_data</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">wc_model</span><span class="p">)</span>
 <span class="n">test_score</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">test_pred</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score</span><span class="p">))</span>
+<span class="n">test_score_playoff</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">test_pred_playoff</span><span class="p">)</span>
+<span class="n">test_score_no_pk</span> <span class="o">=</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test_no_pk</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{}</span><span class="s2"> at 90 mins&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score_no_pk</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{}</span><span class="s2"> at end (Softmax)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For the best Model, </span><span class="si">{}</span><span class="s2">, the test accuracy is </span><span class="si">{}</span><span class="s2"> at end (WC Playoff Model)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">test_score_playoff</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -946,16 +896,41 @@ We choose the final model to be the one with the highest validation score, which
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-For the best Model, Logistic Regression, the test accuracy is 0.594
+For the best Model, Logistic Regression, the test accuracy is 0.5625 at 90 mins
+For the best Model, Logistic Regression, the test accuracy is 0.59375 at end (Softmax)
+For the best Model, Logistic Regression, the test accuracy is 0.578125 at end (WC Playoff Model)
 </pre></div></div>
 </div>
-<p>Impressive! We now have an idea of what our more advanced model should
-hope to achieve.</p>
-<p>Let us do some quick analysis of the baseline model. First, let’s see
-what exactly the model is getting wrong.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [108]:
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#save for comparisons later</span>
+<span class="n">save</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">save</span><span class="p">[</span><span class="s1">&#39;Model Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Baseline Model&#39;</span>
+<span class="n">save</span><span class="p">[</span><span class="s1">&#39;Train Score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s1">&#39;Train Score&#39;</span><span class="p">]</span>
+<span class="n">save</span><span class="p">[</span><span class="s1">&#39;Validation Score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">][</span><span class="s1">&#39;Validation Score&#39;</span><span class="p">]</span>
+<span class="n">save</span><span class="p">[</span><span class="s1">&#39;Test Score (90 mins)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_score_no_pk</span>
+<span class="n">save</span><span class="p">[</span><span class="s1">&#39;Test Score (Softmax)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_score</span>
+<span class="n">save</span><span class="p">[</span><span class="s1">&#39;Test Score (WC Playoff Model)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_score_playoff</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">save</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;baseline_model_results.csv&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Impressive! We now have an idea of what our more advanced model should
+hope to achieve. In this case the Softmax approach did better than the
+WC Playoff Model approach; this might be due to the small training set
+for the playoff matches, the small number of features, or just pure
+luck.</p>
+<p>Let us do some quick analysis of the baseline model. First, let’s see
+what exactly the model is getting wrong by plotting some confusion
+matrices.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -993,25 +968,31 @@ what exactly the model is getting wrong.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [109]:
+<span></span>In [25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">train_cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
+<span class="n">test_cm_90mins</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test_no_pk</span><span class="p">,</span> <span class="n">df_result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
 <span class="n">test_cm</span> <span class="o">=</span>  <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">test_pred</span><span class="p">)</span>
+<span class="n">test_playoff_cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">test_pred_playoff</span><span class="p">)</span>
+
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [117]:
+<span></span>In [26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">axs</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">train_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Train&#39;</span><span class="p">)</span>
-<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">test_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Test&#39;</span><span class="p">)</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">test_cm_90mins</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Test (90 Mins)&#39;</span><span class="p">)</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">test_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Test (Softmax)&#39;</span><span class="p">)</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">test_playoff_cm</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Home Loss&#39;</span><span class="p">,</span> <span class="s1">&#39;Draw&#39;</span><span class="p">,</span> <span class="s1">&#39;Home Win&#39;</span><span class="p">],</span> <span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Test (WC Playoff Model)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1024,12 +1005,30 @@ what exactly the model is getting wrong.</p>
 </div>
 </div>
 <p>Wow! Our model does not predict draws at all. This is a bit concerning,
-but it makes sense</p>
-<p><strong>RELATE BACK TO EDA</strong></p>
+but it makes sense given that from our EDA of these simple features we
+saw that we really could not distinguish draws from home wins and home
+losses at all for any of the features. For most of the feature
+distributions, they were always “sandwiched” between the two other
+distributions. Maybe our more advanced models will be able to better
+predict draws.</p>
 <p>We see that across train set and test set, the proportions in each entry
 of the confusion matrices are approximately the same, which is good.
 This might be an indication that our train and test sets are
 approximately similar.</p>
+<p>While it seems like because the accuracy in predicting home loss and
+home win in the 90 minutes model are higher than those in the softmax
+approach, we must remember that the true labels of the former approach
+and the latter two approaches are different, where all the draws in the
+playoff matches of the test set became either home losses or wins. As a
+result, the overall accuracy of the the softmax approach is still higher
+than the former approach despite having lower home loss and home win
+accuracies; thus we can only compare the overall accuracies of the
+former approach with the latter two approaches. We can still compare the
+home loss and home win accuracies between the latter two approaches
+though since they are using the same test labels, and we see that while
+the WC Playoff Model is better at predicting home losses, it is worse in
+predicting home wins by a larger magnitude, resulting in lower overall
+accuracy.</p>
 <p>More importantly, we are curious just how important each feature is,
 especially the FIFA ranking feature, the one feature we are trying to
 replace. Feature importance of random forest allows us exactly to do so,
@@ -1037,7 +1036,7 @@ and since it has similar performance to logistic regression in the
 train/validation set, we can utilize it in this case.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [61]:
+<span></span>In [27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1047,7 +1046,7 @@ train/validation set, we can utilize it in this case.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [62]:
+<span></span>In [28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1057,7 +1056,7 @@ train/validation set, we can utilize it in this case.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [73]:
+<span></span>In [29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>

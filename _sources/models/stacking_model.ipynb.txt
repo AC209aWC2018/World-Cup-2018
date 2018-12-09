@@ -1,15 +1,8 @@
 {
  "cells": [
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "Stacking"
-   ]
-  },
-  {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 1,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -39,7 +32,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -49,7 +42,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -59,7 +52,7 @@
     "           'goalkeeper_overall_diff', 'bup_dribbling_diff', 'bup_passing_diff', 'bup_speed_diff',\n",
     "           'cc_crossing_diff', 'cc_passing_diff', 'cc_shooting_diff', 'd_aggresion_diff', 'd_pressure_diff', \n",
     "           'd_width_diff', 'gdp_diff', 'is_home', 'raw_gdp_diff', \n",
-    "          'score_past_5_games_diff', 'score_conceded_past_5_games_diff', 'prev_champ']\n",
+    "          'score_past_5_games_diff', 'score_conceded_past_5_games_diff']\n",
     "\n",
     "train = train[columns + ['home_win']]\n",
     "test = test[columns + ['Group', 'home_win']]"
@@ -67,7 +60,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -86,15 +79,8 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "We saw that most models performed similarly. Why not try stacking the models together? We will stack the logistic regression, LDA, QDA, Random Forest, and XGBoost models."
-   ]
-  },
-  {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -116,7 +102,7 @@
     "             'n_estimators': [10, 50, 100, 200, 500]}\n",
     "\n",
     "    rf_mod = RandomizedSearchCV(estimator=RandomForestClassifier(), param_distributions=rf_params,\\\n",
-    "                                n_iter=50, scoring='accuracy', n_jobs=-1, cv=5, verbose=0).fit(X_train, y_train)\n",
+    "                                n_iter=50, scoring='accuracy', n_jobs=-1, cv=5, verbose=1).fit(X_train, y_train)\n",
     "    \n",
     "    \n",
     "    xgb_params = {\n",
@@ -127,7 +113,7 @@
     "        'max_depth': [3, 4, 5]\n",
     "        }\n",
     "    xgb_model = RandomizedSearchCV(estimator=XGBClassifier(objective='multi:softmax', num_class = 3), param_distributions=xgb_params,\\\n",
-    "                                       n_iter=50, scoring='accuracy', n_jobs=-1, cv=5, verbose=0).fit(X_train, y_train)\n",
+    "                                       n_iter=50, scoring='accuracy', n_jobs=-1, cv=5, verbose=1).fit(X_train, y_train)\n",
     "    \n",
     "    \n",
     "    return (lr_mod, lda_mod, qda_mod, rf_mod, xgb_model)"
@@ -135,16 +121,51 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 6,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fitting 5 folds for each of 50 candidates, totalling 250 fits\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.\n",
+      "[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:    7.7s\n",
+      "[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   29.5s\n",
+      "[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:   40.2s finished\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fitting 5 folds for each of 50 candidates, totalling 250 fits\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.\n",
+      "[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   11.8s\n",
+      "[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   50.8s\n",
+      "[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:  1.1min finished\n"
+     ]
+    }
+   ],
    "source": [
     "models = make_models(X_train, y_train)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -170,26 +191,38 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "models_kept = models\n",
-    "stack_model = fit_stack_model(models_kept, X_valid, y_valid)\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 8,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "0.609375"
+       "0.5631578947368421"
       ]
      },
-     "execution_count": 24,
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "models_kept = models[:5]\n",
+    "stack_model = fit_stack_model(models_kept, X_valid, y_valid)\n",
+    "accuracy_score(y_valid, stack_model_predict(models_kept, stack_model, X_valid))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0.625"
+      ]
+     },
+     "execution_count": 9,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -197,13 +230,6 @@
    "source": [
     "accuracy_score(y_test, stack_model_predict(models_kept, stack_model, X_test))"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   },
   {
    "cell_type": "code",

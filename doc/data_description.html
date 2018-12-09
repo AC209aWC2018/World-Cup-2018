@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -35,7 +36,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+        <a class="navbar-brand" href="../index.html">
           World Cup</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -55,11 +56,10 @@
       aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="problem_statement.html">Overview and Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="team.html">Team Members</a></li>
 <li class="toctree-l1"><a class="reference internal" href="related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Exploratory Data Analysis</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="EDA-notebook.html">Exploratory Data Analysis</a></li>
 </ul>
@@ -138,15 +138,19 @@
   <div class="section" id="Description-of-Data">
 <h1>Description of Data<a class="headerlink" href="#Description-of-Data" title="Permalink to this headline">¶</a></h1>
 <p><strong>Rankings and outcomes:</strong> As the baseline model relies on FIFA ranking,
-we obtained the rankings, points and the corresponding changes from FIFA
-international men teams’ rankings from August 1993 to June 2018.
+we obtained the rankings from <a class="reference external" href="https://www.kaggle.com/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now">FIFA international men teams’ rankings
+from August 1993 to June
+2018</a>.
 National team outcomes between 1872 and 2018 dataset provided by the
 staff is used to construct the dependent variables for our training and
-validation sets. Similarly, we found World Cup 2018 Stats to construct
-our test set results.</p>
+validation sets. Similarly, we found <a class="reference external" href="https://gitlab.com/djh_or/2018-world-cup-stats/blob/master/world_cup_2018_stats.csv">World Cup 2018
+Stats</a>
+to construct our test set results.</p>
 <p><strong>Player and team statistics:</strong> Player data, which include ratings,
-positional data and wages, is provided from sofifa.com and also
-collected from other sources, such as European matches. However, as
+positional data and wages, is provided from
+<a class="reference external" href="https://sofifa.com">sofifa</a> and also collected from other sources,
+such as <a class="reference external" href="https://www.kaggle.com/hugomathien/soccer">European
+matches</a>. However, as
 there were different naming conventions across different datasets for
 players’ name, it would be difficult to accurately match player names
 without some extensive manual curation. Moreover, this would yield
@@ -156,8 +160,11 @@ team to approximate the talent available in each team rather than
 inspecting the individual statistics of each player.</p>
 <p><strong>Country statistics:</strong> Looking at the past World Cup champions, we
 noticed that the stronger teams tend to be the economically wealthier
-ones in their own continents. Therefore, we scraped from Wikipedia
-information about countries like GDP PPP and population.</p>
+ones in their own confederations. Therefore, we scraped from Wikipedia
+information about countries like <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)">GDP
+PPP</a>
+and
+<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">population</a>.</p>
 <div class="section" id="Feature-Engineering">
 <h2>Feature Engineering<a class="headerlink" href="#Feature-Engineering" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -180,10 +187,9 @@ encodes the lack of information which neither advantages nor
 disadvantages either team.</li>
 <li><strong>Momentum:</strong> In sports, we often notice that one team tends to keep
 winning or keep losing as they gain momentum due to teams’ morale,
-conditions and other factors. This can be represented by taking
-account a team’s win rate in the past couple of games and possibly
-the number of goals they scored and were scored against them in the
-past couple of games.</li>
+conditions and other factors. This can be represented by taking into
+account the team’s performance in past games, weighted by the rating
+of the teams the team played in these matches.</li>
 <li><strong>Statistics of players:</strong> We aggregate players’ statistics together
 as part of a team’s offensive, defensive abilities. One exception is
 the goalkeepers’ ratings, as we believe that defense is pivotal for
@@ -191,12 +197,16 @@ any team. Good goalkeepers can potentially swing the outcome of a
 match. As such, we single out goalkeepers’ ratings and include them
 as part of the features.</li>
 <li><strong>GDP within the same continent:</strong> Rather than considering the
-overall GDP difference, GDP difference within the same continent
-seems a better indicator of how well a team is doing against another.
-When not in the same continent, this is encoded again with 0 to
-indicate the lack of information which neither advantages nor
-disadvantage any team.</li>
+overall GDP difference, GDP difference within the confederation seems
+a better indicator of how well a team is doing against another.
+Confederations tend to be on the same continent, so we compare the
+GDPs of countries on the same continents. When not in the same
+continent, this is encoded again with 0 to indicate the lack of
+information which neither advantages nor disadvantage any team.</li>
 </ol>
+<p>Our final train dataset consisted of 1897 rows while our test dataset
+consists of the 64 matches of the 2018 World Cup. Below is a table
+summarizing the features we used in the end.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="26%" />
@@ -228,9 +238,9 @@ Object</td>
 <td>Country where the game took place</td>
 <td>String</td>
 </tr>
-<tr class="row-even"><td>neutral</td>
-<td>Indicates whether home team is actually
-not home</td>
+<tr class="row-even"><td>is_home</td>
+<td>??? (Not actually just whether home
+country is home)</td>
 <td>Boolea
 n</td>
 </tr>
@@ -320,14 +330,15 @@ summing all ratings together</td>
 </tr>
 <tr class="row-even"><td>value_euros_mill
 ions_diff</td>
-<td>The estimated worth of all players in
-the team in millions of EUROS</td>
+<td>The difference in estimated worth of all
+players in the team in millions of EUROS</td>
 <td>Float</td>
 </tr>
 <tr class="row-odd"><td>wage_euros_thous
 ands_diff</td>
-<td>The estimated wage of all players in the
-team in thousands of EUROS</td>
+<td>The difference in estimated wage of all
+players in the team in thousands of
+EUROS</td>
 <td>Float</td>
 </tr>
 <tr class="row-even"><td>attack_home_defe
@@ -348,78 +359,62 @@ defense ratings</td>
 </tr>
 <tr class="row-odd"><td>gdp_diff</td>
 <td>The difference in GDP within the same
-confederation</td>
+continent</td>
 <td>Float</td>
 </tr>
-<tr class="row-even"><td>wins_past_1_game
-s_diff</td>
-<td>The difference in number of wins in the
-past 1 game</td>
-<td>Intege
-r</td>
+<tr class="row-even"><td>raw_gdp_diff</td>
+<td>???</td>
+<td>???</td>
 </tr>
-<tr class="row-odd"><td>wins_past_2_game
-s_diff</td>
-<td>The difference in number of wins in the
-past 2 games</td>
-<td>Intege
-r</td>
+<tr class="row-odd"><td>win_momentum_pas
+t_1_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
 </tr>
-<tr class="row-even"><td>wins_past_3_game
-s_diff</td>
-<td>The difference in number of wins in the
-past 3 games</td>
-<td>Intege
-r</td>
+<tr class="row-even"><td>win_momentum_pas
+t_2_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
 </tr>
-<tr class="row-odd"><td>wins_past_4_game
-s_diff</td>
-<td>The difference in number of wins in the
-past 4 games</td>
-<td>Intege
-r</td>
+<tr class="row-odd"><td>win_momentum_pas
+t_3_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
 </tr>
-<tr class="row-even"><td>wins_past_5_game
-s_diff</td>
-<td>The difference in number of wins in the
-past 5 games</td>
-<td>Intege
-r</td>
+<tr class="row-even"><td>win_momentum_pas
+t_4_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
 </tr>
-<tr class="row-odd"><td>wins_home_agains
-t_away_1_games</td>
-<td>The number of wins team 1 against team 2
-in the past 1 game</td>
-<td>Intege
-r</td>
+<tr class="row-odd"><td>win_momentum_pas
+t_5_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
 </tr>
-<tr class="row-even"><td>wins_home_agains
-t_away_2_games</td>
-<td>The number of wins team 1 against team 2
-in the past 2 games</td>
-<td>Intege
-r</td>
+<tr class="row-even"><td>lose_momentum_pa
+st_1_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
 </tr>
-<tr class="row-odd"><td>wins_home_agains
-t_away_3_games</td>
-<td>The number of wins team 1 against team 2
-in the past 3 games</td>
-<td>Intege
-r</td>
+<tr class="row-odd"><td>lose_momentum_pa
+st_2_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
 </tr>
-<tr class="row-even"><td>wins_home_agains
-t_away_4_games</td>
-<td>The number of wins team 1 against team 2
-in the past 4 games</td>
-<td>Intege
-r</td>
+<tr class="row-even"><td>lose_momentum_pa
+st_3_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
 </tr>
-<tr class="row-odd"><td>wins_home_agains
-t_away_5_games</td>
-<td>The number of wins team 1 against team 2
-in the past 5 games</td>
-<td>Intege
-r</td>
+<tr class="row-odd"><td>lose_momentum_pa
+st_4_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
+</tr>
+<tr class="row-even"><td>lose_momentum_pa
+st_5_games_diff</td>
+<td>The difference in ???</td>
+<td>???</td>
 </tr>
 </tbody>
 </table>

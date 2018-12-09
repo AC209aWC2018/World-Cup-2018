@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -33,7 +34,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+        <a class="navbar-brand" href="../index.html">
           World Cup</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -53,11 +54,10 @@
       aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/problem_statement.html">Overview and Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../doc/team.html">Team Members</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Exploratory Data Analysis</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/EDA-notebook.html">Exploratory Data Analysis</a></li>
 </ul>
@@ -298,7 +298,7 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [120]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -327,7 +327,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [121]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -338,7 +338,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [17]:
+<span></span>In [122]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -348,7 +348,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[17]:
+<span></span>Out[122]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -521,7 +521,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [18]:
+<span></span>In [123]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -531,7 +531,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[18]:
+<span></span>Out[123]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -562,11 +562,11 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [19]:
+<span></span>In [125]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;attack_away_defence_home_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_home_defence_away_diff&#39;</span><span class="p">,</span>
+<span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;overall_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_away_defence_home_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;attack_home_defence_away_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;attack_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;defence_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;midfield_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;prestige_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;growth_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;full_age_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;start_age_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;value_euros_millions_diff&#39;</span><span class="p">,</span><span class="s1">&#39;wage_euros_thousands_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;goalkeeper_overall_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_dribbling_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_passing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_speed_diff&#39;</span><span class="p">,</span>
@@ -587,7 +587,7 @@ highly correlated which can be an issue subsequently. We should do a
 simple feature selection.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [20]:
+<span></span>In [126]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -602,7 +602,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [21]:
+<span></span>In [127]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -612,7 +612,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [22]:
+<span></span>In [128]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -625,7 +625,7 @@ simple feature selection.</p>
 <h1>Feature Selection with LASSO<a class="headerlink" href="#Feature-Selection-with-LASSO" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [23]:
+<span></span>In [129]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -640,7 +640,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [24]:
+<span></span>In [130]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -655,7 +655,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [25]:
+<span></span>In [131]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -666,7 +666,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [26]:
+<span></span>In [132]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -676,7 +676,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [27]:
+<span></span>In [133]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -690,7 +690,7 @@ simple feature selection.</p>
 <h1>Feature Selection with SelectKBest<a class="headerlink" href="#Feature-Selection-with-SelectKBest" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [28]:
+<span></span>In [134]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -703,7 +703,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [29]:
+<span></span>In [135]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -713,7 +713,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [30]:
+<span></span>In [136]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -724,7 +724,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [31]:
+<span></span>In [137]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -755,7 +755,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [32]:
+<span></span>In [138]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -769,7 +769,7 @@ simple feature selection.</p>
 <h1>Logistic Regression<a class="headerlink" href="#Logistic-Regression" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [33]:
+<span></span>In [139]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -782,7 +782,7 @@ simple feature selection.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [34]:
+<span></span>In [140]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -803,9 +803,9 @@ simple feature selection.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Logistic Regression Train Score: 0.5082399472643375
-Logistic Regression Validation Score: 0.5473684210526316
-Logistic Regression Test Score: 0.53125
+Logistic Regression Train Score: 0.5108767303889256
+Logistic Regression Validation Score: 0.5552631578947368
+Logistic Regression Test Score: 0.515625
 </pre></div></div>
 </div>
 </div>
@@ -815,7 +815,7 @@ Logistic Regression Test Score: 0.53125
 first check whether the variances across the three outcomes are equal.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [57]:
+<span></span>In [141]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -825,7 +825,7 @@ first check whether the variances across the three outcomes are equal.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[57]:
+<span></span>Out[141]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -849,25 +849,25 @@ first check whether the variances across the three outcomes are equal.</p>
       <th></th>
       <th>overall_diff</th>
       <th>attack_away_defence_home_diff</th>
-      <th>attack_diff</th>
       <th>attack_home_defence_away_diff</th>
+      <th>attack_diff</th>
       <th>defence_diff</th>
       <th>midfield_diff</th>
-      <th>rank_diff</th>
       <th>prestige_diff</th>
       <th>growth_diff</th>
+      <th>full_age_diff</th>
       <th>start_age_diff</th>
       <th>...</th>
-      <th>bup_passing_diff</th>
-      <th>bup_speed_diff</th>
-      <th>cc_crossing_diff</th>
       <th>cc_passing_diff</th>
       <th>cc_shooting_diff</th>
       <th>d_aggresion_diff</th>
       <th>d_pressure_diff</th>
       <th>d_width_diff</th>
+      <th>gdp_diff</th>
       <th>is_home</th>
       <th>raw_gdp_diff</th>
+      <th>score_past_5_games_diff</th>
+      <th>score_conceded_past_5_games_diff</th>
     </tr>
     <tr>
       <th>home_win</th>
@@ -899,82 +899,82 @@ first check whether the variances across the three outcomes are equal.</p>
       <th>-1</th>
       <td>31.393396</td>
       <td>38.015113</td>
-      <td>40.858572</td>
       <td>41.497639</td>
+      <td>40.858572</td>
       <td>37.554931</td>
       <td>38.133908</td>
-      <td>916.793268</td>
       <td>25.423806</td>
       <td>2.770866</td>
+      <td>2.489490</td>
       <td>4.552043</td>
       <td>...</td>
-      <td>336.230586</td>
-      <td>381.164452</td>
-      <td>393.673702</td>
       <td>402.748077</td>
       <td>375.983868</td>
       <td>296.912088</td>
       <td>320.035133</td>
       <td>279.620908</td>
+      <td>0.729948</td>
       <td>0.249014</td>
       <td>8.437606e+08</td>
+      <td>0.852162</td>
+      <td>0.836869</td>
     </tr>
     <tr>
       <th>0</th>
       <td>36.158215</td>
       <td>46.202150</td>
-      <td>47.654088</td>
       <td>46.137393</td>
+      <td>47.654088</td>
       <td>43.559341</td>
       <td>41.798216</td>
-      <td>960.540851</td>
       <td>30.781631</td>
       <td>2.593080</td>
+      <td>2.596855</td>
       <td>4.532752</td>
       <td>...</td>
-      <td>290.252002</td>
-      <td>360.237630</td>
-      <td>404.583899</td>
       <td>437.047544</td>
       <td>372.213618</td>
       <td>321.269206</td>
       <td>327.077465</td>
       <td>277.419308</td>
+      <td>0.795575</td>
       <td>0.159003</td>
       <td>8.036942e+08</td>
+      <td>0.808308</td>
+      <td>0.814475</td>
     </tr>
     <tr>
       <th>1</th>
       <td>37.105145</td>
       <td>47.913430</td>
-      <td>49.295727</td>
       <td>45.265228</td>
+      <td>49.295727</td>
       <td>43.509512</td>
       <td>42.634416</td>
-      <td>936.866455</td>
       <td>26.985673</td>
       <td>2.953428</td>
+      <td>2.406626</td>
       <td>4.359358</td>
       <td>...</td>
-      <td>341.453380</td>
-      <td>385.607281</td>
-      <td>398.076473</td>
       <td>429.027327</td>
       <td>380.046157</td>
       <td>316.424882</td>
       <td>301.391634</td>
       <td>317.805089</td>
+      <td>0.750640</td>
       <td>0.199472</td>
       <td>7.765742e+08</td>
+      <td>0.907216</td>
+      <td>0.896912</td>
     </tr>
   </tbody>
 </table>
-<p>3 rows × 24 columns</p>
+<p>3 rows × 27 columns</p>
 </div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [58]:
+<span></span>In [142]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -984,7 +984,7 @@ first check whether the variances across the three outcomes are equal.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [59]:
+<span></span>In [143]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1005,9 +1005,9 @@ first check whether the variances across the three outcomes are equal.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-LDA Train Score: 0.5141727092946605
-LDA Validation Score: 0.5421052631578948
-LDA Test Score: 0.609375
+LDA Train Score: 0.5154911008569545
+LDA Validation Score: 0.5447368421052632
+LDA Test Score: 0.640625
 </pre></div></div>
 </div>
 </div>
@@ -1017,7 +1017,7 @@ LDA Test Score: 0.609375
 perform similarly to LDA in this case due to the almost equal variances.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [60]:
+<span></span>In [144]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1027,7 +1027,7 @@ perform similarly to LDA in this case due to the almost equal variances.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [61]:
+<span></span>In [145]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1048,15 +1048,15 @@ perform similarly to LDA in this case due to the almost equal variances.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-QDA Train Score: 0.5260382333553065
-QDA Validation Score: 0.44473684210526315
-QDA Test Score: 0.546875
+QDA Train Score: 0.5642715886618326
+QDA Validation Score: 0.4263157894736842
+QDA Test Score: 0.4375
 </pre></div></div>
 </div>
 <p>We will also try out Random Forest.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [62]:
+<span></span>In [146]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1085,14 +1085,14 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   36.7s
-[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:  1.1min
-[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:  1.3min finished
+[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   27.4s
+[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   58.7s
+[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:  1.2min finished
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [63]:
+<span></span>In [147]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1114,7 +1114,7 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Random Forest Train Score: 0.5273566249176005
-Random Forest Validation Score 0.5342105263157895
+Random Forest Validation Score 0.531578947368421
 Random Forest Test Score 0.609375
 </pre></div></div>
 </div>
@@ -1123,7 +1123,7 @@ Random Forest Test Score 0.609375
 <h1>Principal Components Regression<a class="headerlink" href="#Principal-Components-Regression" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [64]:
+<span></span>In [148]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1133,7 +1133,7 @@ Random Forest Test Score 0.609375
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [65]:
+<span></span>In [149]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1149,7 +1149,7 @@ Random Forest Test Score 0.609375
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [66]:
+<span></span>In [150]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1163,7 +1163,7 @@ Random Forest Test Score 0.609375
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [67]:
+<span></span>In [151]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1177,7 +1177,7 @@ Random Forest Test Score 0.609375
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [68]:
+<span></span>In [152]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1197,14 +1197,14 @@ Random Forest Test Score 0.609375
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-PCR (Full) Train Score: 0.5115359261700725
-PCR (Full) Validation Score: 0.5342105263157895
-PCR (Full) Test Score: 0.671875
+PCR (Full) Train Score: 0.5121951219512195
+PCR (Full) Validation Score: 0.5421052631578948
+PCR (Full) Test Score: 0.6875
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [69]:
+<span></span>In [153]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1226,7 +1226,7 @@ PCR (Full) Test Score: 0.671875
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [70]:
+<span></span>In [154]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1244,12 +1244,12 @@ PCR (Full) Test Score: 0.671875
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Number of Components to explain 80% Variance: 9
-Number of Components to explain 90% Variance: 14
+Number of Components to explain 90% Variance: 13
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [71]:
+<span></span>In [155]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1277,7 +1277,7 @@ Number of Components to explain 90% Variance: 14
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [72]:
+<span></span>In [156]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1298,7 +1298,7 @@ Number of Components to explain 90% Variance: 14
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [73]:
+<span></span>In [157]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1330,11 +1330,11 @@ Number of Components to explain 90% Variance: 14
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 PCR (80%) Train Score: 0.5075807514831905
-PCR (80%) Validation Score: 0.5526315789473685
+PCR (80%) Validation Score: 0.55
 PCR (80%) Test Score: 0.65625
-PCR (90%) Train Score: 0.5121951219512195
-PCR (90%) Validation Score: 0.5289473684210526
-PCR (90%) Test Score: 0.703125
+PCR (90%) Train Score: 0.5088991430454846
+PCR (90%) Validation Score: 0.5342105263157895
+PCR (90%) Test Score: 0.6875
 </pre></div></div>
 </div>
 <p>Rather than using arbitrary markers for the cumulative percentage of
@@ -1342,7 +1342,7 @@ variation captured by our PCA, we can check for the most ideal number of
 components for our regression as well.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [74]:
+<span></span>In [158]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1373,7 +1373,7 @@ components for our regression as well.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [75]:
+<span></span>In [159]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1397,7 +1397,7 @@ components for our regression as well.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [76]:
+<span></span>In [160]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1413,12 +1413,12 @@ components for our regression as well.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Best Validation Accuracy Number of Components: 9
+Best Validation Accuracy Number of Components: 15
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [77]:
+<span></span>In [161]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1437,7 +1437,7 @@ Best Validation Accuracy Number of Components: 9
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [78]:
+<span></span>In [162]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1452,7 +1452,7 @@ Best Validation Accuracy Number of Components: 9
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [79]:
+<span></span>In [163]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1473,9 +1473,9 @@ Best Validation Accuracy Number of Components: 9
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-PCR (Best) Train Score: 0.5075807514831905
+PCR (Best) Train Score: 0.5042847725774555
 PCR (Best) Validation Score: 0.5526315789473685
-PCR (Best) Test Score: 0.65625
+PCR (Best) Test Score: 0.640625
 </pre></div></div>
 </div>
 <p>Note that in this case, the best number of components for our validation
@@ -1487,7 +1487,7 @@ set is not the best number of components for our test set.</p>
 the variation between predictors in relation to the response variable.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [80]:
+<span></span>In [164]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1495,41 +1495,54 @@ the variation between predictors in relation to the response variable.</p>
 
 <span class="n">lb</span> <span class="o">=</span> <span class="n">LabelBinarizer</span><span class="p">()</span>
 <span class="n">y_train_lb</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_valid_lb</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_valid</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [81]:
+<span></span>In [165]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">sklearn.cross_decomposition</span> <span class="k">import</span> <span class="n">PLSRegression</span>
 
+<span class="n">plsda1_train_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plsda1_valid_score</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="n">plsda_train_score</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">plsda_valid_score</span> <span class="o">=</span> <span class="p">[]</span>
-
+<span class="c1"># PLS1</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-    <span class="n">plsda_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">plsda_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">)</span>
+    <span class="c1"># initialize empty array</span>
+    <span class="n">train_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">y_train_lb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">valid_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">y_valid_lb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-    <span class="n">plsda_train_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="n">plsda_valid_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">plsda1_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">train_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">valid_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">train_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">valid_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">train_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">valid_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+
+    <span class="n">plsda1_train_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">plsda1_valid_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">valid_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [82]:
+<span></span>In [167]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda_train_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda_train_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda_valid_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda1_train_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda1_train_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda1_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda1_valid_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Accuracy for Different PLS-DA Components&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PLS-DA Components&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Accuracy for Different PLS1-DA Components&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PLS1-DA Components&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
@@ -1544,12 +1557,12 @@ the variation between predictors in relation to the response variable.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [83]:
+<span></span>In [168]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plsda_best_com</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Best Validation Accuracy Number of Components: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plsda_best_com</span><span class="p">))</span>
+<span></span><span class="n">plsda1_best_com</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda1_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Best Validation Accuracy Number of Components: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plsda1_best_com</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1558,40 +1571,63 @@ the variation between predictors in relation to the response variable.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Best Validation Accuracy Number of Components: 7
+Best Validation Accuracy Number of Components: 1
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [84]:
+<span></span>In [169]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># check test accuracy</span>
-<span class="n">plsda_best_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">plsda_best_com</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plsda_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">)</span>
+<span class="c1"># initialize arrays</span>
+<span class="n">best_train_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">y_train_lb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">best_valid_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">y_valid_lb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">best_test_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span>
 
-<span class="n">plsda_best_test_pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-                       <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">grp_id</span><span class="p">,</span> <span class="n">plsda_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))]</span>
+<span class="c1"># fit model</span>
+<span class="n">plsda1_best_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">plsda1_best_com</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># predict</span>
+<span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">best_train_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">best_valid_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">best_test_pred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+
+<span class="c1"># predict</span>
+<span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">best_train_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">best_valid_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">best_test_pred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+
+<span class="c1"># predict</span>
+<span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">best_train_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">best_valid_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">best_test_pred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+
+<span class="n">plsda1_best_test_pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+                       <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">grp_id</span><span class="p">,</span> <span class="n">best_test_pred</span><span class="p">)]</span>
 
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [85]:
+<span></span>In [170]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Best Validation Accuracy</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda_best_mod</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda_best_test_pred</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS-DA (Best) Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS-DA (Best) Validation Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS-DA (Best) Test Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda_best&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score&quot;</span><span class="p">]))</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda1_best_mod</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">best_train_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">best_valid_pred</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda1_best_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS1-DA (Best) Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS1-DA (Best) Validation Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS1-DA (Best) Test Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda1_best&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score&quot;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -1600,38 +1636,40 @@ Best Validation Accuracy Number of Components: 7
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-PLS-DA (Best) Train Score: 0.5095583388266315
-PLS-DA (Best) Validation Score: 0.5368421052631579
-PLS-DA (Best) Test Score: 0.65625
+PLS1-DA (Best) Train Score: 0.5069215557020436
+PLS1-DA (Best) Validation Score: 0.5578947368421052
+PLS1-DA (Best) Test Score: 0.65625
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [86]:
+<span></span>In [171]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plsr_test_score</span> <span class="o">=</span> <span class="p">[]</span>
-
+<span></span><span class="n">plsda2_train_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plsda2_valid_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># PLS2</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-    <span class="n">plsr_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">plsr_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">)</span>
-    <span class="n">test_pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-                 <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">grp_id</span><span class="p">,</span> <span class="n">plsr_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))]</span>
-    <span class="n">plsr_test_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">test_pred</span><span class="p">))</span>
+    <span class="n">plsda2_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plsda2_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">)</span>
+
+    <span class="n">plsda2_train_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">plsda2_valid_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [87]:
+<span></span>In [172]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsr_test_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsr_test_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Test Accuracy&#39;</span><span class="p">)</span>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda2_train_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda2_train_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">plsda2_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">plsda2_valid_score</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Accuracy for Different PLSR Components&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PLSR Components&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Accuracy for Different PLS2-DA Components&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PLS2-DA Components&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
@@ -1644,6 +1682,69 @@ PLS-DA (Best) Test Score: 0.65625
 <img alt="../_images/models_advanced_model_65_0.png" src="../_images/models_advanced_model_65_0.png" />
 </div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [173]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plsda2_best_com</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_valid_score</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Best Validation Accuracy Number of Components: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plsda2_best_com</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Best Validation Accuracy Number of Components: 2
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [174]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># check test accuracy</span>
+<span class="n">plsda2_best_mod</span> <span class="o">=</span> <span class="n">PLSRegression</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">plsda2_best_com</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train_lb</span><span class="p">)</span>
+
+<span class="n">plsda2_best_test_pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+                       <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">grp_id</span><span class="p">,</span> <span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">))]</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [175]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Best Validation Accuracy</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plsda2_best_mod</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">plsda2_best_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid_scaled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">plsda2_best_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS2-DA (Best) Train Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Train Score&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS2-DA (Best) Validation Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Validation Score&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PLS2-DA (Best) Test Score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;plsda2_best&quot;</span><span class="p">][</span><span class="s2">&quot;Test Score&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+PLS2-DA (Best) Train Score: 0.5042847725774555
+PLS2-DA (Best) Validation Score: 0.5526315789473685
+PLS2-DA (Best) Test Score: 0.640625
+</pre></div></div>
+</div>
 <p>Note that the best number of components for our validation set is the
 best number of components for our test set as well.</p>
 </div>
@@ -1651,7 +1752,7 @@ best number of components for our test set as well.</p>
 <h1>Comparing Results<a class="headerlink" href="#Comparing-Results" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [88]:
+<span></span>In [176]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1661,7 +1762,7 @@ best number of components for our test set as well.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [89]:
+<span></span>In [177]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1671,7 +1772,7 @@ best number of components for our test set as well.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[89]:
+<span></span>Out[177]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1702,65 +1803,72 @@ best number of components for our test set as well.</p>
   <tbody>
     <tr>
       <th>Logistic Regression</th>
-      <td>0.53125</td>
-      <td>0.50824</td>
-      <td>0.547368</td>
+      <td>0.515625</td>
+      <td>0.510877</td>
+      <td>0.555263</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>LDA</th>
-      <td>0.609375</td>
-      <td>0.514173</td>
-      <td>0.542105</td>
+      <td>0.640625</td>
+      <td>0.515491</td>
+      <td>0.544737</td>
       <td>LinearDiscriminantAnalysis(n_components=None, ...</td>
     </tr>
     <tr>
       <th>QDA</th>
-      <td>0.546875</td>
-      <td>0.526038</td>
-      <td>0.444737</td>
+      <td>0.4375</td>
+      <td>0.564272</td>
+      <td>0.426316</td>
       <td>QuadraticDiscriminantAnalysis(priors=None, reg...</td>
     </tr>
     <tr>
       <th>Random Forest</th>
       <td>0.609375</td>
       <td>0.527357</td>
-      <td>0.534211</td>
+      <td>0.531579</td>
       <td>RandomizedSearchCV(cv=5, error_score='raise',\...</td>
     </tr>
     <tr>
       <th>pcr_full</th>
-      <td>0.671875</td>
-      <td>0.511536</td>
-      <td>0.534211</td>
+      <td>0.6875</td>
+      <td>0.512195</td>
+      <td>0.542105</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>pcr_80%</th>
       <td>0.65625</td>
       <td>0.507581</td>
-      <td>0.552632</td>
+      <td>0.55</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>pcr_90%</th>
-      <td>0.703125</td>
-      <td>0.512195</td>
-      <td>0.528947</td>
+      <td>0.6875</td>
+      <td>0.508899</td>
+      <td>0.534211</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>pcr_best</th>
-      <td>0.65625</td>
-      <td>0.507581</td>
+      <td>0.640625</td>
+      <td>0.504285</td>
       <td>0.552632</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
-      <th>plsda_best</th>
+      <th>plsda1_best</th>
       <td>0.65625</td>
-      <td>0.509558</td>
-      <td>0.536842</td>
+      <td>0.506922</td>
+      <td>0.557895</td>
+      <td>PLSRegression(copy=True, max_iter=500, n_compo...</td>
+    </tr>
+    <tr>
+      <th>plsda2_best</th>
+      <td>0.640625</td>
+      <td>0.504285</td>
+      <td>0.552632</td>
       <td>PLSRegression(copy=True, max_iter=500, n_compo...</td>
     </tr>
   </tbody>
@@ -1769,7 +1877,7 @@ best number of components for our test set as well.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [90]:
+<span></span>In [178]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1784,12 +1892,12 @@ best number of components for our test set as well.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-We choose the final model to be the one with the highest validation score, which is pcr_80% in this case
+We choose the final model to be the one with the highest validation score, which is plsda1_best in this case
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [91]:
+<span></span>In [179]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1803,18 +1911,8 @@ We choose the final model to be the one with the highest validation score, which
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-For the best Model, pcr_80%, the test accuracy is 0.656
+For the best Model, plsda1_best, the test accuracy is 0.656
 </pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
 </div>
 </div>
 

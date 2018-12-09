@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -33,7 +34,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/iacs.png"></span>
+        <a class="navbar-brand" href="../index.html">
           World Cup</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
@@ -53,11 +54,10 @@
       aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/problem_statement.html">Overview and Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../doc/team.html">Team Members</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc/data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Exploratory Data Analysis</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../doc/EDA-notebook.html">Exploratory Data Analysis</a></li>
 </ul>
@@ -598,7 +598,7 @@ div.nboutput div.output_area.stderr {
            <span class="s1">&#39;goalkeeper_overall_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_dribbling_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_passing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;bup_speed_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;cc_crossing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;cc_passing_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;cc_shooting_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;d_aggresion_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;d_pressure_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;d_width_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;gdp_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;is_home&#39;</span><span class="p">,</span> <span class="s1">&#39;raw_gdp_diff&#39;</span><span class="p">,</span>
-          <span class="s1">&#39;score_past_5_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;score_conceded_past_5_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;prev_champ&#39;</span><span class="p">]</span>
+          <span class="s1">&#39;score_past_5_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;score_conceded_past_5_games_diff&#39;</span><span class="p">]</span>
 <span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]]</span>
 <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="n">columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;home_win&#39;</span><span class="p">]]</span>
 </pre></div>
@@ -630,8 +630,9 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
 <div class="highlight"><pre>
 [Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.
 [Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:    7.7s
-[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   29.1s
-[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:   39.6s finished
+[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   29.9s
+[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:   40.6s finished
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -647,10 +648,9 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.
-[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   11.1s
-[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:   47.6s
-[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:  1.1min finished
+[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   14.2s
+[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:  1.1min
+[Parallel(n_jobs=-1)]: Done 250 out of 250 | elapsed:  1.3min finished
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -696,72 +696,72 @@ Fitting 5 folds for each of 50 candidates, totalling 250 fits
   <tbody>
     <tr>
       <th>Logistic Regression</th>
-      <td>0.546875</td>
-      <td>0.511536</td>
+      <td>0.5625</td>
+      <td>0.514832</td>
       <td>0.55</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>LDA</th>
       <td>0.609375</td>
-      <td>0.517469</td>
-      <td>0.539474</td>
+      <td>0.514173</td>
+      <td>0.542105</td>
       <td>LinearDiscriminantAnalysis(n_components=None, ...</td>
     </tr>
     <tr>
       <th>QDA</th>
-      <td>0.40625</td>
-      <td>0.431773</td>
-      <td>0.471053</td>
+      <td>0.546875</td>
+      <td>0.526697</td>
+      <td>0.444737</td>
       <td>QuadraticDiscriminantAnalysis(priors=None, reg...</td>
     </tr>
     <tr>
       <th>Random Forest</th>
-      <td>0.609375</td>
-      <td>0.524061</td>
+      <td>0.640625</td>
+      <td>0.523401</td>
       <td>0.536842</td>
       <td>RandomizedSearchCV(cv=5, error_score='raise-de...</td>
     </tr>
     <tr>
       <th>XGBoost</th>
-      <td>0.578125</td>
-      <td>0.551747</td>
-      <td>0.542105</td>
+      <td>0.59375</td>
+      <td>0.591958</td>
+      <td>0.515789</td>
       <td>RandomizedSearchCV(cv=5, error_score='raise-de...</td>
     </tr>
     <tr>
       <th>pcr_full</th>
       <td>0.671875</td>
-      <td>0.514173</td>
-      <td>0.536842</td>
+      <td>0.511536</td>
+      <td>0.534211</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>pcr_80%</th>
       <td>0.65625</td>
-      <td>0.509558</td>
-      <td>0.547368</td>
+      <td>0.507581</td>
+      <td>0.552632</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>pcr_90%</th>
       <td>0.703125</td>
       <td>0.512195</td>
-      <td>0.534211</td>
+      <td>0.528947</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>pcr_best</th>
       <td>0.65625</td>
-      <td>0.514173</td>
-      <td>0.55</td>
+      <td>0.507581</td>
+      <td>0.552632</td>
       <td>LogisticRegressionCV(Cs=10, class_weight=None,...</td>
     </tr>
     <tr>
       <th>plsda_best</th>
-      <td>0.640625</td>
-      <td>0.514173</td>
-      <td>0.539474</td>
+      <td>0.65625</td>
+      <td>0.509558</td>
+      <td>0.536842</td>
       <td>PLSRegression(copy=True, max_iter=500, n_compo...</td>
     </tr>
   </tbody>
