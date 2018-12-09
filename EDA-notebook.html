@@ -18,6 +18,8 @@
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Baseline Model" href="models/baseline_model.html" />
+    <link rel="prev" title="Description of Data" href="doc/data_description.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -58,8 +60,8 @@
 <li class="toctree-l1"><a class="reference internal" href="doc/data_description.html">Description of Data</a></li>
 </ul>
 <p class="caption"><span class="caption-text">EDA:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="doc/EDA-notebook.html">Exploratory Data Analysis</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exploratory Data Analysis</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Models:</span></p>
 <ul>
@@ -99,6 +101,14 @@
             
               
                 
+  <li>
+    <a href="doc/data_description.html" title="Previous Chapter: Description of Data"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Description of Data</span>
+    </a>
+  </li>
+  <li>
+    <a href="models/baseline_model.html" title="Next Chapter: Baseline Model"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Baseline Model &raquo;</span>
+    </a>
+  </li>
               
             
             
@@ -298,10 +308,9 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="section" id="Exploratory-Data-Analysis">
 <h1>Exploratory Data Analysis<a class="headerlink" href="#Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h1>
-<p>To rerun this notebook, please clone <a class="reference external" href="https://github.com/AC209aWC2018/World-Cup-2018">World Cup 2018 Github
-Repository</a> and run
-<a class="reference external" href="https://github.com/AC209aWC2018/World-Cup-2018/blob/master/EDA-notebook.ipynb">EDA
-Notebook</a></p>
+<p>Note that this notebook was constructed when we had not feature
+engineered all the features yet, so some of them may be missing from
+this notebook.</p>
 <div class="section" id="European-Matches">
 <h2>European Matches<a class="headerlink" href="#European-Matches" title="Permalink to this headline">¶</a></h2>
 <p>We will now explore the European matches dataset we had cleaned.</p>
@@ -1575,9 +1584,9 @@ still be useful when we do possess the information.</p>
 proportion of them are similarly shaped and distributed. Therefore, we
 considered PCA to perform dimensionality reduction, aggregating similar
 features.</p>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1601,23 +1610,6 @@ features.</p>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-1-d163e133991f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      5</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sklearn<span class="ansi-yellow-intense-fg ansi-bold">.</span>decomposition <span class="ansi-green-intense-fg ansi-bold">import</span> PCA
-<span class="ansi-green-fg">      6</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sklearn<span class="ansi-yellow-intense-fg ansi-bold">.</span>preprocessing <span class="ansi-green-intense-fg ansi-bold">import</span> StandardScaler
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 7</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-green-intense-fg ansi-bold">from</span> xgboost <span class="ansi-green-intense-fg ansi-bold">import</span> XGBClassifier
-<span class="ansi-green-fg">      8</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sklearn<span class="ansi-yellow-intense-fg ansi-bold">.</span>metrics <span class="ansi-green-intense-fg ansi-bold">import</span> accuracy_score
-<span class="ansi-green-fg">      9</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sklearn<span class="ansi-yellow-intense-fg ansi-bold">.</span>linear_model <span class="ansi-green-intense-fg ansi-bold">import</span> LogisticRegressionCV
-
-<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>: No module named &#39;xgboost&#39;
-</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
