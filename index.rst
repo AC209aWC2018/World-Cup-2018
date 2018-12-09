@@ -19,13 +19,13 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
    :maxdepth: 1
    :caption: EDA:
 
-   doc/EDA-notebook.ipynb
+   EDA-notebook.ipynb
 
    
 .. toctree::
    :maxdepth: 2
    :caption: Models:
-   
+
    models/baseline_model.ipynb
    models/beyond_baseline.ipynb
    
