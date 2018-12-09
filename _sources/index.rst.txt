@@ -28,6 +28,7 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
    models/baseline_model.ipynb
    models/beyond_baseline.ipynb
+   models/neural_net.ipynb
    
 .. toctree::
    :maxdepth: 1

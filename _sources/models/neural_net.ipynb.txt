@@ -1,0 +1,210 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Bonus: Neural Network on Small Training Set"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Out of plain curiosity, we wondered how a simple neural network would perform on our problem (Everyone wants to try deep learning nowadays). Because our training set is so small, we do not believe that the neural network will outperform any of our models from the previous part. In fact, it might overfit to the training set and perform worse than our other models. This notebook is just to experiment around with neural networks and see its performance on a small dataset. We will only look at the outcome at 90 minutes and Softmax in the test set, since it would be pretty complicated to come up with a scheme for the WC Playoff Model configuration, especially since there are so few WC playoff matches in our dataset."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 242,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "from sklearn.metrics import accuracy_score\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "\n",
+    "%matplotlib inline\n",
+    "\n",
+    "import keras \n",
+    "from keras.models import Sequential\n",
+    "from keras.layers import Dense\n",
+    "from keras import regularizers\n",
+    "from keras.layers import Dropout\n",
+    "from keras.optimizers import Adam"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 243,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "train = pd.read_csv('../data/cleaned/train_final.csv')\n",
+    "test = pd.read_csv('../data/cleaned/test_final.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 244,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "columns = ['overall_diff', 'attack_away_defence_home_diff', 'attack_diff',\n",
+    "           'attack_home_defence_away_diff', 'defence_diff', 'midfield_diff',\n",
+    "           'prestige_diff', 'growth_diff', 'full_age_diff',\n",
+    "           'start_age_diff', 'value_euros_millions_diff',\n",
+    "           'wage_euros_thousands_diff', 'goalkeeper_overall_diff',\n",
+    "           'bup_dribbling_diff', 'bup_passing_diff', 'bup_speed_diff',\n",
+    "           'cc_crossing_diff', 'cc_passing_diff', 'cc_shooting_diff',\n",
+    "           'd_aggresion_diff', 'd_pressure_diff', 'd_width_diff', \n",
+    "           'gdp_diff', 'is_home', 'raw_gdp_diff', \n",
+    "           'win_momentum_past_1_games_diff', 'lose_momentum_past_1_games_diff',\n",
+    "           'win_momentum_past_2_games_diff', 'lose_momentum_past_2_games_diff',\n",
+    "           'win_momentum_past_3_games_diff', 'lose_momentum_past_3_games_diff',\n",
+    "           'win_momentum_past_4_games_diff', 'lose_momentum_past_4_games_diff',\n",
+    "           'win_momentum_past_5_games_diff', 'lose_momentum_past_5_games_diff',\n",
+    "           \n",
+    "]\n",
+    "\n",
+    "train = train[columns + ['home_win']]\n",
+    "test = test[columns  + ['home_win', 'home_win_no_pk']]\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 250,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Same seed as baseline to ensure same train and validation sets so that comparisons are valid.\n",
+    "np.random.seed(14)\n",
+    "X_train, X_valid = train_test_split(train, test_size = 0.2)\n",
+    "y_train = X_train['home_win'].ravel()\n",
+    "X_train = X_train.drop(['home_win'], axis = 1).values\n",
+    "y_valid= X_valid['home_win'].ravel()\n",
+    "X_valid = X_valid.drop(['home_win'], axis = 1).values\n",
+    "y_test = test['home_win'].ravel()\n",
+    "y_test_no_pk = test['home_win_no_pk'].ravel()\n",
+    "X_test = test.drop(['home_win', 'home_win_no_pk'], axis = 1).values\n",
+    "\n",
+    "\n",
+    "X_train_mean = X_train.mean(axis = 0)\n",
+    "X_train_std = X_train.std(axis = 0)\n",
+    "\n",
+    "X_train = (X_train - X_train_mean) / (X_train_std)\n",
+    "X_valid = (X_valid - X_train_mean) / (X_train_std)\n",
+    "X_test = (X_test - X_train_mean) / (X_train_std)\n",
+    "\n",
+    "#keras.utils.to_categorical doesn't work with negative numbers\n",
+    "y_train = y_train + 1\n",
+    "y_valid = y_valid + 1\n",
+    "y_test_no_pk = y_test + 1\n",
+    "\n",
+    "y_train = keras.utils.to_categorical(y_train)\n",
+    "y_valid = keras.utils.to_categorical(y_valid)\n",
+    "y_test_no_pk = keras.utils.to_categorical(y_test_no_pk)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Our simple neural network will have a total of 3 hidden node layers, with 15 nodes in each layer. We will add regularization on each layer and also add drop out layers to try to prevent overfitting."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "model = Sequential()\n",
+    "model.add(Dense(15, activation=\"relu\", input_dim = X_train.shape[1], kernel_regularizer=regularizers.l2(1e-6)))\n",
+    "model.add(Dropout(0.5))\n",
+    "model.add(Dense(15, activation=\"relu\", kernel_regularizer = regularizers.l2(1e-6)))\n",
+    "model.add(Dropout(0.5))\n",
+    "model.add(Dense(15, activation=\"relu\", activity_regularizer = regularizers.l2(1e-6)))\n",
+    "model.add(Dropout(0.5))\n",
+    "model.add(Dense(3, activation=\"sigmoid\", kernel_regularizer = regularizers.l2(1e-6)))\n",
+    "\n",
+    "adam = Adam(amsgrad= True)\n",
+    "model.compile(loss= 'categorical_crossentropy', optimizer = adam, metrics=['accuracy'])\n",
+    "model.fit(X_train, y_train, epochs = 200, batch_size = 64, validation_data = (X_valid, y_valid))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 252,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Neural Network Train Accuracy: 0.5517468688789763\n",
+      "Neural Network Validation Accuracy: 0.5421052622167688\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Neural Network Train Accuracy: {}\".format(model.evaluate(X_train, y_train, verbose = 0)[1]))\n",
+    "print(\"Neural Network Validation Accuracy: {}\".format(model.evaluate(X_valid, y_valid, verbose = 0)[1]))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 264,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Neural Network Test Accuracy (90 Minutes): 0.609375\n",
+      "Neural Network Test Accuracy (Softmax): 0.609375\n"
+     ]
+    }
+   ],
+   "source": [
+    "y_pred_softmax = [np.where(np.argsort(val) == 1)[0][0]-1 if (i >= 48) & (np.argmax(val) == 1)\n",
+    "                           else np.argmax(val)-1 for i, val in enumerate(model.predict(X_test))] \n",
+    "\n",
+    "print(\"Neural Network Test Accuracy (90 Minutes): {}\".format(model.evaluate(X_test, y_test_no_pk, verbose = 0)[1]))\n",
+    "print(\"Neural Network Test Accuracy (Softmax): {}\".format(accuracy_score(y_test, y_pred_softmax)))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "As we have surmised, the neural network did not perform as well as our best model, although it still performed better than the baseline model. \n",
+    "\n",
+    "We have thus shown that neural networks are not really that effective when the training set is small; it shows that we do not really need that complex of a model in this problem."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
