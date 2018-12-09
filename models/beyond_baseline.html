@@ -373,6 +373,7 @@ engineered.</p>
            <span class="s1">&#39;win_momentum_past_3_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;lose_momentum_past_3_games_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;win_momentum_past_4_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;lose_momentum_past_4_games_diff&#39;</span><span class="p">,</span>
            <span class="s1">&#39;win_momentum_past_5_games_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;lose_momentum_past_5_games_diff&#39;</span><span class="p">,</span>
+
 <span class="p">]</span>
 
 <span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;home_win&#39;</span><span class="p">]]</span>
@@ -713,8 +714,8 @@ QDA Validation Score: 0.45263157894736844
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Random Forest Train Score: 0.5266974291364536
-Random Forest Validation Score 0.5184210526315789
+Random Forest Train Score: 0.5972313777191826
+Random Forest Validation Score 0.5342105263157895
 </pre></div></div>
 </div>
 <p>Finally, XGBoost.</p>
@@ -756,8 +757,8 @@ Random Forest Validation Score 0.5184210526315789
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-XGBoost Train Score: 0.5398813447593935
-XGBoost Validation Score 0.5342105263157895
+XGBoost Train Score: 0.5411997363216875
+XGBoost Validation Score 0.5394736842105263
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -821,14 +822,14 @@ XGBoost Validation Score 0.5342105263157895
     </tr>
     <tr>
       <th>Random Forest</th>
-      <td>0.526697</td>
-      <td>0.518421</td>
+      <td>0.597231</td>
+      <td>0.534211</td>
       <td>RandomizedSearchCV(cv=5, error_score='raise-de...</td>
     </tr>
     <tr>
       <th>XGBoost</th>
-      <td>0.539881</td>
-      <td>0.534211</td>
+      <td>0.5412</td>
+      <td>0.539474</td>
       <td>RandomizedSearchCV(cv=5, error_score='raise-de...</td>
     </tr>
   </tbody>
@@ -988,8 +989,8 @@ models.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Stacking Model Train Score: 0.5346077785102176
-Stacking Model Validation Score: 0.5342105263157895
+Stacking Model Train Score: 0.5662491760052736
+Stacking Model Validation Score: 0.5368421052631579
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1031,9 +1032,9 @@ Stacking Model Validation Score: 0.5342105263157895
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Stacking Model Test Score at 90 mins: 0.625
-Stacking Model Test Score at end (Softmax): 0.65625
-Stacking Model Test Score at end (WC Playoff Model): 0.65625
+Stacking Model Test Score at 90 mins: 0.609375
+Stacking Model Test Score at end (Softmax): 0.625
+Stacking Model Test Score at end (WC Playoff Model): 0.640625
 </pre></div></div>
 </div>
 <p>It seems that stacking in this case did not really help that much. The
@@ -1711,11 +1712,11 @@ the validation scores.</p>
     </tr>
     <tr>
       <th>Stacking</th>
-      <td>0.534608</td>
-      <td>0.534211</td>
+      <td>0.566249</td>
+      <td>0.536842</td>
+      <td>0.609375</td>
       <td>0.625000</td>
-      <td>0.656250</td>
-      <td>0.656250</td>
+      <td>0.640625</td>
     </tr>
     <tr>
       <th>PCR</th>
@@ -1749,7 +1750,7 @@ the validation scores.</p>
 model!</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
+<span></span>In [44]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
