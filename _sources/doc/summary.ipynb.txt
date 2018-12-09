@@ -29,13 +29,6 @@
     "\n",
     "This project proves that there is a lot of potential for the field to expand. There is no doubt in the future we will see teams rely heavily on analytics to make decision, just like how baseball, basketball and American football do in the current era. "
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
