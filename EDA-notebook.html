@@ -67,6 +67,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="models/baseline_model.html">Baseline Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models/beyond_baseline.html">Modeling with Feature Engineered Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/neural_net.html">Bonus: Neural Network on Small Training Set</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Conclusion:</span></p>
 <ul>
@@ -86,7 +87,7 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Exploratory Data Analysis</a><ul>
 <li><a class="reference internal" href="#European-Matches">European Matches</a></li>
-<li><a class="reference internal" href="#Conclusion-From-Europen-Dataset">Conclusion From Europen Dataset</a></li>
+<li><a class="reference internal" href="#Conclusion-From-European-Dataset">Conclusion From European Dataset</a></li>
 <li><a class="reference internal" href="#Further-Exploring-Other-Features">Further Exploring Other Features</a></li>
 <li><a class="reference internal" href="#Exploring-PCA">Exploring PCA</a></li>
 <li><a class="reference internal" href="#Summary">Summary</a></li>
@@ -311,6 +312,51 @@ div.nboutput div.output_area.stderr {
 <p>Note that this notebook was constructed when we had not feature
 engineered all the features yet, so some of them may be missing from
 this notebook.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true;</span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">}</span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">The raw code for this IPython notebook is by default hidden for easier reading.</span>
+<span class="s1">To toggle on/off the raw code, click &lt;a href=&quot;javascript:code_toggle()&quot;&gt;here&lt;/a&gt;.&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[1]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<script>
+code_show=true;
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+}
+$( document ).ready(code_toggle);
+</script>
+The raw code for this IPython notebook is by default hidden for easier reading.
+To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.</div>
+</div>
 <div class="section" id="European-Matches">
 <h2>European Matches<a class="headerlink" href="#European-Matches" title="Permalink to this headline">¶</a></h2>
 <p>We will now explore the European matches dataset we had cleaned.</p>
@@ -524,62 +570,15 @@ this notebook.</p>
 <p>We see that there is a lot of matches where we do not have much
 information about the players. We do not want the rows with too many
 missing values. We drop the rows that have fewer than 11 non-NA values.</p>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1">#See what columns do we have for players.</span>
 <span class="n">player_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">column</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">european_matches</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;home_player_11&quot;</span> <span class="ow">in</span> <span class="n">column</span><span class="p">]</span>
 <span class="n">player_columns</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[4]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[&#39;_overall_rating&#39;,
- &#39;_potential&#39;,
- &#39;_preferred_foot&#39;,
- &#39;_attacking_work_rate&#39;,
- &#39;_defensive_work_rate&#39;,
- &#39;_crossing&#39;,
- &#39;_finishing&#39;,
- &#39;_heading_accuracy&#39;,
- &#39;_short_passing&#39;,
- &#39;_volleys&#39;,
- &#39;_dribbling&#39;,
- &#39;_curve&#39;,
- &#39;_free_kick_accuracy&#39;,
- &#39;_long_passing&#39;,
- &#39;_ball_control&#39;,
- &#39;_acceleration&#39;,
- &#39;_sprint_speed&#39;,
- &#39;_agility&#39;,
- &#39;_reactions&#39;,
- &#39;_balance&#39;,
- &#39;_shot_power&#39;,
- &#39;_jumping&#39;,
- &#39;_stamina&#39;,
- &#39;_strength&#39;,
- &#39;_long_shots&#39;,
- &#39;_aggression&#39;,
- &#39;_interceptions&#39;,
- &#39;_positioning&#39;,
- &#39;_vision&#39;,
- &#39;_penalties&#39;,
- &#39;_marking&#39;,
- &#39;_standing_tackle&#39;,
- &#39;_sliding_tackle&#39;,
- &#39;_gk_diving&#39;,
- &#39;_gk_handling&#39;,
- &#39;_gk_kicking&#39;,
- &#39;_gk_positioning&#39;,
- &#39;_gk_reflexes&#39;]
 </pre></div>
 </div>
 </div>
@@ -613,189 +612,6 @@ missing values. We drop the rows that have fewer than 11 non-NA values.</p>
 <span class="n">european_matches</span> <span class="o">=</span> <span class="n">drop_columns_below_threshold</span><span class="p">(</span><span class="n">european_matches</span><span class="p">,</span> <span class="n">home_rating_columns</span> <span class="o">+</span> <span class="n">away_rating_columns</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">european_matches</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[7]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>date</th>
-      <th>home_win</th>
-      <th>home_player_1_overall_rating</th>
-      <th>home_player_1_potential</th>
-      <th>home_player_1_preferred_foot</th>
-      <th>home_player_1_attacking_work_rate</th>
-      <th>home_player_1_defensive_work_rate</th>
-      <th>home_player_1_crossing</th>
-      <th>home_player_1_finishing</th>
-      <th>home_player_1_heading_accuracy</th>
-      <th>...</th>
-      <th>wins_past_1_games</th>
-      <th>not_enough_past_games_1</th>
-      <th>wins_past_2_games</th>
-      <th>not_enough_past_games_2</th>
-      <th>wins_past_3_games</th>
-      <th>not_enough_past_games_3</th>
-      <th>wins_past_4_games</th>
-      <th>not_enough_past_games_4</th>
-      <th>wins_past_5_games</th>
-      <th>not_enough_past_games_5</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>144</th>
-      <td>2009-02-28 00:00:00</td>
-      <td>0</td>
-      <td>66.0</td>
-      <td>68.0</td>
-      <td>left</td>
-      <td>medium</td>
-      <td>medium</td>
-      <td>20.0</td>
-      <td>20.0</td>
-      <td>34.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>2009-02-27 00:00:00</td>
-      <td>1</td>
-      <td>58.0</td>
-      <td>67.0</td>
-      <td>right</td>
-      <td>medium</td>
-      <td>medium</td>
-      <td>25.0</td>
-      <td>25.0</td>
-      <td>25.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>2009-02-28 00:00:00</td>
-      <td>1</td>
-      <td>70.0</td>
-      <td>74.0</td>
-      <td>right</td>
-      <td>medium</td>
-      <td>medium</td>
-      <td>11.0</td>
-      <td>11.0</td>
-      <td>12.0</td>
-      <td>...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>2009-03-01 00:00:00</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>2009-03-01 00:00:00</td>
-      <td>-1</td>
-      <td>68.0</td>
-      <td>69.0</td>
-      <td>right</td>
-      <td>medium</td>
-      <td>medium</td>
-      <td>24.0</td>
-      <td>31.0</td>
-      <td>32.0</td>
-      <td>...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 868 columns</p>
-</div></div>
 </div>
 <p>For each match, we compute the average statistics for the different
 ratings for each team and difference them. Just getting the total value
@@ -1017,26 +833,6 @@ should have the best goal keeper statistics.</p>
 <p>5 rows × 35 columns</p>
 </div></div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">len</span><span class="p">(</span><span class="n">diff_cols</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[10]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>35
-</pre></div>
-</div>
-</div>
 <p>Now let’s see if there are any differences in the distributions of the
 differences depending on whether the home team lost, won, or tied.</p>
 <div class="nbinput docutils container">
@@ -1227,7 +1023,7 @@ significant. Let’s plot the distributions themselves.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_18_0.png" src="_images/EDA-notebook_18_0.png" />
+<img alt="_images/EDA-notebook_17_0.png" src="_images/EDA-notebook_17_0.png" />
 </div>
 </div>
 <p>Wow! From looking at the plots the distributions of a difference in
@@ -1240,9 +1036,9 @@ predict the world cup. (Later we will see an attempt of using team
 statistics)</p>
 <p>Let us also look at whether previous match results will be good
 predictors.</p>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1255,16 +1051,6 @@ predictors.</p>
     <span class="n">past_wins_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;wins_past_</span><span class="si">{}</span><span class="s1">_games&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 
 <span class="nb">len</span><span class="p">(</span><span class="n">past_wins_columns</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[13]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>10
 </pre></div>
 </div>
 </div>
@@ -1400,7 +1186,7 @@ looking up to 5 games back. Let us also plot the distributions.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_23_0.png" src="_images/EDA-notebook_23_0.png" />
+<img alt="_images/EDA-notebook_22_0.png" src="_images/EDA-notebook_22_0.png" />
 </div>
 </div>
 <p>This time it is a bit more obvious that home team winning tends to have
@@ -1408,8 +1194,8 @@ higher values. It seems like we can probably calculate some kind of
 momentum and utilize it as a predictor. We will explore more of this
 concept later on when we make our advanced model.</p>
 </div>
-<div class="section" id="Conclusion-From-Europen-Dataset">
-<h2>Conclusion From Europen Dataset<a class="headerlink" href="#Conclusion-From-Europen-Dataset" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Conclusion-From-European-Dataset">
+<h2>Conclusion From European Dataset<a class="headerlink" href="#Conclusion-From-European-Dataset" title="Permalink to this headline">¶</a></h2>
 <p>From exploration of the European dataset, we saw that aggregating
 individual player ratings does not seem to help that much while previous
 matches seem to help. Thus, we decided to only keep the summary
@@ -1454,7 +1240,7 @@ datasets.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_29_0.png" src="_images/EDA-notebook_29_0.png" />
+<img alt="_images/EDA-notebook_28_0.png" src="_images/EDA-notebook_28_0.png" />
 </div>
 </div>
 <p>The spearman correlation plot gives us an idea of how well these
@@ -1484,7 +1270,7 @@ give us a fairly good idea of team 1/home team winning.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_31_0.png" src="_images/EDA-notebook_31_0.png" />
+<img alt="_images/EDA-notebook_30_0.png" src="_images/EDA-notebook_30_0.png" />
 </div>
 </div>
 <p>In fact, from the distribution plot we see that the features, such as
@@ -1528,7 +1314,7 @@ between distribution of different outcomes.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_33_1.png" src="_images/EDA-notebook_33_1.png" />
+<img alt="_images/EDA-notebook_32_1.png" src="_images/EDA-notebook_32_1.png" />
 </div>
 </div>
 <p>Inspecting one of the highly correlated features closely, we see that
@@ -1565,7 +1351,7 @@ much more likely to lose.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_35_1.png" src="_images/EDA-notebook_35_1.png" />
+<img alt="_images/EDA-notebook_34_1.png" src="_images/EDA-notebook_34_1.png" />
 </div>
 </div>
 <p>However, there are also some features that don’t have really high
@@ -1583,7 +1369,9 @@ still be useful when we do possess the information.</p>
 <p>Inspecting these distribution of features, we noticed them a large
 proportion of them are similarly shaped and distributed. Therefore, we
 considered PCA to perform dimensionality reduction, aggregating similar
-features.</p>
+features. While we fit some models to the data, we do not really draw
+any conclusions about the models for now, as we just want to see whether
+using PCA has any promising results.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
@@ -1632,9 +1420,9 @@ features.</p>
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [125]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1698,30 +1486,9 @@ features.</p>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-working on 2
-working on 3
-working on 4
-working on 5
-working on 6
-working on 7
-working on 8
-working on 9
-working on 10
-working on 11
-working on 12
-working on 13
-working on 14
-working on 15
-</pre></div></div>
-</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [126]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1730,163 +1497,15 @@ working on 15
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [127]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">df_train_score</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[127]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>LDA</th>
-      <th>Logistic Regression</th>
-      <th>QDA</th>
-      <th>Random Forest</th>
-      <th>XGBoost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2</th>
-      <td>0.523401</td>
-      <td>0.524061</td>
-      <td>0.516809</td>
-      <td>0.526038</td>
-      <td>0.529993</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.518787</td>
-      <td>0.518787</td>
-      <td>0.507581</td>
-      <td>0.526697</td>
-      <td>0.783125</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.515491</td>
-      <td>0.518128</td>
-      <td>0.520765</td>
-      <td>0.531971</td>
-      <td>0.530653</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0.516150</td>
-      <td>0.518787</td>
-      <td>0.526038</td>
-      <td>0.528016</td>
-      <td>0.529334</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.518787</td>
-      <td>0.521424</td>
-      <td>0.528675</td>
-      <td>0.528016</td>
-      <td>0.531971</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0.514832</td>
-      <td>0.520765</td>
-      <td>0.533949</td>
-      <td>0.530653</td>
-      <td>0.536585</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.517469</td>
-      <td>0.519446</td>
-      <td>0.528675</td>
-      <td>0.533289</td>
-      <td>0.532630</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0.520765</td>
-      <td>0.518787</td>
-      <td>0.526038</td>
-      <td>0.550428</td>
-      <td>0.535926</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0.518787</td>
-      <td>0.520105</td>
-      <td>0.532630</td>
-      <td>0.541200</td>
-      <td>0.535267</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0.515491</td>
-      <td>0.520765</td>
-      <td>0.529993</td>
-      <td>0.539881</td>
-      <td>0.531971</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>0.518787</td>
-      <td>0.520765</td>
-      <td>0.533949</td>
-      <td>0.683586</td>
-      <td>0.564272</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0.522742</td>
-      <td>0.520765</td>
-      <td>0.538563</td>
-      <td>0.557020</td>
-      <td>0.565590</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0.519446</td>
-      <td>0.518128</td>
-      <td>0.549110</td>
-      <td>0.536585</td>
-      <td>0.535267</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>0.523401</td>
-      <td>0.517469</td>
-      <td>0.546473</td>
-      <td>0.559657</td>
-      <td>0.910349</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -1913,9 +1532,9 @@ working on 15
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [130]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1923,149 +1542,15 @@ working on 15
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[130]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>train_score</th>
-      <th>validation_score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>LDA</th>
-      <td>0.526038</td>
-      <td>0.486842</td>
-    </tr>
-    <tr>
-      <th>Logistic Regression</th>
-      <td>0.522083</td>
-      <td>0.500000</td>
-    </tr>
-    <tr>
-      <th>QDA</th>
-      <td>0.601846</td>
-      <td>0.415789</td>
-    </tr>
-    <tr>
-      <th>Random Forest</th>
-      <td>0.612393</td>
-      <td>0.507895</td>
-    </tr>
-    <tr>
-      <th>XGBoost</th>
-      <td>0.535267</td>
-      <td>0.492105</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [131]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">df_val_score</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[131]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>LDA</th>
-      <th>Logistic Regression</th>
-      <th>QDA</th>
-      <th>Random Forest</th>
-      <th>XGBoost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2</th>
-      <td>0.484211</td>
-      <td>0.481579</td>
-      <td>0.494737</td>
-      <td>0.473684</td>
-      <td>0.476316</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.473684</td>
-      <td>0.473684</td>
-      <td>0.489474</td>
-      <td>0.478947</td>
-      <td>0.468421</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.492105</td>
-      <td>0.473684</td>
-      <td>0.486842</td>
-      <td>0.476316</td>
-      <td>0.489474</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0.489474</td>
-      <td>0.489474</td>
-      <td>0.494737</td>
-      <td>0.486842</td>
-      <td>0.486842</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.497368</td>
-      <td>0.489474</td>
-      <td>0.494737</td>
-      <td>0.486842</td>
-      <td>0.473684</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -2098,7 +1583,7 @@ working on 15
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_47_1.png" src="_images/EDA-notebook_47_1.png" />
+<img alt="_images/EDA-notebook_46_1.png" src="_images/EDA-notebook_46_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -2242,7 +1727,7 @@ model.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_54_0.png" src="_images/EDA-notebook_54_0.png" />
+<img alt="_images/EDA-notebook_53_0.png" src="_images/EDA-notebook_53_0.png" />
 </div>
 </div>
 <p>We only highlighted the top 20 predictors with largest correlation
@@ -2340,7 +1825,7 @@ might be correlated.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_59_0.png" src="_images/EDA-notebook_59_0.png" />
+<img alt="_images/EDA-notebook_58_0.png" src="_images/EDA-notebook_58_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -2371,7 +1856,7 @@ might be correlated.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_60_0.png" src="_images/EDA-notebook_60_0.png" />
+<img alt="_images/EDA-notebook_59_0.png" src="_images/EDA-notebook_59_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -2401,7 +1886,7 @@ might be correlated.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/EDA-notebook_61_0.png" src="_images/EDA-notebook_61_0.png" />
+<img alt="_images/EDA-notebook_60_0.png" src="_images/EDA-notebook_60_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">

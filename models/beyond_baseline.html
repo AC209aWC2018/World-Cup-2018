@@ -307,6 +307,51 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="section" id="Modeling-with-Feature-Engineered-Features">
 <h1>Modeling with Feature Engineered Features<a class="headerlink" href="#Modeling-with-Feature-Engineered-Features" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true;</span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">}</span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">The raw code for this IPython notebook is by default hidden for easier reading.</span>
+<span class="s1">To toggle on/off the raw code, click &lt;a href=&quot;javascript:code_toggle()&quot;&gt;here&lt;/a&gt;.&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[1]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<script>
+code_show=true;
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+}
+$( document ).ready(code_toggle);
+</script>
+The raw code for this IPython notebook is by default hidden for easier reading.
+To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>.</div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
@@ -352,49 +397,6 @@ div.nboutput div.output_area.stderr {
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">train</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[5]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Index([&#39;game_date&#39;, &#39;home_team&#39;, &#39;away_team&#39;, &#39;home_score&#39;, &#39;away_score&#39;,
-       &#39;tournament&#39;, &#39;country&#39;, &#39;neutral&#39;, &#39;overall_diff&#39;,
-       &#39;attack_away_defence_home_diff&#39;, &#39;attack_diff&#39;,
-       &#39;attack_home_defence_away_diff&#39;, &#39;defence_diff&#39;, &#39;midfield_diff&#39;,
-       &#39;rank_diff&#39;, &#39;prestige_diff&#39;, &#39;growth_diff&#39;, &#39;full_age_diff&#39;,
-       &#39;start_age_diff&#39;, &#39;value_euros_millions_diff&#39;,
-       &#39;wage_euros_thousands_diff&#39;, &#39;goalkeeper_overall_diff&#39;,
-       &#39;bup_dribbling_diff&#39;, &#39;bup_passing_diff&#39;, &#39;bup_speed_diff&#39;,
-       &#39;cc_crossing_diff&#39;, &#39;cc_passing_diff&#39;, &#39;cc_shooting_diff&#39;,
-       &#39;d_aggresion_diff&#39;, &#39;d_pressure_diff&#39;, &#39;d_width_diff&#39;, &#39;home_win&#39;,
-       &#39;x_rating&#39;, &#39;y_rating&#39;, &#39;gdp_diff&#39;, &#39;is_home&#39;, &#39;raw_gdp_diff&#39;,
-       &#39;wins_past_1_games_diff&#39;, &#39;win_momentum_past_1_games_diff&#39;,
-       &#39;lose_momentum_past_2_games_diff&#39;, &#39;lose_momentum_past_4_games_diff&#39;,
-       &#39;wins_home_against_away_5_games&#39;, &#39;wins_past_5_games_diff&#39;,
-       &#39;wins_past_3_games_diff&#39;, &#39;wins_home_against_away_4_games&#39;,
-       &#39;lose_momentum_past_3_games_diff&#39;, &#39;lose_momentum_past_1_games_diff&#39;,
-       &#39;win_momentum_past_3_games_diff&#39;, &#39;wins_home_against_away_3_games&#39;,
-       &#39;wins_past_2_games_diff&#39;, &#39;win_momentum_past_2_games_diff&#39;,
-       &#39;wins_past_4_games_diff&#39;, &#39;wins_home_against_away_2_games&#39;,
-       &#39;wins_home_against_away_1_games&#39;, &#39;lose_momentum_past_5_games_diff&#39;,
-       &#39;win_momentum_past_5_games_diff&#39;, &#39;win_momentum_past_4_games_diff&#39;],
-      dtype=&#39;object&#39;)
-</pre></div>
-</div>
-</div>
-<p>To begin, let’s just naively use all the features we have feature
-engineered.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
@@ -448,8 +450,9 @@ engineered.</p>
 </div>
 <div class="section" id="Fitting-the-Models">
 <h2>Fitting the Models<a class="headerlink" href="#Fitting-the-Models" title="Permalink to this headline">¶</a></h2>
-<p>Similar to before, we will fit different classification models on our
-data and select the one with the best validation accuracy.</p>
+<p>To begin, let’s just naively use all the features we have feature
+engineered. Similar to before, we will fit different classification
+models on our data and select the one with the best validation accuracy.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [5]:
@@ -965,7 +968,7 @@ so we will utilize its feature importance again.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_29_0.png" src="../_images/models_beyond_baseline_29_0.png" />
+<img alt="../_images/models_beyond_baseline_28_0.png" src="../_images/models_beyond_baseline_28_0.png" />
 </div>
 </div>
 <p>Like before, the ratings of the team are pretty important features. Many
@@ -1200,7 +1203,7 @@ components that gives us the best validation accuracy.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_42_0.png" src="../_images/models_beyond_baseline_42_0.png" />
+<img alt="../_images/models_beyond_baseline_41_0.png" src="../_images/models_beyond_baseline_41_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -1438,7 +1441,7 @@ that this might perform even better than PCR.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_52_0.png" src="../_images/models_beyond_baseline_52_0.png" />
+<img alt="../_images/models_beyond_baseline_51_0.png" src="../_images/models_beyond_baseline_51_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -1569,7 +1572,7 @@ PLS1-DA (Best) Validation Score: 0.5552631578947368
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_57_0.png" src="../_images/models_beyond_baseline_57_0.png" />
+<img alt="../_images/models_beyond_baseline_56_0.png" src="../_images/models_beyond_baseline_56_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -1880,7 +1883,7 @@ model!</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/models_beyond_baseline_70_0.png" src="../_images/models_beyond_baseline_70_0.png" />
+<img alt="../_images/models_beyond_baseline_69_0.png" src="../_images/models_beyond_baseline_69_0.png" />
 </div>
 </div>
 <p>The model is actually predicting some draws now for the training set and

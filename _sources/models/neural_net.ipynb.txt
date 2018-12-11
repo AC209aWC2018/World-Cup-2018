@@ -8,6 +8,56 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<script>\n",
+       "code_show=true; \n",
+       "function code_toggle() {\n",
+       " if (code_show){\n",
+       " $('div.input').hide();\n",
+       " } else {\n",
+       " $('div.input').show();\n",
+       " }\n",
+       " code_show = !code_show\n",
+       "} \n",
+       "$( document ).ready(code_toggle);\n",
+       "</script>\n",
+       "The raw code for this IPython notebook is by default hidden for easier reading.\n",
+       "To toggle on/off the raw code, click <a href=\"javascript:code_toggle()\">here</a>."
+      ],
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from IPython.display import HTML\n",
+    "HTML('''<script>\n",
+    "code_show=true; \n",
+    "function code_toggle() {\n",
+    " if (code_show){\n",
+    " $('div.input').hide();\n",
+    " } else {\n",
+    " $('div.input').show();\n",
+    " }\n",
+    " code_show = !code_show\n",
+    "} \n",
+    "$( document ).ready(code_toggle);\n",
+    "</script>\n",
+    "The raw code for this IPython notebook is by default hidden for easier reading.\n",
+    "To toggle on/off the raw code, click <a href=\"javascript:code_toggle()\">here</a>.''')"
+   ]
+  },
+  {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
@@ -16,9 +66,17 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 242,
+   "execution_count": 2,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "Using TensorFlow backend.\n"
+     ]
+    }
+   ],
    "source": [
     "import matplotlib.pyplot as plt\n",
     "import pandas as pd\n",
@@ -33,12 +91,13 @@
     "from keras.layers import Dense\n",
     "from keras import regularizers\n",
     "from keras.layers import Dropout\n",
-    "from keras.optimizers import Adam"
+    "from keras.optimizers import Adam\n",
+    "from keras.utils import plot_model\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 243,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -48,7 +107,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 244,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -75,7 +134,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 250,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -117,9 +176,38 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 6,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "_________________________________________________________________\n",
+      "Layer (type)                 Output Shape              Param #   \n",
+      "=================================================================\n",
+      "dense_1 (Dense)              (None, 15)                540       \n",
+      "_________________________________________________________________\n",
+      "dropout_1 (Dropout)          (None, 15)                0         \n",
+      "_________________________________________________________________\n",
+      "dense_2 (Dense)              (None, 15)                240       \n",
+      "_________________________________________________________________\n",
+      "dropout_2 (Dropout)          (None, 15)                0         \n",
+      "_________________________________________________________________\n",
+      "dense_3 (Dense)              (None, 15)                240       \n",
+      "_________________________________________________________________\n",
+      "dropout_3 (Dropout)          (None, 15)                0         \n",
+      "_________________________________________________________________\n",
+      "dense_4 (Dense)              (None, 3)                 48        \n",
+      "=================================================================\n",
+      "Total params: 1,068\n",
+      "Trainable params: 1,068\n",
+      "Non-trainable params: 0\n",
+      "_________________________________________________________________\n",
+      "None\n"
+     ]
+    }
+   ],
    "source": [
     "model = Sequential()\n",
     "model.add(Dense(15, activation=\"relu\", input_dim = X_train.shape[1], kernel_regularizer=regularizers.l2(1e-6)))\n",
@@ -130,22 +218,42 @@
     "model.add(Dropout(0.5))\n",
     "model.add(Dense(3, activation=\"sigmoid\", kernel_regularizer = regularizers.l2(1e-6)))\n",
     "\n",
-    "adam = Adam(amsgrad= True)\n",
-    "model.compile(loss= 'categorical_crossentropy', optimizer = adam, metrics=['accuracy'])\n",
-    "model.fit(X_train, y_train, epochs = 200, batch_size = 64, validation_data = (X_valid, y_valid))"
+    "print(model.summary())"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 252,
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<keras.callbacks.History at 0x103368c18>"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "adam = Adam(amsgrad= True)\n",
+    "model.compile(loss= 'categorical_crossentropy', optimizer = adam, metrics=['accuracy'])\n",
+    "model.fit(X_train, y_train, epochs = 200, batch_size = 64, validation_data = (X_valid, y_valid), verbose = False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Neural Network Train Accuracy: 0.5517468688789763\n",
-      "Neural Network Validation Accuracy: 0.5421052622167688\n"
+      "Neural Network Train Accuracy: 0.5570204350888611\n",
+      "Neural Network Validation Accuracy: 0.5447368411641372\n"
      ]
     }
    ],
@@ -156,15 +264,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 264,
+   "execution_count": 9,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Neural Network Test Accuracy (90 Minutes): 0.609375\n",
-      "Neural Network Test Accuracy (Softmax): 0.609375\n"
+      "Neural Network Test Accuracy (90 Minutes): 0.625\n",
+      "Neural Network Test Accuracy (Softmax): 0.625\n"
      ]
     }
    ],
@@ -180,9 +288,9 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "As we have surmised, the neural network did not perform as well as our best model, although it still performed better than the baseline model. \n",
+    "Surprisngly, the neural network actually did better than we thought it would. This most likely stems from the regularization we added as well as the dropout layers. However, the neural network did not perform as well as our best model.\n",
     "\n",
-    "We have thus shown that neural networks are not really that effective when the training set is small; it shows that we do not really need that complex of a model in this problem."
+    "We have thus shown that neural networks do not really help improve accuracy in this small dataset; it shows that we do not really need that complex of a model in this problem."
    ]
   }
  ],

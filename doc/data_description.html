@@ -136,173 +136,7 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput,
-div.nboutput {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput div.prompt pre {
-    color: #303F9F;
-}
-
-/* output prompt */
-div.nboutput div.prompt pre {
-    color: #D84315;
-}
-
-/* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
-    min-width: 9ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
-    text-align: right;
-    flex: 0;
-}
-@media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput div.prompt.empty {
-        padding: 0;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    background: #f7f7f7;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.pngmath center alignment in output cells */
-div.nboutput div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-</style>
-<div class="section" id="Description-of-Data">
+  <div class="section" id="Description-of-Data">
 <h1>Description of Data<a class="headerlink" href="#Description-of-Data" title="Permalink to this headline">¶</a></h1>
 <p><strong>FIFA World Ranking:</strong> A key component of the project is to compare
 against a baseline model that relies on FIFA rankings. We obtained the
@@ -357,8 +191,10 @@ account for player and team improvements. As such, prior to 2013, we do
 not have various data points for each year. Nonetheless, this is not a
 huge issue as in-game data do not vary largely within a specific game
 edition. It is thus reasonable to extrapolate throughout the year.</p>
-<p><img alt="image0" src="http://www.fifaworldcupnews.com/wp-content/uploads/2018/04/FIFA-Video-Game-Series-history-cover.jpg" /></p>
-<p>The sofifa dataset also does not include all national teams. Moreover,
+<p><img alt="image0" src="https://static.businessinsider.com/image/53b4538a69bedd0476e18533-750.jpg" /></p>
+<center><p>Source:
+<a class="reference external" href="http://www.fifaworldcupnews.com/wp-content/uploads/2018/04/FIFA-Video-Game-Series-history-cover.jpg">http://www.fifaworldcupnews.com/wp-content/uploads/2018/04/FIFA-Video-Game-Series-history-cover.jpg</a></p>
+</center><p>The sofifa dataset also does not include all national teams. Moreover,
 different sets of national teams are included for each FIFA game
 edition. This does not pose a problem for ‘better’, more popular teams
 as they are generally included in all games by demand. However, alot of
@@ -379,7 +215,9 @@ approximates the list of players that are often called up by their
 national teams. Even the World Cup 2018 game update did not have the
 exact World Cup roster for all the teams!</p>
 <p><img alt="image1" src="https://www.thesun.co.uk/wp-content/uploads/2018/05/wrong-6.jpg?strip=all&amp;quality=100&amp;w=742&amp;h=417&amp;crop=1" /></p>
-<p>It might seem that feature engineering on individual player statistics,
+<center><p>Source:
+<a class="reference external" href="https://www.thesun.co.uk/wp-content/uploads/2018/05/wrong-6.jpg?strip=all&amp;quality=100&amp;w=742&amp;h=417&amp;crop=1">https://www.thesun.co.uk/wp-content/uploads/2018/05/wrong-6.jpg?strip=all&amp;quality=100&amp;w=742&amp;h=417&amp;crop=1</a></p>
+</center><p>It might seem that feature engineering on individual player statistics,
 as compared to using the aggregated team statistics, might give us
 greater flexibility. As such, we nonetheless went ahead with trying to
 match player names with match squad data. However, as there were
@@ -394,18 +232,27 @@ While the in-game squad data is not particularly accurate, since we are
 already approximating the strength of a team through aggregation, it is
 not a huge issue. Moreover, as we shall see, our approximation does
 reasonably well.</p>
-<p>While the sofifa dataset has its limitations, it is the most
-comprehensive, and readily available dataset on soccer statistics. As
-such, the dataset is the main complement to our match-based data.</p>
+<p>But how does EA Sports (the company that produces the line of FIFA
+games) calculate all the in-game player statistics? This is a common
+question often posed by serious gamers who don’t necessarily agree with
+the statistics given to their favorite players. In fact, EA Sports has a
+team that includes professional scouts, coaches and club season ticket
+holders throughout the world that is responsible for collecting and then
+submitting feedback on players. These millions pieces of information are
+then compiled together to create players’ attributes. While there will
+always be debates about the accuracy of a player’s attributes, the data
+collection by EA Sports is by far the most professional and
+comprehensive.</p>
+<p>As such, despite the limitations of the sofifa dataset, it is the most
+comprehensive, and readily available dataset on soccer statistics. We
+thus use the dataset as the main complement to our match-based data.</p>
 <p>We also experimented with data from other sources, such as <a class="reference external" href="https://www.kaggle.com/hugomathien/soccer">European
 matches</a>.</p>
 <p><strong>Country statistics:</strong> Inspired by the prior World-Cup prediction model
 that we reviewed by Andreas Groll and his team at the University of
 Dortmund, we also scraped some country information from Wikipedia such
 as <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)">GDP
-PPP</a>
-and
-<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">population</a>.</p>
+PPP</a>.</p>
 <div class="section" id="Feature-Engineering">
 <h2>Feature Engineering<a class="headerlink" href="#Feature-Engineering" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -430,13 +277,23 @@ information which neither advantages nor disadvantages either team.</li>
 <li><strong>Momentum:</strong> In sports, we often notice that one team tends to keep
 winning or keep losing as they gain momentum due to teams’ morale,
 conditions and other factors. This can be represented by taking into
-account the team’s performance in past games. We engineered a couple
-of momentum-based statistics by looking at the number of wins, goals
-scored, and goals conceded in their past few games. We also
-experimented with weighing some of these momentum-based statistics by
-taking into account the rating of the teams the team played in. This
-is slightly alike the FIFA World Rankings and is our attempt to
-capture similar information from our data.</li>
+account the team’s performance in past games. We engineered momentum
+by taking the opposing team’s strength into account and recording the
+winning and losing momentum in the past n games. This is slightly
+alike the FIFA World Rankings and is our attempt to capture similar
+information from our data. More specifically, the winning momentum is
+calculated by adding up the normalized rating of the opponent in each
+win and the losing momentum is done by summing up -(1)(1 - normalized
+rating). These expressions model the momentum well since a win
+against a highly rated team will impact the value of winning momentum
+by a lot while a loss against a highly rated team will impact the
+losing momentum only by a little bit (as it should be in real life).
+Moreover, we decided to split momentum into win and loss momentums
+instead of summing them up and combining them into one feature. This
+is because if we were to make it into one feature, then winning
+against a strong team and then losing against a weak team would
+cancel each other out arithmetically, when in reality, the momentum
+from the win/loss outcomes may not be symmetrical.</li>
 <li><strong>Statistics of players:</strong> We aggregate players’ statistics together
 as part of a team’s offensive, defensive abilities. One exception is
 the goalkeepers’ ratings, as we believe that defense is pivotal for
@@ -444,14 +301,23 @@ any good team. Good goalkeepers can potentially swing the outcome of
 a match. As such, we single out goalkeepers’ ratings and include them
 as part of the features.</li>
 </ol>
-<table><tr><td></td><td></td></tr></table><ol class="arabic simple" start="5">
-<li><strong>GDP within the same continent:</strong> Rather than considering the
-overall GDP difference, GDP difference within the confederation seems
-a better indicator of how well a team is doing against another.
-Confederations tend to be on the same continent, so we compare the
-GDPs of countries on the same continents. When not in the same
-continent, this is encoded again with 0 to indicate the lack of
-information which neither advantages nor disadvantage any team.</li>
+<p><img alt="image0" src="https://static.businessinsider.com/image/53b4538a69bedd0476e18533-750.jpg" /></p>
+<center><p>Source:
+<a class="reference external" href="https://static.businessinsider.com/image/53b4538a69bedd0476e18533-750.jpg">https://static.businessinsider.com/image/53b4538a69bedd0476e18533-750.jpg</a></p>
+</center><ol class="arabic simple" start="5">
+<li><strong>GDP information:</strong> We realize that GDP per capita of countries can
+contribute to the strength of each team since a richer country may be
+able to afford better training equipments and resources. Moreover, we
+believe that the comparison of GDP per capita within the same region
+captures this information even better since wealth differences in
+similar conditions may impact the availability of resources even
+more. Therefore, on top of recording the raw difference in GDP of 2
+teams, we also record the difference between GDP of countries within
+the same continent (calculated by using log of team1_gdp/team2_gdp).
+When not in the same continent, this is encoded again with 0 to
+indicate the lack of information which neither advantages nor
+disadvantage any team. We obtain a mapping of a country to its
+continent by scraping wikipedia.</li>
 </ol>
 <p>Our final train dataset consisted of 1897 rows while our test dataset
 consists of the 64 matches of the 2018 World Cup. Below is a table
@@ -688,16 +554,6 @@ rical
 </tr>
 </tbody>
 </table>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
