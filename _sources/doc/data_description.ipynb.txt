@@ -21,14 +21,14 @@
     "\n",
     "**Player and team statistics:** Player and team based statistics, such as ratings, positional data and wages for the former and playing style for the latter, was scraped from [sofifa](https://sofifa.com). sofifa is a website that collects from the FIFA game databases and has historical data from FIFA 2007, released on September 25, 2006. Earlier FIFA versions were released without frequent updates. However, starting from FIFA 2013, the game was frequently updated throughout the year to account for player and team improvements. As such, prior to 2013, we do not have various data points for each year. Nonetheless, this is not a huge issue as in-game data do not vary largely within a specific game edition. It is thus reasonable to extrapolate throughout the year. \n",
     "\n",
-    "![](http://www.fifaworldcupnews.com/wp-content/uploads/2018/04/FIFA-Video-Game-Series-history-cover.jpg)\n",
+    "![FIFA Video Game History](http://www.fifaworldcupnews.com/wp-content/uploads/2018/04/FIFA-Video-Game-Series-history-cover.jpg)\n",
     "<center>Source: http://www.fifaworldcupnews.com/wp-content/uploads/2018/04/FIFA-Video-Game-Series-history-cover.jpg</center>\n",
     "\n",
     "The sofifa dataset also does not include all national teams. Moreover, different sets of national teams are included for each FIFA game edition. This does not pose a problem for 'better', more popular teams as they are generally included in all games by demand. However, alot of national teams are generally not included because they are not deemed 'popular' enough to be selected by gamers. As such, we lose alot of matches (where a match is an observation in our full dataset) by merging the sofifa dataset with our match-based dataset. This is again not a huge problem because we still end up with around 1800+ matches, which we deemed to be sufficient for our analysis. We noted that a small number of prior World Cup matches were removed because some of the teams that were in prior World Cups were not inclued in the game (i.e. Ghana and Slovakia in World Cup 2010). Thankfully, there was a World Cup 2018 game update to the FIFA 2018 game edition that ensured that we have the necessary data for our test set.\n",
     "\n",
     "Moreover, even the national teams that are included are not particularly accurate with the list of squad players. The sofifa dataset roughly approximates the list of players that are often called up by their national teams. Even the World Cup 2018 game update did not have the exact World Cup roster for all the teams!\n",
     "\n",
-    "![](https://www.thesun.co.uk/wp-content/uploads/2018/05/wrong-6.jpg?strip=all&quality=100&w=742&h=417&crop=1)\n",
+    "![Missing Players](https://www.thesun.co.uk/wp-content/uploads/2018/05/wrong-6.jpg?strip=all&quality=100&w=742&h=417&crop=1)\n",
     "<center>Source: https://www.thesun.co.uk/wp-content/uploads/2018/05/wrong-6.jpg?strip=all&quality=100&w=742&h=417&crop=1</center>\n",
     "\n",
     "It might seem that feature engineering on individual player statistics, as compared to using the aggregated team statistics, might give us greater flexibility. As such, we nonetheless went ahead with trying to match player names with match squad data. However, as there were different naming conventions across different datasets for players' name, we found that it would be difficult to accurately match player names without some extensive manual curation. Moreover, this would yield minimal benefit for many of the features according to our EDA (see EDA section for details). As such, we relied on a mix of existing team statistics and some aggregated summary statistics of individual players data for each team to approximate the talent available in each team. While the in-game squad data is not particularly accurate, since we are already approximating the strength of a team through aggregation, it is not a huge issue. Moreover, as we shall see, our approximation does reasonably well.\n",
@@ -62,7 +62,7 @@
     "4. **Statistics of players:** We aggregate players' statistics together as part of a team's offensive, defensive abilities. One exception is the goalkeepers' ratings, as we believe that defense is pivotal for any good team. Good goalkeepers can potentially swing the outcome of a match. As such, we single out goalkeepers' ratings and include them as part of the features.\n",
     "\n",
     "\n",
-    "![](https://static.businessinsider.com/image/53b4538a69bedd0476e18533-750.jpg)\n",
+    "![Secretary of Defense](https://static.businessinsider.com/image/53b4538a69bedd0476e18533-750.jpg)\n",
     "<center>Source: https://static.businessinsider.com/image/53b4538a69bedd0476e18533-750.jpg</center>\n",
     "\n",
     "\n",
@@ -120,7 +120,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Below is our response variable.\n",
+    "Below is our response variable. \n",
     "\n",
     "| Column Name        | Description           | Data Type  |\n",
     "| ------------- |:---------------------------:| -----:|\n",
@@ -144,7 +144,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.6.5"
+   "version": "3.6.6"
   }
  },
  "nbformat": 4,
