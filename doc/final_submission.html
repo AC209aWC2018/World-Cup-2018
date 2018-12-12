@@ -99,7 +99,6 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#Baseline-Model">Baseline Model</a></li>
-<li><a class="reference internal" href="#Beyond-Baseline">Beyond Baseline</a></li>
 <li><a class="reference internal" href="#Bonus:-Neural-Network-on-Small-Training-Set">Bonus: Neural Network on Small Training Set</a></li>
 <li><a class="reference internal" href="#Summary-and-Future-Work">Summary and Future Work</a></li>
 </ul>
@@ -145,6 +144,7 @@
 <h1>Predicting the 2018 World Cup<a class="headerlink" href="#Predicting-the-2018-World-Cup" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Brian-Lin,-Shane-Ong,-Pat-Sukhum,-Matteo-Zhang">
 <h2>Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang<a class="headerlink" href="#Brian-Lin,-Shane-Ong,-Pat-Sukhum,-Matteo-Zhang" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/AC209aWC2018/World-Cup-2018">https://github.com/AC209aWC2018/World-Cup-2018</a></p>
 </div>
 </div>
 <div class="section" id="Overview-and-Motivation">
@@ -524,9 +524,6 @@ train/validation set, we can utilize it in this case.</p>
 </div>
 <p>It seems like the FIFA rankings is not that important of a feature!
 Hopefully we can make a better model than the baseline model.</p>
-</div>
-<div class="section" id="Beyond-Baseline">
-<h1>Beyond Baseline<a class="headerlink" href="#Beyond-Baseline" title="Permalink to this headline">¶</a></h1>
 <p>To begin, we naively used all the features we have feature engineered.
 Similar to before, we fitted different classification models on our data
 and select the one with the best validation accuracy.</p>
@@ -563,11 +560,14 @@ better results.</p>
 train/validation. Why not try stacking the models together? We will
 stack the logistic regression, LDA, QDA, Random Forest, and XGBoost
 models.</p>
-<p>We got the following results: Stacking Model Train Score:
-0.5662491760052736 Stacking Model Validation Score: 0.5368421052631579
-Stacking Model Test Score at 90 mins: 0.609375 Stacking Model Test Score
-at end (Softmax): 0.625 Stacking Model Test Score at end (WC Playoff
-Model): 0.640625</p>
+<p>We got the following results:</p>
+<ul class="simple">
+<li>Stacking Model Train Score: 0.5662491760052736</li>
+<li>Stacking Model Validation Score: 0.5368421052631579</li>
+<li>Stacking Model Test Score at 90 mins: 0.609375</li>
+<li>Stacking Model Test Score at end (Softmax): 0.625</li>
+<li>Stacking Model Test Score at end (WC Playoff Model): 0.640625</li>
+</ul>
 <p>It seems that stacking in this case did not really help that much. The
 test accuarcies are still decent though, higher than those of the
 baseline model.</p>
@@ -598,11 +598,15 @@ playoffs data.</p>
 <img alt="PCR Plot" src="../_images/pcr_plot.png" />
 <p class="caption"><span class="caption-text">PCR Plot</span></p>
 </div>
-<p>We got the following results: Best Validation Accuracy Number of
-Components: 3 PCR (Best) Train Score: 0.5042847725774555 PCR (Best)
-Validation Score: 0.5473684210526316 PCR (Best) Test Score at 90 mins:
-0.5625 PCR (Best) Test Score at end (Softmax): 0.578125 PCR (Best) Test
-Score at end (WC Playoffs Model): 0.609375</p>
+<p>We got the following results:</p>
+<ul class="simple">
+<li>Best Validation Accuracy Number of Components: 3</li>
+<li>PCR (Best) Train Score: 0.5042847725774555</li>
+<li>PCR (Best) Validation Score: 0.5473684210526316</li>
+<li>PCR (Best) Test Score at 90 mins: 0.5625</li>
+<li>PCR (Best) Test Score at end (Softmax): 0.578125</li>
+<li>PCR (Best) Test Score at end (WC Playoffs Model): 0.609375</li>
+</ul>
 <p>In this case, PCR was not a good option. The test accuracy decreased
 quite significantly. We may need to take into the account the outcome as
 well when we reduce the dimension of our feature set.</p>
@@ -652,28 +656,37 @@ captured by the components.</p>
 the creation of orthogonal components just as in PCR, but also allows us
 to create components that are correlated with the response. It is likely
 that this might perform even better than PCR.</p>
-<p>We got the following results for PLS1-DA: Best Validation Accuracy
-Number of Components: 16 PLS1-DA (Best) Train Score: 0.5227422544495716
-PLS1-DA (Best) Validation Score: 0.5552631578947368</p>
+<p>We got the following results for PLS1-DA:</p>
+<ul class="simple">
+<li>Best Validation Accuracy Number of Components: 16</li>
+<li>PLS1-DA (Best) Train Score: 0.5227422544495716</li>
+<li>PLS1-DA (Best) Validation Score: 0.5552631578947368</li>
+</ul>
 <div class="figure" id="id17">
 <img alt="PLS 1" src="../_images/pls-da1.png" />
 <p class="caption"><span class="caption-text">PLS 1</span></p>
 </div>
-<p>We got the following results for PLS2-DA: Best Validation Accuracy
-Number of Components: 9 PLS2-DA (Best) Train Score: 0.5181278839815425
-PLS2-DA (Best) Validation Score: 0.5526315789473685</p>
+<p>We got the following results for PLS2-DA:</p>
+<ul class="simple">
+<li>Best Validation Accuracy Number of Components: 9</li>
+<li>PLS2-DA (Best) Train Score: 0.5181278839815425</li>
+<li>PLS2-DA (Best) Validation Score: 0.5526315789473685</li>
+</ul>
 <div class="figure" id="id18">
-<img alt="PLS 1" src="../_images/pls-da2.png" />
-<p class="caption"><span class="caption-text">PLS 1</span></p>
+<img alt="PLS 2" src="../_images/pls-da2.png" />
+<p class="caption"><span class="caption-text">PLS 2</span></p>
 </div>
 <p>For the WC Playoffs Model, we will also fit the PLS model with number of
 components that maximizes the train accuracy. In the case of binary
 labels, PLS1-DA and PLS2-DA are the same, so we only have one result for
 the WC Playoffs Model.</p>
-<p>PLS1-DA (Best) Test Score at 90 mins: 0.640625 PLS1-DA (Best) Test Score
-at end (Softmax): 0.6875 PLS2-DA (Best) Test Score at 90 mins: 0.59375
-PLS2-DA (Best) Test Score at end (Softmax): 0.625 PLS1-DA/PLS2-DA (Best)
-Test Score at end (WC Playoffs Model): 0.65625</p>
+<ul class="simple">
+<li>PLS1-DA (Best) Test Score at 90 mins: 0.640625</li>
+<li>PLS1-DA (Best) Test Score at end (Softmax): 0.6875</li>
+<li>PLS2-DA (Best) Test Score at 90 mins: 0.59375</li>
+<li>PLS2-DA (Best) Test Score at end (Softmax): 0.625</li>
+<li>PLS1-DA/PLS2-DA (Best) Test Score at end (WC Playoffs Model): 0.65625</li>
+</ul>
 <p>Compared to the full model, we do not see much change in the PLS1-DA
 model on the test set while we see a decrease in performance of PLS2-DA
 on the test set, although PLS1-DA does perform better in the second
