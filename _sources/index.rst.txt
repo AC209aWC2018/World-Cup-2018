@@ -9,29 +9,29 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
 .. toctree::
    :maxdepth: 1
-   :caption: Introduction:
+   :caption: Introduction
 
-   doc/problem_statement.md
+   doc/problem_statement.ipynb
    doc/related_works.ipynb
    doc/data_description.ipynb
 
 .. toctree::
    :maxdepth: 1
-   :caption: EDA:
+   :caption: EDA
 
-   EDA-notebook.ipynb
+   doc/eda_writeup.ipynb
 
    
 .. toctree::
    :maxdepth: 2
-   :caption: Models:
+   :caption: Models
 
-   models/baseline_model.ipynb
-   models/beyond_baseline.ipynb
-   models/neural_net.ipynb
+   doc/baseline_writeup.ipynb
+   doc/beyond_baseline_writeup.ipynb
+   doc/neural_network_writeup.ipynb
    
 .. toctree::
    :maxdepth: 1
-   :caption: Conclusion:
+   :caption: Conclusion
 
    doc/summary.ipynb

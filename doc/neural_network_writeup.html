@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Team Members &#8212; World Cup  documentation</title>
+    <title>Bonus: Neural Network on Small Training Set &#8212; World Cup  documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -65,7 +65,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="baseline_writeup.html">Baseline Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="beyond_baseline_writeup.html">Beyond Baseline</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neural_network_writeup.html">Bonus: Neural Network on Small Training Set</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Conclusion</span></p>
 <ul>
@@ -83,13 +82,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Team Members</a><ul>
-<li><a class="reference internal" href="#Brian-Lin">Brian Lin</a></li>
-<li><a class="reference internal" href="#Shane-Ong">Shane Ong</a></li>
-<li><a class="reference internal" href="#Pat-Sukhum">Pat Sukhum</a></li>
-<li><a class="reference internal" href="#Matteo-Zhang">Matteo Zhang</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Bonus: Neural Network on Small Training Set</a></li>
 </ul>
 </ul>
 </li>
@@ -105,7 +98,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/doc/team.ipynb.txt"
+  <a href="../_sources/doc/neural_network_writeup.ipynb.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -129,36 +122,37 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="Team-Members">
-<h1>Team Members<a class="headerlink" href="#Team-Members" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Brian-Lin">
-<h2>Brian Lin<a class="headerlink" href="#Brian-Lin" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="Bonus:-Neural-Network-on-Small-Training-Set">
+<h1>Bonus: Neural Network on Small Training Set<a class="headerlink" href="#Bonus:-Neural-Network-on-Small-Training-Set" title="Permalink to this headline">¶</a></h1>
+<p>Out of plain curiosity, we wondered how a simple neural network would
+perform on our problem (Everyone wants to try deep learning nowadays).
+Because our training set is so small, we do not believe that the neural
+network will outperform any of our models from the previous part. In
+fact, it might overfit to the training set and perform worse than our
+other models. This notebook is just to experiment around with neural
+networks and see its performance on a small dataset. We will only look
+at the outcome at 90 minutes and Softmax in the test set, since it would
+be pretty complicated to come up with a scheme for the WC Playoff Model
+configuration, especially since there are so few WC playoff matches in
+our dataset.</p>
+<p>Our simple neural network had a total of 3 hidden node layers, with 15
+nodes in each layer. We added regularization on each layer and also add
+drop out layers to try to prevent overfitting.</p>
 <div class="figure" id="id1">
-<img alt="Brian" src="doc/img/pavlos.jpeg" />
-<p class="caption"><span class="caption-text">Brian</span></p>
+<img alt="Neural Net Design" src="../_images/neural_net_design.png" />
+<p class="caption"><span class="caption-text">Neural Net Design</span></p>
 </div>
-</div>
-<div class="section" id="Shane-Ong">
-<h2>Shane Ong<a class="headerlink" href="#Shane-Ong" title="Permalink to this headline">¶</a></h2>
 <div class="figure" id="id2">
-<img alt="Shane" src="doc/img/boba.jpg" />
-<p class="caption"><span class="caption-text">Shane</span></p>
+<img alt="Neural Net Results" src="../_images/neural_net_results.png" />
+<p class="caption"><span class="caption-text">Neural Net Results</span></p>
 </div>
-</div>
-<div class="section" id="Pat-Sukhum">
-<h2>Pat Sukhum<a class="headerlink" href="#Pat-Sukhum" title="Permalink to this headline">¶</a></h2>
-<div class="figure" id="id3">
-<img alt="Pat" src="doc/img/leetcode.png" />
-<p class="caption"><span class="caption-text">Pat</span></p>
-</div>
-</div>
-<div class="section" id="Matteo-Zhang">
-<h2>Matteo Zhang<a class="headerlink" href="#Matteo-Zhang" title="Permalink to this headline">¶</a></h2>
-<div class="figure" id="id4">
-<img alt="Matteo" src="doc/img/pikachu.jpg" />
-<p class="caption"><span class="caption-text">Matteo</span></p>
-</div>
-</div>
+<p>Surprisngly, the neural network actually did better than we thought it
+would. This most likely stems from the regularization we added as well
+as the dropout layers. However, the neural network stilldid not perform
+as well as our best model.</p>
+<p>We have thus shown that neural networks do not really help improve
+accuracy in this small dataset; it shows that we do not really need that
+complex of a model in this problem.</p>
 </div>
 
 

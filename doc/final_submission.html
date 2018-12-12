@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Predicting the 2018 World Cup &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          World Cup</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problem_statement.html">Overview and Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="related_works.html">Literature Review and Related Works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_description.html">Description of Data</a></li>
+</ul>
+<p class="caption"><span class="caption-text">EDA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="eda_writeup.html">Exploratory Data Analysis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="baseline_writeup.html">Baseline Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beyond_baseline_writeup.html">Beyond Baseline</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Conclusion</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">Summary and Future Work</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Predicting the 2018 World Cup</a><ul>
+<li><a class="reference internal" href="#Brian-Lin,-Shane-Ong,-Pat-Sukhum,-Matteo-Zhang">Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Overview-and-Motivation">Overview and Motivation</a></li>
+<li><a class="reference internal" href="#Literature-Review-and-Related-Works">Literature Review and Related Works</a></li>
+<li><a class="reference internal" href="#Exploratory-Data-Analysis">Exploratory Data Analysis</a><ul>
+<li><a class="reference internal" href="#European-Matches">European Matches</a></li>
+<li><a class="reference internal" href="#Conclusion-From-Europen-Dataset">Conclusion From Europen Dataset</a></li>
+<li><a class="reference internal" href="#Further-Exploring-Other-Features">Further Exploring Other Features</a></li>
+<li><a class="reference internal" href="#Exploring-PCA">Exploring PCA</a></li>
+<li><a class="reference internal" href="#Summary">Summary</a></li>
+<li><a class="reference internal" href="#Interpreting-PCA">Interpreting PCA</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Baseline-Model">Baseline Model</a></li>
+<li><a class="reference internal" href="#Beyond-Baseline">Beyond Baseline</a></li>
+<li><a class="reference internal" href="#Bonus:-Neural-Network-on-Small-Training-Set">Bonus: Neural Network on Small Training Set</a></li>
+<li><a class="reference internal" href="#Summary-and-Future-Work">Summary and Future Work</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/doc/final_submission.ipynb.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="Predicting-the-2018-World-Cup">
+<h1>Predicting the 2018 World Cup<a class="headerlink" href="#Predicting-the-2018-World-Cup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Brian-Lin,-Shane-Ong,-Pat-Sukhum,-Matteo-Zhang">
+<h2>Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang<a class="headerlink" href="#Brian-Lin,-Shane-Ong,-Pat-Sukhum,-Matteo-Zhang" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="Overview-and-Motivation">
+<h1>Overview and Motivation<a class="headerlink" href="#Overview-and-Motivation" title="Permalink to this headline">¶</a></h1>
+<p>While soccer is one of the most popular sports in the world, its
+analytics is lackluster in comparison to other popular sports such as
+baseball, American football, hockey, and basketball. This is
+particularly evident for the FIFA World Cup. The amount of analytics
+done on the FIFA World Cup is just miniscule in comparison to its scale,
+given that it is one of the most popular and highly televised sporting
+events in the world! This can be attributed to the general resistance of
+the sport (or FIFA) towards technology. Even though numerous other
+sports already use video technology to review plays while on the pitch,
+FIFA World Cup 2018 was the first time Video Assistant Referee (VAR) was
+used in a major soccer tournament.</p>
+<p><img alt="image0" src="https://i.ytimg.com/vi/ITlBUIWlsXQ/maxresdefault.jpg" /></p>
+<center><p>Source:
+<a class="reference external" href="https://pics.me.me/si-fifa-fortnite-var-room-fifaworld-cup-russia-2018-use-34316423.png">https://pics.me.me/si-fifa-fortnite-var-room-fifaworld-cup-russia-2018-use-34316423.png</a></p>
+</center><p>Another possible explanation is it’s uniqueness as a sporting event of a
+global scale. The only other comparison is the Olympics. As a result, it
+is just logistically difficult for international teams to play each
+other very frequently! In fact, soccer clubs are often very resistant to
+allowing their players leave for international friendlies, especially if
+it is in the middle of their sporting season.</p>
+<p><img alt="image1" src="https://pbs.twimg.com/media/CREXjPkWIAA1_OG.jpg" /></p>
+<center><p>Source: <a class="reference external" href="https://pbs.twimg.com/media/CREXjPkWIAA1_OG.jpg">https://pbs.twimg.com/media/CREXjPkWIAA1_OG.jpg</a></p>
+</center><p>As countries just do not compete against each other at the highest level
+frequently, there is a lack of high quality data that can be immediately
+fed into models to perform predictions. This is one of the biggest
+limitations on our project. While we would have liked to construct a
+model based on historical match based statistics, such as the possesion
+rate, the number of shots on target, etc., these data are just not
+readily available (free). Most of these statistics for international
+matches seem to have been calculated only since the start of the 2010s.
+Even then, only matches at the highest level, during tournaments or
+featuring top teams, have these statistics available. As such, we rely
+on a mix of simple match based statistics, and team and individual data
+from the popular FIFA games for our World Cup predictions.</p>
+<p>The World Cup is composed of 64 matches in total - 48 matches in group
+stages and 16 matches in knockout (15 + 1 for third place). We plan to
+predict the outcome of each of the 64 matches independently instead of
+predicting which teams proceed in each round. This strategy allows our
+results to be comparable across models. By framing the problem in this
+way, we plan to approach this problem as a classification problem. Each
+game can be treated as a multi-class classification problem, where there
+are three outcomes: win for the home team (or team 1, indicated with 1),
+win for the away team (or team 2, indicated with -1), or a draw
+(indicated with 0). In the knockout rounds, we limit the outcome to: win
+for the home team (or team 1), win for the away team (or team 2), as
+draws are not allowed. Note that while we refer to teams as ‘home’ or
+‘away’, we are merely abusing the terminology to distinguish between
+teams. There is only one true ‘home’ team for World Cups.</p>
+<p>To validate how accurate FIFA rankings are, we aim to use a baseline
+model that leverages FIFA rankings and some other simple team predictors
+to predict the World Cup results. We plan to create a more advanced
+model without relying on FIFA rankings. Instead, our advanced model is
+based on features that we self collected and engineered. The feature
+engineering process is a follow up to our initial EDA, where we
+identified features that could possibly impact match results.
+Ultimately, our analysis attempts to create a model that can predict the
+World Cup results as accurately as possible, while offering an insight
+into the features helpful in soccer analytics.</p>
+</div>
+<div class="section" id="Literature-Review-and-Related-Works">
+<h1>Literature Review and Related Works<a class="headerlink" href="#Literature-Review-and-Related-Works" title="Permalink to this headline">¶</a></h1>
+<p>Even though soccer analytics is not a well-established field, there are
+a number of attempts to model the 2018 World Cup using machine learning
+techniques.</p>
+<p>For example, Andreas Groll and his team at the University of Dortmund
+utilized <a class="reference external" href="https://arxiv.org/abs/1806.03208">Poisson regression, random forest, and ranking
+methods</a> to simulate the World Cup
+100,000 times. Features that Groll used “include economic factors such
+as a country’s GDP and population, FIFA’s ranking of national teams, and
+the properties of the teams themselves, such as their average age, the
+number of Champions League players they have, whether they have home
+advantage, and so on.”
+(<a class="reference external" href="https://www.technologyreview.com/s/611397/machine-learning-predicts-world-cup-winner/">https://www.technologyreview.com/s/611397/machine-learning-predicts-world-cup-winner/</a>)
+Through these simulations, Groll’s model predicted Spain as the most
+likely winner of the World Cup followed by Germany. We all know how that
+turned out…</p>
+<p><img alt="image0" src="https://i.ytimg.com/vi/ITlBUIWlsXQ/maxresdefault.jpg" /></p>
+<center><p>Source: <a class="reference external" href="https://i.ytimg.com/vi/ITlBUIWlsXQ/maxresdefault.jpg">https://i.ytimg.com/vi/ITlBUIWlsXQ/maxresdefault.jpg</a></p>
+</center><p>Similarly, Gerald Muriuki utilized <a class="reference external" href="https://scotch.io/&#64;itsmuriuki/predicting-fifa-world-cup-2018-using-machine-learning">logistic
+regression</a>
+to simulate the World Cup. Using the historic match dataset as his train
+set, Muriuki only trained on matches in which both teams are playing in
+the 2018 World Cup. The only feature he used was one-hot encoding all
+the teams, essentially representing a team’s past performance against
+the other teams as a feature. The model predicted Brazil as the most
+likely winner.</p>
+<p>Finally, Rodrigo Nader utilized
+<a class="reference external" href="https://towardsdatascience.com/using-machine-learning-to-simulate-world-cup-matches-959e24d0731">SVM</a>
+to simulate the World Cup. Nader used ratings (Atk, Mid, Def, ovr) about
+the teams scraped from Fifa Index to build his model. The model
+predicted Spain as the most likely winner, defeating Brazil in the
+finals.</p>
+<p>As we can see, there were many attempts before the World Cup to predict
+it, with Spain or Brazil prevailing in most cases. However, we did not
+find any existing work that modelled World Cup 2018 after it had ended.
+While this may result in some hindsight bias (which we actively tried to
+avoid), there is still great value in reflecting back on the actual
+results of the World Cup. This would not only give us some insights into
+the actual statistics that matter in determining a soccer match, but
+also provide us with a model that could possibly be applied to future
+soccer matches.</p>
+<p>Moreover, as mentioned previously, we model the World Cup based on
+individual matches for comparability. This is different from the
+simulation models done previously, which simulates the World Cup
+sequentially. Nonetheless, our existing model can be extended to predict
+matches sequentially, although there is not much value in doing so since
+World Cup 2018 has ended.</p>
+<p>Nonetheless, it is evident that the data we chose to use and the
+features we chose to engineer were inspired by the related works. We
+hope to combine the features used individually by these related works to
+make a model of our own.</p>
+</div>
+<div class="section" id="Exploratory-Data-Analysis">
+<h1>Exploratory Data Analysis<a class="headerlink" href="#Exploratory-Data-Analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="European-Matches">
+<h2>European Matches<a class="headerlink" href="#European-Matches" title="Permalink to this headline">¶</a></h2>
+<p>For each match, we compute the average statistics for the different
+ratings for each team and difference them. Just getting the total value
+would not unfortunately work due to some rows potentially having uneven
+number of values missing. We then take the difference in the statistic
+for the home team and away team. For goal keeping ratings, we will only
+look at the max of each team since in theory the goal keepers in a match
+should have the best goal keeper statistics.</p>
+<p>Now let’s see if there are any differences in the distributions of the
+differences depending on whether the home team lost, won, or tied.</p>
+<div class="figure" id="id1">
+<img alt="Differences in the distributions" src="../_images/eda_mean.png" />
+<p class="caption"><span class="caption-text">Differences in the distributions</span></p>
+</div>
+<p>From looking at the mean, it seems in general the mean value for a
+difference in rating when the home team wins is the greatest out of the
+three outcomes while the mean value for the difference in rating when
+the home team loses is the lowest ouf the three outcomes. This seems
+consistent with what we believe. However, the mean differences seem a
+little low for any of these cases, especially since the rating ranges
+from 0 to 100, so mean differences of such small magnitudes might not be
+significant. Let’s plot the distributions themselves.</p>
+<div class="figure" id="id2">
+<img alt="Distributions" src="../_images/dist.png" />
+<p class="caption"><span class="caption-text">Distributions</span></p>
+</div>
+<p>Wow! From looking at the plots the distributions of a difference in
+rating among the three outcome do not really seem that different.</p>
+<p>This might be an indication that using individual ratings and
+aggregating them might not be the way to go. Also, so far efforts to get
+the individual ratings for the actual World Cup data have been
+unsuccessful, so this may be a sign to find other set of features to
+predict the world cup. (Later we will see an attempt of using team
+statistics)</p>
+<p>Let us also look at whether previous match results will be good
+predictors.</p>
+<div class="figure" id="id3">
+<img alt="Previous matches" src="../_images/prev_matches.png" />
+<p class="caption"><span class="caption-text">Previous matches</span></p>
+</div>
+<p>We see a similar pattern as before, where home team winning has the
+highest mean values and away team winning has the lowest mean values.
+This time the small magnitudes make sense however since we are only
+looking up to 5 games back. Let us also plot the distributions.</p>
+<div class="figure" id="id4">
+<img alt="Distribution of previous matches" src="../_images/dist_prev_matches.png" />
+<p class="caption"><span class="caption-text">Distribution of previous matches</span></p>
+</div>
+<p>This time it is a bit more obvious that home team winning tends to have
+higher values. It seems like we can probably calculate some kind of
+momentum and utilize it as a predictor. We will explore more of this
+concept later on when we make our advanced model.</p>
+</div>
+<div class="section" id="Conclusion-From-Europen-Dataset">
+<h2>Conclusion From Europen Dataset<a class="headerlink" href="#Conclusion-From-Europen-Dataset" title="Permalink to this headline">¶</a></h2>
+<p>From exploration of the European dataset, we saw that aggregating
+individual player ratings does not seem to help that much while previous
+matches seem to help. Thus, we decided to only keep the summary
+statistics of the team rather than players’ individual statistics. We
+will keep these discoveries in mind as we move on to the SOFIFA
+datasets.</p>
+</div>
+<div class="section" id="Further-Exploring-Other-Features">
+<h2>Further Exploring Other Features<a class="headerlink" href="#Further-Exploring-Other-Features" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id5">
+<img alt="Spearman" src="../_images/spear_corr_eda.png" />
+<p class="caption"><span class="caption-text">Spearman</span></p>
+</div>
+<p>The spearman correlation plot gives us an idea of how well these
+features correlate with our dependent variable. In other words, the
+highly correlated features, such as overall difference in ratings should
+give us a fairly good idea of team 1/home team winning.</p>
+<div class="figure" id="id6">
+<img alt="Distribution" src="../_images/dist_2.png" />
+<p class="caption"><span class="caption-text">Distribution</span></p>
+</div>
+<p>In fact, from the distribution plot we see that the features, such as
+overall difference in ratings and goalkeeper rating difference, that can
+better discriminate win, loss for team 1 are more highly correlated with
+the win/lose. Similarly, features, such as build up dribbling
+difference, which have low correlation barely show any difference
+between distribution of different outcomes.</p>
+<div class="figure" id="id7">
+<img alt="Box plot" src="../_images/boxplot.png" />
+<p class="caption"><span class="caption-text">Box plot</span></p>
+</div>
+<p>Inspecting one of the highly correlated features closely, we see that
+when the difference is positive (team 1 has an advantage), the
+likelihood of winning is much higher whereas when it’s negative it’s
+much more likely to lose.</p>
+<div class="figure" id="id8">
+<img alt="Wage Dist" src="../_images/dist_wage.png" />
+<p class="caption"><span class="caption-text">Wage Dist</span></p>
+</div>
+<p>However, there are also some features that don’t have really high
+correlation and can still discriminate well the win/lose situations when
+the difference is large. For instance, for the team wage difference, we
+see when the difference is large, it is much more likely to win/lose,
+but there is barely any difference in the middle peaking at 0. This is
+happening because we imputed missing values with 0 to encode lack of
+information. In fact, in these cases we have a lot of distributions with
+a really high peak at 0, causing low correlation. Nonetheless, they can
+still be useful when we do possess the information.</p>
+</div>
+<div class="section" id="Exploring-PCA">
+<h2>Exploring PCA<a class="headerlink" href="#Exploring-PCA" title="Permalink to this headline">¶</a></h2>
+<p>Inspecting these distribution of features, we noticed them a large
+proportion of them are similarly shaped and distributed. Therefore, we
+considered PCA to perform dimensionality reduction, aggregating similar
+features.</p>
+<p><img alt="PCA chart" src="../_images/pca_chart.png" /> <img alt="PCA results" src="../_images/pca_results.png" /></p>
+</div>
+<div class="section" id="Summary">
+<h2>Summary<a class="headerlink" href="#Summary" title="Permalink to this headline">¶</a></h2>
+<p>First of all, we notice that PCA helps models like LDA and QDA perhaps
+because of the independent assumption of components imposed by PCA. On
+the other hand, the performance for Logistic Regression, Random Forest,
+XGBoost seem to be slightly hurt by the reduced information from PCA.</p>
+<p>Nonetheless, we see that the best model is QDA with 9 components from
+PCA. This probably means that performing dimensionality reduction is
+probably quite helpful in summarizing the information from the data with
+similar distributions. We will keep this in mind when picking the final
+model.</p>
+</div>
+<div class="section" id="Interpreting-PCA">
+<h2>Interpreting PCA<a class="headerlink" href="#Interpreting-PCA" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id9">
+<img alt="Correlation Circle" src="../_images/corr_circle.png" />
+<p class="caption"><span class="caption-text">Correlation Circle</span></p>
+</div>
+<p>We only highlighted the top 20 predictors with largest correlation
+magnitude as these are likely to be the more important predictors.</p>
+<p><code class="docutils literal notranslate"><span class="pre">start_age_diff</span></code> and <code class="docutils literal notranslate"><span class="pre">full_age_diff</span></code> are naturally correlated, and
+seem to explain a substantial amount of variation in the data.
+<code class="docutils literal notranslate"><span class="pre">growth_diff</span></code>, which is on the other side of the correlation circle,
+seems to explain variation that is almost the opposite of
+<code class="docutils literal notranslate"><span class="pre">start_age_diff</span></code> and <code class="docutils literal notranslate"><span class="pre">full_age_diff</span></code>. This makes intuitive sense as
+we would expect younger players to have more room for growth.</p>
+<p><code class="docutils literal notranslate"><span class="pre">attack_away_defence_home_diff</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_diff</span></code> also seem to be
+explain similar variation in the data. The rest of the predictors are
+all clustered at the 3 o’clock region of the circle, right across the
+predictors <code class="docutils literal notranslate"><span class="pre">attack_away_defence_home_diff</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_diff</span></code>. This
+suggests that these predictors explain similar variation in the data and
+might be correlated.</p>
+<p><img alt="Overall vs Start Age" src="../_images/overall_start_age.png" /> <img alt="Offense vs Defense" src="../_images/offense_defense.png" /></p>
+<p><img alt="PCA Plot" src="../_images/pca_plot.png" /> <img alt="PCA Table1" src="../_images/eda_table_1.png" /> <img alt="PCA Table2" src="../_images/eda_table_2.png" /></p>
+<p>We can see that PC1 is greatly influenced by <code class="docutils literal notranslate"><span class="pre">overall</span></code>, <code class="docutils literal notranslate"><span class="pre">defence</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">midfield</span></code>, while PC2 is greatly influenced by <code class="docutils literal notranslate"><span class="pre">full_age</span></code>
+(negative), <code class="docutils literal notranslate"><span class="pre">start_age</span></code> (negative), and <code class="docutils literal notranslate"><span class="pre">growth</span></code>. This gives us a
+good way to think about the 2D representation of our dataset summarized
+by the first two PCs. Teams with higher PC2s generally have lower ages
+and thus more potential for growth. They are likely to have lots of
+young, promising players. Teams with higher PC1s are statistically
+better all-round teams.</p>
+<p>While this PCA plot is not a measure of how likely a team will win the
+World Cup (since PCAs only involve the predictors), it can still give us
+an intuition into the various World Cup teams.</p>
+<p>We immediately see that France is probably a strong all-round team that
+also has young, promising players. Nigeria is probably a below-average
+team but with young, promising players. Costa Rica is probably a
+below-average team with older players near their peak. Spain is probably
+a strong all-round team but with older players near their peak. These
+largely corroborates what we know about those teams.</p>
+</div>
+</div>
+<div class="section" id="Baseline-Model">
+<h1>Baseline Model<a class="headerlink" href="#Baseline-Model" title="Permalink to this headline">¶</a></h1>
+<p>Our most basic model would be to just predict the majority class every
+time. In this case, <code class="docutils literal notranslate"><span class="pre">home_win</span></code> = 1 is the majority class. Doing this
+“prediction” on our train set results in an accuracy of 43.8% while
+doing this “prediction” on our test results in an accuracy of 42.19%.
+This is pretty decent when we have three classes. Any model we build
+should be better than this test accuracy of just guessing the majority
+class.</p>
+<p>Our baseline model was pretty simple. We utilized the differences in
+FIFA rankings, offense ratings, defense ratings, midfield ratings,
+overall ratings, and whether the home team is actually playing at home.
+We will make a train and validation set out of the original train set.
+We then fitted the model on several different classification algorithms,
+using cross-validation to train on the models.</p>
+<div class="figure" id="id10">
+<img alt="Baseline Model Results" src="../_images/baseline_results.png" />
+<p class="caption"><span class="caption-text">Baseline Model Results</span></p>
+</div>
+<p>Ultimately, we selected the model with the highest validation accuracy,
+which was logistic regression in this case. We then will see how the
+model performs on the test set. Due to the elimination style during
+playoffs of the World Cup, there are no draws in these playoff matches.
+We attempted three different approaches to predicting the outcome of
+theese playoff matches.</p>
+<p>The first approach is to predict the outcome at 90 minutes (when a
+regular game ends so that our train set and test set are more “similar”
+to each other) before accounting for penalty kicks and overtime,
+allowing the model which trained on the training set to also predict
+draws in the playoff matches of the World Cup.</p>
+<p>In the second approach, we will predict the outcome at the end of the
+match; for a playoff match, if the model predicts a draw as most likely,
+then we instead predict the second most likely outcome of that match. We
+call this approach the “Softmax Approach”.</p>
+<p>The third approach also attempts to predict the outcome at the end of
+the match. Instead of just predicting the second most likely outcome for
+a playoff match, we instead just train another model specifically on
+past World Cup playoff matches on the final outcome of these matches. We
+then just use this model to predict the playoff matches while the model
+trained on the training set will predict the preliminaries match. Since
+we have limited amount of past World Cup playoff matches (only 24
+matches because some of them were removed to accomodate the team ratings
+dataset), we trained a basic logistic regression model as this model in
+the baseline model case. We call this approach the “WC Playoff Model”.</p>
+<div class="figure" id="id11">
+<img alt="Baseline Test Results" src="../_images/baseline_test_results.png" />
+<p class="caption"><span class="caption-text">Baseline Test Results</span></p>
+</div>
+<p>Impressive! The baseline model gave us an indea on what accuracy our
+more advanced model should hope to achieve. In this case the Softmax
+approach did better than the WC Playoff Model approach; this might be
+due to the small training set for the playoff matches, the small number
+of features, or just pure luck.</p>
+<p>We did some basic analysis to see what exactly the model is getting
+wrong by plotting some confusion matrices.</p>
+<div class="figure" id="id12">
+<img alt="Baseline Confusion Matrices" src="../_images/baseline_cm.png" />
+<p class="caption"><span class="caption-text">Baseline Confusion Matrices</span></p>
+</div>
+<p>Our model does not predict draws at all. This is a bit concerning, but
+it makes sense given that from our EDA of these simple features we saw
+that we really could not distinguish draws from home wins and home
+losses at all for any of the features. For most of the feature
+distributions, they were always “sandwiched” between the two other
+distributions. Maybe our more advanced models will be able to better
+predict draws.</p>
+<p>We see that across train set and test set, the proportions in each entry
+of the confusion matrices are approximately the same, which is good.
+This might be an indication that our train and test sets are
+approximately similar.</p>
+<p>While it seems like because the accuracy in predicting home loss and
+home win in the 90 minutes model are higher than those in the softmax
+approach, we must remember that the true labels of the former approach
+and the latter two approaches are different, where all the draws in the
+playoff matches of the test set became either home losses or wins. As a
+result, the overall accuracy of the the softmax approach is still higher
+than the former approach despite having lower home loss and home win
+accuracies; thus we can only compare the overall accuracies of the
+former approach with the latter two approaches. We can still compare the
+home loss and home win accuracies between the latter two approaches
+though since they are using the same test labels, and we see that while
+the WC Playoff Model is better at predicting home losses, it is worse in
+predicting home wins by a larger magnitude, resulting in lower overall
+accuracy.</p>
+<p>More importantly, we were curious just how important each feature is,
+especially the FIFA ranking feature, the one feature we are trying to
+replace. Feature importance of random forest allows us exactly to do so,
+and since it has similar performance to logistic regression in the
+train/validation set, we can utilize it in this case.</p>
+<div class="figure" id="id13">
+<img alt="Baseline Feature Importance" src="../_images/baseline_feature_importance.png" />
+<p class="caption"><span class="caption-text">Baseline Feature Importance</span></p>
+</div>
+<p>It seems like the FIFA rankings is not that important of a feature!
+Hopefully we can make a better model than the baseline model.</p>
+</div>
+<div class="section" id="Beyond-Baseline">
+<h1>Beyond Baseline<a class="headerlink" href="#Beyond-Baseline" title="Permalink to this headline">¶</a></h1>
+<p>To begin, we naively used all the features we have feature engineered.
+Similar to before, we fitted different classification models on our data
+and select the one with the best validation accuracy.</p>
+<p>We ran Logistic Regression, LDA, QDA, Random Forest, and XGBoost and got
+the following results: <img alt="Model scores" src="../_images/model_scores.png" /></p>
+<p>We choose the final model to be the one with the highest validation
+score, which is LDA in this case.</p>
+<p>Similar to before, we used three different approaches to predict the
+test set. For the WC Playoff Model approach, we continue to use logistic
+regression.</p>
+<div class="figure" id="id14">
+<img alt="LDA scores" src="../_images/lda_scores.png" />
+<p class="caption"><span class="caption-text">LDA scores</span></p>
+</div>
+<p>It seems that our model with all the features is a decent improvement to
+the baseline model for the test set in all three approaches. However,
+the lower train and validation scores in general is a bit concerning.
+Like before, random forest seems to perform similarly to the best model,
+so we will utilize its feature importance again.</p>
+<div class="figure" id="id15">
+<img alt="Random Forest features" src="../_images/RF_features.png" />
+<p class="caption"><span class="caption-text">Random Forest features</span></p>
+</div>
+<p>The ratings of the team are still pretty important features. Many of the
+features we have engineered seem to be decent features as well, which
+should not be surprising from the EDA. Besides 3 of them, many of the
+momentum features are near the bottom, and this might be due to the fact
+that these momentum features are obviously highly correlated with each
+other, and this may be causing the lower train and validation scores.
+Many of the features in our feature are highly correlated; we would want
+to deal with this multicollinearity somehow to see if we can achieve
+better results.</p>
+<p>We saw that our models in general performed similarly in terms of
+train/validation. Why not try stacking the models together? We will
+stack the logistic regression, LDA, QDA, Random Forest, and XGBoost
+models.</p>
+<p>We got the following results: Stacking Model Train Score:
+0.5662491760052736 Stacking Model Validation Score: 0.5368421052631579
+Stacking Model Test Score at 90 mins: 0.609375 Stacking Model Test Score
+at end (Softmax): 0.625 Stacking Model Test Score at end (WC Playoff
+Model): 0.640625</p>
+<p>It seems that stacking in this case did not really help that much. The
+test accuarcies are still decent though, higher than those of the
+baseline model.</p>
+<p>As mentioned before, we are a bit concerned about the fact that our
+features are highly correlated, which potentially affects our
+predictions.</p>
+<p>Principal Component Analysis (PCA) is a way to reduce the dimensionality
+of dataset by summarizing the variation in our data into a set of new
+predictors called principal components. These principal components are
+linear combinations of our original predictors. By selecting the top few
+principal components, we are projecting our dataset into the space
+defined by these components. This means that we are projecting our
+dataset onto a space of smaller dimensionality. Importantly, this will
+help us reduce the multicollinearity that might be affecting our
+predictions. Each principal component is constructed such that they are
+orthogonal with each other. Nonetheless, we understand that this will
+limit the interpretability of our coefficients.</p>
+<p>Principal Component Regression (PCR) is basically using the new
+predictors of reduced dimensionality in a regression problem. In this
+problem, we inputed the new principal components into our standard
+logistic regression. In order to decide the number of principal
+components to keep, we cross-validated the number of principal
+components that gives us the best validation accuracy. For the WC
+Playoffs Model, we will also use PCA to find the number of components
+that maximizes the train accuracy and fit a PCR model to the World Cup
+playoffs data.</p>
+<div class="figure" id="id16">
+<img alt="PCR Plot" src="../_images/pcr_plot.png" />
+<p class="caption"><span class="caption-text">PCR Plot</span></p>
+</div>
+<p>We got the following results: Best Validation Accuracy Number of
+Components: 3 PCR (Best) Train Score: 0.5042847725774555 PCR (Best)
+Validation Score: 0.5473684210526316 PCR (Best) Test Score at 90 mins:
+0.5625 PCR (Best) Test Score at end (Softmax): 0.578125 PCR (Best) Test
+Score at end (WC Playoffs Model): 0.609375</p>
+<p>In this case, PCR was not a good option. The test accuracy decreased
+quite significantly. We may need to take into the account the outcome as
+well when we reduce the dimension of our feature set.</p>
+<p>Another way that can help us deal with the issues of multicollinearity
+in our dataset is Partial Least Squares Regression (PLSR). Similar to
+PCA, PLSR involves projecting the predictors onto orthogonal components.
+However, the PLSR components are constructed such that they not only
+approximate the predictors, but are also well correlated with the
+response. As such, we assume that both the predictors and the response
+are functions of (reduced) principal components. In this problem, our
+response variable is a multi-class categorical variable. As such, we
+could use the PLS2 algorithm which simultaneously decomposes on the
+multi-class variable directly. We could also use the PLS1 algorithm on
+each category in our response variable separately.</p>
+<p>To demonstrate how the Partial Least Squares algorithms works, we have
+included a pseudo-code for PLS1:</p>
+<p>Set <span class="math notranslate nohighlight">\(X_0 = X\)</span>, and <span class="math notranslate nohighlight">\(y_0 = y\)</span></p>
+<p>for <span class="math notranslate nohighlight">\(h = 1, 2, ... r\)</span> do (where r is the dimension of the
+predictors)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{w_h} = \mathbf{X^T_{h-1}y_{h-1}/y^T_{h-1}y_{h-1}}\)</span>
+(regress predictors <span class="math notranslate nohighlight">\(x_j\)</span> on response <span class="math notranslate nohighlight">\(y\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} ||\mathbf{w_h}|| = 1\)</span> (normalize)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{z_h} = \mathbf{X_{h-1}w_h/w^T_hw_h}\)</span>
+(regress predictors <span class="math notranslate nohighlight">\(x_j\)</span> on weights <span class="math notranslate nohighlight">\(w_h\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{p_h} = \mathbf{X^T_{h-1}z_h/z^T_hz_h}\)</span>
+(regress predictors <span class="math notranslate nohighlight">\(x_j\)</span> on components <span class="math notranslate nohighlight">\(z_h\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{X_h} = \mathbf{X_{h-1} - z_hp^T_h}\)</span> (deflate
+<span class="math notranslate nohighlight">\(X_{h-1}\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} d_h = \mathbf{y^T_hz_h/z^T_hz_h}\)</span> (regress response
+<span class="math notranslate nohighlight">\(y_h\)</span> onto components <span class="math notranslate nohighlight">\(z_h\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{y_h} = \mathbf{y_{h-1} - d_hz_h}\)</span> (deflate
+<span class="math notranslate nohighlight">\(y_{h-1}\)</span>)</p>
+<p>end for</p>
+<p>The PLS2 algorithm is just an extension for a response variable with
+more than two outcomes.</p>
+<p>Importantly, PLS selects components which gives us the greatest
+reduction in the covariance of our predictors and response. If we
+represent our components as <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, and the response as
+<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, it can be shown that PLSR optimizes with respect to
+the weights <span class="math notranslate nohighlight">\(\mathbf{w}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\arg\max_{\mathbf{w}} cor^2(\mathbf{y, z})var(\mathbf{y})var(\mathbf{z})\]</div>
+<p>It can thus be seen that PLSR tries to maximize the correlation between
+the components and the response whilst trying to maximize the variance
+captured by the components.</p>
+<p>This not only allows us to resolve the multicollinearity issues through
+the creation of orthogonal components just as in PCR, but also allows us
+to create components that are correlated with the response. It is likely
+that this might perform even better than PCR.</p>
+<p>We got the following results for PLS1-DA: Best Validation Accuracy
+Number of Components: 16 PLS1-DA (Best) Train Score: 0.5227422544495716
+PLS1-DA (Best) Validation Score: 0.5552631578947368</p>
+<div class="figure" id="id17">
+<img alt="PLS 1" src="../_images/pls-da1.png" />
+<p class="caption"><span class="caption-text">PLS 1</span></p>
+</div>
+<p>We got the following results for PLS2-DA: Best Validation Accuracy
+Number of Components: 9 PLS2-DA (Best) Train Score: 0.5181278839815425
+PLS2-DA (Best) Validation Score: 0.5526315789473685</p>
+<div class="figure" id="id18">
+<img alt="PLS 1" src="../_images/pls-da2.png" />
+<p class="caption"><span class="caption-text">PLS 1</span></p>
+</div>
+<p>For the WC Playoffs Model, we will also fit the PLS model with number of
+components that maximizes the train accuracy. In the case of binary
+labels, PLS1-DA and PLS2-DA are the same, so we only have one result for
+the WC Playoffs Model.</p>
+<p>PLS1-DA (Best) Test Score at 90 mins: 0.640625 PLS1-DA (Best) Test Score
+at end (Softmax): 0.6875 PLS2-DA (Best) Test Score at 90 mins: 0.59375
+PLS2-DA (Best) Test Score at end (Softmax): 0.625 PLS1-DA/PLS2-DA (Best)
+Test Score at end (WC Playoffs Model): 0.65625</p>
+<p>Compared to the full model, we do not see much change in the PLS1-DA
+model on the test set while we see a decrease in performance of PLS2-DA
+on the test set, although PLS1-DA does perform better in the second
+approach than the full model does; thus PLS1-DA is the best model we
+have seen so far! What’s more important is that the validation scores
+for PLS1-DA were higher than those in the full model. It is likely that
+multicollinearity was causing the decrease in our validation scores.</p>
+<p>Now, suppose we don’t actually know anything about the test set. Which
+model would we have actually chosen? Like before, we can only look at
+the validation scores.</p>
+<div class="figure" id="id19">
+<img alt="Final models" src="../_images/final_models.png" />
+<p class="caption"><span class="caption-text">Final models</span></p>
+</div>
+<p>Based on validation scores, we would have chosen PLS1-DA, the best
+model!</p>
+<p>Let’s see the confusion matrices for our best model, PLS1-DA.</p>
+<div class="figure" id="id20">
+<img alt="Confusion Matrix" src="../_images/conf.png" />
+<p class="caption"><span class="caption-text">Confusion Matrix</span></p>
+</div>
+<p>The model is actually predicting some draws now for the training set and
+test set, although still very little. As mentioned before, it is just
+very hard to predict draws, but this is definitely an improvement
+compared to the baseline model.</p>
+<p>Compared to the baseline model, it seems that the model is better in
+predicting when “home” team loses in the test set in all three
+approaches. This might be due to some bias of how we feature engineer.
+Since none of us really were experts in soccer, we chose features that
+we observed from the World Cup alone, so these features might be biased
+toward the test set.</p>
+<p>The Softmax approach had higher home loss and home win accuracies than
+the WC Playoff Model approach; this might be due to the small training
+set for the playoff matches, so we could just be overfitting to the
+traing set. As mentioned in the baseline model, we cannot really compare
+the confusion matrices of the three approaches to the test set, as the
+true labels between the 90 minutes approach are different from those
+than the true labels in the other two approaches.</p>
+</div>
+<div class="section" id="Bonus:-Neural-Network-on-Small-Training-Set">
+<h1>Bonus: Neural Network on Small Training Set<a class="headerlink" href="#Bonus:-Neural-Network-on-Small-Training-Set" title="Permalink to this headline">¶</a></h1>
+<p>Out of plain curiosity, we wondered how a simple neural network would
+perform on our problem (Everyone wants to try deep learning nowadays).
+Because our training set is so small, we do not believe that the neural
+network will outperform any of our models from the previous part. In
+fact, it might overfit to the training set and perform worse than our
+other models. This notebook is just to experiment around with neural
+networks and see its performance on a small dataset. We will only look
+at the outcome at 90 minutes and Softmax in the test set, since it would
+be pretty complicated to come up with a scheme for the WC Playoff Model
+configuration, especially since there are so few WC playoff matches in
+our dataset.</p>
+<p>Our simple neural network had a total of 3 hidden node layers, with 15
+nodes in each layer. We added regularization on each layer and also add
+drop out layers to try to prevent overfitting.</p>
+<div class="figure" id="id21">
+<img alt="Neural Net Design" src="../_images/neural_net_design.png" />
+<p class="caption"><span class="caption-text">Neural Net Design</span></p>
+</div>
+<div class="figure" id="id22">
+<img alt="Neural Net Results" src="../_images/neural_net_results.png" />
+<p class="caption"><span class="caption-text">Neural Net Results</span></p>
+</div>
+<p>Surprisngly, the neural network actually did better than we thought it
+would. This most likely stems from the regularization we added as well
+as the dropout layers. However, the neural network stilldid not perform
+as well as our best model.</p>
+<p>We have thus shown that neural networks do not really help improve
+accuracy in this small dataset; it shows that we do not really need that
+complex of a model in this problem.</p>
+</div>
+<div class="section" id="Summary-and-Future-Work">
+<h1>Summary and Future Work<a class="headerlink" href="#Summary-and-Future-Work" title="Permalink to this headline">¶</a></h1>
+<p>In this project we explored the idea of predicting the 2018 World Cup
+through a data science approach. We collected data related to matches,
+team ratings, and FIFA rankings. We use as our training set the matches
+played by national teams starting from 2006. However, due to limitations
+of the team ratings dataset, we had to get rid of many matches when
+merging with the matches dataset with the team ratings dataset. The
+training set has three outcomes, home team loses, draw, and home team
+wins. Although the dataset designates one team as home team, in most
+cases this does not mean anything and one can switch home team and away
+team. As a result, any feature we use will have to be symmetric in
+nature.</p>
+<p>Due to the elimination style during playoffs of the World Cup, there are
+no draws in these playoff matches. We attempted different approaches to
+predicting the outcome of these playoff matches. The first approach is
+to predict the outcome at 90 minutes (when a regular game ends so that
+our train set and test set are more “similar” to each other) before
+accounting for penalty kicks and overtime, allowing the model which
+trained on the training set to also predict draws in the playoff matches
+of the World Cup. In the second approach, we predicted the outcome at
+the end of the match; for a playoff match, if the model predicts a draw
+as most likely, then we instead predict the second most likely outcome
+of that match. The third approach also attempts to predict the outcome
+at the end of the match. Instead of just predicting the second most
+likely outcome for a playoff match, we instead just train another model
+specifically on past World Cup playoff matches on the final outcome of
+these matches; we then just use this model to predict the playoff
+matches while the model trained on the training set will predict the
+preliminaries match.</p>
+<p>We wanted to see just how reliable FIFA rankings are in determining the
+outcome of a match, so we built a baseline model consisting of just FIFA
+rankings, attack ratings, defense ratings, midfield ratings, and overall
+ratings of the teams. We tried out a variety of classification methods
+such as logistic regression, linear discriminant analysis, quadratic
+discriminant analysis, random forest, and XGBoost, using
+cross-validation to train on the models and ultimately selecting the
+model with the highest validation accuracy. With this model, we achieved
+decent predictions on the 2018 World Cup. Also, with the baseline model,
+we realized that FIFA rankings do not have that much of an impact on the
+outcome of the matches, indicating that a model without FIFA rankings
+can achieve better results than the baseline model if we feature
+engineer good features.</p>
+<p>Through reviewing past works and exploratory data analysis, we realized
+that features related to other aspects of the team not captured by the
+baseline model, such as the income, age, and more specific statistics of
+the players of the team than just one rating on attack, one rating on
+defense, etc. (such as dribbling skills, passing skills, etc.), or
+momentum in the past few games, matter. Furthermore, not surprisingly
+the wealth of the country matters as well, in which we compared the GDP
+of countries on the same continent, acting as a proxy for comparing GDP
+of teams in the same confederation.</p>
+<p>Similar to the baseline model, we first tried a variety of
+classification methods and use cross-validation to train them, selecting
+the model with the highest validation accuracy as the model of use. With
+this model, we achieved impressive increases to our test accuracies. We
+then tried stacking, but that did not result in anything significant.
+Due to the multicollineariy nature of our features, we utilized the
+dimension reduction techniques to conduct Principal Component Regression
+and Partial Least Squares Discriminant Analysis. In the end we saw that
+Partial Least Squares Discriminant Analysis was comparable to the full
+model, and better in the case of the second approach.</p>
+<div class="figure" id="id23">
+<img alt="Model Results" src="../_images/model_results.png" />
+<p class="caption"><span class="caption-text">Model Results</span></p>
+</div>
+<p>We also tried out a simple neural network just for educational purposes,
+and while it performed better than the baseline model, it did not really
+perform as well as the more advanced models, which is not surprising due
+to our small training set.</p>
+<p>As shown, the models we built have already shown decent results, but of
+course there is always room for improvement. The immediate next step to
+take is to think of more complex features. We would also like to explore
+the impact of individual players on the match; while team ratings may
+capture an aggregate view of the players, we would like to be even more
+granular to see if individual players can “carry” their teams. We had
+attempted to do so during the beginning of this project, but one of the
+main constraints that we encountered was that it was basically
+impossible to match individual players on the national stage. We believe
+that this problem would become resolved as the field becomes more
+developed and centralized; eventually a website or database like
+<a class="reference external" href="https://www.baseball-reference.com/">https://www.baseball-reference.com/</a> will be built, but for soccer. In
+applying data science to any field, we believe that domain knowledge
+about the field is the most necessary requirement to improve the model.
+As such, another crucial next step would be acquire domain knowledge to
+recognize what makes a team “good” considering that none of us basically
+have any knowledge about soccer at all.</p>
+<p>This project proves that there is a lot of potential for the field to
+expand. There is no doubt in the future we will see teams rely heavily
+on analytics to make decision, just like how baseball, basketball and
+American football do in the current era.</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

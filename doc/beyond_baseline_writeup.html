@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Beyond Baseline &#8212; World Cup  documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Summary and Future Work" href="summary.html" />
+    <link rel="prev" title="Baseline Model" href="baseline_writeup.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          World Cup</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problem_statement.html">Overview and Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="related_works.html">Literature Review and Related Works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_description.html">Description of Data</a></li>
+</ul>
+<p class="caption"><span class="caption-text">EDA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="eda_writeup.html">Exploratory Data Analysis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Models</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="baseline_writeup.html">Baseline Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Beyond Baseline</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Conclusion</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">Summary and Future Work</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Beyond Baseline</a><ul>
+<li><a class="reference internal" href="#Modeling-with-Feature-Engineered-Features">Modeling with Feature Engineered Features</a></li>
+<li><a class="reference internal" href="#Stacking">Stacking</a></li>
+<li><a class="reference internal" href="#Principal-Component-Regression">Principal Component Regression</a></li>
+<li><a class="reference internal" href="#Partial-Least-Squares-Regression">Partial Least Squares Regression</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="baseline_writeup.html" title="Previous Chapter: Baseline Model"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Baseline Model</span>
+    </a>
+  </li>
+  <li>
+    <a href="summary.html" title="Next Chapter: Summary and Future Work"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Summary and F... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/doc/beyond_baseline_writeup.ipynb.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="Beyond-Baseline">
+<h1>Beyond Baseline<a class="headerlink" href="#Beyond-Baseline" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Modeling-with-Feature-Engineered-Features">
+<h2>Modeling with Feature Engineered Features<a class="headerlink" href="#Modeling-with-Feature-Engineered-Features" title="Permalink to this headline">¶</a></h2>
+<p>To begin, we naively used all the features we have feature engineered.
+Similar to before, we fitted different classification models on our data
+and select the one with the best validation accuracy.</p>
+<p>We ran Logistic Regression, LDA, QDA, Random Forest, and XGBoost and got
+the following results: <img alt="Model scores" src="../_images/model_scores.png" /></p>
+<p>We choose the final model to be the one with the highest validation
+score, which is LDA in this case.</p>
+<p>Similar to before, we used three different approaches to predict the
+test set. For the WC Playoff Model approach, we continue to use logistic
+regression.</p>
+<div class="figure" id="id1">
+<img alt="LDA scores" src="../_images/lda_scores.png" />
+<p class="caption"><span class="caption-text">LDA scores</span></p>
+</div>
+<p>It seems that our model with all the features is a decent improvement to
+the baseline model for the test set in all three approaches. However,
+the lower train and validation scores in general is a bit concerning.
+Like before, random forest seems to perform similarly to the best model,
+so we will utilize its feature importance again.</p>
+<div class="figure" id="id2">
+<img alt="Random Forest features" src="../_images/RF_features.png" />
+<p class="caption"><span class="caption-text">Random Forest features</span></p>
+</div>
+<p>The ratings of the team are still pretty important features. Many of the
+features we have engineered seem to be decent features as well, which
+should not be surprising from the EDA. Besides 3 of them, many of the
+momentum features are near the bottom, and this might be due to the fact
+that these momentum features are obviously highly correlated with each
+other, and this may be causing the lower train and validation scores.
+Many of the features in our feature are highly correlated; we would want
+to deal with this multicollinearity somehow to see if we can achieve
+better results.</p>
+</div>
+<div class="section" id="Stacking">
+<h2>Stacking<a class="headerlink" href="#Stacking" title="Permalink to this headline">¶</a></h2>
+<p>We saw that our models in general performed similarly in terms of
+train/validation. Why not try stacking the models together? We will
+stack the logistic regression, LDA, QDA, Random Forest, and XGBoost
+models.</p>
+<p>We got the following results: Stacking Model Train Score:
+0.5662491760052736 Stacking Model Validation Score: 0.5368421052631579
+Stacking Model Test Score at 90 mins: 0.609375 Stacking Model Test Score
+at end (Softmax): 0.625 Stacking Model Test Score at end (WC Playoff
+Model): 0.640625</p>
+<p>It seems that stacking in this case did not really help that much. The
+test accuarcies are still decent though, higher than those of the
+baseline model.</p>
+<p>As mentioned before, we are a bit concerned about the fact that our
+features are highly correlated, which potentially affects our
+predictions.</p>
+</div>
+<div class="section" id="Principal-Component-Regression">
+<h2>Principal Component Regression<a class="headerlink" href="#Principal-Component-Regression" title="Permalink to this headline">¶</a></h2>
+<p>Principal Component Analysis (PCA) is a way to reduce the dimensionality
+of dataset by summarizing the variation in our data into a set of new
+predictors called principal components. These principal components are
+linear combinations of our original predictors. By selecting the top few
+principal components, we are projecting our dataset into the space
+defined by these components. This means that we are projecting our
+dataset onto a space of smaller dimensionality. Importantly, this will
+help us reduce the multicollinearity that might be affecting our
+predictions. Each principal component is constructed such that they are
+orthogonal with each other. Nonetheless, we understand that this will
+limit the interpretability of our coefficients.</p>
+<p>Principal Component Regression (PCR) is basically using the new
+predictors of reduced dimensionality in a regression problem. In this
+problem, we inputed the new principal components into our standard
+logistic regression. In order to decide the number of principal
+components to keep, we cross-validated the number of principal
+components that gives us the best validation accuracy. For the WC
+Playoffs Model, we will also use PCA to find the number of components
+that maximizes the train accuracy and fit a PCR model to the World Cup
+playoffs data.</p>
+<div class="figure" id="id3">
+<img alt="PCR Plot" src="../_images/pcr_plot.png" />
+<p class="caption"><span class="caption-text">PCR Plot</span></p>
+</div>
+<p>We got the following results: Best Validation Accuracy Number of
+Components: 3 PCR (Best) Train Score: 0.5042847725774555 PCR (Best)
+Validation Score: 0.5473684210526316 PCR (Best) Test Score at 90 mins:
+0.5625 PCR (Best) Test Score at end (Softmax): 0.578125 PCR (Best) Test
+Score at end (WC Playoffs Model): 0.609375</p>
+<p>In this case, PCR was not a good option. The test accuracy decreased
+quite significantly. We may need to take into the account the outcome as
+well when we reduce the dimension of our feature set.</p>
+</div>
+<div class="section" id="Partial-Least-Squares-Regression">
+<h2>Partial Least Squares Regression<a class="headerlink" href="#Partial-Least-Squares-Regression" title="Permalink to this headline">¶</a></h2>
+<p>Another way that can help us deal with the issues of multicollinearity
+in our dataset is Partial Least Squares Regression (PLSR). Similar to
+PCA, PLSR involves projecting the predictors onto orthogonal components.
+However, the PLSR components are constructed such that they not only
+approximate the predictors, but are also well correlated with the
+response. As such, we assume that both the predictors and the response
+are functions of (reduced) principal components. In this problem, our
+response variable is a multi-class categorical variable. As such, we
+could use the PLS2 algorithm which simultaneously decomposes on the
+multi-class variable directly. We could also use the PLS1 algorithm on
+each category in our response variable separately.</p>
+<p>To demonstrate how the Partial Least Squares algorithms works, we have
+included a pseudo-code for PLS1:</p>
+<p>Set <span class="math notranslate nohighlight">\(X_0 = X\)</span>, and <span class="math notranslate nohighlight">\(y_0 = y\)</span></p>
+<p>for <span class="math notranslate nohighlight">\(h = 1, 2, ... r\)</span> do (where r is the dimension of the
+predictors)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{w_h} = \mathbf{X^T_{h-1}y_{h-1}/y^T_{h-1}y_{h-1}}\)</span>
+(regress predictors <span class="math notranslate nohighlight">\(x_j\)</span> on response <span class="math notranslate nohighlight">\(y\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} ||\mathbf{w_h}|| = 1\)</span> (normalize)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{z_h} = \mathbf{X_{h-1}w_h/w^T_hw_h}\)</span>
+(regress predictors <span class="math notranslate nohighlight">\(x_j\)</span> on weights <span class="math notranslate nohighlight">\(w_h\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{p_h} = \mathbf{X^T_{h-1}z_h/z^T_hz_h}\)</span>
+(regress predictors <span class="math notranslate nohighlight">\(x_j\)</span> on components <span class="math notranslate nohighlight">\(z_h\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{X_h} = \mathbf{X_{h-1} - z_hp^T_h}\)</span> (deflate
+<span class="math notranslate nohighlight">\(X_{h-1}\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} d_h = \mathbf{y^T_hz_h/z^T_hz_h}\)</span> (regress response
+<span class="math notranslate nohighlight">\(y_h\)</span> onto components <span class="math notranslate nohighlight">\(z_h\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\hspace{1cm} \mathbf{y_h} = \mathbf{y_{h-1} - d_hz_h}\)</span> (deflate
+<span class="math notranslate nohighlight">\(y_{h-1}\)</span>)</p>
+<p>end for</p>
+<p>The PLS2 algorithm is just an extension for a response variable with
+more than two outcomes.</p>
+<p>Importantly, PLS selects components which gives us the greatest
+reduction in the covariance of our predictors and response. If we
+represent our components as <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, and the response as
+<span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, it can be shown that PLSR optimizes with respect to
+the weights <span class="math notranslate nohighlight">\(\mathbf{w}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\arg\max_{\mathbf{w}} cor^2(\mathbf{y, z})var(\mathbf{y})var(\mathbf{z})\]</div>
+<p>It can thus be seen that PLSR tries to maximize the correlation between
+the components and the response whilst trying to maximize the variance
+captured by the components.</p>
+<p>This not only allows us to resolve the multicollinearity issues through
+the creation of orthogonal components just as in PCR, but also allows us
+to create components that are correlated with the response. It is likely
+that this might perform even better than PCR.</p>
+<p>We got the following results for PLS1-DA: Best Validation Accuracy
+Number of Components: 16 PLS1-DA (Best) Train Score: 0.5227422544495716
+PLS1-DA (Best) Validation Score: 0.5552631578947368</p>
+<div class="figure" id="id4">
+<img alt="PLS 1" src="../_images/pls-da1.png" />
+<p class="caption"><span class="caption-text">PLS 1</span></p>
+</div>
+<p>We got the following results for PLS2-DA: Best Validation Accuracy
+Number of Components: 9 PLS2-DA (Best) Train Score: 0.5181278839815425
+PLS2-DA (Best) Validation Score: 0.5526315789473685</p>
+<div class="figure" id="id5">
+<img alt="PLS 1" src="../_images/pls-da2.png" />
+<p class="caption"><span class="caption-text">PLS 1</span></p>
+</div>
+<p>For the WC Playoffs Model, we will also fit the PLS model with number of
+components that maximizes the train accuracy. In the case of binary
+labels, PLS1-DA and PLS2-DA are the same, so we only have one result for
+the WC Playoffs Model.</p>
+<p>PLS1-DA (Best) Test Score at 90 mins: 0.640625 PLS1-DA (Best) Test Score
+at end (Softmax): 0.6875 PLS2-DA (Best) Test Score at 90 mins: 0.59375
+PLS2-DA (Best) Test Score at end (Softmax): 0.625 PLS1-DA/PLS2-DA (Best)
+Test Score at end (WC Playoffs Model): 0.65625</p>
+<p>Compared to the full model, we do not see much change in the PLS1-DA
+model on the test set while we see a decrease in performance of PLS2-DA
+on the test set, although PLS1-DA does perform better in the second
+approach than the full model does; thus PLS1-DA is the best model we
+have seen so far! What’s more important is that the validation scores
+for PLS1-DA were higher than those in the full model. It is likely that
+multicollinearity was causing the decrease in our validation scores.</p>
+<p>Now, suppose we don’t actually know anything about the test set. Which
+model would we have actually chosen? Like before, we can only look at
+the validation scores.</p>
+<div class="figure" id="id6">
+<img alt="Final models" src="../_images/final_models.png" />
+<p class="caption"><span class="caption-text">Final models</span></p>
+</div>
+<p>Based on validation scores, we would have chosen PLS1-DA, the best
+model!</p>
+<p>Let’s see the confusion matrices for our best model, PLS1-DA.</p>
+<div class="figure" id="id7">
+<img alt="Confusion Matrix" src="../_images/conf.png" />
+<p class="caption"><span class="caption-text">Confusion Matrix</span></p>
+</div>
+<p>The model is actually predicting some draws now for the training set and
+test set, although still very little. As mentioned before, it is just
+very hard to predict draws, but this is definitely an improvement
+compared to the baseline model.</p>
+<p>Compared to the baseline model, it seems that the model is better in
+predicting when “home” team loses in the test set in all three
+approaches. This might be due to some bias of how we feature engineer.
+Since none of us really were experts in soccer, we chose features that
+we observed from the World Cup alone, so these features might be biased
+toward the test set.</p>
+<p>The Softmax approach had higher home loss and home win accuracies than
+the WC Playoff Model approach; this might be due to the small training
+set for the playoff matches, so we could just be overfitting to the
+traing set. As mentioned in the baseline model, we cannot really compare
+the confusion matrices of the three approaches to the test set, as the
+true labels between the 90 minutes approach are different from those
+than the true labels in the other two approaches.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

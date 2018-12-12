@@ -1,0 +1,73 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Baseline Model"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Our most basic model would be to just predict the majority class every time. In this case, `home_win` = 1 is the majority class. Doing this \"prediction\" on our train set results in an accuracy of 43.8% while doing this \"prediction\" on our test results in an accuracy of 42.19%. This is pretty decent when we have three classes. Any model we build should be better than this test accuracy of just guessing the majority class.\n",
+    "\n",
+    "Our baseline model was pretty simple. We utilized the differences in FIFA rankings, offense ratings, defense ratings, midfield ratings, overall ratings, and whether the home team is actually playing at home. We will make a train and validation set out of the original train set. We then fitted the model on several different classification algorithms, using cross-validation to train on the models.\n",
+    "\n",
+    "![Baseline Model Results](img/baseline_results.png)\n",
+    "\n",
+    "\n",
+    "Ultimately, we selected the model with the highest validation accuracy, which was logistic regression in this case. We then will see how the model performs on the test set. Due to the elimination style during playoffs of the World Cup, there are no draws in these playoff matches. We attempted three different approaches to predicting the outcome of theese playoff matches. \n",
+    "\n",
+    "The first approach is to predict the outcome at 90 minutes (when a regular game ends so that our train set and test set are more \"similar\" to each other) before accounting for penalty kicks and overtime, allowing the model which trained on the training set to also predict draws in the playoff matches of the World Cup. \n",
+    "\n",
+    "In the second approach, we will predict the outcome at the end of the match; for a playoff match, if the model predicts a draw as most likely, then we instead predict the second most likely outcome of that match. We call this approach the \"Softmax Approach\". \n",
+    "\n",
+    "The third approach also attempts to predict the outcome at the end of the match. Instead of just predicting the second most likely outcome for a playoff match, we instead just train another model specifically on past World Cup playoff matches on the final outcome of these matches. We then just use this model to predict the playoff matches while the model trained on the training set will predict the preliminaries match. Since we have limited amount of past World Cup playoff matches (only 24 matches because some of them were removed to accomodate the team ratings dataset), we trained a basic logistic regression model as this model in the baseline model case. We call this approach the \"WC Playoff Model\". \n",
+    "\n",
+    "![Baseline Test Results](img/baseline_test_results.png)\n",
+    "\n",
+    "Impressive! The baseline model gave us an indea on what accuracy our more advanced model should hope to achieve. In this case the Softmax approach did better than the WC Playoff Model approach; this might be due to the small training set for the playoff matches, the small number of features, or just pure luck. \n",
+    "\n",
+    "We did some basic analysis to see what exactly the model is getting wrong by plotting some confusion matrices. \n",
+    "\n",
+    "![Baseline Confusion Matrices](img/baseline_cm.png)\n",
+    "\n",
+    "Our model does not predict draws at all. This is a bit concerning, but it makes sense given that from our EDA of these simple features we saw that we really could not distinguish draws from home wins and home losses at all for any of the features. For most of the feature distributions, they were always \"sandwiched\" between the two other distributions. Maybe our more advanced models will be able to better predict draws.\n",
+    "\n",
+    "We see that across train set and test set, the proportions in each entry of the confusion matrices are approximately the same, which is good. This might be an indication that our train and test sets are approximately similar. \n",
+    "\n",
+    "While it seems like because the accuracy in predicting home loss and home win in the 90 minutes model are higher than those in the softmax approach, we must remember that the true labels of the former approach and the latter two approaches are different, where all the draws in the playoff matches of the test set became either home losses or wins. As a result, the overall accuracy of the the softmax approach is still higher than the former approach despite having lower home loss and home win accuracies; thus we can only compare the overall accuracies of the former approach with the latter two approaches. We can still compare the home loss and home win accuracies between the latter two approaches though since they are using the same test labels, and we see that while the WC Playoff Model is better at predicting home losses, it is worse in predicting home wins by a larger magnitude, resulting in lower overall accuracy. \n",
+    "\n",
+    "More importantly, we were curious just how important each feature is, especially the FIFA ranking feature, the one feature we are trying to replace. Feature importance of random forest allows us exactly to do so, and since it has similar performance to logistic regression in the train/validation set, we can utilize it in this case.\n",
+    "\n",
+    "![Baseline Feature Importance](img/baseline_feature_importance.png)\n",
+    "\n",
+    "\n",
+    "It seems like the FIFA rankings is not that important of a feature! Hopefully we can make a better model than the baseline model.\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

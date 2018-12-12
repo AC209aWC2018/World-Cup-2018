@@ -882,6 +882,13 @@
    "source": [
     "It seems like the FIFA rankings is not that important of a feature! Hopefully we can make a better model than the baseline model."
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
