@@ -35,7 +35,7 @@
     "\n",
     "We are hopeful that the data limitations in soccer analytics on the international stage would become resolved as the field becomes more developed and centralized; eventually a website or database like https://www.baseball-reference.com/ will be built, but for soccer. In fact, Opta Sports is a relatively new company that gathered substantial match data during the World Cup 2018, and often collects match data for European leagues. While it might be impossible to recollect historical data for past international matches, it is our hope that the right match statistics are collected in the present for future analysis.\n",
     "\n",
-    "![opta](https://d2zywfiolv4f83.cloudfront.net/img/graphics/799.jpg)\n",
+    "![opta](https://d2zywfiolv4f83.cloudfront.net/img/graphics/799.jpg)<center>Source: https://d2zywfiolv4f83.cloudfront.net/img/graphics/799.jpg</center>\n",
     "\n",
     "\n",
     "This project proves that there is a lot of potential for the field to expand. There is no doubt in the future we will see teams rely heavily on analytics to make decision, just like how baseball, basketball and American football do in the current era. "
