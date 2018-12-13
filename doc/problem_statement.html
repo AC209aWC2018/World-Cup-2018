@@ -53,25 +53,26 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction</span></p>
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overview and Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">EDA</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="eda_writeup.html">Exploratory Data Analysis</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Models</span></p>
+<p class="caption"><span class="caption-text">Models:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="baseline_writeup.html">Baseline Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="beyond_baseline_writeup.html">Beyond Baseline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="neural_network_writeup.html">Bonus: Neural Network on Small Training Set</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Conclusion</span></p>
+<p class="caption"><span class="caption-text">Summary and Conclusion:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="summary.html">Summary and Future Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results_writeup.html">Results Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">Project Summary and Future Work</a></li>
 </ul>
 </ul>
 </li>
@@ -109,7 +110,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/doc/problem_statement.ipynb.txt"
+  <a href="../_sources/doc/problem_statement.md.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -133,66 +134,17 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="Overview-and-Motivation">
-<h1>Overview and Motivation<a class="headerlink" href="#Overview-and-Motivation" title="Permalink to this headline">¶</a></h1>
-<p>While soccer is one of the most popular sports in the world, its
-analytics is lackluster in comparison to other popular sports such as
-baseball, American football, hockey, and basketball. This is
-particularly evident for the FIFA World Cup. The amount of analytics
-done on the FIFA World Cup is just miniscule in comparison to its scale,
-given that it is one of the most popular and highly televised sporting
-events in the world! This can be attributed to the general resistance of
-the sport (or FIFA) towards technology. Even though numerous other
-sports already use video technology to review plays while on the pitch,
-FIFA World Cup 2018 was the first time Video Assistant Referee (VAR) was
-used in a major soccer tournament.</p>
-<p><img alt="Var Room" src="https://pics.me.me/si-fifa-fortnite-var-room-fifaworld-cup-russia-2018-use-34316423.png" /></p>
-<center><p>Source:
-<a class="reference external" href="https://pics.me.me/si-fifa-fortnite-var-room-fifaworld-cup-russia-2018-use-34316423.png">https://pics.me.me/si-fifa-fortnite-var-room-fifaworld-cup-russia-2018-use-34316423.png</a></p>
-</center><p>Another possible explanation is it’s uniqueness as a sporting event of a
-global scale. The only other comparison is the Olympics. As a result, it
-is just logistically difficult for international teams to play each
-other very frequently! In fact, soccer clubs are often very resistant to
-allowing their players leave for international friendlies, especially if
-it is in the middle of their sporting season.</p>
-<p><img alt="Injuries, injuries" src="https://pbs.twimg.com/media/CREXjPkWIAA1_OG.jpg" /></p>
-<center><p>Source: <a class="reference external" href="https://pbs.twimg.com/media/CREXjPkWIAA1_OG.jpg">https://pbs.twimg.com/media/CREXjPkWIAA1_OG.jpg</a></p>
-</center><p>As countries just do not compete against each other at the highest level
-frequently, there is a lack of high quality data that can be immediately
-fed into models to perform predictions. This is one of the biggest
-limitations on our project. While we would have liked to construct a
-model based on historical match based statistics, such as the possesion
-rate, the number of shots on target, etc., these data are just not
-readily available (free). Most of these statistics for international
-matches seem to have been calculated only since the start of the 2010s.
-Even then, only matches at the highest level, during tournaments or
-featuring top teams, have these statistics available. As such, we rely
-on a mix of simple match based statistics, and team and individual data
-from the popular FIFA games for our World Cup predictions.</p>
-<p>The World Cup is composed of 64 matches in total - 48 matches in group
-stages and 16 matches in knockout (15 + 1 for third place). We plan to
-predict the outcome of each of the 64 matches independently instead of
-predicting which teams proceed in each round. This strategy allows our
-results to be comparable across models. By framing the problem in this
-way, we plan to approach this problem as a classification problem. Each
-game can be treated as a multi-class classification problem, where there
-are three outcomes: win for the home team (or team 1, indicated with 1),
-win for the away team (or team 2, indicated with -1), or a draw
-(indicated with 0). In the knockout rounds, we limit the outcome to: win
-for the home team (or team 1), win for the away team (or team 2), as
-draws are not allowed. Note that while we refer to teams as ‘home’ or
-‘away’, we are merely abusing the terminology to distinguish between
-teams. There is only one true ‘home’ team for World Cups.</p>
-<p>To validate how accurate FIFA rankings are, we aim to use a baseline
-model that leverages FIFA rankings and some other simple team predictors
-to predict the World Cup results. We plan to create a more advanced
-model without relying on FIFA rankings. Instead, our advanced model is
-based on features that we self collected and engineered. The feature
-engineering process is a follow up to our initial EDA, where we
-identified features that could possibly impact match results.
-Ultimately, our analysis attempts to create a model that can predict the
-World Cup results as accurately as possible, while offering an insight
-into the features helpful in soccer analytics.</p>
+  <div class="section" id="overview-and-motivation">
+<h1>Overview and Motivation<a class="headerlink" href="#overview-and-motivation" title="Permalink to this headline">¶</a></h1>
+<p>While soccer is one of the most popular sports in the world, its analytics is lackluster in comparison to other popular sports such as baseball, American football, hockey, and basketball. This is particularly evident for the FIFA World Cup. The amount of analytics done on the FIFA World Cup is just miniscule in comparison to its scale, given that it is one of the most popular and highly televised sporting events in the world! This can be attributed to the general resistance of the sport (or FIFA) towards technology. Even though numerous other sports already use video technology to review plays while on the pitch, FIFA World Cup 2018 was the first time Video Assistant Referee (VAR) was used in a major soccer tournament.</p>
+<p>![](<a class="reference external" href="https://pics.me.me/si-fifa-fortnite-var-room-fifaworld-cup-russia-2018-use-34316423.png">https://pics.me.me/si-fifa-fortnite-var-room-fifaworld-cup-russia-2018-use-34316423.png</a>)
+&lt;center&gt;Source: <a class="reference external" href="https://pics.me.me/si-fifa-fortnite-var-room-fifaworld-cup-russia-2018-use-34316423">https://pics.me.me/si-fifa-fortnite-var-room-fifaworld-cup-russia-2018-use-34316423</a>.png&lt;/center&gt;</p>
+<p>Another possible explanation is it’s uniqueness as a sporting event of a global scale. The only other comparison is the Olympics. As a result, it is just logistically difficult for international teams to play each other very frequently! In fact, soccer clubs are often very resistant to allowing their players leave for international friendlies, especially if it is in the middle of their sporting season.</p>
+<p>![](<a class="reference external" href="https://pbs.twimg.com/media/CREXjPkWIAA1_OG.jpg">https://pbs.twimg.com/media/CREXjPkWIAA1_OG.jpg</a>)
+&lt;center&gt;Source: <a class="reference external" href="https://pbs.twimg.com/media/CREXjPkWIAA1_OG">https://pbs.twimg.com/media/CREXjPkWIAA1_OG</a>.jpg&lt;/center&gt;</p>
+<p>As countries just do not compete against each other at the highest level frequently, there is a lack of high quality data that can be immediately fed into models to perform predictions. This is one of the biggest limitations on our project. While we would have liked to construct a model based on historical match based statistics, such as the possesion rate, the number of shots on target, etc., these data are just not readily available (free). Most of these statistics for international matches seem to have been calculated only since the start of the 2010s. Even then, only matches at the highest level, during tournaments or featuring top teams, have these statistics available. As such, we rely on a mix of simple match based statistics, and team and individual data from the popular FIFA games for our World Cup predictions.</p>
+<p>The World Cup is composed of 64 matches in total - 48 matches in group stages and 16 matches in knockout (15 + 1 for third place). We plan to predict the outcome of each of the 64 matches independently instead of predicting which teams proceed in each round. This strategy allows our results to be comparable across models. By framing the problem in this way, we plan to approach this problem as a classification problem. Each game can be treated as a multi-class classification problem, where there are three outcomes: win for the home team (or team 1, indicated with 1), win for the away team (or team 2, indicated with -1), or a draw (indicated with 0). In the knockout rounds, we limit the outcome to: win for the home team (or team 1), win for the away team (or team 2), as draws are not allowed. Note that while we refer to teams as ‘home’ or ‘away’, we are merely abusing the terminology to distinguish between teams. There is only one true ‘home’ team for World Cups.</p>
+<p>To validate how accurate FIFA rankings are, we aim to use a baseline model that leverages FIFA rankings and some other simple team predictors to predict the World Cup results. We plan to create a more advanced model without relying on FIFA rankings. Instead, our advanced model is based on features that we self collected and engineered. The feature engineering process is a follow up to our initial EDA, where we identified features that could possibly impact match results. Ultimately, our analysis attempts to create a model that can predict the World Cup results as accurately as possible, while offering an insight into the features helpful in soccer analytics.</p>
 </div>
 
 

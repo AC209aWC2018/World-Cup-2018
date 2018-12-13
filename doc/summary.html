@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Summary and Future Work &#8212; World Cup  documentation</title>
+    <title>Project Summary and Future Work &#8212; World Cup  documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -18,7 +18,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Bonus: Neural Network on Small Training Set" href="neural_network_writeup.html" />
+    <link rel="prev" title="Results Summary" href="results_writeup.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -52,25 +52,26 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction</span></p>
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="problem_statement.html">Overview and Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">EDA</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="eda_writeup.html">Exploratory Data Analysis</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Models</span></p>
+<p class="caption"><span class="caption-text">Models:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="baseline_writeup.html">Baseline Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="beyond_baseline_writeup.html">Beyond Baseline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="neural_network_writeup.html">Bonus: Neural Network on Small Training Set</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Conclusion</span></p>
+<p class="caption"><span class="caption-text">Summary and Conclusion:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Summary and Future Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results_writeup.html">Results Summary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project Summary and Future Work</a></li>
 </ul>
 </ul>
 </li>
@@ -84,7 +85,11 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Summary and Future Work</a></li>
+<li><a class="reference internal" href="#">Project Summary and Future Work</a><ul>
+<li><a class="reference internal" href="#Conclusions-and-Summary">Conclusions and Summary</a></li>
+<li><a class="reference internal" href="#Future-Work">Future Work</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -94,7 +99,7 @@
               
                 
   <li>
-    <a href="neural_network_writeup.html" title="Previous Chapter: Bonus: Neural Network on Small Training Set"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Bonus: Neural...</span>
+    <a href="results_writeup.html" title="Previous Chapter: Results Summary"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Results Summary</span>
     </a>
   </li>
               
@@ -128,97 +133,122 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="Summary-and-Future-Work">
-<h1>Summary and Future Work<a class="headerlink" href="#Summary-and-Future-Work" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="Project-Summary-and-Future-Work">
+<h1>Project Summary and Future Work<a class="headerlink" href="#Project-Summary-and-Future-Work" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Conclusions-and-Summary">
+<h2>Conclusions and Summary<a class="headerlink" href="#Conclusions-and-Summary" title="Permalink to this headline">¶</a></h2>
 <p>In this project we explored the idea of predicting the 2018 World Cup
 through a data science approach. We collected data related to matches,
-team ratings, and FIFA rankings. We use as our training set the matches
-played by national teams starting from 2006. However, due to limitations
-of the team ratings dataset, we had to get rid of many matches when
-merging with the matches dataset with the team ratings dataset. The
-training set has three outcomes, home team loses, draw, and home team
-wins. Although the dataset designates one team as home team, in most
-cases this does not mean anything and one can switch home team and away
-team. As a result, any feature we use will have to be symmetric in
-nature.</p>
-<p>Due to the elimination style during playoffs of the World Cup, there are
-no draws in these playoff matches. We attempted different approaches to
-predicting the outcome of these playoff matches. The first approach is
-to predict the outcome at 90 minutes (when a regular game ends so that
-our train set and test set are more “similar” to each other) before
-accounting for penalty kicks and overtime, allowing the model which
-trained on the training set to also predict draws in the playoff matches
-of the World Cup. In the second approach, we predicted the outcome at
-the end of the match; for a playoff match, if the model predicts a draw
-as most likely, then we instead predict the second most likely outcome
-of that match. The third approach also attempts to predict the outcome
-at the end of the match. Instead of just predicting the second most
-likely outcome for a playoff match, we instead just train another model
-specifically on past World Cup playoff matches on the final outcome of
-these matches; we then just use this model to predict the playoff
-matches while the model trained on the training set will predict the
-preliminaries match.</p>
-<p>We wanted to see just how reliable FIFA rankings are in determining the
-outcome of a match, so we built a baseline model consisting of just FIFA
-rankings, attack ratings, defense ratings, midfield ratings, and overall
-ratings of the teams. We tried out a variety of classification methods
-such as logistic regression, linear discriminant analysis, quadratic
+team and player ratings, and FIFA rankings. We use international matches
+starting from 2006 as our training set. However, due to the limitations
+of the sofifa dataset, we had to get rid of many matches when merging
+with the matches dataset with the sofifa dataset. Nonetheless, as we
+have already explained, this was necessary given that the sofifa dataset
+is the most comprehensive database on soccer players. The training set
+has three outcomes, home team loses, draws, or wins. We abuse the
+terminology ‘home’ in order to distinguish between teams. As such, even
+though our dataset designates one team as home team, it does not mean
+anything. In fact, as each observation in our dataset is a match, any
+feature we use are actually symmetric in nature.</p>
+<p>Due to the elimination style of the knockout stages of the World Cup,
+there are no draws in these matches. We attempted different approaches
+to predicting the outcome of the knockout stages matches. The first
+approach is to predict the outcome at 90 minutes (when a regular game
+ends so that our train set and test set are more “similar” to each
+other) before accounting for penalty kicks and extra time. This allows
+our trained model to also predict draws in the knockout stages of the
+World Cup. In the second approach, we predicted the outcome at the end
+of the match; for a knockout stage match, if the model predicts a draw
+with the highest probability, we instead select the outcome with the
+second highest probability. Our third approach also attempts to predict
+the outcome at the end of the match. However, we specifically train a
+separate model on past World Cup knockout stages matches. This model
+will then be used to predict the outcomes of knockout stages matches. We
+continue using our original trained model on the group stages matches.</p>
+<p>We wanted to see the reliability of FIFA rankings in determining the
+relative strength of a team. As such, we built a baseline model
+consisting of just FIFA rankings, and the attack ratings, defense
+ratings, midfield ratings, and overall ratings of the teams from the
+FIFA games. We tried out a variety of classification methods such as
+logistic regression, linear discriminant analysis, quadratic
 discriminant analysis, random forest, and XGBoost, using
 cross-validation to train on the models and ultimately selecting the
 model with the highest validation accuracy. With this model, we achieved
-decent predictions on the 2018 World Cup. Also, with the baseline model,
-we realized that FIFA rankings do not have that much of an impact on the
+decent predictions on World Cup 2018. Also, with the baseline model, we
+realized that FIFA rankings do not have that much of an impact on the
 outcome of the matches, indicating that a model without FIFA rankings
 can achieve better results than the baseline model if we feature
 engineer good features.</p>
-<p>Through reviewing past works and exploratory data analysis, we realized
-that features related to other aspects of the team not captured by the
-baseline model, such as the income, age, and more specific statistics of
-the players of the team than just one rating on attack, one rating on
-defense, etc. (such as dribbling skills, passing skills, etc.), or
-momentum in the past few games, matter. Furthermore, not surprisingly
-the wealth of the country matters as well, in which we compared the GDP
-of countries on the same continent, acting as a proxy for comparing GDP
-of teams in the same confederation.</p>
+<p>Through reviewing past works and exploratory data analysis, we decided
+to use a much broader range of features, such as the average squad age,
+the GDP per capita of countries overall and on the same continent
+(proxying for GDP of teams in the same football confederation), a team’s
+playing style and tactics, the momentum of a team from their last few
+matches, etc. These new features were scraped from different web
+sources, and subsequently feature engineered on for our predictive
+model.</p>
 <p>Similar to the baseline model, we first tried a variety of
-classification methods and use cross-validation to train them, selecting
-the model with the highest validation accuracy as the model of use. With
-this model, we achieved impressive increases to our test accuracies. We
-then tried stacking, but that did not result in anything significant.
-Due to the multicollineariy nature of our features, we utilized the
-dimension reduction techniques to conduct Principal Component Regression
-and Partial Least Squares Discriminant Analysis. In the end we saw that
-Partial Least Squares Discriminant Analysis was comparable to the full
-model, and better in the case of the second approach.</p>
-<div class="figure" id="id1">
-<img alt="Model Results" src="../_images/model_results.png" />
-<p class="caption"><span class="caption-text">Model Results</span></p>
-</div>
+classification methods and used cross-validation to train the various
+models. We then selected the model with the highest validation accuracy
+to use. With this model, we achieved considerable increases to our test
+accuracies. In order to further improve the test accuracies, we also
+experimented with stacking. However, there was no great improvements in
+test accuracies. This process highlighted to us that we might have to
+deal with the multicollineariy nature of our features. As such, we
+utilized dimension reduction techniques to conduct Principal Component
+Regression and Partial Least Squares Discriminant Analysis. In the end
+we saw that Partial Least Squares Discriminant Analysis was comparable
+to the full model, and better in the case of the second approach.</p>
 <p>We also tried out a simple neural network just for educational purposes,
 and while it performed better than the baseline model, it did not really
 perform as well as the more advanced models, which is not surprising due
 to our small training set.</p>
+<p>Nonetheless, based on the Softmax approach evaluation we have managed to
+improve a simple baseline relying on FIFA rankings and some simple
+statistics from 59.4% accuracy for the World Cup to 68.8% for our best
+advanced model, PLS1, based on the validation set.</p>
+</div>
+<div class="section" id="Future-Work">
+<h2>Future Work<a class="headerlink" href="#Future-Work" title="Permalink to this headline">¶</a></h2>
 <p>As shown, the models we built have already shown decent results, but of
 course there is always room for improvement. The immediate next step to
-take is to think of more complex features. We would also like to explore
-the impact of individual players on the match; while team ratings may
-capture an aggregate view of the players, we would like to be even more
-granular to see if individual players can “carry” their teams. We had
-attempted to do so during the beginning of this project, but one of the
-main constraints that we encountered was that it was basically
-impossible to match individual players on the national stage. We believe
-that this problem would become resolved as the field becomes more
+take is to think of more complex features that might affect the outcome
+of a match. An important category of features that we feel would greatly
+improve our model is match statistics, such as in-game possesion, number
+of shots on target, number of fouls conceded, number of tackles
+completed, etc. These statistics, as compared to our current data, are
+more ‘raw’, as there is no inherent bias in the data. While these data
+can still be found for club matches, especially for the larger European
+leagues, it is difficult to be found for international matches,
+especially for lesser-known teams.</p>
+<p>These match statistics could also be extended to ‘purer’ individual
+statistics that measure the number of take-ons completed, the number of
+critical passes, the percentage of passes completed, etc. for individual
+players. These statistics can easily be applied to our predictive model
+through a moving average approach similar to our momentum predictors.
+They would allow us to better measure the performance of a player, and
+explore the impact of individual players on the match. While team
+ratings may capture an aggregate view of the players, we would like to
+be even more granular to see if individual players can “carry” their
+teams.</p>
+<p>We are hopeful that the data limitations in soccer analytics on the
+international stage would become resolved as the field becomes more
 developed and centralized; eventually a website or database like
 <a class="reference external" href="https://www.baseball-reference.com/">https://www.baseball-reference.com/</a> will be built, but for soccer. In
-applying data science to any field, we believe that domain knowledge
-about the field is the most necessary requirement to improve the model.
-As such, another crucial next step would be acquire domain knowledge to
-recognize what makes a team “good” considering that none of us basically
-have any knowledge about soccer at all.</p>
+fact, Opta Sports is a relatively new company that gathered substantial
+match data during the World Cup 2018, and often collects match data for
+European leagues. While it might be impossible to recollect historical
+data for past international matches, it is our hope that the right match
+statistics are collected in the present for future analysis.</p>
+<div class="figure" id="id1">
+<img alt="opta" src="https://d2zywfiolv4f83.cloudfront.net/img/graphics/799.jpg" />
+<p class="caption"><span class="caption-text">opta</span></p>
+</div>
 <p>This project proves that there is a lot of potential for the field to
 expand. There is no doubt in the future we will see teams rely heavily
 on analytics to make decision, just like how baseball, basketball and
 American football do in the current era.</p>
+</div>
 </div>
 
 

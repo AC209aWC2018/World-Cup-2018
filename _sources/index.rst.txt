@@ -7,10 +7,9 @@ Predicting the 2018 World Cup
 =====================================
 Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
-
 .. toctree::
    :maxdepth: 1
-   :caption: Introduction
+   :caption: Introduction:
 
    doc/problem_statement.ipynb
    doc/related_works.ipynb
@@ -18,25 +17,23 @@ Members: Brian Lin, Shane Ong, Pat Sukhum, Matteo Zhang
 
 .. toctree::
    :maxdepth: 1
-   :caption: EDA
+   :caption: EDA:
 
    doc/eda_writeup.ipynb
 
    
 .. toctree::
    :maxdepth: 2
-   :caption: Models
+   :caption: Models:
 
    doc/baseline_writeup.ipynb
    doc/beyond_baseline_writeup.ipynb
    doc/neural_network_writeup.ipynb
    
+
 .. toctree::
    :maxdepth: 1
-   :caption: Conclusion
+   :caption: Summary and Conclusion:
 
+   doc/results_writeup.ipynb
    doc/summary.ipynb
-
-.. |br| raw:: html
-
-   <br />

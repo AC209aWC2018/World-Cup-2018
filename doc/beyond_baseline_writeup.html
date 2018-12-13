@@ -53,25 +53,26 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction</span></p>
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Introduction:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="problem_statement.html">Overview and Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="related_works.html">Literature Review and Related Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_description.html">Description of Data</a></li>
 </ul>
-<p class="caption"><span class="caption-text">EDA</span></p>
+<p class="caption"><span class="caption-text">EDA:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="eda_writeup.html">Exploratory Data Analysis</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Models</span></p>
+<p class="caption"><span class="caption-text">Models:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="baseline_writeup.html">Baseline Model</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Beyond Baseline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="neural_network_writeup.html">Bonus: Neural Network on Small Training Set</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Conclusion</span></p>
+<p class="caption"><span class="caption-text">Summary and Conclusion:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="summary.html">Summary and Future Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results_writeup.html">Results Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">Project Summary and Future Work</a></li>
 </ul>
 </ul>
 </li>
@@ -89,7 +90,7 @@
 <li><a class="reference internal" href="#Modeling-with-Feature-Engineered-Features">Modeling with Feature Engineered Features</a></li>
 <li><a class="reference internal" href="#Stacking">Stacking</a></li>
 <li><a class="reference internal" href="#Principal-Component-Regression">Principal Component Regression</a></li>
-<li><a class="reference internal" href="#Partial-Least-Squares-Regression">Partial Least Squares Regression</a></li>
+<li><a class="reference internal" href="#Partial-Least-Squares-Discriminant-Analysis">Partial Least Squares Discriminant Analysis</a></li>
 </ul>
 </li>
 </ul>
@@ -143,6 +144,8 @@
 <h1>Beyond Baseline<a class="headerlink" href="#Beyond-Baseline" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Modeling-with-Feature-Engineered-Features">
 <h2>Modeling with Feature Engineered Features<a class="headerlink" href="#Modeling-with-Feature-Engineered-Features" title="Permalink to this headline">¶</a></h2>
+<p>Code for advanced models is available in this
+<a class="reference external" href="https://github.com/AC209aWC2018/World-Cup-2018/blob/master/models/beyond_baseline.ipynb">notebook</a></p>
 <p>To begin, we naively used all the features we have feature engineered.
 Similar to before, we fitted different classification models on our data
 and select the one with the best validation accuracy.</p>
@@ -151,8 +154,8 @@ the following results: <img alt="Model scores" src="../_images/model_scores.png"
 <p>We choose the final model to be the one with the highest validation
 score, which is LDA in this case.</p>
 <p>Similar to before, we used three different approaches to predict the
-test set. For the WC Playoff Model approach, we continue to use logistic
-regression.</p>
+test set. For the WC Knockout Stages Model approach, we continue to use
+logistic regression.</p>
 <div class="figure" id="id1">
 <img alt="LDA scores" src="../_images/lda_scores.png" />
 <p class="caption"><span class="caption-text">LDA scores</span></p>
@@ -188,10 +191,10 @@ models.</p>
 <li>Stacking Model Validation Score: 0.5368421052631579</li>
 <li>Stacking Model Test Score at 90 mins: 0.609375</li>
 <li>Stacking Model Test Score at end (Softmax): 0.625</li>
-<li>Stacking Model Test Score at end (WC Playoff Model): 0.640625</li>
+<li>Stacking Model Test Score at end (WC Knockout Stages Model): 0.640625</li>
 </ul>
 <p>It seems that stacking in this case did not really help that much. The
-test accuarcies are still decent though, higher than those of the
+test accuracies are still decent though, higher than those of the
 baseline model.</p>
 <p>As mentioned before, we are a bit concerned about the fact that our
 features are highly correlated, which potentially affects our
@@ -216,9 +219,9 @@ problem, we inputed the new principal components into our standard
 logistic regression. In order to decide the number of principal
 components to keep, we cross-validated the number of principal
 components that gives us the best validation accuracy. For the WC
-Playoffs Model, we will also use PCA to find the number of components
-that maximizes the train accuracy and fit a PCR model to the World Cup
-playoffs data.</p>
+Knockout Stages Model, we will also use PCA to find the number of
+components that maximizes the train accuracy and fit a PCR model to the
+World Cup knockout stages data.</p>
 <div class="figure" id="id3">
 <img alt="PCR Plot" src="../_images/pcr_plot.png" />
 <p class="caption"><span class="caption-text">PCR Plot</span></p>
@@ -230,14 +233,14 @@ playoffs data.</p>
 <li>PCR (Best) Validation Score: 0.5473684210526316</li>
 <li>PCR (Best) Test Score at 90 mins: 0.5625</li>
 <li>PCR (Best) Test Score at end (Softmax): 0.578125</li>
-<li>PCR (Best) Test Score at end (WC Playoffs Model): 0.609375</li>
+<li>PCR (Best) Test Score at end (WC Knockout Stages Model): 0.609375</li>
 </ul>
 <p>In this case, PCR was not a good option. The test accuracy decreased
 quite significantly. We may need to take into the account the outcome as
 well when we reduce the dimension of our feature set.</p>
 </div>
-<div class="section" id="Partial-Least-Squares-Regression">
-<h2>Partial Least Squares Regression<a class="headerlink" href="#Partial-Least-Squares-Regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Partial-Least-Squares-Discriminant-Analysis">
+<h2>Partial Least Squares Discriminant Analysis<a class="headerlink" href="#Partial-Least-Squares-Discriminant-Analysis" title="Permalink to this headline">¶</a></h2>
 <p>Another way that can help us deal with the issues of multicollinearity
 in our dataset is Partial Least Squares Regression (PLSR). Similar to
 PCA, PLSR involves projecting the predictors onto orthogonal components.
@@ -248,7 +251,11 @@ are functions of (reduced) principal components. In this problem, our
 response variable is a multi-class categorical variable. As such, we
 could use the PLS2 algorithm which simultaneously decomposes on the
 multi-class variable directly. We could also use the PLS1 algorithm on
-each category in our response variable separately.</p>
+each category in our response variable separately. Similar to logistic
+regression predicting multinomial problem, PLS1 algorithm is analogous
+to one-vs-all logistic regression whereas PLS2 is analogous multinomial
+logistic regression. These algorithms are also referred to as Partial
+Least Squares Discriminant Analysis (PLS-DA).</p>
 <p>To demonstrate how the Partial Least Squares algorithms works, we have
 included a pseudo-code for PLS1:</p>
 <p>Set <span class="math notranslate nohighlight">\(X_0 = X\)</span>, and <span class="math notranslate nohighlight">\(y_0 = y\)</span></p>
@@ -304,16 +311,17 @@ that this might perform even better than PCR.</p>
 <img alt="PLS 2" src="../_images/pls-da2.png" />
 <p class="caption"><span class="caption-text">PLS 2</span></p>
 </div>
-<p>For the WC Playoffs Model, we will also fit the PLS model with number of
-components that maximizes the train accuracy. In the case of binary
-labels, PLS1-DA and PLS2-DA are the same, so we only have one result for
-the WC Playoffs Model.</p>
+<p>For the WC Knockout Stages Model, we will also fit the PLS model with
+number of components that maximizes the train accuracy. In the case of
+binary labels, PLS1-DA and PLS2-DA are the same, so we only have one
+result for the WC Knockout Stages Model.</p>
 <ul class="simple">
 <li>PLS1-DA (Best) Test Score at 90 mins: 0.640625</li>
 <li>PLS1-DA (Best) Test Score at end (Softmax): 0.6875</li>
 <li>PLS2-DA (Best) Test Score at 90 mins: 0.59375</li>
 <li>PLS2-DA (Best) Test Score at end (Softmax): 0.625</li>
-<li>PLS1-DA/PLS2-DA (Best) Test Score at end (WC Playoffs Model): 0.65625</li>
+<li>PLS1-DA/PLS2-DA (Best) Test Score at end (WC Knockout Stages Model):
+0.65625</li>
 </ul>
 <p>Compared to the full model, we do not see much change in the PLS1-DA
 model on the test set while we see a decrease in performance of PLS2-DA
@@ -347,12 +355,12 @@ Since none of us really were experts in soccer, we chose features that
 we observed from the World Cup alone, so these features might be biased
 toward the test set.</p>
 <p>The Softmax approach had higher home loss and home win accuracies than
-the WC Playoff Model approach; this might be due to the small training
-set for the playoff matches, so we could just be overfitting to the
-traing set. As mentioned in the baseline model, we cannot really compare
-the confusion matrices of the three approaches to the test set, as the
-true labels between the 90 minutes approach are different from those
-than the true labels in the other two approaches.</p>
+the WC Knockout Stages Model approach; this might be due to the small
+training set for the knockout stages matches, so we could just be
+overfitting to the traing set. As mentioned in the baseline model, we
+cannot really compare the confusion matrices of the three approaches to
+the test set, as the true labels between the 90 minutes approach are
+different from those than the true labels in the other two approaches.</p>
 </div>
 </div>
 

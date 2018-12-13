@@ -289,7 +289,7 @@
    "metadata": {},
    "source": [
     "Surprisngly, the neural network actually did better than we thought it would. This most likely stems from the regularization we added as well as the dropout layers. However, the neural network did not perform as well as our best model.\n",
-    "am 43\n",
+    "\n",
     "We have thus shown that neural networks do not really help improve accuracy in this small dataset; it shows that we do not really need that complex of a model in this problem."
    ]
   }
