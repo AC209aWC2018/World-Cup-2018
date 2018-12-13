@@ -1,5 +1,5 @@
 # Predicting World Cup 2018
-This is a project about predicting World Cup 2018 results using features collected from SOFIFA and other sources. A detailed description of this project is available through this [notebook](https://github.com/AC209aWC2018/World-Cup-2018/blob/master/doc/final_submission.ipynb). If you are only interested in the narrative of project, please visit this [website](https://ac209awc2018.github.io/World-Cup-2018/).
+This is a project about predicting World Cup 2018 results using features collected from SOFIFA and other sources. A detailed description of this project is available through this [notebook](https://github.com/AC209aWC2018/World-Cup-2018/blob/master/doc/final_submission.ipynb). If you are only interested in the narrative of this project, please visit this [website](https://ac209awc2018.github.io/World-Cup-2018/).
 
 
 ## Data Collection
